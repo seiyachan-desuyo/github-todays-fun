@@ -1,0 +1,668 @@
+{
+  "date": "2026-09-07",
+  "issue": 2,
+  "title": "真实 GitHub 信号里的今日新项目",
+  "summary": "本期从 10 个真实 GitHub 候选中按近期增长、更新活跃与跨源信号选出；中文说明由确定性规则生成。",
+  "mode": "live",
+  "editorMode": "deterministic",
+  "notice": "仓库事实与增长数据均来自真实 GitHub 数据；中文解释为确定性规则编辑。首日尚无历史快照基线；仅展示 GitHub Trending 页面明确披露的短期增长。",
+  "publishedAt": "2026-09-07T10:23:27.369Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-09-07T10:23:23.093Z",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "raw": [
+        {
+          "query": "created:>=2026-09-04 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-08-24 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-09-04 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-09-07T10:23:23.114Z",
+      "rawCount": 39,
+      "normalizedCount": 39,
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 39 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 18
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 21
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "degraded",
+      "fetchedAt": "2026-09-07T10:23:27.220Z",
+      "message": "HTTP 403，详情补全跳过；保留 Search/Trending 已有事实；rate limit remaining=0"
+    },
+    {
+      "source": "github-events",
+      "status": "ok",
+      "fetchedAt": "2026-09-07T10:23:23.115Z",
+      "rawCount": 10,
+      "normalizedCount": 0,
+      "message": "读取 10 条公共事件；只用于探活，公共流不适合直接推断全站热度"
+    },
+    {
+      "source": "github-explore",
+      "status": "degraded",
+      "fetchedAt": "2026-09-07T10:23:23.115Z",
+      "rawCount": 0,
+      "normalizedCount": 0,
+      "message": "页面可访问（450KB），但内容混合专题/用户/仓库且无稳定公开结构；本次仅探活，不纳入候选以避免误解析"
+    },
+    {
+      "source": "gitdiscover",
+      "status": "unavailable",
+      "fetchedAt": "2026-09-07T10:23:23.115Z",
+      "message": "HTTP 502: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
+    },
+    {
+      "source": "ossinsight",
+      "status": "unavailable",
+      "fetchedAt": "2026-09-07T10:23:23.116Z",
+      "message": "This ranking is ordered by recent star/PR/issue event counts, and our capture of those events fell to roughly 0.3% of baseline, so the ordering would be noise. An empty result here means the metric cannot be computed, not that there are no matching repositories.",
+      "rawCount": 0,
+      "normalizedCount": 0,
+      "raw": {
+        "type": "sql_endpoint",
+        "data": {
+          "columns": [],
+          "rows": [],
+          "result": {
+            "row_count": 0
+          }
+        },
+        "data_quality": {
+          "status": "unavailable",
+          "metric": "github_event_derived_ranking",
+          "source": "github_public_events_firehose",
+          "unavailable_since": "2026-03-01",
+          "reason": "This ranking is ordered by recent star/PR/issue event counts, and our capture of those events fell to roughly 0.3% of baseline, so the ordering would be noise. An empty result here means the metric cannot be computed, not that there are no matching repositories.",
+          "alternative": "Current totals synced directly from GitHub remain accurate: use /v1/repos/{owner}/{repo} for star and fork counts, or /v1/collections/{id} for collection membership.",
+          "docs": "https://ossinsight.io/docs/data-quality"
+        }
+      }
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 189,
+    "normalizedCandidateCount": 189,
+    "dedupedCandidateCount": 179,
+    "eligibleCandidateCount": 169,
+    "selectedCount": 10
+  },
+  "projects": [
+    {
+      "name": "mattpocock/skills",
+      "githubUrl": "https://github.com/mattpocock/skills",
+      "canonicalUrl": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "stars": 255594,
+      "forks": 21529,
+      "recentGrowth": 2207,
+      "growthSource": "github-trending",
+      "language": "Shell",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "raw": [
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "mattpocock/skills",
+            "githubUrl": "https://github.com/mattpocock/skills",
+            "description": "Skills for Real Engineers. Straight from my .agents directory.",
+            "language": "Shell",
+            "stars": 255594,
+            "forks": 21529,
+            "starsToday": 2207,
+            "period": "daily"
+          }
+        }
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +2207"
+        ]
+      },
+      "plainSummary": "原始说明：Skills for Real Engineers. Straight from my .agents directory.",
+      "introduction": "GitHub 仓库公开 description：Skills for Real Engineers. Straight from my .agents directory.。以下排序只使用可核验的仓库事实与来源信号。",
+      "whyToday": "入选信号：Trending 披露 +2207。",
+      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "editorialTags": [
+        "有趣"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "DietrichGebert/ponytail",
+      "githubUrl": "https://github.com/dietrichgebert/ponytail",
+      "canonicalUrl": "https://github.com/dietrichgebert/ponytail",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "stars": 130243,
+      "forks": 6979,
+      "recentGrowth": 1539,
+      "growthSource": "github-trending",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "raw": [
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "DietrichGebert/ponytail",
+            "githubUrl": "https://github.com/DietrichGebert/ponytail",
+            "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+            "language": "JavaScript",
+            "stars": 130243,
+            "forks": 6979,
+            "starsToday": 1539,
+            "period": "daily"
+          }
+        },
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "DietrichGebert/ponytail",
+            "githubUrl": "https://github.com/DietrichGebert/ponytail",
+            "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+            "language": "JavaScript",
+            "stars": 130243,
+            "forks": 6979,
+            "starsToday": 12186,
+            "period": "weekly"
+          }
+        }
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +1539"
+        ]
+      },
+      "plainSummary": "原始说明：Makes your AI agent think like the laziest senior dev in the room. The bes…",
+      "introduction": "GitHub 仓库公开 description：Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.。以下排序只使用可核验的仓库事实与来源信号。",
+      "whyToday": "入选信号：Trending 披露 +1539。",
+      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "affaan-m/ECC",
+      "githubUrl": "https://github.com/affaan-m/ecc",
+      "canonicalUrl": "https://github.com/affaan-m/ecc",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "stars": 252187,
+      "forks": 37858,
+      "recentGrowth": 1485,
+      "growthSource": "github-trending",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "raw": [
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "affaan-m/ECC",
+            "githubUrl": "https://github.com/affaan-m/ECC",
+            "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+            "language": "JavaScript",
+            "stars": 252187,
+            "forks": 37858,
+            "starsToday": 1485,
+            "period": "daily"
+          }
+        },
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "affaan-m/ECC",
+            "githubUrl": "https://github.com/affaan-m/ECC",
+            "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+            "language": "JavaScript",
+            "stars": 252187,
+            "forks": 37858,
+            "starsToday": 6394,
+            "period": "weekly"
+          }
+        }
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +1485"
+        ]
+      },
+      "plainSummary": "原始说明：The agent harness performance optimization system. Skills, instincts, memo…",
+      "introduction": "GitHub 仓库公开 description：The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.。以下排序只使用可核验的仓库事实与来源信号。",
+      "whyToday": "入选信号：Trending 披露 +1485。",
+      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "blader/humanizer",
+      "githubUrl": "https://github.com/blader/humanizer",
+      "canonicalUrl": "https://github.com/blader/humanizer",
+      "description": "Agent skill that removes signs of AI-generated writing from text",
+      "stars": 44738,
+      "forks": 3699,
+      "recentGrowth": 748,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "raw": [
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "blader/humanizer",
+            "githubUrl": "https://github.com/blader/humanizer",
+            "description": "Agent skill that removes signs of AI-generated writing from text",
+            "language": "Python",
+            "stars": 44738,
+            "forks": 3699,
+            "starsToday": 748,
+            "period": "daily"
+          }
+        }
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +748"
+        ]
+      },
+      "plainSummary": "原始说明：Agent skill that removes signs of AI-generated writing from text",
+      "introduction": "GitHub 仓库公开 description：Agent skill that removes signs of AI-generated writing from text。以下排序只使用可核验的仓库事实与来源信号。",
+      "whyToday": "入选信号：Trending 披露 +748。",
+      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "cathrynlavery/diagram-design",
+      "githubUrl": "https://github.com/cathrynlavery/diagram-design",
+      "canonicalUrl": "https://github.com/cathrynlavery/diagram-design",
+      "description": "38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "stars": 33007,
+      "forks": 2108,
+      "recentGrowth": 620,
+      "growthSource": "github-trending",
+      "language": "HTML",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "raw": [
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "cathrynlavery/diagram-design",
+            "githubUrl": "https://github.com/cathrynlavery/diagram-design",
+            "description": "38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+            "language": "HTML",
+            "stars": 33007,
+            "forks": 2108,
+            "starsToday": 620,
+            "period": "daily"
+          }
+        }
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +620"
+        ]
+      },
+      "plainSummary": "原始说明：38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained …",
+      "introduction": "GitHub 仓库公开 description：38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.。以下排序只使用可核验的仓库事实与来源信号。",
+      "whyToday": "入选信号：Trending 披露 +620。",
+      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "magnitudedev/magnitude",
+      "githubUrl": "https://github.com/magnitudedev/magnitude",
+      "canonicalUrl": "https://github.com/magnitudedev/magnitude",
+      "description": "Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. Works with Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.",
+      "stars": 3899,
+      "forks": 280,
+      "recentGrowth": 604,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "raw": [
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "magnitudedev/magnitude",
+            "githubUrl": "https://github.com/magnitudedev/magnitude",
+            "description": "Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. Works with Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.",
+            "language": "TypeScript",
+            "stars": 3899,
+            "forks": 280,
+            "starsToday": 604,
+            "period": "daily"
+          }
+        },
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "magnitudedev/magnitude",
+            "githubUrl": "https://github.com/magnitudedev/magnitude",
+            "description": "Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. Works with Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.",
+            "language": "TypeScript",
+            "stars": 3899,
+            "forks": 280,
+            "starsToday": 1961,
+            "period": "weekly"
+          }
+        }
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +604"
+        ]
+      },
+      "plainSummary": "原始说明：Open source inference server that runs the best local models for your hard…",
+      "introduction": "GitHub 仓库公开 description：Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. Works with Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.。以下排序只使用可核验的仓库事实与来源信号。",
+      "whyToday": "入选信号：Trending 披露 +604。",
+      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "anomalyco/opencode",
+      "githubUrl": "https://github.com/anomalyco/opencode",
+      "canonicalUrl": "https://github.com/anomalyco/opencode",
+      "description": "The open source coding agent.",
+      "stars": 205537,
+      "forks": 26794,
+      "recentGrowth": 551,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "raw": [
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "anomalyco/opencode",
+            "githubUrl": "https://github.com/anomalyco/opencode",
+            "description": "The open source coding agent.",
+            "language": "TypeScript",
+            "stars": 205537,
+            "forks": 26794,
+            "starsToday": 551,
+            "period": "daily"
+          }
+        }
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 54.651146740669006,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 54.7,
+        "signals": [
+          "Trending 披露 +551"
+        ]
+      },
+      "plainSummary": "原始说明：The open source coding agent.",
+      "introduction": "GitHub 仓库公开 description：The open source coding agent.。以下排序只使用可核验的仓库事实与来源信号。",
+      "whyToday": "入选信号：Trending 披露 +551。",
+      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "NousResearch/hermes-agent",
+      "githubUrl": "https://github.com/nousresearch/hermes-agent",
+      "canonicalUrl": "https://github.com/nousresearch/hermes-agent",
+      "description": "The agent that grows with you",
+      "stars": 242826,
+      "forks": 49944,
+      "recentGrowth": 520,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "raw": [
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "NousResearch/hermes-agent",
+            "githubUrl": "https://github.com/NousResearch/hermes-agent",
+            "description": "The agent that grows with you",
+            "language": "Python",
+            "stars": 242826,
+            "forks": 49944,
+            "starsToday": 520,
+            "period": "daily"
+          }
+        }
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 54.150837373671045,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 54.2,
+        "signals": [
+          "Trending 披露 +520"
+        ]
+      },
+      "plainSummary": "原始说明：The agent that grows with you",
+      "introduction": "GitHub 仓库公开 description：The agent that grows with you。以下排序只使用可核验的仓库事实与来源信号。",
+      "whyToday": "入选信号：Trending 披露 +520。",
+      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "BraveOPotato/FckSignups",
+      "githubUrl": "https://github.com/braveopotato/fcksignups",
+      "canonicalUrl": "https://github.com/braveopotato/fcksignups",
+      "description": "A list of tools that are open-source, in-browser, and require no-signups!",
+      "stars": 3543,
+      "forks": 214,
+      "recentGrowth": 436,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "raw": [
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "BraveOPotato/FckSignups",
+            "githubUrl": "https://github.com/BraveOPotato/FckSignups",
+            "description": "A list of tools that are open-source, in-browser, and require no-signups!",
+            "language": "TypeScript",
+            "stars": 3543,
+            "forks": 214,
+            "starsToday": 436,
+            "period": "daily"
+          }
+        }
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 52.62893681700359,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 52.6,
+        "signals": [
+          "Trending 披露 +436"
+        ]
+      },
+      "plainSummary": "原始说明：A list of tools that are open-source, in-browser, and require no-signups!",
+      "introduction": "GitHub 仓库公开 description：A list of tools that are open-source, in-browser, and require no-signups!。以下排序只使用可核验的仓库事实与来源信号。",
+      "whyToday": "入选信号：Trending 披露 +436。",
+      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "editorialTags": [
+        "有趣"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "coreyhaines31/marketingskills",
+      "githubUrl": "https://github.com/coreyhaines31/marketingskills",
+      "canonicalUrl": "https://github.com/coreyhaines31/marketingskills",
+      "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+      "stars": 47777,
+      "forks": 7409,
+      "recentGrowth": 329,
+      "growthSource": "github-trending",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "raw": [
+        {
+          "source": "github-trending",
+          "fetchedAt": "2026-09-07T10:23:23.114Z",
+          "raw": {
+            "name": "coreyhaines31/marketingskills",
+            "githubUrl": "https://github.com/coreyhaines31/marketingskills",
+            "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+            "language": "JavaScript",
+            "stars": 47777,
+            "forks": 7409,
+            "starsToday": 329,
+            "period": "daily"
+          }
+        }
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 50.197933285474896,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 50.2,
+        "signals": [
+          "Trending 披露 +329"
+        ]
+      },
+      "plainSummary": "原始说明：Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, ana…",
+      "introduction": "GitHub 仓库公开 description：Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.。以下排序只使用可核验的仓库事实与来源信号。",
+      "whyToday": "入选信号：Trending 披露 +329。",
+      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "editorialTags": [
+        "AI 工具",
+        "数据",
+        "开发工具"
+      ],
+      "recommendation": 3
+    }
+  ]
+}
