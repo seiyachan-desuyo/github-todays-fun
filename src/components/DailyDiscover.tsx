@@ -59,8 +59,6 @@ export function DailyDiscover({ edition, editions }: {
   }
 
   const formattedDate = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "long", day: "numeric", weekday: "long" }).format(new Date(`${edition.date}T12:00:00+08:00`));
-  const featured = projects[0];
-  const remaining = projects.slice(1);
 
   return (
     <main className="min-h-screen bg-paper text-ink">
@@ -77,7 +75,7 @@ export function DailyDiscover({ edition, editions }: {
               <MastheadMark />
               <div>
                 <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.28em] text-accent">GitHub Daily Review</p>
-                <h1 className="font-serif text-[clamp(2.35rem,7vw,5.8rem)] font-semibold leading-[0.9] tracking-[-0.055em]">GitHub 今日好玩</h1>
+                <h1 className="font-serif text-[clamp(2rem,4vw,3.6rem)] font-semibold leading-none tracking-[-0.04em]">GitHub 今日好玩</h1>
               </div>
             </Link>
             <div className="flex items-end justify-between gap-8 border-t border-ink/15 pt-4 text-xs lg:border-0 lg:pt-0">
@@ -110,14 +108,14 @@ export function DailyDiscover({ edition, editions }: {
           </nav>
         </header>
 
-        <section className="grid border-b border-ink/80 py-10 sm:py-14 lg:grid-cols-[1.2fr_.8fr] lg:gap-16 lg:py-20">
+        <section className="grid border-b border-ink/80 py-9 sm:py-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-14">
           <div>
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-accent">The Editor&apos;s Note / 今日编辑语</p>
-            <h2 className="max-w-4xl font-serif text-[clamp(2.7rem,7vw,6.8rem)] font-medium leading-[0.94] tracking-[-0.05em]">今天 GitHub<br />又有什么<span className="italic">好玩的？</span></h2>
+            <h2 className="max-w-3xl font-serif text-[clamp(2.1rem,4.5vw,4.2rem)] font-medium leading-[1.02] tracking-[-0.04em]">今天 GitHub 又有什么<span className="italic">好玩的？</span></h2>
           </div>
-          <div className="relative mt-10 flex flex-col justify-end border-l border-ink/15 pl-6 lg:mt-0 lg:pl-10">
+          <div className="relative mt-8 flex flex-col justify-end border-l border-ink/15 pl-6 lg:mt-0 lg:pl-9">
             <div className="absolute right-0 top-0 hidden lg:block"><CornerDoodle /></div>
-            <p className="max-w-md text-lg leading-8 text-ink/68">{edition.summary}</p>
+            <p className="max-w-lg text-sm leading-7 text-ink/68 sm:text-base">{edition.summary}</p>
             <a href="#today-picks" className="mt-8 inline-flex w-fit items-center gap-2 border-b border-ink pb-1 text-sm font-semibold hover:border-accent hover:text-accent">翻开本期 <ArrowDown size={15} /></a>
           </div>
         </section>
@@ -133,25 +131,20 @@ export function DailyDiscover({ edition, editions }: {
           {edition.pipelineStats && <p className="text-ink/50">原始 {edition.pipelineStats.rawCandidateCount} → 去重 {edition.pipelineStats.dedupedCandidateCount} → 入选 {edition.pipelineStats.selectedCount}</p>}
         </section>
 
-        <section id="today-picks" className="py-12 sm:py-16">
-          <div className="mb-10 flex items-end justify-between border-b border-ink/80 pb-4">
-            <div className="flex items-baseline gap-4"><span className="text-xs font-bold text-accent">SECTION 01</span><h2 className="font-serif text-3xl sm:text-5xl">今日精选</h2></div>
-            <span className="text-xs text-ink/45">{String(projects.length).padStart(2, "0")} STORIES</span>
+        <section id="today-picks" className="py-10 sm:py-12">
+          <div className="mb-7 flex items-end justify-between border-b border-ink/80 pb-4">
+            <div className="flex items-baseline gap-4"><span className="text-xs font-bold text-accent">SECTION 01</span><h2 className="font-serif text-2xl sm:text-3xl">今日精选</h2></div>
+            <span className="text-xs text-ink/45">{String(projects.length).padStart(2, "0")} PROJECTS</span>
           </div>
 
-          {featured ? (
-            <div>
-              <ProjectCard project={featured} index={0} variant="lead" saved={saved.includes(featured.canonicalUrl)} onToggleSaved={() => toggleSaved(featured.canonicalUrl)} />
-              {remaining.length > 0 && (
-                <div className="mt-16 grid border-t border-ink/80 md:grid-cols-2 lg:grid-cols-12">
-                  {remaining.map((project, index) => (
-                    <ProjectCard key={project.canonicalUrl} project={project} index={index + 1} variant={index % 4 === 2 ? "quote" : "story"} saved={saved.includes(project.canonicalUrl)} onToggleSaved={() => toggleSaved(project.canonicalUrl)} className={index % 5 === 0 ? "lg:col-span-7" : index % 5 === 1 ? "lg:col-span-5" : index % 5 === 2 ? "lg:col-span-4" : "lg:col-span-4"} />
-                  ))}
-                </div>
-              )}
+          {projects.length ? (
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {projects.map((project, index) => (
+                <ProjectCard key={project.canonicalUrl} project={project} index={index} saved={saved.includes(project.canonicalUrl)} onToggleSaved={() => toggleSaved(project.canonicalUrl)} />
+              ))}
             </div>
           ) : (
-            <div className="border-b border-ink/80 py-24 text-center"><p className="font-serif text-3xl">这个栏目今天休刊。</p><button className="mt-5 border-b border-ink text-sm" onClick={() => setActive("Today")}>回到 Today</button></div>
+            <div className="border border-ink/15 py-20 text-center"><p className="font-serif text-2xl">这个栏目今天还没有项目。</p><button className="mt-5 border-b border-ink text-sm" onClick={() => setActive("Today")}>回到 Today</button></div>
           )}
         </section>
 
