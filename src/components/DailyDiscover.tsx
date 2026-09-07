@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { AlertCircle, ArrowDown, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
 import type { DailyEdition, EditorialTag } from "@/lib/types";
 
@@ -19,15 +19,6 @@ function MastheadMark() {
     <svg aria-hidden="true" viewBox="0 0 56 56" className="h-11 w-11 text-ink sm:h-12 sm:w-12">
       <path d="M13 39c6-7 10-15 13-25M17 29c8 0 16 3 24 10M32 12l2 7 7 2-7 2-2 7-2-7-7-2 7-2 2-7Z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" />
       <path d="M11 45c10-3 22-3 34 0" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.6" />
-    </svg>
-  );
-}
-
-function CornerDoodle() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 180 110" className="h-24 w-40 text-ink/75">
-      <path d="M12 83c20-21 41-30 66-27 18 2 31 17 50 11 14-4 23-16 31-31M150 35l10 1-2 10" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.4" />
-      <path d="M29 30l2 8 8 2-8 2-2 8-2-8-8-2 8-2 2-8ZM87 17c2 4 6 7 11 8-5 2-8 5-10 10-1-5-4-8-9-10 4-1 7-4 8-8Z" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.3" />
     </svg>
   );
 }
@@ -64,12 +55,6 @@ export function DailyDiscover({ edition, editions }: {
     <main className="min-h-screen bg-paper text-ink">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
         <header className="border-b border-ink/80">
-          <div className="flex items-center justify-between border-b border-ink/15 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/50 sm:text-xs">
-            <span>Independent open-source journal</span>
-            <span className="hidden sm:inline">Beijing · Published daily</span>
-            <span>Vol. 01</span>
-          </div>
-
           <div className="grid items-end gap-8 py-7 sm:py-9 lg:grid-cols-[1fr_auto]">
             <Link href="/" className="group flex items-center gap-4 sm:gap-5" aria-label="GitHub 今日好玩首页">
               <MastheadMark />
@@ -108,29 +93,6 @@ export function DailyDiscover({ edition, editions }: {
           </nav>
         </header>
 
-        <section className="grid border-b border-ink/80 py-9 sm:py-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-14">
-          <div>
-            <p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-accent">The Editor&apos;s Note / 今日编辑语</p>
-            <h2 className="max-w-3xl font-serif text-[clamp(2.1rem,4.5vw,4.2rem)] font-medium leading-[1.02] tracking-[-0.04em]">今天 GitHub 又有什么<span className="italic">好玩的？</span></h2>
-          </div>
-          <div className="relative mt-8 flex flex-col justify-end border-l border-ink/15 pl-6 lg:mt-0 lg:pl-9">
-            <div className="absolute right-0 top-0 hidden lg:block"><CornerDoodle /></div>
-            <p className="max-w-lg text-sm leading-7 text-ink/68 sm:text-base">{edition.summary}</p>
-            <a href="#today-picks" className="mt-8 inline-flex w-fit items-center gap-2 border-b border-ink pb-1 text-sm font-semibold hover:border-accent hover:text-accent">翻开本期 <ArrowDown size={15} /></a>
-          </div>
-        </section>
-
-        {edition.notice && (
-          <aside className="grid gap-2 border-b border-ink/15 py-4 text-xs leading-5 text-ink/55 sm:grid-cols-[8rem_1fr]">
-            <strong className="flex items-center gap-2 font-semibold text-ink"><AlertCircle size={14} /> Edition note</strong><p>{edition.notice}</p>
-          </aside>
-        )}
-
-        <section className="grid gap-4 border-b border-ink/80 py-5 text-xs sm:grid-cols-[1fr_auto] sm:items-center">
-          <p><strong>数据标识：</strong> Stars、仓库元数据与增长来自真实 GitHub 数据；说明文字为{edition.editorMode === "ai" ? " AI 判断" : "规则编辑"}。</p>
-          {edition.pipelineStats && <p className="text-ink/50">原始 {edition.pipelineStats.rawCandidateCount} → 去重 {edition.pipelineStats.dedupedCandidateCount} → 入选 {edition.pipelineStats.selectedCount}</p>}
-        </section>
-
         <section id="today-picks" className="py-10 sm:py-12">
           <div className="mb-7 flex items-end justify-between border-b border-ink/80 pb-4">
             <div className="flex items-baseline gap-4"><span className="text-xs font-bold text-accent">SECTION 01</span><h2 className="font-serif text-2xl sm:text-3xl">今日精选</h2></div>
@@ -147,22 +109,6 @@ export function DailyDiscover({ edition, editions }: {
             <div className="border border-ink/15 py-20 text-center"><p className="font-serif text-2xl">这个栏目今天还没有项目。</p><button className="mt-5 border-b border-ink text-sm" onClick={() => setActive("Today")}>回到 Today</button></div>
           )}
         </section>
-
-        <section className="grid border-y border-ink/80 py-10 md:grid-cols-[1fr_2fr] md:gap-12">
-          <div><span className="text-xs font-bold text-accent">COLOPHON</span><h2 className="mt-2 font-serif text-3xl">这期从哪里来？</h2></div>
-          <div className="mt-7 md:mt-0">
-            {edition.sourceStatus.map((source) => (
-              <div key={source.source} className="grid gap-2 border-b border-ink/15 py-4 first:pt-0 sm:grid-cols-[8rem_5rem_1fr]">
-                <strong className="text-xs uppercase tracking-wider">{source.source}</strong><span className={`text-[10px] font-bold uppercase tracking-wider ${source.status === "ok" ? "text-ink/60" : "text-accent"}`}>{source.status}</span><p className="text-xs leading-5 text-ink/55">{source.message}{typeof source.normalizedCount === "number" ? ` · ${source.normalizedCount} candidates` : ""}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <footer className="flex flex-col justify-between gap-5 py-10 text-xs text-ink/50 sm:flex-row sm:items-end">
-          <div><p className="font-serif text-xl text-ink">GitHub 今日好玩</p><p className="mt-2">不是排行榜，是一份给普通人的开源世界小报。</p></div>
-          <a href="#today-picks" className="inline-flex items-center gap-1 font-semibold text-ink hover:text-accent">回到本期 <ArrowUpRight size={13} /></a>
-        </footer>
       </div>
     </main>
   );
