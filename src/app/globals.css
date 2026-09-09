@@ -137,50 +137,50 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   }
 }
 
-/* 黄白能力市场主题：沿用轻工作台的层级、圆点背景与白色卡片。 */
+/* 蓝绿能力市场主题：雾白工作区、圆点背景、白色卡片与克制的蓝绿渐变。 */
 :root {
-  --paper: #fffdf5;
-  --paper-deep: #fff8d9;
+  --paper: #f7f9fa;
+  --paper-deep: #f2f6f7;
   --surface: #ffffff;
-  --ink: #171713;
-  --ink-soft: #6f6b5e;
-  --accent: #f2b90c;
-  --accent-deep: #ca8f00;
-  --accent-soft: #fff4b8;
-  --rule: #eee7c9;
+  --ink: #0f1720;
+  --ink-soft: #57606d;
+  --accent: #2f7df6;
+  --accent-deep: #175ec4;
+  --accent-soft: #eef8ff;
+  --rule: #e8edf0;
 }
 
 body {
   background-color: var(--paper);
-  background-image: radial-gradient(circle, rgba(111, 107, 94, .12) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(87, 96, 109, .12) 1px, transparent 1px);
   background-size: 16px 16px;
 }
 
-::selection { color: var(--ink); background: #ffe16a; }
+::selection { color: var(--ink); background: #bfe9df; }
 
 .bg-white { background-color: var(--surface) !important; }
-.bg-stone-50 { background-color: rgba(255, 253, 245, .96) !important; }
-.bg-stone-50\/95 { background-color: rgba(255, 253, 245, .95) !important; }
+.bg-stone-50 { background-color: rgba(247, 249, 250, .96) !important; }
+.bg-stone-50\/95 { background-color: rgba(247, 249, 250, .95) !important; }
 .bg-amber-50,
 .bg-orange-50,
 .bg-rose-50,
-.bg-violet-50 { background-color: #fff9dd !important; }
+.bg-violet-50 { background-color: #edf9f3 !important; }
 .bg-amber-100,
 .bg-orange-100,
 .bg-rose-100,
-.bg-violet-100 { background-color: #fff1ae !important; }
-.bg-amber-200 { background-color: #ffe27a !important; }
-.bg-stone-100 { background-color: #f6f3e8 !important; }
-.bg-stone-200 { background-color: #ede8d8 !important; }
-.bg-gradient-to-br { background-image: linear-gradient(135deg, #ffffff 0%, #fffbea 52%, #fff1ae 100%) !important; }
+.bg-violet-100 { background-color: #dff5ec !important; }
+.bg-amber-200 { background-color: #c8eee0 !important; }
+.bg-stone-100 { background-color: #f2f6f7 !important; }
+.bg-stone-200 { background-color: #e8edf0 !important; }
+.bg-gradient-to-br { background-image: linear-gradient(135deg, #eef8ff 0%, #f7fbfc 48%, #edf9f3 100%) !important; }
 
 .bg-orange-500,
 .bg-orange-600,
 .bg-violet-600,
 .bg-violet-700,
-.bg-rose-600 { background-color: var(--accent) !important; color: var(--ink) !important; }
+.bg-rose-600 { background: linear-gradient(110deg, #2f7df6, #37cbd1 52%, #35c98b) !important; color: #fff !important; }
 .hover\:bg-orange-600:hover,
-.hover\:bg-violet-700:hover { background-color: var(--accent-deep) !important; color: #fff !important; }
+.hover\:bg-violet-700:hover { background: linear-gradient(110deg, #175ec4, #239da5 52%, #16875b) !important; color: #fff !important; }
 .text-orange-400,
 .text-orange-500,
 .text-orange-600,
@@ -192,13 +192,13 @@ body {
 .text-amber-600,
 .text-amber-700,
 .text-amber-800,
-.text-amber-900 { color: #a06d00 !important; }
+.text-amber-900 { color: #16875b !important; }
 .hover\:text-orange-600:hover,
 .hover\:text-violet-700:hover { color: var(--accent-deep) !important; }
 
 .text-stone-900 { color: var(--ink) !important; }
 .text-stone-700,
-.text-stone-600 { color: #4f4c42 !important; }
+.text-stone-600 { color: #3f4a56 !important; }
 .text-stone-500,
 .text-stone-400 { color: var(--ink-soft) !important; }
 .border-stone-100,
@@ -212,7 +212,7 @@ body {
 .border-orange-500 { border-color: var(--accent) !important; }
 .ring-orange-100,
 .ring-orange-200,
-.ring-violet-100 { --tw-ring-color: rgba(242, 185, 12, .24) !important; }
+.ring-violet-100 { --tw-ring-color: rgba(47, 125, 246, .20) !important; }
 .placeholder\:text-stone-400::placeholder { color: #9b978b !important; }
 
 header,
@@ -220,19 +220,19 @@ footer { background-color: rgba(255, 255, 255, .92) !important; }
 header { border-bottom: 1px solid var(--rule) !important; }
 footer { border-top: 1px solid var(--rule); }
 
-.hero-orb-one { background: rgba(255, 214, 61, .24); }
-.hero-orb-two { background: rgba(242, 185, 12, .12); }
+.hero-orb-one { background: rgba(47, 125, 246, .14); }
+.hero-orb-two { background: rgba(53, 201, 139, .14); }
 .magazine-note {
   border-color: var(--rule);
   background: rgba(255, 255, 255, .9);
-  box-shadow: 0 12px 32px rgba(74, 64, 18, .06);
+  box-shadow: 0 12px 32px rgba(15, 23, 32, .035);
 }
-.magazine-note::after { color: rgba(242, 185, 12, .2); }
+.magazine-note::after { color: rgba(55, 203, 209, .18); }
 .project-card { box-shadow: 0 10px 28px rgba(23, 23, 19, .035); }
-.project-card::before { background: linear-gradient(90deg, #f2b90c, #ffe16a, #ca8f00); }
-.project-card:hover { border-color: rgba(242, 185, 12, .55) !important; box-shadow: 0 14px 34px rgba(74, 64, 18, .08); }
+.project-card::before { background: linear-gradient(90deg, #2f7df6, #37cbd1, #35c98b); }
+.project-card:hover { border-color: rgba(47, 125, 246, .24) !important; box-shadow: 0 14px 34px rgba(15, 23, 32, .07); }
 .shadow-orange-200,
-.shadow-violet-200 { --tw-shadow-color: rgba(242, 185, 12, .18) !important; }
+.shadow-violet-200 { --tw-shadow-color: rgba(53, 201, 139, .18) !important; }
 
 @media (max-width: 767px) {
   .category-menu {
