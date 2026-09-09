@@ -5,10 +5,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#181816",
-        paper: "#FAFAF8",
-        accent: "#8A513F",
-        "accent-soft": "#F0E8E3",
+        ink: "#19152B",
+        paper: "#F8F7FF",
+        accent: "#7C4DFF",
+        "accent-soft": "#EEE8FF",
+        brand: {
+          start: "#9D74FF",
+          end: "#703EFF",
+        },
+      },
+      borderRadius: {
+        "4xl": "2rem",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "Inter", "Geist", "sans-serif"],

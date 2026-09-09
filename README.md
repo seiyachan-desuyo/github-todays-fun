@@ -1,6 +1,10 @@
 # GitHub 今日好玩
 
-面向普通用户、AI 爱好者和轻度开发者的 GitHub 中文每日发现页。项目把“事实采集”和“编辑判断”分开：程序只收集、去重、评分和保存真实候选；Aime 在离线会话中阅读任务并编辑正式刊。
+面向普通用户、AI 爱好者和轻度开发者的 GitHub 中文每日发现页，也是一个可安装的 Aime App。项目把“事实采集”和“编辑判断”分开：程序只收集、去重、评分和保存真实候选；Aime 在离线会话中阅读任务并编辑正式刊。
+
+- 在线体验：[GitHub 今日好玩](https://1384e82de8f4.ida-app.bytedance.net)
+- Aime App：内置应用首页、`github-today-fun` Skill 与 `/github-today` 命令
+- 开源许可：[MIT](LICENSE)
 
 ## 核心原则
 
@@ -8,6 +12,23 @@
 - **内容由 Aime 编辑**：Aime 只依据 editor task 中的真实事实选题和写中文介绍，不从项目名猜功能。
 - **前端不调用模型**：Next.js 页面只读取已经校验的静态 edition；项目无需任何模型密钥。
 - **不自动灌模板**：采集命令不会生成正式刊。缺少 Aime 编辑结果时，校验/构建应明确失败，而不是悄悄发布 deterministic 文案。
+
+## Aime App
+
+仓库根目录的 `app.json` 是 Aime App 清单，应用由三部分组成：
+
+- **应用页**：静态导出的 Next.js 站点，由 `runtime/start.sh` 启动；
+- **Skill**：让 Aime 在用户想发现 GitHub 项目时打开应用或引用已发布刊物；
+- **Command**：`/github-today [latest|YYYY-MM-DD] [1-10]`，直接在对话中返回精选。
+
+本地校验与打包：
+
+```bash
+pnpm install --frozen-lockfile
+pnpm aime:package
+```
+
+发布包位于 `release/github-today-fun-aime-app.zip`。完整说明见 [`docs/aime-app.md`](docs/aime-app.md)。
 
 ## 每日工作流
 
@@ -86,6 +107,10 @@ pnpm build
 ## 目录
 
 ```text
+app.json                       Aime App 清单
+runtime/                        Aime App 静态站点服务
+skills/github-today-fun/       Aime Skill
+commands/github_today.py       /github-today 命令
 scripts/collect-editor-task.ts  事实采集，生成 snapshot + editor task
 scripts/validate-edition.ts     校验 Aime 正式刊与事实一致
 src/data/editor-tasks/          交给 Aime 的结构化候选任务
@@ -102,7 +127,9 @@ src/lib/editor/schema.ts        editor task 与正式刊 schema
 
 - `GITHUB_TOKEN`：可选，建议生产配置；
 - `VERCEL_TOKEN`：定时环境未登录 Vercel CLI 时用于生产部署；
-- `EDITION_DATE`：可选兼容变量，推荐在命令中显式传 `--date YYYY-MM-DD`。
+- `EDITION_DATE`：可选兼容变量，推荐在命令中显式传 `--date YYYY-MM-DD`；
+- `LARK_APP_ID`、`LARK_APP_SECRET`、`LARK_RECIPIENT_ID`：仅独立飞书 Bot 推送需要；
+- `GITHUB_TODAY_WEBSITE_URL`：可选，覆盖飞书卡片跳转的网站地址。
 
 项目默认流程没有任何 LLM Key 配置。
 
@@ -114,6 +141,16 @@ pnpm dev
 ```
 
 打开 `http://localhost:3000`。
+
+## 自部署
+
+该项目使用 Next.js 静态导出，运行 `pnpm build` 后将 `dist/` 整体部署到任意静态托管即可。若需要每日自动出版，请按 [`docs/daily-publishing.md`](docs/daily-publishing.md) 配置采集、Aime 编辑、校验和部署链路；若需要独立飞书 Bot 推送，请按 [`docs/lark-daily-bot.md`](docs/lark-daily-bot.md) 配置应用权限和 Secrets。
+
+## 开源协作
+
+- 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
+- 安全报告：[SECURITY.md](SECURITY.md)
+- 许可证：[LICENSE](LICENSE)
 
 ## 2026-09-07 实跑说明
 

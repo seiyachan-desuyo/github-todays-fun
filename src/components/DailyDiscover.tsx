@@ -19,7 +19,7 @@ const INTEREST_KEY = "github-today-interests";
 
 function MastheadMark() {
   return (
-    <div className="grid h-11 w-11 shrink-0 rotate-3 place-items-center rounded-2xl bg-orange-500 text-white shadow-lg shadow-orange-200 sm:h-12 sm:w-12">
+    <div className="grid h-11 w-11 shrink-0 rotate-3 place-items-center rounded-2xl bg-gradient-to-br from-brand-start to-brand-end text-white shadow-lg shadow-violet-200 sm:h-12 sm:w-12">
       <Sparkles size={24} aria-hidden="true" />
     </div>
   );
@@ -121,7 +121,7 @@ export function DailyDiscover({ edition, editions, candidates }: {
   const isDemo = edition.mode === "demo";
 
   return (
-    <main className="min-h-screen bg-stone-50 text-stone-900">
+    <main className="min-h-screen overflow-x-hidden bg-transparent text-stone-900">
       {toast && <div role="status" className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full bg-stone-900 px-5 py-3 text-sm font-bold text-white shadow-xl"><Check className="mr-2 inline" size={15} />{toast}</div>}
 
       <div className="top-gradient-shell">
@@ -143,42 +143,44 @@ export function DailyDiscover({ edition, editions, candidates }: {
         </div>
       </header>
 
-      <section className="relative overflow-hidden border-b border-orange-100 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
-        <div className="relative mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16">
-          <div className="max-w-4xl">
-            <div className="mb-5 flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-stone-900 px-3 py-1.5 text-xs font-bold text-white">今日 30 个</span>
-              <span className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-bold text-orange-700 shadow-sm"><Clock3 size={13} /> 约 5 分钟读完</span>
+      <section className="relative overflow-hidden pb-20 pt-10 sm:pb-28 sm:pt-16">
+        <div className="hero-orb-one pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full blur-3xl" />
+        <div className="hero-orb-two pointer-events-none absolute -right-20 top-12 h-80 w-80 rounded-full blur-3xl" />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="max-w-5xl">
+            <div className="mb-7 flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-stone-900 px-4 py-2 text-xs font-bold text-white">今日 30 个</span>
+              <span className="inline-flex items-center gap-1 rounded-full border border-white/70 bg-white/60 px-4 py-2 text-xs font-bold text-violet-700 shadow-sm backdrop-blur-xl"><Clock3 size={13} /> 约 5 分钟读完</span>
               {isDemo && <span className="rounded-full bg-amber-200 px-3 py-1.5 text-xs font-bold text-amber-900">示例刊物 · {edition.date}</span>}
             </div>
-            <h2 className="font-serif text-4xl font-black leading-tight tracking-tight text-stone-900 sm:text-6xl">今天的 GitHub 👋<br /><span className="text-orange-600">有什么好玩的？</span></h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-stone-600 sm:text-lg">{edition.summary}</p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <button onClick={() => chooseCategory("all")} className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600"><Sparkles size={16} /> 开始翻今天这期</button>
-              <button onClick={() => setInterestOpen(true)} className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-5 py-3 text-sm font-bold text-stone-700 transition hover:border-violet-300 hover:text-violet-700"><Settings2 size={16} /> {interests.length ? `已选 ${interests.length} 个兴趣` : "告诉我你爱看什么"}</button>
+            <h2 className="max-w-5xl bg-gradient-to-r from-[#241345] via-[#5f32db] to-[#9d74ff] bg-clip-text font-serif text-5xl font-black leading-[1.02] tracking-[-0.055em] text-transparent sm:text-7xl lg:text-[5.6rem]">今天的 GitHub 👋<br /><span>有什么好玩的？</span></h2>
+            <p className="mt-7 max-w-2xl text-base leading-8 text-stone-600 sm:text-lg">{edition.summary}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <button onClick={() => chooseCategory("all")} className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-start to-brand-end px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-violet-200 transition hover:-translate-y-1 hover:shadow-2xl"><Sparkles size={16} /> 开始翻今天这期</button>
+              <button onClick={() => setInterestOpen(true)} className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/60 px-6 py-3.5 text-sm font-bold text-stone-700 shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:border-violet-300 hover:text-violet-700"><Settings2 size={16} /> {interests.length ? `已选 ${interests.length} 个兴趣` : "告诉我你爱看什么"}</button>
             </div>
           </div>
         </div>
       </section>
       </div>
 
-      <div className="sticky top-0 z-30 border-b border-stone-200 bg-stone-50/95 backdrop-blur">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="sticky top-2 z-30">
+        <div className="discovery-dock px-3 sm:px-4">
           <div className="flex min-h-16 items-center gap-3">
-            <button className="flex shrink-0 items-center gap-2 rounded-full border border-stone-200 bg-white px-3 py-2 text-sm font-bold md:hidden" onClick={() => setMenuOpen((value) => !value)} aria-expanded={menuOpen}>{menuOpen ? <X size={16} /> : <Menu size={16} />} 分类</button>
+            <button className="dock-action flex shrink-0 items-center gap-2 rounded-full px-3 py-2 text-sm font-bold md:hidden" onClick={() => setMenuOpen((value) => !value)} aria-expanded={menuOpen}>{menuOpen ? <X size={16} /> : <Menu size={16} />} 分类</button>
             <nav className={`${menuOpen ? "category-menu-open" : ""} category-menu flex-1`} aria-label="发现分类">
               {DISCOVERY_CATEGORIES.map((category) => (
-                <button key={category.id} onClick={() => chooseCategory(category.id)} className={`whitespace-nowrap rounded-full px-3 py-2 text-sm font-bold transition ${active === category.id ? "bg-stone-900 text-white" : "text-stone-500 hover:bg-white hover:text-orange-600"}`}>
+                <button key={category.id} onClick={() => chooseCategory(category.id)} className={`whitespace-nowrap rounded-full px-3 py-2 text-sm font-bold transition ${active === category.id ? "category-active" : "text-stone-500 hover:bg-white hover:text-orange-600"}`}>
                   {category.shortLabel}<span className="ml-1 text-xs opacity-60">{categoryCounts[category.id] ?? 0}</span>
                 </button>
               ))}
             </nav>
             <div className="relative hidden w-56 shrink-0 sm:block">
-              <Search className="absolute left-3 top-2.5 text-stone-400" size={16} />
-              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜项目、用途或标签" aria-label="搜索项目" className="w-full rounded-full border border-stone-200 bg-white py-2 pl-9 pr-3 text-sm outline-none transition placeholder:text-stone-400 focus:border-orange-300 focus:ring-2 focus:ring-orange-100" />
+              <Search className="absolute left-3 top-2.5 text-white/60" size={16} />
+              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜项目、用途或标签" aria-label="搜索项目" className="w-full rounded-full border border-white/10 bg-white/10 py-2 pl-9 pr-3 text-sm text-white outline-none transition placeholder:text-white/50 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/30" />
             </div>
             <div className="relative block">
-              <button onClick={() => setArchiveOpen((value) => !value)} className="flex items-center gap-1 rounded-full px-3 py-2 text-sm font-bold text-stone-500 hover:bg-white" aria-expanded={archiveOpen}><LibraryBig size={15} /> 第 {String(edition.issue).padStart(3, "0")} 期 <ChevronDown size={14} className={archiveOpen ? "rotate-180" : ""} /></button>
+              <button onClick={() => setArchiveOpen((value) => !value)} className="dock-action flex items-center gap-1 rounded-full px-3 py-2 text-sm font-bold" aria-expanded={archiveOpen}><LibraryBig size={15} /> 第 {String(edition.issue).padStart(3, "0")} 期 <ChevronDown size={14} className={archiveOpen ? "rotate-180" : ""} /></button>
               {archiveOpen && (
                 <div className="absolute right-0 top-12 z-40 w-80 overflow-hidden rounded-2xl border border-stone-200 bg-white p-2 shadow-xl">
                   <div className="px-3 pb-2 pt-1"><p className="text-xs font-black uppercase tracking-widest text-orange-600">Past editions</p><p className="mt-1 text-sm text-stone-500">按期数浏览往期推送</p></div>

@@ -1,0 +1,54 @@
+{
+  "id": "app_b0e9666721542b2b",
+  "name": "github-today-fun",
+  "display_name": "GitHub 今日好玩",
+  "display_name_en": "GitHub Today Fun",
+  "description": "每天发现值得一玩的 GitHub 开源项目，用真实数据和中文编辑内容帮你快速看懂。",
+  "description_en": "Discover noteworthy GitHub projects every day through verified data and concise editorial summaries.",
+  "version": "0.1.0",
+  "author": "Seiya",
+  "ui_policy": "aime-native",
+  "services": [
+    {
+      "name": "github-today-fun",
+      "description": "提供 GitHub 今日好玩静态页面",
+      "description_en": "Serves the GitHub Today Fun static website",
+      "type": "command",
+      "command": "bash runtime/start.sh",
+      "auto_start": true,
+      "upload_to_cdn": [
+        "dist/_next"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "path": "skills/github-today-fun"
+    }
+  ],
+  "commands": [
+    {
+      "name": "github-today",
+      "description": "查看最新一期或指定日期的 GitHub 今日好玩精选",
+      "description_en": "Show the latest or a dated GitHub Today Fun edition",
+      "type": "script",
+      "script": "commands/github_today.py",
+      "timeout": 20,
+      "mode": "direct"
+    }
+  ],
+  "ui_provider": {
+    "points": [
+      {
+        "point": "ui.pages.onboarding",
+        "id": "primary-entry",
+        "priority": 100,
+        "dynamic_ui": true,
+        "iframe": {
+          "service": "github-today-fun",
+          "uri": "/"
+        }
+      }
+    ]
+  }
+}

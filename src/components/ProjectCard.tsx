@@ -5,7 +5,7 @@ import { ArrowUpRight, Bookmark, Check, Flame, MessageCircle, Sparkles, Star } f
 import { SOURCE_LABELS } from "@/lib/discovery";
 import type { EditorialProject } from "@/lib/types";
 
-const AIME_CHAT_URL = "https://aime.bytedance.net/chat";
+const PUBLIC_AI_CHAT_URL = "https://chat.deepseek.com/";
 
 function compactNumber(value: number) {
   return new Intl.NumberFormat("zh-CN", { notation: "compact", maximumFractionDigits: 1 }).format(value);
@@ -19,29 +19,29 @@ export function ProjectCard({ project, index, saved, onToggleSaved, category, ma
   category: string;
   matchedInterest: boolean;
 }) {
-  const [aimePromptCopied, setAimePromptCopied] = useState(false);
+  const [aiPromptCopied, setAiPromptCopied] = useState(false);
   const number = String(index + 1).padStart(2, "0");
   const owner = project.name.split("/")[0] ?? project.name;
   const growthLabel = typeof project.recentGrowth === "number"
     ? `+${compactNumber(project.recentGrowth)} ${project.growthSource === "snapshot" ? "较上次收录" : "今日"}`
     : "增长待观察";
 
-  const askAime = async () => {
+  const askAI = async () => {
     const prompt = `请帮我详细了解这个 GitHub 项目：${project.githubUrl}\n\n请重点介绍它解决什么问题、核心功能、适合谁使用、如何快速开始，以及使用时需要注意什么。`;
-    window.open(AIME_CHAT_URL, "_blank", "noopener,noreferrer");
+    window.open(PUBLIC_AI_CHAT_URL, "_blank", "noopener,noreferrer");
 
     try {
       await navigator.clipboard.writeText(prompt);
-      setAimePromptCopied(true);
-      window.setTimeout(() => setAimePromptCopied(false), 2500);
+      setAiPromptCopied(true);
+      window.setTimeout(() => setAiPromptCopied(false), 2500);
     } catch {
-      // 剪贴板权限不可用时仍然打开 Aime，用户可以手动粘贴项目链接。
+      // 剪贴板权限不可用时仍然打开公开 AI，用户可以手动粘贴项目链接。
     }
   };
 
   return (
-    <article className="project-card group relative flex h-full flex-col overflow-hidden rounded-3xl border border-stone-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-xl sm:p-6">
-      <div className="absolute right-5 top-5 font-serif text-5xl font-black leading-none text-stone-100 transition group-hover:text-orange-50" aria-hidden="true">{number}</div>
+    <article className="project-card glass-card group relative flex h-full flex-col overflow-hidden rounded-4xl border border-white/80 bg-white/70 p-5 transition duration-300 hover:-translate-y-2 sm:p-6">
+      <div className="absolute right-5 top-5 font-serif text-5xl font-black leading-none text-violet-100/80 transition group-hover:text-violet-200/80" aria-hidden="true">{number}</div>
 
       <div className="relative flex items-start justify-between gap-4 pr-12">
         <div className="flex min-w-0 items-center gap-3">
@@ -78,8 +78,8 @@ export function ProjectCard({ project, index, saved, onToggleSaved, category, ma
         )}
         <h3 className="max-w-sm font-serif text-xl font-bold leading-snug tracking-tight text-stone-900 sm:text-2xl">{project.plainSummary}</h3>
         <p className="mt-3 text-sm leading-6 text-stone-600">{project.introduction}</p>
-        <div className="mt-5 rounded-2xl bg-amber-50 p-3.5">
-          <p className="mb-1 flex items-center gap-1.5 text-xs font-bold text-amber-800"><Flame size={13} /> 为什么今天值得看</p>
+        <div className="mt-5 rounded-3xl border border-white/80 bg-gradient-to-br from-violet-50/90 to-white/70 p-4 shadow-sm">
+          <p className="mb-1 flex items-center gap-1.5 text-xs font-bold text-violet-700"><Flame size={13} /> 为什么今天值得看</p>
           <p className="text-xs font-medium leading-5 text-stone-700">{project.whyToday}</p>
         </div>
         <p className="mt-3 text-xs leading-5 text-stone-500"><span className="font-bold text-stone-700">适合：</span>{project.audience}</p>
@@ -102,12 +102,12 @@ export function ProjectCard({ project, index, saved, onToggleSaved, category, ma
           <div className="flex flex-wrap items-center justify-end gap-2">
             <button
               type="button"
-              onClick={askAime}
-              aria-label={`复制 ${project.name} 的提问内容并打开 Aime`}
+              onClick={askAI}
+              aria-label={`复制 ${project.name} 的提问内容并打开 DeepSeek`}
               className="inline-flex items-center gap-1 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-2 text-xs font-bold text-violet-700 transition hover:border-violet-300 hover:bg-violet-100"
             >
-              {aimePromptCopied ? <Check size={13} /> : <MessageCircle size={13} />}
-              {aimePromptCopied ? "已复制，去问 Aime" : "问问 Aime"}
+              {aiPromptCopied ? <Check size={13} /> : <MessageCircle size={13} />}
+              {aiPromptCopied ? "已复制，去问 AI" : "问问 AI"}
             </button>
             <a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`在 GitHub 查看 ${project.name}`} className="inline-flex items-center gap-1 rounded-full bg-stone-900 px-3.5 py-2 text-xs font-bold text-white transition hover:bg-orange-600">去 GitHub 看看 <ArrowUpRight size={13} /></a>
           </div>
