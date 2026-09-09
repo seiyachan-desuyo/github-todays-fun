@@ -31,7 +31,9 @@ export function scoreProject(project: CandidateProject, now: Date): ScoreBreakdo
   return { snapshotGrowth, trendingGrowth, newProjectVelocity, pushedFreshness, crossSource, total, signals };
 }
 
-export function rankProjects(projects: CandidateProject[], now: Date, limit = 10): CandidateProject[] {
+export const DAILY_EDITION_TARGET = 30;
+
+export function rankProjects(projects: CandidateProject[], now: Date, limit = DAILY_EDITION_TARGET): CandidateProject[] {
   return projects
     .filter((project) => Boolean(project.description) && project.sources.some((source) => source.startsWith("github")))
     .map((project) => ({ ...project, score: scoreProject(project, now) }))

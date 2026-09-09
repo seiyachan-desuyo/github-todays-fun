@@ -1,60 +1,116 @@
 "use client";
 
-import { ArrowUpRight, Bookmark, Star } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, Bookmark, Check, Flame, MessageCircle, Sparkles, Star } from "lucide-react";
+import { SOURCE_LABELS } from "@/lib/discovery";
 import type { EditorialProject } from "@/lib/types";
+
+const AIME_CHAT_URL = "https://aime.bytedance.net/chat";
 
 function compactNumber(value: number) {
   return new Intl.NumberFormat("zh-CN", { notation: "compact", maximumFractionDigits: 1 }).format(value);
 }
 
-export function ProjectCard({ project, index, saved, onToggleSaved }: {
+export function ProjectCard({ project, index, saved, onToggleSaved, category, matchedInterest }: {
   project: EditorialProject;
   index: number;
   saved: boolean;
   onToggleSaved: () => void;
+  category: string;
+  matchedInterest: boolean;
 }) {
+  const [aimePromptCopied, setAimePromptCopied] = useState(false);
   const number = String(index + 1).padStart(2, "0");
-  const label = index % 5 === 0 ? "这个真的有用" : index % 5 === 1 ? "编辑推荐" : index % 5 === 2 ? "AI 又进化了" : index % 5 === 3 ? "居然有人做了这个" : "周末可以玩玩";
+  const owner = project.name.split("/")[0] ?? project.name;
   const growthLabel = typeof project.recentGrowth === "number"
-    ? `+${compactNumber(project.recentGrowth)} ${project.growthSource === "snapshot" ? "较上次快照" : "GitHub Trending"}`
+    ? `+${compactNumber(project.recentGrowth)} ${project.growthSource === "snapshot" ? "较上次收录" : "今日"}`
     : "增长待观察";
 
+  const askAime = async () => {
+    const prompt = `请帮我详细了解这个 GitHub 项目：${project.githubUrl}\n\n请重点介绍它解决什么问题、核心功能、适合谁使用、如何快速开始，以及使用时需要注意什么。`;
+    window.open(AIME_CHAT_URL, "_blank", "noopener,noreferrer");
+
+    try {
+      await navigator.clipboard.writeText(prompt);
+      setAimePromptCopied(true);
+      window.setTimeout(() => setAimePromptCopied(false), 2500);
+    } catch {
+      // 剪贴板权限不可用时仍然打开 Aime，用户可以手动粘贴项目链接。
+    }
+  };
+
   return (
-    <article className="group flex h-full flex-col border border-ink/15 bg-white/35 p-5 transition hover:-translate-y-0.5 hover:border-ink/55 hover:bg-white/65 sm:p-6">
-      <div className="flex items-start justify-between gap-5 border-b border-ink/10 pb-4">
+    <article className="project-card group relative flex h-full flex-col overflow-hidden rounded-3xl border border-stone-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-xl sm:p-6">
+      <div className="absolute right-5 top-5 font-serif text-5xl font-black leading-none text-stone-100 transition group-hover:text-orange-50" aria-hidden="true">{number}</div>
+
+      <div className="relative flex items-start justify-between gap-4 pr-12">
         <div className="flex min-w-0 items-center gap-3">
-          <span className="font-serif text-2xl text-ink/30">{number}</span>
+          <div className="relative grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 text-sm font-black text-orange-700 ring-1 ring-orange-200">
+            <span>{owner.slice(0, 1).toUpperCase()}</span>
+            {/* GitHub owner avatar；加载失败时保留底下的首字母。 */}
+            <img
+              src={`https://github.com/${encodeURIComponent(owner)}.png?size=88`}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+              onError={(event) => { event.currentTarget.style.display = "none"; }}
+            />
+          </div>
           <div className="min-w-0">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent">{label}</p>
-            <p className="mt-1 min-h-8 break-all text-xs font-semibold leading-4 text-ink/45" title={project.name}>{project.name}</p>
+            <span className="inline-flex rounded-full bg-orange-50 px-2.5 py-1 text-xs font-bold text-orange-700">{category}</span>
+            <p className="mt-1.5 truncate text-xs font-semibold text-stone-500" title={project.name}>{project.name}</p>
           </div>
         </div>
-        <button onClick={onToggleSaved} aria-label={saved ? "取消收藏" : "收藏项目"} className={`grid h-8 w-8 shrink-0 place-items-center border transition ${saved ? "border-accent bg-accent text-paper" : "border-ink/15 text-ink/45 hover:border-ink hover:text-ink"}`}>
-          <Bookmark size={13} fill={saved ? "currentColor" : "none"} />
-        </button>
       </div>
 
-      <div className="flex-1 py-5">
-        <h3 className="font-serif text-xl font-semibold leading-snug tracking-[-0.015em] sm:text-2xl">{project.plainSummary}</h3>
-        <p className="mt-3 text-sm leading-6 text-ink/62">{project.introduction}</p>
-        <div className="mt-5 border-l-2 border-accent/45 pl-3">
-          <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-ink/40">为什么值得看</p>
-          <p className="text-xs font-medium leading-5 text-ink/75">{project.whyToday}</p>
+      <button
+        onClick={onToggleSaved}
+        aria-label={saved ? `将 ${project.name} 移出稍后看` : `将 ${project.name} 加入稍后看`}
+        aria-pressed={saved}
+        className={`absolute right-5 top-16 z-10 grid h-9 w-9 place-items-center rounded-full border transition ${saved ? "border-orange-500 bg-orange-500 text-white shadow-md" : "border-stone-200 bg-white text-stone-400 hover:border-orange-300 hover:text-orange-600"}`}
+      >
+        <Bookmark size={15} fill={saved ? "currentColor" : "none"} />
+      </button>
+
+      <div className="relative flex-1 pb-5 pt-6">
+        {matchedInterest && (
+          <p className="mb-2 inline-flex items-center gap-1 text-xs font-bold text-violet-600"><Sparkles size={13} /> 正合你的兴趣</p>
+        )}
+        <h3 className="max-w-sm font-serif text-xl font-bold leading-snug tracking-tight text-stone-900 sm:text-2xl">{project.plainSummary}</h3>
+        <p className="mt-3 text-sm leading-6 text-stone-600">{project.introduction}</p>
+        <div className="mt-5 rounded-2xl bg-amber-50 p-3.5">
+          <p className="mb-1 flex items-center gap-1.5 text-xs font-bold text-amber-800"><Flame size={13} /> 为什么今天值得看</p>
+          <p className="text-xs font-medium leading-5 text-stone-700">{project.whyToday}</p>
         </div>
+        <p className="mt-3 text-xs leading-5 text-stone-500"><span className="font-bold text-stone-700">适合：</span>{project.audience}</p>
       </div>
 
-      <div className="border-t border-ink/10 pt-4">
+      <div className="relative border-t border-stone-100 pt-4">
         <div className="flex flex-wrap gap-1.5">
-          {project.editorialTags.slice(0, 3).map((tag) => <span key={tag} className="border border-ink/12 px-2 py-1 text-[10px] text-ink/55">{tag}</span>)}
+          {project.editorialTags.slice(0, 4).map((tag) => <span key={tag} className="rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-xs text-stone-600">{tag}</span>)}
         </div>
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[10px] text-ink/45">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            {project.language && <span>{project.language}</span>}
-            {typeof project.stars === "number" && <span>★ {compactNumber(project.stars)}</span>}
-            <span>{growthLabel}</span>
-            <span className="flex items-center gap-1"><Star size={10} fill="currentColor" /> {project.recommendation}/5</span>
+        <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-xs text-stone-500 sm:grid-cols-3">
+          <span title="Star 总数">★ {typeof project.stars === "number" ? compactNumber(project.stars) : "待补充"}</span>
+          <span className={typeof project.recentGrowth === "number" ? "font-bold text-rose-600" : ""}>{growthLabel}</span>
+          <span>{project.language ?? "其他"}</span>
+        </div>
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-dashed border-stone-200 pt-3">
+          <div className="flex flex-wrap items-center gap-2 text-xs text-stone-400">
+            {project.sources.map((source) => <span key={source}>{SOURCE_LABELS[source]}</span>)}
+            <span className="flex items-center gap-1 text-amber-600"><Star size={11} fill="currentColor" /> 编辑推荐 {project.recommendation}/5</span>
           </div>
-          <a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`在 GitHub 查看 ${project.name}`} className="inline-flex items-center gap-1 text-xs font-semibold text-ink underline decoration-ink/25 underline-offset-4 hover:text-accent">GitHub <ArrowUpRight size={12} /></a>
+          <div className="flex flex-wrap items-center justify-end gap-2">
+            <button
+              type="button"
+              onClick={askAime}
+              aria-label={`复制 ${project.name} 的提问内容并打开 Aime`}
+              className="inline-flex items-center gap-1 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-2 text-xs font-bold text-violet-700 transition hover:border-violet-300 hover:bg-violet-100"
+            >
+              {aimePromptCopied ? <Check size={13} /> : <MessageCircle size={13} />}
+              {aimePromptCopied ? "已复制，去问 Aime" : "问问 Aime"}
+            </button>
+            <a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`在 GitHub 查看 ${project.name}`} className="inline-flex items-center gap-1 rounded-full bg-stone-900 px-3.5 py-2 text-xs font-bold text-white transition hover:bg-orange-600">去 GitHub 看看 <ArrowUpRight size={13} /></a>
+          </div>
         </div>
       </div>
     </article>

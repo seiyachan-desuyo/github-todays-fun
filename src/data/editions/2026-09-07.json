@@ -1,17 +1,21 @@
 {
   "date": "2026-09-07",
   "issue": 2,
-  "title": "真实 GitHub 信号里的今日新项目",
-  "summary": "本期从 10 个真实 GitHub 候选中按近期增长、更新活跃与跨源信号选出；中文说明由确定性规则生成。",
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "本期从 168 个 GitHub 官方候选中编辑 30 项：既看 Trending 的真实增长，也看新仓速度与更新活跃度，并主动分散到 AI、效率、设计、数据、学习、开源替代、开发工具和轻松小玩具。",
   "mode": "live",
-  "editorMode": "deterministic",
-  "notice": "仓库事实与增长数据均来自真实 GitHub 数据；中文解释为确定性规则编辑。首日尚无历史快照基线；仅展示 GitHub Trending 页面明确披露的短期增长。",
-  "publishedAt": "2026-09-07T10:23:27.369Z",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 GitHub Search、GitHub Trending 与 GitHub Repository API；选题、中文介绍、适合人群与推荐分由 Aime 基于当天 editor task 中的真实 description、README 摘要（如有）和增长信号编辑。",
+  "publishedAt": "2026-09-07T11:53:05.144Z",
   "sourceStatus": [
     {
       "source": "github-search",
       "status": "ok",
-      "fetchedAt": "2026-09-07T10:23:23.093Z",
+      "fetchedAt": "2026-09-07T11:52:04.988Z",
       "rawCount": 150,
       "normalizedCount": 150,
       "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
@@ -36,245 +40,51 @@
     {
       "source": "github-trending",
       "status": "ok",
-      "fetchedAt": "2026-09-07T10:23:23.114Z",
-      "rawCount": 39,
-      "normalizedCount": 39,
-      "message": "2/2 个 GitHub Trending 页面解析成功，读取 39 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "fetchedAt": "2026-09-07T11:52:05.021Z",
+      "rawCount": 33,
+      "normalizedCount": 33,
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 33 条；daily 的 stars today 作为页面明确披露的真实短期信号",
       "raw": [
         {
           "period": "daily",
           "status": 200,
-          "count": 18
+          "count": 14
         },
         {
           "period": "weekly",
           "status": 200,
-          "count": 21
+          "count": 19
         }
       ]
     },
     {
       "source": "github-repository",
       "status": "degraded",
-      "fetchedAt": "2026-09-07T10:23:27.220Z",
+      "fetchedAt": "2026-09-07T11:52:08.752Z",
       "message": "HTTP 403，详情补全跳过；保留 Search/Trending 已有事实；rate limit remaining=0"
-    },
-    {
-      "source": "github-events",
-      "status": "ok",
-      "fetchedAt": "2026-09-07T10:23:23.115Z",
-      "rawCount": 10,
-      "normalizedCount": 0,
-      "message": "读取 10 条公共事件；只用于探活，公共流不适合直接推断全站热度"
-    },
-    {
-      "source": "github-explore",
-      "status": "degraded",
-      "fetchedAt": "2026-09-07T10:23:23.115Z",
-      "rawCount": 0,
-      "normalizedCount": 0,
-      "message": "页面可访问（450KB），但内容混合专题/用户/仓库且无稳定公开结构；本次仅探活，不纳入候选以避免误解析"
-    },
-    {
-      "source": "gitdiscover",
-      "status": "unavailable",
-      "fetchedAt": "2026-09-07T10:23:23.115Z",
-      "message": "HTTP 502: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class"
-    },
-    {
-      "source": "ossinsight",
-      "status": "unavailable",
-      "fetchedAt": "2026-09-07T10:23:23.116Z",
-      "message": "This ranking is ordered by recent star/PR/issue event counts, and our capture of those events fell to roughly 0.3% of baseline, so the ordering would be noise. An empty result here means the metric cannot be computed, not that there are no matching repositories.",
-      "rawCount": 0,
-      "normalizedCount": 0,
-      "raw": {
-        "type": "sql_endpoint",
-        "data": {
-          "columns": [],
-          "rows": [],
-          "result": {
-            "row_count": 0
-          }
-        },
-        "data_quality": {
-          "status": "unavailable",
-          "metric": "github_event_derived_ranking",
-          "source": "github_public_events_firehose",
-          "unavailable_since": "2026-03-01",
-          "reason": "This ranking is ordered by recent star/PR/issue event counts, and our capture of those events fell to roughly 0.3% of baseline, so the ordering would be noise. An empty result here means the metric cannot be computed, not that there are no matching repositories.",
-          "alternative": "Current totals synced directly from GitHub remain accurate: use /v1/repos/{owner}/{repo} for star and fork counts, or /v1/collections/{id} for collection membership.",
-          "docs": "https://ossinsight.io/docs/data-quality"
-        }
-      }
     }
   ],
   "pipelineStats": {
-    "rawCandidateCount": 189,
-    "normalizedCandidateCount": 189,
-    "dedupedCandidateCount": 179,
-    "eligibleCandidateCount": 169,
-    "selectedCount": 10
+    "rawCandidateCount": 183,
+    "normalizedCandidateCount": 183,
+    "dedupedCandidateCount": 175,
+    "eligibleCandidateCount": 168,
+    "selectedCount": 30
   },
   "projects": [
-    {
-      "name": "mattpocock/skills",
-      "githubUrl": "https://github.com/mattpocock/skills",
-      "canonicalUrl": "https://github.com/mattpocock/skills",
-      "description": "Skills for Real Engineers. Straight from my .agents directory.",
-      "stars": 255594,
-      "forks": 21529,
-      "recentGrowth": 2207,
-      "growthSource": "github-trending",
-      "language": "Shell",
-      "topics": [],
-      "sources": [
-        "github-trending"
-      ],
-      "raw": [
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "mattpocock/skills",
-            "githubUrl": "https://github.com/mattpocock/skills",
-            "description": "Skills for Real Engineers. Straight from my .agents directory.",
-            "language": "Shell",
-            "stars": 255594,
-            "forks": 21529,
-            "starsToday": 2207,
-            "period": "daily"
-          }
-        }
-      ],
-      "score": {
-        "snapshotGrowth": 0,
-        "trendingGrowth": 55,
-        "newProjectVelocity": 0,
-        "pushedFreshness": 0,
-        "crossSource": 0,
-        "total": 55,
-        "signals": [
-          "Trending 披露 +2207"
-        ]
-      },
-      "plainSummary": "原始说明：Skills for Real Engineers. Straight from my .agents directory.",
-      "introduction": "GitHub 仓库公开 description：Skills for Real Engineers. Straight from my .agents directory.。以下排序只使用可核验的仓库事实与来源信号。",
-      "whyToday": "入选信号：Trending 披露 +2207。",
-      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
-      "editorialTags": [
-        "有趣"
-      ],
-      "recommendation": 3
-    },
-    {
-      "name": "DietrichGebert/ponytail",
-      "githubUrl": "https://github.com/dietrichgebert/ponytail",
-      "canonicalUrl": "https://github.com/dietrichgebert/ponytail",
-      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
-      "stars": 130243,
-      "forks": 6979,
-      "recentGrowth": 1539,
-      "growthSource": "github-trending",
-      "language": "JavaScript",
-      "topics": [],
-      "sources": [
-        "github-trending"
-      ],
-      "raw": [
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "DietrichGebert/ponytail",
-            "githubUrl": "https://github.com/DietrichGebert/ponytail",
-            "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
-            "language": "JavaScript",
-            "stars": 130243,
-            "forks": 6979,
-            "starsToday": 1539,
-            "period": "daily"
-          }
-        },
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "DietrichGebert/ponytail",
-            "githubUrl": "https://github.com/DietrichGebert/ponytail",
-            "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
-            "language": "JavaScript",
-            "stars": 130243,
-            "forks": 6979,
-            "starsToday": 12186,
-            "period": "weekly"
-          }
-        }
-      ],
-      "score": {
-        "snapshotGrowth": 0,
-        "trendingGrowth": 55,
-        "newProjectVelocity": 0,
-        "pushedFreshness": 0,
-        "crossSource": 0,
-        "total": 55,
-        "signals": [
-          "Trending 披露 +1539"
-        ]
-      },
-      "plainSummary": "原始说明：Makes your AI agent think like the laziest senior dev in the room. The bes…",
-      "introduction": "GitHub 仓库公开 description：Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.。以下排序只使用可核验的仓库事实与来源信号。",
-      "whyToday": "入选信号：Trending 披露 +1539。",
-      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
-      "editorialTags": [
-        "AI 工具",
-        "开发工具"
-      ],
-      "recommendation": 3
-    },
     {
       "name": "affaan-m/ECC",
       "githubUrl": "https://github.com/affaan-m/ecc",
       "canonicalUrl": "https://github.com/affaan-m/ecc",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 252187,
-      "forks": 37858,
+      "stars": 252287,
+      "forks": 37868,
       "recentGrowth": 1485,
       "growthSource": "github-trending",
       "language": "JavaScript",
       "topics": [],
       "sources": [
         "github-trending"
-      ],
-      "raw": [
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "affaan-m/ECC",
-            "githubUrl": "https://github.com/affaan-m/ECC",
-            "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-            "language": "JavaScript",
-            "stars": 252187,
-            "forks": 37858,
-            "starsToday": 1485,
-            "period": "daily"
-          }
-        },
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "affaan-m/ECC",
-            "githubUrl": "https://github.com/affaan-m/ECC",
-            "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-            "language": "JavaScript",
-            "stars": 252187,
-            "forks": 37858,
-            "starsToday": 6394,
-            "period": "weekly"
-          }
-        }
       ],
       "score": {
         "snapshotGrowth": 0,
@@ -287,46 +97,31 @@
           "Trending 披露 +1485"
         ]
       },
-      "plainSummary": "原始说明：The agent harness performance optimization system. Skills, instincts, memo…",
-      "introduction": "GitHub 仓库公开 description：The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.。以下排序只使用可核验的仓库事实与来源信号。",
-      "whyToday": "入选信号：Trending 披露 +1485。",
-      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "plainSummary": "给编程 Agent 加上一套可复用的能力、记忆与安全工具箱",
+      "introduction": "它是一套面向 Claude Code、Codex、OpenCode、Cursor 等工具的 Agent 性能优化系统。项目把技能、经验记忆、安全检查和先研究后开发的方法组织在一起，方便把成熟工作流带到不同编程助手中。",
+      "whyToday": "GitHub Trending 当日增长信号最强，且同时覆盖多款主流编程助手。",
+      "audience": "经常使用 AI 编程助手、想沉淀稳定工作流的人",
       "editorialTags": [
         "AI 工具",
+        "效率",
         "开发工具"
       ],
-      "recommendation": 3
+      "recommendation": 5
     },
     {
-      "name": "blader/humanizer",
-      "githubUrl": "https://github.com/blader/humanizer",
-      "canonicalUrl": "https://github.com/blader/humanizer",
-      "description": "Agent skill that removes signs of AI-generated writing from text",
-      "stars": 44738,
-      "forks": 3699,
-      "recentGrowth": 748,
+      "name": "microsoft/markitdown",
+      "githubUrl": "https://github.com/microsoft/markitdown",
+      "canonicalUrl": "https://github.com/microsoft/markitdown",
+      "description": "Python tool for converting files and office documents to Markdown.",
+      "stars": 179213,
+      "forks": 13206,
+      "recentGrowth": 771,
       "growthSource": "github-trending",
       "language": "Python",
       "topics": [],
       "sources": [
         "github-trending"
       ],
-      "raw": [
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "blader/humanizer",
-            "githubUrl": "https://github.com/blader/humanizer",
-            "description": "Agent skill that removes signs of AI-generated writing from text",
-            "language": "Python",
-            "stars": 44738,
-            "forks": 3699,
-            "starsToday": 748,
-            "period": "daily"
-          }
-        }
-      ],
       "score": {
         "snapshotGrowth": 0,
         "trendingGrowth": 55,
@@ -335,239 +130,26 @@
         "crossSource": 0,
         "total": 55,
         "signals": [
-          "Trending 披露 +748"
+          "Trending 披露 +771"
         ]
       },
-      "plainSummary": "原始说明：Agent skill that removes signs of AI-generated writing from text",
-      "introduction": "GitHub 仓库公开 description：Agent skill that removes signs of AI-generated writing from text。以下排序只使用可核验的仓库事实与来源信号。",
-      "whyToday": "入选信号：Trending 披露 +748。",
-      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "plainSummary": "把 Office 文件和常见资料快速变成 Markdown",
+      "introduction": "这是微软开源的 Python 文档转换工具，可把文件与办公文档转成 Markdown。适合在整理资料、建立知识库或把原始文档交给文本工具前，先统一成更轻便的格式。",
+      "whyToday": "GitHub Trending 当日增长达到 771，实用且容易理解。",
+      "audience": "需要整理文档、知识库或 AI 输入材料的人",
       "editorialTags": [
-        "AI 工具"
-      ],
-      "recommendation": 3
-    },
-    {
-      "name": "cathrynlavery/diagram-design",
-      "githubUrl": "https://github.com/cathrynlavery/diagram-design",
-      "canonicalUrl": "https://github.com/cathrynlavery/diagram-design",
-      "description": "38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
-      "stars": 33007,
-      "forks": 2108,
-      "recentGrowth": 620,
-      "growthSource": "github-trending",
-      "language": "HTML",
-      "topics": [],
-      "sources": [
-        "github-trending"
-      ],
-      "raw": [
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "cathrynlavery/diagram-design",
-            "githubUrl": "https://github.com/cathrynlavery/diagram-design",
-            "description": "38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
-            "language": "HTML",
-            "stars": 33007,
-            "forks": 2108,
-            "starsToday": 620,
-            "period": "daily"
-          }
-        }
-      ],
-      "score": {
-        "snapshotGrowth": 0,
-        "trendingGrowth": 55,
-        "newProjectVelocity": 0,
-        "pushedFreshness": 0,
-        "crossSource": 0,
-        "total": 55,
-        "signals": [
-          "Trending 披露 +620"
-        ]
-      },
-      "plainSummary": "原始说明：38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained …",
-      "introduction": "GitHub 仓库公开 description：38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.。以下排序只使用可核验的仓库事实与来源信号。",
-      "whyToday": "入选信号：Trending 披露 +620。",
-      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
-      "editorialTags": [
+        "效率",
+        "数据",
         "开发工具"
       ],
-      "recommendation": 3
-    },
-    {
-      "name": "magnitudedev/magnitude",
-      "githubUrl": "https://github.com/magnitudedev/magnitude",
-      "canonicalUrl": "https://github.com/magnitudedev/magnitude",
-      "description": "Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. Works with Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.",
-      "stars": 3899,
-      "forks": 280,
-      "recentGrowth": 604,
-      "growthSource": "github-trending",
-      "language": "TypeScript",
-      "topics": [],
-      "sources": [
-        "github-trending"
-      ],
-      "raw": [
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "magnitudedev/magnitude",
-            "githubUrl": "https://github.com/magnitudedev/magnitude",
-            "description": "Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. Works with Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.",
-            "language": "TypeScript",
-            "stars": 3899,
-            "forks": 280,
-            "starsToday": 604,
-            "period": "daily"
-          }
-        },
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "magnitudedev/magnitude",
-            "githubUrl": "https://github.com/magnitudedev/magnitude",
-            "description": "Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. Works with Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.",
-            "language": "TypeScript",
-            "stars": 3899,
-            "forks": 280,
-            "starsToday": 1961,
-            "period": "weekly"
-          }
-        }
-      ],
-      "score": {
-        "snapshotGrowth": 0,
-        "trendingGrowth": 55,
-        "newProjectVelocity": 0,
-        "pushedFreshness": 0,
-        "crossSource": 0,
-        "total": 55,
-        "signals": [
-          "Trending 披露 +604"
-        ]
-      },
-      "plainSummary": "原始说明：Open source inference server that runs the best local models for your hard…",
-      "introduction": "GitHub 仓库公开 description：Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. Works with Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.。以下排序只使用可核验的仓库事实与来源信号。",
-      "whyToday": "入选信号：Trending 披露 +604。",
-      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
-      "editorialTags": [
-        "AI 工具",
-        "开发工具"
-      ],
-      "recommendation": 3
-    },
-    {
-      "name": "anomalyco/opencode",
-      "githubUrl": "https://github.com/anomalyco/opencode",
-      "canonicalUrl": "https://github.com/anomalyco/opencode",
-      "description": "The open source coding agent.",
-      "stars": 205537,
-      "forks": 26794,
-      "recentGrowth": 551,
-      "growthSource": "github-trending",
-      "language": "TypeScript",
-      "topics": [],
-      "sources": [
-        "github-trending"
-      ],
-      "raw": [
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "anomalyco/opencode",
-            "githubUrl": "https://github.com/anomalyco/opencode",
-            "description": "The open source coding agent.",
-            "language": "TypeScript",
-            "stars": 205537,
-            "forks": 26794,
-            "starsToday": 551,
-            "period": "daily"
-          }
-        }
-      ],
-      "score": {
-        "snapshotGrowth": 0,
-        "trendingGrowth": 54.651146740669006,
-        "newProjectVelocity": 0,
-        "pushedFreshness": 0,
-        "crossSource": 0,
-        "total": 54.7,
-        "signals": [
-          "Trending 披露 +551"
-        ]
-      },
-      "plainSummary": "原始说明：The open source coding agent.",
-      "introduction": "GitHub 仓库公开 description：The open source coding agent.。以下排序只使用可核验的仓库事实与来源信号。",
-      "whyToday": "入选信号：Trending 披露 +551。",
-      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
-      "editorialTags": [
-        "AI 工具"
-      ],
-      "recommendation": 3
-    },
-    {
-      "name": "NousResearch/hermes-agent",
-      "githubUrl": "https://github.com/nousresearch/hermes-agent",
-      "canonicalUrl": "https://github.com/nousresearch/hermes-agent",
-      "description": "The agent that grows with you",
-      "stars": 242826,
-      "forks": 49944,
-      "recentGrowth": 520,
-      "growthSource": "github-trending",
-      "language": "Python",
-      "topics": [],
-      "sources": [
-        "github-trending"
-      ],
-      "raw": [
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "NousResearch/hermes-agent",
-            "githubUrl": "https://github.com/NousResearch/hermes-agent",
-            "description": "The agent that grows with you",
-            "language": "Python",
-            "stars": 242826,
-            "forks": 49944,
-            "starsToday": 520,
-            "period": "daily"
-          }
-        }
-      ],
-      "score": {
-        "snapshotGrowth": 0,
-        "trendingGrowth": 54.150837373671045,
-        "newProjectVelocity": 0,
-        "pushedFreshness": 0,
-        "crossSource": 0,
-        "total": 54.2,
-        "signals": [
-          "Trending 披露 +520"
-        ]
-      },
-      "plainSummary": "原始说明：The agent that grows with you",
-      "introduction": "GitHub 仓库公开 description：The agent that grows with you。以下排序只使用可核验的仓库事实与来源信号。",
-      "whyToday": "入选信号：Trending 披露 +520。",
-      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
-      "editorialTags": [
-        "AI 工具"
-      ],
-      "recommendation": 3
+      "recommendation": 5
     },
     {
       "name": "BraveOPotato/FckSignups",
       "githubUrl": "https://github.com/braveopotato/fcksignups",
       "canonicalUrl": "https://github.com/braveopotato/fcksignups",
       "description": "A list of tools that are open-source, in-browser, and require no-signups!",
-      "stars": 3543,
+      "stars": 3576,
       "forks": 214,
       "recentGrowth": 436,
       "growthSource": "github-trending",
@@ -575,22 +157,6 @@
       "topics": [],
       "sources": [
         "github-trending"
-      ],
-      "raw": [
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "BraveOPotato/FckSignups",
-            "githubUrl": "https://github.com/BraveOPotato/FckSignups",
-            "description": "A list of tools that are open-source, in-browser, and require no-signups!",
-            "language": "TypeScript",
-            "stars": 3543,
-            "forks": 214,
-            "starsToday": 436,
-            "period": "daily"
-          }
-        }
       ],
       "score": {
         "snapshotGrowth": 0,
@@ -603,66 +169,1175 @@
           "Trending 披露 +436"
         ]
       },
-      "plainSummary": "原始说明：A list of tools that are open-source, in-browser, and require no-signups!",
-      "introduction": "GitHub 仓库公开 description：A list of tools that are open-source, in-browser, and require no-signups!。以下排序只使用可核验的仓库事实与来源信号。",
-      "whyToday": "入选信号：Trending 披露 +436。",
-      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "plainSummary": "不用注册账号，也能在浏览器里直接用的一批开源工具",
+      "introduction": "这是一个专门收集免注册、开源、浏览器内可用工具的清单。你可以把它当成在线工具导航，需要临时处理任务时先来找不收邮箱、不强制登录的替代品。",
+      "whyToday": "GitHub Trending 当日新增 436 Stars，说明免注册工具这个痛点很有共鸣。",
+      "audience": "讨厌注册流程、想找轻量在线工具的普通用户",
       "editorialTags": [
+        "效率",
+        "开源替代",
         "有趣"
       ],
-      "recommendation": 3
+      "recommendation": 5
     },
     {
-      "name": "coreyhaines31/marketingskills",
-      "githubUrl": "https://github.com/coreyhaines31/marketingskills",
-      "canonicalUrl": "https://github.com/coreyhaines31/marketingskills",
-      "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
-      "stars": 47777,
-      "forks": 7409,
-      "recentGrowth": 329,
+      "name": "heygen-com/hyperframes",
+      "githubUrl": "https://github.com/heygen-com/hyperframes",
+      "canonicalUrl": "https://github.com/heygen-com/hyperframes",
+      "description": "Write HTML. Render video. Built for agents.",
+      "stars": 44662,
+      "forks": 4261,
+      "recentGrowth": 220,
       "growthSource": "github-trending",
-      "language": "JavaScript",
+      "language": "TypeScript",
       "topics": [],
       "sources": [
         "github-trending"
       ],
-      "raw": [
-        {
-          "source": "github-trending",
-          "fetchedAt": "2026-09-07T10:23:23.114Z",
-          "raw": {
-            "name": "coreyhaines31/marketingskills",
-            "githubUrl": "https://github.com/coreyhaines31/marketingskills",
-            "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
-            "language": "JavaScript",
-            "stars": 47777,
-            "forks": 7409,
-            "starsToday": 329,
-            "period": "daily"
-          }
-        }
-      ],
       "score": {
         "snapshotGrowth": 0,
-        "trendingGrowth": 50.197933285474896,
+        "trendingGrowth": 46.72741535634859,
         "newProjectVelocity": 0,
         "pushedFreshness": 0,
         "crossSource": 0,
-        "total": 50.2,
+        "total": 46.7,
         "signals": [
-          "Trending 披露 +329"
+          "Trending 披露 +220"
         ]
       },
-      "plainSummary": "原始说明：Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, ana…",
-      "introduction": "GitHub 仓库公开 description：Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.。以下排序只使用可核验的仓库事实与来源信号。",
-      "whyToday": "入选信号：Trending 披露 +329。",
-      "audience": "希望从真实 GitHub 数据中发现近期项目的读者",
+      "plainSummary": "只写 HTML，就能把页面内容渲染成视频",
+      "introduction": "它主打“写 HTML、出视频”，并明确面向 Agent 使用。适合把网页排版、动效和自动化生成结合起来，让已有 Web 技能直接参与视频制作。",
+      "whyToday": "GitHub Trending 当日新增 220 Stars，网页生成视频的路径正在快速获得关注。",
+      "audience": "会写网页、想自动化制作视频的创作者和开发者",
+      "editorialTags": [
+        "设计",
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "bytedance/deer-flow",
+      "githubUrl": "https://github.com/bytedance/deer-flow",
+      "canonicalUrl": "https://github.com/bytedance/deer-flow",
+      "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
+      "stars": 81675,
+      "forks": 11283,
+      "recentGrowth": 188,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 45.37345454532644,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45.4,
+        "signals": [
+          "Trending 披露 +188"
+        ]
+      },
+      "plainSummary": "让 AI 连续数小时完成研究、写代码和内容创作",
+      "introduction": "这是一个开源的长任务 SuperAgent 框架，通过沙箱、记忆、工具、技能、子 Agent 和消息网关处理分钟到小时级任务。它不只回答问题，而是为较长的研究、开发和创作流程提供运行框架。",
+      "whyToday": "GitHub Trending 当日新增 188 Stars，长任务 Agent 仍是高热方向。",
+      "audience": "需要搭建复杂自动化 Agent 工作流的开发者",
       "editorialTags": [
         "AI 工具",
+        "效率",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "pascalorg/editor",
+      "githubUrl": "https://github.com/pascalorg/editor",
+      "canonicalUrl": "https://github.com/pascalorg/editor",
+      "description": "Create and share 3D architectural projects.",
+      "stars": 22031,
+      "forks": 2843,
+      "recentGrowth": 136,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 42.58819249776316,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 42.6,
+        "signals": [
+          "Trending 披露 +136"
+        ]
+      },
+      "plainSummary": "在浏览器里创建并分享 3D 建筑项目",
+      "introduction": "这是一个用于创建和分享 3D 建筑项目的编辑器。它把建筑空间的三维表达放进可交互编辑环境，适合快速尝试布局、展示概念或分享设计成果。",
+      "whyToday": "GitHub Trending 当日新增 136 Stars，是本期少见的非 AI 创作工具。",
+      "audience": "建筑爱好者、空间设计师和 3D 创作者",
+      "editorialTags": [
+        "设计",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "lnkiai/m3e-canvas",
+      "githubUrl": "https://github.com/lnkiai/m3e-canvas",
+      "canonicalUrl": "https://github.com/lnkiai/m3e-canvas",
+      "description": "Sketch Material 3 Expressive screens in the browser and turn them into vibe-coding prompts.",
+      "stars": 4516,
+      "forks": 387,
+      "openIssues": 1,
+      "language": "TypeScript",
+      "topics": [
+        "design-tool",
+        "material-3-expressive",
+        "material-design",
+        "material3",
+        "nextjs",
+        "prompt",
+        "react",
+        "vibe-coding"
+      ],
+      "createdAt": "2026-09-02T04:36:34Z",
+      "updatedAt": "2026-09-07T11:51:32Z",
+      "pushedAt": "2026-09-07T07:51:39Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 864 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "在浏览器里画 Material 3 界面，再转成生成提示词",
+      "introduction": "它提供浏览器内的 Material 3 Expressive 画布，用来勾画界面方案。完成草图后还能转成 vibe-coding 提示词，让视觉探索更顺畅地衔接到代码生成。",
+      "whyToday": "新项目短期起量明显，并把设计草图与生成式开发连接起来。",
+      "audience": "产品设计师、前端开发者和独立创作者",
+      "editorialTags": [
+        "设计",
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "crmne/fastpotify",
+      "githubUrl": "https://github.com/crmne/fastpotify",
+      "canonicalUrl": "https://github.com/crmne/fastpotify",
+      "description": "Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.",
+      "stars": 3423,
+      "forks": 148,
+      "openIssues": 64,
+      "language": "Rust",
+      "topics": [
+        "audio",
+        "cross-platform",
+        "desktop-app",
+        "egui",
+        "gui",
+        "librespot",
+        "linux",
+        "macos",
+        "mpris",
+        "music",
+        "music-player",
+        "rust",
+        "spotify",
+        "spotify-client",
+        "spotify-connect",
+        "windows"
+      ],
+      "createdAt": "2026-08-27T12:46:32Z",
+      "updatedAt": "2026-09-07T11:40:09Z",
+      "pushedAt": "2026-09-06T15:47:33Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 314 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "一个更轻、更快的原生 Spotify 播放器",
+      "introduction": "这是用 Rust 制作的轻量原生 Spotify 客户端，覆盖 Linux、macOS 和 Windows。它同时支持完整音乐库、本地播放与 Spotify Connect，目标是用一个应用完成常用播放需求。",
+      "whyToday": "新仓近期快速获得关注，跨平台原生音乐体验对普通用户很直接。",
+      "audience": "想要轻量 Spotify 客户端或本地音乐播放的人",
+      "editorialTags": [
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "ashemag/human-atlas",
+      "githubUrl": "https://github.com/ashemag/human-atlas",
+      "canonicalUrl": "https://github.com/ashemag/human-atlas",
+      "description": "Open-source 3D anatomy explorer: 2,234 selectable BodyParts3D meshes, system layers, search, and exploded views.",
+      "stars": 1728,
+      "forks": 452,
+      "openIssues": 14,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-05T00:24:43Z",
+      "updatedAt": "2026-09-07T11:48:58Z",
+      "pushedAt": "2026-09-06T23:35:06Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 720 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "可搜索、可拆解的开源 3D 人体解剖图谱",
+      "introduction": "它包含 2,234 个可单独选择的 BodyParts3D 网格，并提供系统分层、搜索和爆炸视图。可以按身体系统逐层查看，也能把结构拆开观察空间关系。",
+      "whyToday": "新项目起量快，且把专业解剖资料做成直观的 3D 探索体验。",
+      "audience": "医学生、教师、健康科普作者和 3D 爱好者",
+      "editorialTags": [
+        "学习",
+        "数据",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "jub0t/Concat",
+      "githubUrl": "https://github.com/jub0t/concat",
+      "canonicalUrl": "https://github.com/jub0t/concat",
+      "description": "Free & Open-Source CapCut replacement.",
+      "stars": 1355,
+      "forks": 120,
+      "openIssues": 14,
+      "language": "Rust",
+      "topics": [
+        "audio-processor",
+        "auto-caption",
+        "automation",
+        "capcut",
+        "capcut-alternative",
+        "content-creation",
+        "cross-platform",
+        "desktop-app",
+        "ffmpeg",
+        "free-video-editor",
+        "non-linear-editor",
+        "offline-first",
+        "open-source-video-editor",
+        "rust-lang",
+        "slint",
+        "video-editing",
+        "video-editing-software",
+        "video-processing-tool",
+        "whisper-cpp"
+      ],
+      "createdAt": "2026-08-25T18:34:47Z",
+      "updatedAt": "2026-09-07T11:38:12Z",
+      "pushedAt": "2026-09-07T06:49:49Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 107 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "一款免费开源的 CapCut 替代视频编辑器",
+      "introduction": "项目明确定位为免费、开源的 CapCut 替代品。它适合希望摆脱封闭订阅或尝试自托管创作工具的用户，也给视频工作流提供了可检查、可改造的开源选项。",
+      "whyToday": "近期新项目热度上升，开源视频编辑替代品对创作者很有吸引力。",
+      "audience": "短视频创作者和寻找开源剪辑工具的人",
+      "editorialTags": [
+        "开源替代",
+        "设计",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "Jarvis322/macos-sysdata",
+      "githubUrl": "https://github.com/jarvis322/macos-sysdata",
+      "canonicalUrl": "https://github.com/jarvis322/macos-sysdata",
+      "description": "See what is really inside macOS System Data and delete it, item by item, from the menu bar.",
+      "stars": 423,
+      "forks": 18,
+      "openIssues": 1,
+      "language": "Swift",
+      "topics": [
+        "disk-cleanup",
+        "macos",
+        "menubar",
+        "swiftui",
+        "system-data",
+        "xcode"
+      ],
+      "createdAt": "2026-09-05T23:29:13Z",
+      "updatedAt": "2026-09-07T11:51:59Z",
+      "pushedAt": "2026-09-07T09:53:41Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 294 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "看清 macOS“系统数据”里到底是什么，并逐项清理",
+      "introduction": "它从菜单栏展示 macOS System Data 的实际内容，并允许逐项删除。相比一键清理黑盒，它更强调先看清具体项目，再决定哪些空间可以释放。",
+      "whyToday": "新仓近期起量快，直击 Mac 用户常见却不透明的存储问题。",
+      "audience": "被 macOS 系统数据占满磁盘的用户",
+      "editorialTags": [
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "FeiZhuLulu/real-api-pricing",
+      "githubUrl": "https://github.com/feizhululu/real-api-pricing",
+      "canonicalUrl": "https://github.com/feizhululu/real-api-pricing",
+      "description": "真实 API 定价：订阅月费 ÷ 实际可用 token，含额度、单价与分榜帕累托图。Real API pricing: subscription fee ÷ usable tokens, with allowance, unit-price, and leaderboard Pareto charts.",
+      "stars": 105,
+      "forks": 4,
+      "openIssues": 7,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-05T18:29:18Z",
+      "updatedAt": "2026-09-07T11:44:18Z",
+      "pushedAt": "2026-09-07T05:23:32Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 64 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "把 AI 订阅月费换算成真正可用 Token 的价格",
+      "introduction": "项目用“订阅月费 ÷ 实际可用 token”计算真实 API 成本，并整理额度、单位价格和分榜帕累托图。它把难以横向比较的套餐转成更接近实际使用的成本指标。",
+      "whyToday": "项目三天内活跃并快速获得关注，正好回应多模型订阅成本比较需求。",
+      "audience": "需要比较模型 API 与订阅套餐成本的人",
+      "editorialTags": [
+        "数据",
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "scottstts/Jelly-Baby",
+      "githubUrl": "https://github.com/scottstts/jelly-baby",
+      "canonicalUrl": "https://github.com/scottstts/jelly-baby",
+      "description": "A bouncy shiny jelly baby game",
+      "stars": 106,
+      "forks": 30,
+      "openIssues": 1,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-05T15:02:43Z",
+      "updatedAt": "2026-09-07T11:06:12Z",
+      "pushedAt": "2026-09-07T11:06:01Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 29.56147125440872,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 41.6,
+        "signals": [
+          "新仓约 59 stars/day",
+          "0 天内有更新"
+        ]
+      },
+      "plainSummary": "一款会弹跳、亮晶晶的果冻宝宝小游戏",
+      "introduction": "这是一个围绕弹性果冻宝宝制作的轻量游戏。信息简单直接，适合打开看看互动手感，也适合作为小体量视觉与物理效果项目的参考。",
+      "whyToday": "在工具和 Agent 扎堆的候选池里，它提供了难得的纯粹小游戏。",
+      "audience": "想放松几分钟或寻找小游戏灵感的人",
+      "editorialTags": [
+        "有趣",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "lightpanda-io/browser",
+      "githubUrl": "https://github.com/lightpanda-io/browser",
+      "canonicalUrl": "https://github.com/lightpanda-io/browser",
+      "description": "Lightpanda: the headless browser designed for AI and automation",
+      "stars": 34628,
+      "forks": 1641,
+      "recentGrowth": 116,
+      "growthSource": "github-trending",
+      "language": "Zig",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 41.222188317500425,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 41.2,
+        "signals": [
+          "Trending 披露 +116"
+        ]
+      },
+      "plainSummary": "专为 AI 和自动化任务打造的无头浏览器",
+      "introduction": "Lightpanda 是面向 AI 与自动化的 headless browser。它适合需要程序化加载和操作网页的任务，为自动化脚本和 Agent 提供专门设计的浏览器运行环境。",
+      "whyToday": "GitHub Trending 有明确增长，同时题材比通用 Agent 更聚焦于底层浏览能力。",
+      "audience": "开发网页自动化、测试或浏览器 Agent 的工程师",
+      "editorialTags": [
+        "开发工具",
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "sdcb/SimdPaddleOCR",
+      "githubUrl": "https://github.com/sdcb/simdpaddleocr",
+      "canonicalUrl": "https://github.com/sdcb/simdpaddleocr",
+      "description": "纯 C# PP-OCRv6 推理库：多平台 SIMD 优化、较低内存占用、高正确率。",
+      "stars": 96,
+      "forks": 16,
+      "openIssues": 0,
+      "language": "C#",
+      "topics": [],
+      "createdAt": "2026-09-05T06:41:51Z",
+      "updatedAt": "2026-09-07T11:47:01Z",
+      "pushedAt": "2026-09-07T11:46:57Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 27.603697105740025,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 39.6,
+        "signals": [
+          "新仓约 45 stars/day",
+          "0 天内有更新"
+        ]
+      },
+      "plainSummary": "用纯 C# 在多平台上运行更省内存的 PP-OCRv6",
+      "introduction": "这是纯 C# 的 PP-OCRv6 推理库，强调多平台 SIMD 优化、较低内存占用和高正确率。适合在 .NET 应用里直接加入图片文字识别，而不必切换到另一套语言环境。",
+      "whyToday": "项目近期活跃，对 C# 生态提供了清晰、可落地的 OCR 选择。",
+      "audience": ".NET 开发者和需要本地文字识别的团队",
+      "editorialTags": [
+        "开发工具",
+        "效率",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "int64ago/vistep",
+      "githubUrl": "https://github.com/int64ago/vistep",
+      "canonicalUrl": "https://github.com/int64ago/vistep",
+      "description": "Visualize Every Step with AI — bilingual visual explanations, interactive models and synchronized narration.",
+      "stars": 101,
+      "forks": 5,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "topics": [
+        "astro",
+        "bilingual",
+        "education",
+        "react",
+        "simulation",
+        "threejs",
+        "typescript",
+        "visualization"
+      ],
+      "createdAt": "2026-09-05T03:34:58Z",
+      "updatedAt": "2026-09-07T11:41:10Z",
+      "pushedAt": "2026-09-06T15:40:31Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 27.546059747039987,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 39.5,
+        "signals": [
+          "新仓约 45 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "把复杂步骤变成双语动画讲解和互动模型",
+      "introduction": "它用 AI 为每个步骤制作可视化解释，支持双语内容、互动模型与同步旁白。适合把抽象过程拆开演示，让学习者一边看变化、一边听说明。",
+      "whyToday": "近期增长与更新信号都不错，且把 AI 用在解释而非只生成答案。",
+      "audience": "教师、学生和制作教程的内容创作者",
+      "editorialTags": [
+        "学习",
+        "设计",
+        "AI 工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "Rion-Wu-tech/wechat-intelligence-hub",
+      "githubUrl": "https://github.com/rion-wu-tech/wechat-intelligence-hub",
+      "canonicalUrl": "https://github.com/rion-wu-tech/wechat-intelligence-hub",
+      "description": "Local-first WeChat intelligence system with a read-only CLI, Codex skills, searchable chat history, daily briefings, follow-ups and opportunity tracking.",
+      "stars": 1587,
+      "forks": 2008,
+      "openIssues": 2,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-04T15:00:53Z",
+      "updatedAt": "2026-09-07T11:51:39Z",
+      "pushedAt": "2026-09-05T22:55:53Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 569 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "在本地搜索微信聊天，并自动整理每日简报和待跟进事项",
+      "introduction": "这是一个本地优先的微信信息系统，提供只读命令行、可搜索聊天历史、每日简报、跟进和机会追踪。它还带有 Codex skills，重点是从已有聊天中整理信息而不是改写原数据。",
+      "whyToday": "项目近期持续活跃，针对高频聊天信息过载给出了具体工作流。",
+      "audience": "需要从大量微信聊天中找信息和做跟进的人",
+      "editorialTags": [
+        "效率",
+        "AI 工具",
+        "数据"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "pierrenade/short-video-generator-AI",
+      "githubUrl": "https://github.com/pierrenade/short-video-generator-ai",
+      "canonicalUrl": "https://github.com/pierrenade/short-video-generator-ai",
+      "description": "Free open-source project designed for turning youtube-viedos into viral short videos. Highlight detection, subtitles, translation, voiceover, all in one for your content.",
+      "stars": 1139,
+      "forks": 156,
+      "openIssues": 2,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "ai-video",
+        "python",
+        "short-video-maker",
+        "video-generation"
+      ],
+      "createdAt": "2026-09-05T11:55:18Z",
+      "updatedAt": "2026-09-07T10:12:32Z",
+      "pushedAt": "2026-09-05T12:12:29Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 593 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "把 YouTube 长视频自动拆成带字幕和配音的短视频",
+      "introduction": "这是一个免费开源的短视频生成项目，可从 YouTube 视频中识别亮点，并完成字幕、翻译和配音。它把长视频二次剪辑常见的几步集中到一条流程里。",
+      "whyToday": "近期活跃且获得较多关注，功能链条对内容创作者足够清晰。",
+      "audience": "需要把长视频改造成多语言短内容的创作者",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "yczz/oc-english",
+      "githubUrl": "https://github.com/yczz/oc-english",
+      "canonicalUrl": "https://github.com/yczz/oc-english",
+      "description": "养成类游戏英语学习",
+      "stars": 845,
+      "forks": 13,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-09-01T23:45:27Z",
+      "updatedAt": "2026-09-07T10:44:57Z",
+      "pushedAt": "2026-09-05T14:46:39Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 156 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "用养成游戏的方式练英语",
+      "introduction": "项目把英语学习做成养成类游戏体验。相比单纯背词或刷题，它用持续成长和游戏反馈来维持练习动力，适合希望换一种学习节奏的人。",
+      "whyToday": "近期新项目增长明显，为本期补充了面向普通学习者的非工具型选择。",
+      "audience": "想通过游戏化方式坚持英语学习的人",
+      "editorialTags": [
+        "学习",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "burakgon/stop-stutter",
+      "githubUrl": "https://github.com/burakgon/stop-stutter",
+      "canonicalUrl": "https://github.com/burakgon/stop-stutter",
+      "description": "Smoother game streaming on Mac. Automatic AWDL boost for Moonlight, GeForce NOW, Punktfunk, Parsec & Steam Link. Native SwiftUI + Liquid Glass. MIT.",
+      "stars": 488,
+      "forks": 1,
+      "openIssues": 0,
+      "language": "Swift",
+      "topics": [
+        "awdl",
+        "game-streaming",
+        "geforce-now",
+        "latency",
+        "liquid-glass",
+        "macos",
+        "moonlight",
+        "parsec",
+        "steam-link",
+        "stutter",
+        "swiftui"
+      ],
+      "createdAt": "2026-09-04T20:45:06Z",
+      "updatedAt": "2026-09-07T11:51:16Z",
+      "pushedAt": "2026-09-04T21:37:23Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 191 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "自动改善 Mac 上串流游戏时的卡顿",
+      "introduction": "它针对 Moonlight、GeForce NOW、Punktfunk、Parsec 和 Steam Link 自动调整 AWDL，以改善 Mac 游戏串流平滑度。应用采用原生 SwiftUI，并明确以减少串流卡顿为目标。",
+      "whyToday": "近期新项目快速获得关注，解决的是 Mac 玩家能直接感知的体验问题。",
+      "audience": "使用 Mac 玩云游戏或局域网串流的玩家",
+      "editorialTags": [
+        "有趣",
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "yang0/handraw-style",
+      "githubUrl": "https://github.com/yang0/handraw-style",
+      "canonicalUrl": "https://github.com/yang0/handraw-style",
+      "description": "手绘风格编号画廊与双语提示词 Skill",
+      "stars": 285,
+      "forks": 48,
+      "openIssues": 0,
+      "language": "HTML",
+      "topics": [],
+      "createdAt": "2026-09-05T21:57:22Z",
+      "updatedAt": "2026-09-07T11:50:19Z",
+      "pushedAt": "2026-09-05T23:10:29Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 190 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "浏览手绘风格案例，并直接取用中英双语提示词",
+      "introduction": "这是一个手绘风格编号画廊与双语提示词 Skill。可以先按视觉案例挑风格，再使用对应的中文或英文提示词，减少只靠文字想象画面风格的成本。",
+      "whyToday": "项目近期活跃，视觉画廊与双语提示词的组合对创作者很直观。",
+      "audience": "做插画、演示或生成式视觉内容的人",
+      "editorialTags": [
+        "设计",
+        "AI 工具",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Appllama/liquid-glass-screens",
+      "githubUrl": "https://github.com/appllama/liquid-glass-screens",
+      "canonicalUrl": "https://github.com/appllama/liquid-glass-screens",
+      "description": "Explore liquid-glass welcome screens with floating stickers and interactive swipe animations.",
+      "stars": 259,
+      "forks": 25,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "topics": [
+        "animation",
+        "expo",
+        "expo-router",
+        "glassmorphism",
+        "ios",
+        "liquid-glass",
+        "mobile-development",
+        "mobile-ui",
+        "onboarding",
+        "react",
+        "react-native",
+        "react-native-animation",
+        "react-native-gesture-handler",
+        "react-native-reanimated",
+        "react-native-skia",
+        "react-native-ui",
+        "shaders",
+        "skia",
+        "typescript",
+        "ui-components"
+      ],
+      "createdAt": "2026-09-05T06:38:46Z",
+      "updatedAt": "2026-09-07T11:20:02Z",
+      "pushedAt": "2026-09-05T07:31:04Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 121 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "用可滑动贴纸探索 Liquid Glass 欢迎页设计",
+      "introduction": "项目展示一组 Liquid Glass 风格欢迎页，带悬浮贴纸和交互式滑动动画。它更像一个可直接体验的界面灵感集，适合观察材质、层次和首屏动效如何组合。",
+      "whyToday": "近期新项目起量，能为当前热门的玻璃质感界面提供具体参考。",
+      "audience": "移动端设计师和寻找欢迎页灵感的前端开发者",
+      "editorialTags": [
+        "设计",
+        "有趣",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "kitlangton/rolling-number",
+      "githubUrl": "https://github.com/kitlangton/rolling-number",
+      "canonicalUrl": "https://github.com/kitlangton/rolling-number",
+      "description": "Interruptible, locale-aware rolling numbers for the web. TypeScript core and React adapter.",
+      "stars": 108,
+      "forks": 2,
+      "openIssues": 1,
+      "language": "TypeScript",
+      "topics": [
+        "animation",
+        "odometer",
+        "react",
+        "typescript",
+        "web-animations"
+      ],
+      "createdAt": "2026-09-04T16:43:11Z",
+      "updatedAt": "2026-09-07T08:40:59Z",
+      "pushedAt": "2026-09-06T01:45:48Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 26.735796991460894,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 34.7,
+        "signals": [
+          "新仓约 40 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "让网页数字滚动切换，同时照顾不同语言格式",
+      "introduction": "这是一个可中断、支持 locale 的网页滚动数字组件，包含 TypeScript 核心和 React 适配器。适合金额、指标、倒计时等需要动态变化但又要正确显示本地数字格式的界面。",
+      "whyToday": "项目近期保持更新，把常见动效做成了可复用且国际化的组件。",
+      "audience": "前端开发者和数据界面设计师",
+      "editorialTags": [
+        "开发工具",
+        "设计",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "wide-trace/open-higgsfield",
+      "githubUrl": "https://github.com/wide-trace/open-higgsfield",
+      "canonicalUrl": "https://github.com/wide-trace/open-higgsfield",
+      "description": "A studio for image and video generation — one prompt bar, each model’s own settings, and every finished run in one gallery.",
+      "stars": 1401,
+      "forks": 25,
+      "openIssues": 1,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-08-26T06:09:58Z",
+      "updatedAt": "2026-09-07T11:01:35Z",
+      "pushedAt": "2026-09-02T17:42:39Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 34,
+        "signals": [
+          "新仓约 115 stars/day",
+          "5 天内有更新"
+        ]
+      },
+      "plainSummary": "把多种图片和视频生成模型放进同一个创作工作室",
+      "introduction": "它提供统一的图片与视频生成工作室：一个提示词输入区、每个模型各自的设置，以及集中保存所有生成结果的画廊。适合在同一界面比较模型并管理创作记录。",
+      "whyToday": "近期获得较高关注，解决了多模型创作界面分散的问题。",
+      "audience": "经常试用不同图像和视频模型的创作者",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "开源替代"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "jprx/darwin-vm",
+      "githubUrl": "https://github.com/jprx/darwin-vm",
+      "canonicalUrl": "https://github.com/jprx/darwin-vm",
+      "description": "Run iOS/ macOS in Qemu. Virtual iPhone 17, 16, 15, 14, 13, 12 and M5-M1 Apple Si Macs supported.",
+      "stars": 1056,
+      "forks": 88,
+      "openIssues": 5,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-08-27T22:24:31Z",
+      "updatedAt": "2026-09-07T10:30:27Z",
+      "pushedAt": "2026-09-03T18:50:25Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 34,
+        "signals": [
+          "新仓约 101 stars/day",
+          "4 天内有更新"
+        ]
+      },
+      "plainSummary": "用 QEMU 运行虚拟 iPhone 和 Apple Silicon Mac",
+      "introduction": "项目支持在 QEMU 中运行 iOS 与 macOS，并列出虚拟 iPhone 12 至 17 以及 M1 至 M5 Mac。它为 Apple 平台系统研究、测试和虚拟化实验提供开源入口。",
+      "whyToday": "新项目短期起量明显，在移动与桌面虚拟化方向很少见。",
+      "audience": "研究 Apple 平台、虚拟化或系统测试的开发者",
+      "editorialTags": [
+        "开发工具",
+        "学习",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "nahrek/polyledger",
+      "githubUrl": "https://github.com/nahrek/polyledger",
+      "canonicalUrl": "https://github.com/nahrek/polyledger",
+      "description": "Resumable Polymarket indexer: CLOB market metadata plus on-chain trades from Polygon, in one DuckDB file you can query with SQL",
+      "stars": 620,
+      "forks": 109,
+      "openIssues": 0,
+      "language": "Python",
+      "topics": [
+        "data-science",
+        "hypersync",
+        "polymarket",
+        "polymarketprediction-markets",
+        "prediction-market"
+      ],
+      "createdAt": "2026-09-02T17:00:13Z",
+      "updatedAt": "2026-09-06T00:03:52Z",
+      "pushedAt": "2026-09-02T19:48:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 34,
+        "signals": [
+          "新仓约 132 stars/day",
+          "5 天内有更新"
+        ]
+      },
+      "plainSummary": "把预测市场数据整理进一个可用 SQL 查询的 DuckDB 文件",
+      "introduction": "它是可恢复运行的 Polymarket 索引器，把 CLOB 市场元数据和 Polygon 链上交易汇总到单个 DuckDB 文件。用户可以直接用 SQL 查询，适合后续分析或建立自己的数据视图。",
+      "whyToday": "近期活跃且数据边界清楚，是本期较扎实的数据工具。",
+      "audience": "研究预测市场、链上交易或 DuckDB 的数据分析者",
+      "editorialTags": [
         "数据",
         "开发工具"
       ],
-      "recommendation": 3
+      "recommendation": 4
+    },
+    {
+      "name": "amosblomqvist/learn",
+      "githubUrl": "https://github.com/amosblomqvist/learn",
+      "canonicalUrl": "https://github.com/amosblomqvist/learn",
+      "description": "My AI learning system.",
+      "stars": 1527,
+      "forks": 156,
+      "openIssues": 8,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-08-24T16:45:07Z",
+      "updatedAt": "2026-09-07T11:51:15Z",
+      "pushedAt": "2026-08-25T21:49:59Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 30,
+        "signals": [
+          "新仓约 111 stars/day"
+        ]
+      },
+      "plainSummary": "一套围绕 AI 组织个人学习过程的开源系统",
+      "introduction": "项目将自己定义为 AI learning system，目标是用 AI 支持个人学习。它适合关注如何把学习材料、提问和复习组织成系统的人进一步查看和试用。",
+      "whyToday": "近期获得较多关注，为 AI 项目提供了明确的学习场景。",
+      "audience": "想搭建 AI 辅助个人学习流程的人",
+      "editorialTags": [
+        "学习",
+        "AI 工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "bryllim/workout-guide",
+      "githubUrl": "https://github.com/bryllim/workout-guide",
+      "canonicalUrl": "https://github.com/bryllim/workout-guide",
+      "description": "302 open exercise illustrations and a framework-neutral npm package by Bryl Lim",
+      "stars": 1202,
+      "forks": 183,
+      "openIssues": 1,
+      "language": "Astro",
+      "topics": [
+        "exercise",
+        "expo",
+        "fitness",
+        "npm-package",
+        "open-source",
+        "react-native",
+        "workout"
+      ],
+      "createdAt": "2026-08-24T02:14:20Z",
+      "updatedAt": "2026-09-07T11:07:26Z",
+      "pushedAt": "2026-08-26T16:05:37Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 30,
+        "signals": [
+          "新仓约 84 stars/day"
+        ]
+      },
+      "plainSummary": "302 张开放运动插图，加上一套不绑定框架的组件包",
+      "introduction": "项目提供 302 张开放的运动动作插图，并附带 framework-neutral 的 npm package。可以用于健身教学、训练计划或健康应用，而不必从零绘制动作素材。",
+      "whyToday": "近期获得大量关注，内容规模明确，对普通用户和产品开发者都容易理解。",
+      "audience": "健身内容创作者、教练和健康产品开发者",
+      "editorialTags": [
+        "学习",
+        "设计",
+        "开源替代"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "damejan80/tokentab",
+      "githubUrl": "https://github.com/damejan80/tokentab",
+      "canonicalUrl": "https://github.com/damejan80/tokentab",
+      "description": "A CLI that reads Claude Code, Codex, and Gemini CLI session logs and works out how much they cost, by model, project, and day.",
+      "stars": 1161,
+      "forks": 213,
+      "openIssues": 0,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "claude",
+        "claude-code",
+        "cursor",
+        "python",
+        "token-optimization",
+        "token-usage"
+      ],
+      "createdAt": "2026-08-27T14:16:09Z",
+      "updatedAt": "2026-09-07T09:43:20Z",
+      "pushedAt": "2026-08-27T14:20:23Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 30,
+        "signals": [
+          "新仓约 107 stars/day"
+        ]
+      },
+      "plainSummary": "从本地会话日志算清多个 AI 编程工具花了多少钱",
+      "introduction": "这是一个命令行工具，会读取 Claude Code、Codex 和 Gemini CLI 的会话日志，并按模型、项目和日期计算成本。适合复盘个人或团队的 AI 编程开销。",
+      "whyToday": "近期起量明显，正面回应多工具并用后成本难核算的问题。",
+      "audience": "同时使用多个 AI 编程助手并关心预算的人",
+      "editorialTags": [
+        "数据",
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "chrisgreg/boop",
+      "githubUrl": "https://github.com/chrisgreg/boop",
+      "canonicalUrl": "https://github.com/chrisgreg/boop",
+      "description": "A tiny, self-hosted notification inbox for developers. Something happened in one of your apps; Boop tells you on your phone.",
+      "stars": 737,
+      "forks": 35,
+      "openIssues": 3,
+      "language": "Go",
+      "topics": [],
+      "createdAt": "2026-08-28T15:38:33Z",
+      "updatedAt": "2026-09-07T09:22:11Z",
+      "pushedAt": "2026-08-30T11:34:44Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 30,
+        "signals": [
+          "新仓约 75 stars/day"
+        ]
+      },
+      "plainSummary": "给开发者用的轻量自托管手机通知收件箱",
+      "introduction": "Boop 是一个小型、自托管的通知收件箱。当你的应用里发生事件时，它会把消息送到手机上，适合用统一入口接收自己服务的简单提醒。",
+      "whyToday": "项目近期活跃，自托管和单一用途让它比大型告警平台更容易上手。",
+      "audience": "维护个人服务、脚本或小型应用的开发者",
+      "editorialTags": [
+        "效率",
+        "开源替代",
+        "开发工具"
+      ],
+      "recommendation": 4
     }
   ]
 }

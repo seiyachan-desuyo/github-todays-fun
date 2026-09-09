@@ -8,7 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
-    "refresh": "tsx scripts/refresh-edition.ts"
+    "collect": "tsx scripts/collect-editor-task.ts",
+    "validate:edition": "tsx scripts/validate-edition.ts",
+    "pipeline:prepare": "tsx scripts/daily-pipeline.ts prepare",
+    "pipeline:stage": "tsx scripts/daily-pipeline.ts stage",
+    "pipeline:finalize": "tsx scripts/daily-pipeline.ts finalize",
+    "pipeline:status": "tsx scripts/daily-pipeline.ts status",
+    "pipeline:success": "tsx scripts/daily-pipeline.ts success",
+    "bot:send": "tsx scripts/send-lark-daily.ts",
+    "refresh": "pnpm pipeline:prepare"
   },
   "engines": { "node": ">=20" },
   "dependencies": {

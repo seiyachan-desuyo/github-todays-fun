@@ -13,12 +13,7 @@ export type EditorialTag = (typeof EDITORIAL_TAGS)[number];
 export type SourceName =
   | "github-search"
   | "github-trending"
-  | "github-explore"
-  | "github-repository"
-  | "github-events"
-  | "gitdiscover"
-  | "ossinsight"
-  | "github";
+  | "github-repository";
 export type GrowthSource = "snapshot" | "github-trending";
 
 export interface SourceSnapshot {
@@ -65,8 +60,29 @@ export interface CandidateProject {
   pushedAt?: string;
   eventCount?: number;
   sources: SourceName[];
-  raw: RawProject[];
+  raw?: RawProject[];
   score?: ScoreBreakdown;
+}
+
+export interface EditorTaskCandidate {
+  repoName: string;
+  url: string;
+  description?: string;
+  readmeSummary?: string;
+  stars?: number;
+  forks?: number;
+  openIssues?: number;
+  growth?: {
+    value: number;
+    source: GrowthSource;
+  };
+  language?: string;
+  topics: string[];
+  createdAt?: string;
+  updatedAt?: string;
+  pushedAt?: string;
+  sources: SourceName[];
+  score: ScoreBreakdown;
 }
 
 export interface EditorialProject extends CandidateProject {
@@ -86,13 +102,29 @@ export interface PipelineStats {
   selectedCount: number;
 }
 
+export interface EditorTask {
+  date: string;
+  generatedAt: string;
+  editorMode: "aime";
+  targetCount: number;
+  snapshotPath: string;
+  sourceStatus: SourceSnapshot[];
+  pipelineStats: PipelineStats;
+  candidates: EditorTaskCandidate[];
+}
+
 export interface DailyEdition {
   date: string;
   issue: number;
   title: string;
+  metadata?: {
+    targetCount: number;
+    degraded: boolean;
+    degradedReason?: string;
+  };
   summary: string;
   mode: "live" | "demo";
-  editorMode?: "ai" | "deterministic" | "manual";
+  editorMode?: "aime" | "manual";
   notice?: string;
   publishedAt: string;
   sourceStatus: SourceSnapshot[];

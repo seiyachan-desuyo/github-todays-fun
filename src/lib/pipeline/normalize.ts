@@ -69,6 +69,13 @@ export function makeCandidate(input: {
   };
 }
 
+function factPriority(project: CandidateProject): number {
+  if (project.sources.includes("github-repository")) return 3;
+  if (project.sources.includes("github-search")) return 2;
+  if (project.sources.includes("github-trending")) return 1;
+  return 0;
+}
+
 export function dedupeProjects(projects: CandidateProject[]): CandidateProject[] {
   const byUrl = new Map<string, CandidateProject>();
   for (const project of projects) {
@@ -80,22 +87,25 @@ export function dedupeProjects(projects: CandidateProject[]): CandidateProject[]
     const currentGrowth = current.recentGrowth ?? -1;
     const projectGrowth = project.recentGrowth ?? -1;
     const growthWinner = projectGrowth > currentGrowth ? project : current;
+    const factWinner = factPriority(project) > factPriority(current) ? project : current;
+    const factFallback = factWinner === project ? current : project;
     byUrl.set(project.canonicalUrl, {
       ...current,
-      description: current.description ?? project.description,
-      stars: Math.max(current.stars ?? 0, project.stars ?? 0) || undefined,
-      forks: Math.max(current.forks ?? 0, project.forks ?? 0) || undefined,
-      openIssues: current.openIssues ?? project.openIssues,
+      name: factWinner.name,
+      description: factWinner.description ?? factFallback.description,
+      stars: factWinner.stars ?? factFallback.stars,
+      forks: factWinner.forks ?? factFallback.forks,
+      openIssues: factWinner.openIssues ?? factFallback.openIssues,
       recentGrowth: Math.max(currentGrowth, projectGrowth) >= 0 ? Math.max(currentGrowth, projectGrowth) : undefined,
       growthSource: growthWinner.growthSource,
-      language: current.language ?? project.language,
+      language: factWinner.language ?? factFallback.language,
       topics: [...new Set([...current.topics, ...project.topics])],
-      createdAt: current.createdAt ?? project.createdAt,
-      updatedAt: current.updatedAt ?? project.updatedAt,
-      pushedAt: current.pushedAt ?? project.pushedAt,
+      createdAt: factWinner.createdAt ?? factFallback.createdAt,
+      updatedAt: factWinner.updatedAt ?? factFallback.updatedAt,
+      pushedAt: factWinner.pushedAt ?? factFallback.pushedAt,
       eventCount: (current.eventCount ?? 0) + (project.eventCount ?? 0) || undefined,
       sources: [...new Set([...current.sources, ...project.sources])],
-      raw: [...current.raw, ...project.raw],
+      raw: [...(current.raw ?? []), ...(project.raw ?? [])],
     });
   }
   return [...byUrl.values()];

@@ -11,7 +11,7 @@ describe("GitHub Trending parser", () => {
     expect(rows[0]).toEqual({
       name: "Acme/FastRepo",
       githubUrl: "https://github.com/Acme/FastRepo",
-      description: "A fast & useful tool.",
+      description: "A fast & useful tool. A README example says 9,999 stars today.",
       language: "TypeScript",
       stars: 1234,
       forks: 56,

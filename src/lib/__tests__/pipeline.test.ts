@@ -26,6 +26,17 @@ describe("snapshot growth and ranking", () => {
     expect(applySnapshotGrowth([project], previous)[0]).toMatchObject({ recentGrowth: 20, growthSource: "snapshot" });
   });
 
+  it("defaults to the 30-project publication target", () => {
+    const projects = Array.from({ length: 35 }, (_, index) => ({
+      ...project,
+      name: `owner/repo-${index}`,
+      githubUrl: `https://github.com/owner/repo-${index}`,
+      canonicalUrl: `https://github.com/owner/repo-${index}`,
+      stars: 200 - index,
+    }));
+    expect(rankProjects(projects, new Date("2026-09-07T10:00:00Z"))).toHaveLength(30);
+  });
+
   it("scores multiple explainable signals and filters ungrounded candidates", () => {
     const score = scoreProject(project, new Date("2026-09-07T10:00:00Z"));
     expect(score.newProjectVelocity).toBeGreaterThan(0);

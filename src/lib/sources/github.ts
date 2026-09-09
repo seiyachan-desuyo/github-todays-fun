@@ -71,6 +71,26 @@ export interface TrendingRow {
   starsToday?: number;
 }
 
+function extractAnchorCount(article: string, pathSuffix: "stargazers" | "forks"): number | undefined {
+  const anchors = article.match(/<a\b[^>]*>[\s\S]*?<\/a>/gi) ?? [];
+  const anchor = anchors.find((item) => new RegExp(`href=["'][^"']+/${pathSuffix}["']`, "i").test(item));
+  if (!anchor) return undefined;
+  const text = decodeHtml(anchor);
+  const match = text.match(/(?:^|\s)([\d,]+)(?:\s|$)/);
+  return numberFrom(match?.[1]);
+}
+
+function extractTrendingGrowth(article: string): number | undefined {
+  const spans = article.match(/<span\b[^>]*>[\s\S]*?<\/span>/gi) ?? [];
+  for (const span of spans) {
+    if (!/class=["'][^"']*float-sm-right[^"']*["']/i.test(span)) continue;
+    const text = decodeHtml(span);
+    const match = text.match(/^([\d,]+)\s+stars?\s+(?:today|this week)$/i);
+    if (match) return numberFrom(match[1]);
+  }
+  return undefined;
+}
+
 export function parseTrendingHtml(html: string): TrendingRow[] {
   const articles = html.match(/<article\b[^>]*class="[^"]*Box-row[^"]*"[^>]*>[\s\S]*?<\/article>/gi) ?? [];
   return articles.flatMap((article) => {
@@ -79,17 +99,14 @@ export function parseTrendingHtml(html: string): TrendingRow[] {
     const name = `${decodeHtml(repoMatch[1])}/${decodeHtml(repoMatch[2])}`;
     const description = article.match(/<p\b[^>]*class="[^"]*col-9[^"]*"[^>]*>([\s\S]*?)<\/p>/i)?.[1];
     const language = article.match(/itemprop="programmingLanguage"[^>]*>([\s\S]*?)<\/span>/i)?.[1];
-    const stars = article.match(/href="\/[^"]+\/stargazers"[^>]*>[\s\S]*?<\/svg>\s*([\d,]+)/i)?.[1];
-    const forks = article.match(/href="\/[^"]+\/forks"[^>]*>[\s\S]*?<\/svg>\s*([\d,]+)/i)?.[1];
-    const growth = article.match(/([\d,]+)\s+stars?\s+(?:today|this week)/i)?.[1];
     return [{
       name,
       githubUrl: `${WEB_ROOT}/${name}`,
       description: description ? decodeHtml(description) : undefined,
       language: language ? decodeHtml(language) : undefined,
-      stars: numberFrom(stars),
-      forks: numberFrom(forks),
-      starsToday: numberFrom(growth),
+      stars: extractAnchorCount(article, "stargazers"),
+      forks: extractAnchorCount(article, "forks"),
+      starsToday: extractTrendingGrowth(article),
     }];
   });
 }
@@ -188,27 +205,6 @@ export async function fetchGitHubTrending(): Promise<{ projects: CandidateProjec
   };
 }
 
-export async function probeGitHubExplore(): Promise<SourceSnapshot> {
-  const fetchedAt = new Date().toISOString();
-  try {
-    const response = await fetch(`${WEB_ROOT}/explore`, { headers: { Accept: "text/html", "User-Agent": USER_AGENT }, signal: AbortSignal.timeout(TIMEOUT_MS) });
-    const html = await response.text();
-    const hasExplore = response.ok && html.length > 100_000;
-    return {
-      source: "github-explore",
-      status: hasExplore ? "degraded" : "unavailable",
-      fetchedAt,
-      rawCount: 0,
-      normalizedCount: 0,
-      message: hasExplore
-        ? `页面可访问（${Math.round(html.length / 1024)}KB），但内容混合专题/用户/仓库且无稳定公开结构；本次仅探活，不纳入候选以避免误解析`
-        : `HTTP ${response.status} 或页面结构异常`,
-    };
-  } catch (error) {
-    return { source: "github-explore", status: "unavailable", fetchedAt, message: error instanceof Error ? error.message : "请求失败" };
-  }
-}
-
 export async function probeGitHubRepository(project?: CandidateProject): Promise<SourceSnapshot> {
   const fetchedAt = new Date().toISOString();
   if (!project) return { source: "github-repository", status: "degraded", fetchedAt, message: "候选池为空，未执行仓库详情探针" };
@@ -219,18 +215,6 @@ export async function probeGitHubRepository(project?: CandidateProject): Promise
     return { source: "github-repository", status: "ok", fetchedAt, rawCount: 1, normalizedCount: 1, message: `仓库详情 API 可用，已验证 ${project.name}` };
   } catch (error) {
     return { source: "github-repository", status: "unavailable", fetchedAt, message: error instanceof Error ? error.message : "请求失败" };
-  }
-}
-
-export async function probeGitHubEvents(): Promise<SourceSnapshot> {
-  const fetchedAt = new Date().toISOString();
-  try {
-    const response = await fetch(`${API_ROOT}/events?per_page=10`, { headers: headers(), signal: AbortSignal.timeout(TIMEOUT_MS) });
-    if (!response.ok) return responseStatus("github-events", fetchedAt, response, `HTTP ${response.status}，可选活跃度信号跳过，不阻塞日报`);
-    const payload = await response.json() as unknown[];
-    return { source: "github-events", status: "ok", fetchedAt, rawCount: payload.length, normalizedCount: 0, message: `读取 ${payload.length} 条公共事件；只用于探活，公共流不适合直接推断全站热度` };
-  } catch (error) {
-    return { source: "github-events", status: "unavailable", fetchedAt, message: error instanceof Error ? error.message : "请求失败" };
   }
 }
 
@@ -254,7 +238,7 @@ export async function enrichFromGitHub(project: CandidateProject): Promise<Candi
       recentGrowth: project.recentGrowth,
       growthSource: project.growthSource,
       sources: [...new Set([...project.sources, ...enriched.sources])],
-      raw: [...project.raw, ...enriched.raw],
+      raw: [...(project.raw ?? []), ...(enriched.raw ?? [])],
     };
   } catch {
     return project;
