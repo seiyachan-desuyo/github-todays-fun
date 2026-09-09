@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import siteLogo from "@/assets/site-logo.png";
 import { useEffect, useMemo, useState } from "react";
 import {
   Bookmark, Check, ChevronDown, Clock3, Github, Heart, LibraryBig,
@@ -18,11 +20,7 @@ const SAVED_KEY = "github-today-saved";
 const INTEREST_KEY = "github-today-interests";
 
 function MastheadMark() {
-  return (
-    <div className="grid h-11 w-11 shrink-0 rotate-3 place-items-center rounded-2xl bg-gradient-to-br from-brand-start to-brand-end text-white shadow-lg shadow-violet-200 sm:h-12 sm:w-12">
-      <Sparkles size={24} aria-hidden="true" />
-    </div>
-  );
+  return <Image src={siteLogo} alt="GitHub 今日好玩" width={48} height={48} priority className="h-11 w-11 shrink-0 rounded-2xl object-cover shadow-lg shadow-violet-200 sm:h-12 sm:w-12" />;
 }
 
 function readLocalList(key: string): string[] {
@@ -153,7 +151,7 @@ export function DailyDiscover({ edition, editions, candidates }: {
               <span className="inline-flex items-center gap-1 rounded-full border border-white/70 bg-white/60 px-4 py-2 text-xs font-bold text-violet-700 shadow-sm backdrop-blur-xl"><Clock3 size={13} /> 约 5 分钟读完</span>
               {isDemo && <span className="rounded-full bg-amber-200 px-3 py-1.5 text-xs font-bold text-amber-900">示例刊物 · {edition.date}</span>}
             </div>
-            <h2 className="max-w-5xl bg-gradient-to-r from-[#241345] via-[#5f32db] to-[#9d74ff] bg-clip-text font-serif text-5xl font-black leading-[1.02] tracking-[-0.055em] text-transparent sm:text-7xl lg:text-[5.6rem]">今天的 GitHub 👋<br /><span>有什么好玩的？</span></h2>
+            <h2 className="max-w-5xl bg-gradient-to-r from-[#241345] via-[#5f32db] to-[#9d74ff] bg-clip-text font-serif text-5xl font-black leading-[1.02] tracking-[-0.055em] text-transparent sm:text-7xl lg:text-[5.6rem]">今天的 GitHub <span className="emoji-hand" role="img" aria-label="挥手">👋</span><br /><span>有什么好玩的？</span></h2>
             <p className="mt-7 max-w-2xl text-base leading-8 text-stone-600 sm:text-lg">{edition.summary}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <button onClick={() => chooseCategory("all")} className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-start to-brand-end px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-violet-200 transition hover:-translate-y-1 hover:shadow-2xl"><Sparkles size={16} /> 开始翻今天这期</button>
