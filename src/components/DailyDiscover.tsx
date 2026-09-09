@@ -148,8 +148,6 @@ export function DailyDiscover({ edition, editions, candidates }: {
       </header>
 
       <section className="relative overflow-hidden border-b border-orange-100 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
-        <div className="hero-orb hero-orb-one" aria-hidden="true" />
-        <div className="hero-orb hero-orb-two" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16">
           <div className="max-w-4xl">
             <div className="mb-5 flex flex-wrap items-center gap-2">
@@ -157,7 +155,7 @@ export function DailyDiscover({ edition, editions, candidates }: {
               <span className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-bold text-orange-700 shadow-sm"><Clock3 size={13} /> 约 5 分钟读完</span>
               {isDemo && <span className="rounded-full bg-amber-200 px-3 py-1.5 text-xs font-bold text-amber-900">示例刊物 · {edition.date}</span>}
             </div>
-            <h2 className="font-serif text-4xl font-black leading-tight tracking-tight text-stone-900 sm:text-6xl">今天的 GitHub，<br /><span className="text-orange-600">有什么好玩的？</span></h2>
+            <h2 className="font-serif text-4xl font-black leading-tight tracking-tight text-stone-900 sm:text-6xl">今天的 GitHub 👋<br /><span className="text-orange-600">有什么好玩的？</span></h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-stone-600 sm:text-lg">{edition.summary}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <button onClick={() => chooseCategory("all")} className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600"><Sparkles size={16} /> 开始翻今天这期</button>
