@@ -172,7 +172,7 @@ body {
 .bg-amber-200 { background-color: #c4e2ff !important; }
 .bg-stone-100 { background-color: #f2f6f7 !important; }
 .bg-stone-200 { background-color: #e8edf0 !important; }
-.bg-gradient-to-br { background-image: linear-gradient(rgba(47, 125, 246, .1) 0%, rgba(255, 255, 255, .1) 100%) !important; }
+.bg-gradient-to-br { background: transparent !important; }
 
 .bg-orange-500,
 .bg-orange-600,
@@ -215,9 +215,9 @@ body {
 .ring-violet-100 { --tw-ring-color: rgba(47, 125, 246, .20) !important; }
 .placeholder\:text-stone-400::placeholder { color: #9b978b !important; }
 
-header,
+header { background-color: transparent !important; }
 footer { background-color: rgba(255, 255, 255, .92) !important; }
-header { border-bottom: 1px solid var(--rule) !important; }
+header { border-bottom: 1px solid rgba(232, 237, 240, .72) !important; }
 footer { border-top: 1px solid var(--rule); }
 
 .hero-orb-one { background: rgba(47, 125, 246, .14); }
