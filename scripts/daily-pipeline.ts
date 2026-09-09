@@ -10,6 +10,7 @@ const STATE_ROOT = path.join(ROOT, ".daily-pipeline");
 const STAGING_ROOT = path.join(STATE_ROOT, "staging");
 const OUTPUT_ROOT = path.join(STATE_ROOT, "editor-output");
 const EDITIONS_ROOT = path.join(ROOT, "src/data/editions");
+const ENRICHED_ROOT = path.join(ROOT, "src/data/enriched-candidates");
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 
 type Stage = "prepare" | "stage" | "finalize" | "status" | "success";
@@ -131,11 +132,11 @@ async function stage(date: string): Promise<void> {
   const task = await readTask(date);
   const inputPath = path.resolve(option("input") ?? path.join(OUTPUT_ROOT, `${date}.json`));
   const output = aiEditionSchema.parse(JSON.parse(await readFile(inputPath, "utf8")));
-  const expectedCount = Math.min(task.targetCount, task.candidates.length);
-  if (output.projects.length !== expectedCount) throw new Error(`Aime 编辑结果必须包含 ${expectedCount} 项，实际 ${output.projects.length} 项`);
+  const expectedFeaturedCount = Math.min(task.targetCount, task.candidates.length);
+
   const candidates = new Map(task.candidates.map((item) => [item.url.toLowerCase().replace(/\/$/, ""), item]));
   const seen = new Set<string>();
-  const projects = output.projects.map((editorial) => {
+  const allProjects = output.projects.map((editorial) => {
     const key = editorial.githubUrl.toLowerCase().replace(/\/$/, "");
     if (seen.has(key)) throw new Error(`Aime 编辑结果重复：${editorial.githubUrl}`);
     seen.add(key);
@@ -143,11 +144,17 @@ async function stage(date: string): Promise<void> {
     if (!candidate) throw new Error(`Aime 编辑结果包含候选池外项目：${editorial.githubUrl}`);
     return projectFrom(candidate, editorial);
   });
+
+  const featuredProjects = allProjects.slice(0, expectedFeaturedCount);
+  if (featuredProjects.length !== expectedFeaturedCount) {
+    throw new Error(`Aime 编辑结果至少应包含 ${expectedFeaturedCount} 个项目以供精选，实际总计 ${allProjects.length} 个`);
+  }
+
   const degraded = task.candidates.length < task.targetCount;
   const edition: DailyEdition = {
     date,
     issue: await nextIssue(date),
-    title: degraded ? `${projects.length} 个真实 GitHub 项目，今日降级刊` : "30 个真实 GitHub 项目，今天都能玩点不一样的",
+    title: degraded ? `${featuredProjects.length} 个真实 GitHub 项目，今日降级刊` : "30 个真实 GitHub 项目，今天都能玩点不一样的",
     metadata: { targetCount: 30, degraded, ...(degraded ? { degradedReason: `当天可核验候选仅 ${task.candidates.length} 个，已全部采用且未使用虚构项目。` } : {}) },
     summary: output.summary,
     mode: "live",
@@ -155,29 +162,46 @@ async function stage(date: string): Promise<void> {
     notice: "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
     publishedAt: new Date().toISOString(),
     sourceStatus: task.sourceStatus,
-    pipelineStats: { ...task.pipelineStats, selectedCount: projects.length },
-    projects,
+    pipelineStats: { ...task.pipelineStats, selectedCount: featuredProjects.length },
+    projects: featuredProjects,
   };
+
   const stagingPath = path.join(STAGING_ROOT, `${date}.json`);
+  const stagingEnrichedPath = path.join(STAGING_ROOT, `enriched-${date}.json`);
   await atomicJson(stagingPath, edition);
+  await atomicJson(stagingEnrichedPath, { date, projects: allProjects });
   await validateEdition(date, stagingPath);
-  console.log(JSON.stringify({ ok: true, stage: "stage", date, stagingPath, selectedCount: projects.length, next: `pnpm pipeline:finalize -- --date ${date}` }, null, 2));
+  console.log(JSON.stringify({ ok: true, stage: "stage", date, stagingPath, stagingEnrichedPath, featuredCount: featuredProjects.length, totalEnriched: allProjects.length, next: `pnpm pipeline:finalize -- --date ${date}` }, null, 2));
 }
 
 async function generatedIndex(): Promise<string> {
   const dates = (await readdir(EDITIONS_ROOT)).filter((file) => /^\d{4}-\d{2}-\d{2}\.json$/.test(file)).map((file) => file.slice(0, 10)).sort().reverse();
   if (!dates.length) throw new Error("没有可发布的正式 edition");
+  const enrichedDates = (await readdir(ENRICHED_ROOT).catch(() => [])).filter((file) => /^\d{4}-\d{2}-\d{2}\.json$/.test(file)).map((file) => file.slice(0, 10));
+
   const imports = dates.map((date, index) => `import edition${index} from "./editions/${date}.json";`).join("\n");
-  return `import type { DailyEdition } from "@/lib/types";\n${imports}\n\nexport const editions = [${dates.map((_, index) => `edition${index}`).join(", ")}] as DailyEdition[];\nexport const latestEdition = editions[0];\n\nexport function getEdition(date: string): DailyEdition | undefined {\n  return editions.find((edition) => edition.date === date);\n}\n`;
+  const enrichedImports = enrichedDates.map((date, index) => `import enriched${index} from "./enriched-candidates/${date}.json";`).join("\n");
+
+  return `import type { DailyEdition, EditorialProject } from "@/lib/types";\n${imports}\n${enrichedImports}\n\nexport const editions = [${dates.map((_, index) => `edition${index}`).join(", ")}] as DailyEdition[];\nexport const latestEdition = editions[0];\n\nconst enrichedCandidates = [${enrichedDates.map((date, index) => `{ date: "${date}", projects: enriched${index}.projects as EditorialProject[] }`).join(", ")}];\n\nexport function getEdition(date: string): DailyEdition | undefined {\n  return editions.find((edition) => edition.date === date);\n}\n\nexport function getEnrichedCandidates(date: string): EditorialProject[] {\n  return enrichedCandidates.find((item) => item.date === date)?.projects ?? [];\n}\n`;
 }
 
 async function finalize(date: string): Promise<void> {
   const stagingPath = path.join(STAGING_ROOT, `${date}.json`);
+  const stagingEnrichedPath = path.join(STAGING_ROOT, `enriched-${date}.json`);
   const edition = await validateEdition(date, stagingPath);
+
   const finalPath = path.join(EDITIONS_ROOT, `${date}.json`);
+  const finalEnrichedPath = path.join(ENRICHED_ROOT, `${date}.json`);
+
   await atomicJson(finalPath, edition);
+  if (await stat(stagingEnrichedPath).catch(() => null)) {
+    await mkdir(ENRICHED_ROOT, { recursive: true });
+    const enriched = JSON.parse(await readFile(stagingEnrichedPath, "utf8"));
+    await atomicJson(finalEnrichedPath, enriched);
+  }
+
   await atomicText(path.join(ROOT, "src/data/index.ts"), await generatedIndex());
-  console.log(JSON.stringify({ ok: true, stage: "finalize", date, finalPath, selectedCount: edition.projects.length, sourceStatus: edition.sourceStatus, next: "pnpm lint && pnpm test && pnpm build，然后部署 dist；仅部署成功后运行 pipeline:success" }, null, 2));
+  console.log(JSON.stringify({ ok: true, stage: "finalize", date, finalPath, finalEnrichedPath, selectedCount: edition.projects.length, next: "pnpm lint && pnpm test && pnpm build，然后部署 dist；仅部署成功后运行 pipeline:success" }, null, 2));
 }
 
 async function status(date: string): Promise<void> {

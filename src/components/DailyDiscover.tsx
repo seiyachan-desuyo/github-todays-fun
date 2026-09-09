@@ -12,8 +12,7 @@ import {
   interestMatchCount, matchesCategory, personalizedScore, projectCategory,
   type DiscoveryCategory,
 } from "@/lib/discovery";
-import type { CandidateProject } from "@/data";
-import type { DailyEdition, EditorialTag } from "@/lib/types";
+import type { DailyEdition, EditorialProject, EditorialTag } from "@/lib/types";
 
 const SAVED_KEY = "github-today-saved";
 const INTEREST_KEY = "github-today-interests";
@@ -24,10 +23,6 @@ function MastheadMark() {
       <Sparkles size={24} aria-hidden="true" />
     </div>
   );
-}
-
-function compactNumber(value: number) {
-  return new Intl.NumberFormat("zh-CN", { notation: "compact", maximumFractionDigits: 1 }).format(value);
 }
 
 function readLocalList(key: string): string[] {
@@ -42,7 +37,7 @@ function readLocalList(key: string): string[] {
 export function DailyDiscover({ edition, editions, candidates }: {
   edition: DailyEdition;
   editions: DailyEdition[];
-  candidates: CandidateProject[];
+  candidates: EditorialProject[];
 }) {
   const [active, setActive] = useState<DiscoveryCategory>("all");
   const [query, setQuery] = useState("");
@@ -238,15 +233,20 @@ export function DailyDiscover({ edition, editions, candidates }: {
             ) : (
               <div>
                 <div className="mb-6 flex flex-col justify-between gap-3 border-b border-stone-200 pb-4 sm:flex-row sm:items-end">
-                  <div><p className="text-xs font-black uppercase tracking-widest text-orange-600">All verified candidates</p><h2 className="mt-1 font-serif text-3xl font-black">当天全部可核验候选</h2><p className="mt-2 text-sm text-stone-500">保留来源可核验的事实信息，不额外生成项目介绍。</p></div>
+                  <div><p className="text-xs font-black uppercase tracking-widest text-orange-600">All verified candidates</p><h2 className="mt-1 font-serif text-3xl font-black">当天全部可核验候选</h2><p className="mt-2 text-sm text-stone-500">基于原始描述与 README 编辑的中文介绍，供你发现更多可能。</p></div>
                   <button onClick={() => setCandidateOpen(false)} className="self-start text-sm font-bold text-stone-500 hover:text-orange-700">收起候选列表</button>
                 </div>
-                <div className="grid gap-3 md:grid-cols-2">
-                  {candidates.slice(0, candidateLimit).map((candidate) => (
-                    <a key={candidate.url} href={candidate.url} target="_blank" rel="noreferrer" className="group flex items-start justify-between gap-4 rounded-2xl border border-stone-200 bg-white p-4 transition hover:border-orange-300">
-                      <div className="min-w-0"><h3 className="truncate font-serif text-lg font-bold text-stone-900">{candidate.repoName}</h3><p className="mt-1 line-clamp-2 text-sm leading-6 text-stone-500">{candidate.description || "该项目暂未提供公开简介"}</p><div className="mt-2 flex flex-wrap gap-3 text-xs text-stone-500"><span>★ {compactNumber(candidate.stars)}</span><span>{candidate.language || "其他"}</span>{candidate.growth?.value ? <span className="font-bold text-rose-600">+{compactNumber(candidate.growth.value)}</span> : null}</div></div>
-                      <Github className="mt-1 shrink-0 text-stone-400 transition group-hover:text-orange-700" size={18} />
-                    </a>
+                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                  {candidates.slice(0, candidateLimit).map((candidate, index) => (
+                    <ProjectCard
+                      key={candidate.canonicalUrl}
+                      project={candidate}
+                      index={index}
+                      saved={saved.includes(candidate.canonicalUrl)}
+                      onToggleSaved={() => toggleSaved(candidate.canonicalUrl)}
+                      category={projectCategory(candidate, edition.date)}
+                      matchedInterest={interestMatchCount(candidate, interests) > 0}
+                    />
                   ))}
                 </div>
                 {candidateLimit < candidates.length && <div className="mt-6 text-center"><button onClick={() => setCandidateLimit((value) => Math.min(value + 30, candidates.length))} className="rounded-full bg-stone-900 px-6 py-3 text-sm font-bold text-white hover:bg-orange-600">再看 30 个</button></div>}

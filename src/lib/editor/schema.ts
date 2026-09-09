@@ -112,8 +112,14 @@ export const aimeEditionSchema = z.object({
 // 兼容历史测试/导入名；运行时主流程不再调用外部模型。
 export const aiEditionSchema = z.object({
   summary: z.string().min(10).max(180),
-  projects: z.array(editorialItemSchema.pick({ githubUrl: true, plainSummary: true, introduction: true, whyToday: true, audience: true, editorialTags: true, recommendation: true })).min(1).max(30),
+  projects: z.array(editorialItemSchema.pick({ githubUrl: true, plainSummary: true, introduction: true, whyToday: true, audience: true, editorialTags: true, recommendation: true })).min(1).max(500),
+});
+
+export const enrichedCandidatesSchema = z.object({
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  projects: z.array(editorialItemSchema),
 });
 
 export type AimeEditionOutput = z.infer<typeof aimeEditionSchema>;
 export type AiEditionOutput = z.infer<typeof aiEditionSchema>;
+export type EnrichedCandidatesOutput = z.infer<typeof enrichedCandidatesSchema>;
