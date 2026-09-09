@@ -2,114 +2,299 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import {
+  Bookmark, CalendarDays, Check, ChevronDown, Clock3, Github, Heart,
+  Menu, Search, Settings2, Sparkles, X,
+} from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
+import {
+  DISCOVERY_CATEGORIES, INTEREST_OPTIONS, SOURCE_LABELS,
+  interestMatchCount, matchesCategory, personalizedScore, projectCategory,
+  type DiscoveryCategory,
+} from "@/lib/discovery";
+import type { CandidateProject } from "@/data";
 import type { DailyEdition, EditorialTag } from "@/lib/types";
 
-const filters: Array<{ label: string; tag?: EditorialTag }> = [
-  { label: "Today" },
-  { label: "AI", tag: "AI 工具" },
-  { label: "效率", tag: "效率" },
-  { label: "有趣", tag: "有趣" },
-  { label: "设计", tag: "设计" },
-];
+const SAVED_KEY = "github-today-saved";
+const INTEREST_KEY = "github-today-interests";
 
 function MastheadMark() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 56 56" className="h-11 w-11 text-ink sm:h-12 sm:w-12">
-      <path d="M13 39c6-7 10-15 13-25M17 29c8 0 16 3 24 10M32 12l2 7 7 2-7 2-2 7-2-7-7-2 7-2 2-7Z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" />
-      <path d="M11 45c10-3 22-3 34 0" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.6" />
-    </svg>
+    <div className="grid h-11 w-11 shrink-0 rotate-3 place-items-center rounded-2xl bg-orange-500 text-white shadow-lg shadow-orange-200 sm:h-12 sm:w-12">
+      <Sparkles size={24} aria-hidden="true" />
+    </div>
   );
 }
 
-export function DailyDiscover({ edition, editions }: {
+function compactNumber(value: number) {
+  return new Intl.NumberFormat("zh-CN", { notation: "compact", maximumFractionDigits: 1 }).format(value);
+}
+
+function readLocalList(key: string): string[] {
+  try {
+    const value = JSON.parse(localStorage.getItem(key) ?? "[]");
+    return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
+export function DailyDiscover({ edition, editions, candidates }: {
   edition: DailyEdition;
-  editions: Array<{ date: string; issue: number; title: string }>;
+  editions: DailyEdition[];
+  candidates: CandidateProject[];
 }) {
-  const [active, setActive] = useState("Today");
+  const [active, setActive] = useState<DiscoveryCategory>("all");
+  const [query, setQuery] = useState("");
   const [saved, setSaved] = useState<string[]>([]);
+  const [interests, setInterests] = useState<EditorialTag[]>([]);
   const [archiveOpen, setArchiveOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [interestOpen, setInterestOpen] = useState(false);
+  const [candidateOpen, setCandidateOpen] = useState(false);
+  const [candidateLimit, setCandidateLimit] = useState(30);
+  const [storageReady, setStorageReady] = useState(false);
+  const [toast, setToast] = useState("");
 
   useEffect(() => {
-    try { setSaved(JSON.parse(localStorage.getItem("github-today-saved") ?? "[]")); } catch { setSaved([]); }
+    setSaved(readLocalList(SAVED_KEY));
+    setInterests(readLocalList(INTEREST_KEY).filter((item): item is EditorialTag => INTEREST_OPTIONS.some((option) => option.tag === item)));
+    setStorageReady(true);
   }, []);
 
+  useEffect(() => {
+    if (!toast) return;
+    const timer = window.setTimeout(() => setToast(""), 1800);
+    return () => window.clearTimeout(timer);
+  }, [toast]);
+
+  const allPublishedProjects = useMemo(() => {
+    const unique = new Map(editions.flatMap((item) => item.projects).map((project) => [project.canonicalUrl, project]));
+    return [...unique.values()];
+  }, [editions]);
+
+  const categoryCounts = useMemo(() => Object.fromEntries(DISCOVERY_CATEGORIES.map(({ id }) => [
+    id,
+    id === "saved"
+      ? allPublishedProjects.filter((project) => saved.includes(project.canonicalUrl)).length
+      : id === "for-you"
+        ? edition.projects.filter((project) => interestMatchCount(project, interests) > 0).length
+        : edition.projects.filter((project) => matchesCategory(project, id, edition.date, saved)).length,
+  ])), [allPublishedProjects, edition, interests, saved]);
+
   const projects = useMemo(() => {
-    const tag = filters.find((filter) => filter.label === active)?.tag;
-    return tag ? edition.projects.filter((project) => project.editorialTags.includes(tag)) : edition.projects;
-  }, [active, edition.projects]);
+    const normalizedQuery = query.trim().toLocaleLowerCase("zh-CN");
+    const sourceProjects = active === "saved" ? allPublishedProjects : edition.projects;
+    const result = sourceProjects.filter((project) => {
+      if (!matchesCategory(project, active, edition.date, saved)) return false;
+      if (!normalizedQuery) return true;
+      return [project.name, project.plainSummary, project.introduction, project.whyToday, project.language, ...project.editorialTags]
+        .filter(Boolean)
+        .some((value) => value?.toLocaleLowerCase("zh-CN").includes(normalizedQuery));
+    });
+    if (active === "for-you" || interests.length) {
+      return [...result].sort((a, b) => personalizedScore(b, interests) - personalizedScore(a, interests));
+    }
+    return result;
+  }, [active, allPublishedProjects, edition, interests, query, saved]);
 
   function toggleSaved(url: string) {
     setSaved((current) => {
-      const next = current.includes(url) ? current.filter((item) => item !== url) : [...current, url];
-      localStorage.setItem("github-today-saved", JSON.stringify(next));
+      const isRemoving = current.includes(url);
+      const next = isRemoving ? current.filter((item) => item !== url) : [...current, url];
+      localStorage.setItem(SAVED_KEY, JSON.stringify(next));
+      setToast(isRemoving ? "已移出稍后看" : "已加入稍后看");
       return next;
     });
   }
 
+  function toggleInterest(tag: EditorialTag) {
+    setInterests((current) => {
+      const next = current.includes(tag) ? current.filter((item) => item !== tag) : [...current, tag];
+      localStorage.setItem(INTEREST_KEY, JSON.stringify(next));
+      return next;
+    });
+  }
+
+  function chooseCategory(category: DiscoveryCategory) {
+    setActive(category);
+    setMenuOpen(false);
+    document.getElementById("today-picks")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   const formattedDate = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "long", day: "numeric", weekday: "long" }).format(new Date(`${edition.date}T12:00:00+08:00`));
+  const calendarDate = new Date(`${edition.date}T12:00:00+08:00`);
+  const calendarYear = calendarDate.getFullYear();
+  const calendarMonth = calendarDate.getMonth();
+  const calendarDays = Array.from({ length: new Date(calendarYear, calendarMonth + 1, 0).getDate() }, (_, index) => index + 1);
+  const calendarOffset = new Date(calendarYear, calendarMonth, 1).getDay();
+  const editionByDate = new Map(editions.map((item) => [item.date, item]));
+  const isDemo = edition.mode === "demo";
 
   return (
-    <main className="min-h-screen bg-paper text-ink">
-      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
-        <header className="border-b border-ink/80">
-          <div className="grid items-end gap-8 py-7 sm:py-9 lg:grid-cols-[1fr_auto]">
-            <Link href="/" className="group flex items-center gap-4 sm:gap-5" aria-label="GitHub 今日好玩首页">
+    <main className="min-h-screen bg-stone-50 text-stone-900">
+      {toast && <div role="status" className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full bg-stone-900 px-5 py-3 text-sm font-bold text-white shadow-xl"><Check className="mr-2 inline" size={15} />{toast}</div>}
+
+      <header className="border-b border-orange-100 bg-amber-50">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="flex min-h-20 items-center justify-between gap-5 py-4">
+            <Link href="/" className="group flex min-w-0 items-center gap-3" aria-label="GitHub 今日好玩首页">
               <MastheadMark />
-              <div>
-                <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.28em] text-accent">GitHub Daily Review</p>
-                <h1 className="font-serif text-[clamp(2rem,4vw,3.6rem)] font-semibold leading-none tracking-[-0.04em]">GitHub 今日好玩</h1>
+              <div className="min-w-0">
+                <p className="text-xs font-bold uppercase tracking-widest text-orange-600">Daily Open-source Zine</p>
+                <h1 className="truncate font-serif text-2xl font-black tracking-tight sm:text-3xl">GitHub 今日好玩</h1>
               </div>
             </Link>
-            <div className="flex items-end justify-between gap-8 border-t border-ink/15 pt-4 text-xs lg:border-0 lg:pt-0">
-              <div><p className="mb-1 text-ink/45">出版日期</p><p className="font-semibold">{formattedDate}</p></div>
-              <div><p className="mb-1 text-ink/45">刊号</p><p className="font-semibold">NO. {String(edition.issue).padStart(3, "0")}</p></div>
+            <div className="hidden items-center gap-5 text-xs text-stone-500 md:flex">
+              <span>{formattedDate}</span>
+              <span className="rounded-full border border-orange-200 bg-white px-3 py-1.5 font-bold text-stone-700">第 {String(edition.issue).padStart(3, "0")} 期</span>
             </div>
           </div>
+        </div>
+      </header>
 
-          <nav className="relative flex min-h-12 items-center justify-between border-t border-ink/80" aria-label="栏目导航">
-            <button className="flex items-center gap-2 py-3 text-xs font-semibold md:hidden" onClick={() => setMenuOpen((value) => !value)} aria-expanded={menuOpen}>
-              {menuOpen ? <X size={16} /> : <Menu size={16} />} 栏目
-            </button>
-            <div className={`${menuOpen ? "flex" : "hidden"} absolute left-0 top-12 z-30 w-full flex-col border-b border-ink bg-paper py-2 md:static md:flex md:w-auto md:flex-row md:items-center md:border-0 md:py-0`}>
-              {filters.map((filter) => (
-                <button key={filter.label} onClick={() => { setActive(filter.label); setMenuOpen(false); }} className={`border-b border-ink/10 px-0 py-3 text-left text-sm transition md:border-0 md:px-5 md:py-4 md:first:pl-0 ${active === filter.label ? "font-bold text-ink underline decoration-accent decoration-2 underline-offset-8" : "text-ink/55 hover:text-ink"}`}>
-                  {filter.label}
+      <section className="relative overflow-hidden border-b border-orange-100 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
+        <div className="hero-orb hero-orb-one" aria-hidden="true" />
+        <div className="hero-orb hero-orb-two" aria-hidden="true" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-5 lg:items-end">
+          <div className="lg:col-span-3">
+            <div className="mb-5 flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-stone-900 px-3 py-1.5 text-xs font-bold text-white">今日 30 个</span>
+              <span className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-bold text-orange-700 shadow-sm"><Clock3 size={13} /> 约 5 分钟读完</span>
+              {isDemo && <span className="rounded-full bg-amber-200 px-3 py-1.5 text-xs font-bold text-amber-900">示例刊物 · {edition.date}</span>}
+            </div>
+            <h2 className="font-serif text-4xl font-black leading-tight tracking-tight text-stone-900 sm:text-6xl">今天的 GitHub，<br /><span className="text-orange-600">有什么好玩的？</span></h2>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-stone-600 sm:text-lg">{edition.summary}</p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <button onClick={() => chooseCategory("all")} className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5 hover:bg-orange-600"><Sparkles size={16} /> 开始翻今天这期</button>
+              <button onClick={() => setInterestOpen(true)} className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-5 py-3 text-sm font-bold text-stone-700 transition hover:border-violet-300 hover:text-violet-700"><Settings2 size={16} /> {interests.length ? `已选 ${interests.length} 个兴趣` : "告诉我你爱看什么"}</button>
+            </div>
+          </div>
+          <aside className="magazine-note lg:col-span-2">
+            <p className="text-xs font-black uppercase tracking-widest text-orange-600">Editor&apos;s Note</p>
+            <p className="mt-3 font-serif text-2xl font-bold leading-snug">不是排行榜，是一份帮你省时间的中文小杂志。</p>
+            <p className="mt-4 border-t border-stone-200 pt-4 text-sm leading-6 text-stone-500">每天精选值得打开的开源项目；想继续探索时，也可以查看当天完整的可核验候选池。</p>
+          </aside>
+        </div>
+      </section>
+
+      <div className="sticky top-0 z-30 border-b border-stone-200 bg-stone-50/95 backdrop-blur">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="flex min-h-16 items-center gap-3">
+            <button className="flex shrink-0 items-center gap-2 rounded-full border border-stone-200 bg-white px-3 py-2 text-sm font-bold md:hidden" onClick={() => setMenuOpen((value) => !value)} aria-expanded={menuOpen}>{menuOpen ? <X size={16} /> : <Menu size={16} />} 分类</button>
+            <nav className={`${menuOpen ? "category-menu-open" : ""} category-menu flex-1`} aria-label="发现分类">
+              {DISCOVERY_CATEGORIES.map((category) => (
+                <button key={category.id} onClick={() => chooseCategory(category.id)} className={`whitespace-nowrap rounded-full px-3 py-2 text-sm font-bold transition ${active === category.id ? "bg-stone-900 text-white" : "text-stone-500 hover:bg-white hover:text-orange-600"}`}>
+                  {category.shortLabel}<span className="ml-1 text-xs opacity-60">{categoryCounts[category.id] ?? 0}</span>
                 </button>
               ))}
+            </nav>
+            <div className="relative hidden w-56 shrink-0 sm:block">
+              <Search className="absolute left-3 top-2.5 text-stone-400" size={16} />
+              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜项目、用途或标签" aria-label="搜索项目" className="w-full rounded-full border border-stone-200 bg-white py-2 pl-9 pr-3 text-sm outline-none transition placeholder:text-stone-400 focus:border-orange-300 focus:ring-2 focus:ring-orange-100" />
             </div>
-            <div className="relative">
-              <button onClick={() => setArchiveOpen((value) => !value)} className="flex items-center gap-1.5 py-4 text-sm text-ink/60 hover:text-ink">Archive <ChevronDown size={14} className={archiveOpen ? "rotate-180" : ""} /></button>
+            <div className="relative block">
+              <button onClick={() => setArchiveOpen((value) => !value)} className="flex items-center gap-1 rounded-full px-3 py-2 text-sm font-bold text-stone-500 hover:bg-white" aria-expanded={archiveOpen}><CalendarDays size={15} /> 日历 <ChevronDown size={14} className={archiveOpen ? "rotate-180" : ""} /></button>
               {archiveOpen && (
-                <div className="absolute right-0 top-12 z-40 w-80 border border-ink bg-paper p-1">
-                  {editions.map((item) => <Link key={item.date} href={item.date === editions[0].date ? "/" : `/archive/${item.date}`} className="grid grid-cols-[5rem_1fr] gap-3 border-b border-ink/10 px-3 py-3 text-xs last:border-0 hover:bg-accent-soft">
-                    <span className="font-semibold">NO. {String(item.issue).padStart(3, "0")}</span><span className="text-ink/65">{item.title}</span>
-                  </Link>)}
+                <div className="absolute right-0 top-12 z-40 w-80 rounded-2xl border border-stone-200 bg-white p-4 shadow-xl">
+                  <div className="mb-3 flex items-center justify-between"><strong className="font-serif text-lg">{calendarYear} 年 {calendarMonth + 1} 月</strong><span className="text-xs text-stone-500">红色日期可查看</span></div>
+                  <div className="grid grid-cols-7 gap-1 text-center text-xs text-stone-500">{["日", "一", "二", "三", "四", "五", "六"].map((day) => <span key={day} className="py-1 font-bold">{day}</span>)}</div>
+                  <div className="grid grid-cols-7 gap-1 text-center text-sm">
+                    {Array.from({ length: calendarOffset }).map((_, index) => <span key={`empty-${index}`} />)}
+                    {calendarDays.map((day) => {
+                      const date = `${calendarYear}-${String(calendarMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+                      const available = editionByDate.get(date);
+                      const className = `grid h-9 place-items-center rounded-full ${available ? "bg-orange-50 font-black text-orange-700 hover:bg-orange-500 hover:text-white" : "text-stone-400"} ${date === edition.date ? "ring-2 ring-orange-200" : ""}`;
+                      return available ? <Link key={date} href={date === editions[0].date ? "/" : `/archive/${date}`} className={className} title={available.title}>{day}</Link> : <span key={date} className={className}>{day}</span>;
+                    })}
+                  </div>
                 </div>
               )}
             </div>
-          </nav>
-        </header>
+          </div>
+          <div className="pb-3 sm:hidden"><div className="relative"><Search className="absolute left-3 top-2.5 text-stone-400" size={16} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜项目、用途或标签" aria-label="搜索项目" className="w-full rounded-full border border-stone-200 bg-white py-2 pl-9 pr-3 text-sm outline-none focus:border-orange-300" /></div></div>
+        </div>
+      </div>
 
-        <section id="today-picks" className="py-10 sm:py-12">
-          <div className="mb-7 flex items-end justify-between border-b border-ink/80 pb-4">
-            <div className="flex items-baseline gap-4"><span className="text-xs font-bold text-accent">SECTION 01</span><h2 className="font-serif text-2xl sm:text-3xl">今日精选</h2></div>
-            <span className="text-xs text-ink/45">{String(projects.length).padStart(2, "0")} PROJECTS</span>
+      <section id="today-picks" className="scroll-mt-24 py-10 sm:py-14">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="mb-8 flex flex-col justify-between gap-4 border-b border-stone-200 pb-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-xs font-black uppercase tracking-widest text-orange-600">Today&apos;s Picks · {String(projects.length).padStart(2, "0")}</p>
+              <h2 className="mt-1 font-serif text-3xl font-black sm:text-4xl">{DISCOVERY_CATEGORIES.find((item) => item.id === active)?.label}</h2>
+              {active === "for-you" && <p className="mt-2 text-sm text-stone-500">兴趣匹配越多，越靠前；事实热度与编辑推荐也会参与排序。</p>}
+            </div>
+            <div className="flex items-center gap-2 text-xs text-stone-500"><span className={`h-2 w-2 rounded-full ${storageReady ? "bg-emerald-500" : "animate-pulse bg-amber-400"}`} /> {storageReady ? "收藏与兴趣已保存在本机" : "正在读取你的偏好"}</div>
           </div>
 
           {projects.length ? (
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {projects.map((project, index) => (
-                <ProjectCard key={project.canonicalUrl} project={project} index={index} saved={saved.includes(project.canonicalUrl)} onToggleSaved={() => toggleSaved(project.canonicalUrl)} />
-              ))}
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {projects.map((project, index) => <ProjectCard key={project.canonicalUrl} project={project} index={index} saved={saved.includes(project.canonicalUrl)} onToggleSaved={() => toggleSaved(project.canonicalUrl)} category={projectCategory(project, edition.date)} matchedInterest={interestMatchCount(project, interests) > 0} />)}
             </div>
           ) : (
-            <div className="border border-ink/15 py-20 text-center"><p className="font-serif text-2xl">这个栏目今天还没有项目。</p><button className="mt-5 border-b border-ink text-sm" onClick={() => setActive("Today")}>回到 Today</button></div>
+            <div className="rounded-3xl border border-dashed border-orange-200 bg-orange-50 px-6 py-20 text-center">
+              {active === "saved" ? <Bookmark className="mx-auto text-orange-400" size={34} /> : <Search className="mx-auto text-orange-400" size={34} />}
+              <p className="mt-4 font-serif text-2xl font-bold">{active === "saved" ? "稍后看还是空的" : "这次没搜到，换个说法试试"}</p>
+              <p className="mt-2 text-sm text-stone-500">{active === "saved" ? "看到喜欢的项目，点卡片右上角的书签就能收进来。" : "可以搜索项目名、用途、语言或中文标签。"}</p>
+              <button className="mt-5 rounded-full bg-stone-900 px-4 py-2 text-sm font-bold text-white" onClick={() => { setActive("all"); setQuery(""); }}>看看全部 30 个</button>
+            </div>
           )}
+        </div>
+      </section>
+
+      {candidates.length > 0 && (
+        <section className="border-t border-stone-200 pb-12 sm:pb-16">
+          <div className="mx-auto max-w-7xl px-5 pt-8 sm:px-8">
+            {!candidateOpen ? (
+              <div className="text-center">
+                <button onClick={() => setCandidateOpen(true)} className="inline-flex items-center gap-2 rounded-full border border-orange-300 bg-white px-6 py-3 text-sm font-black text-orange-700 transition hover:bg-orange-500 hover:text-white">
+                  查看全部 {candidates.length} 个可核验候选 <ChevronDown size={16} />
+                </button>
+                <p className="mt-3 text-xs text-stone-500">精选 30 个还没看够？继续浏览当天完整候选池。</p>
+              </div>
+            ) : (
+              <div>
+                <div className="mb-6 flex flex-col justify-between gap-3 border-b border-stone-200 pb-4 sm:flex-row sm:items-end">
+                  <div><p className="text-xs font-black uppercase tracking-widest text-orange-600">All verified candidates</p><h2 className="mt-1 font-serif text-3xl font-black">当天全部可核验候选</h2><p className="mt-2 text-sm text-stone-500">保留来源可核验的事实信息，不额外生成项目介绍。</p></div>
+                  <button onClick={() => setCandidateOpen(false)} className="self-start text-sm font-bold text-stone-500 hover:text-orange-700">收起候选列表</button>
+                </div>
+                <div className="grid gap-3 md:grid-cols-2">
+                  {candidates.slice(0, candidateLimit).map((candidate) => (
+                    <a key={candidate.url} href={candidate.url} target="_blank" rel="noreferrer" className="group flex items-start justify-between gap-4 rounded-2xl border border-stone-200 bg-white p-4 transition hover:border-orange-300">
+                      <div className="min-w-0"><h3 className="truncate font-serif text-lg font-bold text-stone-900">{candidate.repoName}</h3><p className="mt-1 line-clamp-2 text-sm leading-6 text-stone-500">{candidate.description || "该项目暂未提供公开简介"}</p><div className="mt-2 flex flex-wrap gap-3 text-xs text-stone-500"><span>★ {compactNumber(candidate.stars)}</span><span>{candidate.language || "其他"}</span>{candidate.growth?.value ? <span className="font-bold text-rose-600">+{compactNumber(candidate.growth.value)}</span> : null}</div></div>
+                      <Github className="mt-1 shrink-0 text-stone-400 transition group-hover:text-orange-700" size={18} />
+                    </a>
+                  ))}
+                </div>
+                {candidateLimit < candidates.length && <div className="mt-6 text-center"><button onClick={() => setCandidateLimit((value) => Math.min(value + 30, candidates.length))} className="rounded-full bg-stone-900 px-6 py-3 text-sm font-bold text-white hover:bg-orange-600">再看 30 个</button></div>}
+              </div>
+            )}
+          </div>
         </section>
-      </div>
+      )}
+
+      <section className="border-y border-stone-200 bg-white py-10">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-3">
+          <div><p className="text-xs font-black uppercase tracking-widest text-orange-600">Facts, then words</p><h2 className="mt-2 font-serif text-2xl font-black">这些内容从哪来？</h2><p className="mt-3 text-sm leading-6 text-stone-500">程序先采集可核验事实、去重并评分，再由 Aime 只根据真实 description 与可用 README 写成中文，校验通过后发布。</p></div>
+          <div className="lg:col-span-2 grid gap-3 sm:grid-cols-3">
+            {edition.sourceStatus.map((source) => <div key={source.source} className="rounded-2xl border border-stone-200 bg-stone-50 p-4"><div className="flex items-center justify-between"><Github size={18} /><span className={`rounded-full px-2 py-1 text-xs font-bold ${source.status === "ok" ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-800"}`}>{source.status === "ok" ? "正常" : "降级"}</span></div><p className="mt-3 text-sm font-bold">{SOURCE_LABELS[source.source]}</p><p className="mt-1 text-xs leading-5 text-stone-500">{source.normalizedCount ?? 0} 条可用事实</p></div>)}
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-amber-50 py-10">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 px-5 text-sm text-stone-500 sm:flex-row sm:px-8"><div><p className="font-serif text-xl font-black text-stone-900">GitHub 今日好玩</p><p className="mt-1">每天替你多逛一会儿 GitHub，少一点术语，多一点发现。</p></div><p className="flex items-center gap-1.5 sm:self-end"><Heart size={14} className="text-rose-500" /> 由真实数据与 Aime 中文编辑共同完成</p></div>
+      </footer>
+
+      {interestOpen && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-stone-900/30 p-0 backdrop-blur-sm sm:items-center sm:p-6" role="dialog" aria-modal="true" aria-labelledby="interest-title" onMouseDown={(event) => { if (event.currentTarget === event.target) setInterestOpen(false); }}>
+          <div className="w-full max-w-2xl rounded-t-3xl bg-white p-6 shadow-2xl sm:rounded-3xl sm:p-8">
+            <div className="flex items-start justify-between gap-5"><div><p className="text-xs font-black uppercase tracking-widest text-violet-600">Make it yours</p><h2 id="interest-title" className="mt-1 font-serif text-3xl font-black">你最近想看什么？</h2><p className="mt-2 text-sm text-stone-500">可多选。只保存在这台设备上，不用登录。</p></div><button onClick={() => setInterestOpen(false)} aria-label="关闭兴趣设置" className="grid h-10 w-10 place-items-center rounded-full bg-stone-100 hover:bg-stone-200"><X size={18} /></button></div>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">{INTEREST_OPTIONS.map((option) => { const selected = interests.includes(option.tag); return <button key={option.tag} onClick={() => toggleInterest(option.tag)} className={`flex items-center justify-between rounded-2xl border p-4 text-left transition ${selected ? "border-violet-300 bg-violet-50 ring-2 ring-violet-100" : "border-stone-200 hover:border-orange-200 hover:bg-orange-50"}`}><span><strong className="block text-sm">{option.label}</strong><span className="mt-1 block text-xs text-stone-500">{option.hint}</span></span><span className={`grid h-6 w-6 place-items-center rounded-full ${selected ? "bg-violet-600 text-white" : "border border-stone-300"}`}>{selected && <Check size={14} />}</span></button>; })}</div>
+            <div className="mt-6 flex items-center justify-between gap-4"><button onClick={() => { setInterests([]); localStorage.setItem(INTEREST_KEY, "[]"); }} className="text-sm font-bold text-stone-400 hover:text-stone-700">清空选择</button><button onClick={() => { setInterestOpen(false); setActive("for-you"); }} className="rounded-full bg-violet-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-violet-200 hover:bg-violet-700">看看为我排的顺序</button></div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

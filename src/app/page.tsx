@@ -1,6 +1,6 @@
-import { latestEdition, editions } from "@/data";
+import { latestEdition, editions, getCandidates } from "@/data";
 import { DailyDiscover } from "@/components/DailyDiscover";
 
 export default function Home() {
-  return <DailyDiscover edition={latestEdition} editions={editions.map(({ date, issue, title }) => ({ date, issue, title }))} />;
+  return <DailyDiscover edition={latestEdition} editions={editions} candidates={getCandidates(latestEdition.date)} />;
 }
