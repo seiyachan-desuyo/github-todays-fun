@@ -1,7 +1,3 @@
-import { access, readFile } from "node:fs/promises";
-import path from "node:path";
-import type { DailyEdition } from "../src/lib/types";
-
 const API = "https://open.feishu.cn/open-apis";
 const REQUIRED = ["LARK_APP_ID", "LARK_APP_SECRET", "LARK_RECIPIENT_ID"] as const;
 
@@ -45,22 +41,11 @@ async function requestJson(url: string, init: RequestInit, attempts = 3): Promis
   throw lastError;
 }
 
-async function loadEdition(date: string): Promise<DailyEdition> {
-  const file = path.resolve(`src/data/editions/${date}.json`);
-  await access(file).catch(() => { throw new Error(`当天 edition 尚不存在：${file}；请确认 09:30 发布任务已完成`); });
-  const edition = JSON.parse(await readFile(file, "utf8")) as DailyEdition;
-  if (edition.date !== date || !Array.isArray(edition.projects) || edition.projects.length === 0) {
-    throw new Error(`edition 内容无效或日期不匹配：${file}`);
-  }
-  return edition;
-}
-
 async function main() {
   const date = option("--date") ?? process.env.EDITION_DATE ?? shanghaiDate();
   const dryRun = process.argv.includes("--dry-run");
   const websiteUrl = process.env.GITHUB_TODAY_WEBSITE_URL ?? "https://9b76bf529dfe.aime-site.bytedance.net";
-  const edition = await loadEdition(date);
-  const message = `GitHub 今日好玩 · ${edition.date}\n${edition.summary}\n${websiteUrl}`;
+  const message = `GitHub 今日好玩 · ${date}\n今天的新鲜开源项目已经更新，点击链接查看完整榜单：\n${websiteUrl}`;
 
   if (dryRun) {
     console.log(message);
