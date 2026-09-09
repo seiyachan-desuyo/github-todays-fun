@@ -125,7 +125,7 @@ export function DailyDiscover({ edition, editions, candidates }: {
       {toast && <div role="status" className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full bg-stone-900 px-5 py-3 text-sm font-bold text-white shadow-xl"><Check className="mr-2 inline" size={15} />{toast}</div>}
 
       <div className="top-gradient-shell">
-      <header className="border-b border-orange-100 bg-amber-50">
+      <header>
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="flex min-h-20 items-center justify-between gap-5 py-4">
             <Link href="/" className="group flex min-w-0 items-center gap-3" aria-label="GitHub 今日好玩首页">
