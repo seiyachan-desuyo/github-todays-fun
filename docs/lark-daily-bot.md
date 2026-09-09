@@ -13,7 +13,7 @@
 
 ## 配置
 
-参考 `.env.example`。默认接收者类型是 `open_id`，默认网站为 `https://9b76bf529dfe.aime-site.bytedance.net`，默认精选 5 项（可设 1–10）。
+参考 `.env.example`。默认接收者类型是 `open_id`，默认网站为 `https://1384e82de8f4.ida-app.bytedance.net`，默认精选 5 项（可设 1–10）。
 
 ## 手动测试
 

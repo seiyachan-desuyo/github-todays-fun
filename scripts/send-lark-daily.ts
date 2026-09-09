@@ -23,7 +23,7 @@ function requireConfig() {
     appSecret: process.env.LARK_APP_SECRET!,
     recipientId: process.env.LARK_RECIPIENT_ID!,
     recipientIdType: process.env.LARK_RECIPIENT_ID_TYPE ?? "open_id",
-    websiteUrl: process.env.GITHUB_TODAY_WEBSITE_URL ?? "https://9b76bf529dfe.aime-site.bytedance.net",
+    websiteUrl: process.env.GITHUB_TODAY_WEBSITE_URL ?? "https://1384e82de8f4.ida-app.bytedance.net",
     count: Number(process.env.LARK_HIGHLIGHT_COUNT ?? "5"),
   };
 }
@@ -60,7 +60,7 @@ async function loadEdition(date: string): Promise<DailyEdition> {
 async function main() {
   const date = option("--date") ?? process.env.EDITION_DATE ?? shanghaiDate();
   const dryRun = process.argv.includes("--dry-run");
-  const websiteUrl = process.env.GITHUB_TODAY_WEBSITE_URL ?? "https://9b76bf529dfe.aime-site.bytedance.net";
+  const websiteUrl = process.env.GITHUB_TODAY_WEBSITE_URL ?? "https://1384e82de8f4.ida-app.bytedance.net";
   const count = Number(process.env.LARK_HIGHLIGHT_COUNT ?? "5");
   const edition = await loadEdition(date);
   const card = buildDailyCard(edition, websiteUrl, count);
