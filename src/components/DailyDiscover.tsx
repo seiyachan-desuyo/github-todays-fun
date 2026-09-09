@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import {
-  Bookmark, CalendarDays, Check, ChevronDown, Clock3, Github, Heart,
+  Bookmark, Check, ChevronDown, Clock3, Github, Heart, LibraryBig,
   Menu, Search, Settings2, Sparkles, X,
 } from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -123,12 +123,6 @@ export function DailyDiscover({ edition, editions, candidates }: {
   }
 
   const formattedDate = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "long", day: "numeric", weekday: "long" }).format(new Date(`${edition.date}T12:00:00+08:00`));
-  const calendarDate = new Date(`${edition.date}T12:00:00+08:00`);
-  const calendarYear = calendarDate.getFullYear();
-  const calendarMonth = calendarDate.getMonth();
-  const calendarDays = Array.from({ length: new Date(calendarYear, calendarMonth + 1, 0).getDate() }, (_, index) => index + 1);
-  const calendarOffset = new Date(calendarYear, calendarMonth, 1).getDay();
-  const editionByDate = new Map(editions.map((item) => [item.date, item]));
   const isDemo = edition.mode === "demo";
 
   return (
@@ -194,18 +188,14 @@ export function DailyDiscover({ edition, editions, candidates }: {
               <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜项目、用途或标签" aria-label="搜索项目" className="w-full rounded-full border border-stone-200 bg-white py-2 pl-9 pr-3 text-sm outline-none transition placeholder:text-stone-400 focus:border-orange-300 focus:ring-2 focus:ring-orange-100" />
             </div>
             <div className="relative block">
-              <button onClick={() => setArchiveOpen((value) => !value)} className="flex items-center gap-1 rounded-full px-3 py-2 text-sm font-bold text-stone-500 hover:bg-white" aria-expanded={archiveOpen}><CalendarDays size={15} /> 日历 <ChevronDown size={14} className={archiveOpen ? "rotate-180" : ""} /></button>
+              <button onClick={() => setArchiveOpen((value) => !value)} className="flex items-center gap-1 rounded-full px-3 py-2 text-sm font-bold text-stone-500 hover:bg-white" aria-expanded={archiveOpen}><LibraryBig size={15} /> 第 {String(edition.issue).padStart(3, "0")} 期 <ChevronDown size={14} className={archiveOpen ? "rotate-180" : ""} /></button>
               {archiveOpen && (
-                <div className="absolute right-0 top-12 z-40 w-80 rounded-2xl border border-stone-200 bg-white p-4 shadow-xl">
-                  <div className="mb-3 flex items-center justify-between"><strong className="font-serif text-lg">{calendarYear} 年 {calendarMonth + 1} 月</strong><span className="text-xs text-stone-500">红色日期可查看</span></div>
-                  <div className="grid grid-cols-7 gap-1 text-center text-xs text-stone-500">{["日", "一", "二", "三", "四", "五", "六"].map((day) => <span key={day} className="py-1 font-bold">{day}</span>)}</div>
-                  <div className="grid grid-cols-7 gap-1 text-center text-sm">
-                    {Array.from({ length: calendarOffset }).map((_, index) => <span key={`empty-${index}`} />)}
-                    {calendarDays.map((day) => {
-                      const date = `${calendarYear}-${String(calendarMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-                      const available = editionByDate.get(date);
-                      const className = `grid h-9 place-items-center rounded-full ${available ? "bg-orange-50 font-black text-orange-700 hover:bg-orange-500 hover:text-white" : "text-stone-400"} ${date === edition.date ? "ring-2 ring-orange-200" : ""}`;
-                      return available ? <Link key={date} href={date === editions[0].date ? "/" : `/archive/${date}`} className={className} title={available.title}>{day}</Link> : <span key={date} className={className}>{day}</span>;
+                <div className="absolute right-0 top-12 z-40 w-80 overflow-hidden rounded-2xl border border-stone-200 bg-white p-2 shadow-xl">
+                  <div className="px-3 pb-2 pt-1"><p className="text-xs font-black uppercase tracking-widest text-orange-600">Past editions</p><p className="mt-1 text-sm text-stone-500">按期数浏览往期推送</p></div>
+                  <div className="max-h-80 overflow-y-auto">
+                    {editions.map((item) => {
+                      const selected = item.date === edition.date;
+                      return <Link key={item.date} href={item.date === editions[0].date ? "/" : `/archive/${item.date}`} className={`flex items-center justify-between gap-4 rounded-xl px-3 py-3 transition ${selected ? "bg-orange-50 text-orange-700" : "hover:bg-orange-50"}`}><span><strong className="block text-sm">第 {String(item.issue).padStart(3, "0")} 期</strong><span className="mt-1 block text-xs text-stone-500">{item.title}</span></span><span className="shrink-0 text-xs text-stone-400">{item.date.slice(5).replace("-", ".")}</span></Link>;
                     })}
                   </div>
                 </div>

@@ -137,51 +137,50 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   }
 }
 
-/* 复古编辑部主题：只替换色彩与表面质感，不改变现有布局和结构。 */
+/* 黄白能力市场主题：沿用轻工作台的层级、圆点背景与白色卡片。 */
 :root {
-  --paper: #f2eee9;
-  --paper-deep: #e8e1d7;
-  --ink: #211d1a;
-  --ink-soft: #655d56;
-  --accent: #8b1a1a;
-  --accent-deep: #691313;
-  --rule: #3b332e;
+  --paper: #fffdf5;
+  --paper-deep: #fff8d9;
+  --surface: #ffffff;
+  --ink: #171713;
+  --ink-soft: #6f6b5e;
+  --accent: #f2b90c;
+  --accent-deep: #ca8f00;
+  --accent-soft: #fff4b8;
+  --rule: #eee7c9;
 }
 
 body {
   background-color: var(--paper);
-  background-image:
-    radial-gradient(circle at 18% 12%, rgba(139, 26, 26, .035), transparent 28rem),
-    repeating-linear-gradient(0deg, rgba(59, 51, 46, .018) 0, rgba(59, 51, 46, .018) 1px, transparent 1px, transparent 4px);
+  background-image: radial-gradient(circle, rgba(111, 107, 94, .12) 1px, transparent 1px);
+  background-size: 16px 16px;
 }
 
-::selection { color: #fffaf3; background: var(--accent); }
+::selection { color: var(--ink); background: #ffe16a; }
 
-/* Warm paper surfaces */
-.bg-white { background-color: #f7f2eb !important; }
-.bg-stone-50 { background-color: var(--paper) !important; }
-.bg-stone-50\/95 { background-color: rgba(242, 238, 233, .95) !important; }
+.bg-white { background-color: var(--surface) !important; }
+.bg-stone-50 { background-color: rgba(255, 253, 245, .96) !important; }
+.bg-stone-50\/95 { background-color: rgba(255, 253, 245, .95) !important; }
 .bg-amber-50,
 .bg-orange-50,
 .bg-rose-50,
-.bg-violet-50 { background-color: var(--paper-deep) !important; }
+.bg-violet-50 { background-color: #fff9dd !important; }
 .bg-amber-100,
 .bg-orange-100,
 .bg-rose-100,
-.bg-violet-100 { background-color: #ddd1c4 !important; }
-.bg-amber-200 { background-color: #d7c4b2 !important; }
-.bg-stone-100 { background-color: #e5ddd3 !important; }
-.bg-stone-200 { background-color: #d6cabd !important; }
-.bg-gradient-to-br { background-image: linear-gradient(135deg, #f3eee7 0%, #e8e1d7 56%, #ded2c5 100%) !important; }
+.bg-violet-100 { background-color: #fff1ae !important; }
+.bg-amber-200 { background-color: #ffe27a !important; }
+.bg-stone-100 { background-color: #f6f3e8 !important; }
+.bg-stone-200 { background-color: #ede8d8 !important; }
+.bg-gradient-to-br { background-image: linear-gradient(135deg, #ffffff 0%, #fffbea 52%, #fff1ae 100%) !important; }
 
-/* Editorial oxblood accents */
 .bg-orange-500,
 .bg-orange-600,
 .bg-violet-600,
 .bg-violet-700,
-.bg-rose-600 { background-color: var(--accent) !important; }
+.bg-rose-600 { background-color: var(--accent) !important; color: var(--ink) !important; }
 .hover\:bg-orange-600:hover,
-.hover\:bg-violet-700:hover { background-color: var(--accent-deep) !important; }
+.hover\:bg-violet-700:hover { background-color: var(--accent-deep) !important; color: #fff !important; }
 .text-orange-400,
 .text-orange-500,
 .text-orange-600,
@@ -193,14 +192,13 @@ body {
 .text-amber-600,
 .text-amber-700,
 .text-amber-800,
-.text-amber-900 { color: var(--accent) !important; }
+.text-amber-900 { color: #a06d00 !important; }
 .hover\:text-orange-600:hover,
 .hover\:text-violet-700:hover { color: var(--accent-deep) !important; }
 
-/* Ink, secondary copy and rules */
 .text-stone-900 { color: var(--ink) !important; }
 .text-stone-700,
-.text-stone-600 { color: #463e38 !important; }
+.text-stone-600 { color: #4f4c42 !important; }
 .text-stone-500,
 .text-stone-400 { color: var(--ink-soft) !important; }
 .border-stone-100,
@@ -210,34 +208,35 @@ body {
 .border-orange-300,
 .border-violet-200,
 .border-violet-300,
-.border-amber-200 { border-color: rgba(59, 51, 46, .4) !important; }
+.border-amber-200 { border-color: var(--rule) !important; }
 .border-orange-500 { border-color: var(--accent) !important; }
 .ring-orange-100,
 .ring-orange-200,
-.ring-violet-100 { --tw-ring-color: rgba(139, 26, 26, .2) !important; }
-.placeholder\:text-stone-400::placeholder { color: #857b72 !important; }
+.ring-violet-100 { --tw-ring-color: rgba(242, 185, 12, .24) !important; }
+.placeholder\:text-stone-400::placeholder { color: #9b978b !important; }
 
 header,
-footer { background-color: var(--paper-deep) !important; }
-header { border-bottom: 3px double var(--rule) !important; }
-footer { border-top: 3px double var(--rule); }
+footer { background-color: rgba(255, 255, 255, .92) !important; }
+header { border-bottom: 1px solid var(--rule) !important; }
+footer { border-top: 1px solid var(--rule); }
 
-.hero-orb-one { background: rgba(139, 26, 26, .11); }
-.hero-orb-two { background: rgba(33, 29, 26, .08); }
+.hero-orb-one { background: rgba(255, 214, 61, .24); }
+.hero-orb-two { background: rgba(242, 185, 12, .12); }
 .magazine-note {
-  border-color: rgba(59, 51, 46, .5);
-  background: rgba(247, 242, 235, .86);
-  box-shadow: 0 18px 50px rgba(59, 28, 22, .09);
+  border-color: var(--rule);
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 12px 32px rgba(74, 64, 18, .06);
 }
-.magazine-note::after { color: rgba(139, 26, 26, .16); }
-.project-card::before { background: linear-gradient(90deg, var(--accent), #b35d4e, var(--ink)); }
-.project-card:hover { border-color: rgba(139, 26, 26, .55) !important; }
+.magazine-note::after { color: rgba(242, 185, 12, .2); }
+.project-card { box-shadow: 0 10px 28px rgba(23, 23, 19, .035); }
+.project-card::before { background: linear-gradient(90deg, #f2b90c, #ffe16a, #ca8f00); }
+.project-card:hover { border-color: rgba(242, 185, 12, .55) !important; box-shadow: 0 14px 34px rgba(74, 64, 18, .08); }
 .shadow-orange-200,
-.shadow-violet-200 { --tw-shadow-color: rgba(139, 26, 26, .18) !important; }
+.shadow-violet-200 { --tw-shadow-color: rgba(242, 185, 12, .18) !important; }
 
 @media (max-width: 767px) {
   .category-menu {
-    border-color: rgba(59, 51, 46, .4);
-    background: #f7f2eb;
+    border-color: var(--rule);
+    background: #fff;
   }
 }
