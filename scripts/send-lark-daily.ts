@@ -1,6 +1,5 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
-import { buildDailyCard } from "../src/lib/lark/daily-card";
 import type { DailyEdition } from "../src/lib/types";
 
 const API = "https://open.feishu.cn/open-apis";
@@ -24,7 +23,6 @@ function requireConfig() {
     recipientId: process.env.LARK_RECIPIENT_ID!,
     recipientIdType: process.env.LARK_RECIPIENT_ID_TYPE ?? "open_id",
     websiteUrl: process.env.GITHUB_TODAY_WEBSITE_URL ?? "https://9b76bf529dfe.aime-site.bytedance.net",
-    count: Number(process.env.LARK_HIGHLIGHT_COUNT ?? "5"),
   };
 }
 
@@ -61,12 +59,11 @@ async function main() {
   const date = option("--date") ?? process.env.EDITION_DATE ?? shanghaiDate();
   const dryRun = process.argv.includes("--dry-run");
   const websiteUrl = process.env.GITHUB_TODAY_WEBSITE_URL ?? "https://9b76bf529dfe.aime-site.bytedance.net";
-  const count = Number(process.env.LARK_HIGHLIGHT_COUNT ?? "5");
   const edition = await loadEdition(date);
-  const card = buildDailyCard(edition, websiteUrl, count);
+  const message = `GitHub 今日好玩 · ${edition.date}\n${edition.summary}\n${websiteUrl}`;
 
   if (dryRun) {
-    console.log(JSON.stringify(card, null, 2));
+    console.log(message);
     return;
   }
 
@@ -79,7 +76,7 @@ async function main() {
   const result = await requestJson(`${API}/im/v1/messages?receive_id_type=${encodeURIComponent(config.recipientIdType)}`, {
     method: "POST",
     headers: { "content-type": "application/json", authorization: `Bearer ${tokenResult.tenant_access_token}` },
-    body: JSON.stringify({ receive_id: config.recipientId, msg_type: "interactive", content: JSON.stringify(card) }),
+    body: JSON.stringify({ receive_id: config.recipientId, msg_type: "text", content: JSON.stringify({ text: message }) }),
   });
   console.log(JSON.stringify({ ok: true, date, messageId: result.data?.message_id }, null, 2));
 }
