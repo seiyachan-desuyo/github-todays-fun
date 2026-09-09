@@ -152,8 +152,10 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
 body {
   background-color: #fbffff;
-  background-image: linear-gradient(rgba(47, 125, 246, .1) 0%, rgba(255, 255, 255, .1) 24.33%);
-  background-repeat: no-repeat;
+}
+
+.top-gradient-shell {
+  background: linear-gradient(180deg, #dceaff 0%, #edf4ff 48%, #fbffff 100%);
 }
 
 ::selection { color: var(--ink); background: #bfe9df; }
@@ -217,7 +219,7 @@ body {
 
 header { background-color: transparent !important; }
 footer { background-color: rgba(255, 255, 255, .92) !important; }
-header { border-bottom: 1px solid rgba(232, 237, 240, .72) !important; }
+header { border-bottom: 0 !important; box-shadow: none !important; }
 footer { border-top: 1px solid var(--rule); }
 
 .hero-orb-one { background: rgba(47, 125, 246, .14); }

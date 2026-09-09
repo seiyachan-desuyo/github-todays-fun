@@ -124,6 +124,7 @@ export function DailyDiscover({ edition, editions, candidates }: {
     <main className="min-h-screen bg-stone-50 text-stone-900">
       {toast && <div role="status" className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full bg-stone-900 px-5 py-3 text-sm font-bold text-white shadow-xl"><Check className="mr-2 inline" size={15} />{toast}</div>}
 
+      <div className="top-gradient-shell">
       <header className="border-b border-orange-100 bg-amber-50">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="flex min-h-20 items-center justify-between gap-5 py-4">
@@ -159,6 +160,7 @@ export function DailyDiscover({ edition, editions, candidates }: {
           </div>
         </div>
       </section>
+      </div>
 
       <div className="sticky top-0 z-30 border-b border-stone-200 bg-stone-50/95 backdrop-blur">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
