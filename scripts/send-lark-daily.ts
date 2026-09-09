@@ -1,3 +1,8 @@
+import { access, readFile } from "node:fs/promises";
+import path from "node:path";
+import { buildDailyCard } from "../src/lib/lark/daily-card";
+import type { DailyEdition } from "../src/lib/types";
+
 const API = "https://open.feishu.cn/open-apis";
 const REQUIRED = ["LARK_APP_ID", "LARK_APP_SECRET", "LARK_RECIPIENT_ID"] as const;
 
@@ -19,6 +24,7 @@ function requireConfig() {
     recipientId: process.env.LARK_RECIPIENT_ID!,
     recipientIdType: process.env.LARK_RECIPIENT_ID_TYPE ?? "open_id",
     websiteUrl: process.env.GITHUB_TODAY_WEBSITE_URL ?? "https://9b76bf529dfe.aime-site.bytedance.net",
+    count: Number(process.env.LARK_HIGHLIGHT_COUNT ?? "5"),
   };
 }
 
@@ -41,14 +47,26 @@ async function requestJson(url: string, init: RequestInit, attempts = 3): Promis
   throw lastError;
 }
 
+async function loadEdition(date: string): Promise<DailyEdition> {
+  const file = path.resolve(`src/data/editions/${date}.json`);
+  await access(file).catch(() => { throw new Error(`当天 edition 尚不存在：${file}；请确认 09:30 发布任务已完成`); });
+  const edition = JSON.parse(await readFile(file, "utf8")) as DailyEdition;
+  if (edition.date !== date || !Array.isArray(edition.projects) || edition.projects.length === 0) {
+    throw new Error(`edition 内容无效或日期不匹配：${file}`);
+  }
+  return edition;
+}
+
 async function main() {
   const date = option("--date") ?? process.env.EDITION_DATE ?? shanghaiDate();
   const dryRun = process.argv.includes("--dry-run");
   const websiteUrl = process.env.GITHUB_TODAY_WEBSITE_URL ?? "https://9b76bf529dfe.aime-site.bytedance.net";
-  const message = `GitHub 今日好玩 · ${date}\n今天的新鲜开源项目已经更新，点击链接查看完整榜单：\n${websiteUrl}`;
+  const count = Number(process.env.LARK_HIGHLIGHT_COUNT ?? "5");
+  const edition = await loadEdition(date);
+  const card = buildDailyCard(edition, websiteUrl, count);
 
   if (dryRun) {
-    console.log(message);
+    console.log(JSON.stringify(card, null, 2));
     return;
   }
 
@@ -61,7 +79,7 @@ async function main() {
   const result = await requestJson(`${API}/im/v1/messages?receive_id_type=${encodeURIComponent(config.recipientIdType)}`, {
     method: "POST",
     headers: { "content-type": "application/json", authorization: `Bearer ${tokenResult.tenant_access_token}` },
-    body: JSON.stringify({ receive_id: config.recipientId, msg_type: "text", content: JSON.stringify({ text: message }) }),
+    body: JSON.stringify({ receive_id: config.recipientId, msg_type: "interactive", content: JSON.stringify(card) }),
   });
   console.log(JSON.stringify({ ok: true, date, messageId: result.data?.message_id }, null, 2));
 }

@@ -17,10 +17,19 @@ function text(value: string) {
   return { tag: "plain_text", content: value };
 }
 
+function consumerSummary(summary: string): string {
+  const cleaned = summary
+    .replace(/今天从\s*\d+\s*个可核验候选中选出\s*(\d+)\s*项/, "今天精选了 $1 个值得一看的开源项目")
+    .replace(/[；;]\s*GitHub Search[^。]*。?$/i, "。")
+    .replace(/[；;]\s*仓库详情探针[^。]*。?$/i, "。")
+    .trim();
+  return cleaned.endsWith("。") ? cleaned : `${cleaned}。`;
+}
+
 export function buildDailyCard(edition: DailyEdition, websiteUrl: string, count = DEFAULT_HIGHLIGHT_COUNT) {
   const highlights = selectHighlights(edition, count);
   const elements: Array<Record<string, unknown>> = [
-    { tag: "markdown", content: `**${edition.summary}**` },
+    { tag: "markdown", content: `**${consumerSummary(edition.summary)}**` },
     { tag: "hr" },
   ];
 
