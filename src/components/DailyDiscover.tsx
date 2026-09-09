@@ -150,8 +150,8 @@ export function DailyDiscover({ edition, editions, candidates }: {
       <section className="relative overflow-hidden border-b border-orange-100 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
         <div className="hero-orb hero-orb-one" aria-hidden="true" />
         <div className="hero-orb hero-orb-two" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-5 lg:items-end">
-          <div className="lg:col-span-3">
+        <div className="relative mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16">
+          <div className="max-w-4xl">
             <div className="mb-5 flex flex-wrap items-center gap-2">
               <span className="rounded-full bg-stone-900 px-3 py-1.5 text-xs font-bold text-white">今日 30 个</span>
               <span className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-bold text-orange-700 shadow-sm"><Clock3 size={13} /> 约 5 分钟读完</span>
@@ -164,11 +164,6 @@ export function DailyDiscover({ edition, editions, candidates }: {
               <button onClick={() => setInterestOpen(true)} className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-5 py-3 text-sm font-bold text-stone-700 transition hover:border-violet-300 hover:text-violet-700"><Settings2 size={16} /> {interests.length ? `已选 ${interests.length} 个兴趣` : "告诉我你爱看什么"}</button>
             </div>
           </div>
-          <aside className="magazine-note lg:col-span-2">
-            <p className="text-xs font-black uppercase tracking-widest text-orange-600">Editor&apos;s Note</p>
-            <p className="mt-3 font-serif text-2xl font-bold leading-snug">不是排行榜，是一份帮你省时间的中文小杂志。</p>
-            <p className="mt-4 border-t border-stone-200 pt-4 text-sm leading-6 text-stone-500">每天精选值得打开的开源项目；想继续探索时，也可以查看当天完整的可核验候选池。</p>
-          </aside>
         </div>
       </section>
 

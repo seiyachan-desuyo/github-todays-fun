@@ -164,23 +164,23 @@ body {
 .bg-amber-50,
 .bg-orange-50,
 .bg-rose-50,
-.bg-violet-50 { background-color: #edf9f3 !important; }
+.bg-violet-50 { background-color: #eef8ff !important; }
 .bg-amber-100,
 .bg-orange-100,
 .bg-rose-100,
-.bg-violet-100 { background-color: #dff5ec !important; }
-.bg-amber-200 { background-color: #c8eee0 !important; }
+.bg-violet-100 { background-color: #dceeff !important; }
+.bg-amber-200 { background-color: #c4e2ff !important; }
 .bg-stone-100 { background-color: #f2f6f7 !important; }
 .bg-stone-200 { background-color: #e8edf0 !important; }
-.bg-gradient-to-br { background-image: linear-gradient(135deg, #eef8ff 0%, #f7fbfc 48%, #edf9f3 100%) !important; }
+.bg-gradient-to-br { background-image: linear-gradient(135deg, #eef8ff 0%, #f7fbff 52%, #e3f2ff 100%) !important; }
 
 .bg-orange-500,
 .bg-orange-600,
 .bg-violet-600,
 .bg-violet-700,
-.bg-rose-600 { background: linear-gradient(110deg, #2f7df6, #37cbd1 52%, #35c98b) !important; color: #fff !important; }
+.bg-rose-600 { background: var(--accent) !important; color: #fff !important; }
 .hover\:bg-orange-600:hover,
-.hover\:bg-violet-700:hover { background: linear-gradient(110deg, #175ec4, #239da5 52%, #16875b) !important; color: #fff !important; }
+.hover\:bg-violet-700:hover { background: var(--accent-deep) !important; color: #fff !important; }
 .text-orange-400,
 .text-orange-500,
 .text-orange-600,
@@ -192,7 +192,7 @@ body {
 .text-amber-600,
 .text-amber-700,
 .text-amber-800,
-.text-amber-900 { color: #16875b !important; }
+.text-amber-900 { color: var(--accent-deep) !important; }
 .hover\:text-orange-600:hover,
 .hover\:text-violet-700:hover { color: var(--accent-deep) !important; }
 
@@ -221,7 +221,7 @@ header { border-bottom: 1px solid var(--rule) !important; }
 footer { border-top: 1px solid var(--rule); }
 
 .hero-orb-one { background: rgba(47, 125, 246, .14); }
-.hero-orb-two { background: rgba(53, 201, 139, .14); }
+.hero-orb-two { background: rgba(113, 185, 255, .14); }
 .magazine-note {
   border-color: var(--rule);
   background: rgba(255, 255, 255, .9);
@@ -232,7 +232,9 @@ footer { border-top: 1px solid var(--rule); }
 .project-card::before { background: linear-gradient(90deg, #2f7df6, #37cbd1, #35c98b); }
 .project-card:hover { border-color: rgba(47, 125, 246, .24) !important; box-shadow: 0 14px 34px rgba(15, 23, 32, .07); }
 .shadow-orange-200,
-.shadow-violet-200 { --tw-shadow-color: rgba(53, 201, 139, .18) !important; }
+.shadow-violet-200 { --tw-shadow-color: rgba(47, 125, 246, .16) !important; }
+.bg-emerald-100 { background-color: #e5f2ff !important; }
+.text-emerald-700 { color: #16875b !important; }
 
 @media (max-width: 767px) {
   .category-menu {
