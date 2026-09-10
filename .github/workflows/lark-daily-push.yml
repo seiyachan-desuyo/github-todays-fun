@@ -4,8 +4,6 @@ on:
   schedule:
     # UTC 02:07 = Asia/Shanghai 10:07。避开整点高峰，降低 GitHub 定时任务延迟或被丢弃的概率。
     - cron: "7 2 * * *"
-    # 临时验证：2026-09-10 11:05（Asia/Shanghai），验证完成后删除。
-    - cron: "5 3 * * *"
   workflow_dispatch:
     inputs:
       date:
