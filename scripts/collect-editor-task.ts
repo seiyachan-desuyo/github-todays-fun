@@ -1,5 +1,6 @@
 import { mkdir, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { excludePublishedProjects, loadPublishedRepoUrls } from "../src/lib/pipeline/history";
 import { dedupeProjects } from "../src/lib/pipeline/normalize";
 import { DAILY_EDITION_TARGET, rankProjects } from "../src/lib/pipeline/rank";
 import { applySnapshotGrowth, loadPreviousSnapshot, saveSnapshot } from "../src/lib/pipeline/snapshot";
@@ -46,9 +47,11 @@ async function main() {
 
   const allProjects = [...search.projects, ...trending.projects];
   const deduped = dedupeProjects(allProjects);
-  const repository = await probeGitHubRepository(deduped[0]);
+  const publishedRepoUrls = await loadPublishedRepoUrls(undefined, date);
+  const freshProjects = excludePublishedProjects(deduped, publishedRepoUrls);
+  const repository = await probeGitHubRepository(freshProjects[0]);
   const previous = await loadPreviousSnapshot(date);
-  const withGrowth = applySnapshotGrowth(deduped, previous);
+  const withGrowth = applySnapshotGrowth(freshProjects, previous);
   await saveSnapshot(date, withGrowth);
 
   const candidates = rankProjects(withGrowth, now, Number.POSITIVE_INFINITY).map(toTaskCandidate);

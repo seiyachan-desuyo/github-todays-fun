@@ -2,6 +2,8 @@ import { spawnSync } from "node:child_process";
 import { mkdir, readFile, readdir, rename, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { aiEditionSchema, editorTaskSchema } from "../src/lib/editor/schema";
+import { loadPublishedRepoUrls } from "../src/lib/pipeline/history";
+import { canonicalizeRepoUrl } from "../src/lib/pipeline/normalize";
 import type { DailyEdition, EditorTask, EditorTaskCandidate, EditorialProject } from "../src/lib/types";
 import { validateEdition } from "./validate-edition";
 
@@ -91,7 +93,7 @@ function projectFrom(candidate: EditorTaskCandidate, editorial: ReturnType<typeo
   return {
     name: candidate.repoName,
     githubUrl: candidate.url,
-    canonicalUrl: candidate.url.toLowerCase().replace(/\/$/, ""),
+    canonicalUrl: canonicalizeRepoUrl(candidate.url) ?? candidate.url,
     description: candidate.description,
     readme: candidate.readmeSummary,
     stars: candidate.stars,
@@ -134,11 +136,14 @@ async function stage(date: string): Promise<void> {
   const output = aiEditionSchema.parse(JSON.parse(await readFile(inputPath, "utf8")));
   const expectedFeaturedCount = Math.min(task.targetCount, task.candidates.length);
 
-  const candidates = new Map(task.candidates.map((item) => [item.url.toLowerCase().replace(/\/$/, ""), item]));
+  const candidates = new Map(task.candidates.map((item) => [canonicalizeRepoUrl(item.url), item]));
+  const publishedRepoUrls = await loadPublishedRepoUrls(EDITIONS_ROOT, date);
   const seen = new Set<string>();
   const allProjects = output.projects.map((editorial) => {
-    const key = editorial.githubUrl.toLowerCase().replace(/\/$/, "");
+    const key = canonicalizeRepoUrl(editorial.githubUrl);
+    if (!key) throw new Error(`Aime 编辑结果包含非法 GitHub 仓库地址：${editorial.githubUrl}`);
     if (seen.has(key)) throw new Error(`Aime 编辑结果重复：${editorial.githubUrl}`);
+    if (publishedRepoUrls.has(key)) throw new Error(`Aime 编辑结果包含历史期次已推送项目：${editorial.githubUrl}`);
     seen.add(key);
     const candidate = candidates.get(key);
     if (!candidate) throw new Error(`Aime 编辑结果包含候选池外项目：${editorial.githubUrl}`);
