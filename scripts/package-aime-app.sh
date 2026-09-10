@@ -12,7 +12,8 @@ pnpm lint
 pnpm test
 rm -rf "$ROOT/dist"
 pnpm build
-python3 -m py_compile runtime/server.py commands/github_today.py
+python3 -m py_compile runtime/server.py commands/github_today.py scripts/send-lark-notify.py
+python3 -m unittest scripts/test_send_lark_notify.py
 
 rm -rf "$STAGE" "$OUTPUT"
 mkdir -p "$STAGE"
@@ -20,6 +21,8 @@ mkdir -p "$STAGE"
 for path in app.json runtime commands skills dist src/data/editions README.md LICENSE; do
   cp -R "$ROOT/$path" "$STAGE/"
 done
+mkdir -p "$STAGE/scripts"
+cp "$ROOT/scripts/send-lark-notify.py" "$STAGE/scripts/"
 
 (
   cd "$RELEASE_DIR"
