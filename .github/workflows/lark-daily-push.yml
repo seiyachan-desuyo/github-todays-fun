@@ -2,8 +2,8 @@ name: GitHub 今日好玩飞书推送
 
 on:
   schedule:
-    # UTC 02:00 = Asia/Shanghai 10:00
-    - cron: "0 2 * * *"
+    # UTC 02:07 = Asia/Shanghai 10:07。避开整点高峰，降低 GitHub 定时任务延迟或被丢弃的概率。
+    - cron: "7 2 * * *"
   workflow_dispatch:
     inputs:
       date:
@@ -37,7 +37,7 @@ jobs:
           LARK_APP_ID: ${{ secrets.LARK_APP_ID }}
           LARK_APP_SECRET: ${{ secrets.LARK_APP_SECRET }}
           LARK_RECIPIENT_ID: ${{ secrets.LARK_RECIPIENT_ID }}
-          LARK_RECIPIENT_ID_TYPE: open_id
+          LARK_RECIPIENT_ID_TYPE: chat_id
           GITHUB_TODAY_WEBSITE_URL: https://1384e82de8f4.ida-app.bytedance.net
           INPUT_DATE: ${{ github.event.inputs.date }}
           INPUT_DRY_RUN: ${{ github.event.inputs.dry_run }}
