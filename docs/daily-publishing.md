@@ -87,8 +87,11 @@ npx vercel@latest deploy --prod --yes --token "$VERCEL_TOKEN"
 先访问生产 URL，确认 HTTP 可达且首页显示当天日期，再执行：
 
 ```bash
+export PIPELINE_SUCCESS_AUTHORIZATION="Bearer <token>"
 pnpm pipeline:success -- --date "$DATE" --url "$DEPLOYED_URL"
 ```
+
+`PIPELINE_SUCCESS_AUTHORIZATION` 必须是目标站点接受的完整 `Authorization` 请求头值。该值仅从环境变量读取，不要写入命令参数、代码或提交到 Git；未设置或仅包含空白时，检测会在发起请求前明确失败。
 
 只有该命令退出码为 0，Aime 才能在定时任务最终回复中向当前用户回传成功。输出包含日期、项目数、各来源状态和线上链接；无需配置飞书 Webhook。
 
@@ -105,6 +108,7 @@ pnpm pipeline:success -- --date "$DATE" --url "$DEPLOYED_URL"
 
 - `GITHUB_TOKEN`：推荐。用于提高 GitHub Search / Repository API 限额；不配置时会使用匿名额度并如实记录来源状态。
 - `VERCEL_TOKEN`：定时环境未登录 Vercel CLI 时需要，仅在部署命令中读取。
+- `PIPELINE_SUCCESS_AUTHORIZATION`：必需。`pipeline:success` 访问启用 SSO 的生产站点时使用的完整 `Authorization` 请求头值（例如 `Bearer <token>`）。
 - `EDITION_DATE`：可选兼容变量；定时任务优先显式传 `--date`。
 
 不需要 LLM API Key、Webhook、飞书用户 ID。Aime 本身负责编辑，并由定时任务最终回复通知当前用户。

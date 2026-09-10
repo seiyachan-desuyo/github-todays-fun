@@ -218,9 +218,14 @@ async function status(date: string): Promise<void> {
 async function success(date: string): Promise<void> {
   const url = option("url");
   if (!url || !/^https?:\/\//.test(url)) throw new Error("成功回执必须提供 --url https://...");
+  const authorization = process.env.PIPELINE_SUCCESS_AUTHORIZATION?.trim();
+  if (!authorization) throw new Error("成功回执缺少认证信息：请设置 PIPELINE_SUCCESS_AUTHORIZATION（例如 Bearer <token>）");
   const edition = await validateEdition(date, path.join(EDITIONS_ROOT, `${date}.json`));
   await stat(path.join(ROOT, "dist/index.html"));
-  const response = await fetch(url, { signal: AbortSignal.timeout(15_000) });
+  const response = await fetch(url, {
+    headers: { authorization },
+    signal: AbortSignal.timeout(15_000),
+  });
   if (!response.ok) throw new Error(`线上可用性检查失败：HTTP ${response.status}`);
   const html = await response.text();
   if (!html.includes(date)) throw new Error(`线上页面尚未显示 ${date}，拒绝成功回执`);
