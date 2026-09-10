@@ -1,10 +1,10 @@
 # GitHub 今日好玩飞书推送
 
-飞书推送由 Aime App 服务内的定时线程触发：每天北京时间（`Asia/Shanghai`）10:07 读取当天刊物，截取 `projects` 的前 5 项组装 CardKit 消息并发到群聊。服务在 10:07 后启动时会补跑；成功日期记录在 `AIME_PLUGIN_DATA_DIR/lark-notify-state.json`，避免服务重启后重复发送。失败会写入服务日志，并每 15 分钟重试。
+飞书推送由 **Aime 平台 cron** 触发：每天北京时间（`Asia/Shanghai`）10:07 直接执行 `scripts/send-lark-notify.py`。应用 Service 只负责提供网站和健康检查，不包含定时器、自动补跑或重试调度，因此不会与平台 cron 重复推送。
 
 ## 必需配置
 
-在 Aime 应用运行环境的 Secret/环境变量中配置：
+在 Aime 平台定时任务的 Secret/环境变量中配置：
 
 - `LARK_APP_ID`：飞书企业自建应用 App ID；
 - `LARK_APP_SECRET`：App Secret；
@@ -24,6 +24,16 @@
 
 远端不可用时自动回退到本地刊物；日期不符或项目为空时退出失败，不发送空卡片。
 
+## Aime 平台 cron
+
+定时任务每天北京时间 10:07 运行一次：
+
+```bash
+python3 scripts/send-lark-notify.py
+```
+
+日期默认按 `Asia/Shanghai` 计算，也可通过 `--date YYYY-MM-DD` 指定。调度、失败重试和执行历史统一由 Aime 平台管理，仓库内不再实现第二套定时机制。
+
 ## 手动使用
 
 ```bash
@@ -42,4 +52,4 @@ GitHub Actions 的 `schedule` 已移除，不再定时推送。需要应急补�
 - 缺少变量：脚本会明确列出缺失的环境变量；
 - `99991663` / 权限不足：确认 `im:message` 已开通、应用版本已发布、机器人已加入群；
 - 当天刊物不存在：检查出版任务是否已生成并发布当天 JSON；
-- Aime 定时运行异常：先查看 Service 日志中的 `[lark-scheduler]` 记录。
+- 定时执行异常：查看 Aime 平台 cron 的执行记录与脚本标准错误输出。
