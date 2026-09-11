@@ -63,7 +63,6 @@ export function DailyDiscover({ edition, editions, candidatePools }: {
   const [menuOpen, setMenuOpen] = useState(false);
   const [interestOpen, setInterestOpen] = useState(false);
   const [candidateOpen, setCandidateOpen] = useState(false);
-  const [candidateLimit, setCandidateLimit] = useState(30);
   const [darkMode, setDarkMode] = useState(false);
   const [storageReady, setStorageReady] = useState(false);
   const [toast, setToast] = useState("");
@@ -109,7 +108,6 @@ export function DailyDiscover({ edition, editions, candidatePools }: {
 
   useEffect(() => {
     setCandidateOpen(false);
-    setCandidateLimit(30);
   }, [displayedEdition.date]);
 
   useEffect(() => {
@@ -299,7 +297,7 @@ export function DailyDiscover({ edition, editions, candidatePools }: {
                   <button onClick={() => setCandidateOpen(false)} className="self-start text-sm font-bold text-stone-500 hover:text-orange-700">收起候选列表</button>
                 </div>
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                  {displayedCandidates.slice(0, candidateLimit).map((candidate, index) => (
+                  {displayedCandidates.map((candidate, index) => (
                     <ProjectCard
                       key={candidate.canonicalUrl}
                       project={candidate}
@@ -311,7 +309,6 @@ export function DailyDiscover({ edition, editions, candidatePools }: {
                     />
                   ))}
                 </div>
-                {candidateLimit < displayedCandidates.length && <div className="mt-6 text-center"><button onClick={() => setCandidateLimit((value) => Math.min(value + 30, displayedCandidates.length))} className="rounded-full bg-stone-900 px-6 py-3 text-sm font-bold text-white hover:bg-orange-600">再看 30 个</button></div>}
               </div>
             )}
           </div>
