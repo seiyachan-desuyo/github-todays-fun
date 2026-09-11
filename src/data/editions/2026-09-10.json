@@ -1,0 +1,1378 @@
+{
+  "date": "2026-09-10",
+  "issue": 4,
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "本期 30 个项目全部避开前三期已发布内容，覆盖 AI Agent、开发与研究工具、三维创作、音乐、游戏、安全与生活指南，并兼顾真实增长、近期活跃度和可玩性。",
+  "mode": "live",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+  "publishedAt": "2026-09-11T03:11:24.869Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-09-09T16:41:49.074Z",
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "raw": [
+        {
+          "query": "created:>=2026-09-07 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-08-27 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-09-07 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-09-09T16:41:49.103Z",
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 33 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "rawCount": 33,
+      "normalizedCount": 33,
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 13
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 20
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "degraded",
+      "fetchedAt": "2026-09-09T16:41:53.393Z",
+      "message": "HTTP 403，详情补全跳过；保留 Search/Trending 已有事实；rate limit remaining=0"
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 183,
+    "normalizedCandidateCount": 183,
+    "dedupedCandidateCount": 178,
+    "eligibleCandidateCount": 166,
+    "selectedCount": 30
+  },
+  "projects": [
+    {
+      "name": "openai/NavierStokesAndEuler",
+      "githubUrl": "https://github.com/openai/navierstokesandeuler",
+      "canonicalUrl": "https://github.com/openai/navierstokesandeuler",
+      "description": "Lean certificates accompanying Navier-Stokes and Euler results",
+      "stars": 1473,
+      "forks": 126,
+      "openIssues": 0,
+      "recentGrowth": 220,
+      "growthSource": "snapshot",
+      "language": "Lean",
+      "topics": [],
+      "createdAt": "2026-09-08T10:53:38Z",
+      "updatedAt": "2026-09-09T16:40:37Z",
+      "pushedAt": "2026-09-08T11:00:49Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +220",
+          "新仓约 750 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "用 Lean 形式化验证流体方程相关结果",
+      "introduction": "这个仓库提供与 Navier–Stokes 和 Euler 方程研究结果配套的 Lean 证明证书。它把数学结论放进形式化系统中，便于机器检查证明过程。",
+      "whyToday": "快照实增 220 星，新仓约 750 stars/day，2 天内有更新。",
+      "audience": "形式化数学、流体力学与 Lean 学习者",
+      "editorialTags": [
+        "学习",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "LBEILC/RhineLabUI",
+      "githubUrl": "https://github.com/lbeilc/rhinelabui",
+      "canonicalUrl": "https://github.com/lbeilc/rhinelabui",
+      "description": "Rhine Lab archive interface built with TypeScript and Three.js",
+      "stars": 263,
+      "forks": 38,
+      "openIssues": 1,
+      "recentGrowth": 54,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-07T18:16:23Z",
+      "updatedAt": "2026-09-09T16:28:21Z",
+      "pushedAt": "2026-09-09T12:24:49Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 40.46951799467262,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 82.5,
+        "signals": [
+          "快照实增 +54",
+          "新仓约 99 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "用 Three.js 打造莱茵生命风格的档案界面",
+      "introduction": "这是一个用 TypeScript 与 Three.js 构建的莱茵生命档案界面。它适合用来体验带三维表现的资料浏览方式，也可作为互动网页视觉的参考。",
+      "whyToday": "快照实增 54 星，新仓约 99 stars/day，且 1 天内有更新。",
+      "audience": "喜欢互动网页、三维界面与主题创作的人",
+      "editorialTags": [
+        "设计",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "gazijarin/itsgiving",
+      "githubUrl": "https://github.com/gazijarin/itsgiving",
+      "canonicalUrl": "https://github.com/gazijarin/itsgiving",
+      "description": "Express yourself in meetings (with memes, of course).",
+      "stars": 454,
+      "forks": 55,
+      "openIssues": 2,
+      "recentGrowth": 69,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-08T05:02:01Z",
+      "updatedAt": "2026-09-09T16:41:38Z",
+      "pushedAt": "2026-09-08T05:45:44Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 42.904981118614764,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 80.9,
+        "signals": [
+          "快照实增 +69",
+          "新仓约 206 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "开会时用表情梗图表达你的即时反应",
+      "introduction": "这是一个让你在会议中用 meme 表达情绪的小工具。它把原本拘谨的线上互动变得更直观，适合给团队会议增加一点轻松气氛。",
+      "whyToday": "快照实增 69 星，新仓约 206 stars/day，3 天内有更新。",
+      "audience": "远程团队、会议主持人与梗图爱好者",
+      "editorialTags": [
+        "有趣",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "ZJU-REAL/Easel",
+      "githubUrl": "https://github.com/zju-real/easel",
+      "canonicalUrl": "https://github.com/zju-real/easel",
+      "description": "An open-source AI agent for social media — discover trends, create content, publish everywhere, and learn what works across Xiaohongshu, Douyin, Zhihu, Bilibili, and more.🎨一个开源的 AI 社交媒体智能体——发现热点趋势、创作内容、一键发布至各大平台，并学习分析哪些内容真正有效，覆盖小红书、抖音、知乎、哔哩哔哩等平台。",
+      "stars": 684,
+      "forks": 84,
+      "openIssues": 2,
+      "recentGrowth": 49,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "agent",
+        "agent-skill",
+        "content-automation",
+        "content-creation",
+        "content-generation",
+        "mcp",
+        "openclaw",
+        "social-media",
+        "social-media-management"
+      ],
+      "createdAt": "2026-08-28T02:22:27Z",
+      "updatedAt": "2026-09-09T16:29:31Z",
+      "pushedAt": "2026-09-09T13:06:50Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 39.50699332842307,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.55197337448853,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 80.1,
+        "signals": [
+          "快照实增 +49",
+          "新仓约 51 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "从找热点到多平台发布的社交媒体 AI Agent",
+      "introduction": "它能发现热点、创作内容并发布到小红书、抖音、知乎和哔哩哔哩等平台。系统还会分析哪些内容有效，用反馈帮助后续创作。",
+      "whyToday": "快照实增 49 星，新仓约 51 stars/day，且 1 天内有更新。",
+      "audience": "自媒体创作者、内容团队和社媒运营者",
+      "editorialTags": [
+        "AI 工具",
+        "效率",
+        "数据"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "tigerless-labs/agent-memory",
+      "githubUrl": "https://github.com/tigerless-labs/agent-memory",
+      "canonicalUrl": "https://github.com/tigerless-labs/agent-memory",
+      "description": "Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an independent sleep-time Manage layer. Claude Code and Codex share one store. No API key.",
+      "stars": 716,
+      "forks": 40,
+      "openIssues": 10,
+      "recentGrowth": 41,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "agent-memory",
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "llm",
+        "local-first",
+        "long-term-memory",
+        "markdown",
+        "mcp",
+        "python",
+        "retrieval",
+        "sqlite"
+      ],
+      "createdAt": "2026-09-01T21:52:29Z",
+      "updatedAt": "2026-09-09T16:20:19Z",
+      "pushedAt": "2026-09-09T16:24:55Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 37.746221959451326,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 79.7,
+        "signals": [
+          "快照实增 +41",
+          "新仓约 84 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "用本地 Markdown 给多个 AI Agent 共用长期记忆",
+      "introduction": "它以普通 Markdown 作为事实源，为 AI Agent 提供本地排序检索与独立的休眠期管理层。Claude Code 和 Codex 可以共享同一份记忆库，而且无需 API 密钥。",
+      "whyToday": "快照实增 41 星，新仓约 84 stars/day，且 1 天内有更新。",
+      "audience": "想为 Claude Code 或 Codex 增加长期记忆的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "数据"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "Omni-Interaction-Gander/Omni-Interaction-Agent",
+      "githubUrl": "https://github.com/omni-interaction-gander/omni-interaction-agent",
+      "canonicalUrl": "https://github.com/omni-interaction-gander/omni-interaction-agent",
+      "description": "Open-source end-to-end omni interaction agent for natural full-duplex voice collaboration, continuous audio-visual perception, and asynchronous long-horizon agentic execution.",
+      "stars": 137,
+      "forks": 8,
+      "openIssues": 1,
+      "recentGrowth": 34,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-07T05:46:59Z",
+      "updatedAt": "2026-09-09T16:02:40Z",
+      "pushedAt": "2026-09-09T14:46:16Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 35.904981118614764,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 27.32007580243764,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 75.2,
+        "signals": [
+          "快照实增 +34",
+          "新仓约 43 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "能持续看听、自然对话并异步执行任务的 Agent",
+      "introduction": "这是一个端到端的全交互 Agent，面向自然的全双工语音协作与持续音视频感知。它还支持异步执行长周期任务，尝试把实时交流和后台行动接在一起。",
+      "whyToday": "快照实增 34 星，新仓约 43 stars/day，且 1 天内有更新。",
+      "audience": "研究多模态交互、语音协作与长任务 Agent 的人",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "coccofresco/TriAevum",
+      "githubUrl": "https://github.com/coccofresco/triaevum",
+      "canonicalUrl": "https://github.com/coccofresco/triaevum",
+      "description": "Experimental native PC recompilation runtime for Ocarina of Time 3D. Windows x64, NRI/Vulkan, single-screen UI and ROM-only setup.",
+      "stars": 169,
+      "forks": 8,
+      "openIssues": 11,
+      "recentGrowth": 25,
+      "growthSource": "snapshot",
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2026-09-07T20:47:12Z",
+      "updatedAt": "2026-09-09T16:36:26Z",
+      "pushedAt": "2026-09-09T11:48:03Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 32.90307802698764,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 74.9,
+        "signals": [
+          "快照实增 +25",
+          "新仓约 66 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "在 PC 上实验运行《时之笛 3D》的原生重编译",
+      "introduction": "它是面向《塞尔达传说：时之笛 3D》的实验性 PC 原生重编译运行时。项目针对 Windows x64，采用 NRI/Vulkan、单屏界面，并要求用户自行准备 ROM。",
+      "whyToday": "快照实增 25 星，新仓约 66 stars/day，且 1 天内有更新。",
+      "audience": "复古游戏玩家、重编译技术与图形开发爱好者",
+      "editorialTags": [
+        "有趣",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "eternity4719/HowToLiveBetter",
+      "githubUrl": "https://github.com/eternity4719/howtolivebetter",
+      "canonicalUrl": "https://github.com/eternity4719/howtolivebetter",
+      "description": "按性价比排序的循证生活指南：长寿防病、急救、省钱理财、法律红线、失业与工伤、医保社保、恋爱婚育、怀孕育儿、创业与做平台合规、出国与技能。每条写明成本、收益、证据等级和原始出处，只引期刊论文与官方文件。",
+      "stars": 182,
+      "forks": 15,
+      "openIssues": 0,
+      "recentGrowth": 17,
+      "growthSource": "snapshot",
+      "language": "HTML",
+      "topics": [],
+      "createdAt": "2026-09-07T01:53:36Z",
+      "updatedAt": "2026-09-09T16:20:05Z",
+      "pushedAt": "2026-09-09T12:09:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 29.189475010096185,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.97562631146835,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 70.2,
+        "signals": [
+          "快照实增 +17",
+          "新仓约 55 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "按性价比整理、标注证据等级的生活指南",
+      "introduction": "它把健康、急救、理财、法律、社保、婚育、创业和出国等生活议题按性价比整理。每条建议都写明成本、收益、证据等级与原始出处，并限定引用期刊论文和官方文件。",
+      "whyToday": "快照实增 17 星，新仓约 55 stars/day，且 1 天内有更新。",
+      "audience": "希望用证据和成本收益判断生活选择的人",
+      "editorialTags": [
+        "学习",
+        "数据",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "achimala/dream-loop",
+      "githubUrl": "https://github.com/achimala/dream-loop",
+      "canonicalUrl": "https://github.com/achimala/dream-loop",
+      "description": "Agent skill for impressive 3D visuals using Blender + image gen + subagent critic",
+      "stars": 425,
+      "forks": 53,
+      "openIssues": 1,
+      "recentGrowth": 23,
+      "growthSource": "snapshot",
+      "topics": [],
+      "createdAt": "2026-09-07T14:19:20Z",
+      "updatedAt": "2026-09-09T16:20:35Z",
+      "pushedAt": "2026-09-07T16:14:23Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 32.094737505048094,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 70.1,
+        "signals": [
+          "快照实增 +23",
+          "新仓约 151 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "让 Blender、图像生成和子 Agent 一起打磨三维视觉",
+      "introduction": "这是一项面向三维视觉创作的 Agent Skill，把 Blender、图像生成和子 Agent 评审组合起来。它适合用循环创作与反馈的方式继续优化视觉结果。",
+      "whyToday": "快照实增 23 星，新仓约 151 stars/day，3 天内有更新。",
+      "audience": "使用 Agent 辅助 Blender 和三维视觉创作的人",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "hanyang9/UMR",
+      "githubUrl": "https://github.com/hanyang9/umr",
+      "canonicalUrl": "https://github.com/hanyang9/umr",
+      "description": "The official codebase of Unified Motion Retargeting",
+      "stars": 141,
+      "forks": 7,
+      "openIssues": 1,
+      "recentGrowth": 14,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-07T19:36:35Z",
+      "updatedAt": "2026-09-09T15:38:03Z",
+      "pushedAt": "2026-09-09T15:33:20Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 27.34823416925963,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.938105211255714,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 68.3,
+        "signals": [
+          "快照实增 +14",
+          "新仓约 54 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "把动作统一迁移到不同角色上的官方实现",
+      "introduction": "这是 Unified Motion Retargeting 的官方代码库，聚焦动作重定向。它可作为研究如何把已有动作迁移到不同角色或骨架上的实现参考。",
+      "whyToday": "快照实增 14 星，新仓约 54 stars/day，且 1 天内有更新。",
+      "audience": "计算机动画、动作迁移与三维角色研究者",
+      "editorialTags": [
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "yappologistic/Spun",
+      "githubUrl": "https://github.com/yappologistic/spun",
+      "canonicalUrl": "https://github.com/yappologistic/spun",
+      "description": "A CD-shaped music player for Linux, with local playback and Cider integration.",
+      "stars": 169,
+      "forks": 8,
+      "openIssues": 5,
+      "recentGrowth": 22,
+      "growthSource": "snapshot",
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2026-09-07T00:30:36Z",
+      "updatedAt": "2026-09-09T15:48:36Z",
+      "pushedAt": "2026-09-09T02:04:44Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 31.664933692399092,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.329944920638614,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 68,
+        "signals": [
+          "快照实增 +22",
+          "新仓约 50 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "一个长得像 CD 的 Linux 本地音乐播放器",
+      "introduction": "这是一款采用 CD 造型的 Linux 音乐播放器，支持本地播放与 Cider 集成。既能听本地音乐，也把唱片意象直接做进桌面交互。",
+      "whyToday": "快照实增 22 星，新仓约 50 stars/day，2 天内有更新。",
+      "audience": "Linux 音乐用户和喜欢拟物界面的桌面玩家",
+      "editorialTags": [
+        "有趣",
+        "设计",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "datawhalechina/zero-to-sglang",
+      "githubUrl": "https://github.com/datawhalechina/zero-to-sglang",
+      "canonicalUrl": "https://github.com/datawhalechina/zero-to-sglang",
+      "description": "Official SGLang × Datawhale course on LLM inference (中英双语): understand inference, build a mini-sglang from scratch, then read the real SGLang source and land your first PR. 《从零手搓SGLang》：读懂推理，手搓 mini-sglang，吃透 SGLang 源码。",
+      "stars": 622,
+      "forks": 46,
+      "openIssues": 7,
+      "recentGrowth": 15,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "cuda",
+        "datawhale",
+        "inference-engine",
+        "infra",
+        "kv-cache",
+        "llm",
+        "llm-inference",
+        "sglang",
+        "tutorial"
+      ],
+      "createdAt": "2026-08-27T02:24:12Z",
+      "updatedAt": "2026-09-09T16:07:29Z",
+      "pushedAt": "2026-09-09T13:01:43Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 28,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 27.369955275182875,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 67.4,
+        "signals": [
+          "快照实增 +15",
+          "新仓约 43 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "从手搓迷你实现到读懂 SGLang 源码的双语课",
+      "introduction": "这是一套 SGLang 与 Datawhale 合作的中英双语大模型推理课程。学习路径从理解推理、动手实现 mini-sglang，一直延伸到阅读真实源码并尝试提交 PR。",
+      "whyToday": "快照实增 15 星，新仓约 43 stars/day，且 1 天内有更新。",
+      "audience": "想系统学习大模型推理与 SGLang 的开发者",
+      "editorialTags": [
+        "学习",
+        "开发工具",
+        "AI 工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "amap-cvlab/ABot-Recon",
+      "githubUrl": "https://github.com/amap-cvlab/abot-recon",
+      "canonicalUrl": "https://github.com/amap-cvlab/abot-recon",
+      "description": "Streaming 3D reconstruction from only video input: Revisiting Local Context for Long-Horizon Streaming 3D Reconstruction",
+      "stars": 616,
+      "forks": 43,
+      "openIssues": 2,
+      "recentGrowth": 12,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "3d-reconstruction",
+        "abot-recon",
+        "slam"
+      ],
+      "createdAt": "2026-08-27T08:32:09Z",
+      "updatedAt": "2026-09-09T15:37:17Z",
+      "pushedAt": "2026-09-09T15:30:10Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 25.903078026987647,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 27.428598544950344,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 65.3,
+        "signals": [
+          "快照实增 +12",
+          "新仓约 44 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "仅凭视频输入进行长时流式三维重建",
+      "introduction": "它从视频输入持续生成三维重建结果，聚焦长时间流式场景中的局部上下文利用。项目适合用来了解视频驱动三维重建与 SLAM 的新实现。",
+      "whyToday": "快照实增 12 星，新仓约 44 stars/day，且 1 天内有更新。",
+      "audience": "三维重建、计算机视觉与 SLAM 研究者",
+      "editorialTags": [
+        "开发工具",
+        "学习",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "brayonpi/hexstellar",
+      "githubUrl": "https://github.com/brayonpi/hexstellar",
+      "canonicalUrl": "https://github.com/brayonpi/hexstellar",
+      "description": "Turn any AI agent into a computational researcher. HexStellar Cortex delivers software-accelerated optimization, quantum computing, scientific computing, decision intelligence, and verifiable execution through a Python CLI and API—with certainty labels, verification receipts, examples, and a free sandbox. Start instantly: pip install hexstellar",
+      "stars": 1023,
+      "forks": 116,
+      "openIssues": 0,
+      "recentGrowth": 22,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-08-27T20:53:42Z",
+      "updatedAt": "2026-09-09T16:39:08Z",
+      "pushedAt": "2026-08-27T21:07:24Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 31.664933692399092,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 61.7,
+        "signals": [
+          "快照实增 +22",
+          "新仓约 76 stars/day"
+        ]
+      },
+      "plainSummary": "把 AI Agent 接入可验证的计算研究能力",
+      "introduction": "它通过 Python CLI 与 API 为 Agent 提供优化、量子计算、科学计算和决策能力。执行结果带有确定性标签与验证回执，并提供示例和免费沙箱。",
+      "whyToday": "快照实增 22 星，新仓约 76 stars/day，计算研究型 Agent 值得关注。",
+      "audience": "科学计算、优化研究和智能决策方向的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "数据",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "fanhao375/microduck-replica",
+      "githubUrl": "https://github.com/fanhao375/microduck-replica",
+      "canonicalUrl": "https://github.com/fanhao375/microduck-replica",
+      "description": "Microduck 复刻 · 从官方 MJCF 与 Rust 源码反推出的装配图、CAD 装配体与完整电控方案 | Mechanical + electronics reconstruction of Pollen Robotics' Microduck",
+      "stars": 622,
+      "forks": 119,
+      "openIssues": 19,
+      "recentGrowth": 11,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-08-28T13:42:48Z",
+      "updatedAt": "2026-09-09T15:56:26Z",
+      "pushedAt": "2026-09-09T06:07:11Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 25.094737505048094,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.13547516214024,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 61.2,
+        "signals": [
+          "快照实增 +11",
+          "新仓约 48 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "从源码反推出 Microduck 的机械与电控复刻方案",
+      "introduction": "项目依据官方 MJCF 与 Rust 源码，反推出 Pollen Robotics Microduck 的装配图、CAD 装配体和完整电控方案。它把机械结构与电子实现集中整理，便于动手复刻。",
+      "whyToday": "快照实增 11 星，新仓约 48 stars/day，2 天内有更新。",
+      "audience": "机器人、机械设计、CAD 与硬件复刻爱好者",
+      "editorialTags": [
+        "学习",
+        "开发工具",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "cclank/clay-safari",
+      "githubUrl": "https://github.com/cclank/clay-safari",
+      "canonicalUrl": "https://github.com/cclank/clay-safari",
+      "description": "黏土风格 3D 双语动物世界 · A playful clay-style animal world built with Three.js and Blender.",
+      "stars": 155,
+      "forks": 38,
+      "openIssues": 0,
+      "recentGrowth": 7,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [
+        "blender",
+        "cloudflare-workers",
+        "education",
+        "threejs",
+        "webgl"
+      ],
+      "createdAt": "2026-09-07T13:41:44Z",
+      "updatedAt": "2026-09-09T14:04:43Z",
+      "pushedAt": "2026-09-07T13:43:16Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 21,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.967145056705075,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 58,
+        "signals": [
+          "快照实增 +7",
+          "新仓约 54 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "在浏览器逛一个黏土风格的双语三维动物世界",
+      "introduction": "这是一个用 Three.js 与 Blender 制作的黏土风格三维动物世界。它把双语内容、动物主题和 WebGL 互动结合起来，适合轻松探索。",
+      "whyToday": "快照实增 7 星，新仓约 54 stars/day，3 天内有更新。",
+      "audience": "亲子教育用户、三维网页学习者和动物爱好者",
+      "editorialTags": [
+        "有趣",
+        "设计",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "sdli1995/dlssg_for_sm86",
+      "githubUrl": "https://github.com/sdli1995/dlssg_for_sm86",
+      "canonicalUrl": "https://github.com/sdli1995/dlssg_for_sm86",
+      "description": "Here is a dlssg for RTX30 Series GPU",
+      "stars": 548,
+      "forks": 25,
+      "openIssues": 31,
+      "recentGrowth": 226,
+      "growthSource": "snapshot",
+      "topics": [],
+      "createdAt": "2026-09-07T16:16:48Z",
+      "updatedAt": "2026-09-09T16:37:52Z",
+      "pushedAt": "2026-09-07T16:33:52Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +226",
+          "新仓约 200 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "让 RTX 30 系显卡尝试 DLSS 帧生成",
+      "introduction": "它提供面向 RTX 30 系 GPU 的 DLSSG 实现入口。适合愿意研究显卡兼容性与帧生成效果的玩家按仓库说明动手尝试。",
+      "whyToday": "快照实增 226 星，新仓约 200 stars/day，3 天内有更新。",
+      "audience": "RTX 30 系玩家和图形技术爱好者",
+      "editorialTags": [
+        "有趣",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "com-phantom/Phantom-Wallet-Desktop",
+      "githubUrl": "https://github.com/com-phantom/phantom-wallet-desktop",
+      "canonicalUrl": "https://github.com/com-phantom/phantom-wallet-desktop",
+      "description": "Phantom Wallet Desktop app for Windows, macOS and Linux. A lightweight desktop client that brings Phantom crypto wallet experience outside the browser with native desktop access.",
+      "stars": 324,
+      "forks": 31,
+      "openIssues": 0,
+      "recentGrowth": 138,
+      "growthSource": "snapshot",
+      "language": "HTML",
+      "topics": [
+        "bitcoin",
+        "blockchain",
+        "cryptocurrency",
+        "defi",
+        "desktop-app",
+        "electron",
+        "ethereum",
+        "js",
+        "nft",
+        "phantom",
+        "phantom-desktop",
+        "phantom-wallet-browser",
+        "phantomjs",
+        "sol-trade",
+        "solana",
+        "solana-launchpad",
+        "solana-wallet-connect",
+        "solana-wallet-manager",
+        "wallet",
+        "web3"
+      ],
+      "createdAt": "2026-09-08T10:38:43Z",
+      "updatedAt": "2026-09-09T16:39:14Z",
+      "pushedAt": "2026-09-08T11:06:57Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +138",
+          "新仓约 164 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "把 Phantom 钱包体验带到跨平台桌面",
+      "introduction": "这是一个面向 Windows、macOS 和 Linux 的轻量桌面客户端。它尝试把 Phantom 加密钱包从浏览器带到原生桌面环境。",
+      "whyToday": "快照实增 138 星，新仓约 164 stars/day，2 天内有更新。",
+      "audience": "需要桌面钱包体验的多平台用户",
+      "editorialTags": [
+        "开源替代",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "MSNightmare/ShieldCrash",
+      "githubUrl": "https://github.com/msnightmare/shieldcrash",
+      "canonicalUrl": "https://github.com/msnightmare/shieldcrash",
+      "description": "Windows Defender 0day Vulnerability",
+      "stars": 167,
+      "forks": 37,
+      "openIssues": 2,
+      "recentGrowth": 36,
+      "growthSource": "snapshot",
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2026-09-07T20:36:16Z",
+      "updatedAt": "2026-09-09T16:20:41Z",
+      "pushedAt": "2026-09-08T19:05:21Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 36.46617355940265,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 74.5,
+        "signals": [
+          "快照实增 +36",
+          "新仓约 65 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "用于研究 Windows Defender 零日漏洞的项目",
+      "introduction": "仓库聚焦 Windows Defender 的零日漏洞，适合作为安全研究与防御分析的事实样本。使用前应在隔离、授权的测试环境中阅读项目说明。",
+      "whyToday": "快照实增 36 星，新仓约 65 stars/day，2 天内有更新。",
+      "audience": "Windows 安全研究与防御人员",
+      "editorialTags": [
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "faisalkindi/DLSS5oneclick",
+      "githubUrl": "https://github.com/faisalkindi/dlss5oneclick",
+      "canonicalUrl": "https://github.com/faisalkindi/dlss5oneclick",
+      "description": "One-click setup of the leaked DLSS 5 neural-rendering build for any DX11/DX12 game on RTX 20–50, with or without DLSS. ReShade + RenoDX add-on (or OptiScaler engine); DLSS5-Feeder + LumeniteFX for games without DLSS; dlss5-bridge for DX11. Rust, single exe.",
+      "stars": 626,
+      "forks": 41,
+      "openIssues": 27,
+      "recentGrowth": 16,
+      "growthSource": "snapshot",
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-08-31T02:12:29Z",
+      "updatedAt": "2026-09-09T16:26:56Z",
+      "pushedAt": "2026-09-09T16:17:50Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 28.612239888752374,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 29.727981280095847,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 70.3,
+        "signals": [
+          "快照实增 +16",
+          "新仓约 61 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "用单个 Rust 程序配置多种游戏的 DLSS 5",
+      "introduction": "它尝试为 DX11、DX12 游戏提供一键式 DLSS 5 神经渲染配置，并组合 ReShade、RenoDX 或 OptiScaler 等方案。项目以单个 Rust 可执行文件交付。",
+      "whyToday": "快照实增 16 星，新仓约 61 stars/day，且 1 天内有更新。",
+      "audience": "愿意折腾画质工具的 PC 玩家",
+      "editorialTags": [
+        "有趣",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "lfzk550/fanzha-ai-proxy",
+      "githubUrl": "https://github.com/lfzk550/fanzha-ai-proxy",
+      "canonicalUrl": "https://github.com/lfzk550/fanzha-ai-proxy",
+      "description": "国家反诈AI API 转 OpenAI 兼容格式反向代理服务 || 仅学习用途",
+      "stars": 379,
+      "forks": 329,
+      "openIssues": 0,
+      "recentGrowth": 30,
+      "growthSource": "snapshot",
+      "topics": [],
+      "createdAt": "2026-09-07T10:05:28Z",
+      "updatedAt": "2026-09-09T16:32:06Z",
+      "pushedAt": "2026-09-07T08:44:24Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 34.67937417270812,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 68.7,
+        "signals": [
+          "快照实增 +30",
+          "新仓约 126 stars/day",
+          "4 天内有更新"
+        ]
+      },
+      "plainSummary": "把国家反诈 AI API 转成 OpenAI 兼容接口",
+      "introduction": "这是一个仅供学习的反向代理服务。它将国家反诈 AI API 转换为 OpenAI 兼容格式，方便用熟悉的客户端接口做实验。",
+      "whyToday": "快照实增 30 星，新仓约 126 stars/day，4 天内有更新。",
+      "audience": "研究兼容 API 与代理服务的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "andrewroxby/claude-style-patch",
+      "githubUrl": "https://github.com/andrewroxby/claude-style-patch",
+      "canonicalUrl": "https://github.com/andrewroxby/claude-style-patch",
+      "description": "A drop-in CLAUDE.md style section that changes how Claude writes prose.",
+      "stars": 118,
+      "forks": 7,
+      "openIssues": 0,
+      "recentGrowth": 12,
+      "growthSource": "snapshot",
+      "topics": [],
+      "createdAt": "2026-09-08T02:59:44Z",
+      "updatedAt": "2026-09-09T15:47:19Z",
+      "pushedAt": "2026-09-08T19:03:45Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 25.903078026987647,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.569406614926436,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 62.5,
+        "signals": [
+          "快照实增 +12",
+          "新仓约 51 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "用一段 CLAUDE.md 配置调整 Claude 的写作风格",
+      "introduction": "它提供可直接放入 CLAUDE.md 的风格配置段，用来改变 Claude 生成散文时的表达方式。适合快速试验团队统一的文字风格。",
+      "whyToday": "快照实增 12 星，新仓约 51 stars/day，2 天内有更新。",
+      "audience": "使用 Claude 写作或维护项目规范的人",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "aizhimou/javranking-extension",
+      "githubUrl": "https://github.com/aizhimou/javranking-extension",
+      "canonicalUrl": "https://github.com/aizhimou/javranking-extension",
+      "description": "Show all JAV cover and ranking in one click.",
+      "stars": 182,
+      "forks": 8,
+      "openIssues": 2,
+      "recentGrowth": 11,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [
+        "jav",
+        "jav-metadata",
+        "javrank",
+        "javranking"
+      ],
+      "createdAt": "2026-09-07T00:19:59Z",
+      "updatedAt": "2026-09-09T16:11:30Z",
+      "pushedAt": "2026-09-07T23:11:50Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 25.094737505048094,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.8390064715638,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 61.9,
+        "signals": [
+          "快照实增 +11",
+          "新仓约 53 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "一键查看 JAV 封面与排行榜的浏览器扩展",
+      "introduction": "该扩展把 JAV 封面和排行集中到一次操作中展示。它能减少在多个页面之间查找信息的步骤。",
+      "whyToday": "快照实增 11 星，新仓约 53 stars/day，3 天内有更新。",
+      "audience": "需要集中浏览相关排行信息的成年用户",
+      "editorialTags": [
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "Git-Agni/prod-FARM-IOS-Core",
+      "githubUrl": "https://github.com/git-agni/prod-farm-ios-core",
+      "canonicalUrl": "https://github.com/git-agni/prod-farm-ios-core",
+      "description": "A farm of real iPhones, run from your Mac. Open-source iOS device automation with live control, a Postgres-backed scheduler, and TikTok workflows. Self-hosted, Apache-2.0.",
+      "stars": 923,
+      "forks": 174,
+      "openIssues": 1,
+      "recentGrowth": 8,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [
+        "appium",
+        "device-farm",
+        "ios-automation",
+        "marketing-automation",
+        "phone-farm",
+        "tiktok-automation-script",
+        "webdriveragent"
+      ],
+      "createdAt": "2026-08-27T04:55:36Z",
+      "updatedAt": "2026-09-09T15:32:48Z",
+      "pushedAt": "2026-09-07T10:50:41Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 22.189475010096185,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 60.2,
+        "signals": [
+          "快照实增 +8",
+          "新仓约 65 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "在 Mac 上自托管真实 iPhone 设备农场",
+      "introduction": "它提供 iOS 真机自动化、实时控制和基于 Postgres 的调度器，并包含 TikTok 工作流。团队可以在自己的 Mac 上搭建和管理设备农场。",
+      "whyToday": "快照实增 8 星，新仓约 65 stars/day，3 天内有更新。",
+      "audience": "移动测试、设备自动化与自托管团队",
+      "editorialTags": [
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Sophomoresty/turnstile-bypass",
+      "githubUrl": "https://github.com/sophomoresty/turnstile-bypass",
+      "canonicalUrl": "https://github.com/sophomoresty/turnstile-bypass",
+      "description": "Cross-platform Cloudflare Turnstile solver (macOS, Windows, Linux)",
+      "stars": 380,
+      "forks": 146,
+      "openIssues": 0,
+      "recentGrowth": 8,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-07T17:22:54Z",
+      "updatedAt": "2026-09-09T16:21:48Z",
+      "pushedAt": "2026-09-07T20:26:10Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 22.189475010096185,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 60.2,
+        "signals": [
+          "快照实增 +8",
+          "新仓约 141 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "跨平台研究 Cloudflare Turnstile 验证流程",
+      "introduction": "这是一个覆盖 macOS、Windows 和 Linux 的 Turnstile solver。适合在自有或获授权环境中理解自动化验证与兼容性问题。",
+      "whyToday": "快照实增 8 星，新仓约 141 stars/day，3 天内有更新。",
+      "audience": "Web 自动化与安全测试开发者",
+      "editorialTags": [
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "mubix/cyber-resume-reviewer-skill",
+      "githubUrl": "https://github.com/mubix/cyber-resume-reviewer-skill",
+      "canonicalUrl": "https://github.com/mubix/cyber-resume-reviewer-skill",
+      "description": "A skill to help cybersecurity folks update and tweak their resume",
+      "stars": 134,
+      "forks": 11,
+      "openIssues": 0,
+      "recentGrowth": 7,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-07T19:06:41Z",
+      "updatedAt": "2026-09-09T15:43:33Z",
+      "pushedAt": "2026-09-07T21:01:57Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 21,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.52132153804307,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 57.5,
+        "signals": [
+          "快照实增 +7",
+          "新仓约 51 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "帮助网络安全从业者修改简历的 Agent Skill",
+      "introduction": "这项技能专门辅助网络安全从业者更新和微调简历。可以把行业语境带进简历审阅流程，减少通用建议与岗位需求之间的偏差。",
+      "whyToday": "快照实增 7 星，新仓约 51 stars/day，3 天内有更新。",
+      "audience": "求职中的网络安全从业者",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "freestylefly/awesome-gpt-image-2",
+      "githubUrl": "https://github.com/freestylefly/awesome-gpt-image-2",
+      "canonicalUrl": "https://github.com/freestylefly/awesome-gpt-image-2",
+      "description": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
+      "stars": 29882,
+      "forks": 2883,
+      "recentGrowth": 612,
+      "growthSource": "github-trending",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +612"
+        ]
+      },
+      "plainSummary": "把 GPT-Image 2 提示词做成可复用的工程模板",
+      "introduction": "项目以 Prompt as Code 的方式整理 530 多个案例和 20 多套工业级模板，并进一步提炼为 Skills。适合从现成案例学习和复用图像生成方法。",
+      "whyToday": "GitHub Trending 明确披露当日增长 612 星。",
+      "audience": "图像生成创作者、设计师和提示词工程实践者",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "学习"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "Tencent/teamai-cli",
+      "githubUrl": "https://github.com/tencent/teamai-cli",
+      "canonicalUrl": "https://github.com/tencent/teamai-cli",
+      "description": "Make Every Team AI Native",
+      "stars": 2816,
+      "forks": 176,
+      "recentGrowth": 563,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 54.83730811439276,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 54.8,
+        "signals": [
+          "Trending 披露 +563"
+        ]
+      },
+      "plainSummary": "帮助团队把 AI 能力带进日常工作的命令行工具",
+      "introduction": "这个 TypeScript 项目以“让每个团队 AI Native”为目标，提供面向团队使用的 CLI 入口。适合直接查看仓库中的具体命令和协作方式。",
+      "whyToday": "GitHub Trending 明确披露当日增长 563 星。",
+      "audience": "希望在团队工作流中引入 AI 的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "sashyo/minidauth",
+      "githubUrl": "https://github.com/sashyo/minidauth",
+      "canonicalUrl": "https://github.com/sashyo/minidauth",
+      "description": "Mini decentralised auth. Gives an existing auth system a key nobody holds, with governance over who can decrypt.",
+      "stars": 94,
+      "forks": 14,
+      "openIssues": 0,
+      "recentGrowth": 3,
+      "growthSource": "snapshot",
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-09-08T13:23:05Z",
+      "updatedAt": "2026-09-09T11:31:48Z",
+      "pushedAt": "2026-09-09T11:24:03Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 14,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.441690577132235,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 54.4,
+        "signals": [
+          "快照实增 +3",
+          "新仓约 51 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "给现有认证系统增加去中心化解密治理",
+      "introduction": "它为已有认证系统引入一把无人单独持有的密钥，并通过治理机制决定谁可以解密。适合探索最小化的去中心化认证设计。",
+      "whyToday": "快照实增 3 星，新仓约 51 stars/day，且 1 天内有更新。",
+      "audience": "认证、密钥治理与安全架构开发者",
+      "editorialTags": [
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "daishuge/pcb-skill",
+      "githubUrl": "https://github.com/daishuge/pcb-skill",
+      "canonicalUrl": "https://github.com/daishuge/pcb-skill",
+      "description": "Agent skill for taking a hardware idea to a manufacturable PCB: concept, schematic, sourcing, layout, routing, verification, and a purchase staged to the pre-payment page. Drives EasyEDA Pro over MCP from Claude Code or Codex.",
+      "stars": 95,
+      "forks": 15,
+      "openIssues": 0,
+      "recentGrowth": 5,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-08T10:15:23Z",
+      "updatedAt": "2026-09-09T14:35:43Z",
+      "pushedAt": "2026-09-08T10:59:46Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 18.094737505048094,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.037403309550072,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 54.1,
+        "signals": [
+          "快照实增 +5",
+          "新仓约 48 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "让 Agent 从硬件想法一路推进到可制造 PCB",
+      "introduction": "这项 Agent Skill 覆盖概念、原理图、选型、布局、布线与验证，并通过 MCP 驱动 EasyEDA Pro。采购流程会停在付款前，保留人工确认。",
+      "whyToday": "快照实增 5 星，新仓约 48 stars/day，2 天内有更新。",
+      "audience": "硬件创客、PCB 设计者和 Agent 开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 5
+    }
+  ]
+}

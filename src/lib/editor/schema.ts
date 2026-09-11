@@ -57,7 +57,7 @@ export const editorTaskSchema = z.object({
   })).min(1),
 });
 
-export const editorialItemSchema = z.object({
+export const candidateProjectSchema = z.object({
   name: z.string().min(3),
   githubUrl: z.string().url().refine((url) => new URL(url).hostname === "github.com", "必须是 GitHub URL"),
   canonicalUrl: z.string().url(),
@@ -75,6 +75,9 @@ export const editorialItemSchema = z.object({
   pushedAt: z.string().datetime().optional(),
   sources: z.array(sourceNameSchema).min(1),
   score: scoreSchema,
+});
+
+export const editorialItemSchema = candidateProjectSchema.extend({
   plainSummary: z.string().min(8).max(80),
   introduction: z.string().min(20).max(260),
   whyToday: z.string().min(8).max(140),
@@ -89,11 +92,7 @@ export const aimeEditionSchema = z.object({
   title: z.string().min(4).max(80),
   metadata: z.object({
     targetCount: z.literal(30),
-    degraded: z.boolean(),
-    degradedReason: z.string().min(10).optional(),
-  }).superRefine((metadata, context) => {
-    if (metadata.degraded && !metadata.degradedReason) context.addIssue({ code: z.ZodIssueCode.custom, message: "降级出版必须说明原因" });
-    if (!metadata.degraded && metadata.degradedReason) context.addIssue({ code: z.ZodIssueCode.custom, message: "正常出版不应填写降级原因" });
+    degraded: z.literal(false),
   }),
   summary: z.string().min(10).max(180),
   mode: z.literal("live"),
@@ -102,11 +101,7 @@ export const aimeEditionSchema = z.object({
   publishedAt: z.string().datetime(),
   sourceStatus: z.array(sourceStatusSchema).min(1),
   pipelineStats: pipelineStatsSchema,
-  projects: z.array(editorialItemSchema).min(1).max(30),
-}).superRefine((edition, context) => {
-  if (!edition.metadata.degraded && edition.projects.length !== 30) {
-    context.addIssue({ code: z.ZodIssueCode.custom, path: ["projects"], message: "正常出版必须恰好包含 30 个项目" });
-  }
+  projects: z.array(editorialItemSchema).length(30),
 });
 
 // 兼容历史测试/导入名；运行时主流程不再调用外部模型。
@@ -117,7 +112,7 @@ export const aiEditionSchema = z.object({
 
 export const enrichedCandidatesSchema = z.object({
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  projects: z.array(editorialItemSchema),
+  projects: z.array(candidateProjectSchema),
 });
 
 export type AimeEditionOutput = z.infer<typeof aimeEditionSchema>;

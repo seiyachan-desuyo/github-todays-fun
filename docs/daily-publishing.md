@@ -39,7 +39,7 @@ Aime 读取 `src/data/editor-tasks/$DATE.json`，只依据候选中的 `descript
 }
 ```
 
-正常情况必须恰好 30 项且 URL 去重。只有当天整个可核验候选池少于 30 项时，后续工具才会自动生成明确的降级说明。
+编辑结果必须恰好包含 30 项且 URL 去重。当天可核验候选池少于 30 项时停止出版，不生成降级刊。Aime 只编辑这 30 个入选项目，不需要为完整候选池逐条撰写文案。
 
 ### 3. 生成并校验 staging edition
 
@@ -47,7 +47,7 @@ Aime 读取 `src/data/editor-tasks/$DATE.json`，只依据候选中的 `descript
 pnpm pipeline:stage -- --date "$DATE"
 ```
 
-该命令把事实字段从 editor task 原样装配到 `.daily-pipeline/staging/$DATE.json`，随后执行严格校验。校验覆盖 schema、日期、恰好 30 项、URL 去重、候选归属、全部事实字段、来源状态和 pipelineStats。
+该命令把 30 个精选的事实字段从 editor task 原样装配到 `.daily-pipeline/staging/$DATE.json`，同时把当天全部程序评分候选确定性映射到 `.daily-pipeline/staging/enriched-$DATE.json`。随后执行严格校验，覆盖 schema、日期、固定 30 项、URL 去重、候选归属、全部事实字段、来源状态和 pipelineStats。
 
 退出码非 0：停止，报告失败阶段 `stage`；正式 edition 不会变化。
 
@@ -57,7 +57,7 @@ pnpm pipeline:stage -- --date "$DATE"
 pnpm pipeline:finalize -- --date "$DATE"
 ```
 
-该命令先再次校验 staging，再通过同目录临时文件加 `rename` 原子写入 `src/data/editions/$DATE.json`，并重新生成按日期倒序的 `src/data/index.ts`。同日期重跑复用原刊号。
+该命令先再次校验 staging，再通过同目录临时文件加 `rename` 原子写入 `src/data/editions/$DATE.json` 与 `src/data/enriched-candidates/$DATE.json`，重新生成按日期倒序的 `src/data/index.ts`，并生成同时包含 `editions` 与 `candidatePools` 的动态 Feed。同日期重跑复用原刊号。
 
 退出码非 0：停止，报告失败阶段 `finalize`；不得进入构建和部署。
 
@@ -87,11 +87,17 @@ npx vercel@latest deploy --prod --yes --token "$VERCEL_TOKEN"
 先访问生产 URL，确认 HTTP 可达且首页显示当天日期，再执行：
 
 ```bash
+pnpm pipeline:success -- --date "$DATE" --url "$DEPLOYED_URL"
+```
+
+公开可访问站点无需配置认证，检查请求不会发送 `Authorization` Header。仅当目标站点确实要求认证时，才设置目标站点接受的完整请求头值：
+
+```bash
 export PIPELINE_SUCCESS_AUTHORIZATION="Bearer <token>"
 pnpm pipeline:success -- --date "$DATE" --url "$DEPLOYED_URL"
 ```
 
-`PIPELINE_SUCCESS_AUTHORIZATION` 必须是目标站点接受的完整 `Authorization` 请求头值。该值仅从环境变量读取，不要写入命令参数、代码或提交到 Git；未设置或仅包含空白时，检测会在发起请求前明确失败。
+`PIPELINE_SUCCESS_AUTHORIZATION` 仅从环境变量读取，不要写入命令参数、代码或提交到 Git。配置后脚本会原样添加为 `Authorization` Header；未配置或仅包含空白时按公开站点处理。
 
 只有该命令退出码为 0，Aime 才能在定时任务最终回复中向当前用户回传成功。输出包含日期、项目数、各来源状态和线上链接；无需配置飞书 Webhook。
 
@@ -108,11 +114,11 @@ pnpm pipeline:success -- --date "$DATE" --url "$DEPLOYED_URL"
 
 - `GITHUB_TOKEN`：推荐。用于提高 GitHub Search / Repository API 限额；不配置时会使用匿名额度并如实记录来源状态。
 - `VERCEL_TOKEN`：定时环境未登录 Vercel CLI 时需要，仅在部署命令中读取。
-- `PIPELINE_SUCCESS_AUTHORIZATION`：必需。`pipeline:success` 访问启用 SSO 的生产站点时使用的完整 `Authorization` 请求头值（例如 `Bearer <token>`）。
+- `PIPELINE_SUCCESS_AUTHORIZATION`：可选。仅在 `pipeline:success` 访问需要认证的生产站点时填写完整 `Authorization` 请求头值（例如 `Bearer <token>`）；公开站点留空。
 - `EDITION_DATE`：可选兼容变量；定时任务优先显式传 `--date`。
 
 不需要 LLM API Key、Webhook、飞书用户 ID。Aime 本身负责编辑，并由定时任务最终回复通知当前用户。
 
 ## 安全降级边界
 
-GitHub Repository 探针限流时，采集器保留 GitHub Search / Trending 已取得的事实，并把探针标记为 `degraded`。如果所有来源均没有任何可核验候选，采集直接失败；不会生成空任务或编造项目。候选不足 30 项时只允许使用真实候选生成降级刊，并在 `metadata.degradedReason` 明示数量原因。
+GitHub Repository 探针限流时，采集器保留 GitHub Search / Trending 已取得的事实，并把探针标记为 `degraded`。如果所有来源均没有任何可核验候选，采集直接失败；不会生成空任务或编造项目。候选不足 30 项时停止出版并报告采集不足，正式 edition 始终固定为 30 个 AI 精选。

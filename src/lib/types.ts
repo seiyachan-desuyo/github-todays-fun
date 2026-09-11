@@ -64,6 +64,11 @@ export interface CandidateProject {
   score?: ScoreBreakdown;
 }
 
+export interface CandidatePool {
+  date: string;
+  projects: CandidateProject[];
+}
+
 export interface EditorTaskCandidate {
   repoName: string;
   url: string;

@@ -1,0 +1,1204 @@
+{
+  "date": "2026-09-11",
+  "issue": 5,
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "今天的 GitHub 像一间同时开着天文台、创作室和 Agent 工坊的车库：既有真实空间情报与惯导库，也有敲 MacBook 触发快捷指令、照片直送 Blender 等脑洞工具。AI 项目仍是主角，但本期更看重能立即上手的玩法、清晰的用途，以及当天可核验的增长信号。",
+  "mode": "live",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+  "publishedAt": "2026-09-11T03:11:26.601Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-09-11T02:26:52.123Z",
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "raw": [
+        {
+          "query": "created:>=2026-09-08 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-08-28 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-09-08 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-09-11T02:26:52.153Z",
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 38 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "rawCount": 38,
+      "normalizedCount": 38,
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 16
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 22
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "degraded",
+      "fetchedAt": "2026-09-11T02:26:56.323Z",
+      "message": "HTTP 403，详情补全跳过；保留 Search/Trending 已有事实；rate limit remaining=0"
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 188,
+    "normalizedCandidateCount": 188,
+    "dedupedCandidateCount": 179,
+    "eligibleCandidateCount": 124,
+    "selectedCount": 30
+  },
+  "projects": [
+    {
+      "name": "siknet/FreePEP",
+      "githubUrl": "https://github.com/siknet/freepep",
+      "canonicalUrl": "https://github.com/siknet/freepep",
+      "description": "人教社电子教材下载器 v1.2",
+      "stars": 855,
+      "forks": 136,
+      "openIssues": 2,
+      "recentGrowth": 258,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-08-31T02:21:10Z",
+      "updatedAt": "2026-09-11T02:20:38Z",
+      "pushedAt": "2026-09-10T12:57:43Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +258",
+          "新仓约 76 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "下载人教社电子教材的 Python 工具。",
+      "introduction": "它用于下载人教社电子教材。适合把教材资料整理到本地，按自己的阅读与归档方式使用。",
+      "whyToday": "快照实增 258 星，新仓约 76 stars/day，且 1 天内有更新。",
+      "audience": "需要整理电子教材的学生、家长与教师",
+      "editorialTags": [
+        "效率",
+        "学习"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "jnz/INSLIB",
+      "githubUrl": "https://github.com/jnz/inslib",
+      "canonicalUrl": "https://github.com/jnz/inslib",
+      "description": "Open Source Inertial Navigation Library",
+      "stars": 334,
+      "forks": 44,
+      "openIssues": 0,
+      "recentGrowth": 197,
+      "growthSource": "snapshot",
+      "language": "C",
+      "topics": [],
+      "createdAt": "2026-09-08T10:34:32Z",
+      "updatedAt": "2026-09-11T01:42:09Z",
+      "pushedAt": "2026-09-09T00:03:27Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +197",
+          "新仓约 112 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "一套开源惯性导航程序库。",
+      "introduction": "它为惯性导航相关开发提供开源实现。可以用来研究导航算法，或作为工程原型的基础组件。",
+      "whyToday": "快照实增 197 星，新仓约 112 stars/day。",
+      "audience": "导航、机器人与嵌入式开发者",
+      "editorialTags": [
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "Colafornia/short-video-generator-AI",
+      "githubUrl": "https://github.com/colafornia/short-video-generator-ai",
+      "canonicalUrl": "https://github.com/colafornia/short-video-generator-ai",
+      "description": "Free open-source project designed for turning youtube-viedos into viral short videos. Highlight detection, subtitles, translation, voiceover, all in one for your content.",
+      "stars": 267,
+      "forks": 106,
+      "openIssues": 0,
+      "recentGrowth": 192,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "ai",
+        "ai-generation",
+        "short-video",
+        "short-video-maker"
+      ],
+      "createdAt": "2026-09-08T14:55:47Z",
+      "updatedAt": "2026-09-11T02:22:00Z",
+      "pushedAt": "2026-09-08T15:05:46Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +192",
+          "新仓约 96 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "把 YouTube 视频自动加工成带字幕、翻译和配音的短视频。",
+      "introduction": "它把长视频中的精彩片段识别、字幕、翻译和配音串成一条流程。内容创作者可以拿它快速试做适合短视频平台的版本。",
+      "whyToday": "快照实增 192 星，新仓约 96 stars/day。",
+      "audience": "视频创作者与内容运营",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "jaskirat1616/mactap-app",
+      "githubUrl": "https://github.com/jaskirat1616/mactap-app",
+      "canonicalUrl": "https://github.com/jaskirat1616/mactap-app",
+      "description": "MacTap — knock your MacBook to run shortcuts",
+      "stars": 256,
+      "forks": 10,
+      "openIssues": 2,
+      "recentGrowth": 54,
+      "growthSource": "snapshot",
+      "language": "Swift",
+      "topics": [],
+      "createdAt": "2026-09-08T22:57:29Z",
+      "updatedAt": "2026-09-10T23:50:26Z",
+      "pushedAt": "2026-09-10T05:12:09Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 40.46951799467262,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 78.5,
+        "signals": [
+          "快照实增 +54",
+          "新仓约 104 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "敲一敲 MacBook 就能运行快捷指令。",
+      "introduction": "它把敲击 MacBook 变成快捷指令触发方式。可以给常用动作安排一个很有实体感的“敲门暗号”。",
+      "whyToday": "快照实增 54 星，新仓约 104 stars/day，且 2 天内有更新。",
+      "audience": "喜欢自动化和新奇交互的 Mac 用户",
+      "editorialTags": [
+        "效率",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "punkpeye/awesome-remote-mcp-servers",
+      "githubUrl": "https://github.com/punkpeye/awesome-remote-mcp-servers",
+      "canonicalUrl": "https://github.com/punkpeye/awesome-remote-mcp-servers",
+      "description": "A collection of remote MCP servers.",
+      "stars": 129,
+      "forks": 204,
+      "openIssues": 96,
+      "recentGrowth": 40,
+      "growthSource": "snapshot",
+      "topics": [
+        "mcp"
+      ],
+      "createdAt": "2026-09-08T00:43:30Z",
+      "updatedAt": "2026-09-11T00:58:18Z",
+      "pushedAt": "2026-09-10T20:48:26Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 37.502864032326585,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 26.444172513401014,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 75.9,
+        "signals": [
+          "快照实增 +40",
+          "新仓约 38 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "远程 MCP 服务器的精选清单。",
+      "introduction": "它集中整理可远程访问的 MCP 服务器。可以用来给 Agent 寻找外部工具，也方便快速浏览 MCP 生态。",
+      "whyToday": "快照实增 40 星，新仓约 38 stars/day，且 1 天内有更新。",
+      "audience": "Agent 开发者与 MCP 使用者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "skydoves/nowinandroid-kmp",
+      "githubUrl": "https://github.com/skydoves/nowinandroid-kmp",
+      "canonicalUrl": "https://github.com/skydoves/nowinandroid-kmp",
+      "description": "📱 Now in Android KMP is a full Kotlin Multiplatform port of Google's Now in Android sample.",
+      "stars": 108,
+      "forks": 4,
+      "openIssues": 2,
+      "recentGrowth": 14,
+      "growthSource": "snapshot",
+      "language": "Kotlin",
+      "topics": [
+        "android",
+        "compose",
+        "compose-multiplatform",
+        "jetpack-compose",
+        "kmp",
+        "kotlin-multiplatform",
+        "nowinandroid",
+        "skydoves"
+      ],
+      "createdAt": "2026-09-08T08:59:54Z",
+      "updatedAt": "2026-09-11T01:44:23Z",
+      "pushedAt": "2026-09-09T23:28:44Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 27.34823416925963,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 25.95031611573802,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 61.3,
+        "signals": [
+          "快照实增 +14",
+          "新仓约 36 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "Google Now in Android 示例的 Kotlin Multiplatform 完整移植。",
+      "introduction": "它把 Now in Android 示例带到 Kotlin Multiplatform。适合对照学习 Compose Multiplatform 与跨平台工程组织。",
+      "whyToday": "快照实增 14 星，新仓约 36 stars/day。",
+      "audience": "Kotlin 与跨平台移动开发者",
+      "editorialTags": [
+        "学习",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "cbrock84/headcount",
+      "githubUrl": "https://github.com/cbrock84/headcount",
+      "canonicalUrl": "https://github.com/cbrock84/headcount",
+      "description": "An agent organization for Claude Code, structured as a company — 15+ departments, 125+ skills, each independently installable.",
+      "stars": 1355,
+      "forks": 209,
+      "openIssues": 1,
+      "recentGrowth": 21,
+      "growthSource": "snapshot",
+      "language": "Markdown",
+      "topics": [
+        "agent-marketplace",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-plugin",
+        "claude-skills",
+        "mcp"
+      ],
+      "createdAt": "2026-08-28T18:03:04Z",
+      "updatedAt": "2026-09-11T02:20:54Z",
+      "pushedAt": "2026-09-03T02:54:33Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 31.216021330461082,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 61.2,
+        "signals": [
+          "快照实增 +21",
+          "新仓约 99 stars/day"
+        ]
+      },
+      "plainSummary": "把 Claude Code Agent 按公司部门组织起来的技能集合。",
+      "introduction": "它把 Agent 组织成 15 个以上部门，并提供 125 个以上可独立安装的技能。可以按“组建公司”的思路搭配不同专业角色。",
+      "whyToday": "快照实增 21 星，新仓约 99 stars/day。",
+      "audience": "Claude Code 用户与多 Agent 工作流设计者",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "masihsultani/whiteboard-animator",
+      "githubUrl": "https://github.com/masihsultani/whiteboard-animator",
+      "canonicalUrl": "https://github.com/masihsultani/whiteboard-animator",
+      "description": "Turn a whiteboard-style image into a hand-drawn reveal video. The render engine behind Kinoslide.",
+      "stars": 115,
+      "forks": 9,
+      "openIssues": 0,
+      "recentGrowth": 21,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-08T00:25:02Z",
+      "updatedAt": "2026-09-11T02:14:00Z",
+      "pushedAt": "2026-09-08T01:46:37Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 31.216021330461082,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 25.611431515262332,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 60.8,
+        "signals": [
+          "快照实增 +21",
+          "新仓约 34 stars/day",
+          "4 天内有更新"
+        ]
+      },
+      "plainSummary": "把白板风格图片变成手绘揭示动画。",
+      "introduction": "它能把一张白板式图像渲染成逐笔画出的展示视频。适合做讲解片头、知识动画或演示素材。",
+      "whyToday": "快照实增 21 星，新仓约 34 stars/day。",
+      "audience": "教育视频与演示内容创作者",
+      "editorialTags": [
+        "设计",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "ahujasid/camera-to-blender",
+      "githubUrl": "https://github.com/ahujasid/camera-to-blender",
+      "canonicalUrl": "https://github.com/ahujasid/camera-to-blender",
+      "description": "Take a photo of real objects, and paste them in Blender",
+      "stars": 795,
+      "forks": 82,
+      "openIssues": 0,
+      "recentGrowth": 10,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-09-03T10:34:30Z",
+      "updatedAt": "2026-09-10T17:08:07Z",
+      "pushedAt": "2026-09-05T15:20:13Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 24.216021330461082,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 58.2,
+        "signals": [
+          "快照实增 +10",
+          "新仓约 100 stars/day",
+          "6 天内有更新"
+        ]
+      },
+      "plainSummary": "拍下真实物体，再把它放进 Blender。",
+      "introduction": "它尝试从真实物体照片衔接到 Blender 场景。可以拿身边物件做快速采集，体验现实素材进入 3D 工作流。",
+      "whyToday": "快照实增 10 星，新仓约 100 stars/day。",
+      "audience": "Blender 用户与 3D 创作者",
+      "editorialTags": [
+        "设计",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "bilawalsidhu/gods-eye-view",
+      "githubUrl": "https://github.com/bilawalsidhu/gods-eye-view",
+      "canonicalUrl": "https://github.com/bilawalsidhu/gods-eye-view",
+      "description": "A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+      "stars": 24490,
+      "forks": 5079,
+      "recentGrowth": 1762,
+      "growthSource": "github-trending",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +1762"
+        ]
+      },
+      "plainSummary": "在写实 3D 地球上浏览真实开源空间情报。",
+      "introduction": "它把实时开源空间情报放到逼真的浏览器 3D 地球上。可以像操作间谍卫星模拟器一样探索真实数据。",
+      "whyToday": "GitHub Trending 明确披露当日增长 1762 星。",
+      "audience": "地图、数据可视化与开源情报爱好者",
+      "editorialTags": [
+        "数据",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "diegosouzapw/OmniRoute",
+      "githubUrl": "https://github.com/diegosouzapw/omniroute",
+      "canonicalUrl": "https://github.com/diegosouzapw/omniroute",
+      "description": "Never stop coding. Free MIT AI gateway: one endpoint, 352 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 550+ contributors",
+      "stars": 64292,
+      "forks": 9000,
+      "recentGrowth": 626,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +626"
+        ]
+      },
+      "plainSummary": "聚合多家模型与供应商、支持自动回退的 AI 网关。",
+      "introduction": "它用一个入口连接数百家供应商和上千个模型，并提供配额感知回退与压缩。可以给多种编码助手统一安排模型路由。",
+      "whyToday": "GitHub Trending 明确披露当日增长 626 星。",
+      "audience": "需要多模型路由的 AI 开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "zolplay-labs/swiftui-sky",
+      "githubUrl": "https://github.com/zolplay-labs/swiftui-sky",
+      "canonicalUrl": "https://github.com/zolplay-labs/swiftui-sky",
+      "description": "A procedural SwiftUI sky with drifting clouds, seasonal light, stars, and meteors. Includes an interactive iOS and macOS demo.",
+      "stars": 81,
+      "forks": 4,
+      "openIssues": 0,
+      "recentGrowth": 5,
+      "growthSource": "snapshot",
+      "language": "Swift",
+      "topics": [],
+      "createdAt": "2026-09-08T14:30:41Z",
+      "updatedAt": "2026-09-10T04:50:36Z",
+      "pushedAt": "2026-09-08T14:30:47Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 18.094737505048094,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 24.48737847696217,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 50.6,
+        "signals": [
+          "快照实增 +5",
+          "新仓约 29 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "用 SwiftUI 生成会漂云、变光、出现星星和流星的天空。",
+      "introduction": "它提供程序化 SwiftUI 天空与 iOS、macOS 交互演示。可以直接研究动态背景，也能给应用添上一片会呼吸的天。",
+      "whyToday": "快照实增 5 星，新仓约 29 stars/day。",
+      "audience": "SwiftUI 开发者与界面动效爱好者",
+      "editorialTags": [
+        "设计",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "alsk1992/CloddsBot",
+      "githubUrl": "https://github.com/alsk1992/cloddsbot",
+      "canonicalUrl": "https://github.com/alsk1992/cloddsbot",
+      "description": "Open Source AI trading agent that operates autonomously across 1000+ markets - Polymarket, Kalshi, Binance, Hyperliquid, Solana DEXs, 5 EVM chains. Scans for edge, executes instantly, manages risk while you sleep. Agent commerce protocol for machine-to-machine payments. Self-hosted. Built on Claude.",
+      "stars": 1698,
+      "forks": 259,
+      "recentGrowth": 277,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 48.71364643634104,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 48.7,
+        "signals": [
+          "Trending 披露 +277"
+        ]
+      },
+      "plainSummary": "可自托管、覆盖多类市场的自主 AI 交易 Agent。",
+      "introduction": "它面向预测市场、交易所和多条链执行扫描、交易与风险管理。适合研究跨市场 Agent 自动化，但实际资金操作仍需自行审慎评估。",
+      "whyToday": "GitHub Trending 明确披露当日增长 277 星。",
+      "audience": "量化交易与 Agent 系统研究者",
+      "editorialTags": [
+        "AI 工具",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "AlexsJones/llmfit",
+      "githubUrl": "https://github.com/alexsjones/llmfit",
+      "canonicalUrl": "https://github.com/alexsjones/llmfit",
+      "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
+      "stars": 35779,
+      "forks": 2270,
+      "recentGrowth": 258,
+      "growthSource": "github-trending",
+      "language": "Rust",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 48.10084972611933,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 48.1,
+        "signals": [
+          "Trending 披露 +258"
+        ]
+      },
+      "plainSummary": "用一条命令找出适合本机硬件运行的模型。",
+      "introduction": "它帮助用户在大量模型和供应商中判断哪些能跑在自己的硬件上。准备本地部署 LLM 时，可以先用它缩小选择范围。",
+      "whyToday": "GitHub Trending 明确披露当日增长 258 星。",
+      "audience": "本地模型玩家与 AI 工程师",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "ayghri/i-have-adhd",
+      "githubUrl": "https://github.com/ayghri/i-have-adhd",
+      "canonicalUrl": "https://github.com/ayghri/i-have-adhd",
+      "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+      "stars": 38546,
+      "forks": 2211,
+      "recentGrowth": 4873,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +4873"
+        ]
+      },
+      "plainSummary": "让编码 Agent 别把答案埋在长篇输出里的技能。",
+      "introduction": "它用更适合 ADHD 阅读习惯的方式约束编码 Agent 输出。可以减少绕弯和信息掩埋，让答案更快露头。",
+      "whyToday": "快照实增 4873 星，是本期最强增长信号之一。",
+      "audience": "偏好短而清晰回答的编码助手用户",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "tt-a1i/archify",
+      "githubUrl": "https://github.com/tt-a1i/archify",
+      "canonicalUrl": "https://github.com/tt-a1i/archify",
+      "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
+      "stars": 57500,
+      "forks": 3759,
+      "recentGrowth": 1684,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +1684"
+        ]
+      },
+      "plainSummary": "生成可验证、可动效展示并能清晰导出的架构图。",
+      "introduction": "它面向架构、流程、时序、数据流和生命周期图，输出自包含 HTML。可以让 Agent 产出的图既能检查，也方便展示和导出。",
+      "whyToday": "快照实增 1684 星，增长信号突出。",
+      "audience": "架构师、研发与技术写作者",
+      "editorialTags": [
+        "设计",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "DietrichGebert/ponytail",
+      "githubUrl": "https://github.com/dietrichgebert/ponytail",
+      "canonicalUrl": "https://github.com/dietrichgebert/ponytail",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "stars": 134815,
+      "forks": 7223,
+      "recentGrowth": 1655,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +1655"
+        ]
+      },
+      "plainSummary": "让 AI Agent 像“最懒的资深工程师”一样少写代码。",
+      "introduction": "它强调能不写的代码就不写，用克制思路约束 Agent。可以用来提醒编码助手优先删复杂度，而不是堆实现。",
+      "whyToday": "快照实增 1655 星，社区关注快速上升。",
+      "audience": "追求简单实现的软件工程师",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "cathrynlavery/diagram-design",
+      "githubUrl": "https://github.com/cathrynlavery/diagram-design",
+      "canonicalUrl": "https://github.com/cathrynlavery/diagram-design",
+      "description": "38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "stars": 37824,
+      "forks": 2397,
+      "recentGrowth": 1535,
+      "growthSource": "snapshot",
+      "language": "HTML",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +1535"
+        ]
+      },
+      "plainSummary": "为编码 Agent 准备的 38 类编辑风格图表模板。",
+      "introduction": "它提供 38 类图表，输出自包含 HTML 与 SVG，并明确追求干净的编辑设计。可以让 Claude Code、Codex 或 Pi 生成更像出版物的图。",
+      "whyToday": "快照实增 1535 星，显示出强烈的当日兴趣。",
+      "audience": "技术写作者、设计师与编码 Agent 用户",
+      "editorialTags": [
+        "设计",
+        "AI 工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "mattpocock/skills",
+      "githubUrl": "https://github.com/mattpocock/skills",
+      "canonicalUrl": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "stars": 258923,
+      "forks": 21815,
+      "recentGrowth": 1245,
+      "growthSource": "snapshot",
+      "language": "Shell",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +1245"
+        ]
+      },
+      "plainSummary": "从真实 Agent 配置中整理出的工程技能集合。",
+      "introduction": "它汇集面向实际工程工作的 Agent 技能。可以挑选需要的技能，补进自己的开发助手工作流。",
+      "whyToday": "快照实增 1245 星，关注度持续走高。",
+      "audience": "使用编码 Agent 的软件工程师",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "THU-MAIC/OpenMAIC",
+      "githubUrl": "https://github.com/thu-maic/openmaic",
+      "canonicalUrl": "https://github.com/thu-maic/openmaic",
+      "description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+      "stars": 35385,
+      "forks": 5646,
+      "recentGrowth": 1135,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +1135"
+        ]
+      },
+      "plainSummary": "一键进入多 Agent 互动课堂。",
+      "introduction": "它用多个 Agent 组织沉浸式互动学习体验。可以把课堂里的讲授、讨论与角色互动搬进一套开源系统。",
+      "whyToday": "快照实增 1135 星，教育类项目中信号醒目。",
+      "audience": "教育技术开发者、教师与学习产品团队",
+      "editorialTags": [
+        "AI 工具",
+        "学习"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "liquidslr/system-design-notes",
+      "githubUrl": "https://github.com/liquidslr/system-design-notes",
+      "canonicalUrl": "https://github.com/liquidslr/system-design-notes",
+      "description": "Notes of the book System Desgin Interview - An Insider's Guide",
+      "stars": 18842,
+      "forks": 3487,
+      "recentGrowth": 1073,
+      "growthSource": "snapshot",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +1073"
+        ]
+      },
+      "plainSummary": "《System Design Interview》相关学习笔记。",
+      "introduction": "它整理系统设计面试书籍的学习内容。可以用于复习常见架构题，但应结合原始资料核对和拓展。",
+      "whyToday": "快照实增 1073 星，学习资料类项目热度明显。",
+      "audience": "准备系统设计面试的开发者",
+      "editorialTags": [
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "obra/superpowers",
+      "githubUrl": "https://github.com/obra/superpowers",
+      "canonicalUrl": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 284737,
+      "forks": 25473,
+      "recentGrowth": 871,
+      "growthSource": "snapshot",
+      "language": "Shell",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +871"
+        ]
+      },
+      "plainSummary": "一套面向 Agent 的技能框架与软件开发方法。",
+      "introduction": "它把 Agent 技能和软件开发方法组合成可执行框架。可以用来规范编码助手从分析到交付的工作方式。",
+      "whyToday": "快照实增 871 星，成熟项目仍有显著增长。",
+      "audience": "希望规范 Agent 开发流程的团队",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "vastsa/PI-Desktop",
+      "githubUrl": "https://github.com/vastsa/pi-desktop",
+      "canonicalUrl": "https://github.com/vastsa/pi-desktop",
+      "description": "Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins",
+      "stars": 2345,
+      "forks": 194,
+      "recentGrowth": 799,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +799"
+        ]
+      },
+      "plainSummary": "本地优先、支持插件的桌面 AI 编码 Agent。",
+      "introduction": "它以 Electron、Rust 主机核心和 Agent Harness 组成桌面编码环境。可以在本地使用并安装用户插件，探索更可控的编码助手。",
+      "whyToday": "快照实增 799 星，近期关注快速集中。",
+      "audience": "偏好本地桌面工具的 AI 开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "blader/humanizer",
+      "githubUrl": "https://github.com/blader/humanizer",
+      "canonicalUrl": "https://github.com/blader/humanizer",
+      "description": "Agent skill that removes signs of AI-generated writing from text",
+      "stars": 46520,
+      "forks": 3806,
+      "recentGrowth": 648,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +648"
+        ]
+      },
+      "plainSummary": "减少文本中 AI 写作痕迹的 Agent 技能。",
+      "introduction": "它用于识别并调整常见的机器化表达。可以作为文案润色步骤，让文字更自然，但最终内容仍需人工判断。",
+      "whyToday": "快照实增 648 星，写作辅助方向热度显著。",
+      "audience": "编辑、内容创作者与 Agent 用户",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "NousResearch/hermes-agent",
+      "githubUrl": "https://github.com/nousresearch/hermes-agent",
+      "canonicalUrl": "https://github.com/nousresearch/hermes-agent",
+      "description": "The agent that grows with you",
+      "stars": 244236,
+      "forks": 50535,
+      "recentGrowth": 486,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +486"
+        ]
+      },
+      "plainSummary": "主打随用户共同成长的 AI Agent。",
+      "introduction": "它把“随你成长”作为 Agent 的核心定位。适合关注长期个性化 Agent 与持续协作体验的开发者研究。",
+      "whyToday": "快照实增 486 星，高星项目继续获得关注。",
+      "audience": "个人 Agent 与长期记忆方向开发者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "mksglu/context-mode",
+      "githubUrl": "https://github.com/mksglu/context-mode",
+      "canonicalUrl": "https://github.com/mksglu/context-mode",
+      "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "stars": 22028,
+      "forks": 1585,
+      "recentGrowth": 378,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +378"
+        ]
+      },
+      "plainSummary": "为 AI 编码 Agent 节省上下文窗口的工具。",
+      "introduction": "它通过隔离工具输出、保留会话记忆和路由规则来优化上下文使用。可以接入多类平台，减少大量工具输出挤占对话空间。",
+      "whyToday": "快照实增 378 星，上下文优化需求受到持续关注。",
+      "audience": "重度使用编码 Agent 的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "openai/plugins",
+      "githubUrl": "https://github.com/openai/plugins",
+      "canonicalUrl": "https://github.com/openai/plugins",
+      "description": "OpenAI Plugins",
+      "stars": 6387,
+      "forks": 842,
+      "recentGrowth": 276,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +276"
+        ]
+      },
+      "plainSummary": "OpenAI Plugins 的公开仓库。",
+      "introduction": "它集中承载 OpenAI Plugins 相关内容。可以作为了解插件形态和已有材料的入口。",
+      "whyToday": "快照实增 276 星，进入当天高增长候选。",
+      "audience": "OpenAI 生态开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "coreyhaines31/marketingskills",
+      "githubUrl": "https://github.com/coreyhaines31/marketingskills",
+      "canonicalUrl": "https://github.com/coreyhaines31/marketingskills",
+      "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+      "stars": 49460,
+      "forks": 7535,
+      "recentGrowth": 272,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +272"
+        ]
+      },
+      "plainSummary": "覆盖转化、文案、SEO、分析与增长工程的营销 Agent 技能。",
+      "introduction": "它把常见营销工作拆成 Claude Code 和 AI Agent 可用的技能。可以按任务挑选模块，为产品营销流程补上结构化方法。",
+      "whyToday": "快照实增 272 星，营销技能集合保持活跃。",
+      "audience": "增长、市场与独立开发者",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "every-app/open-seo",
+      "githubUrl": "https://github.com/every-app/open-seo",
+      "canonicalUrl": "https://github.com/every-app/open-seo",
+      "description": "Open source alternative to Semrush and Ahrefs",
+      "stars": 18297,
+      "forks": 2315,
+      "recentGrowth": 233,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +233"
+        ]
+      },
+      "plainSummary": "面向 Semrush 和 Ahrefs 的开源替代方案。",
+      "introduction": "它提供开源 SEO 工具方向的替代选择。可以用于研究关键词、站点表现等工作流，降低对封闭平台的依赖。",
+      "whyToday": "快照实增 233 星，开源 SEO 工具受到明显关注。",
+      "audience": "SEO 从业者、站长与增长团队",
+      "editorialTags": [
+        "开源替代",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "ruvnet/ruflo",
+      "githubUrl": "https://github.com/ruvnet/ruflo",
+      "canonicalUrl": "https://github.com/ruvnet/ruflo",
+      "description": "🌊 The original agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+      "stars": 72000,
+      "forks": 8518,
+      "recentGrowth": 227,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +227"
+        ]
+      },
+      "plainSummary": "用于部署和协调多 Agent 群体的元级 Harness。",
+      "introduction": "它面向多 Agent 编排、自主工作流、记忆与 RAG 集成。可以用来搭建 Agent 群协作实验，并连接多种编码助手。",
+      "whyToday": "快照实增 227 星，多 Agent 编排方向继续升温。",
+      "audience": "多 Agent 系统与工作流开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    }
+  ]
+}

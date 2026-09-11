@@ -2,8 +2,9 @@ import { spawnSync } from "node:child_process";
 import { mkdir, readFile, readdir, rename, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { aiEditionSchema, editorTaskSchema } from "../src/lib/editor/schema";
-import type { DailyEdition, EditorTask, EditorTaskCandidate, EditorialProject } from "../src/lib/types";
+import type { CandidateProject, DailyEdition, EditorTask, EditorTaskCandidate, EditorialProject } from "../src/lib/types";
 import { validateEdition } from "./validate-edition";
+import { generateFeed } from "./generate-feed";
 
 const ROOT = process.cwd();
 const STATE_ROOT = path.join(ROOT, ".daily-pipeline");
@@ -87,7 +88,7 @@ async function prepare(date: string): Promise<void> {
   console.log(JSON.stringify({ ok: true, stage: "prepare", reused: false, date, taskPath, candidateCount: task.candidates.length, sourceStatus: task.sourceStatus, editorOutputPath: path.join(OUTPUT_ROOT, `${date}.json`) }, null, 2));
 }
 
-function projectFrom(candidate: EditorTaskCandidate, editorial: ReturnType<typeof aiEditionSchema.parse>["projects"][number]): EditorialProject {
+function candidateProjectFrom(candidate: EditorTaskCandidate): CandidateProject {
   return {
     name: candidate.repoName,
     githubUrl: candidate.url,
@@ -106,6 +107,12 @@ function projectFrom(candidate: EditorTaskCandidate, editorial: ReturnType<typeo
     pushedAt: candidate.pushedAt,
     sources: candidate.sources,
     score: candidate.score,
+  };
+}
+
+function projectFrom(candidate: EditorTaskCandidate, editorial: ReturnType<typeof aiEditionSchema.parse>["projects"][number]): EditorialProject {
+  return {
+    ...candidateProjectFrom(candidate),
     plainSummary: editorial.plainSummary,
     introduction: editorial.introduction,
     whyToday: editorial.whyToday,
@@ -132,11 +139,14 @@ async function stage(date: string): Promise<void> {
   const task = await readTask(date);
   const inputPath = path.resolve(option("input") ?? path.join(OUTPUT_ROOT, `${date}.json`));
   const output = aiEditionSchema.parse(JSON.parse(await readFile(inputPath, "utf8")));
-  const expectedFeaturedCount = Math.min(task.targetCount, task.candidates.length);
+  if (task.candidates.length < task.targetCount) {
+    throw new Error(`候选池仅 ${task.candidates.length} 个，不足以出版固定 ${task.targetCount} 个 AI 精选`);
+  }
+  const expectedFeaturedCount = task.targetCount;
 
   const candidates = new Map(task.candidates.map((item) => [item.url.toLowerCase().replace(/\/$/, ""), item]));
   const seen = new Set<string>();
-  const allProjects = output.projects.map((editorial) => {
+  const editorialProjects = output.projects.map((editorial) => {
     const key = editorial.githubUrl.toLowerCase().replace(/\/$/, "");
     if (seen.has(key)) throw new Error(`Aime 编辑结果重复：${editorial.githubUrl}`);
     seen.add(key);
@@ -145,17 +155,16 @@ async function stage(date: string): Promise<void> {
     return projectFrom(candidate, editorial);
   });
 
-  const featuredProjects = allProjects.slice(0, expectedFeaturedCount);
+  const featuredProjects = editorialProjects.slice(0, expectedFeaturedCount);
   if (featuredProjects.length !== expectedFeaturedCount) {
-    throw new Error(`Aime 编辑结果至少应包含 ${expectedFeaturedCount} 个项目以供精选，实际总计 ${allProjects.length} 个`);
+    throw new Error(`Aime 编辑结果至少应包含 ${expectedFeaturedCount} 个项目以供精选，实际总计 ${editorialProjects.length} 个`);
   }
 
-  const degraded = task.candidates.length < task.targetCount;
   const edition: DailyEdition = {
     date,
     issue: await nextIssue(date),
-    title: degraded ? `${featuredProjects.length} 个真实 GitHub 项目，今日降级刊` : "30 个真实 GitHub 项目，今天都能玩点不一样的",
-    metadata: { targetCount: 30, degraded, ...(degraded ? { degradedReason: `当天可核验候选仅 ${task.candidates.length} 个，已全部采用且未使用虚构项目。` } : {}) },
+    title: "30 个真实 GitHub 项目，今天都能玩点不一样的",
+    metadata: { targetCount: 30, degraded: false },
     summary: output.summary,
     mode: "live",
     editorMode: "aime",
@@ -168,10 +177,11 @@ async function stage(date: string): Promise<void> {
 
   const stagingPath = path.join(STAGING_ROOT, `${date}.json`);
   const stagingEnrichedPath = path.join(STAGING_ROOT, `enriched-${date}.json`);
+  const candidateProjects = task.candidates.map(candidateProjectFrom);
   await atomicJson(stagingPath, edition);
-  await atomicJson(stagingEnrichedPath, { date, projects: allProjects });
+  await atomicJson(stagingEnrichedPath, { date, projects: candidateProjects });
   await validateEdition(date, stagingPath);
-  console.log(JSON.stringify({ ok: true, stage: "stage", date, stagingPath, stagingEnrichedPath, featuredCount: featuredProjects.length, totalEnriched: allProjects.length, next: `pnpm pipeline:finalize -- --date ${date}` }, null, 2));
+  console.log(JSON.stringify({ ok: true, stage: "stage", date, stagingPath, stagingEnrichedPath, featuredCount: featuredProjects.length, totalEnriched: candidateProjects.length, next: `pnpm pipeline:finalize -- --date ${date}` }, null, 2));
 }
 
 async function generatedIndex(): Promise<string> {
@@ -182,7 +192,7 @@ async function generatedIndex(): Promise<string> {
   const imports = dates.map((date, index) => `import edition${index} from "./editions/${date}.json";`).join("\n");
   const enrichedImports = enrichedDates.map((date, index) => `import enriched${index} from "./enriched-candidates/${date}.json";`).join("\n");
 
-  return `import type { DailyEdition, EditorialProject } from "@/lib/types";\n${imports}\n${enrichedImports}\n\nexport const editions = [${dates.map((_, index) => `edition${index}`).join(", ")}] as DailyEdition[];\nexport const latestEdition = editions[0];\n\nconst enrichedCandidates = [${enrichedDates.map((date, index) => `{ date: "${date}", projects: enriched${index}.projects as EditorialProject[] }`).join(", ")}];\n\nexport function getEdition(date: string): DailyEdition | undefined {\n  return editions.find((edition) => edition.date === date);\n}\n\nexport function getEnrichedCandidates(date: string): EditorialProject[] {\n  return enrichedCandidates.find((item) => item.date === date)?.projects ?? [];\n}\n`;
+  return `import type { CandidatePool, CandidateProject, DailyEdition } from "@/lib/types";\n${imports}\n${enrichedImports}\n\nexport const editions = [${dates.map((_, index) => `edition${index}`).join(", ")}] as DailyEdition[];\nexport const latestEdition = editions[0];\n\nexport const candidatePools: CandidatePool[] = [${enrichedDates.map((date, index) => `{ date: "${date}", projects: enriched${index}.projects as CandidateProject[] }`).join(", ")}];\n\nexport function getEdition(date: string): DailyEdition | undefined {\n  return editions.find((edition) => edition.date === date);\n}\n\nexport function getEnrichedCandidates(date: string): CandidateProject[] {\n  return candidatePools.find((item) => item.date === date)?.projects ?? [];\n}\n`;
 }
 
 async function finalize(date: string): Promise<void> {
@@ -201,7 +211,8 @@ async function finalize(date: string): Promise<void> {
   }
 
   await atomicText(path.join(ROOT, "src/data/index.ts"), await generatedIndex());
-  console.log(JSON.stringify({ ok: true, stage: "finalize", date, finalPath, finalEnrichedPath, selectedCount: edition.projects.length, next: "pnpm lint && pnpm test && pnpm build，然后部署 dist；仅部署成功后运行 pipeline:success" }, null, 2));
+  const feed = await generateFeed();
+  console.log(JSON.stringify({ ok: true, stage: "finalize", date, finalPath, finalEnrichedPath, selectedCount: edition.projects.length, feedLatest: feed.latest, feedEditionCount: feed.editions.length, next: "pnpm lint && pnpm test && pnpm build，然后部署 dist；仅部署成功后运行 pipeline:success" }, null, 2));
 }
 
 async function status(date: string): Promise<void> {
@@ -219,11 +230,10 @@ async function success(date: string): Promise<void> {
   const url = option("url");
   if (!url || !/^https?:\/\//.test(url)) throw new Error("成功回执必须提供 --url https://...");
   const authorization = process.env.PIPELINE_SUCCESS_AUTHORIZATION?.trim();
-  if (!authorization) throw new Error("成功回执缺少认证信息：请设置 PIPELINE_SUCCESS_AUTHORIZATION（例如 Bearer <token>）");
   const edition = await validateEdition(date, path.join(EDITIONS_ROOT, `${date}.json`));
   await stat(path.join(ROOT, "dist/index.html"));
   const response = await fetch(url, {
-    headers: { authorization },
+    ...(authorization ? { headers: { authorization } } : {}),
     signal: AbortSignal.timeout(15_000),
   });
   if (!response.ok) throw new Error(`线上可用性检查失败：HTTP ${response.status}`);

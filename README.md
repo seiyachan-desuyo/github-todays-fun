@@ -79,7 +79,17 @@ pnpm test
 pnpm build
 ```
 
-校验器会确认：正式刊 schema 合法、正常出版恰好 30 项（候选池不足时才允许等于候选数并明示降级原因）、项目全部来自当天候选池、无重复项目、所有事实字段未被编辑改写、来源状态与统计一致。Next.js 使用静态导出，产物位于 `dist/`。
+校验器会确认：正式刊 schema 合法且恰好包含 30 项 AI 精选、项目全部来自当天候选池、无重复项目、所有事实字段未被编辑改写、来源状态与统计一致。`enriched-candidates` 则保存程序评分后的完整事实候选池，不要求 Aime 逐条编辑。Next.js 使用静态导出，产物位于 `dist/`。`pnpm build` 会先运行 `pnpm feed:generate`，把所有正式刊及按日期关联的完整候选池生成到 `public/data/feed.json` 并一并导出。
+
+### 4. 远程 Feed 与 Aime App 回退
+
+网站同源读取 `/data/feed.json`，Feed 同时携带 `editions`（每期固定 30 个 AI 精选）与 `candidatePools`（对应日期的完整程序评分候选池）。候选池只在用户展开“查看更多候选”时渲染。Aime runtime 的 `/api/feed` 默认代理公开 GitHub Raw 地址：
+
+```text
+https://raw.githubusercontent.com/seiyachan-desuyo/github-todays-fun/aime/1788773097-github-today-fun/public/data/feed.json
+```
+
+可通过 `GITHUB_TODAY_FEED_URL` 覆盖。固定 IDA 站点开启 SSO，不作为 runtime 的无凭据 Feed 源。前端优先读取 `/api/feed`；远程请求失败、返回非 2xx 或 Feed 格式非法时，再读取安装包随附的 `/data/feed.json`，因此离线或远程尚未更新时仍可展示包内最新刊。GitHub Raw 只有在对应分支已推送 `public/data/feed.json` 后才会返回 200。
 
 ## 数据源与 fallback
 
@@ -127,9 +137,11 @@ src/lib/editor/schema.ts        editor task 与正式刊 schema
 
 - `GITHUB_TOKEN`：可选，建议生产配置；
 - `VERCEL_TOKEN`：定时环境未登录 Vercel CLI 时用于生产部署；
+- `PIPELINE_SUCCESS_AUTHORIZATION`：可选，仅当 `pipeline:success` 检查的目标站点要求认证时填写该站点接受的完整 `Authorization` 请求头值（如 `Bearer <token>`）；公开站点留空即可，脚本不会发送该 Header；
 - `EDITION_DATE`：可选兼容变量，推荐在命令中显式传 `--date YYYY-MM-DD`；
 - `LARK_APP_ID`、`LARK_APP_SECRET`、`LARK_RECIPIENT_ID`：仅独立飞书 Bot 推送需要；
-- `GITHUB_TODAY_WEBSITE_URL`：可选，覆盖飞书卡片跳转的网站地址。
+- `GITHUB_TODAY_WEBSITE_URL`：可选，覆盖飞书卡片跳转的网站地址；
+- `GITHUB_TODAY_FEED_URL`：可选，覆盖 Aime runtime 默认使用的公开 GitHub Raw Feed。
 
 项目默认流程没有任何 LLM Key 配置。
 

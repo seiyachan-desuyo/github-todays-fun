@@ -6,7 +6,7 @@ import siteLogo from "@/assets/site-logo.png";
 import { useEffect, useMemo, useState } from "react";
 import {
   Bookmark, Check, ChevronDown, Clock3, Github, Heart, LibraryBig,
-  Menu, Search, Settings2, Sparkles, X,
+  Menu, Moon, Search, Settings2, Sparkles, Sun, X,
 } from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
 import {
@@ -14,10 +14,22 @@ import {
   interestMatchCount, matchesCategory, personalizedScore, projectCategory,
   type DiscoveryCategory,
 } from "@/lib/discovery";
-import type { DailyEdition, EditorialProject, EditorialTag } from "@/lib/types";
+import type { CandidatePool, DailyEdition, EditorialTag } from "@/lib/types";
 
 const SAVED_KEY = "github-today-saved";
 const INTEREST_KEY = "github-today-interests";
+const THEME_KEY = "github-today-theme";
+const FEED_ENDPOINTS = ["/api/feed", "/data/feed.json"];
+
+type EditionFeed = { schemaVersion: 2; latest: string; editions: DailyEdition[]; candidatePools: CandidatePool[] };
+
+function isEditionFeed(value: unknown): value is EditionFeed {
+  if (!value || typeof value !== "object") return false;
+  const feed = value as Partial<EditionFeed>;
+  return feed.schemaVersion === 2 && typeof feed.latest === "string" && Array.isArray(feed.editions)
+    && feed.editions.length > 0 && feed.editions.every((item) => item && typeof item.date === "string" && Array.isArray(item.projects))
+    && Array.isArray(feed.candidatePools) && feed.candidatePools.every((item) => item && typeof item.date === "string" && Array.isArray(item.projects));
+}
 
 function MastheadMark() {
   return <Image src={siteLogo} alt="GitHub 今日好玩" width={48} height={48} priority className="h-11 w-11 shrink-0 rounded-2xl object-cover shadow-lg shadow-violet-200 sm:h-12 sm:w-12" />;
@@ -32,11 +44,17 @@ function readLocalList(key: string): string[] {
   }
 }
 
-export function DailyDiscover({ edition, editions, candidates }: {
+export function DailyDiscover({ edition, editions, candidatePools }: {
   edition: DailyEdition;
   editions: DailyEdition[];
-  candidates: EditorialProject[];
+  candidatePools: CandidatePool[];
 }) {
+  const [remoteFeed, setRemoteFeed] = useState<EditionFeed | null>(null);
+  const [selectedDate, setSelectedDate] = useState(edition.date);
+  const availableEditions = remoteFeed?.editions ?? editions;
+  const availableCandidatePools = remoteFeed?.candidatePools ?? candidatePools;
+  const displayedEdition = availableEditions.find((item) => item.date === selectedDate) ?? availableEditions[0] ?? edition;
+  const displayedCandidates = availableCandidatePools.find((item) => item.date === displayedEdition.date)?.projects ?? [];
   const [active, setActive] = useState<DiscoveryCategory>("all");
   const [query, setQuery] = useState("");
   const [saved, setSaved] = useState<string[]>([]);
@@ -46,14 +64,53 @@ export function DailyDiscover({ edition, editions, candidates }: {
   const [interestOpen, setInterestOpen] = useState(false);
   const [candidateOpen, setCandidateOpen] = useState(false);
   const [candidateLimit, setCandidateLimit] = useState(30);
+  const [darkMode, setDarkMode] = useState(false);
   const [storageReady, setStorageReady] = useState(false);
   const [toast, setToast] = useState("");
 
   useEffect(() => {
     setSaved(readLocalList(SAVED_KEY));
     setInterests(readLocalList(INTEREST_KEY).filter((item): item is EditorialTag => INTEREST_OPTIONS.some((option) => option.tag === item)));
+    const storedTheme = window.localStorage.getItem(THEME_KEY);
+    const initialDarkMode = storedTheme === "dark";
+    setDarkMode(initialDarkMode);
+    document.documentElement.dataset.theme = initialDarkMode ? "dark" : "light";
     setStorageReady(true);
   }, []);
+
+  useEffect(() => {
+    if (!storageReady) return;
+    document.documentElement.dataset.theme = darkMode ? "dark" : "light";
+    window.localStorage.setItem(THEME_KEY, darkMode ? "dark" : "light");
+  }, [darkMode, storageReady]);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function loadFeed() {
+      for (const endpoint of FEED_ENDPOINTS) {
+        try {
+          const response = await fetch(endpoint, { cache: "no-store" });
+          if (!response.ok) continue;
+          const feed: unknown = await response.json();
+          if (!isEditionFeed(feed)) continue;
+          if (!cancelled) {
+            setRemoteFeed(feed);
+            setSelectedDate(feed.latest);
+          }
+          return;
+        } catch {
+          // Try the same-origin static feed, then keep the bundled fallback.
+        }
+      }
+    }
+    void loadFeed();
+    return () => { cancelled = true; };
+  }, []);
+
+  useEffect(() => {
+    setCandidateOpen(false);
+    setCandidateLimit(30);
+  }, [displayedEdition.date]);
 
   useEffect(() => {
     if (!toast) return;
@@ -62,24 +119,24 @@ export function DailyDiscover({ edition, editions, candidates }: {
   }, [toast]);
 
   const allPublishedProjects = useMemo(() => {
-    const unique = new Map(editions.flatMap((item) => item.projects).map((project) => [project.canonicalUrl, project]));
+    const unique = new Map(availableEditions.flatMap((item) => item.projects).map((project) => [project.canonicalUrl, project]));
     return [...unique.values()];
-  }, [editions]);
+  }, [availableEditions]);
 
   const categoryCounts = useMemo(() => Object.fromEntries(DISCOVERY_CATEGORIES.map(({ id }) => [
     id,
     id === "saved"
       ? allPublishedProjects.filter((project) => saved.includes(project.canonicalUrl)).length
       : id === "for-you"
-        ? edition.projects.filter((project) => interestMatchCount(project, interests) > 0).length
-        : edition.projects.filter((project) => matchesCategory(project, id, edition.date, saved)).length,
-  ])), [allPublishedProjects, edition, interests, saved]);
+        ? displayedEdition.projects.filter((project) => interestMatchCount(project, interests) > 0).length
+        : displayedEdition.projects.filter((project) => matchesCategory(project, id, displayedEdition.date, saved)).length,
+  ])), [allPublishedProjects, displayedEdition, interests, saved]);
 
   const projects = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase("zh-CN");
-    const sourceProjects = active === "saved" ? allPublishedProjects : edition.projects;
+    const sourceProjects = active === "saved" ? allPublishedProjects : displayedEdition.projects;
     const result = sourceProjects.filter((project) => {
-      if (!matchesCategory(project, active, edition.date, saved)) return false;
+      if (!matchesCategory(project, active, displayedEdition.date, saved)) return false;
       if (!normalizedQuery) return true;
       return [project.name, project.plainSummary, project.introduction, project.whyToday, project.language, ...project.editorialTags]
         .filter(Boolean)
@@ -89,7 +146,7 @@ export function DailyDiscover({ edition, editions, candidates }: {
       return [...result].sort((a, b) => personalizedScore(b, interests) - personalizedScore(a, interests));
     }
     return result;
-  }, [active, allPublishedProjects, edition, interests, query, saved]);
+  }, [active, allPublishedProjects, displayedEdition, interests, query, saved]);
 
   function toggleSaved(url: string) {
     setSaved((current) => {
@@ -115,8 +172,8 @@ export function DailyDiscover({ edition, editions, candidates }: {
     document.getElementById("today-picks")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  const formattedDate = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "long", day: "numeric", weekday: "long" }).format(new Date(`${edition.date}T12:00:00+08:00`));
-  const isDemo = edition.mode === "demo";
+  const formattedDate = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "long", day: "numeric", weekday: "long" }).format(new Date(`${displayedEdition.date}T12:00:00+08:00`));
+  const isDemo = displayedEdition.mode === "demo";
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-transparent text-stone-900">
@@ -133,9 +190,12 @@ export function DailyDiscover({ edition, editions, candidates }: {
                 <h1 className="truncate font-serif text-2xl font-black tracking-tight sm:text-3xl">GitHub 今日好玩</h1>
               </div>
             </Link>
-            <div className="hidden items-center gap-5 text-xs text-stone-500 md:flex">
-              <span>{formattedDate}</span>
-              <span className="rounded-full border border-orange-200 bg-white px-3 py-1.5 font-bold text-stone-700">第 {String(edition.issue).padStart(3, "0")} 期</span>
+            <div className="flex items-center gap-3 text-xs text-stone-500">
+              <span className="hidden md:inline">{formattedDate}</span>
+              <span className="hidden rounded-full border border-orange-200 bg-white px-3 py-1.5 font-bold text-stone-700 md:inline">第 {String(displayedEdition.issue).padStart(3, "0")} 期</span>
+              <button type="button" onClick={() => setDarkMode((value) => !value)} className="theme-toggle grid h-10 w-10 place-items-center rounded-full border border-white/70 bg-white/65 text-violet-700 shadow-sm backdrop-blur-xl transition hover:-translate-y-0.5" aria-label={darkMode ? "切换到浅色模式" : "切换到深色模式"} title={darkMode ? "浅色模式" : "深色模式"}>
+                {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
             </div>
           </div>
         </div>
@@ -149,10 +209,10 @@ export function DailyDiscover({ edition, editions, candidates }: {
             <div className="mb-7 flex flex-wrap items-center gap-2">
               <span className="rounded-full bg-stone-900 px-4 py-2 text-xs font-bold text-white">今日 30 个</span>
               <span className="inline-flex items-center gap-1 rounded-full border border-white/70 bg-white/60 px-4 py-2 text-xs font-bold text-violet-700 shadow-sm backdrop-blur-xl"><Clock3 size={13} /> 约 5 分钟读完</span>
-              {isDemo && <span className="rounded-full bg-amber-200 px-3 py-1.5 text-xs font-bold text-amber-900">示例刊物 · {edition.date}</span>}
+              {isDemo && <span className="rounded-full bg-amber-200 px-3 py-1.5 text-xs font-bold text-amber-900">示例刊物 · {displayedEdition.date}</span>}
             </div>
             <h2 className="max-w-5xl bg-gradient-to-r from-[#241345] via-[#5f32db] to-[#9d74ff] bg-clip-text font-serif text-5xl font-black leading-[1.02] tracking-[-0.055em] text-transparent sm:text-7xl lg:text-[5.6rem]">今天的 GitHub <span className="emoji-hand" role="img" aria-label="挥手">👋</span><br /><span>有什么好玩的？</span></h2>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-stone-600 sm:text-lg">{edition.summary}</p>
+            <p className="mt-7 max-w-2xl text-base leading-8 text-stone-600 sm:text-lg">{displayedEdition.summary}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <button onClick={() => chooseCategory("all")} className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-start to-brand-end px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-violet-200 transition hover:-translate-y-1 hover:shadow-2xl"><Sparkles size={16} /> 开始翻今天这期</button>
               <button onClick={() => setInterestOpen(true)} className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/60 px-6 py-3.5 text-sm font-bold text-stone-700 shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:border-violet-300 hover:text-violet-700"><Settings2 size={16} /> {interests.length ? `已选 ${interests.length} 个兴趣` : "告诉我你爱看什么"}</button>
@@ -178,14 +238,14 @@ export function DailyDiscover({ edition, editions, candidates }: {
               <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜项目、用途或标签" aria-label="搜索项目" className="w-full rounded-full border border-white/10 bg-white/10 py-2 pl-9 pr-3 text-sm text-white outline-none transition placeholder:text-white/50 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/30" />
             </div>
             <div className="relative block">
-              <button onClick={() => setArchiveOpen((value) => !value)} className="dock-action flex items-center gap-1 rounded-full px-3 py-2 text-sm font-bold" aria-expanded={archiveOpen}><LibraryBig size={15} /> 第 {String(edition.issue).padStart(3, "0")} 期 <ChevronDown size={14} className={archiveOpen ? "rotate-180" : ""} /></button>
+              <button onClick={() => setArchiveOpen((value) => !value)} className="dock-action flex items-center gap-1 rounded-full px-3 py-2 text-sm font-bold" aria-expanded={archiveOpen}><LibraryBig size={15} /> 第 {String(displayedEdition.issue).padStart(3, "0")} 期 <ChevronDown size={14} className={archiveOpen ? "rotate-180" : ""} /></button>
               {archiveOpen && (
                 <div className="absolute right-0 top-12 z-40 w-80 overflow-hidden rounded-2xl border border-stone-200 bg-white p-2 shadow-xl">
                   <div className="px-3 pb-2 pt-1"><p className="text-xs font-black uppercase tracking-widest text-orange-600">Past editions</p><p className="mt-1 text-sm text-stone-500">按期数浏览往期推送</p></div>
                   <div className="max-h-80 overflow-y-auto">
-                    {editions.map((item) => {
-                      const selected = item.date === edition.date;
-                      return <Link key={item.date} href={item.date === editions[0].date ? "/" : `/archive/${item.date}`} className={`flex items-center justify-between gap-4 rounded-xl px-3 py-3 transition ${selected ? "bg-orange-50 text-orange-700" : "hover:bg-orange-50"}`}><span><strong className="block text-sm">第 {String(item.issue).padStart(3, "0")} 期</strong><span className="mt-1 block text-xs text-stone-500">{item.title}</span></span><span className="shrink-0 text-xs text-stone-400">{item.date.slice(5).replace("-", ".")}</span></Link>;
+                    {availableEditions.map((item) => {
+                      const selected = item.date === displayedEdition.date;
+                      return <button type="button" key={item.date} onClick={() => { setSelectedDate(item.date); setArchiveOpen(false); setActive("all"); setQuery(""); }} className={`flex w-full items-center justify-between gap-4 rounded-xl px-3 py-3 text-left transition ${selected ? "bg-orange-50 text-orange-700" : "hover:bg-orange-50"}`}><span><strong className="block text-sm">第 {String(item.issue).padStart(3, "0")} 期</strong><span className="mt-1 block text-xs text-stone-500">{item.title}</span></span><span className="shrink-0 text-xs text-stone-400">{item.date.slice(5).replace("-", ".")}</span></button>;
                     })}
                   </div>
                 </div>
@@ -209,7 +269,7 @@ export function DailyDiscover({ edition, editions, candidates }: {
 
           {projects.length ? (
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {projects.map((project, index) => <ProjectCard key={project.canonicalUrl} project={project} index={index} saved={saved.includes(project.canonicalUrl)} onToggleSaved={() => toggleSaved(project.canonicalUrl)} category={projectCategory(project, edition.date)} matchedInterest={interestMatchCount(project, interests) > 0} />)}
+              {projects.map((project, index) => <ProjectCard key={project.canonicalUrl} project={project} index={index} saved={saved.includes(project.canonicalUrl)} onToggleSaved={() => toggleSaved(project.canonicalUrl)} category={projectCategory(project, displayedEdition.date)} matchedInterest={interestMatchCount(project, interests) > 0} />)}
             </div>
           ) : (
             <div className="rounded-3xl border border-dashed border-orange-200 bg-orange-50 px-6 py-20 text-center">
@@ -222,36 +282,36 @@ export function DailyDiscover({ edition, editions, candidates }: {
         </div>
       </section>
 
-      {candidates.length > 0 && (
+      {displayedCandidates.length > 0 && (
         <section className="border-t border-stone-200 pb-12 sm:pb-16">
           <div className="mx-auto max-w-7xl px-5 pt-8 sm:px-8">
             {!candidateOpen ? (
               <div className="text-center">
                 <button onClick={() => setCandidateOpen(true)} className="inline-flex items-center gap-2 rounded-full border border-orange-300 bg-white px-6 py-3 text-sm font-black text-orange-700 transition hover:bg-orange-500 hover:text-white">
-                  查看全部 {candidates.length} 个可核验候选 <ChevronDown size={16} />
+                  查看全部 {displayedCandidates.length} 个可核验候选 <ChevronDown size={16} />
                 </button>
                 <p className="mt-3 text-xs text-stone-500">精选 30 个还没看够？继续浏览当天完整候选池。</p>
               </div>
             ) : (
               <div>
                 <div className="mb-6 flex flex-col justify-between gap-3 border-b border-stone-200 pb-4 sm:flex-row sm:items-end">
-                  <div><p className="text-xs font-black uppercase tracking-widest text-orange-600">All verified candidates</p><h2 className="mt-1 font-serif text-3xl font-black">当天全部可核验候选</h2><p className="mt-2 text-sm text-stone-500">基于原始描述与 README 编辑的中文介绍，供你发现更多可能。</p></div>
+                  <div><p className="text-xs font-black uppercase tracking-widest text-orange-600">All verified candidates</p><h2 className="mt-1 font-serif text-3xl font-black">当天全部可核验候选</h2><p className="mt-2 text-sm text-stone-500">以下内容按程序评分排序，直接展示仓库原始描述与可核验信号，未经 AI 逐条编辑。</p></div>
                   <button onClick={() => setCandidateOpen(false)} className="self-start text-sm font-bold text-stone-500 hover:text-orange-700">收起候选列表</button>
                 </div>
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                  {candidates.slice(0, candidateLimit).map((candidate, index) => (
+                  {displayedCandidates.slice(0, candidateLimit).map((candidate, index) => (
                     <ProjectCard
                       key={candidate.canonicalUrl}
                       project={candidate}
                       index={index}
                       saved={saved.includes(candidate.canonicalUrl)}
                       onToggleSaved={() => toggleSaved(candidate.canonicalUrl)}
-                      category={projectCategory(candidate, edition.date)}
-                      matchedInterest={interestMatchCount(candidate, interests) > 0}
+                      category={projectCategory(candidate, displayedEdition.date)}
+                      matchedInterest={false}
                     />
                   ))}
                 </div>
-                {candidateLimit < candidates.length && <div className="mt-6 text-center"><button onClick={() => setCandidateLimit((value) => Math.min(value + 30, candidates.length))} className="rounded-full bg-stone-900 px-6 py-3 text-sm font-bold text-white hover:bg-orange-600">再看 30 个</button></div>}
+                {candidateLimit < displayedCandidates.length && <div className="mt-6 text-center"><button onClick={() => setCandidateLimit((value) => Math.min(value + 30, displayedCandidates.length))} className="rounded-full bg-stone-900 px-6 py-3 text-sm font-bold text-white hover:bg-orange-600">再看 30 个</button></div>}
               </div>
             )}
           </div>
@@ -262,7 +322,7 @@ export function DailyDiscover({ edition, editions, candidates }: {
         <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-3">
           <div><p className="text-xs font-black uppercase tracking-widest text-orange-600">Facts, then words</p><h2 className="mt-2 font-serif text-2xl font-black">这些内容从哪来？</h2><p className="mt-3 text-sm leading-6 text-stone-500">程序先采集可核验事实、去重并评分，再由 Aime 只根据真实 description 与可用 README 写成中文，校验通过后发布。</p></div>
           <div className="lg:col-span-2 grid gap-3 sm:grid-cols-3">
-            {edition.sourceStatus.map((source) => <div key={source.source} className="rounded-2xl border border-stone-200 bg-stone-50 p-4"><div className="flex items-center justify-between"><Github size={18} /><span className={`rounded-full px-2 py-1 text-xs font-bold ${source.status === "ok" ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-800"}`}>{source.status === "ok" ? "正常" : "降级"}</span></div><p className="mt-3 text-sm font-bold">{SOURCE_LABELS[source.source]}</p><p className="mt-1 text-xs leading-5 text-stone-500">{source.normalizedCount ?? 0} 条可用事实</p></div>)}
+            {displayedEdition.sourceStatus.map((source) => <div key={source.source} className="rounded-2xl border border-stone-200 bg-stone-50 p-4"><div className="flex items-center justify-between"><Github size={18} /><span className={`rounded-full px-2 py-1 text-xs font-bold ${source.status === "ok" ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-800"}`}>{source.status === "ok" ? "正常" : "降级"}</span></div><p className="mt-3 text-sm font-bold">{SOURCE_LABELS[source.source]}</p><p className="mt-1 text-xs leading-5 text-stone-500">{source.normalizedCount ?? 0} 条可用事实</p></div>)}
           </div>
         </div>
       </section>
