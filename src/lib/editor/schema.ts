@@ -62,6 +62,7 @@ export const candidateProjectSchema = z.object({
   githubUrl: z.string().url().refine((url) => new URL(url).hostname === "github.com", "必须是 GitHub URL"),
   canonicalUrl: z.string().url(),
   description: z.string().min(1).optional(),
+  chineseDescription: z.string().min(2).max(160).optional(),
   readme: z.string().min(1).optional(),
   stars: z.number().int().nonnegative().optional(),
   forks: z.number().int().nonnegative().optional(),
@@ -108,6 +109,10 @@ export const aimeEditionSchema = z.object({
 export const aiEditionSchema = z.object({
   summary: z.string().min(10).max(180),
   projects: z.array(editorialItemSchema.pick({ githubUrl: true, plainSummary: true, introduction: true, whyToday: true, audience: true, editorialTags: true, recommendation: true })).min(1).max(500),
+  candidateTranslations: z.array(z.object({
+    githubUrl: candidateProjectSchema.shape.githubUrl,
+    chineseDescription: z.string().min(2).max(160),
+  })).min(1).max(1000),
 });
 
 export const enrichedCandidatesSchema = z.object({

@@ -88,12 +88,13 @@ async function prepare(date: string): Promise<void> {
   console.log(JSON.stringify({ ok: true, stage: "prepare", reused: false, date, taskPath, candidateCount: task.candidates.length, sourceStatus: task.sourceStatus, editorOutputPath: path.join(OUTPUT_ROOT, `${date}.json`) }, null, 2));
 }
 
-function candidateProjectFrom(candidate: EditorTaskCandidate): CandidateProject {
+function candidateProjectFrom(candidate: EditorTaskCandidate, chineseDescription: string): CandidateProject {
   return {
     name: candidate.repoName,
     githubUrl: candidate.url,
     canonicalUrl: candidate.url.toLowerCase().replace(/\/$/, ""),
     description: candidate.description,
+    chineseDescription,
     readme: candidate.readmeSummary,
     stars: candidate.stars,
     forks: candidate.forks,
@@ -110,9 +111,9 @@ function candidateProjectFrom(candidate: EditorTaskCandidate): CandidateProject 
   };
 }
 
-function projectFrom(candidate: EditorTaskCandidate, editorial: ReturnType<typeof aiEditionSchema.parse>["projects"][number]): EditorialProject {
+function projectFrom(candidate: EditorTaskCandidate, chineseDescription: string, editorial: ReturnType<typeof aiEditionSchema.parse>["projects"][number]): EditorialProject {
   return {
-    ...candidateProjectFrom(candidate),
+    ...candidateProjectFrom(candidate, chineseDescription),
     plainSummary: editorial.plainSummary,
     introduction: editorial.introduction,
     whyToday: editorial.whyToday,
@@ -145,6 +146,17 @@ async function stage(date: string): Promise<void> {
   const expectedFeaturedCount = task.targetCount;
 
   const candidates = new Map(task.candidates.map((item) => [item.url.toLowerCase().replace(/\/$/, ""), item]));
+  const translations = new Map<string, string>();
+  for (const item of output.candidateTranslations) {
+    const key = item.githubUrl.toLowerCase().replace(/\/$/, "");
+    if (!candidates.has(key)) throw new Error(`候选池中文描述包含候选池外项目：${item.githubUrl}`);
+    if (translations.has(key)) throw new Error(`候选池中文描述重复：${item.githubUrl}`);
+    translations.set(key, item.chineseDescription);
+  }
+  const missingTranslations = [...candidates.keys()].filter((key) => !translations.has(key));
+  if (missingTranslations.length || translations.size !== candidates.size) {
+    throw new Error(`候选池中文描述必须完整覆盖 ${candidates.size} 个项目，当前 ${translations.size} 个，缺少 ${missingTranslations.length} 个`);
+  }
   const seen = new Set<string>();
   const editorialProjects = output.projects.map((editorial) => {
     const key = editorial.githubUrl.toLowerCase().replace(/\/$/, "");
@@ -152,7 +164,7 @@ async function stage(date: string): Promise<void> {
     seen.add(key);
     const candidate = candidates.get(key);
     if (!candidate) throw new Error(`Aime 编辑结果包含候选池外项目：${editorial.githubUrl}`);
-    return projectFrom(candidate, editorial);
+    return projectFrom(candidate, translations.get(key)!, editorial);
   });
 
   const featuredProjects = editorialProjects.slice(0, expectedFeaturedCount);
@@ -177,7 +189,7 @@ async function stage(date: string): Promise<void> {
 
   const stagingPath = path.join(STAGING_ROOT, `${date}.json`);
   const stagingEnrichedPath = path.join(STAGING_ROOT, `enriched-${date}.json`);
-  const candidateProjects = task.candidates.map(candidateProjectFrom);
+  const candidateProjects = task.candidates.map((candidate) => candidateProjectFrom(candidate, translations.get(candidate.url.toLowerCase().replace(/\/$/, ""))!));
   await atomicJson(stagingPath, edition);
   await atomicJson(stagingEnrichedPath, { date, projects: candidateProjects });
   await validateEdition(date, stagingPath);

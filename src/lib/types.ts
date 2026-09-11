@@ -47,6 +47,7 @@ export interface CandidateProject {
   githubUrl: string;
   canonicalUrl: string;
   description?: string;
+  chineseDescription?: string;
   readme?: string;
   stars?: number;
   forks?: number;

@@ -84,7 +84,7 @@ export function ProjectCard({ project, index, saved, onToggleSaved, category, ma
           <p className="mb-2 inline-flex items-center gap-1 text-xs font-bold text-violet-600"><Sparkles size={13} /> 正合你的兴趣</p>
         )}
         <h3 className="max-w-sm font-serif text-xl font-bold leading-snug tracking-tight text-stone-900 sm:text-2xl">{editorial ? project.plainSummary : project.name}</h3>
-        <p className="mt-3 text-sm leading-6 text-stone-600">{editorial ? project.introduction : (project.description ?? project.readme ?? "该仓库暂未提供项目描述。")}</p>
+        <p className="mt-3 text-sm leading-6 text-stone-600">{editorial ? project.introduction : (project.chineseDescription ?? "该仓库暂未提供中文描述。")}</p>
         <div className="mt-5 rounded-3xl border border-white/80 bg-gradient-to-br from-violet-50/90 to-white/70 p-4 shadow-sm">
           <p className="mb-1 flex items-center gap-1.5 text-xs font-bold text-violet-700"><Flame size={13} /> {editorial ? "为什么今天值得看" : "程序评分信号"}</p>
           <p className="text-xs font-medium leading-5 text-stone-700">{editorial ? project.whyToday : (project.score?.signals.join("；") || "已进入当天可核验候选池")}</p>

@@ -18,13 +18,19 @@ pnpm pipeline:prepare -- --date "$DATE"
 
 ### 2. Aime 编辑
 
-Aime 读取 `src/data/editor-tasks/$DATE.json`，只依据候选中的 `description`、`readmeSummary`、增长与评分信号选题和写中文文案。不得按项目名猜测；不得改写任何事实字段。
+Aime 读取 `src/data/editor-tasks/$DATE.json`，只依据候选中的 `description`、`readmeSummary`、增长与评分信号选题和写中文文案。除 30 个精选项目外，还要为候选池每个项目生成简短的 `chineseDescription`；不得按项目名猜测，也不得改写任何事实字段。
 
 把编辑结果写到 `.daily-pipeline/editor-output/$DATE.json`：
 
 ```json
 {
   "summary": "本期导语",
+  "candidateTranslations": [
+    {
+      "githubUrl": "必须来自当天 candidates",
+      "chineseDescription": "基于原始 description 的简短中文翻译"
+    }
+  ],
   "projects": [
     {
       "githubUrl": "必须来自当天 candidates",
@@ -39,7 +45,7 @@ Aime 读取 `src/data/editor-tasks/$DATE.json`，只依据候选中的 `descript
 }
 ```
 
-编辑结果必须恰好包含 30 项且 URL 去重。当天可核验候选池少于 30 项时停止出版，不生成降级刊。Aime 只编辑这 30 个入选项目，不需要为完整候选池逐条撰写文案。
+精选编辑结果必须恰好包含 30 项且 URL 去重；`candidateTranslations` 必须覆盖当天全部候选且 URL 去重。当天可核验候选池少于 30 项时停止出版，不生成降级刊。候选池中文描述只需简短翻译，不必写成精选项目的完整介绍。
 
 ### 3. 生成并校验 staging edition
 
