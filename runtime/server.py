@@ -46,10 +46,19 @@ class AppHandler(SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(body)
             except (HTTPError, URLError, TimeoutError, json.JSONDecodeError, ValueError) as exc:
-                body = json.dumps({"error": "remote_feed_unavailable", "detail": str(exc)}).encode()
-                self.send_response(502)
-                self.send_header("Content-Type", "application/json; charset=utf-8")
-                self.send_header("Cache-Control", "no-store")
+                local_feed = DIST / "data" / "feed.json"
+                if local_feed.is_file():
+                    body = local_feed.read_bytes()
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.send_header("Cache-Control", "no-store")
+                    self.send_header("X-Feed-Source", "packaged-fallback")
+                    self.send_header("X-Remote-Feed-Error", type(exc).__name__)
+                else:
+                    body = json.dumps({"error": "remote_feed_unavailable", "detail": str(exc)}).encode()
+                    self.send_response(502)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.send_header("Cache-Control", "no-store")
                 self.send_header("Content-Length", str(len(body)))
                 self.end_headers()
                 self.wfile.write(body)

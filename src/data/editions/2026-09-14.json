@@ -1,0 +1,1288 @@
+{
+  "date": "2026-09-14",
+  "issue": 6,
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "本期关注快速升温的 AI 创作、多代理协作、开发工具与本地模型项目，也收录机器人、语音、企业管理和桌面体验等实用方向。所有推荐理由均来自当天快照增长、Trending 增长、新仓速度或更新时效信号。",
+  "mode": "live",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+  "publishedAt": "2026-09-14T03:08:43.396Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-09-14T03:06:13.502Z",
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "raw": [
+        {
+          "query": "created:>=2026-09-11 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-08-31 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-09-11 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-09-14T03:06:13.536Z",
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 42 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "rawCount": 42,
+      "normalizedCount": 42,
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 19
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 23
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "degraded",
+      "fetchedAt": "2026-09-14T03:06:17.447Z",
+      "message": "HTTP 403，详情补全跳过；保留 Search/Trending 已有事实；rate limit remaining=0"
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 192,
+    "normalizedCandidateCount": 192,
+    "dedupedCandidateCount": 190,
+    "eligibleCandidateCount": 130,
+    "selectedCount": 30
+  },
+  "projects": [
+    {
+      "name": "Vincentwei1021/anything2explainer",
+      "githubUrl": "https://github.com/vincentwei1021/anything2explainer",
+      "canonicalUrl": "https://github.com/vincentwei1021/anything2explainer",
+      "description": "Topic in, narrated explainer video out. A Claude Code / Codex skill that turns any topic into a black-canvas motion-graphics explainer video with TTS voiceover, subtitles and a chapter progress bar. Chinese or English; every frame drawn in code with Remotion.",
+      "chineseDescription": "将任意主题制作成带旁白、字幕和章节进度条的中英文动态讲解视频。",
+      "stars": 1189,
+      "forks": 209,
+      "openIssues": 0,
+      "recentGrowth": 458,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "ai-video",
+        "claude-code",
+        "claude-code-skill",
+        "codex",
+        "edge-tts",
+        "educational-video",
+        "explainer-video",
+        "kokoro",
+        "motion-graphics",
+        "multi-agent",
+        "react",
+        "remotion",
+        "text-to-video",
+        "tts",
+        "typescript",
+        "video-generation"
+      ],
+      "createdAt": "2026-09-08T17:19:54Z",
+      "updatedAt": "2026-09-14T03:02:27Z",
+      "pushedAt": "2026-09-13T03:23:06Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +458",
+          "新仓约 209 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "把任意主题快速变成有旁白的动态图解视频。",
+      "introduction": "它把文字主题制作成黑底动态讲解视频。你可以在 Claude Code 或 Codex 中调用技能，生成中英文旁白、字幕和章节进度条。",
+      "whyToday": "快照实增 +458；新仓约 209 stars/day；2 天内有更新",
+      "audience": "适合内容创作者、教师与 AI 视频开发者",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "donvito/codex-astra-luna-orchestrator",
+      "githubUrl": "https://github.com/donvito/codex-astra-luna-orchestrator",
+      "canonicalUrl": "https://github.com/donvito/codex-astra-luna-orchestrator",
+      "description": "Use Astra as orchestrator and Luna for subagents in Codex",
+      "chineseDescription": "在 Codex 中使用 Astra 编排任务，并由 Luna 充当子代理。",
+      "stars": 1224,
+      "forks": 94,
+      "openIssues": 3,
+      "recentGrowth": 300,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-05T16:03:06Z",
+      "updatedAt": "2026-09-14T02:15:51Z",
+      "pushedAt": "2026-09-11T11:27:26Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +300",
+          "新仓约 140 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "用 Astra 和 Luna 为 Codex 组织多代理协作。",
+      "introduction": "它用 Astra 充当编排器、Luna 充当 Codex 子代理。你可以借此搭建由主代理拆解并委派任务的协作流程。",
+      "whyToday": "快照实增 +300；新仓约 140 stars/day；3 天内有更新",
+      "audience": "适合 Codex 用户与多代理工作流开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "sonicloudco/recorder",
+      "githubUrl": "https://github.com/sonicloudco/recorder",
+      "canonicalUrl": "https://github.com/sonicloudco/recorder",
+      "description": "声云录音卡 Recorder 是一套面向开发者和行业客户的智能录音硬件接入方案。 项目以录音卡片硬件为核心，开放 BLE 协议 SDK 及 Android、iOS、鸿蒙、Flutter 接入示例，同时提供 Windows/macOS 桌面端 Demo，支持设备连接、录音控制、实时音频、文件传输、OTA 升级和语音转写等能力，帮助开发者快速将录音硬件接入自己的 App、桌面软件或行业系统。 如需获取硬件规格、样机、完整协议、SDK 资料或定制服务，请联系安徽声云",
+      "chineseDescription": "面向开发者和行业客户的智能录音硬件接入方案，提供多端 SDK、示例与桌面 Demo。",
+      "stars": 1246,
+      "forks": 56,
+      "openIssues": 0,
+      "recentGrowth": 527,
+      "growthSource": "snapshot",
+      "language": "HTML",
+      "topics": [],
+      "createdAt": "2026-09-02T03:32:02Z",
+      "updatedAt": "2026-09-14T03:06:10Z",
+      "pushedAt": "2026-09-10T01:47:18Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +527",
+          "新仓约 102 stars/day",
+          "5 天内有更新"
+        ]
+      },
+      "plainSummary": "一套覆盖多平台的智能录音硬件接入方案。",
+      "introduction": "它围绕录音卡片硬件开放 BLE 协议 SDK、移动端示例和桌面 Demo。你可以接入设备连接、录音控制、实时音频、文件传输、OTA 与语音转写。",
+      "whyToday": "快照实增 +527；新仓约 102 stars/day；5 天内有更新",
+      "audience": "适合智能硬件、音频应用与行业系统开发者",
+      "editorialTags": [
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "SpaceDudem/text-humanizer",
+      "githubUrl": "https://github.com/spacedudem/text-humanizer",
+      "canonicalUrl": "https://github.com/spacedudem/text-humanizer",
+      "description": "text-humanizer is an open-source project designed to convert text generated by AI to its \"humanized\" version. Bypasses the most of AI detectors such as Turnitin or GPTZero",
+      "chineseDescription": "将 AI 生成文本改写得更像人工写作，并声称可绕过多种 AI 检测器。",
+      "stars": 732,
+      "forks": 110,
+      "openIssues": 4,
+      "recentGrowth": 486,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "ai-humanizer",
+        "gpt-zero",
+        "text-humanizer"
+      ],
+      "createdAt": "2026-09-08T15:28:28Z",
+      "updatedAt": "2026-09-14T02:13:26Z",
+      "pushedAt": "2026-09-08T15:37:07Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +486",
+          "新仓约 127 stars/day",
+          "6 天内有更新"
+        ]
+      },
+      "plainSummary": "将 AI 文本改写得更像人工写作的开源工具。",
+      "introduction": "它用于对 AI 生成文本进行所谓“人性化”改写。你可以用它调整文本表达，并自行评估其关于检测规避的效果。",
+      "whyToday": "快照实增 +486；新仓约 127 stars/day；6 天内有更新",
+      "audience": "适合文本工具研究者与内容编辑",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "angusdevgo/IDM_Pro_Tool",
+      "githubUrl": "https://github.com/angusdevgo/idm_pro_tool",
+      "canonicalUrl": "https://github.com/angusdevgo/idm_pro_tool",
+      "description": "IDM激活与状态维护工具",
+      "chineseDescription": "用于 IDM 激活与状态维护的工具。",
+      "stars": 684,
+      "forks": 172,
+      "openIssues": 3,
+      "recentGrowth": 398,
+      "growthSource": "snapshot",
+      "language": "C#",
+      "topics": [],
+      "createdAt": "2026-09-10T09:39:06Z",
+      "updatedAt": "2026-09-14T02:57:38Z",
+      "pushedAt": "2026-09-11T08:06:21Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +398",
+          "新仓约 170 stars/day",
+          "4 天内有更新"
+        ]
+      },
+      "plainSummary": "用于 IDM 激活与状态维护的工具。",
+      "introduction": "它集中处理 IDM 的激活与状态维护。你可以按项目提供的方式检查或维护 IDM 状态。",
+      "whyToday": "快照实增 +398；新仓约 170 stars/day；4 天内有更新",
+      "audience": "适合需要管理 IDM 状态的 Windows 用户",
+      "editorialTags": [
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "AI-FanGe/Microduck-build-tutorial",
+      "githubUrl": "https://github.com/ai-fange/microduck-build-tutorial",
+      "canonicalUrl": "https://github.com/ai-fange/microduck-build-tutorial",
+      "description": "A practical hardware and software setup for a compact RL-powered biped robot.",
+      "chineseDescription": "紧凑型强化学习双足机器人的软硬件搭建方案。",
+      "stars": 819,
+      "forks": 217,
+      "openIssues": 9,
+      "recentGrowth": 157,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-04T17:18:43Z",
+      "updatedAt": "2026-09-14T02:58:23Z",
+      "pushedAt": "2026-09-11T07:51:37Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +157",
+          "新仓约 84 stars/day",
+          "4 天内有更新"
+        ]
+      },
+      "plainSummary": "软硬件结合搭建强化学习双足机器人的实践方案。",
+      "introduction": "它提供紧凑型强化学习双足机器人的软硬件配置。你可以依照方案组装平台并开展双足控制实验。",
+      "whyToday": "快照实增 +157；新仓约 84 stars/day；4 天内有更新",
+      "audience": "适合机器人爱好者、硬件开发者与强化学习研究者",
+      "editorialTags": [
+        "学习",
+        "开发工具",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "adtexterry-lgtm/unigit-ecosystem",
+      "githubUrl": "https://github.com/adtexterry-lgtm/unigit-ecosystem",
+      "canonicalUrl": "https://github.com/adtexterry-lgtm/unigit-ecosystem",
+      "description": "UNIGIT public brand and ecosystem hub — AI should work for everyone.",
+      "chineseDescription": "UNIGIT 的公共品牌与生态中心，主张让所有人都能使用 AI。",
+      "stars": 948,
+      "forks": 45,
+      "openIssues": 0,
+      "recentGrowth": 273,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [
+        "agentic-ai",
+        "ai-tools",
+        "ai-workbench",
+        "ecosystem",
+        "mcp",
+        "productivity",
+        "unigit"
+      ],
+      "createdAt": "2026-09-02T10:08:01Z",
+      "updatedAt": "2026-09-13T03:11:24Z",
+      "pushedAt": "2026-09-02T12:51:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 75,
+        "signals": [
+          "快照实增 +273",
+          "新仓约 79 stars/day"
+        ]
+      },
+      "plainSummary": "面向公众的 UNIGIT 品牌与 AI 生态入口。",
+      "introduction": "它汇集 UNIGIT 的公共品牌和生态信息。你可以从这里了解其 AI 工具、工作台与 MCP 相关生态。",
+      "whyToday": "快照实增 +273；新仓约 79 stars/day",
+      "audience": "适合关注 AI 工具生态与 UNIGIT 的用户",
+      "editorialTags": [
+        "AI 工具",
+        "学习"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "larashero3-dotcom/lieflat-gongwen",
+      "githubUrl": "https://github.com/larashero3-dotcom/lieflat-gongwen",
+      "canonicalUrl": "https://github.com/larashero3-dotcom/lieflat-gongwen",
+      "description": "通过102万字语料提炼的公文写作 skill，把公文写作风格变成可测量、可验收的量化数据",
+      "chineseDescription": "基于 102 万字语料提炼的公文写作技能，将写作风格转化为可量化验收的数据。",
+      "stars": 927,
+      "forks": 146,
+      "openIssues": 1,
+      "recentGrowth": 179,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-02T15:10:19Z",
+      "updatedAt": "2026-09-14T02:42:55Z",
+      "pushedAt": "2026-09-05T02:50:50Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 75,
+        "signals": [
+          "快照实增 +179",
+          "新仓约 79 stars/day"
+        ]
+      },
+      "plainSummary": "把公文写作风格转化为可测量规则的 Agent 技能。",
+      "introduction": "它从 102 万字语料中提炼公文写作方法。你可以用量化指标生成、检查并验收公文风格。",
+      "whyToday": "快照实增 +179；新仓约 79 stars/day",
+      "audience": "适合公文撰写者、行政人员与写作 Agent 开发者",
+      "editorialTags": [
+        "AI 工具",
+        "效率",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "debpalash/VoiceStudio",
+      "githubUrl": "https://github.com/debpalash/voicestudio",
+      "canonicalUrl": "https://github.com/debpalash/voicestudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "chineseDescription": "完全本地运行的开源语音工具，支持声音克隆、配音、听写、转录和有声书制作等功能。",
+      "stars": 27089,
+      "forks": 3338,
+      "recentGrowth": 2632,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +2632"
+        ]
+      },
+      "plainSummary": "完全本地运行的多语言语音创作套件。",
+      "introduction": "它提供声音克隆、声音设计、视频配音、听写、转录与有声书制作。你可以在本地完成覆盖 646 种语言的语音工作流。",
+      "whyToday": "Trending 披露 +2632",
+      "audience": "适合配音创作者、音频开发者与重视本地处理的用户",
+      "editorialTags": [
+        "AI 工具",
+        "开源替代",
+        "设计"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "asgeirtj/system_prompts_leaks",
+      "githubUrl": "https://github.com/asgeirtj/system_prompts_leaks",
+      "canonicalUrl": "https://github.com/asgeirtj/system_prompts_leaks",
+      "description": "Extracted system prompts from Anthropic - Claude Fable 5.1, Opus 5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
+      "chineseDescription": "持续整理从多家 AI 产品中提取的系统提示词。",
+      "stars": 66132,
+      "forks": 10813,
+      "recentGrowth": 706,
+      "growthSource": "github-trending",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +706"
+        ]
+      },
+      "plainSummary": "集中查看多家 AI 产品提取系统提示词的资料库。",
+      "introduction": "它整理 Anthropic、OpenAI、Google、xAI 等产品中提取的系统提示词。你可以按产品查阅并比较这些公开整理的内容。",
+      "whyToday": "Trending 披露 +706",
+      "audience": "适合提示词研究者与 AI 产品开发者",
+      "editorialTags": [
+        "AI 工具",
+        "学习",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "vxcontrol/pentagi",
+      "githubUrl": "https://github.com/vxcontrol/pentagi",
+      "canonicalUrl": "https://github.com/vxcontrol/pentagi",
+      "description": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
+      "chineseDescription": "可自主执行复杂渗透测试任务的 AI Agent 系统。",
+      "stars": 24047,
+      "forks": 3101,
+      "recentGrowth": 590,
+      "growthSource": "github-trending",
+      "language": "Go",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +590"
+        ]
+      },
+      "plainSummary": "让 AI Agent 自主执行复杂渗透测试任务。",
+      "introduction": "它是一套面向复杂渗透测试的全自主 Agent 系统。你可以在授权安全测试中用它组织自动化评估流程。",
+      "whyToday": "Trending 披露 +590",
+      "audience": "适合授权渗透测试人员与安全研究者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "tonhowtf/omniget",
+      "githubUrl": "https://github.com/tonhowtf/omniget",
+      "canonicalUrl": "https://github.com/tonhowtf/omniget",
+      "description": "Download Udemy and Hotmart courses, YouTube videos, music and books — 1,800+ sites, no terminal. Free open-source desktop app for Windows, macOS and Linux, with a built-in course player, PDF/EPUB reader and music library. Powered by yt-dlp. Your files stay on your computer.",
+      "chineseDescription": "无需终端即可从 1800 多个站点下载课程、视频、音乐和图书的跨平台桌面应用。",
+      "stars": 11786,
+      "forks": 1029,
+      "recentGrowth": 507,
+      "growthSource": "github-trending",
+      "language": "Rust",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 53.93210812063299,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 53.9,
+        "signals": [
+          "Trending 披露 +507"
+        ]
+      },
+      "plainSummary": "无需命令行的跨平台多媒体下载与管理工具。",
+      "introduction": "它支持从 1800 多个站点下载课程、视频、音乐和图书，并把文件保存在本机。你可以在 Windows、macOS 或 Linux 上使用内置播放器、阅读器和音乐库管理内容。",
+      "whyToday": "Trending 披露 +507",
+      "audience": "适合希望用图形界面管理离线媒体的用户",
+      "editorialTags": [
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "SnailSploit/Claude-Red",
+      "githubUrl": "https://github.com/snailsploit/claude-red",
+      "canonicalUrl": "https://github.com/snailsploit/claude-red",
+      "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+      "chineseDescription": "面向 Claude 技能系统的进攻安全技能库，覆盖多类攻击面与方法。",
+      "stars": 4214,
+      "forks": 596,
+      "recentGrowth": 506,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 53.915051622020044,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 53.9,
+        "signals": [
+          "Trending 披露 +506"
+        ]
+      },
+      "plainSummary": "为 Claude 准备的进攻安全技能集合。",
+      "introduction": "它以结构化 SKILL.md 提供 SQL 注入、Shellcode、EDR 规避和漏洞开发等方法。你可以在授权安全研究中按攻击面加载对应技能。",
+      "whyToday": "Trending 披露 +506",
+      "audience": "适合授权红队、安全研究者与 Claude 技能开发者",
+      "editorialTags": [
+        "AI 工具",
+        "学习",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "multimodal-art-projection/YuE",
+      "githubUrl": "https://github.com/multimodal-art-projection/yue",
+      "canonicalUrl": "https://github.com/multimodal-art-projection/yue",
+      "description": "YuE2: frontier music generation with symbolic planning, zero-shot covers, and agentic music editing.",
+      "chineseDescription": "支持符号规划、零样本翻唱和代理式音乐编辑的音乐生成项目。",
+      "stars": 7821,
+      "forks": 868,
+      "recentGrowth": 487,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 53.58442402537732,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 53.6,
+        "signals": [
+          "Trending 披露 +487"
+        ]
+      },
+      "plainSummary": "支持规划、翻唱和代理式编辑的音乐生成项目。",
+      "introduction": "它提供带符号规划、零样本翻唱与代理式音乐编辑的前沿音乐生成能力。你可以围绕歌曲生成、翻唱和后期调整探索完整创作流程。",
+      "whyToday": "Trending 披露 +487",
+      "audience": "适合 AI 音乐研究者、音乐人和音频开发者",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "jiji262/douyin-downloader",
+      "githubUrl": "https://github.com/jiji262/douyin-downloader",
+      "canonicalUrl": "https://github.com/jiji262/douyin-downloader",
+      "description": "A practical Douyin downloader for both single-item and profile batch downloads, with progress display, retries, SQLite deduplication, and browser fallback support. 抖音批量下载工具，去水印，支持视频、图集、合集、音乐(原声)。",
+      "chineseDescription": "支持抖音单项与主页批量下载、去水印、重试和 SQLite 去重的工具。",
+      "stars": 11453,
+      "forks": 1756,
+      "recentGrowth": 452,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 52.94020344027741,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 52.9,
+        "signals": [
+          "Trending 披露 +452"
+        ]
+      },
+      "plainSummary": "兼顾单项与批量任务的抖音下载工具。",
+      "introduction": "它支持视频、图集、合集和原声的去水印下载，并带进度、重试、SQLite 去重与浏览器回退。你可以抓取单个作品，也可以批量处理主页内容。",
+      "whyToday": "Trending 披露 +452",
+      "audience": "适合需要归档自有或获授权抖音内容的用户",
+      "editorialTags": [
+        "效率",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "alibaba/open-code-review",
+      "githubUrl": "https://github.com/alibaba/open-code-review",
+      "canonicalUrl": "https://github.com/alibaba/open-code-review",
+      "description": "Fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "chineseDescription": "结合确定性流水线与 LLM Agent 的代码审查工具，提供行级评论和多语言规则。",
+      "stars": 23651,
+      "forks": 1751,
+      "recentGrowth": 443,
+      "growthSource": "github-trending",
+      "language": "Go",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 52.76649519810063,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 52.8,
+        "signals": [
+          "Trending 披露 +443"
+        ]
+      },
+      "plainSummary": "用规则流水线与 LLM Agent 协同审查代码。",
+      "introduction": "它提供精确到行的评论，并内置空指针、线程安全、XSS 和 SQL 注入等多语言规则。你可以连接 OpenAI 或 Anthropic 兼容模型，把确定性检查与 Agent 审查组合起来。",
+      "whyToday": "Trending 披露 +443",
+      "audience": "适合研发团队、代码审查平台维护者与安全工程师",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "melgarafael/DeskcommCRM",
+      "githubUrl": "https://github.com/melgarafael/deskcommcrm",
+      "canonicalUrl": "https://github.com/melgarafael/deskcommcrm",
+      "description": "Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+      "chineseDescription": "可自托管的 AI 销售 CRM，集成原生 AI Agent 与 WhatsApp。",
+      "stars": 2251,
+      "forks": 601,
+      "recentGrowth": 432,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 52.54933928836034,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 52.5,
+        "signals": [
+          "Trending 披露 +432"
+        ]
+      },
+      "plainSummary": "集成 AI Agent 与 WhatsApp 的可自托管销售 CRM。",
+      "introduction": "它为通过聊天完成销售的业务提供多租户 CRM、原生 AI Agent 和 WAHA 接入。你可以自行部署，管理客户对话并通过 MCP 扩展工作流。",
+      "whyToday": "Trending 披露 +432",
+      "audience": "适合聊天销售团队、CRM 开发者与自托管用户",
+      "editorialTags": [
+        "AI 工具",
+        "开源替代",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "calesthio/OpenMontage",
+      "githubUrl": "https://github.com/calesthio/openmontage",
+      "canonicalUrl": "https://github.com/calesthio/openmontage",
+      "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+      "chineseDescription": "代理式视频制作系统，提供 12 条制作流水线、100 多个工具和大量技能资料。",
+      "stars": 58552,
+      "forks": 7369,
+      "recentGrowth": 380,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 51.44188312495993,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 51.4,
+        "signals": [
+          "Trending 披露 +380"
+        ]
+      },
+      "plainSummary": "把 AI 编程助手扩展成代理式视频制作工作室。",
+      "introduction": "它汇集 12 条制作流水线、100 多个工具和 700 多份技能及制作知识文件。你可以让 AI 编程助手调用这些资源，组织多环节视频生产。",
+      "whyToday": "Trending 披露 +380",
+      "audience": "适合视频创作者、AI 工作流设计者与开发者",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "alphaXiv/OpenResearch",
+      "githubUrl": "https://github.com/alphaxiv/openresearch",
+      "canonicalUrl": "https://github.com/alphaxiv/openresearch",
+      "description": "Run parallel research agents with any model",
+      "chineseDescription": "可搭配任意模型并行运行研究代理。",
+      "stars": 2139,
+      "forks": 144,
+      "recentGrowth": 289,
+      "growthSource": "github-trending",
+      "language": "Rust",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 49.07945454008961,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 49.1,
+        "signals": [
+          "Trending 披露 +289"
+        ]
+      },
+      "plainSummary": "用任意模型并行运行多个研究代理。",
+      "introduction": "它提供模型无关的并行研究 Agent 运行方式。你可以同时发起多个研究分支，再汇总各自结果。",
+      "whyToday": "Trending 披露 +289",
+      "audience": "适合研究人员、分析师与 Agent 开发者",
+      "editorialTags": [
+        "AI 工具",
+        "学习",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "tech-leads-club/agent-skills",
+      "githubUrl": "https://github.com/tech-leads-club/agent-skills",
+      "canonicalUrl": "https://github.com/tech-leads-club/agent-skills",
+      "description": "The secure, validated skill registry for professional AI coding agents. Extend Antigravity, Claude Code, Cursor, Copilot and more with absolute confidence.",
+      "chineseDescription": "面向专业 AI 编程代理的安全、经过验证的技能注册表。",
+      "stars": 5710,
+      "forks": 502,
+      "recentGrowth": 265,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 48.33169461300713,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 48.3,
+        "signals": [
+          "Trending 披露 +265"
+        ]
+      },
+      "plainSummary": "为主流 AI 编程工具提供经过验证的技能注册表。",
+      "introduction": "它集中收录面向 Antigravity、Claude Code、Cursor 和 Copilot 等工具的专业技能。你可以从经过验证的目录中选择技能，扩展编程代理能力。",
+      "whyToday": "Trending 披露 +265",
+      "audience": "适合 AI 编程用户、团队平台工程师与技能作者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "jihe520/MathModelAgent",
+      "githubUrl": "https://github.com/jihe520/mathmodelagent",
+      "canonicalUrl": "https://github.com/jihe520/mathmodelagent",
+      "description": "🤖📐专为数学建模设计的 Agent & skills ,自动完成数学建模，生成一份完整的可以直接提交的论文。 An Agent Designed for Mathematical Modeling ,Automatically complete mathmodel and generate a complete paper ready for submission.",
+      "chineseDescription": "面向数学建模的 Agent 与技能，可自动完成建模并生成完整论文。",
+      "stars": 5404,
+      "forks": 411,
+      "recentGrowth": 246,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 47.69020338950807,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 47.7,
+        "signals": [
+          "Trending 披露 +246"
+        ]
+      },
+      "plainSummary": "自动完成数学建模并生成完整论文的 Agent。",
+      "introduction": "它把数学建模流程封装为 Agent 与配套技能。你可以用它推进建模、分析和论文生成，并对结果进行人工核验。",
+      "whyToday": "Trending 披露 +246",
+      "audience": "适合数学建模参赛者、学生与研究人员",
+      "editorialTags": [
+        "AI 工具",
+        "学习",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "yuliskov/SmartTube",
+      "githubUrl": "https://github.com/yuliskov/smarttube",
+      "canonicalUrl": "https://github.com/yuliskov/smarttube",
+      "description": "Browse media content with your own rules on Android TV",
+      "chineseDescription": "允许用户按自定义规则浏览 Android TV 媒体内容。",
+      "stars": 33473,
+      "forks": 2035,
+      "recentGrowth": 233,
+      "growthSource": "github-trending",
+      "language": "Java",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 47.222188317500425,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 47.2,
+        "signals": [
+          "Trending 披露 +233"
+        ]
+      },
+      "plainSummary": "在 Android TV 上按自己的规则浏览媒体内容。",
+      "introduction": "它提供可自定义规则的 Android TV 媒体浏览体验。你可以配置规则，在电视端筛选和查看内容。",
+      "whyToday": "Trending 披露 +233",
+      "audience": "适合 Android TV 用户与媒体应用爱好者",
+      "editorialTags": [
+        "有趣",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "ever-co/ever-gauzy",
+      "githubUrl": "https://github.com/ever-co/ever-gauzy",
+      "canonicalUrl": "https://github.com/ever-co/ever-gauzy",
+      "description": "Ever® Gauzy™ - Open Business Management Platform (ERP/CRM/HRM/ATS/PM) - https://gauzy.co",
+      "chineseDescription": "覆盖 ERP、CRM、HRM、ATS 和项目管理的开源企业管理平台。",
+      "stars": 5217,
+      "forks": 951,
+      "recentGrowth": 191,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 45.50977500432694,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45.5,
+        "signals": [
+          "Trending 披露 +191"
+        ]
+      },
+      "plainSummary": "一站式开源企业管理平台。",
+      "introduction": "它覆盖 ERP、CRM、人力资源、招聘和项目管理。你可以部署后按业务需要组合多个企业管理模块。",
+      "whyToday": "Trending 披露 +191",
+      "audience": "适合中小企业、运营团队与企业软件开发者",
+      "editorialTags": [
+        "开源替代",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "JustVugg/colibri",
+      "githubUrl": "https://github.com/justvugg/colibri",
+      "canonicalUrl": "https://github.com/justvugg/colibri",
+      "description": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦",
+      "chineseDescription": "用纯 C 在现有硬件上运行前沿 MoE 模型，通过磁盘流式加载专家且零依赖。",
+      "stars": 30057,
+      "forks": 3261,
+      "recentGrowth": 2562,
+      "growthSource": "snapshot",
+      "language": "C",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +2562"
+        ]
+      },
+      "plainSummary": "在普通硬件上运行大型 MoE 模型的极简 C 引擎。",
+      "introduction": "它用纯 C 实现零依赖推理，并从磁盘流式读取专家参数。你可以在已有硬件上尝试运行前沿 MoE 模型，而不必一次性把全部专家载入内存。",
+      "whyToday": "快照实增 +2562",
+      "audience": "适合本地大模型用户、系统开发者与推理优化研究者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "开源替代"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "ChromeDevTools/chrome-devtools-mcp",
+      "githubUrl": "https://github.com/chromedevtools/chrome-devtools-mcp",
+      "canonicalUrl": "https://github.com/chromedevtools/chrome-devtools-mcp",
+      "description": "Chrome DevTools for coding agents",
+      "chineseDescription": "为编程代理提供 Chrome DevTools 能力。",
+      "stars": 51853,
+      "forks": 3640,
+      "recentGrowth": 266,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +266"
+        ]
+      },
+      "plainSummary": "把 Chrome DevTools 能力交给编程代理。",
+      "introduction": "它为编程 Agent 提供 Chrome 开发者工具接口。你可以让代理检查页面、调试浏览器行为并辅助前端开发。",
+      "whyToday": "快照实增 +266",
+      "audience": "适合前端开发者、测试工程师与编程 Agent 用户",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "openai/skills",
+      "githubUrl": "https://github.com/openai/skills",
+      "canonicalUrl": "https://github.com/openai/skills",
+      "description": "Skills Catalog for Codex",
+      "chineseDescription": "面向 Codex 的技能目录。",
+      "stars": 27108,
+      "forks": 1809,
+      "recentGrowth": 240,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +240"
+        ]
+      },
+      "plainSummary": "Codex 可用技能的集中目录。",
+      "introduction": "它收录面向 Codex 的技能。你可以浏览目录并为不同任务选择相应技能。",
+      "whyToday": "快照实增 +240",
+      "audience": "适合 Codex 用户与技能开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "huggingface/transformers",
+      "githubUrl": "https://github.com/huggingface/transformers",
+      "canonicalUrl": "https://github.com/huggingface/transformers",
+      "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+      "chineseDescription": "用于定义前沿文本、视觉、音频和多模态模型的机器学习框架，支持训练与推理。",
+      "stars": 165583,
+      "forks": 34561,
+      "recentGrowth": 152,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 43.544327056155915,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 43.5,
+        "signals": [
+          "Trending 披露 +152"
+        ]
+      },
+      "plainSummary": "覆盖文本、视觉、音频和多模态模型的主流机器学习框架。",
+      "introduction": "它统一定义多类前沿模型，并同时支持训练与推理。你可以加载模型、微调训练或构建跨模态应用。",
+      "whyToday": "Trending 披露 +152",
+      "audience": "适合机器学习工程师、研究人员与 AI 应用开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "NVlabs/SoL-Pi",
+      "githubUrl": "https://github.com/nvlabs/sol-pi",
+      "canonicalUrl": "https://github.com/nvlabs/sol-pi",
+      "description": "SoL-Pi: Scaling Auto-Research Loops for Efficient Agent Harnesses",
+      "chineseDescription": "通过扩展自动研究循环来提升 Agent Harness 效率的项目。",
+      "stars": 1737,
+      "forks": 131,
+      "openIssues": 40,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-02T14:48:47Z",
+      "updatedAt": "2026-09-14T03:04:18Z",
+      "pushedAt": "2026-09-14T02:39:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 147 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "研究如何扩展自动研究循环与提升 Agent Harness 效率。",
+      "introduction": "它围绕可扩展的自动研究循环构建高效 Agent Harness。你可以用它实验自动研究流程及其扩展方式。",
+      "whyToday": "新仓约 147 stars/day；1 天内有更新",
+      "audience": "适合 Agent 系统研究者与 AI 基础设施开发者",
+      "editorialTags": [
+        "AI 工具",
+        "学习",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "sumimakito/Mac-Duo",
+      "githubUrl": "https://github.com/sumimakito/mac-duo",
+      "canonicalUrl": "https://github.com/sumimakito/mac-duo",
+      "description": "Wish you could bring the iPhone Duo effect to your MacBook?",
+      "chineseDescription": "把 iPhone Duo 式翻转效果带到 MacBook 的 macOS 工具。",
+      "stars": 802,
+      "forks": 59,
+      "openIssues": 23,
+      "language": "Swift",
+      "topics": [
+        "flip",
+        "iphone",
+        "iphoneduo",
+        "mac",
+        "macos",
+        "menubar",
+        "menubar-app",
+        "menubarapp"
+      ],
+      "createdAt": "2026-09-10T18:55:39Z",
+      "updatedAt": "2026-09-14T02:48:59Z",
+      "pushedAt": "2026-09-13T17:51:30Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 221 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "把 iPhone Duo 式翻转效果带到 MacBook。",
+      "introduction": "它是一款原生 macOS 工具，用于模拟 iPhone Duo 效果。你可以在 MacBook 上安装后体验对应的翻转交互。",
+      "whyToday": "新仓约 221 stars/day；1 天内有更新",
+      "audience": "适合 macOS 用户与界面动效爱好者",
+      "editorialTags": [
+        "有趣",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "perseval-BLR/DLSS5-NeuralScreen",
+      "githubUrl": "https://github.com/perseval-blr/dlss5-neuralscreen",
+      "canonicalUrl": "https://github.com/perseval-blr/dlss5-neuralscreen",
+      "description": "DLSS 5 Neural Rendering on your whole Windows desktop, in real time. RTX 30/40/50, 12 languages, user presets, recording with audio, one-window mode.",
+      "chineseDescription": "在整个 Windows 桌面实时应用 DLSS 5 神经渲染，支持 RTX 30/40/50 系列。",
+      "stars": 658,
+      "forks": 40,
+      "openIssues": 13,
+      "language": "Python",
+      "topics": [
+        "ai-upscaling",
+        "desktop-overlay",
+        "dlsr",
+        "dlss",
+        "dlss5",
+        "dlss5-autopilot",
+        "dlss5-feeder",
+        "dlss5-oneclick",
+        "dlss5-rtx",
+        "dlss5-swapper",
+        "dlss5-universal",
+        "neural-rendering",
+        "neuralscreen",
+        "ngx",
+        "nvidia",
+        "real-time-ai",
+        "rtx",
+        "windows"
+      ],
+      "createdAt": "2026-09-06T14:22:19Z",
+      "updatedAt": "2026-09-14T02:54:03Z",
+      "pushedAt": "2026-09-13T11:53:07Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 84 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "在整个 Windows 桌面实时应用 DLSS 5 神经渲染。",
+      "introduction": "它支持 RTX 30、40、50 系列显卡，提供 12 种语言、用户预设、带音频录制和单窗口模式。你可以对整个桌面或指定窗口启用实时神经渲染。",
+      "whyToday": "新仓约 84 stars/day；1 天内有更新",
+      "audience": "适合 RTX 显卡用户、画质技术爱好者与 Windows 开发者",
+      "editorialTags": [
+        "开发工具",
+        "有趣"
+      ],
+      "recommendation": 4
+    }
+  ]
+}
