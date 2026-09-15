@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, Bookmark, Check, Flame, MessageCircle, Sparkles, Star } from "lucide-react";
 import { SOURCE_LABELS } from "@/lib/discovery";
 import type { CandidateProject, EditorialProject } from "@/lib/types";
@@ -34,10 +34,26 @@ export function ProjectCard({ project, index, saved, onToggleSaved, category, ma
     ? `+${compactNumber(project.recentGrowth)} ${project.growthSource === "snapshot" ? "较上次收录" : "今日"}`
     : "增长待观察";
 
+  // 在 Aime App 的 iframe 中，宿主会注入 window.__aime__，可直接把问题发给对话流里的 Aime。
+  // 服务端/静态导出阶段没有 window，故在客户端挂载后再检测，避免 hydration 不匹配。
+  const [inAime, setInAime] = useState(false);
+  useEffect(() => {
+    const bridge = (window as unknown as { __aime__?: { sendPrompt?: (text: string) => void } }).__aime__;
+    setInAime(typeof bridge?.sendPrompt === "function");
+  }, []);
+
   const askAI = async () => {
     const prompt = `请帮我详细了解这个 GitHub 项目：${project.githubUrl}\n\n请重点介绍它解决什么问题、核心功能、适合谁使用、如何快速开始，以及使用时需要注意什么。`;
-    window.open(PUBLIC_AI_CHAT_URL, "_blank", "noopener,noreferrer");
 
+    // Aime App 内：直接调用宿主 Aime，无需离开应用。
+    const bridge = (window as unknown as { __aime__?: { sendPrompt?: (text: string) => void } }).__aime__;
+    if (typeof bridge?.sendPrompt === "function") {
+      bridge.sendPrompt(prompt);
+      return;
+    }
+
+    // 公开网页（IDA / Vercel 等）：兜底打开公开 AI，并复制提问内容。
+    window.open(PUBLIC_AI_CHAT_URL, "_blank", "noopener,noreferrer");
     try {
       await navigator.clipboard.writeText(prompt);
       setAiPromptCopied(true);
@@ -112,11 +128,11 @@ export function ProjectCard({ project, index, saved, onToggleSaved, category, ma
             <button
               type="button"
               onClick={askAI}
-              aria-label={`复制 ${project.name} 的提问内容并打开 DeepSeek`}
+              aria-label={inAime ? `向 Aime 提问了解 ${project.name}` : `复制 ${project.name} 的提问内容并打开 DeepSeek`}
               className="inline-flex items-center gap-1 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-2 text-xs font-bold text-violet-700 transition hover:border-violet-300 hover:bg-violet-100"
             >
               {aiPromptCopied ? <Check size={13} /> : <MessageCircle size={13} />}
-              {aiPromptCopied ? "已复制，去问 AI" : "问问 AI"}
+              {inAime ? "问问 Aime" : aiPromptCopied ? "已复制，去问 AI" : "问问 AI"}
             </button>
             <a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`在 GitHub 查看 ${project.name}`} className="inline-flex items-center gap-1 rounded-full bg-stone-900 px-3.5 py-2 text-xs font-bold text-white transition hover:bg-orange-600">去 GitHub 看看 <ArrowUpRight size={13} /></a>
           </div>
