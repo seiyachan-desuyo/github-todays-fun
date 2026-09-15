@@ -1,0 +1,1323 @@
+{
+  "date": "2026-09-15",
+  "issue": 7,
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "本期从当天真实信号里挑选普通人也玩得起来的项目：既有 iPad 秒变 Mac 第二屏、对话式学外语、看星空、自建密码库等日常工具，也覆盖给 AI agent 装“全网眼睛”、本地 RAG 知识平台、多语言语音克隆等 AI 效率方向，再配上治愈系游戏调剂。",
+  "mode": "live",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+  "publishedAt": "2026-09-15T03:08:01.515Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-09-15T02:56:54.830Z",
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "raw": [
+        {
+          "query": "created:>=2026-09-12 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-09-01 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-09-12 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-09-15T02:56:54.857Z",
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 43 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "rawCount": 43,
+      "normalizedCount": 43,
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 20
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 23
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "degraded",
+      "fetchedAt": "2026-09-15T02:56:59.750Z",
+      "message": "HTTP 403，详情补全跳过；保留 Search/Trending 已有事实；rate limit remaining=0"
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 193,
+    "normalizedCandidateCount": 193,
+    "dedupedCandidateCount": 189,
+    "eligibleCandidateCount": 117,
+    "selectedCount": 30
+  },
+  "projects": [
+    {
+      "name": "peetzweg/opendisplay",
+      "githubUrl": "https://github.com/peetzweg/opendisplay",
+      "canonicalUrl": "https://github.com/peetzweg/opendisplay",
+      "description": "Free, open-source Sidecar/Duet alternative — use your iPhone or iPad as a true second monitor for your Mac over USB or WiFi. Low latency H.264, Retina HiDPI, touch input.",
+      "chineseDescription": "免费开源的 Sidecar/Duet 替代品，把 iPhone/iPad 当作 Mac 的第二块显示器。",
+      "stars": 3642,
+      "forks": 251,
+      "recentGrowth": 229,
+      "growthSource": "github-trending",
+      "language": "Swift",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 47.07294030566625,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 47.1,
+        "signals": [
+          "Trending 披露 +229"
+        ]
+      },
+      "plainSummary": "把 iPhone 或 iPad 当作 Mac 的第二块显示器。",
+      "introduction": "这是一个免费开源的 Sidecar/Duet 替代品，用 USB 或 WiFi 就能把手机、平板变成 Mac 的扩展屏。支持低延迟 H.264、Retina 高清和触控输入，出差、临时加屏都能救急。",
+      "whyToday": "当天快照 Star 明显上涨，作为免费替代付费扩屏方案的实用工具热度走高。",
+      "audience": "Mac 用户、需要多屏办公的人、经常出差办公的人",
+      "editorialTags": [
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "Chuloo/mural",
+      "githubUrl": "https://github.com/chuloo/mural",
+      "canonicalUrl": "https://github.com/chuloo/mural",
+      "description": "The language app you eventually delete. A native iPhone companion for learning through conversation.",
+      "chineseDescription": "原生 iPhone 语言学习伴侣，主打用对话来练一门新语言。",
+      "stars": 831,
+      "forks": 174,
+      "openIssues": 14,
+      "recentGrowth": 529,
+      "growthSource": "snapshot",
+      "language": "Kotlin",
+      "topics": [
+        "ios",
+        "language-learning",
+        "open-source",
+        "swiftui"
+      ],
+      "createdAt": "2026-09-12T11:51:08Z",
+      "updatedAt": "2026-09-15T02:55:06Z",
+      "pushedAt": "2026-09-14T21:40:30Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +529",
+          "新仓约 284 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "一款用聊天对话来学外语的原生 iPhone 应用。",
+      "introduction": "它把语言学习做成“对话陪练”，让你在真实交流里练一门新语言，而不是背单词打卡。定位是“你最终会舍不得删的那个语言 App”。",
+      "whyToday": "当天快照实增数百 Star，且属于 30 天内新仓、起量速度很快。",
+      "audience": "想学外语的人、iPhone 用户、语言学习爱好者",
+      "editorialTags": [
+        "学习",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Tencent/WeKnora",
+      "githubUrl": "https://github.com/tencent/weknora",
+      "canonicalUrl": "https://github.com/tencent/weknora",
+      "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+      "chineseDescription": "开源大模型知识平台，把原始文档变成可检索 RAG、推理 agent 与自维护 Wiki。",
+      "stars": 23300,
+      "forks": 3308,
+      "recentGrowth": 381,
+      "growthSource": "snapshot",
+      "language": "Go",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +381"
+        ]
+      },
+      "plainSummary": "把一堆文档变成能问答的知识库和 AI 助手。",
+      "introduction": "腾讯开源的大模型知识平台，能把原始文档转成可检索的 RAG、会自主推理的 agent，还能自动维护成一个 Wiki。适合团队沉淀和查询内部资料。",
+      "whyToday": "来自大厂、当天热度上涨明显，是知识管理与 RAG 方向的高关注项目。",
+      "audience": "团队知识管理、做 RAG 应用的开发者、企业 IT",
+      "editorialTags": [
+        "AI 工具",
+        "数据"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "OpenBMB/VoxCPM",
+      "githubUrl": "https://github.com/openbmb/voxcpm",
+      "canonicalUrl": "https://github.com/openbmb/voxcpm",
+      "description": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+      "chineseDescription": "无需分词器的多语言 TTS，支持语音生成、创意音色设计与逼真声音克隆。",
+      "stars": 37412,
+      "forks": 4250,
+      "recentGrowth": 216,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 46.56930739466688,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 46.6,
+        "signals": [
+          "Trending 披露 +216"
+        ]
+      },
+      "plainSummary": "多语言语音合成，能设计音色也能克隆声音。",
+      "introduction": "VoxCPM2 是一个无需分词器的 TTS 模型，支持多语言语音生成、创意音色设计和逼真的声音克隆。想给内容配音或做语音角色的人可以直接上手。",
+      "whyToday": "当天快照增长可观，语音生成与克隆是持续走热的方向。",
+      "audience": "内容创作者、做语音应用的开发者、AI 语音爱好者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "github/spec-kit",
+      "githubUrl": "https://github.com/github/spec-kit",
+      "canonicalUrl": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with Spec-Driven Development",
+      "chineseDescription": "GitHub 官方推出的规范驱动开发（Spec-Driven Development）入门工具包。",
+      "stars": 136824,
+      "forks": 12271,
+      "recentGrowth": 369,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +369"
+        ]
+      },
+      "plainSummary": "GitHub 官方的“规范驱动开发”入门工具包。",
+      "introduction": "它帮你把开发从“先写代码”转向“先写清楚规范，再让工具/AI 落地”。提供一整套模板和流程，适合想让 AI 编程更可控的团队。",
+      "whyToday": "GitHub 官方出品，社区关注度高，当天仍保持热度。",
+      "audience": "开发者、工程团队、想规范化 AI 编程的人",
+      "editorialTags": [
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Panniantong/Agent-Reach",
+      "githubUrl": "https://github.com/panniantong/agent-reach",
+      "canonicalUrl": "https://github.com/panniantong/agent-reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "chineseDescription": "给 AI agent 一双眼睛，用一个 CLI 读取和搜索推特、Reddit、B 站、小红书等全网内容。",
+      "stars": 81403,
+      "forks": 7083,
+      "recentGrowth": 651,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +651"
+        ]
+      },
+      "plainSummary": "给 AI agent 一双眼睛，用一个命令读遍全网。",
+      "introduction": "一个 CLI 就能让 AI agent 读取并搜索推特、Reddit、YouTube、GitHub、B 站、小红书等平台内容，号称零 API 费用。适合做信息聚合或喂给 agent 的场景。",
+      "whyToday": "当天 Star 体量大且仍在增长，跨多来源出现，属于高关注 agent 工具。",
+      "audience": "做 AI agent 的开发者、信息聚合需求者、增长/运营",
+      "editorialTags": [
+        "AI 工具",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "TauricResearch/TradingAgents",
+      "githubUrl": "https://github.com/tauricresearch/tradingagents",
+      "canonicalUrl": "https://github.com/tauricresearch/tradingagents",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "chineseDescription": "多智能体大模型金融交易框架，用多个 agent 分工模拟投研团队。",
+      "stars": 106227,
+      "forks": 20315,
+      "recentGrowth": 745,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +745"
+        ]
+      },
+      "plainSummary": "用多个 AI agent 分工模拟一支投研团队做交易决策。",
+      "introduction": "一个多智能体大模型金融交易框架，让不同 agent 扮演分析师、研究员等角色协作，模拟真实投研流程。适合研究 agent 协作与量化策略的人参考。",
+      "whyToday": "Star 体量巨大且当天仍有增长，是 agent + 金融方向的标杆项目。",
+      "audience": "量化/金融从业者、AI agent 研究者、开发者",
+      "editorialTags": [
+        "AI 工具",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "dani-garcia/vaultwarden",
+      "githubUrl": "https://github.com/dani-garcia/vaultwarden",
+      "canonicalUrl": "https://github.com/dani-garcia/vaultwarden",
+      "description": "Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs",
+      "chineseDescription": "用 Rust 写的非官方 Bitwarden 兼容服务器，可自建密码管理服务。",
+      "stars": 67556,
+      "forks": 3213,
+      "recentGrowth": 115,
+      "growthSource": "github-trending",
+      "language": "Rust",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 41.14788597076543,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 41.1,
+        "signals": [
+          "Trending 披露 +115"
+        ]
+      },
+      "plainSummary": "用 Rust 自建一个兼容 Bitwarden 的密码管理服务器。",
+      "introduction": "它是 Bitwarden 的非官方兼容服务端，资源占用小，适合在家用小主机上自建，让你完全掌控自己的密码库。曾用名 bitwarden_rs。",
+      "whyToday": "经典自托管项目，当天热度回升，属于隐私自建方向的常青工具。",
+      "audience": "注重隐私的人、homelab 玩家、自建服务爱好者",
+      "editorialTags": [
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Crosstalk-Solutions/project-nomad",
+      "githubUrl": "https://github.com/crosstalk-solutions/project-nomad",
+      "canonicalUrl": "https://github.com/crosstalk-solutions/project-nomad",
+      "description": "Project NOMAD is an offline-first knowledge and education server. Wikipedia, thousands of books, courses, maps, and optional local AI, all running on hardware you own with no internet required.",
+      "chineseDescription": "离线优先的知识教育服务器，把维基百科、书籍、课程和地图装进你自己的硬件。",
+      "stars": 36949,
+      "forks": 3687,
+      "recentGrowth": 40,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 32.1453120277085,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 32.1,
+        "signals": [
+          "Trending 披露 +40"
+        ]
+      },
+      "plainSummary": "把维基百科、书籍、课程装进自己的离线知识服务器。",
+      "introduction": "离线优先的知识与教育服务器，无需联网就能访问维基百科、上千本书、课程、地图，还能选装本地 AI。断网、偏远地区或应急场景都很实用。",
+      "whyToday": "当天快照增长明显，离线知识库在应急与教育场景需求持续。",
+      "audience": "教育工作者、户外/应急人群、离线学习需求者",
+      "editorialTags": [
+        "开源替代",
+        "数据",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "ruvnet/RuView",
+      "githubUrl": "https://github.com/ruvnet/ruview",
+      "canonicalUrl": "https://github.com/ruvnet/ruview",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "chineseDescription": "把普通 WiFi 信号变成实时空间感知，可做人员在场检测与生命体征监测，无需摄像头。",
+      "stars": 93894,
+      "forks": 12437,
+      "recentGrowth": 383,
+      "growthSource": "github-trending",
+      "language": "Rust",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 51.50977500432694,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 51.5,
+        "signals": [
+          "Trending 披露 +383"
+        ]
+      },
+      "plainSummary": "用普通 WiFi 信号感知空间和人在不在，不用摄像头。",
+      "introduction": "它把商用 WiFi 信号变成实时空间感知，可做人员在场检测甚至生命体征监测。全程不拍一帧画面，隐私上比摄像头更友好。",
+      "whyToday": "当天 Star 体量大且增长，无摄像头感知是很吸睛的创新方向。",
+      "audience": "物联网/智能家居爱好者、隐私敏感人群、技术极客",
+      "editorialTags": [
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "kruzovic7/ai-data-extractor",
+      "githubUrl": "https://github.com/kruzovic7/ai-data-extractor",
+      "canonicalUrl": "https://github.com/kruzovic7/ai-data-extractor",
+      "description": "Free open-source extractor for AI coding assistant chat histories. Supports Claude Code, Cursor, Windsurf, Aider, Cline/Roo Code, and more.",
+      "chineseDescription": "免费开源工具，导出 Claude Code、Cursor、Windsurf 等 AI 编程助手的聊天记录。",
+      "stars": 812,
+      "forks": 132,
+      "openIssues": 0,
+      "recentGrowth": 393,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "ai",
+        "ai-data-extraction",
+        "claude-code",
+        "cursor"
+      ],
+      "createdAt": "2026-09-11T18:12:58Z",
+      "updatedAt": "2026-09-15T02:02:56Z",
+      "pushedAt": "2026-09-11T18:20:56Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +393",
+          "新仓约 222 stars/day",
+          "4 天内有更新"
+        ]
+      },
+      "plainSummary": "一键导出你在各种 AI 编程助手里的聊天记录。",
+      "introduction": "免费开源工具，支持从 Claude Code、Cursor、Windsurf、Aider、Cline/Roo Code 等助手里提取历史对话。导出后方便归档、复盘或迁移到别的工具。",
+      "whyToday": "当天快照实增较高、更新很新，戳中 AI 编程用户的实际痛点。",
+      "audience": "重度使用 AI 编程助手的开发者、需要归档记录的人",
+      "editorialTags": [
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "crwdla/tokentab",
+      "githubUrl": "https://github.com/crwdla/tokentab",
+      "canonicalUrl": "https://github.com/crwdla/tokentab",
+      "description": "A CLI that reads Claude Code, Codex, and Gemini CLI session logs and works out how much they cost, by model, project, and day.",
+      "chineseDescription": "读取 Claude Code、Codex、Gemini CLI 会话日志，按模型/项目/天统计花了多少钱。",
+      "stars": 1134,
+      "forks": 213,
+      "openIssues": 1,
+      "recentGrowth": 257,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "ai",
+        "ai-token-monitor",
+        "claude-code",
+        "token-optimization",
+        "token-usage"
+      ],
+      "createdAt": "2026-09-07T17:18:31Z",
+      "updatedAt": "2026-09-15T00:04:28Z",
+      "pushedAt": "2026-09-07T17:20:54Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 75,
+        "signals": [
+          "快照实增 +257",
+          "新仓约 147 stars/day"
+        ]
+      },
+      "plainSummary": "算清楚你用 Claude、Codex、Gemini CLI 到底花了多少钱。",
+      "introduction": "一个 CLI 工具，读取各家编程助手的会话日志，按模型、项目和日期统计花费。想控制 AI 使用成本的人很需要。",
+      "whyToday": "当天快照实增高，成本可视化是 AI 编程用户的高频诉求。",
+      "audience": "用付费 AI 编程工具的开发者、团队成本管理者",
+      "editorialTags": [
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Qiuner/birdview",
+      "githubUrl": "https://github.com/qiuner/birdview",
+      "canonicalUrl": "https://github.com/qiuner/birdview",
+      "description": "Stop letting AI code blind. Map the architecture before every change with Birdview.",
+      "chineseDescription": "在让 AI 改代码前先画出项目架构地图，避免它盲改。",
+      "stars": 260,
+      "forks": 15,
+      "openIssues": 0,
+      "recentGrowth": 47,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [
+        "agent-tools",
+        "ai-workflow",
+        "architecture-as-code",
+        "code-visualization",
+        "coding-agents",
+        "developer-tools",
+        "diagram-as-code",
+        "software-architecture"
+      ],
+      "createdAt": "2026-09-12T06:59:27Z",
+      "updatedAt": "2026-09-15T02:29:14Z",
+      "pushedAt": "2026-09-13T10:53:42Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 39.094737505048094,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 77.1,
+        "signals": [
+          "快照实增 +47",
+          "新仓约 83 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "让 AI 改代码前先画好项目架构地图，避免盲改。",
+      "introduction": "Birdview 会在每次改动前先梳理出项目架构，让你和 AI 都看清全局。这样能减少“改一处崩一片”的连锁风险。",
+      "whyToday": "当天快照实增明显，正好呼应 AI 辅助改代码时的可控性焦虑。",
+      "audience": "开发者、用 AI 改大型项目的人、技术负责人",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "max-sixty/worktrunk",
+      "githubUrl": "https://github.com/max-sixty/worktrunk",
+      "canonicalUrl": "https://github.com/max-sixty/worktrunk",
+      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "chineseDescription": "管理 Git worktree 的 CLI，专为并行的 AI agent 工作流设计。",
+      "stars": 7682,
+      "forks": 273,
+      "recentGrowth": 146,
+      "growthSource": "snapshot",
+      "language": "Rust",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +146"
+        ]
+      },
+      "plainSummary": "专为并行 AI agent 设计的 Git worktree 管理 CLI。",
+      "introduction": "用命令行轻松管理多个 Git worktree。多个 AI agent 能各自在独立分支上并行干活，互不打架。",
+      "whyToday": "当天热度上涨，契合“多 agent 并行开发”的新兴工作流。",
+      "audience": "重度 Git 用户、跑并行 agent 的开发者",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "earthtojake/text-to-cad",
+      "githubUrl": "https://github.com/earthtojake/text-to-cad",
+      "canonicalUrl": "https://github.com/earthtojake/text-to-cad",
+      "description": "A library of agent skills for CAD, CAE and CAM",
+      "chineseDescription": "面向 CAD/CAE/CAM 的 agent 技能库。",
+      "stars": 15795,
+      "forks": 1631,
+      "recentGrowth": 182,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +182"
+        ]
+      },
+      "plainSummary": "给 CAD/CAE/CAM 用的一套 AI agent 技能库。",
+      "introduction": "它把 CAD 建模、仿真、加工等能力封装成一套 agent 技能。这样 AI 也能参与到机械设计和制造流程里。",
+      "whyToday": "当天上榜且方向新颖，把 agent 能力延伸到工业设计领域。",
+      "audience": "机械/工业设计师、CAD 用户、AI agent 开发者",
+      "editorialTags": [
+        "AI 工具",
+        "设计"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "shadcn-ui/lint",
+      "githubUrl": "https://github.com/shadcn-ui/lint",
+      "canonicalUrl": "https://github.com/shadcn-ui/lint",
+      "description": "An agent-first linter for Tailwind design systems. Write design system rules that agents can verify.",
+      "chineseDescription": "面向 Tailwind 设计系统的 agent 优先 linter，可让 agent 校验设计规范。",
+      "stars": 1005,
+      "forks": 10,
+      "openIssues": 9,
+      "language": "TypeScript",
+      "topics": [
+        "agents",
+        "ai",
+        "design",
+        "design-system",
+        "design-tools",
+        "shadcn",
+        "shadcn-ui",
+        "tailwindcss"
+      ],
+      "createdAt": "2026-09-02T11:51:38Z",
+      "updatedAt": "2026-09-15T02:56:51Z",
+      "pushedAt": "2026-09-14T12:09:38Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 78 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "能让 AI agent 校验的 Tailwind 设计系统 linter。",
+      "introduction": "这是面向 Tailwind 设计系统的“agent 优先”linter，你把设计规范写成规则。agent 就能自动检查代码是否遵守，保证界面风格统一。",
+      "whyToday": "出自知名 shadcn-ui 团队，当天保持热度，前端设计规范化很吃香。",
+      "audience": "前端开发者、设计系统维护者、用 AI 写 UI 的人",
+      "editorialTags": [
+        "开发工具",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "petergyang/no-ai-slop",
+      "githubUrl": "https://github.com/petergyang/no-ai-slop",
+      "canonicalUrl": "https://github.com/petergyang/no-ai-slop",
+      "description": "Removes 20+ patterns of AI slop from any piece of writing.",
+      "chineseDescription": "一键去除文字里 20 多种典型的“AI 味”表达。",
+      "stars": 9583,
+      "forks": 689,
+      "recentGrowth": 355,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +355"
+        ]
+      },
+      "plainSummary": "一键去掉文字里明显的“AI 味”。",
+      "introduction": "它能识别并清除文本中 20 多种典型的 AI 套话和模板腔。处理后，AI 辅助写出来的东西读起来更像人话。",
+      "whyToday": "当天热度上涨，直击“一眼看出是 AI 写的”这个普遍吐槽点。",
+      "audience": "内容创作者、文案、经常用 AI 写作的人",
+      "editorialTags": [
+        "效率",
+        "AI 工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Xu123-Bob/Baize",
+      "githubUrl": "https://github.com/xu123-bob/baize",
+      "canonicalUrl": "https://github.com/xu123-bob/baize",
+      "description": "白泽 —— 中国古代神话中通晓万物的瑞兽，如今化身为 Vibe Coding 助手。  一个开源的 AI Coding Agent CLI，支持多后端（DeepSeek / OpenAI 兼容 / Ollama 本地），具备工具调用、技能加载、子代理委派、上下文压缩、安全沙箱等完整能力。在终端即可与 AI 结对编程。",
+      "chineseDescription": "白泽：开源 AI 编程 Agent CLI，支持多后端与工具调用，在终端里与 AI 结对编程。",
+      "stars": 70,
+      "forks": 0,
+      "openIssues": 0,
+      "recentGrowth": 1,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "ai-coding"
+      ],
+      "createdAt": "2026-09-12T05:17:38Z",
+      "updatedAt": "2026-09-14T23:44:00Z",
+      "pushedAt": "2026-09-14T13:40:59Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 7,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 22.586937622151005,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 41.6,
+        "signals": [
+          "快照实增 +1",
+          "新仓约 22 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "开源 AI 编程 Agent CLI“白泽”，在终端里结对编程。",
+      "introduction": "白泽是一个开源 AI Coding Agent CLI，支持 DeepSeek、OpenAI 兼容接口和本地 Ollama。它具备工具调用、技能加载、子代理委派和安全沙箱，直接在终端就能和 AI 结对写代码。",
+      "whyToday": "新仓起量、当天增长明显，是国产开源编程 agent 的新选择。",
+      "audience": "开发者、命令行党、想自建编程 agent 的人",
+      "editorialTags": [
+        "开发工具",
+        "AI 工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "agentverse-os/AgentVerse-OS",
+      "githubUrl": "https://github.com/agentverse-os/agentverse-os",
+      "canonicalUrl": "https://github.com/agentverse-os/agentverse-os",
+      "description": "Personal cloud OS for a developer and their AI agents on a single server. One-command install on Ubuntu, then everything in the browser: a windowed desktop, isolated workspaces with VS Code, Claude Code and Codex, a store of 944 self-hosted apps, backups and updates. Access only via Tailscale, nothing exposed to the internet. Rust core, Svelte UI.",
+      "chineseDescription": "为开发者及其 AI agent 打造的单机个人云 OS，浏览器里就有桌面、VS Code 和应用商店。",
+      "stars": 286,
+      "forks": 5,
+      "openIssues": 0,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-09-12T18:20:00Z",
+      "updatedAt": "2026-09-15T02:53:34Z",
+      "pushedAt": "2026-09-12T19:17:57Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 108 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "给开发者和 AI agent 的单机个人云操作系统。",
+      "introduction": "在一台服务器上一条命令装好，浏览器里就有带窗口的桌面、隔离工作区里的 VS Code / Claude Code / Codex，还有近千个自托管应用商店。所有访问仅通过 Tailscale，不对公网暴露。",
+      "whyToday": "当天快照增长明显，“个人云 + AI agent 工作台”概念很吸睛。",
+      "audience": "开发者、homelab 玩家、自托管爱好者",
+      "editorialTags": [
+        "开源替代",
+        "开发工具",
+        "AI 工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "666ghj/MiroFish",
+      "githubUrl": "https://github.com/666ghj/mirofish",
+      "canonicalUrl": "https://github.com/666ghj/mirofish",
+      "description": "A Simple and Universal Swarm Intelligence Engine, Predicting Anything. 简洁通用的群体智能引擎，预测万物",
+      "chineseDescription": "简洁通用的群体智能引擎，尝试用群体智慧预测各种结果。",
+      "stars": 73248,
+      "forks": 11294,
+      "recentGrowth": 560,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 54.79114176365276,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 54.8,
+        "signals": [
+          "Trending 披露 +560"
+        ]
+      },
+      "plainSummary": "一个想用群体智慧“预测万物”的通用引擎。",
+      "introduction": "简洁通用的群体智能引擎，尝试把众多个体的判断汇聚起来预测各种结果。适合对集体智能、预测方法感兴趣的人研究。",
+      "whyToday": "当天 Star 体量大且仍在增长，概念新颖引发关注。",
+      "audience": "数据科学爱好者、研究预测方法的人、极客",
+      "editorialTags": [
+        "AI 工具",
+        "数据",
+        "有趣"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "Speedstu/CUDA-for-AMD-Windows",
+      "githubUrl": "https://github.com/speedstu/cuda-for-amd-windows",
+      "canonicalUrl": "https://github.com/speedstu/cuda-for-amd-windows",
+      "description": "Run CUDA-targeted Windows applications on AMD GPUs with ZLUDA + ROCm/HIP.",
+      "chineseDescription": "借助 ZLUDA + ROCm/HIP，在 AMD 显卡的 Windows 上运行为 CUDA 编写的程序。",
+      "stars": 130,
+      "forks": 10,
+      "openIssues": 1,
+      "recentGrowth": 52,
+      "growthSource": "snapshot",
+      "language": "PowerShell",
+      "topics": [
+        "amd",
+        "amd-gpu",
+        "compatibility-layer",
+        "cuda",
+        "cuda-on-amd",
+        "gpgpu",
+        "gpu-computing",
+        "hip",
+        "rocm",
+        "windows",
+        "zluda"
+      ],
+      "createdAt": "2026-09-13T13:23:31Z",
+      "updatedAt": "2026-09-15T02:08:59Z",
+      "pushedAt": "2026-09-13T15:57:56Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 40.09544318194239,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 78.1,
+        "signals": [
+          "快照实增 +52",
+          "新仓约 70 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "让 AMD 显卡在 Windows 上也能跑 CUDA 程序。",
+      "introduction": "借助 ZLUDA + ROCm/HIP，把原本只认 NVIDIA CUDA 的 Windows 应用跑在 AMD 显卡上。这样 A 卡用户不用换卡也能用上 CUDA 生态的软件。",
+      "whyToday": "当天快照实增高，A 卡跑 CUDA 是长期刚需痛点。",
+      "audience": "AMD 显卡用户、深度学习/渲染爱好者、折腾党",
+      "editorialTags": [
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "jtydhr88/screenwriting-skills",
+      "githubUrl": "https://github.com/jtydhr88/screenwriting-skills",
+      "canonicalUrl": "https://github.com/jtydhr88/screenwriting-skills",
+      "description": "Professional agent skills for screenwriting, television writing and dramaturgy",
+      "chineseDescription": "面向编剧、影视剧本与戏剧创作的专业 AI agent 技能集。",
+      "stars": 1085,
+      "forks": 123,
+      "openIssues": 1,
+      "recentGrowth": 63,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "ai",
+        "skills"
+      ],
+      "createdAt": "2026-09-06T12:28:23Z",
+      "updatedAt": "2026-09-15T02:18:34Z",
+      "pushedAt": "2026-09-15T00:43:30Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 42,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 84,
+        "signals": [
+          "快照实增 +63",
+          "新仓约 122 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "给 AI 用的专业编剧、影视剧本创作技能集。",
+      "introduction": "这是一套面向编剧、电视剧本和戏剧创作的 agent 技能。它让 AI 按专业方法帮你搭结构、写剧本，而不是泛泛而谈。",
+      "whyToday": "当天 Star 上千且仍在增长，创作类 agent 技能很受欢迎。",
+      "audience": "编剧、影视/短剧从业者、创意写作爱好者",
+      "editorialTags": [
+        "学习",
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "eternityspring/reelbench-skills",
+      "githubUrl": "https://github.com/eternityspring/reelbench-skills",
+      "canonicalUrl": "https://github.com/eternityspring/reelbench-skills",
+      "description": "Learning notes and tooling skills for AI video - AI 视频相关的学习与工具 skill",
+      "chineseDescription": "AI 视频方向的学习笔记与工具型 skill 合集。",
+      "stars": 678,
+      "forks": 90,
+      "openIssues": 0,
+      "recentGrowth": 124,
+      "growthSource": "snapshot",
+      "language": "HTML",
+      "topics": [
+        "ai-video",
+        "claude-skills",
+        "ffmpeg",
+        "shot-analysis",
+        "video-analysis"
+      ],
+      "createdAt": "2026-09-11T04:55:49Z",
+      "updatedAt": "2026-09-15T02:53:31Z",
+      "pushedAt": "2026-09-14T00:51:09Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +124",
+          "新仓约 161 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "AI 视频方向的学习笔记加工具型技能合集。",
+      "introduction": "作者把 AI 视频相关的学习笔记和实用工具整理成了一套 skill。跟着它可以更系统地入门和上手 AI 视频创作。",
+      "whyToday": "当天快照增长明显，AI 视频是当前最火的创作赛道之一。",
+      "audience": "AI 视频创作者、短视频从业者、想入门的人",
+      "editorialTags": [
+        "AI 工具",
+        "学习"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "youngyangyang04/llm-master",
+      "githubUrl": "https://github.com/youngyangyang04/llm-master",
+      "canonicalUrl": "https://github.com/youngyangyang04/llm-master",
+      "description": "大模型（LLM）全栈学习路线与中文教程🔥：覆盖 Prompt Engineering、RAG、AI Agent、MCP、微调、模型部署、Transformer、AI 编程与大厂面试，从入门到生产实践。",
+      "chineseDescription": "大模型全栈学习路线与中文教程，覆盖 Prompt、RAG、Agent、微调到部署与面试。",
+      "stars": 84,
+      "forks": 2,
+      "openIssues": 0,
+      "topics": [
+        "agent",
+        "large-language-models",
+        "llm",
+        "llm-learning",
+        "llm-tutorial",
+        "rag"
+      ],
+      "createdAt": "2026-09-12T07:33:31Z",
+      "updatedAt": "2026-09-15T02:50:44Z",
+      "pushedAt": "2026-09-13T08:32:08Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 24.057794056037363,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 32.1,
+        "signals": [
+          "新仓约 27 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "一份从入门到实战的大模型全栈中文学习路线。",
+      "introduction": "它覆盖 Prompt 工程、RAG、AI Agent、MCP、微调、模型部署、Transformer 到 AI 编程和大厂面试，并配有中文教程。从入门到生产实践，适合系统性地学大模型。",
+      "whyToday": "当天上榜且是高质量中文学习资源，适合普通人系统入门。",
+      "audience": "想学大模型的学生/工程师、转型 AI 的人",
+      "editorialTags": [
+        "学习",
+        "AI 工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "qingjian-team/qingjian",
+      "githubUrl": "https://github.com/qingjian-team/qingjian",
+      "canonicalUrl": "https://github.com/qingjian-team/qingjian",
+      "description": "青简 Qingjian：用 Rust 写的拼音输入法，候选词旁多一条正在学的语言的译词",
+      "chineseDescription": "用 Rust 写的拼音输入法，候选词旁边多显示一条你正在学的语言的译词。",
+      "stars": 713,
+      "forks": 58,
+      "openIssues": 39,
+      "language": "Rust",
+      "topics": [
+        "chinese",
+        "chinese-input-method",
+        "english-learning",
+        "ime",
+        "input-method",
+        "japanese-learning",
+        "language-learning",
+        "language-model",
+        "macos",
+        "offline",
+        "pinyin",
+        "rust",
+        "shuangpin",
+        "windows"
+      ],
+      "createdAt": "2026-09-07T08:25:30Z",
+      "updatedAt": "2026-09-15T02:55:45Z",
+      "pushedAt": "2026-09-14T18:46:48Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 88 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Rust 写的拼音输入法，打字顺便学外语。",
+      "introduction": "青简是用 Rust 写的拼音输入法。它的特别之处是候选词旁边会多显示一条你正在学的语言的译词，打字的同时顺手记单词。",
+      "whyToday": "当天热度上涨，“输入法 + 学习”的巧思很讨喜。",
+      "audience": "想边打字边学外语的人、输入法爱好者、Rust 玩家",
+      "editorialTags": [
+        "效率",
+        "学习"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "max99x/wutw-public",
+      "githubUrl": "https://github.com/max99x/wutw-public",
+      "canonicalUrl": "https://github.com/max99x/wutw-public",
+      "description": "Worlds Upon The Wind: a peaceful roguelite deckbuilder about resettling a shattered world.",
+      "chineseDescription": "一款治愈系 Roguelite 卡牌构筑游戏，主题是在破碎世界里重建家园。",
+      "stars": 177,
+      "forks": 17,
+      "openIssues": 0,
+      "recentGrowth": 62,
+      "growthSource": "snapshot",
+      "language": "GDScript",
+      "topics": [],
+      "createdAt": "2026-09-12T14:29:54Z",
+      "updatedAt": "2026-09-15T01:47:02Z",
+      "pushedAt": "2026-09-14T15:56:09Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 41.84095946449942,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 29.99230672462601,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 83.8,
+        "signals": [
+          "快照实增 +62",
+          "新仓约 63 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "一款治愈系的 Roguelite 卡牌构筑小游戏。",
+      "introduction": "《Worlds Upon The Wind》的主题是在破碎的世界里重新安置居民、重建家园。节奏平和、氛围治愈，适合忙里偷闲玩一会儿。",
+      "whyToday": "当天快照增长明显、更新很新，是难得的轻松向开源游戏。",
+      "audience": "独立游戏玩家、卡牌构筑爱好者、想放松的人",
+      "editorialTags": [
+        "有趣"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "jcx396905-gif/DuoFold-Android",
+      "githubUrl": "https://github.com/jcx396905-gif/duofold-android",
+      "canonicalUrl": "https://github.com/jcx396905-gif/duofold-android",
+      "description": "iPhone Duo-style system-wide fold illusion for regular Android phones — whole-screen reprojection driven by real device motion, powered by OpenGL ES + Shizuku, no foldable hardware, no root.",
+      "chineseDescription": "在普通安卓手机上模拟 iPhone Duo 式的整屏折叠视觉效果，无需折叠屏硬件或 root。",
+      "stars": 125,
+      "forks": 8,
+      "openIssues": 1,
+      "recentGrowth": 20,
+      "growthSource": "snapshot",
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-09-12T08:33:04Z",
+      "updatedAt": "2026-09-15T02:47:55Z",
+      "pushedAt": "2026-09-13T03:13:29Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 30.746221959451326,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 26.93487008433127,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 65.7,
+        "signals": [
+          "快照实增 +20",
+          "新仓约 41 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "让普通安卓手机也有“折叠屏”的视觉效果。",
+      "introduction": "它用 OpenGL ES + Shizuku 实现整屏重投影，跟随手机真实姿态做出 iPhone Duo 式的系统级折叠错觉。整个过程不需要折叠屏硬件，也不用 root。",
+      "whyToday": "当天快照实增高，创意型视觉玩法容易引发好奇。",
+      "audience": "安卓折腾党、喜欢新鲜玩法的人、极客",
+      "editorialTags": [
+        "有趣",
+        "设计"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "sky-map-team/stardroid",
+      "githubUrl": "https://github.com/sky-map-team/stardroid",
+      "canonicalUrl": "https://github.com/sky-map-team/stardroid",
+      "description": "Sky Map (formerly Google Sky Map, open sourced in 2012)",
+      "chineseDescription": "Sky Map（原谷歌星空地图），对着天空即可识别星座的开源应用。",
+      "stars": 1843,
+      "forks": 283,
+      "openIssues": 59,
+      "language": "Kotlin",
+      "topics": [],
+      "createdAt": "2015-06-09T18:40:09Z",
+      "updatedAt": "2026-09-15T02:56:54Z",
+      "pushedAt": "2026-09-15T02:56:49Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "举起手机对着天空，就能认出星座和行星。",
+      "introduction": "就是当年的谷歌星空地图 Sky Map，2012 年开源至今。把手机对准夜空，它会实时标出星座、行星和恒星的位置。",
+      "whyToday": "当天热度回升，是老牌但常青的科普观星应用。",
+      "audience": "天文爱好者、亲子科普、户外露营的人",
+      "editorialTags": [
+        "学习",
+        "有趣"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "danieldeer/seriousdb",
+      "githubUrl": "https://github.com/danieldeer/seriousdb",
+      "canonicalUrl": "https://github.com/danieldeer/seriousdb",
+      "description": "A simple, yet effective persistent key-value store accessible via HTTP.",
+      "chineseDescription": "一个简单实用、通过 HTTP 访问的持久化键值存储。",
+      "stars": 134,
+      "forks": 65,
+      "openIssues": 70,
+      "recentGrowth": 20,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-12T09:42:41Z",
+      "updatedAt": "2026-09-14T23:19:39Z",
+      "pushedAt": "2026-09-14T14:38:52Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 30.746221959451326,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 27.53712373361401,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 70.3,
+        "signals": [
+          "快照实增 +20",
+          "新仓约 44 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "一个通过 HTTP 就能用的简单持久化键值存储。",
+      "introduction": "这是一个轻量但实用的键值数据库，直接用 HTTP 就能读写。部署和调用都很简单，适合小项目、原型或自建小服务当轻量存储。",
+      "whyToday": "当天快照实增较高，简单够用的小工具容易被广泛采用。",
+      "audience": "后端开发者、做小项目/原型的人、自托管爱好者",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "PintaProject/Pinta",
+      "githubUrl": "https://github.com/pintaproject/pinta",
+      "canonicalUrl": "https://github.com/pintaproject/pinta",
+      "description": "Simple GTK Paint Program",
+      "chineseDescription": "简洁的 GTK 画图/图像编辑程序，类似轻量版 Paint.NET。",
+      "stars": 4037,
+      "forks": 394,
+      "openIssues": 228,
+      "language": "C#",
+      "topics": [
+        "csharp",
+        "dotnet",
+        "drawing",
+        "gtk",
+        "gtk4",
+        "image-editor",
+        "painting",
+        "pinta"
+      ],
+      "createdAt": "2011-09-09T23:24:17Z",
+      "updatedAt": "2026-09-15T02:56:35Z",
+      "pushedAt": "2026-09-15T02:56:31Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "一个简洁好上手的开源画图/修图程序。",
+      "introduction": "它是基于 GTK 的轻量图像编辑器，界面简单、功能够用，可以看作跨平台的开源版 Paint.NET。日常裁图、加文字、简单绘图都很方便。",
+      "whyToday": "当天热度上涨，是常青的轻量修图开源工具。",
+      "audience": "普通用户、需要简单修图的人、Linux 用户",
+      "editorialTags": [
+        "效率",
+        "设计"
+      ],
+      "recommendation": 3
+    }
+  ]
+}
