@@ -1,0 +1,1348 @@
+{
+  "date": "2026-09-16",
+  "issue": 8,
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "今天开源圈的主角依旧是 AI Agent：从工具箱、技能集到多 Agent 编排与安全卫士一应俱全，也别错过 Homebrew 官方 GUI、浏览器里跑单片机和会眨眼的桌面吉祥物。",
+  "mode": "live",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+  "publishedAt": "2026-09-16T03:16:51.517Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-09-16T03:11:20.768Z",
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "raw": [
+        {
+          "query": "created:>=2026-09-13 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-09-02 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-09-13 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-09-16T03:11:20.812Z",
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 36 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "rawCount": 36,
+      "normalizedCount": 36,
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 14
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 22
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "degraded",
+      "fetchedAt": "2026-09-16T03:11:24.540Z",
+      "message": "HTTP 403，详情补全跳过；保留 Search/Trending 已有事实；rate limit remaining=0"
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 186,
+    "normalizedCandidateCount": 186,
+    "dedupedCandidateCount": 183,
+    "eligibleCandidateCount": 106,
+    "selectedCount": 30
+  },
+  "projects": [
+    {
+      "name": "earendil-works/pi",
+      "githubUrl": "https://github.com/earendil-works/pi",
+      "canonicalUrl": "https://github.com/earendil-works/pi",
+      "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+      "chineseDescription": "一体化 AI Agent 工具箱：统一 LLM 接口、Agent 循环、TUI 与编程 CLI。",
+      "stars": 105825,
+      "forks": 13299,
+      "recentGrowth": 458,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 53.05410206048285,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 53.1,
+        "signals": [
+          "Trending 披露 +458"
+        ]
+      },
+      "plainSummary": "一整套开箱即用的 AI Agent 开发工具箱。",
+      "introduction": "它把统一的 LLM 接口、Agent 主循环、终端 TUI 和编程 CLI 打包在一起。装上就能快速搭出自己的智能体，不用东拼西凑各种库。",
+      "whyToday": "近期新增 458 星、逼近 10.6 万星，是当下最火的 Agent 工具箱之一。",
+      "audience": "想动手做 AI Agent 的开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "addyosmani/agent-skills",
+      "githubUrl": "https://github.com/addyosmani/agent-skills",
+      "canonicalUrl": "https://github.com/addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "chineseDescription": "为 AI 编程 Agent 打造的生产级工程技能集合。",
+      "stars": 94874,
+      "forks": 10067,
+      "recentGrowth": 307,
+      "growthSource": "github-trending",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 49.60071924416941,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 49.6,
+        "signals": [
+          "Trending 披露 +307"
+        ]
+      },
+      "plainSummary": "为 AI 编程 Agent 准备的生产级工程技能集。",
+      "introduction": "由知名前端专家 Addy Osmani 整理，把工程实践沉淀成可直接喂给 Agent 的技能。让 AI 写代码时更像资深工程师。",
+      "whyToday": "单日新增 307 星、总量近 9.5 万，热度持续走高。",
+      "audience": "用 AI 辅助编程的团队与开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "NationalSecurityAgency/ghidra",
+      "githubUrl": "https://github.com/nationalsecurityagency/ghidra",
+      "canonicalUrl": "https://github.com/nationalsecurityagency/ghidra",
+      "description": "Ghidra is a software reverse engineering (SRE) framework",
+      "chineseDescription": "美国国安局开源的软件逆向工程（SRE）框架，功能强大。",
+      "stars": 76803,
+      "forks": 8475,
+      "recentGrowth": 725,
+      "growthSource": "github-trending",
+      "language": "Java",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +725"
+        ]
+      },
+      "plainSummary": "美国国安局开源的重量级逆向工程框架。",
+      "introduction": "Ghidra 能反汇编、反编译并分析各类二进制程序，是安全研究和逆向的标配工具之一。功能全面且完全免费。",
+      "whyToday": "今日大涨 725 星，逆向老牌名项目热度不减。",
+      "audience": "安全研究员与逆向工程爱好者。",
+      "editorialTags": [
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "decolua/9router",
+      "githubUrl": "https://github.com/decolua/9router",
+      "canonicalUrl": "https://github.com/decolua/9router",
+      "description": "Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. Auto-fallback, RTK -40% tokens, never hit limits.",
+      "chineseDescription": "免费无限的 AI 编程路由：把 Claude Code、Codex、Cursor 等接到 40+ 免费模型。",
+      "stars": 28926,
+      "forks": 5312,
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 0,
+        "signals": [
+          "进入 GitHub 官方候选源"
+        ]
+      },
+      "plainSummary": "把主流编程助手接到免费大模型的路由器。",
+      "introduction": "它能让 Claude Code、Codex、Cursor 等工具连上 40+ 家免费的 Claude/GPT/Gemini 服务。自动兜底切换，还能省下约 40% token。",
+      "whyToday": "近 2.9 万星，主打「无限免费 AI 编程」，话题性十足。",
+      "audience": "想低成本用上多种 AI 编程模型的人。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "danny-avila/LibreChat",
+      "githubUrl": "https://github.com/danny-avila/librechat",
+      "canonicalUrl": "https://github.com/danny-avila/librechat",
+      "description": "Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active",
+      "chineseDescription": "增强版 ChatGPT 开源克隆，支持多模型、Agent、MCP 与代码解释器。",
+      "stars": 43897,
+      "forks": 9031,
+      "recentGrowth": 254,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 47.966120621153145,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 48,
+        "signals": [
+          "Trending 披露 +254"
+        ]
+      },
+      "plainSummary": "功能强大的开源 ChatGPT 平替。",
+      "introduction": "支持几乎所有主流大模型，还内置 Agent、MCP、代码解释器、多用户认证和消息搜索。可以自托管，数据握在自己手里。",
+      "whyToday": "近期新增 254 星，是自建 AI 对话平台的热门选择。",
+      "audience": "想自建私有 AI 对话平台的个人与团队。",
+      "editorialTags": [
+        "AI 工具",
+        "开源替代",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "Homebrew/BrewUI",
+      "githubUrl": "https://github.com/homebrew/brewui",
+      "canonicalUrl": "https://github.com/homebrew/brewui",
+      "description": "📺 Homebrew's official macOS GUI",
+      "chineseDescription": "Homebrew 官方推出的 macOS 图形界面客户端。",
+      "stars": 1457,
+      "forks": 33,
+      "recentGrowth": 271,
+      "growthSource": "github-trending",
+      "language": "Swift",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 48.524777047502035,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 48.5,
+        "signals": [
+          "Trending 披露 +271"
+        ]
+      },
+      "plainSummary": "Homebrew 官方出的 macOS 图形界面。",
+      "introduction": "以后装、删、管 Homebrew 软件包不用只靠命令行了，官方给出了一个原生 macOS 图形客户端。对新手尤其友好。",
+      "whyToday": "单日暴涨 271 星，官方 GUI 让人期待已久。",
+      "audience": "所有用 Homebrew 的 Mac 用户。",
+      "editorialTags": [
+        "效率",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "pacifio/atlas",
+      "githubUrl": "https://github.com/pacifio/atlas",
+      "canonicalUrl": "https://github.com/pacifio/atlas",
+      "description": "Source control for agents. Use multiple coding agents, track their changes and query them in one place",
+      "chineseDescription": "面向 AI Agent 的源码管理：多编程 Agent 统一追踪与查询改动。",
+      "stars": 4672,
+      "forks": 281,
+      "recentGrowth": 91,
+      "growthSource": "github-trending",
+      "language": "Rust",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 39.14137173634208,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 39.1,
+        "signals": [
+          "Trending 披露 +91"
+        ]
+      },
+      "plainSummary": "为多个 AI 编程 Agent 做的版本管理。",
+      "introduction": "当你同时用好几个编程 Agent 时，它能统一追踪各自的改动并集中查询。相当于给一堆 AI 打工人配了个协作总控台。",
+      "whyToday": "近期新增 91 星、总量超 4600，切中多 Agent 协作的新痛点。",
+      "audience": "同时驱动多个编程 Agent 的开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "vllm-project/llm-compressor",
+      "githubUrl": "https://github.com/vllm-project/llm-compressor",
+      "canonicalUrl": "https://github.com/vllm-project/llm-compressor",
+      "description": "Transformers-compatible library for applying various compression algorithms to LLMs for optimized deployment with vLLM",
+      "chineseDescription": "兼容 Transformers 的大模型压缩库，为 vLLM 部署做量化优化。",
+      "stars": 3787,
+      "forks": 668,
+      "openIssues": 113,
+      "language": "Python",
+      "topics": [
+        "compression",
+        "quantization"
+      ],
+      "createdAt": "2024-06-20T20:13:34Z",
+      "updatedAt": "2026-09-16T03:11:05Z",
+      "pushedAt": "2026-09-16T03:11:03Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "给大模型做压缩量化的部署利器。",
+      "introduction": "它兼容 Transformers，能对大模型施加多种压缩与量化算法，让模型在 vLLM 上跑得更省更快。是推理提速的实用工具。",
+      "whyToday": "vLLM 官方出品，超 3700 星，部署党的常备。",
+      "audience": "需要优化大模型推理成本的工程师。",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "web-infra-dev/rsbuild",
+      "githubUrl": "https://github.com/web-infra-dev/rsbuild",
+      "canonicalUrl": "https://github.com/web-infra-dev/rsbuild",
+      "description": "Fast, extensible build tool for modern web development",
+      "chineseDescription": "快速、可扩展的现代 Web 构建工具（基于 Rspack）。",
+      "stars": 3379,
+      "forks": 281,
+      "openIssues": 24,
+      "language": "TypeScript",
+      "topics": [
+        "build-tool",
+        "bundler",
+        "frontend",
+        "javascript",
+        "rsbuild",
+        "rspack",
+        "rstack",
+        "typescript",
+        "webpack"
+      ],
+      "createdAt": "2023-10-07T12:59:03Z",
+      "updatedAt": "2026-09-16T03:10:38Z",
+      "pushedAt": "2026-09-16T03:10:36Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "快速又可扩展的现代 Web 构建工具。",
+      "introduction": "基于 Rspack 打造，主打开箱即用的高速打包体验。想让前端项目构建更快，它是 Webpack 之外值得一试的选择。",
+      "whyToday": "超 3300 星的明星前端工具，社区活跃。",
+      "audience": "追求构建速度的前端开发者。",
+      "editorialTags": [
+        "开发工具",
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "davidmonterocrespo24/velxio",
+      "githubUrl": "https://github.com/davidmonterocrespo24/velxio",
+      "canonicalUrl": "https://github.com/davidmonterocrespo24/velxio",
+      "description": "Emulate Arduino, ESP32 & Raspberry Pi. in your browser. Write code, compile, and run on 19 real boards — Arduino Uno, ESP32, ESP32-C3, Raspberry Pi Pico, Raspberry Pi 3, and more. No hardware, no cloud, no limits.. Discord: https://discord.gg/3mARjJrh4E",
+      "chineseDescription": "在浏览器里模拟 Arduino、ESP32、树莓派并跑代码，无需真实硬件。",
+      "stars": 2846,
+      "forks": 287,
+      "openIssues": 11,
+      "language": "TypeScript",
+      "topics": [
+        "arduino",
+        "esp32",
+        "simulation",
+        "velxio",
+        "wokwi"
+      ],
+      "createdAt": "2026-03-03T23:12:53Z",
+      "updatedAt": "2026-09-16T03:11:18Z",
+      "pushedAt": "2026-09-16T03:11:13Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "在浏览器里模拟跑 Arduino 和 ESP32。",
+      "introduction": "不用买硬件，直接在浏览器写代码、编译并在 19 种真实开发板上运行，涵盖 Arduino Uno、ESP32、树莓派 Pico 等。学硬件的门槛一下降下来。",
+      "whyToday": "超 2800 星，让嵌入式入门变得零成本。",
+      "audience": "学单片机与嵌入式的爱好者和学生。",
+      "editorialTags": [
+        "学习",
+        "有趣",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "xLLM-AI/xllm",
+      "githubUrl": "https://github.com/xllm-ai/xllm",
+      "canonicalUrl": "https://github.com/xllm-ai/xllm",
+      "description": "A high-performance inference engine for LLM, VLM, DiT and REC models, optimized for diverse AI accelerators. It is hosted in OpenAtom Foundation.",
+      "chineseDescription": "面向多种 AI 加速器优化的高性能 LLM/VLM 推理引擎。",
+      "stars": 1571,
+      "forks": 298,
+      "openIssues": 211,
+      "language": "C++",
+      "topics": [
+        "deepseek",
+        "glm",
+        "inference",
+        "inference-engine",
+        "large-language-models",
+        "llm-inference",
+        "qwen"
+      ],
+      "createdAt": "2025-08-12T13:16:07Z",
+      "updatedAt": "2026-09-16T03:11:11Z",
+      "pushedAt": "2026-09-16T03:11:06Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "面向多种加速器的高性能推理引擎。",
+      "introduction": "支持 LLM、VLM、DiT 等多类模型，针对不同 AI 加速器做了优化，托管在开放原子基金会。追求推理性能时可以关注。",
+      "whyToday": "超 1500 星，国产开源推理引擎新秀。",
+      "audience": "做大模型推理部署的工程团队。",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "MG1937/ASC",
+      "githubUrl": "https://github.com/mg1937/asc",
+      "canonicalUrl": "https://github.com/mg1937/asc",
+      "description": "ASC is a super FAST Android decompiler front-end designed for Agents/Mobile Researchers.",
+      "chineseDescription": "面向 Agent 与移动安全研究者的超快 Android 反编译前端。",
+      "stars": 1237,
+      "forks": 202,
+      "recentGrowth": 129,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 42.13420687817073,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 42.1,
+        "signals": [
+          "Trending 披露 +129"
+        ]
+      },
+      "plainSummary": "面向 Agent 的超快 Android 反编译前端。",
+      "introduction": "它专为 AI Agent 和移动安全研究者设计，把 Android 反编译做得又快又顺手。做安卓逆向分析时能省不少时间。",
+      "whyToday": "近期新增 129 星，安全研究圈的实用新工具。",
+      "audience": "安卓逆向与移动安全研究者。",
+      "editorialTags": [
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "mthcht/awesome-lists",
+      "githubUrl": "https://github.com/mthcht/awesome-lists",
+      "canonicalUrl": "https://github.com/mthcht/awesome-lists",
+      "description": "Awesome Security lists for SOC/CERT/CTI",
+      "chineseDescription": "面向 SOC/CERT/CTI 的安全资源精选清单合集。",
+      "stars": 1915,
+      "forks": 239,
+      "openIssues": 26,
+      "language": "YARA",
+      "topics": [
+        "awesome-list",
+        "blueteam",
+        "blueteam-tools",
+        "cti",
+        "detection",
+        "detection-engineering",
+        "dfir",
+        "hacktools",
+        "incident-response",
+        "ioc",
+        "iocs",
+        "ir",
+        "ransomware",
+        "redteam",
+        "rmm",
+        "security",
+        "siem",
+        "soc",
+        "threat-hunting",
+        "threat-intelligence"
+      ],
+      "createdAt": "2022-12-11T10:45:11Z",
+      "updatedAt": "2026-09-16T03:11:12Z",
+      "pushedAt": "2026-09-16T03:11:08Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "面向安全运营的资源精选大合集。",
+      "introduction": "为 SOC、CERT、CTI 等蓝队场景整理了大量安全资源与工具清单。做威胁情报和安全防护时可以按图索骥。",
+      "whyToday": "近 1900 星，蓝队常备的资源导航。",
+      "audience": "安全运营与威胁情报从业者。",
+      "editorialTags": [
+        "学习",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "gastownhall/gascity",
+      "githubUrl": "https://github.com/gastownhall/gascity",
+      "canonicalUrl": "https://github.com/gastownhall/gascity",
+      "description": "Orchestration-builder SDK for multi-agent coding workflows",
+      "chineseDescription": "用于搭建多 Agent 编程工作流的编排 SDK。",
+      "stars": 1267,
+      "forks": 405,
+      "openIssues": 1280,
+      "language": "Go",
+      "topics": [],
+      "createdAt": "2026-02-22T01:40:16Z",
+      "updatedAt": "2026-09-16T03:11:20Z",
+      "pushedAt": "2026-09-16T03:11:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "搭建多 Agent 编程工作流的编排 SDK。",
+      "introduction": "它提供一套编排能力，帮你把多个编程 Agent 组织成协作流水线。想让 AI 们分工干活时用得上。",
+      "whyToday": "超 1200 星，踩中多 Agent 编排的新热点。",
+      "audience": "构建 Agent 工作流的开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "SonicloudTech/sonicloud_opensdk",
+      "githubUrl": "https://github.com/sonicloudtech/sonicloud_opensdk",
+      "canonicalUrl": "https://github.com/sonicloudtech/sonicloud_opensdk",
+      "description": "声云录音卡 Recorder 是一套面向开发者和行业客户的智能录音硬件接入方案。 项目以录音卡片硬件为核心，开放 BLE 协议 SDK 及 Android、iOS、鸿蒙、Flutter 接入示例，同时提供 Windows/macOS 桌面端 Demo，支持设备连接、录音控制、实时音频、文件传输、OTA 升级和语音转写等能力，帮助开发者快速将录音硬件接入自己的 App、桌面软件或行业系统。 如需获取硬件规格、样机、完整协议、SDK 资料或定制服务，请联系安徽声云",
+      "chineseDescription": "声云智能录音卡的开放接入方案，含多端 SDK 与桌面 Demo。",
+      "stars": 1473,
+      "forks": 56,
+      "openIssues": 0,
+      "language": "HTML",
+      "topics": [],
+      "createdAt": "2026-09-02T03:32:02Z",
+      "updatedAt": "2026-09-16T03:10:58Z",
+      "pushedAt": "2026-09-10T01:47:18Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 34,
+        "signals": [
+          "新仓约 103 stars/day",
+          "7 天内有更新"
+        ]
+      },
+      "plainSummary": "智能录音卡硬件的开放接入方案。",
+      "introduction": "它以录音卡硬件为核心，开放 BLE 协议 SDK 及安卓、iOS、鸿蒙、Flutter 接入示例。桌面 Demo 也一并提供，支持录音控制、实时音频、文件传输与语音转写。",
+      "whyToday": "超 1400 星，软硬结合的国产开源方案。",
+      "audience": "做录音硬件接入的开发者与厂商。",
+      "editorialTags": [
+        "开发工具",
+        "数据"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "linebender/parley",
+      "githubUrl": "https://github.com/linebender/parley",
+      "canonicalUrl": "https://github.com/linebender/parley",
+      "description": "Rich text layout library",
+      "chineseDescription": "功能丰富的富文本排版布局库（Rust）。",
+      "stars": 735,
+      "forks": 117,
+      "openIssues": 128,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2021-06-04T11:05:04Z",
+      "updatedAt": "2026-09-16T03:10:34Z",
+      "pushedAt": "2026-09-16T03:10:30Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "功能丰富的富文本排版布局库。",
+      "introduction": "它用 Rust 实现，负责把富文本准确地排版布局出来。做编辑器、终端或图形界面的文字渲染时很有价值。",
+      "whyToday": "超 700 星，Rust 图形生态里的重要基础件。",
+      "audience": "做文本渲染与 UI 库的开发者。",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "chainguard-images/images",
+      "githubUrl": "https://github.com/chainguard-images/images",
+      "canonicalUrl": "https://github.com/chainguard-images/images",
+      "description": "Public Chainguard Images",
+      "chineseDescription": "Chainguard 公开的极简安全容器镜像仓库。",
+      "stars": 692,
+      "forks": 177,
+      "openIssues": 115,
+      "language": "HCL",
+      "topics": [
+        "apko",
+        "audit",
+        "chainguard",
+        "chainguard-images",
+        "melange",
+        "no-ghaudit-branch-protections",
+        "oci",
+        "oci-image",
+        "wolfi"
+      ],
+      "createdAt": "2022-11-08T19:08:30Z",
+      "updatedAt": "2026-09-16T03:10:30Z",
+      "pushedAt": "2026-09-16T03:10:26Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "极简又安全的公开容器镜像库。",
+      "introduction": "Chainguard 提供的这批镜像主打小体积、少漏洞。想让容器供应链更安全时，可以用它替换臃肿的基础镜像。",
+      "whyToday": "近 700 星，容器安全领域的口碑项目。",
+      "audience": "关注供应链安全的运维与后端。",
+      "editorialTags": [
+        "开发工具",
+        "开源替代"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "yuzicapp/yuzic",
+      "githubUrl": "https://github.com/yuzicapp/yuzic",
+      "canonicalUrl": "https://github.com/yuzicapp/yuzic",
+      "description": "A cross-platform, free and open source music player for Navidrome & Jellyfin",
+      "chineseDescription": "面向 Navidrome 与 Jellyfin 的跨平台开源音乐播放器。",
+      "stars": 511,
+      "forks": 21,
+      "openIssues": 3,
+      "language": "TypeScript",
+      "topics": [
+        "expo",
+        "jellyfin",
+        "lidarr",
+        "navidrome",
+        "navidrome-client",
+        "react",
+        "react-native",
+        "typescript"
+      ],
+      "createdAt": "2024-12-18T23:10:13Z",
+      "updatedAt": "2026-09-16T03:10:48Z",
+      "pushedAt": "2026-09-16T03:10:39Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "跨平台的开源音乐播放器。",
+      "introduction": "它为 Navidrome 和 Jellyfin 打造，免费开源、多端可用。自己搭了音乐服务器的话，用它来听歌很合适。",
+      "whyToday": "超 500 星，自托管音乐党的顺手客户端。",
+      "audience": "用 Navidrome/Jellyfin 自建音乐库的人。",
+      "editorialTags": [
+        "开源替代",
+        "有趣"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "GoPlusSecurity/agentguard",
+      "githubUrl": "https://github.com/goplussecurity/agentguard",
+      "canonicalUrl": "https://github.com/goplussecurity/agentguard",
+      "description": "Security guard for AI agents — blocks malicious skills, prevents data leaks, protects secrets. 24 detection rules, runtime action evaluation, trust registry.",
+      "chineseDescription": "AI Agent 安全卫士：拦截恶意技能、防数据泄露、保护密钥。",
+      "stars": 461,
+      "forks": 67,
+      "openIssues": 13,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-02-02T09:21:25Z",
+      "updatedAt": "2026-09-16T03:10:59Z",
+      "pushedAt": "2026-09-16T03:10:54Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "给 AI Agent 的安全防护卫士。",
+      "introduction": "它能拦截恶意技能、阻止数据泄露、保护密钥，内置 24 条检测规则并做运行时行为评估。给 Agent 加一道安全闸门。",
+      "whyToday": "近 500 星，切中 Agent 安全这个新兴刚需。",
+      "audience": "部署 AI Agent 的团队。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "captainbrosset/devtools-tips",
+      "githubUrl": "https://github.com/captainbrosset/devtools-tips",
+      "canonicalUrl": "https://github.com/captainbrosset/devtools-tips",
+      "description": "A collection of useful cross-browser DevTools tips",
+      "chineseDescription": "一份跨浏览器的开发者工具实用技巧合集。",
+      "stars": 448,
+      "forks": 44,
+      "openIssues": 20,
+      "language": "HTML",
+      "topics": [
+        "debugging",
+        "devtools",
+        "tips"
+      ],
+      "createdAt": "2021-06-08T09:46:10Z",
+      "updatedAt": "2026-09-16T03:10:30Z",
+      "pushedAt": "2026-09-16T03:10:33Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "跨浏览器的开发者工具技巧合集。",
+      "introduction": "收集了大量 Chrome、Firefox、Safari 等浏览器 DevTools 的实用小技巧。调试网页时翻一翻，常有惊喜。",
+      "whyToday": "近 450 星，前端调试的实用锦囊。",
+      "audience": "做网页调试的前端开发者。",
+      "editorialTags": [
+        "学习",
+        "效率",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "getsentry/sentry-docs",
+      "githubUrl": "https://github.com/getsentry/sentry-docs",
+      "canonicalUrl": "https://github.com/getsentry/sentry-docs",
+      "description": "Sentry's documentation (and tools to build it)",
+      "chineseDescription": "Sentry 官方文档及其构建工具。",
+      "stars": 445,
+      "forks": 1700,
+      "openIssues": 585,
+      "language": "MDX",
+      "topics": [
+        "docs",
+        "documentation",
+        "hacktoberfest",
+        "sentry-documentation",
+        "tag-production",
+        "team-web-frontend"
+      ],
+      "createdAt": "2015-04-12T22:59:45Z",
+      "updatedAt": "2026-09-16T03:10:49Z",
+      "pushedAt": "2026-09-16T03:10:36Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Sentry 官方文档及其构建工具。",
+      "introduction": "这是错误监控平台 Sentry 的完整官方文档仓库，连带文档站的构建工具一起开源。学习接入或想给文档提 PR 都行。",
+      "whyToday": "近 450 星，Hacktoberfest 友好、适合参与贡献。",
+      "audience": "用 Sentry 或想练手开源贡献的人。",
+      "editorialTags": [
+        "学习",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "LnYo-Cly/ai4j",
+      "githubUrl": "https://github.com/lnyo-cly/ai4j",
+      "canonicalUrl": "https://github.com/lnyo-cly/ai4j",
+      "description": "Java 8+ agentic SDK: unified LLM access (OpenAI/Anthropic/DashScope/Doubao/DeepSeek...), Tool Calling, MCP, RAG, Agent Runtime, and a built-in Coding Agent CLI/TUI/ACP.",
+      "chineseDescription": "Java 8+ 的 Agent SDK：统一多家 LLM、工具调用、MCP、RAG 与运行时。",
+      "stars": 429,
+      "forks": 56,
+      "openIssues": 5,
+      "language": "Java",
+      "topics": [
+        "agent",
+        "anthropic",
+        "chatglm",
+        "chatgpt",
+        "coding-agent",
+        "dashscope",
+        "deepseek",
+        "embedding",
+        "function-calling",
+        "hunyuan",
+        "java",
+        "mcp",
+        "ollama",
+        "openai",
+        "rag",
+        "runtime",
+        "sdk",
+        "spring-boot",
+        "vector-database"
+      ],
+      "createdAt": "2024-08-17T08:59:56Z",
+      "updatedAt": "2026-09-16T03:11:19Z",
+      "pushedAt": "2026-09-16T03:11:13Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Java 生态的一站式 Agent SDK。",
+      "introduction": "它统一接入 OpenAI、Anthropic、豆包、DeepSeek 等模型，支持工具调用、MCP、RAG、Agent 运行时，还自带编程 Agent CLI。Java 党做 AI 应用更顺手。",
+      "whyToday": "近 430 星，填补 Java 侧 Agent 框架的空白。",
+      "audience": "用 Java 开发 AI 应用的工程师。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "openxla/tokamax",
+      "githubUrl": "https://github.com/openxla/tokamax",
+      "canonicalUrl": "https://github.com/openxla/tokamax",
+      "description": "Tokamax: A GPU and TPU kernel library.",
+      "chineseDescription": "面向 GPU 与 TPU 的算子内核库（OpenXLA）。",
+      "stars": 288,
+      "forks": 59,
+      "openIssues": 91,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2025-04-25T21:23:23Z",
+      "updatedAt": "2026-09-16T03:11:12Z",
+      "pushedAt": "2026-09-16T03:11:09Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "面向 GPU 与 TPU 的算子内核库。",
+      "introduction": "由 OpenXLA 出品，提供一批高性能的 GPU/TPU 计算内核。做底层模型加速和编译优化时用得上。",
+      "whyToday": "近 300 星，来自 OpenXLA 的底层加速新作。",
+      "audience": "做模型编译与算子优化的工程师。",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "open-constructs/cdk-terrain",
+      "githubUrl": "https://github.com/open-constructs/cdk-terrain",
+      "canonicalUrl": "https://github.com/open-constructs/cdk-terrain",
+      "description": "Define infrastructure resources using programming constructs and provision them using OpenTofu/Terraform",
+      "chineseDescription": "用编程构造定义基础设施，再用 OpenTofu/Terraform 部署。",
+      "stars": 261,
+      "forks": 24,
+      "openIssues": 96,
+      "language": "TypeScript",
+      "topics": [
+        "cdk",
+        "cdk-terrain",
+        "cdktf",
+        "cdktn",
+        "infrastructure-as-code",
+        "opentofu",
+        "terraform",
+        "terraform-cdk"
+      ],
+      "createdAt": "2026-01-12T09:13:18Z",
+      "updatedAt": "2026-09-16T03:10:49Z",
+      "pushedAt": "2026-09-16T03:11:21Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "用代码定义基础设施再交给 Terraform 部署。",
+      "introduction": "它让你用编程构造（construct）来描述基础设施资源，再用 OpenTofu/Terraform 实际provision。写 IaC 更接近写代码。",
+      "whyToday": "近 260 星，IaC 领域的实用新工具。",
+      "audience": "做基础设施即代码的 DevOps。",
+      "editorialTags": [
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "brekkylab/backlot",
+      "githubUrl": "https://github.com/brekkylab/backlot",
+      "canonicalUrl": "https://github.com/brekkylab/backlot",
+      "description": "A local emulator for enterprise SaaS APIs — Slack, Gmail, Google Drive, GitHub, Jira, Notion, S3 and more — with the real response shapes, pagination, auth and per-document ACLs, over a corpus you supply.",
+      "chineseDescription": "本地模拟 Slack、Gmail、Drive 等企业 SaaS API 的仿真器。",
+      "stars": 189,
+      "forks": 19,
+      "openIssues": 44,
+      "language": "Python",
+      "topics": [
+        "ai-agents",
+        "amazon-s3",
+        "api-mock",
+        "enterprise",
+        "fastapi",
+        "github",
+        "gmail",
+        "google-drive",
+        "jira",
+        "mcp",
+        "mock-server",
+        "notion",
+        "openapi",
+        "python",
+        "rag",
+        "slack"
+      ],
+      "createdAt": "2026-07-02T11:04:23Z",
+      "updatedAt": "2026-09-16T03:10:31Z",
+      "pushedAt": "2026-09-16T03:10:29Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "本地模拟企业 SaaS 接口的仿真器。",
+      "introduction": "它能在本地模拟 Slack、Gmail、Drive、GitHub、Jira 等 API，连响应结构、分页、鉴权和权限都还原。开发测试企业集成时不用连真实服务。",
+      "whyToday": "近 190 星，企业集成开发的省心利器。",
+      "audience": "做企业 SaaS 集成与测试的开发者。",
+      "editorialTags": [
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "strands-labs/robots",
+      "githubUrl": "https://github.com/strands-labs/robots",
+      "canonicalUrl": "https://github.com/strands-labs/robots",
+      "description": "Control robots and physical hardware with natural language through Strands Agents.",
+      "chineseDescription": "用自然语言通过 Strands Agents 控制机器人与物理硬件。",
+      "stars": 158,
+      "forks": 35,
+      "openIssues": 25,
+      "language": "Python",
+      "topics": [
+        "robots",
+        "strands-agents",
+        "strands-labs",
+        "vision-language-action",
+        "world-foundation-models"
+      ],
+      "createdAt": "2026-02-19T19:42:45Z",
+      "updatedAt": "2026-09-16T03:10:39Z",
+      "pushedAt": "2026-09-16T03:10:35Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "用自然语言指挥机器人干活。",
+      "introduction": "它借助 Strands Agents，让你用大白话去控制机器人和物理硬件。把具身智能的操控门槛拉低了一截。",
+      "whyToday": "近 160 星，具身智能方向的有趣尝试。",
+      "audience": "对机器人与具身智能感兴趣的开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "有趣"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "nilbuild/page-mascot",
+      "githubUrl": "https://github.com/nilbuild/page-mascot",
+      "canonicalUrl": "https://github.com/nilbuild/page-mascot",
+      "description": "A mascot that watches the cursor and blinks when you poke it",
+      "chineseDescription": "一只盯着鼠标看、被戳会眨眼的桌面小吉祥物。",
+      "stars": 541,
+      "forks": 42,
+      "openIssues": 1,
+      "recentGrowth": 264,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-14T06:55:59Z",
+      "updatedAt": "2026-09-16T03:03:42Z",
+      "pushedAt": "2026-09-15T10:07:44Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +264",
+          "新仓约 254 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "一只会盯鼠标、被戳会眨眼的桌面吉祥物。",
+      "introduction": "把这只小家伙放到页面上，它会一直追着你的光标看，戳一下还会眨眼。纯粹为了给屏幕添点乐子。",
+      "whyToday": "两天涨了 264 星，可爱到让人想 Star。",
+      "audience": "喜欢给页面加点趣味的人。",
+      "editorialTags": [
+        "有趣",
+        "设计"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "anmolkapil/plexo",
+      "githubUrl": "https://github.com/anmolkapil/plexo",
+      "canonicalUrl": "https://github.com/anmolkapil/plexo",
+      "description": "Speed up downloads by combining multiple network connections in parallel",
+      "chineseDescription": "并行合并多条网络连接来给下载提速的工具。",
+      "stars": 62,
+      "forks": 5,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-15T09:41:57Z",
+      "updatedAt": "2026-09-16T02:45:24Z",
+      "pushedAt": "2026-09-15T17:16:13Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 29.797977784063427,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 41.8,
+        "signals": [
+          "新仓约 61 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "合并多条网络连接来给下载加速。",
+      "introduction": "它把多个网络连接并行捆在一起用，从而提升下载速度。网速不满意又想榨干带宽时可以试试。",
+      "whyToday": "轻巧实用的小工具，解决日常痛点。",
+      "audience": "常下大文件、想提速的用户。",
+      "editorialTags": [
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "opencoredev/bg0",
+      "githubUrl": "https://github.com/opencoredev/bg0",
+      "canonicalUrl": "https://github.com/opencoredev/bg0",
+      "description": "Private, unlimited background removal that runs in your browser.",
+      "chineseDescription": "完全在浏览器本地运行的隐私友好、无限次抠图去背景工具。",
+      "stars": 97,
+      "forks": 7,
+      "openIssues": 1,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-14T16:42:22Z",
+      "updatedAt": "2026-09-16T03:08:33Z",
+      "pushedAt": "2026-09-15T23:56:00Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 29.21192530179153,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 41.2,
+        "signals": [
+          "新仓约 56 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "在浏览器本地就能做的无限抠图去背景。",
+      "introduction": "它完全在你的浏览器里运行，隐私不外传，还能无限次给图片去背景。抠图不用再上传到云端了。",
+      "whyToday": "隐私 + 免费 + 无限次，抠图刚需的清爽方案。",
+      "audience": "常处理图片、在意隐私的人。",
+      "editorialTags": [
+        "效率",
+        "设计",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "bert-mccutchen/oak",
+      "githubUrl": "https://github.com/bert-mccutchen/oak",
+      "canonicalUrl": "https://github.com/bert-mccutchen/oak",
+      "description": "A simple homepage for self-hosters.",
+      "chineseDescription": "给自托管服务用的简洁个人主页/起始页，支持主题定制。",
+      "stars": 81,
+      "forks": 5,
+      "openIssues": 2,
+      "language": "JavaScript",
+      "topics": [
+        "homepage",
+        "self-hosted",
+        "startpage",
+        "theming",
+        "wisdom"
+      ],
+      "createdAt": "2025-12-24T18:07:20Z",
+      "updatedAt": "2026-09-16T03:10:42Z",
+      "pushedAt": "2026-09-16T03:10:38Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "给自托管服务用的简洁起始页。",
+      "introduction": "它是一个简单好看的个人主页/导航页，支持主题定制。把自己搭的各种服务和常用链接都收进来，一屏直达。",
+      "whyToday": "简洁可定制，自托管党的门面首选。",
+      "audience": "喜欢自托管、爱折腾主页的人。",
+      "editorialTags": [
+        "设计",
+        "效率",
+        "有趣"
+      ],
+      "recommendation": 3
+    }
+  ]
+}
