@@ -36,9 +36,8 @@ class AppHandler(SimpleHTTPRequestHandler):
                         or not isinstance(feed.get("latest"), str)
                         or not isinstance(feed.get("editions"), list)
                         or not feed["editions"]
-                        or not isinstance(feed.get("candidatePools"), list)
                     ):
-                        raise ValueError("远程响应不是包含候选池的有效 edition feed")
+                        raise ValueError("远程响应不是有效的 edition feed")
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
                 self.send_header("Cache-Control", "no-store")
