@@ -238,20 +238,31 @@ async function status(date: string): Promise<void> {
   console.log(JSON.stringify({ ok: true, stage: "status", date, checks: Object.fromEntries(checks) }, null, 2));
 }
 
+async function readFeedLatest(): Promise<{ latest: string; source: string } | null> {
+  for (const candidate of [path.join(ROOT, "dist/data/feed.json"), path.join(ROOT, "public/data/feed.json")]) {
+    try {
+      const feed = JSON.parse(await readFile(candidate, "utf8")) as { latest?: unknown };
+      if (typeof feed.latest === "string") return { latest: feed.latest, source: candidate };
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+    }
+  }
+  return null;
+}
+
+// 成功校验不再访问线上 IDA 站点（服务端请求会被字节 SSO 重定向导致误判）。
+// 改为校验本地构建产物：正式 edition 合法、dist/index.html 存在，且本地
+// dist/data/feed.json（优先）或 public/data/feed.json 的 latest 字段等于当天日期。
 async function success(date: string): Promise<void> {
   const url = option("url");
-  if (!url || !/^https?:\/\//.test(url)) throw new Error("成功回执必须提供 --url https://...");
-  const authorization = process.env.PIPELINE_SUCCESS_AUTHORIZATION?.trim();
   const edition = await validateEdition(date, path.join(EDITIONS_ROOT, `${date}.json`));
   await stat(path.join(ROOT, "dist/index.html"));
-  const response = await fetch(url, {
-    ...(authorization ? { headers: { authorization } } : {}),
-    signal: AbortSignal.timeout(15_000),
-  });
-  if (!response.ok) throw new Error(`线上可用性检查失败：HTTP ${response.status}`);
-  const html = await response.text();
-  if (!html.includes(date)) throw new Error(`线上页面尚未显示 ${date}，拒绝成功回执`);
-  console.log(JSON.stringify({ ok: true, stage: "success", notification: { date, projectCount: edition.projects.length, sourceStatus: edition.sourceStatus.map(({ source, status, message }) => ({ source, status, message })), url } }, null, 2));
+
+  const feed = await readFeedLatest();
+  if (!feed) throw new Error("未找到本地构建产物 feed.json（dist/data 或 public/data），请先完成 finalize 与 build 后再回执");
+  if (feed.latest !== date) throw new Error(`本地构建产物 ${feed.source} 的 latest=${feed.latest}，与当天 ${date} 不一致，拒绝成功回执`);
+
+  console.log(JSON.stringify({ ok: true, stage: "success", verifiedBy: feed.source, feedLatest: feed.latest, notification: { date, projectCount: edition.projects.length, sourceStatus: edition.sourceStatus.map(({ source, status, message }) => ({ source, status, message })), url: url ?? null } }, null, 2));
 }
 
 async function main() {

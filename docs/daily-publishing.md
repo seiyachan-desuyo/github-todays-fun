@@ -90,22 +90,19 @@ npx vercel@latest deploy --prod --yes --token "$VERCEL_TOKEN"
 
 ### 7. 生成成功回执
 
-先访问生产 URL，确认 HTTP 可达且首页显示当天日期，再执行：
+`pipeline:success` **不再访问线上 IDA 站点**（服务端请求会被字节 SSO 重定向，导致误判）。它改为校验本地构建产物：正式 edition 合法、`dist/index.html` 存在，且 `dist/data/feed.json`（优先）或 `public/data/feed.json` 的 `latest` 字段等于当天日期。因此必须先完成 `finalize` 与 `pnpm build` 再执行：
+
+```bash
+pnpm pipeline:success -- --date "$DATE"
+```
+
+`--url` 现在是可选参数，仅用于把生产链接写进回执输出，不再触发任何联网校验，也不再读取 `PIPELINE_SUCCESS_AUTHORIZATION`：
 
 ```bash
 pnpm pipeline:success -- --date "$DATE" --url "$DEPLOYED_URL"
 ```
 
-公开可访问站点无需配置认证，检查请求不会发送 `Authorization` Header。仅当目标站点确实要求认证时，才设置目标站点接受的完整请求头值：
-
-```bash
-export PIPELINE_SUCCESS_AUTHORIZATION="Bearer <token>"
-pnpm pipeline:success -- --date "$DATE" --url "$DEPLOYED_URL"
-```
-
-`PIPELINE_SUCCESS_AUTHORIZATION` 仅从环境变量读取，不要写入命令参数、代码或提交到 Git。配置后脚本会原样添加为 `Authorization` Header；未配置或仅包含空白时按公开站点处理。
-
-只有该命令退出码为 0，Aime 才能在定时任务最终回复中向当前用户回传成功。输出包含日期、项目数、各来源状态和线上链接；无需配置飞书 Webhook。
+只有该命令退出码为 0，Aime 才能在定时任务最终回复中向当前用户回传成功。输出包含校验来源（`verifiedBy`）、日期、项目数、各来源状态和线上链接；无需配置飞书 Webhook，也无需线上鉴权。
 
 ## 并发、幂等与恢复
 
@@ -120,8 +117,9 @@ pnpm pipeline:success -- --date "$DATE" --url "$DEPLOYED_URL"
 
 - `GITHUB_TOKEN`：推荐。用于提高 GitHub Search / Repository API 限额；不配置时会使用匿名额度并如实记录来源状态。
 - `VERCEL_TOKEN`：定时环境未登录 Vercel CLI 时需要，仅在部署命令中读取。
-- `PIPELINE_SUCCESS_AUTHORIZATION`：可选。仅在 `pipeline:success` 访问需要认证的生产站点时填写完整 `Authorization` 请求头值（例如 `Bearer <token>`）；公开站点留空。
 - `EDITION_DATE`：可选兼容变量；定时任务优先显式传 `--date`。
+
+> `pipeline:success` 已改为纯本地构建产物校验，不再读取 `PIPELINE_SUCCESS_AUTHORIZATION`，也不再访问 IDA 线上站点。
 
 不需要 LLM API Key、Webhook、飞书用户 ID。Aime 本身负责编辑，并由定时任务最终回复通知当前用户。
 

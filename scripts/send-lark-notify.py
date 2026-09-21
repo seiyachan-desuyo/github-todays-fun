@@ -12,7 +12,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote, urlencode
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
@@ -22,6 +22,13 @@ ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / ".env")
 
 DEFAULT_SITE_URL = "https://1384e82de8f4.ida-app.bytedance.net"
+# 数据读取不再依赖 IDA（服务端请求会被 aeolus/user/forbidden 拦截）。
+# 优先读本地构建产物 public/data/feed.json，读不到再回退到公开的 GitHub Raw feed.json。
+LOCAL_FEED_PATH = ROOT / "public" / "data" / "feed.json"
+DEFAULT_FEED_URL = (
+    "https://raw.githubusercontent.com/seiyachan-desuyo/github-todays-fun/"
+    "aime/1788773097-github-today-fun/public/data/feed.json"
+)
 LARK_API = "https://open.feishu.cn/open-apis"
 SHANGHAI = ZoneInfo("Asia/Shanghai")
 
@@ -68,22 +75,36 @@ def validate_edition(data: dict[str, Any], date: str, source: str) -> dict[str, 
     return data
 
 
-def load_edition(date: str, site_url: str = DEFAULT_SITE_URL) -> dict[str, Any]:
-    errors: list[str] = []
-    base = site_url.rstrip("/")
-    for path in (f"/data/editions/{quote(date)}.json", f"/data/{quote(date)}.json"):
-        url = f"{base}{path}"
-        try:
-            return validate_edition(request_json(url, attempts=1), date, url)
-        except Exception as exc:  # Remote fallback is intentionally best-effort.
-            errors.append(f"{url}: {exc}")
+def edition_from_feed(feed: dict[str, Any], date: str, source: str) -> dict[str, Any]:
+    editions = feed.get("editions")
+    if not isinstance(editions, list) or not editions:
+        raise ValueError(f"feed 缺少 editions 列表：{source}")
+    for edition in editions:
+        if isinstance(edition, dict) and edition.get("date") == date:
+            return validate_edition(edition, date, source)
+    raise ValueError(f"feed 中未找到 {date} 的期刊：{source}")
 
-    for path in (ROOT / "public" / "data" / "editions" / f"{date}.json", ROOT / "src" / "data" / "editions" / f"{date}.json"):
-        if path.is_file():
-            try:
-                return validate_edition(json.loads(path.read_text(encoding="utf-8")), date, str(path))
-            except (OSError, json.JSONDecodeError, ValueError) as exc:
-                errors.append(f"{path}: {exc}")
+
+def load_edition(date: str, feed_url: str = DEFAULT_FEED_URL) -> dict[str, Any]:
+    errors: list[str] = []
+
+    # 1) 优先读取本地构建产物 public/data/feed.json（相对项目根）。
+    if LOCAL_FEED_PATH.is_file():
+        try:
+            feed = json.loads(LOCAL_FEED_PATH.read_text(encoding="utf-8"))
+            return edition_from_feed(feed, date, str(LOCAL_FEED_PATH))
+        except (OSError, json.JSONDecodeError, ValueError) as exc:
+            errors.append(f"{LOCAL_FEED_PATH}: {exc}")
+    else:
+        errors.append(f"{LOCAL_FEED_PATH}: 文件不存在")
+
+    # 2) 本地读不到时回退到公开的 GitHub Raw feed.json（无需登录）。
+    try:
+        feed = request_json(feed_url, attempts=3)
+        return edition_from_feed(feed, date, feed_url)
+    except Exception as exc:  # noqa: BLE001 - fallback 尽力而为
+        errors.append(f"{feed_url}: {exc}")
+
     raise RuntimeError("未能读取当天 edition：" + "；".join(errors))
 
 
@@ -150,7 +171,8 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="只生成卡片，不调用飞书 API")
     args = parser.parse_args()
     website_url = os.environ.get("GITHUB_TODAY_WEBSITE_URL", DEFAULT_SITE_URL)
-    card = build_card(load_edition(args.date, website_url), website_url)
+    feed_url = os.environ.get("GITHUB_TODAY_FEED_URL") or DEFAULT_FEED_URL
+    card = build_card(load_edition(args.date, feed_url), website_url)
     if args.dry_run:
         print(json.dumps(card, ensure_ascii=False, indent=2))
         return 0

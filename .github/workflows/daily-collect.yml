@@ -1,0 +1,63 @@
+name: GitHub 今日好玩每日采集
+
+# 每天在云端采集当天 GitHub 候选事实并回写仓库，使采集阶段不再依赖本地 macOS。
+# 说明：AI 编辑与 IDA 部署无法在公有云 Actions 上完成（详见 docs/online-migration.md），
+# 本 workflow 只负责确定性的「采集 + 提交」，编辑与部署仍由 Aime 定时任务承担。
+
+on:
+  schedule:
+    # UTC 05:30 = Asia/Shanghai 13:30
+    - cron: "30 5 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "采集日期（YYYY-MM-DD，留空为上海当天）"
+        required: false
+        type: string
+
+concurrency:
+  group: daily-collect-${{ github.event.inputs.date || github.run_id }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: aime/1788773097-github-today-fun
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: 计算上海日期
+        id: date
+        env:
+          INPUT_DATE: ${{ github.event.inputs.date }}
+        run: |
+          if [ -n "$INPUT_DATE" ]; then
+            echo "value=$INPUT_DATE" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=$(TZ=Asia/Shanghai date +%F)" >> "$GITHUB_OUTPUT"
+          fi
+      - name: 采集当天候选事实
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm collect -- --date "${{ steps.date.outputs.value }}"
+      - name: 提交采集产物
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/editor-tasks src/data/snapshots
+          if git diff --cached --quiet; then
+            echo "无新增采集产物，跳过提交"
+          else
+            git commit -m "chore(collect): 云端采集 ${{ steps.date.outputs.value }} 候选事实"
+            git push origin HEAD:aime/1788773097-github-today-fun
+          fi
