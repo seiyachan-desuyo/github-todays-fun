@@ -1,5 +1,5 @@
 import { spawnSync } from "node:child_process";
-import { mkdir, readFile, readdir, rename, rm, stat, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, readdir, rename, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { aiEditionSchema, editorTaskSchema } from "../src/lib/editor/schema";
 import type { CandidateProject, DailyEdition, EditorTask, EditorTaskCandidate, EditorialProject } from "../src/lib/types";
@@ -14,7 +14,7 @@ const EDITIONS_ROOT = path.join(ROOT, "src/data/editions");
 const ENRICHED_ROOT = path.join(ROOT, "src/data/enriched-candidates");
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 
-type Stage = "prepare" | "stage" | "finalize" | "status" | "success";
+type Stage = "prepare" | "stage" | "finalize" | "status" | "success" | "refresh-app";
 
 function option(name: string): string | undefined {
   const index = process.argv.indexOf(`--${name}`);
@@ -224,7 +224,84 @@ async function finalize(date: string): Promise<void> {
 
   await atomicText(path.join(ROOT, "src/data/index.ts"), await generatedIndex());
   const feed = await generateFeed();
-  console.log(JSON.stringify({ ok: true, stage: "finalize", date, finalPath, finalEnrichedPath, selectedCount: edition.projects.length, feedLatest: feed.latest, feedEditionCount: feed.editions.length, next: "pnpm lint && pnpm test && pnpm build，然后部署 dist；仅部署成功后运行 pipeline:success" }, null, 2));
+  console.log(JSON.stringify({ ok: true, stage: "finalize", date, finalPath, finalEnrichedPath, selectedCount: edition.projects.length, feedLatest: feed.latest, feedEditionCount: feed.editions.length, next: "pnpm lint && pnpm test && pnpm build，然后部署 dist（pipeline:deploy）；部署成功后先运行 pipeline:refresh-app 刷新 Aime App，再运行 pipeline:success" }, null, 2));
+}
+
+type AppManifest = { id: string; name: string; services?: Array<{ name: string }> };
+
+async function readAppManifest(): Promise<AppManifest> {
+  const manifest = JSON.parse(await readFile(path.join(ROOT, "app.json"), "utf8")) as AppManifest;
+  if (!manifest.id || !manifest.name) throw new Error("app.json 缺少 id 或 name，无法定位 Aime App 安装目录");
+  return manifest;
+}
+
+// 动态定位 Aime App 的安装目录（`<name>_<id>`），绝不硬编码绝对路径。
+// 依次尝试：显式环境变量 → 工作区/家目录下的 .aime/plugins → 从仓库根向上逐级查找的 .aime/plugins。
+async function resolveInstallDir(manifest: AppManifest): Promise<string> {
+  const installDirName = `${manifest.name}_${manifest.id}`;
+  const roots: string[] = [];
+  const pushRoot = (value: string | undefined | null) => {
+    if (value && !roots.includes(value)) roots.push(value);
+  };
+
+  pushRoot(process.env.AIME_PLUGINS_DIR);
+  pushRoot(process.env.AIME_WORKSPACE_PATH ? path.join(process.env.AIME_WORKSPACE_PATH, ".aime", "plugins") : undefined);
+  pushRoot(process.env.HOME ? path.join(process.env.HOME, ".aime", "plugins") : undefined);
+  let cursor = ROOT;
+  for (let depth = 0; depth < 8; depth += 1) {
+    pushRoot(path.join(cursor, ".aime", "plugins"));
+    const parent = path.dirname(cursor);
+    if (parent === cursor) break;
+    cursor = parent;
+  }
+
+  const attempted: string[] = [];
+  for (const root of roots) {
+    // 优先按精确目录名匹配。
+    const exact = path.join(root, installDirName);
+    attempted.push(exact);
+    if (await stat(path.join(exact, "app.json")).catch(() => null)) return exact;
+    // 回退：同一 plugins 根下查找任意以 `_<id>` 结尾的安装目录。
+    const entries = await readdir(root).catch(() => [] as string[]);
+    const match = entries.find((entry) => entry.endsWith(`_${manifest.id}`));
+    if (match) {
+      const full = path.join(root, match);
+      if (await stat(path.join(full, "app.json")).catch(() => null)) return full;
+    }
+  }
+
+  throw new Error(`未能定位 Aime App 安装目录 ${installDirName}；已尝试：${attempted.join(", ") || "(无候选根目录)"}。可通过环境变量 AIME_PLUGINS_DIR 显式指定 plugins 根目录`);
+}
+
+// pipeline:deploy（线上部署）成功之后、pipeline:success 之前执行：
+// 由于 App runtime 容器无法访问 raw.githubusercontent.com，只能读取打包进 dist 的 feed.json 兜底，
+// 因此每期出版后必须重建 dist、覆盖安装目录并重启 App 服务，否则 App 会一直停在旧期。
+async function refreshApp(date: string): Promise<void> {
+  // 先确认正式 edition 已存在且合法，避免在未发布的日期上重建 dist。
+  await validateEdition(date, path.join(EDITIONS_ROOT, `${date}.json`));
+
+  // 1. 重建 dist（pnpm build 内部会先跑 feed:generate，确保 dist/data/feed.json 含最新期刊）。
+  const build = spawnSync("pnpm", ["build"], { cwd: ROOT, env: process.env, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  if (build.status !== 0) throw new Error(`重建 dist 失败（exit ${build.status ?? 1}）：${build.stderr || build.stdout}`);
+
+  // 2. 校验重建后的 feed.json 确实包含最新期刊。
+  const feedPath = path.join(ROOT, "dist", "data", "feed.json");
+  const feed = JSON.parse(await readFile(feedPath, "utf8")) as { latest?: string };
+  if (feed.latest !== date) throw new Error(`重建后的 dist/data/feed.json latest=${feed.latest ?? "(缺失)"}，期望 ${date}；拒绝覆盖安装目录`);
+
+  // 3. 覆盖安装目录的 dist（路径动态查找，绝不硬编码）。
+  const manifest = await readAppManifest();
+  const installDir = await resolveInstallDir(manifest);
+  const installDist = path.join(installDir, "dist");
+  await rm(installDist, { recursive: true, force: true });
+  await cp(path.join(ROOT, "dist"), installDist, { recursive: true });
+
+  // 4. 重启 Aime App 服务，使其加载新的 dist/data/feed.json。
+  const serviceName = manifest.services?.[0]?.name ?? manifest.name;
+  const restart = spawnSync("aime", ["app", "service", "restart", manifest.name, serviceName], { cwd: ROOT, env: process.env, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  if (restart.status !== 0) throw new Error(`重启 Aime App 服务失败（exit ${restart.status ?? 1}）：${restart.stderr || restart.stdout}`);
+
+  console.log(JSON.stringify({ ok: true, stage: "refresh-app", date, installDir, installDist, feedLatest: feed.latest, restarted: `${manifest.name}/${serviceName}`, next: `pnpm pipeline:success -- --date ${date} --url <DEPLOYED_URL>` }, null, 2));
 }
 
 async function status(date: string): Promise<void> {
@@ -267,13 +344,14 @@ async function success(date: string): Promise<void> {
 
 async function main() {
   const stageName = process.argv[2] as Stage | undefined;
-  if (!stageName || !["prepare", "stage", "finalize", "status", "success"].includes(stageName)) throw new Error("用法：daily-pipeline.ts <prepare|stage|finalize|status|success> --date YYYY-MM-DD");
+  if (!stageName || !["prepare", "stage", "finalize", "status", "success", "refresh-app"].includes(stageName)) throw new Error("用法：daily-pipeline.ts <prepare|stage|finalize|status|success|refresh-app> --date YYYY-MM-DD");
   const date = editionDate();
   if (stageName === "status") return status(date);
   await withLock(date, async () => {
     if (stageName === "prepare") return prepare(date);
     if (stageName === "stage") return stage(date);
     if (stageName === "finalize") return finalize(date);
+    if (stageName === "refresh-app") return refreshApp(date);
     return success(date);
   });
 }

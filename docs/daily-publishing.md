@@ -88,7 +88,24 @@ npx vercel@latest deploy --prod --yes --token "$VERCEL_TOKEN"
 
 如果定时运行环境已通过 Vercel CLI 登录，可省略 `--token`。必须保存命令返回的生产 URL；部署失败时报告 `deploy` 失败，不得发送成功回执，线上旧部署保持可用。
 
-### 7. 生成成功回执
+### 7. 刷新 Aime App（重建 dist + 覆盖安装目录 + 重启服务）
+
+```bash
+pnpm pipeline:refresh-app -- --date "$DATE"
+```
+
+**为什么必须做这一步：** Aime App 的 runtime 容器**无法访问 `raw.githubusercontent.com`**，运行时拉取远端 feed 会失败并回退到**打包进 `dist` 的 `dist/data/feed.json` 快照**。因此仅完成线上（IDA/Vercel）部署还不够——如果不刷新 App 自带的 `dist`，Aime App 会一直停在旧一期。该步骤是每期出版链路中面向 Aime App 的独立发布动作，必须在 `pipeline:deploy` 之后、`pipeline:success` 之前执行。
+
+该命令会依次：
+
+1. 校验当天正式 edition 已存在且合法；
+2. 重建 `dist`（内部先跑 `feed:generate`，确保 `dist/data/feed.json` 包含最新期刊），并校验重建后的 `feed.json` 的 `latest` 等于当天日期，否则拒绝覆盖；
+3. **动态查找** Aime App 安装目录 `github-today-fun_app_b0e9666721542b2b`（不硬编码路径：依次检查 `AIME_PLUGINS_DIR`、`$AIME_WORKSPACE_PATH/.aime/plugins`、`$HOME/.aime/plugins`，以及从仓库根逐级向上查找的 `.aime/plugins`），用新 `dist` 覆盖其 `dist` 目录；
+4. 执行 `aime app service restart github-today-fun github-today-fun` 重启服务，使其加载新的 `dist/data/feed.json`。
+
+退出码非 0：停止，报告失败阶段 `refresh-app`。此时线上站点已更新，但 Aime App 仍停在旧期，需排查后重跑本步骤，不得发送成功回执。若安装目录无法自动定位，可通过环境变量 `AIME_PLUGINS_DIR` 显式指定 plugins 根目录后重跑。
+
+### 8. 生成成功回执
 
 `pipeline:success` **不再访问线上 IDA 站点**（服务端请求会被字节 SSO 重定向，导致误判）。它改为校验本地构建产物：正式 edition 合法、`dist/index.html` 存在，且 `dist/data/feed.json`（优先）或 `public/data/feed.json` 的 `latest` 字段等于当天日期。因此必须先完成 `finalize` 与 `pnpm build` 再执行：
 
@@ -106,7 +123,7 @@ pnpm pipeline:success -- --date "$DATE" --url "$DEPLOYED_URL"
 
 ## 并发、幂等与恢复
 
-- `prepare`、`stage`、`finalize`、`success` 使用 `.daily-pipeline/locks/$DATE.lock`，同日期并发会立即失败。
+- `prepare`、`stage`、`finalize`、`refresh-app`、`success` 使用 `.daily-pipeline/locks/$DATE.lock`，同日期并发会立即失败。
 - 锁超过 6 小时且确认没有任务运行时，才可添加 `--force-lock` 清理陈旧锁。
 - `prepare` 默认复用合法任务；`stage` 只覆盖 staging；`finalize` 只接受通过全部校验的 staging。
 - `pnpm pipeline:status -- --date "$DATE"` 可查看 task、编辑输出、staging、正式版和构建产物是否存在，再从缺失阶段恢复。
@@ -117,6 +134,7 @@ pnpm pipeline:success -- --date "$DATE" --url "$DEPLOYED_URL"
 
 - `GITHUB_TOKEN`：推荐。用于提高 GitHub Search / Repository API 限额；不配置时会使用匿名额度并如实记录来源状态。
 - `VERCEL_TOKEN`：定时环境未登录 Vercel CLI 时需要，仅在部署命令中读取。
+- `AIME_PLUGINS_DIR`：可选。`pipeline:refresh-app` 定位 Aime App 安装目录时的显式 plugins 根目录；不配置时脚本会自动依次检查 `$AIME_WORKSPACE_PATH/.aime/plugins`、`$HOME/.aime/plugins` 以及从仓库根向上查找的 `.aime/plugins`。
 - `EDITION_DATE`：可选兼容变量；定时任务优先显式传 `--date`。
 
 > `pipeline:success` 已改为纯本地构建产物校验，不再读取 `PIPELINE_SUCCESS_AUTHORIZATION`，也不再访问 IDA 线上站点。
