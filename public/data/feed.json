@@ -1,8 +1,1415 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-21T07:43:00.155Z",
-  "latest": "2026-09-21",
+  "generatedAt": "2026-09-22T06:00:25.852Z",
+  "latest": "2026-09-22",
   "editions": [
+    {
+      "date": "2026-09-22",
+      "issue": 13,
+      "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+      "metadata": {
+        "targetCount": 30,
+        "degraded": false
+      },
+      "summary": "今日 Jev/Laya/TypeSafe 决策模型生态集中爆发：多个 MLX、Core ML、GliFormer 开源实现同天上榜，Web/Minecraft/macOS 都出现 computer-use 案例；Wallet 美化、微信 CLI、AI 剪辑与 coding agent 舰队 IDE 也在快速升温。",
+      "mode": "live",
+      "editorMode": "aime",
+      "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+      "publishedAt": "2026-09-22T05:53:45.789Z",
+      "sourceStatus": [
+        {
+          "source": "github-search",
+          "status": "ok",
+          "fetchedAt": "2026-09-22T05:46:24.777Z",
+          "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+          "rawCount": 150,
+          "normalizedCount": 150,
+          "raw": [
+            {
+              "query": "created:>=2026-09-19 stars:>=5",
+              "status": 200,
+              "count": 50
+            },
+            {
+              "query": "created:>=2026-09-08 stars:>=25",
+              "status": 200,
+              "count": 50
+            },
+            {
+              "query": "pushed:>=2026-09-19 stars:50..5000 archived:false",
+              "status": 200,
+              "count": 50
+            }
+          ]
+        },
+        {
+          "source": "github-trending",
+          "status": "ok",
+          "fetchedAt": "2026-09-22T05:46:24.799Z",
+          "message": "2/2 个 GitHub Trending 页面解析成功，读取 33 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+          "rawCount": 33,
+          "normalizedCount": 33,
+          "raw": [
+            {
+              "period": "daily",
+              "status": 200,
+              "count": 12
+            },
+            {
+              "period": "weekly",
+              "status": 200,
+              "count": 21
+            }
+          ]
+        },
+        {
+          "source": "github-repository",
+          "status": "degraded",
+          "fetchedAt": "2026-09-22T05:46:28.070Z",
+          "message": "HTTP 403，详情补全跳过；保留 Search/Trending 已有事实；rate limit remaining=0"
+        }
+      ],
+      "pipelineStats": {
+        "rawCandidateCount": 183,
+        "normalizedCandidateCount": 183,
+        "dedupedCandidateCount": 177,
+        "eligibleCandidateCount": 101,
+        "selectedCount": 30
+      },
+      "projects": [
+        {
+          "name": "mizorewww/laya-mlx",
+          "githubUrl": "https://github.com/mizorewww/laya-mlx",
+          "canonicalUrl": "https://github.com/mizorewww/laya-mlx",
+          "description": "Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
+          "chineseDescription": "让 Laya 类型化决策模型跑在 MLX 上，M3 Max 短决策 7–14 ms，无需 PyTorch 或云 API。",
+          "stars": 4270,
+          "forks": 282,
+          "openIssues": 4,
+          "recentGrowth": 2145,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "apple-silicon",
+            "decision-model",
+            "inference",
+            "laya",
+            "local-ai",
+            "machine-learning",
+            "mlx",
+            "modernbert",
+            "system-one",
+            "typed-decisions"
+          ],
+          "createdAt": "2026-09-19T13:50:26Z",
+          "updatedAt": "2026-09-22T05:45:39Z",
+          "pushedAt": "2026-09-22T05:34:51Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 87,
+            "signals": [
+              "快照实增 +2145",
+              "新仓约 1504 stars/day",
+              "1 天内有更新"
+            ]
+          },
+          "plainSummary": "为 Apple Silicon 打造的 Laya 有类型决策模型 MLX 原生运行时。",
+          "introduction": "把 Laya 的“有类型决策”模型跑在 Mac 本地的 MLX 后端上，用来做快速判定而不是生成文本。安装后加载 ModernBERT 权重，在 M3 Max 上做短决策只需 7–14 ms，全程不联网、不依赖 PyTorch 或云 API。",
+          "whyToday": "创建仅三天就实增 +2145 stars，快照增速位列榜首，是今天最热的本地推理项目。",
+          "audience": "关注 Apple Silicon 本地推理和 Jev/Laya 决策模型生态的 macOS 开发者。",
+          "editorialTags": [
+            "AI 工具",
+            "开源替代",
+            "开发工具"
+          ],
+          "recommendation": 5
+        },
+        {
+          "name": "TheoLeeCJ/SemIf",
+          "githubUrl": "https://github.com/theoleecj/semif",
+          "canonicalUrl": "https://github.com/theoleecj/semif",
+          "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
+          "chineseDescription": "用开源模型做“语义 if”，在家里 3090 上就能跑；独立开发，与 Jev/TypeSafe 无关。",
+          "stars": 3382,
+          "forks": 220,
+          "openIssues": 14,
+          "recentGrowth": 737,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-16T03:51:21Z",
+          "updatedAt": "2026-09-22T05:45:54Z",
+          "pushedAt": "2026-09-21T20:07:30Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 87,
+            "signals": [
+              "快照实增 +737",
+              "新仓约 541 stars/day",
+              "1 天内有更新"
+            ]
+          },
+          "plainSummary": "在家用 3090 上跑开源模型做“语义 if”判断。",
+          "introduction": "把 if 分支的条件交给开源大模型来判断，让代码可以基于语义而不是关键词分流。项目独立开发，作者明确表示与 Jev / TypeSafe 无关，可在单张 3090 上本地部署。",
+          "whyToday": "上线不到一周实增 +737 stars，是今天独立开发者项目里最亮眼的一个。",
+          "audience": "想把语义判断塞进业务逻辑、又不想依赖闭源云 API 的后端工程师。",
+          "editorialTags": [
+            "AI 工具",
+            "开发工具",
+            "开源替代"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "yibie/awesome-jev",
+          "githubUrl": "https://github.com/yibie/awesome-jev",
+          "canonicalUrl": "https://github.com/yibie/awesome-jev",
+          "description": "A curated list of public projects, integrations, and discussions built on Jev — TypeSafe AI's System One model for typed decisions.",
+          "chineseDescription": "围绕 TypeSafe Jev 类型化决策模型的公共项目、集成与讨论精选清单。",
+          "stars": 1062,
+          "forks": 140,
+          "openIssues": 5,
+          "recentGrowth": 324,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "awesome",
+            "awesome-list",
+            "jev",
+            "llm"
+          ],
+          "createdAt": "2026-09-17T14:23:21Z",
+          "updatedAt": "2026-09-22T05:45:02Z",
+          "pushedAt": "2026-09-21T23:35:16Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 87,
+            "signals": [
+              "快照实增 +324",
+              "新仓约 220 stars/day",
+              "1 天内有更新"
+            ]
+          },
+          "plainSummary": "围绕 TypeSafe Jev 决策模型的公共项目与讨论精选清单。",
+          "introduction": "系统整理基于 Jev（TypeSafe 的 System One 有类型决策模型）构建的公共项目、集成方案与社区讨论。适合把它当作了解 Jev 生态的入口。",
+          "whyToday": "Jev 生态今日仍在扩散，本榜单一天新增 +324 stars，是最直接的“Jev 全景图”。",
+          "audience": "刚听说 Jev 想快速摸清生态和上手方向的开发者。",
+          "editorialTags": [
+            "AI 工具",
+            "学习"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "browser-use/jev-ultrafast",
+          "githubUrl": "https://github.com/browser-use/jev-ultrafast",
+          "canonicalUrl": "https://github.com/browser-use/jev-ultrafast",
+          "description": "Fastest and cheapest web agent",
+          "chineseDescription": "号称最快、最便宜的 web agent。",
+          "stars": 16485,
+          "forks": 1037,
+          "openIssues": 110,
+          "recentGrowth": 3220,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-16T21:30:12Z",
+          "updatedAt": "2026-09-22T05:45:38Z",
+          "pushedAt": "2026-09-18T16:28:35Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 4,
+            "crossSource": 0,
+            "total": 79,
+            "signals": [
+              "快照实增 +3220",
+              "新仓约 2986 stars/day",
+              "4 天内有更新"
+            ]
+          },
+          "plainSummary": "号称最快最便宜的 Web 智能体。",
+          "introduction": "让浏览器自动化 Agent 用有类型决策代替长文本生成，从而降低推理延迟和 token 成本。定位是“最快、最便宜的 web agent”。",
+          "whyToday": "browser-use 团队的新分支一周内实增 +3220 stars，是今日快照增长最大的仓库。",
+          "audience": "在做浏览器 RPA、抓取或 Web Agent 的工程团队。",
+          "editorialTags": [
+            "AI 工具",
+            "效率",
+            "开发工具"
+          ],
+          "recommendation": 5
+        },
+        {
+          "name": "awlevin/typesafe-computer-use",
+          "githubUrl": "https://github.com/awlevin/typesafe-computer-use",
+          "canonicalUrl": "https://github.com/awlevin/typesafe-computer-use",
+          "description": "Computer use for about $0.0002 a step: OCR the screen, classify the next action with TypeSafe, click. macOS.",
+          "chineseDescription": "每步约 0.0002 美元的 macOS computer-use：OCR 截屏 + TypeSafe 决策 + 点击。",
+          "stars": 767,
+          "forks": 60,
+          "openIssues": 11,
+          "recentGrowth": 84,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "ai-agents",
+            "automation",
+            "computer-use",
+            "macos",
+            "ocr",
+            "typesafe"
+          ],
+          "createdAt": "2026-09-16T17:48:45Z",
+          "updatedAt": "2026-09-22T05:40:29Z",
+          "pushedAt": "2026-09-21T17:05:28Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 44.86573655296391,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 86.9,
+            "signals": [
+              "快照实增 +84",
+              "新仓约 135 stars/day",
+              "1 天内有更新"
+            ]
+          },
+          "plainSummary": "用 OCR + TypeSafe 判定，把 macOS 的计算机操作单步压到约 0.0002 美元。",
+          "introduction": "面向 macOS 的“电脑操作 Agent”：先 OCR 截屏，再用 TypeSafe 决策模型分类下一步动作，最后点击执行。定位是超低成本的 computer-use pipeline。",
+          "whyToday": "computer-use 主题今天有多个项目冒头，这个把每步成本量化到 0.0002 美元最具工程感。",
+          "audience": "研究 GUI Agent、想在本地跑 computer-use 的 macOS 开发者。",
+          "editorialTags": [
+            "AI 工具",
+            "效率",
+            "开发工具"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "Mak5er/AirCard",
+          "githubUrl": "https://github.com/mak5er/aircard",
+          "canonicalUrl": "https://github.com/mak5er/aircard",
+          "description": "Apple Wallet Card Skinner for iOS 18+ (No Jailbreak Required)",
+          "chineseDescription": "无需越狱的 iOS 18+ Apple Wallet 卡面美化工具。",
+          "stars": 1871,
+          "forks": 74,
+          "openIssues": 15,
+          "recentGrowth": 1151,
+          "growthSource": "snapshot",
+          "language": "Swift",
+          "topics": [],
+          "createdAt": "2026-09-16T22:20:15Z",
+          "updatedAt": "2026-09-22T05:45:49Z",
+          "pushedAt": "2026-09-21T06:10:20Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +1151",
+              "新仓约 341 stars/day",
+              "2 天内有更新"
+            ]
+          },
+          "plainSummary": "iOS 18+ 的 Apple Wallet 卡面换肤工具，无需越狱。",
+          "introduction": "为 Apple Wallet 里的银行卡、门禁卡等定制外观，通过 Swift 应用在设备侧完成，无需越狱。当前只针对 iOS 18 及以上版本。",
+          "whyToday": "非 AI 类项目里今日爆发最猛，实增 +1151 stars，位列榜单前列。",
+          "audience": "喜欢 iOS 折腾、想把 Wallet 卡面弄得漂亮点的用户。",
+          "editorialTags": [
+            "有趣",
+            "设计"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "mizorewww/laya-coreml",
+          "githubUrl": "https://github.com/mizorewww/laya-coreml",
+          "canonicalUrl": "https://github.com/mizorewww/laya-coreml",
+          "description": "Local Laya typed decisions on Apple Core ML and Neural Engine. Validated ports, ~5 ms short decisions on M3 Max, reproducible speed and energy benchmarks.",
+          "chineseDescription": "让 Laya 决策模型本地跑在 Apple Core ML 和神经网络引擎上，M3 Max 上约 5 ms 短决策，含速度与能耗基准。",
+          "stars": 966,
+          "forks": 64,
+          "openIssues": 1,
+          "recentGrowth": 456,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "apple-neural-engine",
+            "apple-silicon",
+            "coreml",
+            "decision-model",
+            "laya",
+            "local-ai",
+            "modernbert",
+            "on-device-ai",
+            "typed-decisions"
+          ],
+          "createdAt": "2026-09-19T23:14:13Z",
+          "updatedAt": "2026-09-22T05:43:18Z",
+          "pushedAt": "2026-09-20T03:52:14Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +456",
+              "新仓约 395 stars/day",
+              "3 天内有更新"
+            ]
+          },
+          "plainSummary": "把 Laya 决策模型移植到 Apple Core ML 与神经网络引擎。",
+          "introduction": "同一作者把 Laya 的有类型决策模型移到 Core ML 与 Apple Neural Engine 上跑，附有验证过的模型端口和可复现的速度/能耗 benchmark。M3 Max 上短决策约 5 ms。",
+          "whyToday": "与 laya-mlx 形成 MLX / CoreML 双栈，今日实增 +456 stars，是 Apple 端本地推理的另一条路径。",
+          "audience": "追求最低能耗、把决策模型跑上 Neural Engine 的 iOS/macOS 开发者。",
+          "editorialTags": [
+            "AI 工具",
+            "开源替代",
+            "开发工具"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "TianyuCodings/NanoJev",
+          "githubUrl": "https://github.com/tianyucodings/nanojev",
+          "canonicalUrl": "https://github.com/tianyucodings/nanojev",
+          "description": "A nano replica of Jev: parallel decisions, dynamic candidates, and an end-to-end training pipeline.",
+          "chineseDescription": "Jev 的“nano”复刻版：并行决策、动态候选和端到端训练管线。",
+          "stars": 1863,
+          "forks": 203,
+          "openIssues": 7,
+          "recentGrowth": 254,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-17T16:08:30Z",
+          "updatedAt": "2026-09-22T05:38:28Z",
+          "pushedAt": "2026-09-21T09:58:28Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +254",
+              "新仓约 393 stars/day",
+              "2 天内有更新"
+            ]
+          },
+          "plainSummary": "极简版 Jev：并行决策 + 端到端训练管线。",
+          "introduction": "从零复刻一个“nano”版 Jev，支持并行决策和动态候选，附带完整的端到端训练脚本。适合当作学习 Jev 内部结构的最小示例。",
+          "whyToday": "作为教学向复刻实现，一周实增 +254 stars，是理解 Jev 工作原理最直接的入口。",
+          "audience": "想读代码理解“类型化决策模型”原理的研究者与学生。",
+          "editorialTags": [
+            "AI 工具",
+            "学习",
+            "开发工具"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "bespokelabsai/nimble",
+          "githubUrl": "https://github.com/bespokelabsai/nimble",
+          "canonicalUrl": "https://github.com/bespokelabsai/nimble",
+          "description": "Local typed decisions, contrastive data curation, and model evaluation.",
+          "chineseDescription": "本地类型化决策、对比式数据整理和模型评估的一站式工具。",
+          "stars": 1519,
+          "forks": 106,
+          "openIssues": 2,
+          "recentGrowth": 225,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-18T09:07:48Z",
+          "updatedAt": "2026-09-22T05:45:15Z",
+          "pushedAt": "2026-09-20T19:44:35Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +225",
+              "新仓约 376 stars/day",
+              "2 天内有更新"
+            ]
+          },
+          "plainSummary": "本地类型化决策 + 对比数据整理 + 模型评估一站式工具。",
+          "introduction": "把类型化决策、对比式数据清洗和模型评估打包在同一个 Python 项目里。可以按需组合子模块，直接嵌进本地训练/推理流水线。",
+          "whyToday": "Bespoke Labs 出品，一周实增 +225 stars，是把决策模型工程化落地的代表。",
+          "audience": "做数据清洗与小模型评估的数据/ML 工程师。",
+          "editorialTags": [
+            "AI 工具",
+            "数据",
+            "开发工具"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "rmalde/minecraft-agent",
+          "githubUrl": "https://github.com/rmalde/minecraft-agent",
+          "canonicalUrl": "https://github.com/rmalde/minecraft-agent",
+          "description": "Astra planner and JEV controller for Minecraft, with native recording, tested routes, and run verification.",
+          "chineseDescription": "面向 Minecraft 的 Astra 规划器 + JEV 控制器，含原生录制、测试路线和运行核验。",
+          "stars": 489,
+          "forks": 47,
+          "openIssues": 2,
+          "recentGrowth": 142,
+          "growthSource": "snapshot",
+          "language": "JavaScript",
+          "topics": [],
+          "createdAt": "2026-09-20T05:05:12Z",
+          "updatedAt": "2026-09-22T05:42:43Z",
+          "pushedAt": "2026-09-20T05:05:16Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +142",
+              "新仓约 222 stars/day",
+              "3 天内有更新"
+            ]
+          },
+          "plainSummary": "在 Minecraft 里跑 Astra 规划 + JEV 控制的智能体。",
+          "introduction": "在 Minecraft 里跑一套“规划器 + 控制器”的智能体：Astra 负责高层规划，JEV 决策模型负责动作控制。仓库自带原生录屏、测试路径和运行结果核验，方便复现。",
+          "whyToday": "今日新出的“Minecraft Agent”类项目里增速最猛，一天实增 +142 stars。",
+          "audience": "关注游戏内智能体、想把 LLM + 决策模型接进 Minecraft 的开发者。",
+          "editorialTags": [
+            "AI 工具",
+            "有趣",
+            "开发工具"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "Mak5er/AirCard-iOS",
+          "githubUrl": "https://github.com/mak5er/aircard-ios",
+          "canonicalUrl": "https://github.com/mak5er/aircard-ios",
+          "description": "Apple Wallet card skins and lock screen passcode themes on iOS 27.",
+          "chineseDescription": "iOS 27 的 Apple Wallet 卡面皮肤与锁屏密码主题包。",
+          "stars": 380,
+          "forks": 28,
+          "openIssues": 11,
+          "recentGrowth": 128,
+          "growthSource": "snapshot",
+          "language": "Swift",
+          "topics": [],
+          "createdAt": "2026-09-19T09:22:23Z",
+          "updatedAt": "2026-09-22T05:38:23Z",
+          "pushedAt": "2026-09-20T21:01:12Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +128",
+              "新仓约 126 stars/day",
+              "2 天内有更新"
+            ]
+          },
+          "plainSummary": "iOS 27 的 Apple Wallet 卡面与锁屏密码主题包。",
+          "introduction": "作者的 AirCard 系列续作，聚焦 iOS 27，除了 Wallet 卡面还加入锁屏密码框的主题装饰。用 Swift 开发，走系统合规路径。",
+          "whyToday": "在 AirCard 之后再度上榜，两天内实增 +128 stars，说明 iOS 个性化定制流量正旺。",
+          "audience": "已经在用 AirCard，想升级到 iOS 27 主题的用户。",
+          "editorialTags": [
+            "设计",
+            "有趣"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "minorun365/minorun-marp-skill",
+          "githubUrl": "https://github.com/minorun365/minorun-marp-skill",
+          "canonicalUrl": "https://github.com/minorun365/minorun-marp-skill",
+          "description": "Marpで登壇スライドを作るための、ストーリー・図・デザインバランスのスキル集と黒地テーマ、検査ツール",
+          "chineseDescription": "让 Marp 幻灯片更好看的 Skill 集：故事、图示、设计平衡，加黑底主题和检查工具（日语）。",
+          "stars": 334,
+          "forks": 9,
+          "openIssues": 0,
+          "recentGrowth": 99,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "agent-skills",
+            "claude-code",
+            "marp",
+            "presentation"
+          ],
+          "createdAt": "2026-09-20T13:48:09Z",
+          "updatedAt": "2026-09-22T05:35:32Z",
+          "pushedAt": "2026-09-20T14:55:18Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +99",
+              "新仓约 181 stars/day",
+              "2 天内有更新"
+            ]
+          },
+          "plainSummary": "写 Marp 登壇幻灯片的 Skill 集与黑底主题。",
+          "introduction": "把作者做登壇 slides 的经验封装成可复用的 Claude Code Skill，覆盖故事结构、图示与设计平衡。同时提供一套黑底主题和检查工具，可直接接入 Marp 工作流。",
+          "whyToday": "面向 Agent Skill + Marp 的组合方案里今日增速最快，一天实增 +99 stars。",
+          "audience": "常用 Marp 做技术分享、想让 Claude Code 帮忙打磨幻灯片的讲者。",
+          "editorialTags": [
+            "效率",
+            "设计",
+            "开发工具"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "jarrodwatts/jev-trader",
+          "githubUrl": "https://github.com/jarrodwatts/jev-trader",
+          "canonicalUrl": "https://github.com/jarrodwatts/jev-trader",
+          "description": "One AI trade decision every Monad block. Jev on Kuru MON-USDC.",
+          "chineseDescription": "每个 Monad 区块用 Jev 做一次交易决策，跑在 Kuru 的 MON-USDC 上。",
+          "stars": 1892,
+          "forks": 363,
+          "openIssues": 4,
+          "recentGrowth": 254,
+          "growthSource": "snapshot",
+          "language": "TypeScript",
+          "topics": [],
+          "createdAt": "2026-09-16T21:36:20Z",
+          "updatedAt": "2026-09-22T05:39:39Z",
+          "pushedAt": "2026-09-17T02:48:22Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 4,
+            "crossSource": 0,
+            "total": 79,
+            "signals": [
+              "快照实增 +254",
+              "新仓约 343 stars/day",
+              "6 天内有更新"
+            ]
+          },
+          "plainSummary": "每个 Monad 区块都用 Jev 做一次交易决策的机器人。",
+          "introduction": "在 Kuru 的 MON-USDC 交易对上，每产生一个 Monad 区块就调用 Jev 做一次买/卖/持有的决策并落链。TypeScript 项目，可作为链上决策代理的模板。",
+          "whyToday": "今日“AI + 链上交易”类项目里最典型的实践，一天实增 +254 stars。",
+          "audience": "想在 Monad / 链上做 AI 决策代理的 Web3 工程师。",
+          "editorialTags": [
+            "AI 工具",
+            "效率",
+            "开发工具"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "v-modal/awesome-jev-tools",
+          "githubUrl": "https://github.com/v-modal/awesome-jev-tools",
+          "canonicalUrl": "https://github.com/v-modal/awesome-jev-tools",
+          "description": "A curated list of tools  built for Jev — TypeSafe AI's System One model for typed decisions.",
+          "chineseDescription": "围绕 TypeSafe Jev 的工具精选列表。",
+          "stars": 629,
+          "forks": 13,
+          "openIssues": 9,
+          "recentGrowth": 41,
+          "growthSource": "snapshot",
+          "topics": [
+            "awesome",
+            "awesome-list",
+            "awesome-lists",
+            "jev",
+            "llm",
+            "robotics",
+            "robotics-algorithms",
+            "robotics-control",
+            "robotics-simulation"
+          ],
+          "createdAt": "2026-09-19T16:48:59Z",
+          "updatedAt": "2026-09-22T04:40:05Z",
+          "pushedAt": "2026-09-19T17:02:33Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 37.746221959451326,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 75.7,
+            "signals": [
+              "快照实增 +41",
+              "新仓约 232 stars/day",
+              "3 天内有更新"
+            ]
+          },
+          "plainSummary": "面向 Jev 决策模型的开发工具精选列表。",
+          "introduction": "与 awesome-jev 互补，专门收集围绕 Jev 的工具链。覆盖客户端、评估器、机器人控制与仿真等方向，方便按需求跳转。",
+          "whyToday": "补齐 Jev 工具生态视角，一天实增 +41 stars，方便查找具体工具。",
+          "audience": "已经在用 Jev、想找配套 SDK / 工具的开发者。",
+          "editorialTags": [
+            "AI 工具",
+            "有趣"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "Heman10x-NGU/openJev-verdict-2.0",
+          "githubUrl": "https://github.com/heman10x-ngu/openjev-verdict-2.0",
+          "canonicalUrl": "https://github.com/heman10x-ngu/openjev-verdict-2.0",
+          "description": "Calibrated 151M Non-Autoregressive Decision Engine beating TypeSafe Jev & Laya on LocalLLaMA/typed-decisions (77.10% acc, 0.0636 Brier, 0.0144 ECE)",
+          "chineseDescription": "151M 参数的非自回归决策引擎，在 typed-decisions 基准上刷分优于 Jev 和 Laya。",
+          "stars": 247,
+          "forks": 37,
+          "openIssues": 2,
+          "recentGrowth": 32,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "agentic-ai",
+            "brier-score",
+            "calibration",
+            "decision-engine",
+            "deep-learning",
+            "encoder",
+            "jev",
+            "machine-learning",
+            "modernbert",
+            "non-autoregressive",
+            "onnx",
+            "openjev",
+            "rlcd",
+            "selective-prediction",
+            "structured-outputs",
+            "system-one",
+            "text-classification",
+            "typesafe-ai",
+            "uncertainty-quantification",
+            "webgpu"
+          ],
+          "createdAt": "2026-09-19T12:14:46Z",
+          "updatedAt": "2026-09-22T04:57:01Z",
+          "pushedAt": "2026-09-20T14:54:40Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 35.310758835509176,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 73.3,
+            "signals": [
+              "快照实增 +32",
+              "新仓约 85 stars/day",
+              "2 天内有更新"
+            ]
+          },
+          "plainSummary": "151M 参数的非自回归决策引擎，公开跑分优于 Jev 和 Laya。",
+          "introduction": "一款约 151M 参数的开源非自回归决策引擎，公开跑分优于 Jev 和 Laya。仓库附 ONNX 权重与 WebGPU 演示，可在本地或浏览器复跑基准。",
+          "whyToday": "开源阵营正面挑战 TypeSafe 的公开跑分，作者披露实增 +32 stars。",
+          "audience": "关心决策模型精度与校准 (calibration) 的研究者。",
+          "editorialTags": [
+            "开发工具",
+            "学习"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "logan-markewich/jeff",
+          "githubUrl": "https://github.com/logan-markewich/jeff",
+          "canonicalUrl": "https://github.com/logan-markewich/jeff",
+          "description": "A self-hosted drop-in replacement for TypeSafe's jev, powered by GliFormer.",
+          "chineseDescription": "自托管、可替换 TypeSafe Jev 的 GliFormer 版本。",
+          "stars": 206,
+          "forks": 13,
+          "openIssues": 2,
+          "recentGrowth": 31,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "classification",
+            "encoder",
+            "gliner",
+            "jev",
+            "typesafe"
+          ],
+          "createdAt": "2026-09-19T02:17:25Z",
+          "updatedAt": "2026-09-22T04:40:22Z",
+          "pushedAt": "2026-09-20T00:59:58Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 35,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 29.88926797143213,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 72.9,
+            "signals": [
+              "快照实增 +31",
+              "新仓约 62 stars/day",
+              "3 天内有更新"
+            ]
+          },
+          "plainSummary": "自托管、可替换 TypeSafe Jev 的 GliFormer 版本。",
+          "introduction": "用 GliFormer 做骨干，提供 TypeSafe Jev 兼容 API 的自托管版本。可以在保持接口不变的前提下把云端 Jev 换成本地实例。",
+          "whyToday": "作为“可自托管替代 Jev”的方案，一天实增 +31 stars，走向逐步清晰。",
+          "audience": "希望摆脱云 API 依赖、内网部署决策模型的工程团队。",
+          "editorialTags": [
+            "AI 工具",
+            "开源替代",
+            "学习"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "zhengkid/Dream-RSI",
+          "githubUrl": "https://github.com/zhengkid/dream-rsi",
+          "canonicalUrl": "https://github.com/zhengkid/dream-rsi",
+          "description": "The offical repo for \"Dream-RSI: Recursive Self-Improvement through Evolving Worlds\"",
+          "chineseDescription": "论文 Dream-RSI（在演化世界中做递归自我提升）的官方仓库。",
+          "stars": 1048,
+          "forks": 97,
+          "openIssues": 4,
+          "recentGrowth": 45,
+          "growthSource": "snapshot",
+          "topics": [],
+          "createdAt": "2026-09-13T20:39:43Z",
+          "updatedAt": "2026-09-22T05:42:22Z",
+          "pushedAt": "2026-09-16T10:32:18Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 38.66493369239909,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 4,
+            "crossSource": 0,
+            "total": 72.7,
+            "signals": [
+              "快照实增 +45",
+              "新仓约 122 stars/day",
+              "6 天内有更新"
+            ]
+          },
+          "plainSummary": "论文《Dream-RSI: Recursive Self-Improvement through Evolving Worlds》的官方仓库。",
+          "introduction": "官方仓库对应论文 Dream-RSI，让智能体在演化世界模型中做递归自我提升。项目里包含实验代码，能复现论文里的训练与评估流程。",
+          "whyToday": "研究向的 RSI 项目今日实增 +45 stars，Recursive Self-Improvement 话题重新升温。",
+          "audience": "研究 world model、递归自我提升的 ML 学者。",
+          "editorialTags": [
+            "AI 工具",
+            "开源替代",
+            "开发工具"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "sutro-sh/jev-align",
+          "githubUrl": "https://github.com/sutro-sh/jev-align",
+          "canonicalUrl": "https://github.com/sutro-sh/jev-align",
+          "description": "Build calibrated AI Functions from human feedback using Jev and GEPA.",
+          "chineseDescription": "基于 Jev 和 GEPA，用人类反馈校准 AI Function 的 CLI。",
+          "stars": 271,
+          "forks": 20,
+          "openIssues": 1,
+          "recentGrowth": 21,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "active-learning",
+            "classification",
+            "cli",
+            "gepa",
+            "human-in-the-loop",
+            "jev",
+            "prompt-optimization",
+            "typesafe-ai"
+          ],
+          "createdAt": "2026-09-19T02:12:23Z",
+          "updatedAt": "2026-09-22T03:55:52Z",
+          "pushedAt": "2026-09-20T20:50:08Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 31.216021330461082,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 69.2,
+            "signals": [
+              "快照实增 +21",
+              "新仓约 82 stars/day",
+              "2 天内有更新"
+            ]
+          },
+          "plainSummary": "用人类反馈 + GEPA 校准 Jev AI Function 的 CLI。",
+          "introduction": "以 Jev 决策模型为基础，通过 human-in-the-loop 主动学习和 GEPA 提示词优化，把“AI Function”校准到目标分类精度。附命令行工具。",
+          "whyToday": "把校准/主动学习流程做成 CLI，今日实增 +21 stars，工程实用度高。",
+          "audience": "想把决策模型质量交给内部 QA / 标注团队来打磨的团队。",
+          "editorialTags": [
+            "AI 工具",
+            "学习"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "shhivv/third-hand",
+          "githubUrl": "https://github.com/shhivv/third-hand",
+          "canonicalUrl": "https://github.com/shhivv/third-hand",
+          "description": "computer-use assistant w/ decision models",
+          "chineseDescription": "基于决策模型的 computer-use 助手。",
+          "stars": 285,
+          "forks": 22,
+          "openIssues": 1,
+          "recentGrowth": 19,
+          "growthSource": "snapshot",
+          "language": "Swift",
+          "topics": [],
+          "createdAt": "2026-09-19T13:29:41Z",
+          "updatedAt": "2026-09-22T05:29:07Z",
+          "pushedAt": "2026-09-19T17:01:39Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 30.25349666421154,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 68.3,
+            "signals": [
+              "快照实增 +19",
+              "新仓约 100 stars/day",
+              "3 天内有更新"
+            ]
+          },
+          "plainSummary": "基于决策模型的 computer-use 助手。",
+          "introduction": "以决策模型为核心，给桌面装一只“第三只手”：看屏幕、判断下一步、代替用户点击拖拽。Swift 实现，配合决策模型的低延迟特性。",
+          "whyToday": "computer-use 赛道今日又一新面孔，实增 +19 stars。",
+          "audience": "想在 macOS 上尝试 computer-use 助手的极客用户。",
+          "editorialTags": [
+            "AI 工具",
+            "效率",
+            "开发工具"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "HyNetworks/OpenGFW",
+          "githubUrl": "https://github.com/hynetworks/opengfw",
+          "canonicalUrl": "https://github.com/hynetworks/opengfw",
+          "description": "OpenGFW is your very own DIY Great Firewall of China",
+          "chineseDescription": "你的 DIY 版“Great Firewall of China”，用 Go 写。",
+          "stars": 249,
+          "forks": 86,
+          "openIssues": 1,
+          "recentGrowth": 9,
+          "growthSource": "snapshot",
+          "language": "Go",
+          "topics": [],
+          "createdAt": "2026-09-19T09:21:17Z",
+          "updatedAt": "2026-09-22T03:39:40Z",
+          "pushedAt": "2026-09-21T19:04:58Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 23.253496664211536,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 65.3,
+            "signals": [
+              "快照实增 +9",
+              "新仓约 82 stars/day",
+              "1 天内有更新"
+            ]
+          },
+          "plainSummary": "自己动手做一个防火长城的 DIY Go 项目。",
+          "introduction": "作者调侃地把项目描述为“你自己的 Great Firewall of China”，用 Go 实现深度包检测与过滤策略。可以在私有网络里搭建自定义出网规则，也适合做流量分析教学。",
+          "whyToday": "老牌网络安全项目今日再次冒头，实增 +9 stars，具备教学价值。",
+          "audience": "研究网络流量分析、DPI 和企业网出网策略的安全工程师。",
+          "editorialTags": [
+            "AI 工具",
+            "效率"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "nftechie/stonkfly",
+          "githubUrl": "https://github.com/nftechie/stonkfly",
+          "canonicalUrl": "https://github.com/nftechie/stonkfly",
+          "description": "A full retained fly-connectome simulation with experimental memory and guarded Coinbase AgentKit trading actions.",
+          "chineseDescription": "带实验性记忆的完整果蝇连接组仿真，配合 Coinbase AgentKit 做受限交易。",
+          "stars": 802,
+          "forks": 145,
+          "openIssues": 3,
+          "recentGrowth": 10,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-10T02:40:30Z",
+          "updatedAt": "2026-09-21T22:58:17Z",
+          "pushedAt": "2026-09-10T02:40:34Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 24.216021330461082,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 54.2,
+            "signals": [
+              "快照实增 +10",
+              "新仓约 65 stars/day"
+            ]
+          },
+          "plainSummary": "果蝇连接组仿真 + Coinbase AgentKit 交易的“脑虫”实验。",
+          "introduction": "把果蝇 (fly) 全连接组仿真跑起来，接上实验性的记忆机制，再通过 Coinbase AgentKit 触发受限的交易动作。属于跨脑科学与链上代理的实验性项目。",
+          "whyToday": "冷门但脑洞极大的项目，今日实增 +10 stars，值得围观。",
+          "audience": "喜欢神经元连接组、类脑计算和链上代理交叉话题的爱好者。",
+          "editorialTags": [
+            "开发工具",
+            "有趣",
+            "学习"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "jackwener/wx-cli-again",
+          "githubUrl": "https://github.com/jackwener/wx-cli-again",
+          "canonicalUrl": "https://github.com/jackwener/wx-cli-again",
+          "description": "WeChat local data CLI (query/decrypt/export) — fresh start from wx-cli",
+          "chineseDescription": "微信本地数据 CLI（查询/解密/导出）——wx-cli 的重启版。",
+          "stars": 715,
+          "forks": 1686,
+          "openIssues": 2,
+          "recentGrowth": 9,
+          "growthSource": "snapshot",
+          "language": "Rust",
+          "topics": [],
+          "createdAt": "2026-09-14T07:43:27Z",
+          "updatedAt": "2026-09-22T00:02:34Z",
+          "pushedAt": "2026-09-14T07:43:38Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 23.253496664211536,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 53.3,
+            "signals": [
+              "快照实增 +9",
+              "新仓约 88 stars/day"
+            ]
+          },
+          "plainSummary": "微信本地数据的查询、解密与导出 CLI（wx-cli 的重启版）。",
+          "introduction": "用 Rust 重写的微信本地数据工具：可以查询数据库、解密文件、把聊天记录导出到本地。作者说这是 wx-cli 之后的重新出发。",
+          "whyToday": "Rust 版微信 CLI 今日实增 +9 stars，是本地数据管理话题的代表。",
+          "audience": "需要备份或分析自己微信聊天数据的 Windows/macOS 用户。",
+          "editorialTags": [
+            "AI 工具",
+            "有趣"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "zhouxiaoka/autoclip",
+          "githubUrl": "https://github.com/zhouxiaoka/autoclip",
+          "canonicalUrl": "https://github.com/zhouxiaoka/autoclip",
+          "description": "AutoClip : AI-powered video clipping and highlight generation · 一款智能高光提取与剪辑的二创工具",
+          "chineseDescription": "AI 驱动的视频剪辑与高光提取二创工具。",
+          "stars": 8424,
+          "forks": 1582,
+          "recentGrowth": 250,
+          "growthSource": "github-trending",
+          "language": "Python",
+          "topics": [],
+          "sources": [
+            "github-trending"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 47.82926132370463,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 47.8,
+            "signals": [
+              "Trending 披露 +250"
+            ]
+          },
+          "plainSummary": "AI 驱动的视频剪辑与高光片段生成器。",
+          "introduction": "从长视频里自动挑出精彩片段、生成短视频，主打“二创剪辑”场景。Python 项目，中英文双语文档，支持本地部署。",
+          "whyToday": "GitHub Trending 披露今日 +250 stars，是今日 AI 视频剪辑赛道的代表。",
+          "audience": "自媒体、短视频 up 主，想把长视频自动切成 highlights。",
+          "editorialTags": [
+            "效率",
+            "开发工具",
+            "数据"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "stablyai/orca",
+          "githubUrl": "https://github.com/stablyai/orca",
+          "canonicalUrl": "https://github.com/stablyai/orca",
+          "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+          "chineseDescription": "面向并行 coding agent 舰队的 ADE，桌面、移动、远程 runtime 都可用。",
+          "stars": 74899,
+          "forks": 4896,
+          "recentGrowth": 925,
+          "growthSource": "snapshot",
+          "language": "TypeScript",
+          "topics": [],
+          "sources": [
+            "github-trending"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 45,
+            "signals": [
+              "快照实增 +925"
+            ]
+          },
+          "plainSummary": "并行 coding agent 舰队的 IDE 环境（ADE）。",
+          "introduction": "为“成群并行运行的 coding agent”设计的 ADE，让开发者用自己的订阅驱动任意 coding agent。桌面、移动和远程 runtime 都支持，可作为多 agent 的集中控制面。",
+          "whyToday": "coding agent 平台化今日代表作，快照实增 +925 stars，跻身 GitHub Trending。",
+          "audience": "想集中管理多家 coding agent、追求“agent 舰队”体验的开发者。",
+          "editorialTags": [
+            "AI 工具",
+            "效率",
+            "有趣"
+          ],
+          "recommendation": 5
+        },
+        {
+          "name": "mvt-project/mvt",
+          "githubUrl": "https://github.com/mvt-project/mvt",
+          "canonicalUrl": "https://github.com/mvt-project/mvt",
+          "description": "MVT (Mobile Verification Toolkit) helps with conducting forensics of mobile devices in order to find signs of a potential compromise.",
+          "chineseDescription": "移动设备取证工具，用来寻找设备被入侵的痕迹。",
+          "stars": 13688,
+          "forks": 1332,
+          "recentGrowth": 169,
+          "growthSource": "github-trending",
+          "language": "Python",
+          "topics": [],
+          "sources": [
+            "github-trending"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 44.45634561682621,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 44.5,
+            "signals": [
+              "Trending 披露 +169"
+            ]
+          },
+          "plainSummary": "移动设备取证工具，用来发现潜在的攻击痕迹。",
+          "introduction": "Mobile Verification Toolkit (MVT) 帮助研究者、记者和维权人员从 iOS/Android 设备中提取取证信息。核心用法是寻找间谍软件与被攻陷设备的痕迹。",
+          "whyToday": "老牌取证工具再次登上 GitHub Trending，今日披露 +169 stars。",
+          "audience": "安全研究员、调查记者、维权组织的技术支持。",
+          "editorialTags": [
+            "AI 工具",
+            "效率",
+            "开发工具"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "akitaonrails/ai-memory",
+          "githubUrl": "https://github.com/akitaonrails/ai-memory",
+          "canonicalUrl": "https://github.com/akitaonrails/ai-memory",
+          "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+          "chineseDescription": "为 coding CLI Agent 打造的长期记忆与跨厂商交接方案。",
+          "stars": 7819,
+          "forks": 527,
+          "recentGrowth": 167,
+          "growthSource": "github-trending",
+          "language": "Rust",
+          "topics": [],
+          "sources": [
+            "github-trending"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 44.353904536672566,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 44.4,
+            "signals": [
+              "Trending 披露 +167"
+            ]
+          },
+          "plainSummary": "为 coding CLI Agent 打造的长期记忆与跨厂商交接方案。",
+          "introduction": "帮助命令行 AI 编码助手保留跨会话的长期记忆，并在不同 agent 厂商之间做“无痛交接”。Rust 实现，可作为 CLI 层的记忆中间件。",
+          "whyToday": "GitHub Trending 披露 +167 stars，coding CLI 长期记忆的代表方案。",
+          "audience": "在 Claude Code / Codex / Cursor 间来回切换的 AI 编码用户。",
+          "editorialTags": [
+            "开发工具",
+            "数据"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "jev-chat/jev-chat-jarvis",
+          "githubUrl": "https://github.com/jev-chat/jev-chat-jarvis",
+          "canonicalUrl": "https://github.com/jev-chat/jev-chat-jarvis",
+          "description": "装在手机上的对话副驾：在微信 / QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
+          "chineseDescription": "手机上的对话副驾：读懂对方、给出候选回复、一键填入，只读屏、不 hook。",
+          "stars": 1758,
+          "forks": 580,
+          "openIssues": 7,
+          "language": "Kotlin",
+          "topics": [
+            "accessibility-service",
+            "android",
+            "chat-assistant",
+            "llm",
+            "qq",
+            "wechat"
+          ],
+          "createdAt": "2026-09-21T11:12:53Z",
+          "updatedAt": "2026-09-22T05:45:53Z",
+          "pushedAt": "2026-09-22T04:10:16Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 1758 stars/day",
+              "1 天内有更新"
+            ]
+          },
+          "plainSummary": "装在手机上的对话副驾，只读屏、给候选回复。",
+          "introduction": "在微信 / QQ / X / 飞书里帮你“读懂对方”，给出候选回复，一键填入输入框，是否发出由你决定。基于 Android 无障碍服务，不 hook、不改包，只读屏幕。",
+          "whyToday": "刚上线一天 stars 就冲到 1758，是今日社交 AI 副驾赛道最抢眼的新面孔。",
+          "audience": "在 IM 场景里被高强度聊天消耗、想借助 AI 提词的用户。",
+          "editorialTags": [
+            "AI 工具",
+            "效率",
+            "开发工具"
+          ],
+          "recommendation": 4
+        },
+        {
+          "name": "volotat/mini-AGI",
+          "githubUrl": "https://github.com/volotat/mini-agi",
+          "canonicalUrl": "https://github.com/volotat/mini-agi",
+          "description": "Continual learning model trained from scratch on 8GB VRAM laptop with batch-1 stream of data.",
+          "chineseDescription": "在 8GB 显存笔记本上、以 batch-1 数据流从零训练的持续学习模型。",
+          "stars": 331,
+          "forks": 23,
+          "openIssues": 2,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-19T00:25:59Z",
+          "updatedAt": "2026-09-22T05:33:25Z",
+          "pushedAt": "2026-09-22T00:41:36Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 97 stars/day",
+              "1 天内有更新"
+            ]
+          },
+          "plainSummary": "在 8GB 显存笔记本上从零训练的持续学习模型。",
+          "introduction": "作者从零开始训练一个持续学习 (continual learning) 模型，样本流式喂入、batch size 为 1，全过程只用一台 8GB 显存的笔记本。用来探索资源受限下的 AGI 雏形。",
+          "whyToday": "极简 AGI 探索一天获得 +331 stars（新仓约 97 stars/day），是研究性小项目的代表。",
+          "audience": "对小模型、持续学习、资源受限训练感兴趣的研究者。",
+          "editorialTags": [
+            "AI 工具",
+            "效率",
+            "有趣"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "Rizzo-AI-Academy/rizzo-flow",
+          "githubUrl": "https://github.com/rizzo-ai-academy/rizzo-flow",
+          "canonicalUrl": "https://github.com/rizzo-ai-academy/rizzo-flow",
+          "description": "The open, local take on Jev: typed decisions from an LLM, without generating a single token",
+          "chineseDescription": "开源本地版 Jev：让 LLM 输出类型化决策，不生成任何 token。",
+          "stars": 232,
+          "forks": 6,
+          "openIssues": 0,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-21T00:00:02Z",
+          "updatedAt": "2026-09-22T05:27:29Z",
+          "pushedAt": "2026-09-21T23:31:43Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 164 stars/day",
+              "1 天内有更新"
+            ]
+          },
+          "plainSummary": "开源本地版 Jev：让 LLM 输出类型化决策而不生成一个 token。",
+          "introduction": "以“不产生任何生成 token”的方式，从本地 LLM 抽取 Jev 兼容的类型化决策输出。适合放到延迟敏感的判定流水线里。",
+          "whyToday": "刚上线一天就积累 232 stars，是今日 Jev 兼容开源实现里的新面孔。",
+          "audience": "想在自家 LLM 里加一层零 token 决策接口的工程师。",
+          "editorialTags": [
+            "AI 工具",
+            "学习"
+          ],
+          "recommendation": 3
+        },
+        {
+          "name": "jerryjliu/docjev",
+          "githubUrl": "https://github.com/jerryjliu/docjev",
+          "canonicalUrl": "https://github.com/jerryjliu/docjev",
+          "description": "A very fast document classifier/splitter using Jev",
+          "chineseDescription": "用 Jev 做文档分类和切分的高速工具。",
+          "stars": 203,
+          "forks": 17,
+          "openIssues": 0,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-19T17:17:03Z",
+          "updatedAt": "2026-09-22T05:42:36Z",
+          "pushedAt": "2026-09-21T22:40:31Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 75 stars/day",
+              "1 天内有更新"
+            ]
+          },
+          "plainSummary": "用 Jev 做文档分类与切分的超快工具。",
+          "introduction": "把 Jev 决策模型套到文档处理链路上，专攻文档分类与切分。速度对标传统文本分类器，可用作 RAG 前处理阶段的高速分块器。",
+          "whyToday": "LlamaIndex 作者的新实验，一天获得 203 stars，代表决策模型在 RAG 前处理的落地。",
+          "audience": "在做 RAG 数据预处理、文档分块的 LLM 应用开发者。",
+          "editorialTags": [
+            "AI 工具",
+            "开源替代",
+            "开发工具"
+          ],
+          "recommendation": 3
+        }
+      ]
+    },
     {
       "date": "2026-09-21",
       "issue": 12,
@@ -15046,6 +16453,3589 @@
     }
   ],
   "candidatePools": [
+    {
+      "date": "2026-09-22",
+      "projects": [
+        {
+          "name": "mizorewww/laya-mlx",
+          "githubUrl": "https://github.com/mizorewww/laya-mlx",
+          "canonicalUrl": "https://github.com/mizorewww/laya-mlx",
+          "description": "Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
+          "chineseDescription": "让 Laya 类型化决策模型跑在 MLX 上，M3 Max 短决策 7–14 ms，无需 PyTorch 或云 API。",
+          "stars": 4270,
+          "forks": 282,
+          "openIssues": 4,
+          "recentGrowth": 2145,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "apple-silicon",
+            "decision-model",
+            "inference",
+            "laya",
+            "local-ai",
+            "machine-learning",
+            "mlx",
+            "modernbert",
+            "system-one",
+            "typed-decisions"
+          ],
+          "createdAt": "2026-09-19T13:50:26Z",
+          "updatedAt": "2026-09-22T05:45:39Z",
+          "pushedAt": "2026-09-22T05:34:51Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 87,
+            "signals": [
+              "快照实增 +2145",
+              "新仓约 1504 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "TheoLeeCJ/SemIf",
+          "githubUrl": "https://github.com/theoleecj/semif",
+          "canonicalUrl": "https://github.com/theoleecj/semif",
+          "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
+          "chineseDescription": "用开源模型做“语义 if”，在家里 3090 上就能跑；独立开发，与 Jev/TypeSafe 无关。",
+          "stars": 3382,
+          "forks": 220,
+          "openIssues": 14,
+          "recentGrowth": 737,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-16T03:51:21Z",
+          "updatedAt": "2026-09-22T05:45:54Z",
+          "pushedAt": "2026-09-21T20:07:30Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 87,
+            "signals": [
+              "快照实增 +737",
+              "新仓约 541 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "yibie/awesome-jev",
+          "githubUrl": "https://github.com/yibie/awesome-jev",
+          "canonicalUrl": "https://github.com/yibie/awesome-jev",
+          "description": "A curated list of public projects, integrations, and discussions built on Jev — TypeSafe AI's System One model for typed decisions.",
+          "chineseDescription": "围绕 TypeSafe Jev 类型化决策模型的公共项目、集成与讨论精选清单。",
+          "stars": 1062,
+          "forks": 140,
+          "openIssues": 5,
+          "recentGrowth": 324,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "awesome",
+            "awesome-list",
+            "jev",
+            "llm"
+          ],
+          "createdAt": "2026-09-17T14:23:21Z",
+          "updatedAt": "2026-09-22T05:45:02Z",
+          "pushedAt": "2026-09-21T23:35:16Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 87,
+            "signals": [
+              "快照实增 +324",
+              "新仓约 220 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "wuyoscar/jev-skill",
+          "githubUrl": "https://github.com/wuyoscar/jev-skill",
+          "canonicalUrl": "https://github.com/wuyoscar/jev-skill",
+          "description": "An awesome collection of Jev use cases, workflows, and agent skills.",
+          "chineseDescription": "汇集 Jev 的使用案例、工作流和 agent skills。",
+          "stars": 386,
+          "forks": 21,
+          "openIssues": 1,
+          "recentGrowth": 153,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-20T02:35:26Z",
+          "updatedAt": "2026-09-22T05:44:44Z",
+          "pushedAt": "2026-09-21T23:10:39Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 87,
+            "signals": [
+              "快照实增 +153",
+              "新仓约 167 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "awlevin/typesafe-computer-use",
+          "githubUrl": "https://github.com/awlevin/typesafe-computer-use",
+          "canonicalUrl": "https://github.com/awlevin/typesafe-computer-use",
+          "description": "Computer use for about $0.0002 a step: OCR the screen, classify the next action with TypeSafe, click. macOS.",
+          "chineseDescription": "每步约 0.0002 美元的 macOS computer-use：OCR 截屏 + TypeSafe 决策 + 点击。",
+          "stars": 767,
+          "forks": 60,
+          "openIssues": 11,
+          "recentGrowth": 84,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "ai-agents",
+            "automation",
+            "computer-use",
+            "macos",
+            "ocr",
+            "typesafe"
+          ],
+          "createdAt": "2026-09-16T17:48:45Z",
+          "updatedAt": "2026-09-22T05:40:29Z",
+          "pushedAt": "2026-09-21T17:05:28Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 44.86573655296391,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 86.9,
+            "signals": [
+              "快照实增 +84",
+              "新仓约 135 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "Mak5er/AirCard",
+          "githubUrl": "https://github.com/mak5er/aircard",
+          "canonicalUrl": "https://github.com/mak5er/aircard",
+          "description": "Apple Wallet Card Skinner for iOS 18+ (No Jailbreak Required)",
+          "chineseDescription": "无需越狱的 iOS 18+ Apple Wallet 卡面美化工具。",
+          "stars": 1871,
+          "forks": 74,
+          "openIssues": 15,
+          "recentGrowth": 1151,
+          "growthSource": "snapshot",
+          "language": "Swift",
+          "topics": [],
+          "createdAt": "2026-09-16T22:20:15Z",
+          "updatedAt": "2026-09-22T05:45:49Z",
+          "pushedAt": "2026-09-21T06:10:20Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +1151",
+              "新仓约 341 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "mizorewww/laya-coreml",
+          "githubUrl": "https://github.com/mizorewww/laya-coreml",
+          "canonicalUrl": "https://github.com/mizorewww/laya-coreml",
+          "description": "Local Laya typed decisions on Apple Core ML and Neural Engine. Validated ports, ~5 ms short decisions on M3 Max, reproducible speed and energy benchmarks.",
+          "chineseDescription": "让 Laya 决策模型本地跑在 Apple Core ML 和神经网络引擎上，M3 Max 上约 5 ms 短决策，含速度与能耗基准。",
+          "stars": 966,
+          "forks": 64,
+          "openIssues": 1,
+          "recentGrowth": 456,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "apple-neural-engine",
+            "apple-silicon",
+            "coreml",
+            "decision-model",
+            "laya",
+            "local-ai",
+            "modernbert",
+            "on-device-ai",
+            "typed-decisions"
+          ],
+          "createdAt": "2026-09-19T23:14:13Z",
+          "updatedAt": "2026-09-22T05:43:18Z",
+          "pushedAt": "2026-09-20T03:52:14Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +456",
+              "新仓约 395 stars/day",
+              "3 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "TianyuCodings/NanoJev",
+          "githubUrl": "https://github.com/tianyucodings/nanojev",
+          "canonicalUrl": "https://github.com/tianyucodings/nanojev",
+          "description": "A nano replica of Jev: parallel decisions, dynamic candidates, and an end-to-end training pipeline.",
+          "chineseDescription": "Jev 的“nano”复刻版：并行决策、动态候选和端到端训练管线。",
+          "stars": 1863,
+          "forks": 203,
+          "openIssues": 7,
+          "recentGrowth": 254,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-17T16:08:30Z",
+          "updatedAt": "2026-09-22T05:38:28Z",
+          "pushedAt": "2026-09-21T09:58:28Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +254",
+              "新仓约 393 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "bespokelabsai/nimble",
+          "githubUrl": "https://github.com/bespokelabsai/nimble",
+          "canonicalUrl": "https://github.com/bespokelabsai/nimble",
+          "description": "Local typed decisions, contrastive data curation, and model evaluation.",
+          "chineseDescription": "本地类型化决策、对比式数据整理和模型评估的一站式工具。",
+          "stars": 1519,
+          "forks": 106,
+          "openIssues": 2,
+          "recentGrowth": 225,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-18T09:07:48Z",
+          "updatedAt": "2026-09-22T05:45:15Z",
+          "pushedAt": "2026-09-20T19:44:35Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +225",
+              "新仓约 376 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "rmalde/minecraft-agent",
+          "githubUrl": "https://github.com/rmalde/minecraft-agent",
+          "canonicalUrl": "https://github.com/rmalde/minecraft-agent",
+          "description": "Astra planner and JEV controller for Minecraft, with native recording, tested routes, and run verification.",
+          "chineseDescription": "面向 Minecraft 的 Astra 规划器 + JEV 控制器，含原生录制、测试路线和运行核验。",
+          "stars": 489,
+          "forks": 47,
+          "openIssues": 2,
+          "recentGrowth": 142,
+          "growthSource": "snapshot",
+          "language": "JavaScript",
+          "topics": [],
+          "createdAt": "2026-09-20T05:05:12Z",
+          "updatedAt": "2026-09-22T05:42:43Z",
+          "pushedAt": "2026-09-20T05:05:16Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +142",
+              "新仓约 222 stars/day",
+              "3 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "Mak5er/AirCard-iOS",
+          "githubUrl": "https://github.com/mak5er/aircard-ios",
+          "canonicalUrl": "https://github.com/mak5er/aircard-ios",
+          "description": "Apple Wallet card skins and lock screen passcode themes on iOS 27.",
+          "chineseDescription": "iOS 27 的 Apple Wallet 卡面皮肤与锁屏密码主题包。",
+          "stars": 380,
+          "forks": 28,
+          "openIssues": 11,
+          "recentGrowth": 128,
+          "growthSource": "snapshot",
+          "language": "Swift",
+          "topics": [],
+          "createdAt": "2026-09-19T09:22:23Z",
+          "updatedAt": "2026-09-22T05:38:23Z",
+          "pushedAt": "2026-09-20T21:01:12Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +128",
+              "新仓约 126 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "minorun365/minorun-marp-skill",
+          "githubUrl": "https://github.com/minorun365/minorun-marp-skill",
+          "canonicalUrl": "https://github.com/minorun365/minorun-marp-skill",
+          "description": "Marpで登壇スライドを作るための、ストーリー・図・デザインバランスのスキル集と黒地テーマ、検査ツール",
+          "chineseDescription": "让 Marp 幻灯片更好看的 Skill 集：故事、图示、设计平衡，加黑底主题和检查工具（日语）。",
+          "stars": 334,
+          "forks": 9,
+          "openIssues": 0,
+          "recentGrowth": 99,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "agent-skills",
+            "claude-code",
+            "marp",
+            "presentation"
+          ],
+          "createdAt": "2026-09-20T13:48:09Z",
+          "updatedAt": "2026-09-22T05:35:32Z",
+          "pushedAt": "2026-09-20T14:55:18Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 83,
+            "signals": [
+              "快照实增 +99",
+              "新仓约 181 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "browser-use/jev-ultrafast",
+          "githubUrl": "https://github.com/browser-use/jev-ultrafast",
+          "canonicalUrl": "https://github.com/browser-use/jev-ultrafast",
+          "description": "Fastest and cheapest web agent",
+          "chineseDescription": "号称最快、最便宜的 web agent。",
+          "stars": 16485,
+          "forks": 1037,
+          "openIssues": 110,
+          "recentGrowth": 3220,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-16T21:30:12Z",
+          "updatedAt": "2026-09-22T05:45:38Z",
+          "pushedAt": "2026-09-18T16:28:35Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 4,
+            "crossSource": 0,
+            "total": 79,
+            "signals": [
+              "快照实增 +3220",
+              "新仓约 2986 stars/day",
+              "4 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "jarrodwatts/jev-trader",
+          "githubUrl": "https://github.com/jarrodwatts/jev-trader",
+          "canonicalUrl": "https://github.com/jarrodwatts/jev-trader",
+          "description": "One AI trade decision every Monad block. Jev on Kuru MON-USDC.",
+          "chineseDescription": "每个 Monad 区块用 Jev 做一次交易决策，跑在 Kuru 的 MON-USDC 上。",
+          "stars": 1892,
+          "forks": 363,
+          "openIssues": 4,
+          "recentGrowth": 254,
+          "growthSource": "snapshot",
+          "language": "TypeScript",
+          "topics": [],
+          "createdAt": "2026-09-16T21:36:20Z",
+          "updatedAt": "2026-09-22T05:39:39Z",
+          "pushedAt": "2026-09-17T02:48:22Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 4,
+            "crossSource": 0,
+            "total": 79,
+            "signals": [
+              "快照实增 +254",
+              "新仓约 343 stars/day",
+              "6 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "v-modal/awesome-jev-tools",
+          "githubUrl": "https://github.com/v-modal/awesome-jev-tools",
+          "canonicalUrl": "https://github.com/v-modal/awesome-jev-tools",
+          "description": "A curated list of tools  built for Jev — TypeSafe AI's System One model for typed decisions.",
+          "chineseDescription": "围绕 TypeSafe Jev 的工具精选列表。",
+          "stars": 629,
+          "forks": 13,
+          "openIssues": 9,
+          "recentGrowth": 41,
+          "growthSource": "snapshot",
+          "topics": [
+            "awesome",
+            "awesome-list",
+            "awesome-lists",
+            "jev",
+            "llm",
+            "robotics",
+            "robotics-algorithms",
+            "robotics-control",
+            "robotics-simulation"
+          ],
+          "createdAt": "2026-09-19T16:48:59Z",
+          "updatedAt": "2026-09-22T04:40:05Z",
+          "pushedAt": "2026-09-19T17:02:33Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 37.746221959451326,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 75.7,
+            "signals": [
+              "快照实增 +41",
+              "新仓约 232 stars/day",
+              "3 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "Heman10x-NGU/openJev-verdict-2.0",
+          "githubUrl": "https://github.com/heman10x-ngu/openjev-verdict-2.0",
+          "canonicalUrl": "https://github.com/heman10x-ngu/openjev-verdict-2.0",
+          "description": "Calibrated 151M Non-Autoregressive Decision Engine beating TypeSafe Jev & Laya on LocalLLaMA/typed-decisions (77.10% acc, 0.0636 Brier, 0.0144 ECE)",
+          "chineseDescription": "151M 参数的非自回归决策引擎，在 typed-decisions 基准上刷分优于 Jev 和 Laya。",
+          "stars": 247,
+          "forks": 37,
+          "openIssues": 2,
+          "recentGrowth": 32,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "agentic-ai",
+            "brier-score",
+            "calibration",
+            "decision-engine",
+            "deep-learning",
+            "encoder",
+            "jev",
+            "machine-learning",
+            "modernbert",
+            "non-autoregressive",
+            "onnx",
+            "openjev",
+            "rlcd",
+            "selective-prediction",
+            "structured-outputs",
+            "system-one",
+            "text-classification",
+            "typesafe-ai",
+            "uncertainty-quantification",
+            "webgpu"
+          ],
+          "createdAt": "2026-09-19T12:14:46Z",
+          "updatedAt": "2026-09-22T04:57:01Z",
+          "pushedAt": "2026-09-20T14:54:40Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 35.310758835509176,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 73.3,
+            "signals": [
+              "快照实增 +32",
+              "新仓约 85 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "logan-markewich/jeff",
+          "githubUrl": "https://github.com/logan-markewich/jeff",
+          "canonicalUrl": "https://github.com/logan-markewich/jeff",
+          "description": "A self-hosted drop-in replacement for TypeSafe's jev, powered by GliFormer.",
+          "chineseDescription": "自托管、可替换 TypeSafe Jev 的 GliFormer 版本。",
+          "stars": 206,
+          "forks": 13,
+          "openIssues": 2,
+          "recentGrowth": 31,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "classification",
+            "encoder",
+            "gliner",
+            "jev",
+            "typesafe"
+          ],
+          "createdAt": "2026-09-19T02:17:25Z",
+          "updatedAt": "2026-09-22T04:40:22Z",
+          "pushedAt": "2026-09-20T00:59:58Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 35,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 29.88926797143213,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 72.9,
+            "signals": [
+              "快照实增 +31",
+              "新仓约 62 stars/day",
+              "3 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "zhengkid/Dream-RSI",
+          "githubUrl": "https://github.com/zhengkid/dream-rsi",
+          "canonicalUrl": "https://github.com/zhengkid/dream-rsi",
+          "description": "The offical repo for \"Dream-RSI: Recursive Self-Improvement through Evolving Worlds\"",
+          "chineseDescription": "论文 Dream-RSI（在演化世界中做递归自我提升）的官方仓库。",
+          "stars": 1048,
+          "forks": 97,
+          "openIssues": 4,
+          "recentGrowth": 45,
+          "growthSource": "snapshot",
+          "topics": [],
+          "createdAt": "2026-09-13T20:39:43Z",
+          "updatedAt": "2026-09-22T05:42:22Z",
+          "pushedAt": "2026-09-16T10:32:18Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 38.66493369239909,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 4,
+            "crossSource": 0,
+            "total": 72.7,
+            "signals": [
+              "快照实增 +45",
+              "新仓约 122 stars/day",
+              "6 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "sutro-sh/jev-align",
+          "githubUrl": "https://github.com/sutro-sh/jev-align",
+          "canonicalUrl": "https://github.com/sutro-sh/jev-align",
+          "description": "Build calibrated AI Functions from human feedback using Jev and GEPA.",
+          "chineseDescription": "基于 Jev 和 GEPA，用人类反馈校准 AI Function 的 CLI。",
+          "stars": 271,
+          "forks": 20,
+          "openIssues": 1,
+          "recentGrowth": 21,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [
+            "active-learning",
+            "classification",
+            "cli",
+            "gepa",
+            "human-in-the-loop",
+            "jev",
+            "prompt-optimization",
+            "typesafe-ai"
+          ],
+          "createdAt": "2026-09-19T02:12:23Z",
+          "updatedAt": "2026-09-22T03:55:52Z",
+          "pushedAt": "2026-09-20T20:50:08Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 31.216021330461082,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 69.2,
+            "signals": [
+              "快照实增 +21",
+              "新仓约 82 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "shhivv/third-hand",
+          "githubUrl": "https://github.com/shhivv/third-hand",
+          "canonicalUrl": "https://github.com/shhivv/third-hand",
+          "description": "computer-use assistant w/ decision models",
+          "chineseDescription": "基于决策模型的 computer-use 助手。",
+          "stars": 285,
+          "forks": 22,
+          "openIssues": 1,
+          "recentGrowth": 19,
+          "growthSource": "snapshot",
+          "language": "Swift",
+          "topics": [],
+          "createdAt": "2026-09-19T13:29:41Z",
+          "updatedAt": "2026-09-22T05:29:07Z",
+          "pushedAt": "2026-09-19T17:01:39Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 30.25349666421154,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 68.3,
+            "signals": [
+              "快照实增 +19",
+              "新仓约 100 stars/day",
+              "3 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "HyNetworks/OpenGFW",
+          "githubUrl": "https://github.com/hynetworks/opengfw",
+          "canonicalUrl": "https://github.com/hynetworks/opengfw",
+          "description": "OpenGFW is your very own DIY Great Firewall of China",
+          "chineseDescription": "你的 DIY 版“Great Firewall of China”，用 Go 写。",
+          "stars": 249,
+          "forks": 86,
+          "openIssues": 1,
+          "recentGrowth": 9,
+          "growthSource": "snapshot",
+          "language": "Go",
+          "topics": [],
+          "createdAt": "2026-09-19T09:21:17Z",
+          "updatedAt": "2026-09-22T03:39:40Z",
+          "pushedAt": "2026-09-21T19:04:58Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 23.253496664211536,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 65.3,
+            "signals": [
+              "快照实增 +9",
+              "新仓约 82 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "nftechie/stonkfly",
+          "githubUrl": "https://github.com/nftechie/stonkfly",
+          "canonicalUrl": "https://github.com/nftechie/stonkfly",
+          "description": "A full retained fly-connectome simulation with experimental memory and guarded Coinbase AgentKit trading actions.",
+          "chineseDescription": "带实验性记忆的完整果蝇连接组仿真，配合 Coinbase AgentKit 做受限交易。",
+          "stars": 802,
+          "forks": 145,
+          "openIssues": 3,
+          "recentGrowth": 10,
+          "growthSource": "snapshot",
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-10T02:40:30Z",
+          "updatedAt": "2026-09-21T22:58:17Z",
+          "pushedAt": "2026-09-10T02:40:34Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 24.216021330461082,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 54.2,
+            "signals": [
+              "快照实增 +10",
+              "新仓约 65 stars/day"
+            ]
+          }
+        },
+        {
+          "name": "jackwener/wx-cli-again",
+          "githubUrl": "https://github.com/jackwener/wx-cli-again",
+          "canonicalUrl": "https://github.com/jackwener/wx-cli-again",
+          "description": "WeChat local data CLI (query/decrypt/export) — fresh start from wx-cli",
+          "chineseDescription": "微信本地数据 CLI（查询/解密/导出）——wx-cli 的重启版。",
+          "stars": 715,
+          "forks": 1686,
+          "openIssues": 2,
+          "recentGrowth": 9,
+          "growthSource": "snapshot",
+          "language": "Rust",
+          "topics": [],
+          "createdAt": "2026-09-14T07:43:27Z",
+          "updatedAt": "2026-09-22T00:02:34Z",
+          "pushedAt": "2026-09-14T07:43:38Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 23.253496664211536,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 53.3,
+            "signals": [
+              "快照实增 +9",
+              "新仓约 88 stars/day"
+            ]
+          }
+        },
+        {
+          "name": "zhouxiaoka/autoclip",
+          "githubUrl": "https://github.com/zhouxiaoka/autoclip",
+          "canonicalUrl": "https://github.com/zhouxiaoka/autoclip",
+          "description": "AutoClip : AI-powered video clipping and highlight generation · 一款智能高光提取与剪辑的二创工具",
+          "chineseDescription": "AI 驱动的视频剪辑与高光提取二创工具。",
+          "stars": 8424,
+          "forks": 1582,
+          "recentGrowth": 250,
+          "growthSource": "github-trending",
+          "language": "Python",
+          "topics": [],
+          "sources": [
+            "github-trending"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 47.82926132370463,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 47.8,
+            "signals": [
+              "Trending 披露 +250"
+            ]
+          }
+        },
+        {
+          "name": "stablyai/orca",
+          "githubUrl": "https://github.com/stablyai/orca",
+          "canonicalUrl": "https://github.com/stablyai/orca",
+          "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+          "chineseDescription": "面向并行 coding agent 舰队的 ADE，桌面、移动、远程 runtime 都可用。",
+          "stars": 74899,
+          "forks": 4896,
+          "recentGrowth": 925,
+          "growthSource": "snapshot",
+          "language": "TypeScript",
+          "topics": [],
+          "sources": [
+            "github-trending"
+          ],
+          "score": {
+            "snapshotGrowth": 45,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 45,
+            "signals": [
+              "快照实增 +925"
+            ]
+          }
+        },
+        {
+          "name": "mvt-project/mvt",
+          "githubUrl": "https://github.com/mvt-project/mvt",
+          "canonicalUrl": "https://github.com/mvt-project/mvt",
+          "description": "MVT (Mobile Verification Toolkit) helps with conducting forensics of mobile devices in order to find signs of a potential compromise.",
+          "chineseDescription": "移动设备取证工具，用来寻找设备被入侵的痕迹。",
+          "stars": 13688,
+          "forks": 1332,
+          "recentGrowth": 169,
+          "growthSource": "github-trending",
+          "language": "Python",
+          "topics": [],
+          "sources": [
+            "github-trending"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 44.45634561682621,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 44.5,
+            "signals": [
+              "Trending 披露 +169"
+            ]
+          }
+        },
+        {
+          "name": "akitaonrails/ai-memory",
+          "githubUrl": "https://github.com/akitaonrails/ai-memory",
+          "canonicalUrl": "https://github.com/akitaonrails/ai-memory",
+          "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+          "chineseDescription": "为 coding CLI Agent 打造的长期记忆与跨厂商交接方案。",
+          "stars": 7819,
+          "forks": 527,
+          "recentGrowth": 167,
+          "growthSource": "github-trending",
+          "language": "Rust",
+          "topics": [],
+          "sources": [
+            "github-trending"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 44.353904536672566,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 44.4,
+            "signals": [
+              "Trending 披露 +167"
+            ]
+          }
+        },
+        {
+          "name": "jev-chat/jev-chat-jarvis",
+          "githubUrl": "https://github.com/jev-chat/jev-chat-jarvis",
+          "canonicalUrl": "https://github.com/jev-chat/jev-chat-jarvis",
+          "description": "装在手机上的对话副驾：在微信 / QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
+          "chineseDescription": "手机上的对话副驾：读懂对方、给出候选回复、一键填入，只读屏、不 hook。",
+          "stars": 1758,
+          "forks": 580,
+          "openIssues": 7,
+          "language": "Kotlin",
+          "topics": [
+            "accessibility-service",
+            "android",
+            "chat-assistant",
+            "llm",
+            "qq",
+            "wechat"
+          ],
+          "createdAt": "2026-09-21T11:12:53Z",
+          "updatedAt": "2026-09-22T05:45:53Z",
+          "pushedAt": "2026-09-22T04:10:16Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 1758 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "volotat/mini-AGI",
+          "githubUrl": "https://github.com/volotat/mini-agi",
+          "canonicalUrl": "https://github.com/volotat/mini-agi",
+          "description": "Continual learning model trained from scratch on 8GB VRAM laptop with batch-1 stream of data.",
+          "chineseDescription": "在 8GB 显存笔记本上、以 batch-1 数据流从零训练的持续学习模型。",
+          "stars": 331,
+          "forks": 23,
+          "openIssues": 2,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-19T00:25:59Z",
+          "updatedAt": "2026-09-22T05:33:25Z",
+          "pushedAt": "2026-09-22T00:41:36Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 97 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "Rizzo-AI-Academy/rizzo-flow",
+          "githubUrl": "https://github.com/rizzo-ai-academy/rizzo-flow",
+          "canonicalUrl": "https://github.com/rizzo-ai-academy/rizzo-flow",
+          "description": "The open, local take on Jev: typed decisions from an LLM, without generating a single token",
+          "chineseDescription": "开源本地版 Jev：让 LLM 输出类型化决策，不生成任何 token。",
+          "stars": 232,
+          "forks": 6,
+          "openIssues": 0,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-21T00:00:02Z",
+          "updatedAt": "2026-09-22T05:27:29Z",
+          "pushedAt": "2026-09-21T23:31:43Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 164 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "jerryjliu/docjev",
+          "githubUrl": "https://github.com/jerryjliu/docjev",
+          "canonicalUrl": "https://github.com/jerryjliu/docjev",
+          "description": "A very fast document classifier/splitter using Jev",
+          "chineseDescription": "用 Jev 做文档分类和切分的高速工具。",
+          "stars": 203,
+          "forks": 17,
+          "openIssues": 0,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-19T17:17:03Z",
+          "updatedAt": "2026-09-22T05:42:36Z",
+          "pushedAt": "2026-09-21T22:40:31Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 75 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "receptron/laya",
+          "githubUrl": "https://github.com/receptron/laya",
+          "canonicalUrl": "https://github.com/receptron/laya",
+          "description": "Run Laya, the open-source Jev-compatible System-1 decision model, from Node.js / TypeScript via ONNX Runtime",
+          "chineseDescription": "通过 ONNX Runtime，在 Node.js/TypeScript 中跑开源、兼容 Jev 的 Laya 决策模型。",
+          "stars": 201,
+          "forks": 18,
+          "openIssues": 0,
+          "language": "TypeScript",
+          "topics": [],
+          "createdAt": "2026-09-19T15:30:52Z",
+          "updatedAt": "2026-09-22T05:32:46Z",
+          "pushedAt": "2026-09-21T13:16:59Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 73 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "FBddcz/embodied-jev",
+          "githubUrl": "https://github.com/fbddcz/embodied-jev",
+          "canonicalUrl": "https://github.com/fbddcz/embodied-jev",
+          "description": "EmbodiedJev: MuJoCo robot decision workbench with MiniCPM5-2B, Jev and compatible model APIs",
+          "chineseDescription": "MuJoCo 机器人决策工作台，兼容 MiniCPM5-2B、Jev 及其他模型 API。",
+          "stars": 165,
+          "forks": 2,
+          "openIssues": 2,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-20T03:38:31Z",
+          "updatedAt": "2026-09-22T05:25:39Z",
+          "pushedAt": "2026-09-22T03:50:14Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 73 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "maanHimself/OpenDLSS-NR",
+          "githubUrl": "https://github.com/maanhimself/opendlss-nr",
+          "canonicalUrl": "https://github.com/maanhimself/opendlss-nr",
+          "description": "A Vulkan reimplementation of NVIDIA's DLSS 5 Neural Rendering network, bit-exact against the original.",
+          "chineseDescription": "NVIDIA DLSS 5 神经渲染网络的 Vulkan 重实现，与原版位对位一致。",
+          "stars": 145,
+          "forks": 14,
+          "openIssues": 0,
+          "language": "JavaScript",
+          "topics": [],
+          "createdAt": "2026-09-20T22:35:35Z",
+          "updatedAt": "2026-09-22T05:43:52Z",
+          "pushedAt": "2026-09-21T16:16:55Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 98 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "FerryCorleone/crush-monitor",
+          "githubUrl": "https://github.com/ferrycorleone/crush-monitor",
+          "canonicalUrl": "https://github.com/ferrycorleone/crush-monitor",
+          "description": "Crush 好感监控器：用 Jev 分析微信聊天的情绪、意图和回复表现。本机部署，使用自己的 API Key。",
+          "chineseDescription": "用 Jev 分析微信聊天里的情绪、意图和回复表现，本机部署 + 自带 API Key。",
+          "stars": 128,
+          "forks": 14,
+          "openIssues": 1,
+          "language": "TypeScript",
+          "topics": [],
+          "createdAt": "2026-09-20T12:46:10Z",
+          "updatedAt": "2026-09-22T05:00:56Z",
+          "pushedAt": "2026-09-22T03:52:49Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 68 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "benjiyaya/ComfyUI-Qwen-Image-2.1-Prompt-Enhancer",
+          "githubUrl": "https://github.com/benjiyaya/comfyui-qwen-image-2.1-prompt-enhancer",
+          "canonicalUrl": "https://github.com/benjiyaya/comfyui-qwen-image-2.1-prompt-enhancer",
+          "description": "ComfyUI  Custom Node for Qwen-Image-2.1 Prompt Enhancement , support T2I , Image Edit",
+          "chineseDescription": "ComfyUI 自定义节点：为 Qwen-Image-2.1 增强提示词，支持文生图与图编辑。",
+          "stars": 109,
+          "forks": 10,
+          "openIssues": 1,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-20T22:03:05Z",
+          "updatedAt": "2026-09-22T05:15:38Z",
+          "pushedAt": "2026-09-21T15:16:01Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 42,
+            "signals": [
+              "新仓约 73 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "shhivv/arc-cua",
+          "githubUrl": "https://github.com/shhivv/arc-cua",
+          "canonicalUrl": "https://github.com/shhivv/arc-cua",
+          "description": "Superfast action layer for computer-use agents",
+          "chineseDescription": "面向 computer-use agent 的超快动作层。",
+          "stars": 127,
+          "forks": 13,
+          "openIssues": 1,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-20T08:27:09Z",
+          "updatedAt": "2026-09-22T04:34:24Z",
+          "pushedAt": "2026-09-22T04:34:20Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 29.830851649545494,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 41.8,
+            "signals": [
+              "新仓约 62 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "heyjunpenn/awesome-jev",
+          "githubUrl": "https://github.com/heyjunpenn/awesome-jev",
+          "canonicalUrl": "https://github.com/heyjunpenn/awesome-jev",
+          "description": "A verified, community-maintained catalog of 640 open-source projects built with Jev.",
+          "chineseDescription": "经过验证、由社区维护的 640 个 Jev 开源项目目录。",
+          "stars": 184,
+          "forks": 12,
+          "openIssues": 1,
+          "language": "Astro",
+          "topics": [],
+          "createdAt": "2026-09-19T05:14:36Z",
+          "updatedAt": "2026-09-22T05:43:33Z",
+          "pushedAt": "2026-09-22T05:27:08Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 29.35582527504653,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 41.4,
+            "signals": [
+              "新仓约 58 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "yifanzhang-pro/KLPO",
+          "githubUrl": "https://github.com/yifanzhang-pro/klpo",
+          "canonicalUrl": "https://github.com/yifanzhang-pro/klpo",
+          "description": "Official Project Page for KL-Regularized Policy Optimization for Agentic Reinforcement Learning (KLPO)",
+          "chineseDescription": "论文 KLPO（面向 Agentic 强化学习的 KL 正则策略优化）项目页。",
+          "stars": 176,
+          "forks": 15,
+          "openIssues": 0,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-19T03:52:03Z",
+          "updatedAt": "2026-09-22T05:36:38Z",
+          "pushedAt": "2026-09-21T16:06:41Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 28.91492685791812,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 40.9,
+            "signals": [
+              "新仓约 54 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "isas1/skills",
+          "githubUrl": "https://github.com/isas1/skills",
+          "canonicalUrl": "https://github.com/isas1/skills",
+          "description": "Skills for explaining and summarising AI output: eli5-succinct, simple-summary, summary",
+          "chineseDescription": "解释和总结 AI 输出的 Skills：eli5-succinct、simple-summary、summary。",
+          "stars": 140,
+          "forks": 11,
+          "openIssues": 0,
+          "topics": [
+            "ai",
+            "aisummarizer",
+            "summarization",
+            "summarizer",
+            "summary",
+            "summary-generator",
+            "summarytools"
+          ],
+          "createdAt": "2026-09-19T16:26:26Z",
+          "updatedAt": "2026-09-22T04:45:27Z",
+          "pushedAt": "2026-09-21T18:25:13Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 28.536960907547865,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 40.5,
+            "signals": [
+              "新仓约 51 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "Yinsongxu/LLM2Jev",
+          "githubUrl": "https://github.com/yinsongxu/llm2jev",
+          "canonicalUrl": "https://github.com/yinsongxu/llm2jev",
+          "description": "Adapt local language models into Jev-compatible structured decision engines with Choice, Score, and Noul outputs   powered by prefill-only binary inference.",
+          "chineseDescription": "把本地 LLM 改造成 Jev 兼容的结构化决策引擎，通过 prefill-only 二进制推理输出 Choice/Score/Noul。",
+          "stars": 125,
+          "forks": 11,
+          "openIssues": 1,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-19T10:59:33Z",
+          "updatedAt": "2026-09-22T02:51:15Z",
+          "pushedAt": "2026-09-21T16:42:51Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 27.1729840575181,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 39.2,
+            "signals": [
+              "新仓约 42 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "ThreeDaPrint/niimbot",
+          "githubUrl": "https://github.com/threedaprint/niimbot",
+          "canonicalUrl": "https://github.com/threedaprint/niimbot",
+          "description": "Niimbot B1 unlocked binary",
+          "chineseDescription": "Niimbot B1 打印机的解锁二进制。",
+          "stars": 115,
+          "forks": 17,
+          "openIssues": 1,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-09-19T16:34:59Z",
+          "updatedAt": "2026-09-22T04:19:22Z",
+          "pushedAt": "2026-09-21T10:58:51Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 27.163277980384844,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 39.2,
+            "signals": [
+              "新仓约 42 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "uehaj/jev-semgrep",
+          "githubUrl": "https://github.com/uehaj/jev-semgrep",
+          "canonicalUrl": "https://github.com/uehaj/jev-semgrep",
+          "description": "grep by meaning, across languages. TypeSafe Jev scores every line against a meaning; combine meanings with AND/OR/NOT. 意味で探す grep。日本語で英語を、英語で日本語を検索できる",
+          "chineseDescription": "按“含义”做 grep：用 TypeSafe Jev 给每行打分，可用 AND/OR/NOT 组合语义，支持中英日互搜。",
+          "stars": 125,
+          "forks": 7,
+          "openIssues": 3,
+          "language": "JavaScript",
+          "topics": [],
+          "createdAt": "2026-09-19T03:18:28Z",
+          "updatedAt": "2026-09-22T04:56:46Z",
+          "pushedAt": "2026-09-21T13:51:54Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 26.449763939760228,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 38.4,
+            "signals": [
+              "新仓约 38 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "caxete/crypto-tax-calculator",
+          "githubUrl": "https://github.com/caxete/crypto-tax-calculator",
+          "canonicalUrl": "https://github.com/caxete/crypto-tax-calculator",
+          "description": "A comprehensive crypto tax solution supporting leading wallets, exchanges, and blockchain explorers.",
+          "chineseDescription": "支持主流钱包、交易所与区块浏览器的加密货币纳税计算方案。",
+          "stars": 377,
+          "forks": 121,
+          "openIssues": 0,
+          "language": "Python",
+          "topics": [
+            "bitcoin",
+            "crypto-tax-calculator",
+            "crypto-tax-reports",
+            "cryptocurrency",
+            "cryptotax",
+            "tax-calculation",
+            "tax-calculator",
+            "tax-reports"
+          ],
+          "createdAt": "2026-09-20T12:06:40Z",
+          "updatedAt": "2026-09-21T19:59:02Z",
+          "pushedAt": "2026-09-20T12:23:36Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 38,
+            "signals": [
+              "新仓约 197 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "kloxeld/xscrape",
+          "githubUrl": "https://github.com/kloxeld/xscrape",
+          "canonicalUrl": "https://github.com/kloxeld/xscrape",
+          "description": "Async Python client for collecting public data from X (Twitter) - search, profiles, threads, replies, and media. Built-in account rotation, adaptive rate limiting, and export to JSON/CSV/SQLite.",
+          "chineseDescription": "异步 Python 客户端，采集 X（Twitter）公开数据；含账号轮换、自适应限速、多格式导出。",
+          "stars": 256,
+          "forks": 34,
+          "openIssues": 0,
+          "language": "Python",
+          "topics": [
+            "parser",
+            "post-scraper",
+            "scraper",
+            "scraping",
+            "twitter",
+            "twitter-api",
+            "twitter-scraper",
+            "x",
+            "x-scraper"
+          ],
+          "createdAt": "2026-09-20T14:56:05Z",
+          "updatedAt": "2026-09-21T13:04:45Z",
+          "pushedAt": "2026-09-20T15:43:46Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 38,
+            "signals": [
+              "新仓约 143 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "MSNightmare/BigDiskBuster",
+          "githubUrl": "https://github.com/msnightmare/bigdiskbuster",
+          "canonicalUrl": "https://github.com/msnightmare/bigdiskbuster",
+          "description": "Windows Defender Update Denial of Service Vulnerability",
+          "chineseDescription": "Windows Defender 更新拒绝服务漏洞 PoC。",
+          "stars": 157,
+          "forks": 24,
+          "openIssues": 1,
+          "language": "C++",
+          "topics": [],
+          "createdAt": "2026-09-19T23:31:52Z",
+          "updatedAt": "2026-09-22T04:59:14Z",
+          "pushedAt": "2026-09-19T23:37:55Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 38,
+            "signals": [
+              "新仓约 64 stars/day",
+              "3 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "amitshekhariitbhu/ai-engineer-roadmap",
+          "githubUrl": "https://github.com/amitshekhariitbhu/ai-engineer-roadmap",
+          "canonicalUrl": "https://github.com/amitshekhariitbhu/ai-engineer-roadmap",
+          "description": "AI Engineer Roadmap - A step-by-step AI Engineering roadmap to become an AI Engineer, with a blog for every topic.",
+          "chineseDescription": "AI Engineer 学习路线图，每个主题配一篇博客。",
+          "stars": 157,
+          "forks": 16,
+          "openIssues": 0,
+          "language": "Markdown",
+          "topics": [
+            "ai-engineer",
+            "ai-engineer-roadmap",
+            "ai-engineering",
+            "ai-engineering-roadmap"
+          ],
+          "createdAt": "2026-09-20T15:02:38Z",
+          "updatedAt": "2026-09-22T05:42:59Z",
+          "pushedAt": "2026-09-20T15:08:42Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 38,
+            "signals": [
+              "新仓约 88 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "ghuntley/underclass",
+          "githubUrl": "https://github.com/ghuntley/underclass",
+          "canonicalUrl": "https://github.com/ghuntley/underclass",
+          "description": "underclass: an OpenAI-compatible pooling proxy that pins sessions to one account (prompt cache stays warm), cools quota-exhausted subscriptions until their window resets, and fails fast with the earliest Retry-After when the whole pool is dry.",
+          "chineseDescription": "OpenAI 兼容的池化代理：把会话绑到单账号（保持缓存），耗尽账号自动降温，池空时快速失败。",
+          "stars": 151,
+          "forks": 9,
+          "openIssues": 3,
+          "language": "Rust",
+          "topics": [
+            "openai",
+            "openai-proxy-load-balancer"
+          ],
+          "createdAt": "2026-09-20T07:00:32Z",
+          "updatedAt": "2026-09-22T05:35:23Z",
+          "pushedAt": "2026-09-20T16:06:45Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 38,
+            "signals": [
+              "新仓约 71 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "wquguru/dasheng",
+          "githubUrl": "https://github.com/wquguru/dasheng",
+          "canonicalUrl": "https://github.com/wquguru/dasheng",
+          "description": "大声读 — R2T2 流式 ASR 听，Jev 逐词判，英文朗读评分",
+          "chineseDescription": "“大声读”：R2T2 流式 ASR + Jev 逐词判定，做英文朗读评分。",
+          "stars": 122,
+          "forks": 16,
+          "openIssues": 0,
+          "language": "JavaScript",
+          "topics": [],
+          "createdAt": "2026-09-20T15:33:25Z",
+          "updatedAt": "2026-09-22T05:09:28Z",
+          "pushedAt": "2026-09-20T16:36:46Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 8,
+            "crossSource": 0,
+            "total": 38,
+            "signals": [
+              "新仓约 69 stars/day",
+              "2 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "yynxxxxx/Codex-X",
+          "githubUrl": "https://github.com/yynxxxxx/codex-x",
+          "canonicalUrl": "https://github.com/yynxxxxx/codex-x",
+          "description": "OpenAI Codex 桌面端/CLI 的可视化管理工具，具有Provider/API 切换、会话同步、提示词注入、Skills/MCP 管理、TOML 配置可视化的跨平台工具。",
+          "chineseDescription": "OpenAI Codex 桌面端/CLI 的可视化管理工具，含 Provider 切换、会话同步、提示词注入、Skills/MCP 管理。",
+          "stars": 3753,
+          "forks": 468,
+          "recentGrowth": 50,
+          "growthSource": "github-trending",
+          "language": "Rust",
+          "topics": [],
+          "sources": [
+            "github-trending"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 34.03455205182897,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 34,
+            "signals": [
+              "Trending 披露 +50"
+            ]
+          }
+        },
+        {
+          "name": "hydra-db/open-glean",
+          "githubUrl": "https://github.com/hydra-db/open-glean",
+          "canonicalUrl": "https://github.com/hydra-db/open-glean",
+          "description": "An open-source AI platform for knowledge work. Connect your apps, find answers, and get work done.",
+          "chineseDescription": "开源 AI 知识办公平台：连接你的应用、查找答案、协作办公。",
+          "stars": 661,
+          "forks": 321,
+          "openIssues": 0,
+          "language": "TypeScript",
+          "topics": [],
+          "createdAt": "2026-09-17T05:22:08Z",
+          "updatedAt": "2026-09-22T05:44:50Z",
+          "pushedAt": "2026-09-17T05:46:34Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 30,
+            "pushedFreshness": 4,
+            "crossSource": 0,
+            "total": 34,
+            "signals": [
+              "新仓约 127 stars/day",
+              "6 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "haplollc/ThinkingOrbs",
+          "githubUrl": "https://github.com/haplollc/thinkingorbs",
+          "canonicalUrl": "https://github.com/haplollc/thinkingorbs",
+          "description": "Dotted, honestly-3D loading indicators for AI and agent interfaces in SwiftUI. Nine hand-tuned designs, two tuned sizes.",
+          "chineseDescription": "SwiftUI 里为 AI/Agent 界面打造的 3D 圆点加载指示器，共 9 款设计、2 种尺寸。",
+          "stars": 165,
+          "forks": 13,
+          "openIssues": 0,
+          "language": "Swift",
+          "topics": [
+            "ai",
+            "animation",
+            "ios",
+            "loading-indicator",
+            "spinner",
+            "swift",
+            "swift-package-manager",
+            "swiftui"
+          ],
+          "createdAt": "2026-09-19T06:15:54Z",
+          "updatedAt": "2026-09-22T05:33:00Z",
+          "pushedAt": "2026-09-19T06:31:12Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 28.678637284932627,
+            "pushedFreshness": 4,
+            "crossSource": 0,
+            "total": 32.7,
+            "signals": [
+              "新仓约 52 stars/day",
+              "4 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "hirotomasato/yowes",
+          "githubUrl": "https://github.com/hirotomasato/yowes",
+          "canonicalUrl": "https://github.com/hirotomasato/yowes",
+          "description": "Generate realistic teacher documents (ID cards, licenses, letters) for 13 countries via MCP.",
+          "chineseDescription": "通过 MCP 为 13 个国家生成看起来逼真的教师文件（ID、执照、信函）。",
+          "stars": 131,
+          "forks": 57,
+          "openIssues": 0,
+          "language": "Python",
+          "topics": [
+            "agent",
+            "document-generator",
+            "mcp",
+            "model-context-protocol",
+            "pillow",
+            "python"
+          ],
+          "createdAt": "2026-09-19T05:33:10Z",
+          "updatedAt": "2026-09-22T05:31:03Z",
+          "pushedAt": "2026-09-19T05:47:51Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 26.98326578790306,
+            "pushedFreshness": 4,
+            "crossSource": 0,
+            "total": 31,
+            "signals": [
+              "新仓约 41 stars/day",
+              "4 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "To3akaRin/mac-computer-use",
+          "githubUrl": "https://github.com/to3akarin/mac-computer-use",
+          "canonicalUrl": "https://github.com/to3akarin/mac-computer-use",
+          "description": "让任意大模型可以操控电脑，多平台可用，附 3D 建模案例与实机动态图。",
+          "chineseDescription": "让任意大模型控制电脑，多平台可用，附 3D 建模案例与实机动图。",
+          "stars": 736,
+          "forks": 12,
+          "openIssues": 0,
+          "language": "JavaScript",
+          "topics": [
+            "agent-skills",
+            "cdp",
+            "codex",
+            "computer-use",
+            "macos",
+            "swift"
+          ],
+          "createdAt": "2026-09-08T09:09:24Z",
+          "updatedAt": "2026-09-22T05:43:37Z",
+          "pushedAt": "2026-09-11T09:53:21Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 28.699214706540623,
+            "pushedFreshness": 0,
+            "crossSource": 0,
+            "total": 28.7,
+            "signals": [
+              "新仓约 52 stars/day"
+            ]
+          }
+        },
+        {
+          "name": "rust-lang/crates.io-index",
+          "githubUrl": "https://github.com/rust-lang/crates.io-index",
+          "canonicalUrl": "https://github.com/rust-lang/crates.io-index",
+          "description": "Registry index for crates.io",
+          "chineseDescription": "crates.io 的注册索引。",
+          "stars": 746,
+          "forks": 271,
+          "openIssues": 2,
+          "recentGrowth": 2,
+          "growthSource": "snapshot",
+          "language": "Tcl",
+          "topics": [],
+          "createdAt": "2014-11-04T23:26:38Z",
+          "updatedAt": "2026-09-22T05:45:56Z",
+          "pushedAt": "2026-09-22T05:45:54Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 11.094737505048093,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 23.1,
+            "signals": [
+              "快照实增 +2",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "EddiKusS/proton-playground-warden",
+          "githubUrl": "https://github.com/eddikuss/proton-playground-warden",
+          "canonicalUrl": "https://github.com/eddikuss/proton-playground-warden",
+          "description": "Linux Game Trainer Automation Suite 2026: Seamless Modding",
+          "chineseDescription": "2026 版 Linux 游戏训练器自动化套件，聚焦无缝 modding。",
+          "stars": 55,
+          "forks": 0,
+          "openIssues": 0,
+          "language": "HTML",
+          "topics": [
+            "game-trainers",
+            "linux-gaming",
+            "proton",
+            "steam",
+            "trainer",
+            "wemod"
+          ],
+          "createdAt": "2026-08-25T10:16:36Z",
+          "updatedAt": "2026-09-22T05:45:55Z",
+          "pushedAt": "2026-09-22T05:45:51Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 7.8403910503685985,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 19.8,
+            "signals": [
+              "新仓约 2 stars/day",
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "WordPress/agent-skills",
+          "githubUrl": "https://github.com/wordpress/agent-skills",
+          "canonicalUrl": "https://github.com/wordpress/agent-skills",
+          "description": "Expert-level WordPress knowledge for AI coding assistants - blocks, themes, plugins, and best practices",
+          "chineseDescription": "为 AI 编码助手准备的专家级 WordPress 知识（blocks、themes、plugins、最佳实践）。",
+          "stars": 2156,
+          "forks": 320,
+          "openIssues": 53,
+          "language": "JavaScript",
+          "topics": [],
+          "createdAt": "2026-01-20T01:21:50Z",
+          "updatedAt": "2026-09-22T05:45:33Z",
+          "pushedAt": "2026-09-22T05:45:30Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "ZhiXuanWang/cf-speed-dns",
+          "githubUrl": "https://github.com/zhixuanwang/cf-speed-dns",
+          "canonicalUrl": "https://github.com/zhixuanwang/cf-speed-dns",
+          "description": "CF优选IP工具。动态获取Cloudflare优选IP，CloudflareSpeedTest测速。",
+          "chineseDescription": "CF 优选 IP 工具：动态获取 Cloudflare 优选 IP，配 CloudflareSpeedTest 测速。",
+          "stars": 1568,
+          "forks": 484,
+          "openIssues": 1,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2023-12-18T14:05:54Z",
+          "updatedAt": "2026-09-22T05:45:28Z",
+          "pushedAt": "2026-09-22T05:45:23Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "xland/DraftDepot",
+          "githubUrl": "https://github.com/xland/draftdepot",
+          "canonicalUrl": "https://github.com/xland/draftdepot",
+          "description": "DraftDepot 稿仓",
+          "chineseDescription": "DraftDepot 稿仓。",
+          "stars": 1334,
+          "forks": 274,
+          "openIssues": 37,
+          "language": "C",
+          "topics": [],
+          "createdAt": "2019-01-18T12:29:33Z",
+          "updatedAt": "2026-09-22T05:45:42Z",
+          "pushedAt": "2026-09-22T05:45:37Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "iAmCorey/Wake",
+          "githubUrl": "https://github.com/iamcorey/wake",
+          "canonicalUrl": "https://github.com/iamcorey/wake",
+          "description": "All your AI agent sessions in one place — browse, search, resume. Rust + GPUI.",
+          "chineseDescription": "把所有 AI agent 会话集中在一处：浏览、搜索、恢复；Rust + GPUI 实现。",
+          "stars": 944,
+          "forks": 65,
+          "openIssues": 2,
+          "language": "Rust",
+          "topics": [],
+          "createdAt": "2026-08-18T09:46:23Z",
+          "updatedAt": "2026-09-22T05:45:50Z",
+          "pushedAt": "2026-09-22T05:45:45Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "CutWire-Studios/Drift",
+          "githubUrl": "https://github.com/cutwire-studios/drift",
+          "canonicalUrl": "https://github.com/cutwire-studios/drift",
+          "description": "Drift is a free, open-source, beginner-friendly desktop video editor built with Qt 6 and FFmpeg.",
+          "chineseDescription": "基于 Qt 6 与 FFmpeg 的免费开源、面向新手的桌面视频编辑器。",
+          "stars": 775,
+          "forks": 93,
+          "openIssues": 40,
+          "language": "C++",
+          "topics": [],
+          "createdAt": "2026-07-07T11:08:57Z",
+          "updatedAt": "2026-09-22T05:45:29Z",
+          "pushedAt": "2026-09-22T05:45:24Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "zhiyuan1i/adblock_list",
+          "githubUrl": "https://github.com/zhiyuan1i/adblock_list",
+          "canonicalUrl": "https://github.com/zhiyuan1i/adblock_list",
+          "description": "adblock_list 是一个致力于中文区广告过滤、隐私保护的快速迭代规则，以解决现有中文区拦截规则重复、维护缓慢等问题",
+          "chineseDescription": "面向中文区的广告过滤 / 隐私保护规则，快速迭代维护。",
+          "stars": 758,
+          "forks": 38,
+          "openIssues": 2,
+          "language": "Python",
+          "topics": [
+            "adblock",
+            "adblock-list",
+            "adguard-blocklist",
+            "filterlist",
+            "ublock-filters-rules"
+          ],
+          "createdAt": "2020-08-24T07:48:11Z",
+          "updatedAt": "2026-09-22T05:45:52Z",
+          "pushedAt": "2026-09-22T05:45:47Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "0xDanielLopez/TweetFeed",
+          "githubUrl": "https://github.com/0xdaniellopez/tweetfeed",
+          "canonicalUrl": "https://github.com/0xdaniellopez/tweetfeed",
+          "description": "TweetFeed collects Indicators of Compromise (IOCs) shared by the infosec community at Twitter. Here you will find malicious URLs, domains, IPs, and SHA256/MD5 hashes.",
+          "chineseDescription": "从 Twitter 汇总安全社区分享的 IoC：恶意 URL、域名、IP、SHA256/MD5。",
+          "stars": 683,
+          "forks": 69,
+          "openIssues": 0,
+          "topics": [
+            "blueteam",
+            "malware",
+            "malware-detection",
+            "malware-research",
+            "osint",
+            "phishing",
+            "phishing-attacks",
+            "phishing-detection",
+            "phishing-sites"
+          ],
+          "createdAt": "2021-08-07T16:24:37Z",
+          "updatedAt": "2026-09-22T05:45:28Z",
+          "pushedAt": "2026-09-22T05:45:24Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "sylearn/AIUsage",
+          "githubUrl": "https://github.com/sylearn/aiusage",
+          "canonicalUrl": "https://github.com/sylearn/aiusage",
+          "description": "One dashboard to manage all your AI subscriptions — track quotas, costs, accounts, Claude Code proxy, and Codex proxy in one place.",
+          "chineseDescription": "一个仪表盘管理所有 AI 订阅：额度、成本、账号、Claude Code / Codex 代理。",
+          "stars": 681,
+          "forks": 51,
+          "openIssues": 6,
+          "language": "Swift",
+          "topics": [],
+          "createdAt": "2026-04-11T04:49:02Z",
+          "updatedAt": "2026-09-22T05:45:51Z",
+          "pushedAt": "2026-09-22T05:45:46Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "rust-ui/ui",
+          "githubUrl": "https://github.com/rust-ui/ui",
+          "canonicalUrl": "https://github.com/rust-ui/ui",
+          "description": "A Shadcn-inspired component registry for Rust. Build cross-platform apps for Web, Desktop, iOS and Android.",
+          "chineseDescription": "Rust 版 Shadcn 风格组件库，用于构建 Web、桌面、iOS、Android 的跨平台应用。",
+          "stars": 661,
+          "forks": 47,
+          "openIssues": 4,
+          "language": "Rust",
+          "topics": [
+            "axum",
+            "components",
+            "cross-platform",
+            "desktop",
+            "leptos",
+            "mobile",
+            "rust",
+            "rust-ui",
+            "shadcn",
+            "shadcn-ui",
+            "tailwindcss",
+            "ui",
+            "wasm"
+          ],
+          "createdAt": "2026-03-11T08:14:03Z",
+          "updatedAt": "2026-09-22T05:45:41Z",
+          "pushedAt": "2026-09-22T05:45:38Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "thunder-id/thunderid",
+          "githubUrl": "https://github.com/thunder-id/thunderid",
+          "canonicalUrl": "https://github.com/thunder-id/thunderid",
+          "description": "ThunderID is a high-performance, open-source identity stack designed for developers to secure and manage access for humans, AI agents, and machines through fully composable identity flows.",
+          "chineseDescription": "面向开发者的高性能开源身份栈，为人类、AI Agent 与机器提供可组合的身份流。",
+          "stars": 580,
+          "forks": 381,
+          "openIssues": 786,
+          "language": "Go",
+          "topics": [
+            "access-management",
+            "ai-agents",
+            "authentication",
+            "authorization",
+            "go",
+            "golang",
+            "hacktoberfest",
+            "iam",
+            "identity",
+            "mfa",
+            "oauth2",
+            "oidc"
+          ],
+          "createdAt": "2025-05-01T15:17:40Z",
+          "updatedAt": "2026-09-22T05:45:44Z",
+          "pushedAt": "2026-09-22T05:45:41Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "palantir/javapoet",
+          "githubUrl": "https://github.com/palantir/javapoet",
+          "canonicalUrl": "https://github.com/palantir/javapoet",
+          "description": "Java library used to generate Java source files.",
+          "chineseDescription": "用于生成 Java 源文件的库。",
+          "stars": 383,
+          "forks": 21,
+          "openIssues": 12,
+          "language": "Java",
+          "topics": [
+            "octo-correct-managed"
+          ],
+          "createdAt": "2024-04-08T18:32:20Z",
+          "updatedAt": "2026-09-22T05:45:25Z",
+          "pushedAt": "2026-09-22T05:45:22Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "MhdiTaheri/V2rayCollector",
+          "githubUrl": "https://github.com/mhditaheri/v2raycollector",
+          "canonicalUrl": "https://github.com/mhditaheri/v2raycollector",
+          "description": "This script is designed to retrieve configuration details for various VPN protocols (VLESS, VMess, Shadowsocks, and Trojan) from a list of Telegram channel URLs provided within the script. It uses cURL to fetch content and regular expressions to extract the configurations.",
+          "chineseDescription": "从 Telegram 频道抓取 VLESS / VMess / Shadowsocks / Trojan 等 VPN 协议配置。",
+          "stars": 318,
+          "forks": 27,
+          "openIssues": 0,
+          "language": "PHP",
+          "topics": [
+            "config",
+            "hysteria",
+            "php",
+            "server",
+            "subscription",
+            "tuic",
+            "v2ray",
+            "vless",
+            "vmess"
+          ],
+          "createdAt": "2023-11-22T20:05:49Z",
+          "updatedAt": "2026-09-22T05:45:48Z",
+          "pushedAt": "2026-09-22T05:45:44Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "iplocate/free-proxy-list",
+          "githubUrl": "https://github.com/iplocate/free-proxy-list",
+          "canonicalUrl": "https://github.com/iplocate/free-proxy-list",
+          "description": "⚡️ Free Verified HTTP, SOCKS5, & SOCKS4 Proxy List ⏰ Updated every 30 minutes",
+          "chineseDescription": "每 30 分钟更新一次的免费 HTTP / SOCKS5 / SOCKS4 代理列表。",
+          "stars": 307,
+          "forks": 27,
+          "openIssues": 2,
+          "topics": [
+            "anonymity",
+            "anonymous",
+            "free-proxy",
+            "free-proxy-list",
+            "http",
+            "http-proxy",
+            "https-proxy",
+            "proxies",
+            "proxies-list",
+            "proxy",
+            "proxy-list",
+            "proxy-scraper",
+            "proxy-server",
+            "scraping",
+            "socks",
+            "socks-proxy",
+            "socks4-proxy",
+            "socks5",
+            "socks5-proxy"
+          ],
+          "createdAt": "2025-07-08T11:42:01Z",
+          "updatedAt": "2026-09-22T05:45:38Z",
+          "pushedAt": "2026-09-22T05:45:34Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "cbusifabcap/daily_free_vpn",
+          "githubUrl": "https://github.com/cbusifabcap/daily_free_vpn",
+          "canonicalUrl": "https://github.com/cbusifabcap/daily_free_vpn",
+          "description": "分享免费节点、免费机场、付费机场、电报代理、ssr节点、v2ray节点、v2ray订阅、clash节点、clash订阅、shadowrocket订阅、Quantumult X订阅、Clash .NET订阅、小火箭节点、小猫咪节点、免费翻墙、免费科学上网、免费梯子、免费trojan节点、蓝灯、谷歌商店、翻墙梯子、安卓VPN、iphone翻墙节点、iphone vpn、一键翻墙浏览器、节点分享、免费SSR、蓝灯、谷歌商店、V2ary免费节点、代理、proxy代理科学上网、TG代理、电报代理、Telegram代理、ip加速、翻墙软件、socks5、破解VPN、机场推荐、节点订阅、破解VPN",
+          "chineseDescription": "分享各种免费节点、机场、订阅链接的聚合仓库。",
+          "stars": 280,
+          "forks": 17,
+          "openIssues": 0,
+          "recentGrowth": 0,
+          "growthSource": "snapshot",
+          "topics": [
+            "clash",
+            "clash-meta",
+            "hy2",
+            "hysteria2",
+            "mihomo",
+            "nekobox",
+            "proxy",
+            "reality",
+            "shadowsocks",
+            "sing-box",
+            "trojan",
+            "tuic",
+            "v2ray",
+            "v2rayng",
+            "vless",
+            "vmess",
+            "vpn",
+            "wireguard",
+            "xray"
+          ],
+          "createdAt": "2026-01-29T03:01:07Z",
+          "updatedAt": "2026-09-22T05:46:00Z",
+          "pushedAt": "2026-09-22T05:45:57Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "nerdai/llm-agents-from-scratch",
+          "githubUrl": "https://github.com/nerdai/llm-agents-from-scratch",
+          "canonicalUrl": "https://github.com/nerdai/llm-agents-from-scratch",
+          "description": "Build LLM agents and multi-agent systems from scratch, with MCP, Skills, and A2A",
+          "chineseDescription": "从零构建 LLM Agent 与多 Agent 系统，覆盖 MCP、Skills、A2A。",
+          "stars": 185,
+          "forks": 65,
+          "openIssues": 60,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2025-06-14T19:40:11Z",
+          "updatedAt": "2026-09-22T05:45:59Z",
+          "pushedAt": "2026-09-22T05:45:56Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "josefbacik/systing",
+          "githubUrl": "https://github.com/josefbacik/systing",
+          "canonicalUrl": "https://github.com/josefbacik/systing",
+          "description": "A libbpf based tracer to help figure out what an application is doing.",
+          "chineseDescription": "基于 libbpf 的 tracer，帮助你搞清楚一个应用在做什么。",
+          "stars": 178,
+          "forks": 19,
+          "openIssues": 8,
+          "language": "Rust",
+          "topics": [],
+          "createdAt": "2024-10-17T13:25:58Z",
+          "updatedAt": "2026-09-22T05:45:31Z",
+          "pushedAt": "2026-09-22T05:45:27Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "iboxz/free-v2ray-collector",
+          "githubUrl": "https://github.com/iboxz/free-v2ray-collector",
+          "canonicalUrl": "https://github.com/iboxz/free-v2ray-collector",
+          "description": "V2Ray config collector, multiple protocols support Mix, Reality, VLESS, VMESS, Shadowsocks, Trojan",
+          "chineseDescription": "多协议 V2Ray 配置收集器（Reality、VLESS、VMess、Shadowsocks、Trojan）。",
+          "stars": 176,
+          "forks": 11,
+          "openIssues": 0,
+          "language": "CSS",
+          "topics": [
+            "configuration",
+            "iran",
+            "proxy",
+            "v2ray",
+            "vless",
+            "vmess"
+          ],
+          "createdAt": "2023-08-05T19:06:47Z",
+          "updatedAt": "2026-09-22T05:45:58Z",
+          "pushedAt": "2026-09-22T05:45:54Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "swapnildahiphale/OpenSRE",
+          "githubUrl": "https://github.com/swapnildahiphale/opensre",
+          "canonicalUrl": "https://github.com/swapnildahiphale/opensre",
+          "description": "OpenSRE — the memory-first AI SRE. Self-hosted incident investigation with episodic memory, knowledge graph, web console, Slack & Teams. opensre.in",
+          "chineseDescription": "以记忆为核心的自托管 AI SRE：事件调查、情景记忆、知识图谱、Web 控制台，接 Slack/Teams。",
+          "stars": 142,
+          "forks": 43,
+          "openIssues": 21,
+          "language": "Python",
+          "topics": [
+            "ai-agent",
+            "ai-sre",
+            "devops",
+            "episodic-memory",
+            "incident-investigation",
+            "incident-response",
+            "knowledge-graph",
+            "self-hosted",
+            "site-reliability-engineering",
+            "sre-agent"
+          ],
+          "createdAt": "2026-03-28T18:57:28Z",
+          "updatedAt": "2026-09-22T05:46:00Z",
+          "pushedAt": "2026-09-22T05:45:59Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "sisshiki1969/monoruby",
+          "githubUrl": "https://github.com/sisshiki1969/monoruby",
+          "canonicalUrl": "https://github.com/sisshiki1969/monoruby",
+          "description": "Ruby implementation with yet another JIT compiler.",
+          "chineseDescription": "带 JIT 编译器的另一种 Ruby 实现。",
+          "stars": 140,
+          "forks": 7,
+          "openIssues": 18,
+          "language": "Rust",
+          "topics": [],
+          "createdAt": "2022-02-06T06:11:45Z",
+          "updatedAt": "2026-09-22T05:45:55Z",
+          "pushedAt": "2026-09-22T05:46:01Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "AmyJeanes/TeslaMateAgile",
+          "githubUrl": "https://github.com/amyjeanes/teslamateagile",
+          "canonicalUrl": "https://github.com/amyjeanes/teslamateagile",
+          "description": "Integration to automatically fill in prices for charge data captured by TeslaMate for smart energy providers",
+          "chineseDescription": "把 TeslaMate 的充电数据自动匹配到智能电价供应商的价格。",
+          "stars": 122,
+          "forks": 18,
+          "openIssues": 2,
+          "language": "C#",
+          "topics": [
+            "electricity-tariffs",
+            "octopus",
+            "tesla",
+            "teslamate",
+            "tibber"
+          ],
+          "createdAt": "2020-05-31T03:04:39Z",
+          "updatedAt": "2026-09-22T05:45:36Z",
+          "pushedAt": "2026-09-22T05:45:50Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "Caplet1989/Brokies-AI-Foundry",
+          "githubUrl": "https://github.com/caplet1989/brokies-ai-foundry",
+          "canonicalUrl": "https://github.com/caplet1989/brokies-ai-foundry",
+          "description": "Top Free AI Developer Tools for 2026",
+          "chineseDescription": "2026 免费 AI 开发者工具列表。",
+          "stars": 120,
+          "forks": 0,
+          "openIssues": 0,
+          "language": "HTML",
+          "topics": [
+            "ai-coding",
+            "ai-free",
+            "ai-student",
+            "ai-tools",
+            "coding-tools",
+            "developer-tools",
+            "developer-tools-ai-agent",
+            "free",
+            "free-ai",
+            "free-ai-software",
+            "free-ai-tools",
+            "list",
+            "student-discounts",
+            "students"
+          ],
+          "createdAt": "2026-06-28T19:21:00Z",
+          "updatedAt": "2026-09-22T05:45:54Z",
+          "pushedAt": "2026-09-22T05:45:50Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "juwairiyah09/spike-angular-pro-starter",
+          "githubUrl": "https://github.com/juwairiyah09/spike-angular-pro-starter",
+          "canonicalUrl": "https://github.com/juwairiyah09/spike-angular-pro-starter",
+          "description": "Spike Angular 2026: Ultimate Free Material Admin Template for Modern Dashboards",
+          "chineseDescription": "2026 版 Spike Angular Material 免费仪表盘模板。",
+          "stars": 116,
+          "forks": 0,
+          "openIssues": 0,
+          "language": "HTML",
+          "topics": [
+            "admin-dashboard",
+            "angular",
+            "angular-20",
+            "angular-admin",
+            "angular-admin-dashboard",
+            "angular-admin-template",
+            "angular-template",
+            "angular-typescript",
+            "dashboard-templates",
+            "free-angular-admin",
+            "free-angular-admin-template",
+            "free-angular-templete",
+            "free-material-angular",
+            "freebies",
+            "material-angular"
+          ],
+          "createdAt": "2026-06-28T20:54:15Z",
+          "updatedAt": "2026-09-22T05:45:49Z",
+          "pushedAt": "2026-09-22T05:45:45Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "Nunes24/spotify-audio-realm",
+          "githubUrl": "https://github.com/nunes24/spotify-audio-realm",
+          "canonicalUrl": "https://github.com/nunes24/spotify-audio-realm",
+          "description": "The Ultimate Spotify Premium Audio Experience Guide 2026",
+          "chineseDescription": "2026 版 Spotify Premium 音质体验指南。",
+          "stars": 116,
+          "forks": 0,
+          "openIssues": 0,
+          "language": "HTML",
+          "topics": [
+            "free-premium-account",
+            "no-ads-music",
+            "offline-music-free",
+            "premium-features-unlocked",
+            "remove-ads-spotify",
+            "spotify-crack-android",
+            "spotify-cracked-apk",
+            "spotify-downloader",
+            "spotify-hack-tool",
+            "spotify-hacked-version",
+            "spotify-ios-mod",
+            "spotify-latest-mod",
+            "spotify-modded-app",
+            "spotify-music-download",
+            "spotify-playlist-downloader",
+            "spotify-without-ads",
+            "unlimited-skips"
+          ],
+          "createdAt": "2026-06-28T20:56:50Z",
+          "updatedAt": "2026-09-22T05:45:25Z",
+          "pushedAt": "2026-09-22T05:45:22Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "Ney432/angular-beacon-pro",
+          "githubUrl": "https://github.com/ney432/angular-beacon-pro",
+          "canonicalUrl": "https://github.com/ney432/angular-beacon-pro",
+          "description": "Best Angular Admin Dashboard Template 2026 for Scalable Web Apps",
+          "chineseDescription": "2026 版 Angular Admin Dashboard 模板。",
+          "stars": 116,
+          "forks": 0,
+          "openIssues": 0,
+          "language": "HTML",
+          "topics": [
+            "angular",
+            "angular-20",
+            "angular-dashboard",
+            "angular-dashboard-free",
+            "angular-dashboard-starter",
+            "angular-dashboard-template",
+            "angular-free",
+            "angular-template",
+            "angular-templates",
+            "angular-theme",
+            "free-admin-template",
+            "free-angular-admin",
+            "free-angular-admin-template",
+            "free-angular-dashboard",
+            "free-angular-template",
+            "free-angular-templates",
+            "free-angular-templete",
+            "open-source-template"
+          ],
+          "createdAt": "2026-06-28T20:17:34Z",
+          "updatedAt": "2026-09-22T05:45:26Z",
+          "pushedAt": "2026-09-22T05:45:22Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "aykutkorkut/badge-odyssey-voyage",
+          "githubUrl": "https://github.com/aykutkorkut/badge-odyssey-voyage",
+          "canonicalUrl": "https://github.com/aykutkorkut/badge-odyssey-voyage",
+          "description": "The Ultimate Discord Badge Tracker Dashboard 2026",
+          "chineseDescription": "2026 版 Discord 徽章追踪仪表盘。",
+          "stars": 115,
+          "forks": 0,
+          "openIssues": 0,
+          "language": "HTML",
+          "topics": [
+            "boost",
+            "discord",
+            "discord-nitro",
+            "discord-server-boost",
+            "nitro"
+          ],
+          "createdAt": "2026-06-28T19:40:46Z",
+          "updatedAt": "2026-09-22T05:46:01Z",
+          "pushedAt": "2026-09-22T05:45:57Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "disintel/VideoVault-Core",
+          "githubUrl": "https://github.com/disintel/videovault-core",
+          "canonicalUrl": "https://github.com/disintel/videovault-core",
+          "description": "VideoFetch Pro: Best Universal Video Grabber Tool 2026 for 1800+ Sites",
+          "chineseDescription": "2026 版 VideoFetch Pro：覆盖 1800+ 站点的通用视频抓取工具。",
+          "stars": 115,
+          "forks": 0,
+          "openIssues": 0,
+          "language": "HTML",
+          "topics": [
+            "fdm",
+            "freedownloadmanager",
+            "video-download-tool",
+            "youtube",
+            "yt-dlp"
+          ],
+          "createdAt": "2026-06-28T21:04:31Z",
+          "updatedAt": "2026-09-22T05:45:58Z",
+          "pushedAt": "2026-09-22T05:45:54Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "GreendayBadboy/nice-angular-blaze",
+          "githubUrl": "https://github.com/greendaybadboy/nice-angular-blaze",
+          "canonicalUrl": "https://github.com/greendaybadboy/nice-angular-blaze",
+          "description": "Ultimate Bootstrap Angular Admin Dashboard with Premium UI Components 2026",
+          "chineseDescription": "2026 版 Bootstrap Angular 高级 UI Admin Dashboard。",
+          "stars": 115,
+          "forks": 0,
+          "openIssues": 0,
+          "language": "HTML",
+          "topics": [
+            "admin-dashboard",
+            "angular",
+            "angular-admin",
+            "angular-admin-dashboard",
+            "angular-admin-template",
+            "angular-template",
+            "angular-typescript",
+            "angular17",
+            "bootstrap5",
+            "dashboard-templates",
+            "free-angular-admin",
+            "free-angular-admin-template",
+            "free-angular-templete",
+            "freebies",
+            "ng-bootstrap"
+          ],
+          "createdAt": "2026-06-28T20:29:14Z",
+          "updatedAt": "2026-09-22T05:45:48Z",
+          "pushedAt": "2026-09-22T05:45:45Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "drcruz-lang/OptiGrab",
+          "githubUrl": "https://github.com/drcruz-lang/optigrab",
+          "canonicalUrl": "https://github.com/drcruz-lang/optigrab",
+          "description": "Best Open Source Video Downloader 2026: Speed & Simplicity",
+          "chineseDescription": "2026 版开源视频下载器，主打速度与简洁。",
+          "stars": 115,
+          "forks": 0,
+          "openIssues": 0,
+          "language": "HTML",
+          "topics": [
+            "aprixlabs",
+            "automation",
+            "content-creation",
+            "ffmpeg",
+            "ffmpeg-gui",
+            "python",
+            "tkinter",
+            "video-download-tool",
+            "video-downloader-apps",
+            "vidmuncher",
+            "youtube-downloader",
+            "youtubedl",
+            "youtubedl-gui",
+            "yt-dlp",
+            "yt-dlp-frontend",
+            "yt-dlp-gui",
+            "yt-downloader",
+            "ytdl"
+          ],
+          "createdAt": "2026-06-28T21:04:30Z",
+          "updatedAt": "2026-09-22T05:45:27Z",
+          "pushedAt": "2026-09-22T05:45:24Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "tedydonel/Heisenberg",
+          "githubUrl": "https://github.com/tedydonel/heisenberg",
+          "canonicalUrl": "https://github.com/tedydonel/heisenberg",
+          "description": "A block-based content engine and bilingual blog backend for Laravel  Gutenberg-style editor, media library, post templates, roles, and an AI writing assistant, with zero host coupling.",
+          "chineseDescription": "面向 Laravel 的 block 内容引擎与双语博客后端：Gutenberg 风编辑器、媒体库、模板、权限、AI 写作助手。",
+          "stars": 107,
+          "forks": 1,
+          "openIssues": 0,
+          "language": "PHP",
+          "topics": [
+            "ai-agent",
+            "blog-engine",
+            "laravel-cms",
+            "laravel-cms-builder",
+            "mcp"
+          ],
+          "createdAt": "2026-08-05T11:05:07Z",
+          "updatedAt": "2026-09-22T05:45:45Z",
+          "pushedAt": "2026-09-22T05:45:41Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "MrMarble/proxy-list",
+          "githubUrl": "https://github.com/mrmarble/proxy-list",
+          "canonicalUrl": "https://github.com/mrmarble/proxy-list",
+          "description": "Free https proxy list",
+          "chineseDescription": "免费 HTTPS 代理列表。",
+          "stars": 104,
+          "forks": 4,
+          "openIssues": 0,
+          "topics": [
+            "https-proxy",
+            "proxies",
+            "proxy-list"
+          ],
+          "createdAt": "2023-11-24T22:19:41Z",
+          "updatedAt": "2026-09-22T05:45:29Z",
+          "pushedAt": "2026-09-22T05:45:25Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "thoughtbot/flightdeck",
+          "githubUrl": "https://github.com/thoughtbot/flightdeck",
+          "canonicalUrl": "https://github.com/thoughtbot/flightdeck",
+          "description": "Terraform modules for rapidly building production-grade Kubernetes clusters following SRE practices.",
+          "chineseDescription": "遵循 SRE 实践、快速搭建生产级 Kubernetes 集群的 Terraform 模块。",
+          "stars": 100,
+          "forks": 11,
+          "openIssues": 36,
+          "language": "HCL",
+          "topics": [
+            "kubernetes",
+            "sre",
+            "terraform"
+          ],
+          "createdAt": "2021-04-27T16:39:58Z",
+          "updatedAt": "2026-09-22T05:45:58Z",
+          "pushedAt": "2026-09-22T05:45:55Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "bogdanstann/printer-offline-revival-toolkit",
+          "githubUrl": "https://github.com/bogdanstann/printer-offline-revival-toolkit",
+          "canonicalUrl": "https://github.com/bogdanstann/printer-offline-revival-toolkit",
+          "description": "Fix Canon, Epson, HP Printer Offline Errors 2026 Guide",
+          "chineseDescription": "Canon / Epson / HP 打印机 2026 版“离线错误”修复指南。",
+          "stars": 88,
+          "forks": 0,
+          "openIssues": 0,
+          "language": "HTML",
+          "topics": [
+            "brother-printer-offline",
+            "fix-printer-offline",
+            "how-to-fix-printer-offline",
+            "hp-printer-offline",
+            "hp-printer-offline-fix",
+            "offline-printer",
+            "offline-printer-fix",
+            "printer-is-offline",
+            "printer-is-offline-how-to-fix",
+            "printer-offline",
+            "printer-offline-fix",
+            "printer-says-offline",
+            "printer-showing-offline",
+            "why-is-my-printer-offline"
+          ],
+          "createdAt": "2026-06-15T07:51:48Z",
+          "updatedAt": "2026-09-22T05:45:25Z",
+          "pushedAt": "2026-09-22T05:45:21Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "galette/galette",
+          "githubUrl": "https://github.com/galette/galette",
+          "canonicalUrl": "https://github.com/galette/galette",
+          "description": "Free your association management! Open source association management software",
+          "chineseDescription": "开源协会成员管理系统。",
+          "stars": 72,
+          "forks": 36,
+          "openIssues": 4,
+          "language": "PHP",
+          "topics": [
+            "assocation",
+            "gestion-adherents",
+            "hacktoberfest",
+            "members-management",
+            "non-profit-organizations"
+          ],
+          "createdAt": "2013-01-14T22:48:07Z",
+          "updatedAt": "2026-09-22T05:45:28Z",
+          "pushedAt": "2026-09-22T05:45:24Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "bgin/RF-EMT",
+          "githubUrl": "https://github.com/bgin/rf-emt",
+          "canonicalUrl": "https://github.com/bgin/rf-emt",
+          "description": "Radio-Frequency Engineering Modeling Toolkit (RF-EMT). This project provides a high-fidelity simulation framework for Radar,Telecommunication and the other Radio-frequency engineering systems. The goal is to achieve realistic, design-level system modeling and simulation.",
+          "chineseDescription": "射频工程建模工具箱（RF-EMT）：面向雷达、通信等 RF 系统的高保真仿真框架。",
+          "stars": 68,
+          "forks": 23,
+          "openIssues": 0,
+          "language": "C++",
+          "topics": [
+            "antenna-modeling",
+            "atmosphere-model",
+            "avx",
+            "avx512",
+            "cuda-kernels",
+            "electromagnetic-simulation",
+            "fading-channel",
+            "high-performance-computing",
+            "modeling-and-simulation",
+            "multithreading",
+            "neural-network",
+            "openmp",
+            "radar",
+            "radar-signal-processing",
+            "radio-frequency",
+            "signal-processing",
+            "simd-instructions",
+            "simulation",
+            "sse",
+            "vectorization"
+          ],
+          "createdAt": "2019-09-27T18:45:54Z",
+          "updatedAt": "2026-09-22T05:45:54Z",
+          "pushedAt": "2026-09-22T05:45:51Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "xiaofang142/hivemtk",
+          "githubUrl": "https://github.com/xiaofang142/hivemtk",
+          "canonicalUrl": "https://github.com/xiaofang142/hivemtk",
+          "description": "开源私域 AI 营销 SCRM 系统，Martech 获客引流利器！全渠道聚合（抖音/小红书/快手/微信/WhatsApp/TikTok/Telegram）统一收件箱与 CDP 客户管理。🤖核心功能：1. ReAct 自主 AI 智能体（41原子工具/销冠 SOP 自动化编排）；2. 本地知识库 RAG（混合检索/混合粗排）；3. 独家 GEO 模块（生成式大模型引擎优化/AI 搜索占位/内容创作），让 ChatGPT/Perplexity/DeepSeek 优先推荐你的品牌！🔒数据安全：支持 100% 私域自托管部署，数据零出域",
+          "chineseDescription": "开源私域 AI 营销 SCRM：全渠道聚合、ReAct 智能体、本地 RAG 知识库、GEO 生成式引擎优化，支持 100% 私域自托管。",
+          "stars": 66,
+          "forks": 19,
+          "openIssues": 10,
+          "language": "Go",
+          "topics": [
+            "ai-agent",
+            "cdp",
+            "llm",
+            "marketing-technology",
+            "martech",
+            "open-source",
+            "rag",
+            "react",
+            "react-agent",
+            "scrm",
+            "self-hosted"
+          ],
+          "createdAt": "2026-07-21T08:35:08Z",
+          "updatedAt": "2026-09-22T05:45:31Z",
+          "pushedAt": "2026-09-22T05:45:28Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "mrbuilder1961/ChatPatches",
+          "githubUrl": "https://github.com/mrbuilder1961/chatpatches",
+          "canonicalUrl": "https://github.com/mrbuilder1961/chatpatches",
+          "description": "A Minecraft client-side mod that touches up Minecraft's mundane chat, with configurability in mind!",
+          "chineseDescription": "Minecraft 客户端 mod，聚焦聊天体验优化和可配置化。",
+          "stars": 64,
+          "forks": 34,
+          "openIssues": 37,
+          "language": "Java",
+          "topics": [
+            "chat",
+            "client",
+            "cosmetic",
+            "essential",
+            "fabricmc",
+            "lightweight",
+            "minecraft",
+            "minecraft-mod",
+            "misc",
+            "mod",
+            "qol",
+            "qualityoflife",
+            "quiltmc",
+            "small"
+          ],
+          "createdAt": "2021-12-23T19:25:06Z",
+          "updatedAt": "2026-09-22T05:45:42Z",
+          "pushedAt": "2026-09-22T05:45:39Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "objectstack-ai/objectstack",
+          "githubUrl": "https://github.com/objectstack-ai/objectstack",
+          "canonicalUrl": "https://github.com/objectstack-ai/objectstack",
+          "description": "Apps small enough for AI to hold whole. ObjectStack turns the whole app — data model, UI, workflows, permissions — into typed metadata: a complete CRM in under 150k tokens, one context window. Agents read it whole, reason it whole, refactor it whole.",
+          "chineseDescription": "把数据模型、UI、工作流、权限都变成类型化元数据，让 AI 一次读完整个应用（150k tokens 内的 CRM）。",
+          "stars": 62,
+          "forks": 16,
+          "openIssues": 430,
+          "language": "TypeScript",
+          "topics": [
+            "ai-agents-automation",
+            "ai-agents-for-business",
+            "fde",
+            "fde-enablement",
+            "mcp",
+            "metadata-driven",
+            "ontology",
+            "ontology-driven-development",
+            "ontology-engineering",
+            "palantir",
+            "palantir-alternative",
+            "palantir-fde",
+            "palantir-foundry",
+            "palantir-ontology",
+            "salesforce-alternative"
+          ],
+          "createdAt": "2026-01-18T06:47:54Z",
+          "updatedAt": "2026-09-22T05:45:48Z",
+          "pushedAt": "2026-09-22T05:45:47Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "RevolutionTR/keenetic-zapret2-manager",
+          "githubUrl": "https://github.com/revolutiontr/keenetic-zapret2-manager",
+          "canonicalUrl": "https://github.com/revolutiontr/keenetic-zapret2-manager",
+          "description": "Advanced Zapret2 manager for Keenetic routers (OpenWrt/Entware). Bypass DPI restrictions (Discord, Roblox, Kick, Wattpad, Mullvad and more) with smart DPI profiles, IPSET client filtering, IPv6 support, Telegram alerts, HealthMon watchdog, blockcheck automation and Web UI. | Keenetic icin gelismis Zapret2 yonetim araci.",
+          "chineseDescription": "面向 Keenetic 路由器 (OpenWrt/Entware) 的 Zapret2 高级管理器，用于绕过 DPI 限制。",
+          "stars": 61,
+          "forks": 8,
+          "openIssues": 0,
+          "language": "Shell",
+          "topics": [
+            "anti-dpi",
+            "bypass-censorship",
+            "censorship-bypass",
+            "discord",
+            "dpi-bypass",
+            "entware",
+            "internet-censorship",
+            "keenetic",
+            "keenetic-titan",
+            "openwrt",
+            "proxy-bypass",
+            "roblox",
+            "router",
+            "shell-script",
+            "ttnet",
+            "turkey",
+            "turkiye",
+            "vpn-alternative",
+            "zapret",
+            "zapret2"
+          ],
+          "createdAt": "2026-05-22T07:15:53Z",
+          "updatedAt": "2026-09-22T05:46:00Z",
+          "pushedAt": "2026-09-22T05:45:57Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "qianqikun/LunaTV-config",
+          "githubUrl": "https://github.com/qianqikun/lunatv-config",
+          "canonicalUrl": "https://github.com/qianqikun/lunatv-config",
+          "description": "自用LunaTV-config源，每日自动检测API状态，可在自己的CF部署CORSAPI中转被墙API，本人提供的CORSAPI仅为测试使用，请勿滥用！！！自用JSON配置文件编辑器，Luna TV配置管理专用。",
+          "chineseDescription": "自用 LunaTV 配置源，每日检测 API 状态，可在 CF 部署 CORSAPI 中转被墙 API。",
+          "stars": 61,
+          "forks": 19,
+          "openIssues": 1,
+          "language": "JavaScript",
+          "topics": [],
+          "createdAt": "2025-10-22T03:27:19Z",
+          "updatedAt": "2026-09-22T05:45:45Z",
+          "pushedAt": "2026-09-22T05:45:41Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "jordanhubbard/pythonos",
+          "githubUrl": "https://github.com/jordanhubbard/pythonos",
+          "canonicalUrl": "https://github.com/jordanhubbard/pythonos",
+          "description": "A tiny OS that boots into python",
+          "chineseDescription": "一个启动进 Python 的迷你操作系统。",
+          "stars": 61,
+          "forks": 8,
+          "openIssues": 0,
+          "language": "Python",
+          "topics": [],
+          "createdAt": "2026-04-27T05:09:48Z",
+          "updatedAt": "2026-09-22T05:45:28Z",
+          "pushedAt": "2026-09-22T05:45:24Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "poseidon/wait-for-status-checks",
+          "githubUrl": "https://github.com/poseidon/wait-for-status-checks",
+          "canonicalUrl": "https://github.com/poseidon/wait-for-status-checks",
+          "description": "GitHub Action that waits for check runs",
+          "chineseDescription": "等待 GitHub check runs 完成的 GitHub Action。",
+          "stars": 60,
+          "forks": 24,
+          "openIssues": 14,
+          "language": "TypeScript",
+          "topics": [
+            "github-action"
+          ],
+          "createdAt": "2023-07-18T06:46:02Z",
+          "updatedAt": "2026-09-22T05:45:39Z",
+          "pushedAt": "2026-09-22T05:45:35Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "solovyov-jenya2004/all_subs",
+          "githubUrl": "https://github.com/solovyov-jenya2004/all_subs",
+          "canonicalUrl": "https://github.com/solovyov-jenya2004/all_subs",
+          "description": "Бесплатные, автообновляемые VPN‑конфигурации для использования при развёртывании белых списков мобильного интернета в Российской Федерации.",
+          "chineseDescription": "在俄罗斯白名单移动网环境下使用的免费、自动更新 VPN 配置合集（俄语）。",
+          "stars": 57,
+          "forks": 2,
+          "openIssues": 0,
+          "recentGrowth": 0,
+          "growthSource": "snapshot",
+          "topics": [
+            "rf",
+            "ru",
+            "russia",
+            "russian-federation",
+            "sub",
+            "subscription",
+            "vpn",
+            "white-list",
+            "white-lists",
+            "whitelist",
+            "whitelists",
+            "wl"
+          ],
+          "createdAt": "2026-04-26T12:32:22Z",
+          "updatedAt": "2026-09-22T05:45:40Z",
+          "pushedAt": "2026-09-22T05:45:36Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "spydisec/spydithreatintel",
+          "githubUrl": "https://github.com/spydisec/spydithreatintel",
+          "canonicalUrl": "https://github.com/spydisec/spydithreatintel",
+          "description": "Spydi ThreatIntel Feed is built on open-source threat intelligence, community-maintained blocklists, and public security research.",
+          "chineseDescription": "基于开源威胁情报、社区维护 blocklist 与公共安全研究的 Spydi ThreatIntel Feed。",
+          "stars": 57,
+          "forks": 4,
+          "openIssues": 0,
+          "topics": [
+            "blocklist",
+            "c2",
+            "commandandcontrol",
+            "cybersecurity",
+            "honeypot",
+            "indicator-of-compromise",
+            "ioc",
+            "ioc-feed",
+            "iocfeed",
+            "malware",
+            "osint",
+            "pihole",
+            "threat-hunting",
+            "threat-intel",
+            "threat-intelligence"
+          ],
+          "createdAt": "2025-01-16T01:07:29Z",
+          "updatedAt": "2026-09-22T05:45:26Z",
+          "pushedAt": "2026-09-22T05:45:23Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "abusaeeidx/CricHd-playlists-Auto-Update-permanent",
+          "githubUrl": "https://github.com/abusaeeidx/crichd-playlists-auto-update-permanent",
+          "canonicalUrl": "https://github.com/abusaeeidx/crichd-playlists-auto-update-permanent",
+          "description": "🌐 CricHD Playlist – Free Live Sports Streaming 🏏 with auto-updated m3u8 playlists every 15 minutes | 🚫 Ad-free | ⚡ Buffer-free | 📱 Works on all devices",
+          "chineseDescription": "自动每 15 分钟更新的 CricHD 免费体育直播 m3u8 playlist。",
+          "stars": 53,
+          "forks": 29,
+          "openIssues": 5,
+          "topics": [
+            "bdix",
+            "crichd",
+            "iptv-channels",
+            "sports-channel-live"
+          ],
+          "createdAt": "2025-04-26T07:06:34Z",
+          "updatedAt": "2026-09-22T05:45:40Z",
+          "pushedAt": "2026-09-22T05:45:35Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        },
+        {
+          "name": "statsig-io/statsigstatus",
+          "githubUrl": "https://github.com/statsig-io/statsigstatus",
+          "canonicalUrl": "https://github.com/statsig-io/statsigstatus",
+          "description": "Statsig's Status Page, forked from our open-source template.",
+          "chineseDescription": "Statsig 的状态页，Fork 自其开源模板。",
+          "stars": 52,
+          "forks": 27,
+          "openIssues": 0,
+          "language": "JavaScript",
+          "topics": [],
+          "createdAt": "2021-06-10T22:53:10Z",
+          "updatedAt": "2026-09-22T05:45:56Z",
+          "pushedAt": "2026-09-22T05:45:52Z",
+          "sources": [
+            "github-search"
+          ],
+          "score": {
+            "snapshotGrowth": 0,
+            "trendingGrowth": 0,
+            "newProjectVelocity": 0,
+            "pushedFreshness": 12,
+            "crossSource": 0,
+            "total": 12,
+            "signals": [
+              "1 天内有更新"
+            ]
+          }
+        }
+      ]
+    },
     {
       "date": "2026-09-21",
       "projects": [
