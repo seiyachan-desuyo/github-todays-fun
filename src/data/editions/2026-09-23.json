@@ -6,11 +6,11 @@
     "targetCount": 30,
     "degraded": false
   },
-  "summary": "今日 Jev/Laya System-1 决策模型再度霸屏：从 MuJoCo 机器人、微信意图识别到 macOS 表单填写；同时 Google ax、CopilotKit openmuse、agent-substrate、browser-use video-use、dream-num Univer 等通用 Agent 编排框架集体升温。",
+  "summary": "今日 Agent 工具链升温：Trending 披露 google/ax、univer、substrate、treg、video-use；快照实增亮点有 OpenDLSS-NR、open-glean、jev-skill，并涌现多款微信与 computer-use 本地辅助。",
   "mode": "live",
   "editorMode": "aime",
   "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
-  "publishedAt": "2026-09-23T05:49:31.382Z",
+  "publishedAt": "2026-09-23T06:13:21.033Z",
   "sourceStatus": [
     {
       "source": "github-search",
@@ -79,7 +79,7 @@
       "githubUrl": "https://github.com/maanhimself/opendlss-nr",
       "canonicalUrl": "https://github.com/maanhimself/opendlss-nr",
       "description": "A Vulkan reimplementation of NVIDIA's DLSS 5 Neural Rendering network, bit-exact against the original.",
-      "chineseDescription": "用 Vulkan 位对位复刻 NVIDIA DLSS 5 神经渲染网络的开源实现。",
+      "chineseDescription": "用 Vulkan 重实现 NVIDIA DLSS 5 的神经渲染网络，并与原版做到位级一致。",
       "stars": 291,
       "forks": 29,
       "openIssues": 0,
@@ -106,14 +106,13 @@
           "2 天内有更新"
         ]
       },
-      "plainSummary": "用 Vulkan 位对位复刻 NVIDIA DLSS 5 神经渲染网络的开源实现。",
-      "introduction": "OpenDLSS-NR 用 Vulkan 复刻了 NVIDIA DLSS 5 的神经渲染网络，输出结果与原实现 bit-exact 一致。仓库同时提供推理管线与验证工具，方便在非 NVIDIA 平台上研究 DLSS 神经架构。",
-      "whyToday": "新仓 3 天内快照实增 +146 stars，日均约 118 stars，是当前 GitHub 上少见的 DLSS 5 开放实现。",
-      "audience": "关注实时渲染、图形学与神经超分辨率的开发者与研究者。",
+      "plainSummary": "用 Vulkan 重实现 NVIDIA DLSS 5 神经渲染网络的开源项目。",
+      "introduction": "该项目自述为 NVIDIA DLSS 5 Neural Rendering network 的 Vulkan 重实现，并强调与原版做到 bit-exact（一致到位级别）。整体定位非常明确：复刻一个特定的神经渲染网络实现。",
+      "whyToday": "信号来自 GitHub 快照与仓库活跃度：快照实增 +146；新仓约 118 stars/day；2 天内有更新。",
+      "audience": "关注图形渲染与 Vulkan 生态、对神经渲染/超分相关实现感兴趣的开发者。",
       "editorialTags": [
-        "设计",
-        "开源替代",
-        "学习"
+        "开发工具",
+        "开源替代"
       ],
       "recommendation": 5
     },
@@ -122,7 +121,7 @@
       "githubUrl": "https://github.com/wuyoscar/jev-skill",
       "canonicalUrl": "https://github.com/wuyoscar/jev-skill",
       "description": "An awesome collection of Jev use cases, workflows, and agent skills.",
-      "chineseDescription": "Jev 用例、工作流与 Agent 技能的精选合集。",
+      "chineseDescription": "Jev 使用案例、工作流与 agent skills 的精选合集。",
       "stars": 442,
       "forks": 25,
       "openIssues": 0,
@@ -149,14 +148,13 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "Jev 决策模型的用例、工作流与 Agent Skill 精选合集。",
-      "introduction": "围绕 Jev（TypeSafe 系 System-1 决策模型）汇总了各类实战用例、工作流模板与 Agent Skill。开发者可以直接照搬这些配方，把 Jev 快速接入自己的 Agent 或工具链。",
-      "whyToday": "新仓日均 134 stars/day，快照实增 +56，是今日 Jev 生态最活跃的资源型仓库。",
-      "audience": "想快速上手 Jev / TypeSafe 决策模型的 Agent 开发者。",
+      "plainSummary": "Jev 使用案例、工作流与 agent skills 的资料汇总。",
+      "introduction": "项目描述为“awesome collection”，重点收集 Jev 的 use cases、workflows 以及可复用的 agent skills。适合作为了解与复用 Jev 实践的入口。",
+      "whyToday": "信号来自 GitHub 快照：快照实增 +56；新仓约 134 stars/day；1 天内有更新。",
+      "audience": "想快速浏览 Jev 生态实践、寻找可直接复用工作流的智能体开发者。",
       "editorialTags": [
-        "AI 工具",
-        "开发工具",
-        "开源替代"
+        "学习",
+        "开发工具"
       ],
       "recommendation": 4
     },
@@ -165,7 +163,7 @@
       "githubUrl": "https://github.com/ferrycorleone/crush-monitor",
       "canonicalUrl": "https://github.com/ferrycorleone/crush-monitor",
       "description": "Crush 好感监控器：用 Jev 分析微信聊天的情绪、意图和回复表现。本机部署，使用自己的 API Key。",
-      "chineseDescription": "Crush 好感监控器：用 Jev 分析微信聊天的情绪、意图与回复表现，全部本地跑。",
+      "chineseDescription": "Crush 好感监控器：用 Jev 分析微信聊天的情绪、意图和回复表现；本机部署，使用自己的 API Key。",
       "stars": 181,
       "forks": 19,
       "openIssues": 1,
@@ -192,14 +190,13 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "用 Jev 分析微信聊天情绪与回复表现的本地好感度监控器。",
-      "introduction": "Crush Monitor 把你的微信聊天丢给本地部署的 Jev 模型，用来分析对方情绪、意图以及你自己的回复表现。所有推理都跑在自己的机器上，通过自带的 API Key 调用模型，隐私可控。",
-      "whyToday": "新仓日均 63 stars/day，快照实增 +53，配合 Jev 系爆发一起上榜。",
-      "audience": "想给个人聊天做数据化复盘、又在意隐私的社交场景玩家。",
+      "plainSummary": "本机部署的“微信聊天好感监控器”，用 Jev 分析情绪与意图。",
+      "introduction": "项目自述为 Crush 好感监控器：分析微信聊天内容中的情绪、意图与回复表现。强调本机部署，并使用自己的 API Key。",
+      "whyToday": "信号来自 GitHub 快照与活跃度：快照实增 +53；新仓约 63 stars/day；1 天内有更新。",
+      "audience": "希望在本地对聊天内容做分析/提示、并重视“自己掌控 API Key”的用户与开发者。",
       "editorialTags": [
-        "有趣",
         "AI 工具",
-        "效率"
+        "有趣"
       ],
       "recommendation": 4
     },
@@ -208,7 +205,7 @@
       "githubUrl": "https://github.com/hydra-db/open-glean",
       "canonicalUrl": "https://github.com/hydra-db/open-glean",
       "description": "An open-source AI platform for knowledge work. Connect your apps, find answers, and get work done.",
-      "chineseDescription": "开源 AI 知识工作平台，接入自有应用做统一检索与任务执行，对标 Glean。",
+      "chineseDescription": "面向知识工作的开源 AI 平台：连接你的应用、查找答案并完成工作。",
       "stars": 861,
       "forks": 371,
       "openIssues": 0,
@@ -235,23 +232,22 @@
           "7 天内有更新"
         ]
       },
-      "plainSummary": "开源的 AI 知识工作平台，对标 Glean 做统一检索与执行。",
-      "introduction": "Open-Glean 提供了一个开源的 AI 知识工作平台：连接你的多种应用做统一检索、回答与任务执行。整体思路对齐 Glean，但可以部署到自己控制的环境里。",
-      "whyToday": "新仓日均 139 stars/day，快照实增 +200，是今日体量最大的知识管理开源新星。",
-      "audience": "想私有化部署 Glean 类企业搜索与 Agent 工作台的团队。",
+      "plainSummary": "面向知识工作的开源 AI 平台：连接应用、查找答案并完成工作。",
+      "introduction": "项目将自己定位为开源 AI 平台，面向知识工作场景。描述强调“连接你的应用”“找答案”“把工作做完”，属于偏平台/产品形态的工具。",
+      "whyToday": "信号来自 GitHub 快照：快照实增 +200；新仓约 139 stars/day；7 天内有更新。",
+      "audience": "希望把多应用信息聚合到一个 AI 工作台里处理的团队与个人用户。",
       "editorialTags": [
-        "开源替代",
-        "效率",
-        "AI 工具"
+        "AI 工具",
+        "开发工具"
       ],
-      "recommendation": 5
+      "recommendation": 4
     },
     {
       "name": "FBddcz/embodied-jev",
       "githubUrl": "https://github.com/fbddcz/embodied-jev",
       "canonicalUrl": "https://github.com/fbddcz/embodied-jev",
       "description": "EmbodiedJev: MuJoCo robot decision workbench with MiniCPM5-2B, Jev and compatible model APIs",
-      "chineseDescription": "MuJoCo 机器人决策工作台，用 MiniCPM5-2B、Jev 及兼容模型 API 驱动。",
+      "chineseDescription": "EmbodiedJev：基于 MuJoCo 的机器人决策工作台，支持 MiniCPM5-2B、Jev 及兼容模型 API。",
       "stars": 195,
       "forks": 4,
       "openIssues": 2,
@@ -278,12 +274,11 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "用 MiniCPM5-2B 和 Jev 驱动的 MuJoCo 机器人决策工作台。",
-      "introduction": "EmbodiedJev 在 MuJoCo 仿真环境里搭出一个机器人决策 workbench，用 MiniCPM5-2B、Jev 及兼容模型 API 做感知与决策。开发者可以在这里把 System-1 决策模型直接接进机器人控制回路。",
-      "whyToday": "新仓日均 60 stars/day，快照实增 +30，代表 Jev 在具身智能方向的最新落地。",
-      "audience": "研究具身智能、机器人策略与仿真训练的团队。",
+      "plainSummary": "基于 MuJoCo 的机器人决策工作台，支持 Jev 与兼容模型 API。",
+      "introduction": "EmbodiedJev 自述为“MuJoCo robot decision workbench”，并列出 MiniCPM5-2B、Jev 以及兼容模型 API。整体方向更偏具身/机器人仿真下的决策工作台。",
+      "whyToday": "信号来自 GitHub 快照与活跃度：快照实增 +30；新仓约 60 stars/day；1 天内有更新。",
+      "audience": "在做 MuJoCo 机器人仿真、希望把决策模型接进控制回路的开发者与研究者。",
       "editorialTags": [
-        "学习",
         "AI 工具",
         "开发工具"
       ],
@@ -294,7 +289,7 @@
       "githubUrl": "https://github.com/amitshekhariitbhu/ai-engineer-roadmap",
       "canonicalUrl": "https://github.com/amitshekhariitbhu/ai-engineer-roadmap",
       "description": "AI Engineer Roadmap - A step-by-step AI Engineering roadmap to become an AI Engineer, with a blog for every topic.",
-      "chineseDescription": "分步式 AI 工程师成长路线图，每个主题配套博客文章。",
+      "chineseDescription": "AI Engineer 学习路线图：一步步成为 AI 工程师，每个主题配一篇博客。",
       "stars": 178,
       "forks": 18,
       "openIssues": 0,
@@ -326,22 +321,21 @@
           "3 天内有更新"
         ]
       },
-      "plainSummary": "分步式 AI 工程师成长路线图，每个主题都配了博客文章。",
-      "introduction": "这个仓库把成为 AI 工程师所需的能力拆解成一份逐步推进的路线图，每个环节都对应一篇解释博客。适合当作自学 Checklist 或团队入门指引。",
-      "whyToday": "仅 3 天内快照实增 +21 stars，日均 64 stars/day，是本周涨得最快的学习资源类仓库。",
-      "audience": "想系统学习 AI 工程的开发者以及入门期学生。",
+      "plainSummary": "AI 工程师学习路线图（每个主题配博客）。",
+      "introduction": "这是一个 Markdown 形式的学习路线图项目：按步骤组织 AI Engineering 相关主题，并为每个主题提供对应博客入口。内容以“路线 + 文章链接”为核心。",
+      "whyToday": "信号来自 GitHub 快照：快照实增 +21；新仓约 64 stars/day；3 天内有更新。",
+      "audience": "想按路线系统补齐 AI 工程实践的人（学生、自学者、转岗工程师）。",
       "editorialTags": [
-        "学习",
-        "AI 工具"
+        "学习"
       ],
-      "recommendation": 4
+      "recommendation": 3
     },
     {
       "name": "benjiyaya/ComfyUI-Qwen-Image-2.1-Prompt-Enhancer",
       "githubUrl": "https://github.com/benjiyaya/comfyui-qwen-image-2.1-prompt-enhancer",
       "canonicalUrl": "https://github.com/benjiyaya/comfyui-qwen-image-2.1-prompt-enhancer",
       "description": "ComfyUI  Custom Node for Qwen-Image-2.1 Prompt Enhancement , support T2I , Image Edit",
-      "chineseDescription": "ComfyUI 自定义节点：为 Qwen-Image 2.1 做文生图与图像编辑的提示词增强。",
+      "chineseDescription": "ComfyUI 自定义节点：为 Qwen-Image-2.1 做提示词增强，支持文生图与图像编辑。",
       "stars": 127,
       "forks": 13,
       "openIssues": 1,
@@ -368,23 +362,22 @@
           "2 天内有更新"
         ]
       },
-      "plainSummary": "ComfyUI 上专门给 Qwen-Image 2.1 做 Prompt 增强的自定义节点。",
-      "introduction": "这是一个 ComfyUI 自定义节点，专为 Qwen-Image 2.1 优化提示词质量，同时支持文生图（T2I）与图像编辑（Image Edit）两条路径。装好后可以直接接入现有 ComfyUI 工作流。",
-      "whyToday": "新仓 2 天内快照实增 +18 stars，日均 51 stars/day，是围绕 Qwen-Image 2.1 的高价值扩展。",
-      "audience": "用 ComfyUI + Qwen-Image 做图像创作的设计师与 AI 玩家。",
+      "plainSummary": "ComfyUI 节点：为 Qwen-Image-2.1 做提示词增强。",
+      "introduction": "项目提供一个 ComfyUI Custom Node，用于 Qwen-Image-2.1 的 prompt enhancement。描述还提到支持 T2I 与 image edit 两类用法。",
+      "whyToday": "信号来自 GitHub 快照：快照实增 +18；新仓约 51 stars/day；2 天内有更新。",
+      "audience": "常用 ComfyUI 工作流、希望在提示词层面提升生成/编辑效果的 AIGC 用户。",
       "editorialTags": [
         "AI 工具",
-        "设计",
         "开发工具"
       ],
-      "recommendation": 4
+      "recommendation": 3
     },
     {
       "name": "wquguru/dasheng",
       "githubUrl": "https://github.com/wquguru/dasheng",
       "canonicalUrl": "https://github.com/wquguru/dasheng",
       "description": "大声读 — R2T2 流式 ASR 听，Jev 逐词判，英文朗读评分",
-      "chineseDescription": "大声读：R2T2 流式 ASR 听、Jev 逐词判、英文朗读实时打分。",
+      "chineseDescription": "大声读：R2T2 流式 ASR 听写 + Jev 逐词判定，用于英文朗读评分。",
       "stars": 135,
       "forks": 18,
       "openIssues": 0,
@@ -411,23 +404,22 @@
           "3 天内有更新"
         ]
       },
-      "plainSummary": "大声读：流式 ASR + Jev 逐词判定，给英文朗读实时打分。",
-      "introduction": "「大声读」串联 R2T2 流式 ASR 做听写，再让 Jev 逐词做判定，为英文朗读提供实时评分。整套流程可以直接跑在自己的机器上，用来练口语或校对朗读。",
-      "whyToday": "新仓 3 天内实增 +13，日均 49 stars/day，是今日最实用的 Jev 教育应用。",
-      "audience": "练英语口语、想要客观打分反馈的学习者与教育产品团队。",
+      "plainSummary": "R2T2 流式 ASR + Jev 逐词判定的英文朗读评分工具。",
+      "introduction": "项目描述为“大声读”，组合了 R2T2 流式 ASR（听写）与 Jev 的逐词判定，用于英文朗读评分。整体属于“语音输入 → 判定/评分”的本地/工具链型项目。",
+      "whyToday": "信号来自 GitHub 快照：快照实增 +13；新仓约 49 stars/day；3 天内有更新。",
+      "audience": "做口语练习产品、或想用 ASR + 轻量判定模型实现评分/反馈的开发者。",
       "editorialTags": [
-        "有趣",
         "AI 工具",
         "学习"
       ],
-      "recommendation": 4
+      "recommendation": 3
     },
     {
       "name": "ghuntley/underclass",
       "githubUrl": "https://github.com/ghuntley/underclass",
       "canonicalUrl": "https://github.com/ghuntley/underclass",
       "description": "underclass: an OpenAI-compatible pooling proxy that pins sessions to one account (prompt cache stays warm), cools quota-exhausted subscriptions until their window resets, and fails fast with the earliest Retry-After when the whole pool is dry.",
-      "chineseDescription": "OpenAI 兼容的账号池化代理，会把会话钉在同一账号保持缓存，配额耗尽自动冷却。",
+      "chineseDescription": "OpenAI 兼容的池化代理：会话固定到单账号（保持提示缓存），对耗尽配额的订阅“降温”等待窗口重置；池耗尽时基于最早的 Retry-After 快速失败。",
       "stars": 157,
       "forks": 9,
       "openIssues": 4,
@@ -457,14 +449,13 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "OpenAI 兼容账号池化代理，粘性会话 + 配额冷却 + 快速失败。",
-      "introduction": "Underclass 提供一个 OpenAI 兼容的池化代理：会话钉在同一账号上以保持 prompt cache，配额耗尽的订阅会被自动冷却直到窗口重置，池子空了会立刻返回最早的 Retry-After。整体设计以稳定并压榨每个订阅额度为目标。",
-      "whyToday": "新仓 1 天日均 50 stars/day，快照实增 +6，是今日运维向 AI 网关代表。",
-      "audience": "用多账号池化 OpenAI/Claude 的团队，或希望榨干订阅额度的 SaaS 团队。",
+      "plainSummary": "OpenAI 兼容的账号池化代理：会话绑定、配额降温与快速失败。",
+      "introduction": "underclass 自述为 OpenAI-compatible pooling proxy，会把会话固定到某个账号以保持 prompt cache。遇到配额耗尽时它会“降温”等待窗口重置；当整个池都不可用时，再返回最早的 Retry-After 并快速失败。",
+      "whyToday": "信号来自 GitHub 快照与活跃度：快照实增 +6；新仓约 50 stars/day；1 天内有更新。",
+      "audience": "需要多账号/多订阅池化接入 OpenAI 兼容接口、并关注配额窗口管理的工程团队。",
       "editorialTags": [
         "开发工具",
-        "AI 工具",
-        "开源替代"
+        "效率"
       ],
       "recommendation": 4
     },
@@ -473,7 +464,7 @@
       "githubUrl": "https://github.com/google/ax",
       "canonicalUrl": "https://github.com/google/ax",
       "description": "Google's open agentic orchestration runtime",
-      "chineseDescription": "Google 官方开源的 Agentic 编排运行时。",
+      "chineseDescription": "Google 开源的 agent 编排运行时。",
       "stars": 7919,
       "forks": 368,
       "recentGrowth": 2305,
@@ -494,14 +485,13 @@
           "Trending 披露 +2305"
         ]
       },
-      "plainSummary": "Google 官方开源的 Agentic 编排运行时。",
-      "introduction": "Google ax 是 Google 官方发布的开源 Agent 编排运行时，用来搭建、调度与运行多步骤 AI Agent 应用。仓库主打作为通用 orchestration runtime 使用。",
-      "whyToday": "当天 GitHub Trending 明示 +2305 stars，是本期唯一带官方背书的巨型 Agent 框架事件。",
-      "audience": "关注 Agent 框架、编排引擎与生产落地的架构师和平台团队。",
+      "plainSummary": "Google 的开源 agent 编排运行时。",
+      "introduction": "项目描述非常直接：Google's open agentic orchestration runtime。整体信息以“开源 + agent 编排运行时”为主，未在此处展开更多细节。",
+      "whyToday": "信号来自 GitHub Trending 页面披露：Trending 披露 +2305。",
+      "audience": "关注 Agent 编排/运行时基础设施、以及 Google 开源动向的开发者与架构师。",
       "editorialTags": [
-        "AI 工具",
         "开发工具",
-        "开源替代"
+        "AI 工具"
       ],
       "recommendation": 5
     },
@@ -510,7 +500,7 @@
       "githubUrl": "https://github.com/caxete/crypto-tax-calculator",
       "canonicalUrl": "https://github.com/caxete/crypto-tax-calculator",
       "description": "A comprehensive crypto tax solution supporting leading wallets, exchanges, and blockchain explorers.",
-      "chineseDescription": "覆盖主流钱包、交易所与链上浏览器的加密货币报税工具。",
+      "chineseDescription": "覆盖主流钱包、交易所与区块浏览器的加密货币税务方案。",
       "stars": 378,
       "forks": 121,
       "openIssues": 0,
@@ -546,14 +536,13 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "覆盖主流钱包、交易所与链上浏览器的加密报税解决方案。",
-      "introduction": "Crypto Tax Calculator 是一套完整的加密货币报税工具，能接入主流钱包、交易所与区块链浏览器数据，帮助用户产出合规的税务报告。适合个人玩家或做 Web3 财税的团队自建流程。",
-      "whyToday": "新仓日均 130 stars/day，快照实增 +1 但增长曲线稳定，是今日金融方向亮点。",
-      "audience": "炒币要报税的个人，以及提供 Web3 财税服务的团队。",
+      "plainSummary": "支持多钱包/交易所/链浏览器的加密货币税务计算方案。",
+      "introduction": "该项目定位为综合性的 crypto tax 解决方案，描述明确覆盖钱包、交易所与区块链浏览器等数据来源。适合把“税务计算”作为一个可复用的组件/工具链来使用。",
+      "whyToday": "信号来自 GitHub 快照与活跃度：快照实增 +1；新仓约 130 stars/day；1 天内有更新。",
+      "audience": "需要做加密资产交易记录汇总与税务计算的开发者、以及相关产品团队。",
       "editorialTags": [
-        "有趣",
-        "开源替代",
-        "效率"
+        "数据",
+        "开发工具"
       ],
       "recommendation": 3
     },
@@ -562,7 +551,7 @@
       "githubUrl": "https://github.com/dream-num/univer",
       "canonicalUrl": "https://github.com/dream-num/univer",
       "description": "The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime.",
-      "chineseDescription": "面向 AI Agent 的 Office 运行时，一套框架统一电子表格、文档、幻灯片、Canvas、关系表和 PDF。",
+      "chineseDescription": "面向 AI Agents 的 Office Harness：在一个运行时里提供表格、文档、幻灯片、画布、关系表和 PDF。",
       "stars": 15731,
       "forks": 1401,
       "recentGrowth": 255,
@@ -583,13 +572,12 @@
           "Trending 披露 +255"
         ]
       },
-      "plainSummary": "面向 AI Agent 的 Office 运行时：一套引擎搞定表格、文档、幻灯片、PDF。",
-      "introduction": "Dream-num Univer 把电子表格、文档、幻灯片、Canvas、关系表和 PDF 编排在同一个运行时里，作为 AI Agent 的 Office Harness 使用。适合做那种需要 Agent 直接读写多种办公文档的场景。",
-      "whyToday": "当天 GitHub Trending 明示 +255 stars，总 stars 15.7k，是今日办公协同赛道最有背景的项目。",
-      "audience": "给 Agent 做办公自动化、企业内网 Office 工具链的团队。",
+      "plainSummary": "把表格/文档/幻灯片等 Office 能力封装成“AI Agent 运行时”。",
+      "introduction": "Univer 将自身定位为“Office Harness for AI Agents”：在一个运行时里提供 Spreadsheets、Docs、Slides、Canvas、Relational Tables 与 PDF。更像是把办公组件能力抽象为可供智能体调用的一套 runtime。",
+      "whyToday": "信号来自 GitHub Trending 页面披露：Trending 披露 +255。",
+      "audience": "做 AI 办公/文档/表格相关 Agent 产品与插件的开发团队。",
       "editorialTags": [
         "开发工具",
-        "效率",
         "AI 工具"
       ],
       "recommendation": 5
@@ -599,7 +587,7 @@
       "githubUrl": "https://github.com/agent-substrate/substrate",
       "canonicalUrl": "https://github.com/agent-substrate/substrate",
       "description": "Agent Substrate: the core system",
-      "chineseDescription": "Agent Substrate：Agent 基础设施的核心系统。",
+      "chineseDescription": "Agent Substrate：核心系统。",
       "stars": 3087,
       "forks": 389,
       "recentGrowth": 245,
@@ -620,10 +608,10 @@
           "Trending 披露 +245"
         ]
       },
-      "plainSummary": "Agent Substrate：Agent 基础设施的核心系统。",
-      "introduction": "Agent Substrate 定位为 Agent 基础设施的核心系统，提供一层通用底座给上层 Agent 应用使用。仓库当前主打把 Substrate 打造成 Agent 的核心运行系统。",
-      "whyToday": "当天 GitHub Trending 明示 +245 stars，是本期上升最快的 Agent 底座类项目。",
-      "audience": "想自建 Agent 平台底座、做通用运行时的架构团队。",
+      "plainSummary": "Agent Substrate 的核心系统。",
+      "introduction": "仓库描述为“Agent Substrate: the core system”，信息较为克制，主要强调其作为核心系统/底座。适合把它作为相关生态的入口项目来关注。",
+      "whyToday": "信号来自 GitHub Trending 页面披露：Trending 披露 +245。",
+      "audience": "关注 agent 底层系统/平台型项目的人，或在跟踪 Agent Substrate 生态的开发者。",
       "editorialTags": [
         "开发工具",
         "AI 工具"
@@ -635,7 +623,7 @@
       "githubUrl": "https://github.com/superdesigndev/treg",
       "canonicalUrl": "https://github.com/superdesigndev/treg",
       "description": "OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn",
-      "chineseDescription": "Agent 工具的 OpenRouter，统一路由和调用第三方工具服务。",
+      "chineseDescription": "面向 agent 工具的 OpenRouter。",
       "stars": 2319,
       "forks": 226,
       "recentGrowth": 230,
@@ -656,10 +644,10 @@
           "Trending 披露 +230"
         ]
       },
-      "plainSummary": "面向 Agent 工具的 OpenRouter，一层统一路由所有第三方工具。",
-      "introduction": "Treg 把「OpenRouter」的思路搬到了 Agent Tools：一个统一入口去路由和调度不同的第三方工具或服务。方便 Agent 项目不用绑定单一工具生态。",
-      "whyToday": "当天 GitHub Trending 明示 +230 stars，代表 Agent Tools 中间件方向的最新爆点。",
-      "audience": "开发多工具 Agent、需要统一工具网关的团队。",
+      "plainSummary": "面向 agent 工具的“OpenRouter”式路由层。",
+      "introduction": "项目自述为“OpenRouter for agent tools”，即把各类 agent 工具的接入做成统一的路由层/聚合入口。描述中还给出了社区入口链接。",
+      "whyToday": "信号来自 GitHub Trending 页面披露：Trending 披露 +230。",
+      "audience": "在做 agent 工具生态整合、需要一个统一入口/路由层的开发者与社区维护者。",
       "editorialTags": [
         "开发工具",
         "AI 工具"
@@ -671,7 +659,7 @@
       "githubUrl": "https://github.com/browser-use/video-use",
       "canonicalUrl": "https://github.com/browser-use/video-use",
       "description": "Edit videos with coding agents",
-      "chineseDescription": "让 Coding Agent 直接编辑视频的开源工具链。",
+      "chineseDescription": "用 coding agents 进行视频编辑。",
       "stars": 26022,
       "forks": 3130,
       "recentGrowth": 191,
@@ -692,13 +680,13 @@
           "Trending 披露 +191"
         ]
       },
-      "plainSummary": "让 Coding Agent 直接操作与编辑视频。",
-      "introduction": "Video-Use 是 browser-use 团队的延伸项目，让 Coding Agent 直接负责视频编辑任务：处理素材、剪辑与合成都由 Agent 编排完成。适合探索 Agent 在多媒体制作里的边界。",
-      "whyToday": "当天 GitHub Trending 明示 +191 stars，母项目 26k stars 背书，是今日多模态 Agent 代表。",
-      "audience": "关注 Agent 落地视频剪辑与多媒体自动化的创作者与开发者。",
+      "plainSummary": "用 coding agents 来编辑视频。",
+      "introduction": "video-use 用一句话定义自己：Edit videos with coding agents。整体定位是把“视频编辑”作为可编排的 agent 能力来使用。",
+      "whyToday": "信号来自 GitHub Trending 页面披露：Trending 披露 +191。",
+      "audience": "想把视频处理流程自动化、或探索“代码智能体 + 媒体编辑”的创作者与工程团队。",
       "editorialTags": [
-        "设计",
-        "AI 工具"
+        "AI 工具",
+        "效率"
       ],
       "recommendation": 4
     },
@@ -707,7 +695,7 @@
       "githubUrl": "https://github.com/shhivv/arc-cua",
       "canonicalUrl": "https://github.com/shhivv/arc-cua",
       "description": "Superfast action layer for computer-use agents",
-      "chineseDescription": "为 computer-use agent 打造的超快动作执行层。",
+      "chineseDescription": "为 computer-use 智能体提供的超快动作层。",
       "stars": 128,
       "forks": 13,
       "openIssues": 1,
@@ -734,22 +722,22 @@
           "2 天内有更新"
         ]
       },
-      "plainSummary": "给 computer-use agent 打造的超快动作执行层。",
-      "introduction": "Arc-CUA 是一个专为 computer-use agent 设计的超快 action layer，把桌面/浏览器上的动作调度做得非常薄。整体思路是让 CUA Agent 的判定和执行链路尽可能接近实时。",
-      "whyToday": "新仓 2 天日均 42 stars/day，配合今日 CUA 生态的整体爆发。",
-      "audience": "做桌面自动化 / CUA agent、追求低延迟操作的开发者。",
+      "plainSummary": "为 computer-use 智能体提供的动作层。",
+      "introduction": "项目自述为“Superfast action layer for computer-use agents”，重点是给 computer-use 类智能体提供更快的动作执行层。描述本身没有展开实现细节，因此文案保持克制。",
+      "whyToday": "信号来自 GitHub 快照与活跃度：快照实增 +1；新仓约 42 stars/day；2 天内有更新。",
+      "audience": "在做 computer-use/桌面自动化智能体、需要动作执行层的人。",
       "editorialTags": [
         "开发工具",
-        "AI 工具"
+        "效率"
       ],
-      "recommendation": 4
+      "recommendation": 3
     },
     {
       "name": "unreallabsai/unreal-agent",
       "githubUrl": "https://github.com/unreallabsai/unreal-agent",
       "canonicalUrl": "https://github.com/unreallabsai/unreal-agent",
       "description": "Async-first agent harness",
-      "chineseDescription": "Async-first 的 Agent Harness 框架，主打异步优先执行。",
+      "chineseDescription": "异步优先（async-first）的 agent harness。",
       "stars": 1184,
       "forks": 55,
       "openIssues": 4,
@@ -773,10 +761,10 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "Async-first 的 Agent Harness 框架。",
-      "introduction": "Unreal Agent 主打「Async-first」，把并发、异步任务和长时间运行的 Agent 步骤做成一等公民。相比同类框架，它更强调非阻塞的执行模型。",
-      "whyToday": "新仓 1 天冲到 1184 stars，日均约 817 stars/day，是今日增速前列的 Agent Harness。",
-      "audience": "做长任务、多分支并发 Agent 的开发者与平台团队。",
+      "plainSummary": "异步优先的 agent harness。",
+      "introduction": "项目描述为“Async-first agent harness”。信息不多，但方向明确：把异步作为优先设计目标的智能体执行/封装框架。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 817 stars/day；1 天内有更新。",
+      "audience": "需要构建或评估 agent harness、并偏好异步模型的工程团队。",
       "editorialTags": [
         "开发工具",
         "AI 工具"
@@ -788,7 +776,7 @@
       "githubUrl": "https://github.com/copilotkit/openmuse",
       "canonicalUrl": "https://github.com/copilotkit/openmuse",
       "description": "A personal agent with a browser, terminal, files, and work that keeps going built with CopilotKit and AG-UI.",
-      "chineseDescription": "基于 CopilotKit 与 AG-UI 的个人 Agent：自带浏览器、终端、文件与持续运行的任务。",
+      "chineseDescription": "一个个人智能体：带浏览器、终端、文件与可持续执行的工作流，基于 CopilotKit 与 AG-UI 构建。",
       "stars": 1127,
       "forks": 118,
       "openIssues": 21,
@@ -812,14 +800,13 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "CopilotKit 出的个人 Agent，带浏览器、终端、文件、AG-UI。",
-      "introduction": "OpenMuse 用 CopilotKit + AG-UI 构建了一个个人级 Agent：内建浏览器、终端与文件系统，工作可以持续跑不打断。作为个人助理场景的开源方案，可扩展性较好。",
-      "whyToday": "新仓 1 天冲到 1127 stars，日均 145 stars/day，是今天个人 Agent 方向的门面。",
-      "audience": "想自建个人 AI 助理、又偏好开源栈的开发者。",
+      "plainSummary": "个人智能体：集成浏览器、终端、文件与持续工作能力。",
+      "introduction": "openmuse 描述为个人 agent，具备浏览器、终端、文件与可持续执行的工作（keeps going）。项目基于 CopilotKit 与 AG-UI 构建，定位偏“能动手做事”的个人助手。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 145 stars/day；1 天内有更新。",
+      "audience": "想搭建“带浏览器/终端能力”的个人智能体原型，并关注 CopilotKit 生态的开发者。",
       "editorialTags": [
         "AI 工具",
-        "有趣",
-        "开源替代"
+        "开发工具"
       ],
       "recommendation": 4
     },
@@ -828,7 +815,7 @@
       "githubUrl": "https://github.com/deepopen-com/deepopen",
       "canonicalUrl": "https://github.com/deepopen-com/deepopen",
       "description": "非自回归System 1决策引擎，专为结构化类型决策场景设计  DeepOpen Multilingual, non-autoregressive System 1 decision engine.",
-      "chineseDescription": "非自回归 System 1 决策引擎，专为结构化类型决策场景设计，支持多语言。",
+      "chineseDescription": "DeepOpen：面向结构化类型决策场景的多语种非自回归 System 1 决策引擎。",
       "stars": 377,
       "forks": 3,
       "openIssues": 6,
@@ -852,13 +839,12 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "非自回归 System-1 决策引擎，专攻结构化类型决策。",
-      "introduction": "DeepOpen 是一个多语言、非自回归的 System-1 决策引擎，专为结构化类型化决策场景设计。相比自回归 LLM，它在结构化输入输出场景下的延迟和成本会更友好。",
-      "whyToday": "新仓 1 天冲到 377 stars，日均 162 stars/day，是今日 Jev/Laya 之外另一位 System-1 玩家。",
-      "audience": "要在生产系统里做低延迟结构化决策的团队。",
+      "plainSummary": "面向结构化类型决策的非自回归 System 1 决策引擎。",
+      "introduction": "DeepOpen 自述为“Multilingual, non-autoregressive System 1 decision engine”，并强调面向结构化类型决策场景。整体更偏“决策引擎/判定模型”而非文本生成。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 162 stars/day；1 天内有更新。",
+      "audience": "需要结构化决策（System 1）能力、并希望以多语言方式接入的智能体/应用开发者。",
       "editorialTags": [
         "AI 工具",
-        "学习",
         "开发工具"
       ],
       "recommendation": 4
@@ -868,7 +854,7 @@
       "githubUrl": "https://github.com/freestylefly/wechatbridge",
       "canonicalUrl": "https://github.com/freestylefly/wechatbridge",
       "description": "微信聊天记录一键转发到 AI Agent 与 Obsidian 的原生 macOS 工具",
-      "chineseDescription": "原生 macOS 工具，一键把微信聊天记录同步到 AI Agent 与 Obsidian。",
+      "chineseDescription": "原生 macOS 工具：一键把微信聊天记录转发到 AI Agent 与 Obsidian。",
       "stars": 356,
       "forks": 187,
       "openIssues": 5,
@@ -900,12 +886,11 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "原生 macOS 工具，把微信聊天一键同步到 AI Agent 和 Obsidian。",
-      "introduction": "WeChatBridge 是一款原生 macOS 工具，把微信聊天记录一键转发到 AI Agent 与 Obsidian 笔记库里。适合把聊天沉淀成可检索、可分析的个人知识资产。",
-      "whyToday": "新仓 1 天冲到 356 stars，日均 155 stars/day，配合今日一众微信 AI 工具一起爆发。",
-      "audience": "重度使用 Obsidian、想把微信聊天沉淀成知识库的用户。",
+      "plainSummary": "macOS 原生工具：把微信聊天记录一键转发到 AI Agent 与 Obsidian。",
+      "introduction": "项目描述明确为原生 macOS 工具，目标是把微信聊天记录一键转发到 AI Agent 与 Obsidian。偏向“个人知识流/Agent 输入”的桥接组件。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 155 stars/day；1 天内有更新。",
+      "audience": "在 macOS 上做个人知识管理、想把微信聊天纳入 Obsidian/Agent 工作流的人。",
       "editorialTags": [
-        "有趣",
         "效率",
         "开发工具"
       ],
@@ -916,7 +901,7 @@
       "githubUrl": "https://github.com/jev-chat/jev-chat-windows",
       "canonicalUrl": "https://github.com/jev-chat/jev-chat-windows",
       "description": "微信（Windows 4.x）旁挂的回复辅助：窗口截图 + 本地离线 OCR 读对方消息 → Jev 判断意图 → 3 条候选一键填入，发送永远手动",
-      "chineseDescription": "Windows 微信 4.x 旁挂回复助手：本地 OCR + Jev 判意图，给三条候选回复由人工发送。",
+      "chineseDescription": "微信（Windows 4.x）旁挂回复辅助：窗口截图 + 本地离线 OCR 读取对方消息 → Jev 判断意图 → 3 条候选一键填入；发送永远手动。",
       "stars": 327,
       "forks": 72,
       "openIssues": 9,
@@ -951,12 +936,11 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "Windows 微信 4.x 的旁挂 AI 回复辅助，本地 OCR + Jev 意图判断。",
-      "introduction": "Jev-Chat-Windows 通过窗口截图 + 本地离线 OCR 读取微信 4.x 里的消息，再让 Jev 判定意图，给出 3 条候选回复并一键填入输入框。所有发送都需要人工确认，Agent 从不越权操作。",
-      "whyToday": "新仓 1 天冲到 327 stars，日均 181 stars/day，代表今日微信辅助工具方向的 Windows 侧代表。",
-      "audience": "重度用微信办公、想借 AI 起草回复但保留人工把关的 Windows 用户。",
+      "plainSummary": "Windows 微信旁挂回复辅助：截图 + 离线 OCR + Jev 判意图。",
+      "introduction": "该项目面向 Windows 4.x 微信客户端，通过窗口截图与本地离线 OCR 读取对方消息，再用 Jev 判断意图，生成 3 条候选并支持一键填入输入框。项目描述强调“发送永远手动”。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 181 stars/day；1 天内有更新。",
+      "audience": "希望在 Windows 上获得“只辅助不代发”的聊天回复建议、并重视本地 OCR 的用户与开发者。",
       "editorialTags": [
-        "有趣",
         "AI 工具",
         "效率"
       ],
@@ -967,7 +951,7 @@
       "githubUrl": "https://github.com/jev-chat/jev-chat-jarvis-mac",
       "canonicalUrl": "https://github.com/jev-chat/jev-chat-jarvis-mac",
       "description": "微信消息意图识别悬浮窗（macOS）：看屏 + 本地小模型判断意图和风险，再按话术生成回复候选。纯只读、不注入微信。",
-      "chineseDescription": "macOS 微信意图识别悬浮窗：只读看屏、本地小模型判断风险并生成回复候选。",
+      "chineseDescription": "微信消息意图识别悬浮窗（macOS）：看屏 + 本地小模型判断意图与风险，再按话术生成回复候选；纯只读、不注入微信。",
       "stars": 246,
       "forks": 72,
       "openIssues": 12,
@@ -1000,12 +984,11 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "macOS 微信意图识别悬浮窗，只读看屏 + 本地小模型判风险。",
-      "introduction": "Jev-Chat-Jarvis 是同一系列的 macOS 版本，通过悬浮窗方式看屏做识别，用本地小模型判断消息意图与风险，再按话术生成回复候选。整个流程纯只读、不会往微信里注入内容。",
-      "whyToday": "新仓 1 天冲到 246 stars，日均 127 stars/day，与 Windows 版形成完整跨平台矩阵。",
-      "audience": "macOS 微信重度用户，尤其在意隐私和只读采集的人群。",
+      "plainSummary": "macOS 微信意图识别悬浮窗：看屏 + 本地判断 + 生成候选话术。",
+      "introduction": "项目提供 macOS 悬浮窗形态的回复辅助：看屏读取消息，用本地小模型判断意图与风险，再按话术生成回复候选。描述强调“纯只读、不注入微信”。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 127 stars/day；1 天内有更新。",
+      "audience": "想在 macOS 上用“只读屏幕”的方式获取聊天回复建议、并关注隐私/安全边界的用户。",
       "editorialTags": [
-        "有趣",
         "AI 工具",
         "效率"
       ],
@@ -1016,7 +999,7 @@
       "githubUrl": "https://github.com/malevrigns/agent-jev",
       "canonicalUrl": "https://github.com/malevrigns/agent-jev",
       "description": "AgentJev-0.6B - a fast 'System One' decision model for AI Agents: feed it any unstructured state (diffs, traces, logs) and structured questions, get calibrated probability distributions back in one ~50ms forward pass. Zero output-token decoding.",
-      "chineseDescription": "AgentJev-0.6B：Agent 用的 System-1 快速决策模型，~50ms 一次前向拿到校准概率分布。",
+      "chineseDescription": "AgentJev-0.6B：面向 AI Agents 的快速“System One”决策模型；输入非结构化状态与结构化问题，约 50ms 前向即可输出校准过的概率分布，不做输出 token 解码。",
       "stars": 233,
       "forks": 16,
       "openIssues": 0,
@@ -1040,14 +1023,13 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "AgentJev-0.6B：Agent 用的 System-1 决策模型，~50ms 出概率分布。",
-      "introduction": "AgentJev-0.6B 是面向 AI Agent 的快速「System-1」决策模型：把任意非结构化状态（diff、trace、日志）加结构化问题喂进去，一次约 50ms 就能返回校准后的概率分布，全程零输出 token 解码。适合作为大模型旁挂的判定器。",
-      "whyToday": "新仓 1 天冲到 233 stars，日均 134 stars/day，是今日 Jev 阵营中最偏 Coding Agent 场景的模型。",
-      "audience": "给 Coding Agent 或 Ops Agent 做判定层的开发者。",
+      "plainSummary": "面向智能体的“System One”决策模型：约 50ms 输出校准概率分布。",
+      "introduction": "AgentJev-0.6B 以“System One decision model”为定位：接收各种非结构化状态（diff/trace/log 等）与结构化问题，单次前向（约 50ms）返回校准过的概率分布。描述强调 zero output-token decoding。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 134 stars/day；1 天内有更新。",
+      "audience": "在做智能体路由/判定/校准输出，希望降低生成成本并获得概率分布的开发者与研究者。",
       "editorialTags": [
         "AI 工具",
-        "开发工具",
-        "学习"
+        "开发工具"
       ],
       "recommendation": 4
     },
@@ -1056,7 +1038,7 @@
       "githubUrl": "https://github.com/kryvora-network/kryvora-node",
       "canonicalUrl": "https://github.com/kryvora-network/kryvora-node",
       "description": "Reference client daemon and verification worker for Kryvora Network nodes.",
-      "chineseDescription": "Kryvora 网络节点的参考客户端守护进程与验证工作节点。",
+      "chineseDescription": "Kryvora Network 节点的参考客户端守护进程与验证 worker。",
       "stars": 182,
       "forks": 1,
       "openIssues": 0,
@@ -1088,13 +1070,12 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "Kryvora 网络节点的参考客户端守护进程与验证工作节点。",
-      "introduction": "Kryvora-Node 提供 Kryvora Network 的参考客户端守护进程和验证 worker 实现。用来在自己的机器上跑一个可参与网络验证的完整节点。",
-      "whyToday": "新仓 1 天冲到 182 stars，日均 182 stars/day，是今日 Web3/网络类项目里最活跃的一批之一。",
-      "audience": "想接入或研究 Kryvora Network、以及做去中心化验证节点的团队。",
+      "plainSummary": "Kryvora Network 节点的参考客户端与验证 worker。",
+      "introduction": "该仓库描述为 Kryvora Network nodes 的 reference client daemon 和 verification worker。信息集中在“节点守护进程 + 验证 worker”的角色定位上。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 182 stars/day；1 天内有更新。",
+      "audience": "关注节点/分布式网络基础设施、以及相关节点实现的开发者。",
       "editorialTags": [
-        "开发工具",
-        "开源替代"
+        "开发工具"
       ],
       "recommendation": 3
     },
@@ -1103,7 +1084,7 @@
       "githubUrl": "https://github.com/miuuyy/astra-ares",
       "canonicalUrl": "https://github.com/miuuyy/astra-ares",
       "description": "Adaptive reasoning effort for GPT-6 Astra during Codex tasks, powered by Jev to reduce token usage.",
-      "chineseDescription": "给 Codex + GPT-6 Astra 做自适应推理力度调节，靠 Jev 判定压 token 消耗。",
+      "chineseDescription": "在 Codex 任务中为 GPT-6 Astra 自适应调节推理投入，由 Jev 驱动以降低 token 使用。",
       "stars": 178,
       "forks": 11,
       "openIssues": 5,
@@ -1127,23 +1108,22 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "给 Codex + GPT-6 Astra 做自适应推理力度调节，压 token。",
-      "introduction": "Astra-Ares 通过 Jev 判定动态调整 GPT-6 Astra 在 Codex 任务中的推理力度（reasoning effort），在保持结果质量的前提下压低 token 消耗。适合把 Codex 或类似 Coding Agent 的成本再挤一挤。",
-      "whyToday": "新仓 1 天冲到 178 stars，日均 178 stars/day，是今日 Coding Agent 成本优化方向的代表。",
-      "audience": "重度使用 Codex / GPT-6 Astra 的开发者与团队。",
+      "plainSummary": "用 Jev 在 Codex 任务中自适应调节推理投入，减少 token 使用。",
+      "introduction": "项目描述为“Adaptive reasoning effort for GPT-6 Astra during Codex tasks”，并明确由 Jev 驱动，目标是减少 token usage。整体是偏“推理预算/投入控制”的小工具思路。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 178 stars/day；1 天内有更新。",
+      "audience": "频繁跑 Codex/编码任务、希望控制推理成本与 token 消耗的开发者。",
       "editorialTags": [
-        "开发工具",
-        "AI 工具",
-        "效率"
+        "效率",
+        "开发工具"
       ],
-      "recommendation": 4
+      "recommendation": 3
     },
     {
       "name": "kydlikebtc/awesome-jev",
       "githubUrl": "https://github.com/kydlikebtc/awesome-jev",
       "canonicalUrl": "https://github.com/kydlikebtc/awesome-jev",
       "description": "805 verified examples of Jev — TypeSafe AI's System One decision model — indexed by the decision each one makes, not the blog that mentioned it. Every cited call site is re-read by CI each week. Bilingual EN/中文, JSON schema, and a cross-platform compatibility table.",
-      "chineseDescription": "805 个经 CI 每周复核的 Jev 使用案例，按决策类型索引、中英双语和跨平台兼容表。",
+      "chineseDescription": "805 个经核验的 Jev 示例：按“做了什么决策”而不是“被哪篇文章提到”来索引；CI 每周重读引用点；提供中英双语、JSON schema 与跨平台兼容表。",
       "stars": 168,
       "forks": 1,
       "openIssues": 1,
@@ -1183,23 +1163,60 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "805 个 Jev 使用案例，按决策类型索引、每周 CI 复核。",
-      "introduction": "Awesome-Jev 收集了 805 个经过验证的 Jev 使用案例，按每一次决策的类型（而不是介绍它的博客）做索引；每周 CI 会重新复核所有引用，附带中英双语、JSON schema 与跨平台兼容表。适合作为 Jev 生态查阅字典。",
-      "whyToday": "新仓 1 天冲到 168 stars，日均 128 stars/day，是最完整的 Jev 参考索引。",
-      "audience": "要评估、迁移或大量使用 Jev 类型决策模型的团队。",
+      "plainSummary": "按“决策类型”索引的 Jev 示例库（805 个，含中英双语与 CI 复核）。",
+      "introduction": "这是一个强调“verified examples”的 awesome 列表：自述收录 805 个 Jev 示例，并按每个示例做的决策来索引。还提到 CI 每周重读引用点，并提供 EN/中文双语、JSON schema 与跨平台兼容表。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 128 stars/day；1 天内有更新。",
+      "audience": "想系统浏览 Jev 生态案例、并需要可持续校验资料库的开发者与研究者。",
       "editorialTags": [
         "学习",
-        "AI 工具",
         "开发工具"
       ],
       "recommendation": 4
+    },
+    {
+      "name": "mater1996/travel-planning",
+      "githubUrl": "https://github.com/mater1996/travel-planning",
+      "canonicalUrl": "https://github.com/mater1996/travel-planning",
+      "description": "travel planning",
+      "chineseDescription": "旅行规划（travel planning）。",
+      "stars": 134,
+      "forks": 19,
+      "openIssues": 0,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-21T07:44:55Z",
+      "updatedAt": "2026-09-23T05:35:44Z",
+      "pushedAt": "2026-09-23T03:03:38Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 64 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "一个名为“travel planning”的旅行规划项目（描述信息较少）。",
+      "introduction": "该项目在候选信息中仅提供了简短描述“travel planning”，因此不对功能做进一步推断。已知语言标注为 Python，可作为后续补充文档/README 时再关注的项目。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 64 stars/day；1 天内有更新。",
+      "audience": "对旅行规划相关开源项目感兴趣、愿意自行阅读代码或等待后续文档完善的开发者。",
+      "editorialTags": [
+        "有趣"
+      ],
+      "recommendation": 3
     },
     {
       "name": "Michael-Jiahao-Zhang/game-the-llm-reviewer",
       "githubUrl": "https://github.com/michael-jiahao-zhang/game-the-llm-reviewer",
       "canonicalUrl": "https://github.com/michael-jiahao-zhang/game-the-llm-reviewer",
       "description": "Defend sound research against LLM reviewer bias through meaning-preserving rewrites.",
-      "chineseDescription": "通过保义改写抵御 LLM 评审偏见，为学术论文守住可信度。",
+      "chineseDescription": "通过保持含义不变的改写，抵御 LLM 审稿偏见，以保护严谨研究。",
       "stars": 120,
       "forks": 4,
       "openIssues": 0,
@@ -1232,13 +1249,13 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "用保义改写抵御 LLM 评审偏见，为可信研究守住阵地。",
-      "introduction": "这个项目研究如何在保持语义不变的前提下改写论文，来抵御 LLM 评审系统的偏见。目标是让扎实的研究不被算法审稿人误伤。",
-      "whyToday": "新仓 1 天冲到 120 stars，日均 83 stars/day，代表今日 LLM 应用伦理方向的讨论热点。",
-      "audience": "研究学术评审、LLM 应用伦理和对抗性文本的研究者。",
+      "plainSummary": "用“保留含义的改写”来对抗 LLM 审稿偏见的写作工具思路。",
+      "introduction": "项目目标是通过 meaning-preserving rewrites（保持含义不变的改写）来防御 LLM reviewer bias，从而保护严谨研究表达。描述聚焦在“对抗偏见”这一明确场景。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 83 stars/day；1 天内有更新。",
+      "audience": "写论文/研究报告、担心“审稿 LLM 偏见”影响表达与结论呈现的研究者与写作者。",
       "editorialTags": [
         "学习",
-        "AI 工具"
+        "开发工具"
       ],
       "recommendation": 3
     },
@@ -1247,7 +1264,7 @@
       "githubUrl": "https://github.com/ipenywis/laya-ultrafast",
       "canonicalUrl": "https://github.com/ipenywis/laya-ultrafast",
       "description": "Same as jev-ultrafast but using Laya",
-      "chineseDescription": "和 jev-ultrafast 同款玩法，但底层换成 Laya 决策模型。",
+      "chineseDescription": "与 jev-ultrafast 类似，但改用 Laya。",
       "stars": 116,
       "forks": 16,
       "openIssues": 0,
@@ -1271,14 +1288,13 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "jev-ultrafast 的 Laya 版本：换底层决策模型的同款玩法。",
-      "introduction": "Laya-Ultrafast 复用了 jev-ultrafast 的思路，但底层决策模型换成了 Laya。适合想在同一套推理管线里对比 Jev 与 Laya 的开发者。",
-      "whyToday": "新仓 1 天冲到 116 stars，日均 78 stars/day，是今日 Laya 阵营的关键新项目。",
-      "audience": "想快速尝试 Laya 决策模型的开发者。",
+      "plainSummary": "“jev-ultrafast”的 Laya 版本（描述信息较少）。",
+      "introduction": "项目描述为“Same as jev-ultrafast but using Laya”，即与 jev-ultrafast 类似，但改用 Laya。由于缺少更多说明，这里仅按描述做保守介绍。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 78 stars/day；1 天内有更新。",
+      "audience": "关注 Laya/Jev 决策模型生态、想对比不同实现/后端的开发者。",
       "editorialTags": [
         "AI 工具",
-        "开发工具",
-        "开源替代"
+        "开发工具"
       ],
       "recommendation": 3
     },
@@ -1287,7 +1303,7 @@
       "githubUrl": "https://github.com/linguo2625469/workbuddy2api-panel",
       "canonicalUrl": "https://github.com/linguo2625469/workbuddy2api-panel",
       "description": "把腾讯WorkBuddy账号变成 OpenAI 兼容 API 的多账号网关，同时自动完成任务中心全部任务，附 Web 管理面板（账号池可视化 / 积分任务 / 配置热更新）。基于 Sliverkiss/workbuddy2api 的增强分支",
-      "chineseDescription": "把腾讯 WorkBuddy 账号变成 OpenAI 兼容 API 的多账号网关，附积分任务与账号池 Web 面板。",
+      "chineseDescription": "把腾讯 WorkBuddy 账号变成 OpenAI 兼容 API 的多账号网关，并自动完成任务中心任务；附 Web 管理面板（账号池可视化/积分任务/配置热更新）；基于 Sliverkiss/workbuddy2api 的增强分支。",
       "stars": 696,
       "forks": 135,
       "openIssues": 19,
@@ -1319,62 +1335,11 @@
           "1 天内有更新"
         ]
       },
-      "plainSummary": "把腾讯 WorkBuddy 变 OpenAI 兼容 API 的多账号网关，附管理面板。",
-      "introduction": "这个项目把腾讯 WorkBuddy 账号包装成 OpenAI 兼容 API，同时自动完成任务中心的全部任务；附带一个 Web 管理面板，可视化账号池、积分任务与配置热更新。基于 Sliverkiss/workbuddy2api 做的增强分支。",
-      "whyToday": "新仓 1 天冲到 696 stars，日均 62 stars/day，是今日国产模型接入侧的代表玩法。",
-      "audience": "想低成本白嫖国产模型接口、或做多账号池化实验的开发者。",
+      "plainSummary": "把腾讯 WorkBuddy 账号变成 OpenAI 兼容 API 的多账号网关，并配套 Web 管理面板。",
+      "introduction": "项目描述为将腾讯 WorkBuddy 账号转换成 OpenAI 兼容 API 的多账号网关，并支持自动完成任务中心的任务。额外提供 Web 管理面板，用于账号池可视化、积分任务与配置热更新，并说明基于 Sliverkiss/workbuddy2api 的增强分支。",
+      "whyToday": "信号来自新仓速度与更新：新仓约 62 stars/day；1 天内有更新。",
+      "audience": "需要把 WorkBuddy 账号接入到 OpenAI 兼容接口、并希望集中管理账号池的开发者与团队。",
       "editorialTags": [
-        "开源替代",
-        "开发工具",
-        "AI 工具"
-      ],
-      "recommendation": 3
-    },
-    {
-      "name": "FluidInference/FluidUse",
-      "githubUrl": "https://github.com/fluidinference/fluiduse",
-      "canonicalUrl": "https://github.com/fluidinference/fluiduse",
-      "description": "Local computer use on Apple silicon: on-device typed decisions with laya and form filling with CUA-S1-FORMS, driven through the macOS Accessibility API",
-      "chineseDescription": "Apple Silicon 上的本地 computer-use：设备内类型化决策 + CUA-S1-FORMS 表单填写，走 macOS Accessibility API。",
-      "stars": 139,
-      "forks": 9,
-      "openIssues": 3,
-      "language": "Swift",
-      "topics": [
-        "accessibility-api",
-        "apple-silicon",
-        "computer-use",
-        "coreml",
-        "decision-model",
-        "macos",
-        "neural-engine",
-        "on-device-ai",
-        "swift"
-      ],
-      "createdAt": "2026-09-21T00:47:25Z",
-      "updatedAt": "2026-09-23T04:29:02Z",
-      "pushedAt": "2026-09-23T05:29:18Z",
-      "sources": [
-        "github-search"
-      ],
-      "score": {
-        "snapshotGrowth": 0,
-        "trendingGrowth": 0,
-        "newProjectVelocity": 29.451232254715066,
-        "pushedFreshness": 12,
-        "crossSource": 0,
-        "total": 41.5,
-        "signals": [
-          "新仓约 58 stars/day",
-          "1 天内有更新"
-        ]
-      },
-      "plainSummary": "Apple Silicon 本地 computer-use：Laya 类型决策 + macOS Accessibility API 表单填写。",
-      "introduction": "FluidUse 在 Apple Silicon 上做本地 computer use：设备内用 Laya 做类型化决策，配合 CUA-S1-FORMS 做表单填写，全部通过 macOS Accessibility API 驱动系统操作。是把 CUA + 本地小模型跑通的一手样板。",
-      "whyToday": "新仓 1 天冲到 139 stars，日均 58 stars/day，Swift 原生实现，今日本地 CUA 代表作。",
-      "audience": "macOS 上想做本地自动化、Accessibility API 或 CUA 的开发者。",
-      "editorialTags": [
-        "AI 工具",
         "开发工具",
         "效率"
       ],
