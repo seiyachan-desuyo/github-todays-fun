@@ -47,6 +47,18 @@ Aime 读取 `src/data/editor-tasks/$DATE.json`，只依据候选中的 `descript
 
 精选编辑结果必须恰好包含 30 项且 URL 去重；`candidateTranslations` 必须覆盖当天全部候选且 URL 去重。当天可核验候选池少于 30 项时停止出版，不生成降级刊。候选池中文描述只需简短翻译，不必写成精选项目的完整介绍。
 
+#### 中文化硬性规则（Aime 编辑内容 SPEC）
+
+以下规则对**每一期**所有 30 个精选项目与 `candidateTranslations` 都强制生效，任何辅助生成脚本（例如 `scripts/gen-editor-*.py`）都必须遵守，不得回退到英文兜底：
+
+- **`plainSummary`（展示标题）**：必须是**一句纯中文**。格式建议为「项目名 —— 用一句话说清项目是干什么的」；不得整段照搬英文 `description`，不得只做英文截断，不得只是仓库名或语言名。可以在项目名后保留原名字母，但项目定位描述部分必须是中文。
+- **`introduction`（介绍）**：必须是**纯中文 2–3 句自然语言**，围绕「这是什么 / 解决了什么问题 / 能做什么 / 面向谁」展开；不得整段照搬英文 `description`，不得把英文短语截断后拼接中文数据字段（如 stars、growth）以充数，不得只是罗列 topic 标签。可以在必要处保留少量专有名词（如 `Rust`、`Tauri`、`LSP`、`MCP` 等术语和产品名），其余表达必须中文化。
+- **`whyToday` / `audience`**：必须是中文，且要与当天的实际信号（新增 stars、增长曲线、近期更新等）或人群定位对应；不得只写空泛的"今日进入候选池"。
+- **`editorialTags`**：只能从固定标签集合中选取（详见 `scripts/gen-editor-*.py` 的 `TAGS` 常量），最少 1 个、最多 3 个。
+- **`candidateTranslations[*].chineseDescription`**：必须是中文短句，说清项目是什么；若原描述已经含中文/日文可直接采用并截断到 ≤ 158 字符；纯英文描述必须先翻译成中文再落盘，不得整段照搬英文。
+
+任何一项不符合以上规则的输出，都视为不合格的编辑内容，需回炉重写；`pipeline:stage` 阶段的校验会阻止显然非中文的字段进入正式 edition。
+
 ### 3. 生成并校验 staging edition
 
 ```bash
