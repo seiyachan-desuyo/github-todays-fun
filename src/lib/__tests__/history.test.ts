@@ -23,4 +23,24 @@ describe("published edition history", () => {
     const published = await loadPublishedCanonicalUrls(fixtureRoot, "2026-09-10");
     expect([...published]).toEqual(["https://github.com/owner/old"]);
   });
+
+  it("只排除历史最终 30 精选；candidatePool（enriched-candidates）中未被精选的项目不排除", async () => {
+    const editionsRoot = path.join(fixtureRoot, "editions");
+    const enrichedRoot = path.join(fixtureRoot, "enriched-candidates");
+    await mkdir(editionsRoot, { recursive: true });
+    await mkdir(enrichedRoot, { recursive: true });
+    await writeFile(
+      path.join(editionsRoot, "2026-09-20.json"),
+      JSON.stringify({ projects: [{ canonicalUrl: "https://github.com/owner/final-selected" }] }),
+    );
+    await writeFile(
+      path.join(enrichedRoot, "2026-09-20.json"),
+      JSON.stringify({ projects: [{ canonicalUrl: "https://github.com/owner/pool-only" }] }),
+    );
+
+    const published = await loadPublishedCanonicalUrls(editionsRoot, "2026-09-24");
+    expect(published.has("https://github.com/owner/final-selected")).toBe(true);
+    // 关键断言：仅在 candidatePool 出现、未进入最终 30 的项目不会被排除。
+    expect(published.has("https://github.com/owner/pool-only")).toBe(false);
+  });
 });
