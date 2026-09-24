@@ -1,0 +1,1403 @@
+{
+  "date": "2026-09-24",
+  "issue": 15,
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "今日 30 精选：Jev/laya 决策模型继续霸屏，AnyJev、JevHarness、SemIf-OpenJev 相继涌现；Rust 桌面工具集中爆发（编辑器/终端/dock/代理客户端），Agent 与 Codex/Claude 生态工具持续加码。",
+  "mode": "live",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+  "publishedAt": "2026-09-24T06:16:03.084Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-09-24T06:13:03.176Z",
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "raw": [
+        {
+          "query": "created:>=2026-09-21 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-09-10 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-09-21 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-09-24T06:13:03.202Z",
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 37 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "rawCount": 37,
+      "normalizedCount": 37,
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 17
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 20
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "ok",
+      "fetchedAt": "2026-09-24T06:13:07.276Z",
+      "message": "仓库详情 API 可用，已验证 jev-chat/jev-chat-jarvis",
+      "rawCount": 1,
+      "normalizedCount": 1
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 187,
+    "normalizedCandidateCount": 187,
+    "dedupedCandidateCount": 180,
+    "eligibleCandidateCount": 93,
+    "selectedCount": 30
+  },
+  "projects": [
+    {
+      "name": "NandhaKishorM/laya",
+      "githubUrl": "https://github.com/nandhakishorm/laya",
+      "canonicalUrl": "https://github.com/nandhakishorm/laya",
+      "description": "Non-autoregressive System 1 decision engine. Typed choice, score and yes/no decisions over any text in a single forward pass, in 100+ languages, with a router that picks the right checkpoint per request.",
+      "chineseDescription": "laya：Non-autoregressive System 1 decision engine. Typed choice, score and yes/no decisions over any text in a single forward pass, in 100+ languages, with a …",
+      "stars": 21218,
+      "forks": 1808,
+      "openIssues": 78,
+      "recentGrowth": 3632,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "calibration",
+        "classification",
+        "decision-model",
+        "huggingface",
+        "jev",
+        "modernbert",
+        "multilingual",
+        "nlp",
+        "python",
+        "pytorch",
+        "routing",
+        "typed-decisions",
+        "zero-shot"
+      ],
+      "createdAt": "2026-09-18T04:46:33Z",
+      "updatedAt": "2026-09-24T06:12:51Z",
+      "pushedAt": "2026-09-24T05:39:18Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +3632",
+          "新仓约 3413 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "laya —— Non-autoregressive System 1 decision engine. Typed",
+      "introduction": "Non-autoregressive System 1 decision engine  Typed choice, score and yes/no decisions over any text in a single forward…。用 Python 编写，主要话题：calibration、classification、decision-model、…。当前 21218 星，近日新增约 3632 星。",
+      "whyToday": "今日热度陡增（+3632 星），值得围观其真正解决了什么",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "nokia-applied-research/AnyJev",
+      "githubUrl": "https://github.com/nokia-applied-research/anyjev",
+      "canonicalUrl": "https://github.com/nokia-applied-research/anyjev",
+      "description": "Turn any LLM into a Jev-style decision model: typed decisions, real probabilities, no training. (continue updating)",
+      "chineseDescription": "AnyJev：Turn any LLM into a Jev-style decision model: typed decisions, real probabilities, no training. (continue updating)",
+      "stars": 411,
+      "forks": 64,
+      "openIssues": 3,
+      "recentGrowth": 290,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "calibration",
+        "decision-model",
+        "jev",
+        "jev-model",
+        "llm",
+        "system-one",
+        "transformers",
+        "vllm"
+      ],
+      "createdAt": "2026-09-21T05:55:40Z",
+      "updatedAt": "2026-09-24T05:53:55Z",
+      "pushedAt": "2026-09-23T20:55:55Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +290",
+          "新仓约 130 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "AnyJev —— Turn any LLM into a Jev-style decision model: type",
+      "introduction": "Turn any LLM into a Jev-style decision model: typed decisions, real probabilities, no training  (continue updating)。用 Python 编写，主要话题：calibration、decision-model、jev、jev-model。当前 411 星，近日新增约 290 星。",
+      "whyToday": "今日热度陡增（+290 星），值得围观其真正解决了什么",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "OnlistTeam/ai-manager",
+      "githubUrl": "https://github.com/onlistteam/ai-manager",
+      "canonicalUrl": "https://github.com/onlistteam/ai-manager",
+      "description": "AI Manager desktop application for AI coding tools",
+      "chineseDescription": "ai-manager：AI Manager desktop application for AI coding tools",
+      "stars": 172,
+      "forks": 5,
+      "openIssues": 3,
+      "recentGrowth": 65,
+      "growthSource": "snapshot",
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-09-21T05:07:53Z",
+      "updatedAt": "2026-09-24T05:58:28Z",
+      "pushedAt": "2026-09-24T02:57:21Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 42.310758835509176,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 28.867611548527048,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 83.2,
+        "signals": [
+          "快照实增 +65",
+          "新仓约 54 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "ai-manager —— AI Manager desktop application for AI coding tools",
+      "introduction": "AI Manager desktop application for AI coding tools。用 Rust 编写。当前 172 星，近日新增约 65 星。",
+      "whyToday": "近日以 +65 星势头进入视野，可以看看它的思路",
+      "audience": "追求好用桌面软件的效率党",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "rgem227/knoweldge-base",
+      "githubUrl": "https://github.com/rgem227/knoweldge-base",
+      "canonicalUrl": "https://github.com/rgem227/knoweldge-base",
+      "description": "Personal or team knowledge base, supports MCP API calls.",
+      "chineseDescription": "knoweldge-base：Personal or team knowledge base, supports MCP API calls.",
+      "stars": 454,
+      "forks": 5,
+      "openIssues": 0,
+      "recentGrowth": 303,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-22T04:28:59Z",
+      "updatedAt": "2026-09-24T06:05:11Z",
+      "pushedAt": "2026-09-22T05:28:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +303",
+          "新仓约 204 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "knoweldge-base —— Personal or team knowledge base, supports MCP API",
+      "introduction": "Personal or team knowledge base, supports MCP API calls。用 Python 编写。当前 454 星，近日新增约 303 星。",
+      "whyToday": "今日热度陡增（+303 星），值得围观其真正解决了什么",
+      "audience": "对当天技术新鲜事感兴趣的开发者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "lhlGitHub/threejs-architecture-effects",
+      "githubUrl": "https://github.com/lhlgithub/threejs-architecture-effects",
+      "canonicalUrl": "https://github.com/lhlgithub/threejs-architecture-effects",
+      "description": "An Agent Skill for building interactive, self-assembling 3D architecture with Three.js.  一个用 Three.js 生成可交互、可动态建造 3D 建筑的 Agent Skill。",
+      "chineseDescription": "An Agent Skill for building interactive, self-assembling 3D architecture with Three.js.  一个用 Three.js 生成可交互、可动态建造 3D 建筑的 Agent Skill。",
+      "stars": 199,
+      "forks": 37,
+      "openIssues": 0,
+      "recentGrowth": 67,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-22T03:01:05Z",
+      "updatedAt": "2026-09-24T06:06:14Z",
+      "pushedAt": "2026-09-22T03:27:27Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 42.61223988875237,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 80.6,
+        "signals": [
+          "快照实增 +67",
+          "新仓约 87 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "An Agent Skill for building interactive, self-assembling 3D…",
+      "introduction": "An Agent Skill for building interactive, self-assembling 3D architecture with Three js   一个用 Three js 生成可交互、可动态建造 3D 建筑…。用 TypeScript 编写。当前 199 星，近日新增约 67 星。",
+      "whyToday": "近日以 +67 星势头进入视野，可以看看它的思路",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "设计"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "TianyuCodings/JevHarness",
+      "githubUrl": "https://github.com/tianyucodings/jevharness",
+      "canonicalUrl": "https://github.com/tianyucodings/jevharness",
+      "description": "LLM-authored task-specific Jev harnesses with optional full-trajectory reward reflection and GEPA evolution.",
+      "chineseDescription": "JevHarness：LLM-authored task-specific Jev harnesses with optional full-trajectory reward reflection and GEPA evolution.",
+      "stars": 185,
+      "forks": 11,
+      "openIssues": 0,
+      "recentGrowth": 38,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-21T08:59:46Z",
+      "updatedAt": "2026-09-24T05:48:47Z",
+      "pushedAt": "2026-09-21T10:39:01Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 36.997815532035744,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 29.749854468304452,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 74.7,
+        "signals": [
+          "快照实增 +38",
+          "新仓约 61 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "JevHarness —— LLM-authored task-specific Jev harnesses with opti",
+      "introduction": "LLM-authored task-specific Jev harnesses with optional full-trajectory reward reflection and GEPA evolution。用 Python 编写。当前 185 星，近日新增约 38 星。",
+      "whyToday": "近日以 +38 星势头进入视野，可以看看它的思路",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "FluidInference/FluidUse",
+      "githubUrl": "https://github.com/fluidinference/fluiduse",
+      "canonicalUrl": "https://github.com/fluidinference/fluiduse",
+      "description": "Local computer use on Apple silicon: on-device typed decisions with laya and form filling with CUA-S1-FORMS, driven through the macOS Accessibility API",
+      "chineseDescription": "FluidUse：Local computer use on Apple silicon: on-device typed decisions with laya and form filling with CUA-S1-FORMS, driven through the macOS Accessibility …",
+      "stars": 152,
+      "forks": 12,
+      "openIssues": 4,
+      "recentGrowth": 13,
+      "growthSource": "snapshot",
+      "language": "Swift",
+      "topics": [
+        "accessibility-api",
+        "apple-silicon",
+        "computer-use",
+        "coreml",
+        "decision-model",
+        "macos",
+        "neural-engine",
+        "on-device-ai",
+        "swift"
+      ],
+      "createdAt": "2026-09-21T00:47:25Z",
+      "updatedAt": "2026-09-24T02:07:52Z",
+      "pushedAt": "2026-09-24T05:57:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 26.651484454403228,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 27.605368347452334,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 66.3,
+        "signals": [
+          "快照实增 +13",
+          "新仓约 45 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "FluidUse —— Local computer use on Apple silicon: on-device typ",
+      "introduction": "Local computer use on Apple silicon: on-device typed decisions with laya and form filling with CUA-S1-FORMS, driven thr…。用 Swift 编写，主要话题：accessibility-api、apple-silicon、computer-us…。当前 152 星，近日新增约 13 星。",
+      "whyToday": "近日以 +13 星势头进入视野，可以看看它的思路",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Futureppo/typesafe_register",
+      "githubUrl": "https://github.com/futureppo/typesafe_register",
+      "canonicalUrl": "https://github.com/futureppo/typesafe_register",
+      "description": "typesafe.ai注册机，极致优化，无限jev",
+      "chineseDescription": "typesafe.ai注册机，极致优化，无限jev",
+      "stars": 120,
+      "forks": 49,
+      "openIssues": 2,
+      "recentGrowth": 6,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-21T13:21:38Z",
+      "updatedAt": "2026-09-23T17:46:26Z",
+      "pushedAt": "2026-09-21T20:26:15Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 19.651484454403228,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 27.124338681190654,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 54.8,
+        "signals": [
+          "快照实增 +6",
+          "新仓约 42 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "typesafe.ai注册机，极致优化，无限jev",
+      "introduction": "typesafe ai注册机，极致优化，无限jev。用 Python 编写。当前 120 星，近日新增约 6 星。",
+      "whyToday": "近日以 +6 星势头进入视野，可以看看它的思路",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "pbakaus/impeccable",
+      "githubUrl": "https://github.com/pbakaus/impeccable",
+      "canonicalUrl": "https://github.com/pbakaus/impeccable",
+      "description": "The design language that makes your AI harness better at design.",
+      "chineseDescription": "impeccable：The design language that makes your AI harness better at design.",
+      "stars": 70468,
+      "forks": 4278,
+      "recentGrowth": 304,
+      "growthSource": "github-trending",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 49.51599259470149,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 49.5,
+        "signals": [
+          "Trending 披露 +304"
+        ]
+      },
+      "plainSummary": "impeccable —— The design language that makes your AI harness bet",
+      "introduction": "The design language that makes your AI harness better at design。用 JavaScript 编写。当前 70468 星，近日新增约 304 星。",
+      "whyToday": "今日热度陡增（+304 星），值得围观其真正解决了什么",
+      "audience": "视觉与创意方向的从业者",
+      "editorialTags": [
+        "AI 工具",
+        "设计"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "DeusData/codebase-memory-mcp",
+      "githubUrl": "https://github.com/deusdata/codebase-memory-mcp",
+      "canonicalUrl": "https://github.com/deusdata/codebase-memory-mcp",
+      "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+      "chineseDescription": "codebase-memory-mcp：High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 la…",
+      "stars": 44686,
+      "forks": 3644,
+      "recentGrowth": 190,
+      "growthSource": "github-trending",
+      "language": "C",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 45.46457296821449,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45.5,
+        "signals": [
+          "Trending 披露 +190"
+        ]
+      },
+      "plainSummary": "codebase-memory-mcp —— High-performance code intelligence MCP server. Ind",
+      "introduction": "High-performance code intelligence MCP server  Indexes codebases into a persistent knowledge graph — average repo in mi…。用 C 编写。当前 44686 星，近日新增约 190 星。",
+      "whyToday": "近日以 +190 星势头进入视野，可以看看它的思路",
+      "audience": "关注数据基建与检索的工程师",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "数据"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "davila7/claude-code-templates",
+      "githubUrl": "https://github.com/davila7/claude-code-templates",
+      "canonicalUrl": "https://github.com/davila7/claude-code-templates",
+      "description": "CLI tool for configuring and monitoring Claude Code",
+      "chineseDescription": "claude-code-templates：CLI tool for configuring and monitoring Claude Code",
+      "stars": 31591,
+      "forks": 3586,
+      "recentGrowth": 386,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +386"
+        ]
+      },
+      "plainSummary": "claude-code-templates —— CLI tool for configuring and monitoring Claude Cod",
+      "introduction": "CLI tool for configuring and monitoring Claude Code。用 Python 编写。当前 31591 星，近日新增约 386 星。",
+      "whyToday": "今日热度陡增（+386 星），值得围观其真正解决了什么",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "数据"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "TheoLeeCJ/SemIf-OpenJev",
+      "githubUrl": "https://github.com/theoleecj/semif-openjev",
+      "canonicalUrl": "https://github.com/theoleecj/semif-openjev",
+      "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
+      "chineseDescription": "SemIf-OpenJev：Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
+      "stars": 4127,
+      "forks": 277,
+      "openIssues": 26,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-16T03:51:21Z",
+      "updatedAt": "2026-09-24T05:55:02Z",
+      "pushedAt": "2026-09-23T18:48:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 500 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "SemIf-OpenJev —— Semantic ifs from open models, on a 3090 at home.",
+      "introduction": "Semantic ifs from open models, on a 3090 at home  Independent; not affiliated with Jev or TypeSafe。用 Python 编写。当前 4127 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "shilapi/xcertplay",
+      "githubUrl": "https://github.com/shilapi/xcertplay",
+      "canonicalUrl": "https://github.com/shilapi/xcertplay",
+      "description": "Carplay on Android head unit using onboard mfi chip or via CH341.",
+      "chineseDescription": "xcertplay：Carplay on Android head unit using onboard mfi chip or via CH341.",
+      "stars": 798,
+      "forks": 131,
+      "openIssues": 6,
+      "language": "Kotlin",
+      "topics": [
+        "carplay",
+        "headunit"
+      ],
+      "createdAt": "2026-09-12T03:43:23Z",
+      "updatedAt": "2026-09-24T06:12:04Z",
+      "pushedAt": "2026-09-24T06:04:56Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 65 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "xcertplay —— Carplay on Android head unit using onboard mfi chi",
+      "introduction": "Carplay on Android head unit using onboard mfi chip or via CH341。用 Kotlin 编写，主要话题：carplay、headunit。当前 798 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "对当天技术新鲜事感兴趣的开发者",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "driceroland/Search",
+      "githubUrl": "https://github.com/driceroland/search",
+      "canonicalUrl": "https://github.com/driceroland/search",
+      "description": "A small, fast WebKit browser for macOS, by Office Commun.",
+      "chineseDescription": "Search：A small, fast WebKit browser for macOS, by Office Commun.",
+      "stars": 793,
+      "forks": 82,
+      "openIssues": 114,
+      "language": "Swift",
+      "topics": [],
+      "createdAt": "2026-09-20T10:29:47Z",
+      "updatedAt": "2026-09-24T06:12:50Z",
+      "pushedAt": "2026-09-24T00:02:12Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 199 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Search —— A small, fast WebKit browser for macOS, by Office",
+      "introduction": "A small, fast WebKit browser for macOS, by Office Commun。用 Swift 编写。当前 793 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "追求好用桌面软件的效率党",
+      "editorialTags": [
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "heyjunpenn/awesome-jev",
+      "githubUrl": "https://github.com/heyjunpenn/awesome-jev",
+      "canonicalUrl": "https://github.com/heyjunpenn/awesome-jev",
+      "description": "A verified, community-maintained catalog of 896 open-source projects built with Jev.",
+      "chineseDescription": "awesome-jev：A verified, community-maintained catalog of 896 open-source projects built with Jev.",
+      "stars": 782,
+      "forks": 55,
+      "openIssues": 2,
+      "language": "Astro",
+      "topics": [
+        "astro",
+        "awesome",
+        "awesome-jev",
+        "awesome-list",
+        "jev",
+        "typesafe"
+      ],
+      "createdAt": "2026-09-19T05:14:36Z",
+      "updatedAt": "2026-09-24T05:26:57Z",
+      "pushedAt": "2026-09-24T05:26:52Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 150 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "awesome-jev —— A verified, community-maintained catalog of 896 op",
+      "introduction": "A verified, community-maintained catalog of 896 open-source projects built with Jev。用 Astro 编写，主要话题：astro、awesome、awesome-jev、awesome-list。当前 782 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "数据"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "SewCabinSpout/cleanupper",
+      "githubUrl": "https://github.com/sewcabinspout/cleanupper",
+      "canonicalUrl": "https://github.com/sewcabinspout/cleanupper",
+      "description": "🧹 Free, open-source macOS disk cleanup CLI. Scan & safely remove caches, logs, Xcode DerivedData, npm/Homebrew/pip junk and stale node_modules from your terminal. Trash-first, zero telemetry the terminal-native CleanMyMac alternative.",
+      "chineseDescription": "cleanupper：🧹 Free, open-source macOS disk cleanup CLI. Scan & safely remove caches, logs, Xcode DerivedData, npm/Homebrew/pip junk and stale node_modules fro…",
+      "stars": 724,
+      "forks": 1,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "topics": [
+        "cache-cleane",
+        "cleanmymac-alternative",
+        "cli",
+        "deriveddata",
+        "developer-tools",
+        "disk-cleanup",
+        "free-disk-space",
+        "homebrew",
+        "mac-cleaner",
+        "macos",
+        "macos-app",
+        "node-modules",
+        "nodejs",
+        "npm",
+        "open-source",
+        "xcode"
+      ],
+      "createdAt": "2026-09-23T17:19:45Z",
+      "updatedAt": "2026-09-24T04:18:52Z",
+      "pushedAt": "2026-09-23T17:45:50Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 724 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "cleanupper —— 🧹 Free, open-source macOS disk cleanup CLI. Scan &",
+      "introduction": "🧹 Free, open-source macOS disk cleanup CLI  Scan & safely remove caches, logs, Xcode DerivedData, npm/Homebrew/pip junk…。用 JavaScript 编写，主要话题：cache-cleane、cleanmymac-alternative、cl…。当前 724 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "追求趁手工具的开发者",
+      "editorialTags": [
+        "开发工具",
+        "数据",
+        "开源替代"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "anishfn/shapeshift",
+      "githubUrl": "https://github.com/anishfn/shapeshift",
+      "canonicalUrl": "https://github.com/anishfn/shapeshift",
+      "description": "An input that becomes what you mean: one text box that morphs into the right UI as you type. Powered by TypeSafe Jev, works offline.",
+      "chineseDescription": "shapeshift：An input that becomes what you mean: one text box that morphs into the right UI as you type. Powered by TypeSafe Jev, works offline.",
+      "stars": 466,
+      "forks": 46,
+      "openIssues": 2,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-22T08:52:32Z",
+      "updatedAt": "2026-09-24T06:02:59Z",
+      "pushedAt": "2026-09-23T23:57:19Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 228 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "shapeshift —— An input that becomes what you mean: one text box",
+      "introduction": "An input that becomes what you mean: one text box that morphs into the right UI as you type  Powered by TypeSafe Jev, w…。用 TypeScript 编写。当前 466 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "设计"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "JohnHeibel/PDoomVideo",
+      "githubUrl": "https://github.com/johnheibel/pdoomvideo",
+      "canonicalUrl": "https://github.com/johnheibel/pdoomvideo",
+      "description": "Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
+      "chineseDescription": "PDoomVideo：Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
+      "stars": 429,
+      "forks": 36,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-09-22T23:32:19Z",
+      "updatedAt": "2026-09-24T06:11:13Z",
+      "pushedAt": "2026-09-23T21:50:55Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 299 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "PDoomVideo —— Source code for the Claude Opus 5.5 music video fo",
+      "introduction": "Source code for the Claude Opus 5 5 music video for I'm Upping My P(doom)。用 JavaScript 编写。当前 429 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "设计"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "Alex314618-create/JevRev",
+      "githubUrl": "https://github.com/alex314618-create/jevrev",
+      "canonicalUrl": "https://github.com/alex314618-create/jevrev",
+      "description": "An LLM + Jev workflow. Boost your vertebrate brain with a spine inside.",
+      "chineseDescription": "JevRev：An LLM + Jev workflow. Boost your vertebrate brain with a spine inside.",
+      "stars": 283,
+      "forks": 12,
+      "openIssues": 2,
+      "language": "TypeScript",
+      "topics": [
+        "jev",
+        "llm",
+        "workflow"
+      ],
+      "createdAt": "2026-09-21T01:53:13Z",
+      "updatedAt": "2026-09-24T06:07:04Z",
+      "pushedAt": "2026-09-24T05:35:56Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 85 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "JevRev —— An LLM + Jev workflow. Boost your vertebrate brain",
+      "introduction": "An LLM + Jev workflow  Boost your vertebrate brain with a spine inside。用 TypeScript 编写，主要话题：jev、llm、workflow。当前 283 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "yetone/magpie",
+      "githubUrl": "https://github.com/yetone/magpie",
+      "canonicalUrl": "https://github.com/yetone/magpie",
+      "description": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
+      "chineseDescription": "magpie：Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
+      "stars": 272,
+      "forks": 12,
+      "openIssues": 4,
+      "language": "Go",
+      "topics": [
+        "claude-code",
+        "codex",
+        "deepseek",
+        "gemini-cli",
+        "llm",
+        "macos"
+      ],
+      "createdAt": "2026-09-23T16:22:35Z",
+      "updatedAt": "2026-09-24T06:11:30Z",
+      "pushedAt": "2026-09-24T06:11:31Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 272 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "magpie —— Every agent's model. One place. Codex on DeepSeek,",
+      "introduction": "Every agent's model  One place  Codex on DeepSeek, Claude Code on Kimi, from the menu bar。用 Go 编写，主要话题：claude-code、codex、deepseek、gemini-cli。当前 272 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "samyost1/3dicon",
+      "githubUrl": "https://github.com/samyost1/3dicon",
+      "canonicalUrl": "https://github.com/samyost1/3dicon",
+      "description": "One prompt in, a looping animated 3D icon out — with real transparency. A Claude Code skill.",
+      "chineseDescription": "3dicon：One prompt in, a looping animated 3D icon out — with real transparency. A Claude Code skill.",
+      "stars": 230,
+      "forks": 17,
+      "openIssues": 0,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-23T18:04:25Z",
+      "updatedAt": "2026-09-24T06:08:50Z",
+      "pushedAt": "2026-09-23T18:15:55Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 230 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "3dicon —— One prompt in, a looping animated 3D icon out — wi",
+      "introduction": "One prompt in, a looping animated 3D icon out — with real transparency  A Claude Code skill。用 Python 编写。当前 230 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "设计"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "852wa/JIZURA",
+      "githubUrl": "https://github.com/852wa/jizura",
+      "canonicalUrl": "https://github.com/852wa/jizura",
+      "description": "歌詞から文字PVを自動で組み立てるブラウザアプリ",
+      "chineseDescription": "歌詞から文字PVを自動で組み立てるブラウザアプリ",
+      "stars": 227,
+      "forks": 47,
+      "openIssues": 3,
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-09-23T04:04:13Z",
+      "updatedAt": "2026-09-24T06:12:35Z",
+      "pushedAt": "2026-09-24T02:14:14Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 182 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "歌詞から文字PVを自動で組み立てるブラウザアプリ",
+      "introduction": "歌詞から文字PVを自動で組み立てるブラウザアプリ。用 JavaScript 编写。当前 227 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "对当天技术新鲜事感兴趣的开发者",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "BricklayerSurmount/DockForge",
+      "githubUrl": "https://github.com/bricklayersurmount/dockforge",
+      "canonicalUrl": "https://github.com/bricklayersurmount/dockforge",
+      "description": "Flexible dock and panel layout system for desktop apps",
+      "chineseDescription": "DockForge：Flexible dock and panel layout system for desktop apps",
+      "stars": 223,
+      "forks": 47,
+      "openIssues": 0,
+      "language": "Rust",
+      "topics": [
+        "desktop",
+        "dock",
+        "gui",
+        "layout",
+        "panels",
+        "productivity",
+        "rust",
+        "workspace"
+      ],
+      "createdAt": "2026-09-23T11:21:45Z",
+      "updatedAt": "2026-09-24T04:19:00Z",
+      "pushedAt": "2026-09-23T11:22:02Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 223 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "DockForge —— Flexible dock and panel layout system for desktop",
+      "introduction": "Flexible dock and panel layout system for desktop apps。用 Rust 编写，主要话题：desktop、dock、gui、layout。当前 223 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "视觉与创意方向的从业者",
+      "editorialTags": [
+        "开发工具",
+        "设计",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "BridgeDruidCompress/TauriKit",
+      "githubUrl": "https://github.com/bridgedruidcompress/taurikit",
+      "canonicalUrl": "https://github.com/bridgedruidcompress/taurikit",
+      "description": "Modern UI component kit for Rust desktop applications",
+      "chineseDescription": "TauriKit：Modern UI component kit for Rust desktop applications",
+      "stars": 223,
+      "forks": 47,
+      "openIssues": 0,
+      "language": "Rust",
+      "topics": [
+        "components",
+        "cross-platform",
+        "desktop",
+        "gui",
+        "rust",
+        "tauri",
+        "ui-kit"
+      ],
+      "createdAt": "2026-09-23T11:21:48Z",
+      "updatedAt": "2026-09-23T16:46:41Z",
+      "pushedAt": "2026-09-23T11:22:07Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 223 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "TauriKit —— Modern UI component kit for Rust desktop applicati",
+      "introduction": "Modern UI component kit for Rust desktop applications。用 Rust 编写，主要话题：components、cross-platform、desktop、gui。当前 223 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "视觉与创意方向的从业者",
+      "editorialTags": [
+        "开发工具",
+        "设计"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "BufferHerald/WarpLite",
+      "githubUrl": "https://github.com/bufferherald/warplite",
+      "canonicalUrl": "https://github.com/bufferherald/warplite",
+      "description": "Fast GPU-accelerated terminal and shell experience",
+      "chineseDescription": "WarpLite：Fast GPU-accelerated terminal and shell experience",
+      "stars": 223,
+      "forks": 47,
+      "openIssues": 0,
+      "topics": [
+        "cross-platform",
+        "desktop",
+        "gpu",
+        "productivity",
+        "rust",
+        "shell",
+        "terminal"
+      ],
+      "createdAt": "2026-09-23T11:21:52Z",
+      "updatedAt": "2026-09-24T01:22:38Z",
+      "pushedAt": "2026-09-23T11:22:18Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 223 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "WarpLite —— Fast GPU-accelerated terminal and shell experience",
+      "introduction": "Fast GPU-accelerated terminal and shell experience。主要话题：cross-platform、desktop、gpu、productivity。当前 223 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "追求好用桌面软件的效率党",
+      "editorialTags": [
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "AutocratGirder/ClashDesk",
+      "githubUrl": "https://github.com/autocratgirder/clashdesk",
+      "canonicalUrl": "https://github.com/autocratgirder/clashdesk",
+      "description": "Modern cross-platform desktop client for proxy workflows",
+      "chineseDescription": "ClashDesk：Modern cross-platform desktop client for proxy workflows",
+      "stars": 223,
+      "forks": 47,
+      "openIssues": 0,
+      "language": "Rust",
+      "topics": [
+        "clash",
+        "desktop",
+        "gui",
+        "linux",
+        "macos",
+        "proxy",
+        "rust",
+        "tauri",
+        "windows"
+      ],
+      "createdAt": "2026-09-23T11:21:44Z",
+      "updatedAt": "2026-09-24T06:01:29Z",
+      "pushedAt": "2026-09-23T11:22:01Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 223 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "ClashDesk —— Modern cross-platform desktop client for proxy wor",
+      "introduction": "Modern cross-platform desktop client for proxy workflows。用 Rust 编写，主要话题：clash、desktop、gui、linux。当前 223 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "追求趁手工具的开发者",
+      "editorialTags": [
+        "开发工具",
+        "设计",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "BinaryDeliverer/CodexDesk",
+      "githubUrl": "https://github.com/binarydeliverer/codexdesk",
+      "canonicalUrl": "https://github.com/binarydeliverer/codexdesk",
+      "description": "Desktop companion for AI coding agents and Codex workflows",
+      "chineseDescription": "CodexDesk：Desktop companion for AI coding agents and Codex workflows",
+      "stars": 222,
+      "forks": 47,
+      "openIssues": 0,
+      "language": "Rust",
+      "topics": [
+        "agent",
+        "ai",
+        "codex",
+        "desktop",
+        "developer-tools",
+        "gui",
+        "productivity",
+        "rust"
+      ],
+      "createdAt": "2026-09-23T11:21:44Z",
+      "updatedAt": "2026-09-23T12:21:06Z",
+      "pushedAt": "2026-09-23T11:22:00Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 222 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "CodexDesk —— Desktop companion for AI coding agents and Codex w",
+      "introduction": "Desktop companion for AI coding agents and Codex workflows。用 Rust 编写，主要话题：agent、ai、codex、desktop。当前 222 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "关注 LLM 工程 / Agent 落地的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "设计"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "centralcashierboost/ZedLite",
+      "githubUrl": "https://github.com/centralcashierboost/zedlite",
+      "canonicalUrl": "https://github.com/centralcashierboost/zedlite",
+      "description": "Lightweight high-performance code editor built with Rust",
+      "chineseDescription": "ZedLite：Lightweight high-performance code editor built with Rust",
+      "stars": 222,
+      "forks": 47,
+      "openIssues": 0,
+      "topics": [
+        "code-editor",
+        "cross-platform",
+        "desktop",
+        "developer-tools",
+        "editor",
+        "gpui",
+        "productivity",
+        "rust"
+      ],
+      "createdAt": "2026-09-23T11:21:50Z",
+      "updatedAt": "2026-09-24T06:01:53Z",
+      "pushedAt": "2026-09-23T11:22:14Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 222 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "ZedLite —— Lightweight high-performance code editor built wit",
+      "introduction": "Lightweight high-performance code editor built with Rust。主要话题：code-editor、cross-platform、desktop、developer-tools。当前 222 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "追求趁手工具的开发者",
+      "editorialTags": [
+        "开发工具",
+        "设计",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "CassowaryDevelop/HelixEdit",
+      "githubUrl": "https://github.com/cassowarydevelop/helixedit",
+      "canonicalUrl": "https://github.com/cassowarydevelop/helixedit",
+      "description": "Modal code editor with LSP support written in Rust",
+      "chineseDescription": "HelixEdit：Modal code editor with LSP support written in Rust",
+      "stars": 221,
+      "forks": 47,
+      "openIssues": 0,
+      "language": "Rust",
+      "topics": [
+        "code-editor",
+        "desktop",
+        "developer-tools",
+        "editor",
+        "helix",
+        "lsp",
+        "rust"
+      ],
+      "createdAt": "2026-09-23T11:21:48Z",
+      "updatedAt": "2026-09-23T12:21:31Z",
+      "pushedAt": "2026-09-23T11:22:09Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 221 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "HelixEdit —— Modal code editor with LSP support written in Rust",
+      "introduction": "Modal code editor with LSP support written in Rust。用 Rust 编写，主要话题：code-editor、desktop、developer-tools、editor。当前 221 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "追求趁手工具的开发者",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "Behemothlyaoscillate/RustDeskPro",
+      "githubUrl": "https://github.com/behemothlyaoscillate/rustdeskpro",
+      "canonicalUrl": "https://github.com/behemothlyaoscillate/rustdeskpro",
+      "description": "Self-hosted remote desktop client for teams",
+      "chineseDescription": "RustDeskPro：Self-hosted remote desktop client for teams",
+      "stars": 221,
+      "forks": 47,
+      "openIssues": 0,
+      "language": "Rust",
+      "topics": [
+        "cross-platform",
+        "desktop",
+        "gui",
+        "remote-access",
+        "remote-desktop",
+        "rust",
+        "self-hosted"
+      ],
+      "createdAt": "2026-09-23T11:21:46Z",
+      "updatedAt": "2026-09-23T12:21:23Z",
+      "pushedAt": "2026-09-23T11:22:03Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 221 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "RustDeskPro —— Self-hosted remote desktop client for teams",
+      "introduction": "Self-hosted remote desktop client for teams。用 Rust 编写，主要话题：cross-platform、desktop、gui、remote-access。当前 221 星。",
+      "whyToday": "Trending 曝光带来新一批关注，可以了解它的定位与差异",
+      "audience": "追求趁手工具的开发者",
+      "editorialTags": [
+        "开发工具",
+        "设计",
+        "开源替代"
+      ],
+      "recommendation": 3
+    }
+  ]
+}
