@@ -122,7 +122,7 @@ FEATURED = {
     },
     "driceroland/Search": {
         "plainSummary": "Search —— 一个小巧快速的 macOS WebKit 浏览器。",
-        "introduction": "Search 是 Office Commun 出品的 macOS 浏览器，基于系统 WebKit 打造，追求「小而快」：启动快、界面极简，适合当作辅助浏览器或专门用来读文档的备用浏览器。",
+        "introduction": "Search 是 Office Commun 出品的 macOS 浏览器，基于系统 WebKit 打造，追求「小而快」，启动秒开、界面极简。适合当作辅助浏览器或专门用来读文档的备用浏览器。",
         "whyToday": "当前 793 星，macOS 上又一个走极简路线的浏览器新面孔。",
         "audience": "喜欢极简效率工具的 Mac 用户。",
         "editorialTags": ["效率", "开发工具"],
@@ -218,7 +218,7 @@ FEATURED = {
     },
     "AutocratGirder/ClashDesk": {
         "plainSummary": "ClashDesk —— 现代跨平台的 Clash 代理桌面客户端。",
-        "introduction": "ClashDesk 是一款用 Rust + Tauri 构建的跨平台桌面客户端，主打 Clash 代理工作流：可视化规则、订阅管理、流量监控等常用能力都齐全，覆盖 Windows/macOS/Linux。",
+        "introduction": "ClashDesk 是一款用 Rust + Tauri 构建的跨平台桌面客户端，主打 Clash 代理工作流。可视化规则、订阅管理、流量监控等常用能力齐全，覆盖 Windows/macOS/Linux。",
         "whyToday": "当前 223 星，Clash 系客户端里 UI 走现代化路线的新面孔。",
         "audience": "使用 Clash 类代理工具、追求好看好用 GUI 的用户。",
         "editorialTags": ["效率", "开发工具"],
@@ -226,7 +226,7 @@ FEATURED = {
     },
     "BinaryDeliverer/CodexDesk": {
         "plainSummary": "CodexDesk —— 面向 AI 编码 Agent 和 Codex 工作流的桌面伴侣。",
-        "introduction": "CodexDesk 是给 AI 编码 Agent（如 Codex 系工具）用的桌面伴侣：任务面板、会话切换、代理管理、常用工具集成打包在一个 Rust + Tauri 客户端里，方便重度 AI Coding 用户操作。",
+        "introduction": "CodexDesk 是给 AI 编码 Agent（如 Codex 系工具）用的桌面伴侣。任务面板、会话切换、代理管理、常用工具集成打包在一个 Rust + Tauri 客户端里，方便重度 AI Coding 用户操作。",
         "whyToday": "当前 222 星，围绕 Codex 生态又一款「桌面壳子」，可以对比 magpie 一起看。",
         "audience": "重度使用 Codex/AI Coding Agent 的开发者。",
         "editorialTags": ["AI 工具", "开发工具"],
