@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, Bookmark, Check, Flame, MessageCircle, Sparkles, Star } from "lucide-react";
 import { SOURCE_LABELS } from "@/lib/discovery";
-import type { EditorialProject } from "@/lib/types";
+import type { CandidateProject, EditorialProject } from "@/lib/types";
 
 const PUBLIC_AI_CHAT_URL = "https://chat.deepseek.com/";
 
@@ -11,8 +11,15 @@ function compactNumber(value: number) {
   return new Intl.NumberFormat("zh-CN", { notation: "compact", maximumFractionDigits: 1 }).format(value);
 }
 
+function isEditorialProject(project: CandidateProject): project is EditorialProject {
+  return "plainSummary" in project
+    && typeof project.plainSummary === "string"
+    && "introduction" in project
+    && typeof project.introduction === "string";
+}
+
 export function ProjectCard({ project, index, saved, onToggleSaved, category, matchedInterest }: {
-  project: EditorialProject;
+  project: CandidateProject;
   index: number;
   saved: boolean;
   onToggleSaved: () => void;
@@ -22,14 +29,31 @@ export function ProjectCard({ project, index, saved, onToggleSaved, category, ma
   const [aiPromptCopied, setAiPromptCopied] = useState(false);
   const number = String(index + 1).padStart(2, "0");
   const owner = project.name.split("/")[0] ?? project.name;
+  const editorial = isEditorialProject(project);
   const growthLabel = typeof project.recentGrowth === "number"
     ? `+${compactNumber(project.recentGrowth)} ${project.growthSource === "snapshot" ? "较上次收录" : "今日"}`
     : "增长待观察";
 
+  // 在 Aime App 的 iframe 中，宿主会注入 window.__aime__，可直接把问题发给对话流里的 Aime。
+  // 服务端/静态导出阶段没有 window，故在客户端挂载后再检测，避免 hydration 不匹配。
+  const [inAime, setInAime] = useState(false);
+  useEffect(() => {
+    const bridge = (window as unknown as { __aime__?: { sendPrompt?: (text: string) => void } }).__aime__;
+    setInAime(typeof bridge?.sendPrompt === "function");
+  }, []);
+
   const askAI = async () => {
     const prompt = `请帮我详细了解这个 GitHub 项目：${project.githubUrl}\n\n请重点介绍它解决什么问题、核心功能、适合谁使用、如何快速开始，以及使用时需要注意什么。`;
-    window.open(PUBLIC_AI_CHAT_URL, "_blank", "noopener,noreferrer");
 
+    // Aime App 内：直接调用宿主 Aime，无需离开应用。
+    const bridge = (window as unknown as { __aime__?: { sendPrompt?: (text: string) => void } }).__aime__;
+    if (typeof bridge?.sendPrompt === "function") {
+      bridge.sendPrompt(prompt);
+      return;
+    }
+
+    // 公开网页（IDA / Vercel 等）：兜底打开公开 AI，并复制提问内容。
+    window.open(PUBLIC_AI_CHAT_URL, "_blank", "noopener,noreferrer");
     try {
       await navigator.clipboard.writeText(prompt);
       setAiPromptCopied(true);
@@ -47,7 +71,6 @@ export function ProjectCard({ project, index, saved, onToggleSaved, category, ma
         <div className="flex min-w-0 items-center gap-3">
           <div className="relative grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 text-sm font-black text-orange-700 ring-1 ring-orange-200">
             <span>{owner.slice(0, 1).toUpperCase()}</span>
-            {/* GitHub owner avatar；加载失败时保留底下的首字母。 */}
             <img
               src={`https://github.com/${encodeURIComponent(owner)}.png?size=88`}
               alt=""
@@ -76,18 +99,18 @@ export function ProjectCard({ project, index, saved, onToggleSaved, category, ma
         {matchedInterest && (
           <p className="mb-2 inline-flex items-center gap-1 text-xs font-bold text-violet-600"><Sparkles size={13} /> 正合你的兴趣</p>
         )}
-        <h3 className="max-w-sm font-serif text-xl font-bold leading-snug tracking-tight text-stone-900 sm:text-2xl">{project.plainSummary}</h3>
-        <p className="mt-3 text-sm leading-6 text-stone-600">{project.introduction}</p>
+        <h3 className="max-w-sm font-serif text-xl font-bold leading-snug tracking-tight text-stone-900 sm:text-2xl">{editorial ? project.plainSummary : project.name}</h3>
+        <p className="mt-3 text-sm leading-6 text-stone-600">{editorial ? project.introduction : (project.chineseDescription ?? "该仓库暂未提供中文描述。")}</p>
         <div className="mt-5 rounded-3xl border border-white/80 bg-gradient-to-br from-violet-50/90 to-white/70 p-4 shadow-sm">
-          <p className="mb-1 flex items-center gap-1.5 text-xs font-bold text-violet-700"><Flame size={13} /> 为什么今天值得看</p>
-          <p className="text-xs font-medium leading-5 text-stone-700">{project.whyToday}</p>
+          <p className="mb-1 flex items-center gap-1.5 text-xs font-bold text-violet-700"><Flame size={13} /> {editorial ? "为什么今天值得看" : "程序评分信号"}</p>
+          <p className="text-xs font-medium leading-5 text-stone-700">{editorial ? project.whyToday : (project.score?.signals.join("；") || "已进入当天可核验候选池")}</p>
         </div>
-        <p className="mt-3 text-xs leading-5 text-stone-500"><span className="font-bold text-stone-700">适合：</span>{project.audience}</p>
+        {editorial && <p className="mt-3 text-xs leading-5 text-stone-500"><span className="font-bold text-stone-700">适合：</span>{project.audience}</p>}
       </div>
 
       <div className="relative border-t border-stone-100 pt-4">
         <div className="flex flex-wrap gap-1.5">
-          {project.editorialTags.slice(0, 4).map((tag) => <span key={tag} className="rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-xs text-stone-600">{tag}</span>)}
+          {(editorial ? project.editorialTags : project.topics).slice(0, 4).map((tag) => <span key={tag} className="rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-xs text-stone-600">{tag}</span>)}
         </div>
         <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-xs text-stone-500 sm:grid-cols-3">
           <span title="Star 总数">★ {typeof project.stars === "number" ? compactNumber(project.stars) : "待补充"}</span>
@@ -97,17 +120,19 @@ export function ProjectCard({ project, index, saved, onToggleSaved, category, ma
         <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-dashed border-stone-200 pt-3">
           <div className="flex flex-wrap items-center gap-2 text-xs text-stone-400">
             {project.sources.map((source) => <span key={source}>{SOURCE_LABELS[source]}</span>)}
-            <span className="flex items-center gap-1 text-amber-600"><Star size={11} fill="currentColor" /> 编辑推荐 {project.recommendation}/5</span>
+            {editorial
+              ? <span className="flex items-center gap-1 text-amber-600"><Star size={11} fill="currentColor" /> 编辑推荐 {project.recommendation}/5</span>
+              : <span className="font-semibold text-violet-600">程序评分 {project.score?.total ?? "待补充"}</span>}
           </div>
           <div className="flex flex-wrap items-center justify-end gap-2">
             <button
               type="button"
               onClick={askAI}
-              aria-label={`复制 ${project.name} 的提问内容并打开 DeepSeek`}
+              aria-label={inAime ? `向 Aime 提问了解 ${project.name}` : `复制 ${project.name} 的提问内容并打开 DeepSeek`}
               className="inline-flex items-center gap-1 rounded-full border border-violet-200 bg-violet-50 px-3.5 py-2 text-xs font-bold text-violet-700 transition hover:border-violet-300 hover:bg-violet-100"
             >
               {aiPromptCopied ? <Check size={13} /> : <MessageCircle size={13} />}
-              {aiPromptCopied ? "已复制，去问 AI" : "问问 AI"}
+              {inAime ? "问问 Aime" : aiPromptCopied ? "已复制，去问 AI" : "问问 AI"}
             </button>
             <a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`在 GitHub 查看 ${project.name}`} className="inline-flex items-center gap-1 rounded-full bg-stone-900 px-3.5 py-2 text-xs font-bold text-white transition hover:bg-orange-600">去 GitHub 看看 <ArrowUpRight size={13} /></a>
           </div>

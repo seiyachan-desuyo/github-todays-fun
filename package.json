@@ -5,27 +5,32 @@
   "packageManager": "pnpm@10.34.5",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm feed:generate && next build",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
     "collect": "tsx scripts/collect-editor-task.ts",
     "validate:edition": "tsx scripts/validate-edition.ts",
+    "feed:generate": "tsx scripts/generate-feed.ts",
     "pipeline:prepare": "tsx scripts/daily-pipeline.ts prepare",
     "pipeline:stage": "tsx scripts/daily-pipeline.ts stage",
     "pipeline:finalize": "tsx scripts/daily-pipeline.ts finalize",
+    "pipeline:refresh-app": "tsx scripts/daily-pipeline.ts refresh-app",
     "pipeline:status": "tsx scripts/daily-pipeline.ts status",
     "pipeline:success": "tsx scripts/daily-pipeline.ts success",
     "bot:send": "tsx scripts/send-lark-daily.ts",
     "aime:package": "bash scripts/package-aime-app.sh",
     "refresh": "pnpm pipeline:prepare"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "lucide-react": "^0.468.0",
     "next": "15.5.25",
     "react": "19.1.1",
     "react-dom": "19.1.1",
+    "undici": "^7.30.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {

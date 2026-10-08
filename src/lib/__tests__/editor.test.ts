@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { aiEditionSchema, editorTaskSchema, editorialItemSchema } from "@/lib/editor/schema";
 
+const validTranslation = { githubUrl: "https://github.com/owner/repo", chineseDescription: "一个真实的开发工具" };
+
 const validEditorialFields = {
   githubUrl: "https://github.com/owner/repo",
   plainSummary: "这是一个普通人也能看懂的项目介绍",
@@ -14,10 +16,10 @@ const validEditorialFields = {
 const score = { snapshotGrowth: 0, trendingGrowth: 12, newProjectVelocity: 3, pushedFreshness: 8, crossSource: 0, total: 23, signals: ["Trending 披露 +10"] };
 
 describe("Aime editor schemas", () => {
-  it("keeps the compatibility editorial output strict", () => expect(aiEditionSchema.parse({ summary: "今天关注真正能派上用场的新工具。", projects: [validEditorialFields] }).projects).toHaveLength(1));
+  it("keeps the compatibility editorial output strict", () => expect(aiEditionSchema.parse({ summary: "今天关注真正能派上用场的新工具。", projects: [validEditorialFields], candidateTranslations: [validTranslation] }).projects).toHaveLength(1));
   it("rejects unknown tags", () => expect(() => editorialItemSchema.parse({ ...validEditorialFields, editorialTags: ["区块链"] })).toThrow());
   it("rejects non-GitHub URLs and scores outside 1-5", () => {
-    expect(() => aiEditionSchema.parse({ summary: "今天关注真正能派上用场的新工具。", projects: [{ ...validEditorialFields, githubUrl: "https://example.com/a/b", recommendation: 6 }] })).toThrow();
+    expect(() => aiEditionSchema.parse({ summary: "今天关注真正能派上用场的新工具。", projects: [{ ...validEditorialFields, githubUrl: "https://example.com/a/b", recommendation: 6 }], candidateTranslations: [validTranslation] })).toThrow();
   });
   it("accepts a fact-only editor task without editorial copy", () => {
     const task = editorTaskSchema.parse({

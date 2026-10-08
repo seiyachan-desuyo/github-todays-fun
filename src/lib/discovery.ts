@@ -1,4 +1,4 @@
-import type { EditorialProject, EditorialTag, SourceName } from "@/lib/types";
+import type { CandidateProject, EditorialProject, EditorialTag, SourceName } from "@/lib/types";
 
 export const DISCOVERY_CATEGORIES = [
   { id: "all", label: "今日 30 个", shortLabel: "全部" },
@@ -37,11 +37,11 @@ function daysSince(value: string | undefined, editionDate: string): number {
   return Number.isFinite(start) ? Math.max(0, (end - start) / 86_400_000) : Number.POSITIVE_INFINITY;
 }
 
-export function isNewProject(project: EditorialProject, editionDate: string): boolean {
+export function isNewProject(project: CandidateProject, editionDate: string): boolean {
   return daysSince(project.createdAt, editionDate) <= 30;
 }
 
-export function isHotProject(project: EditorialProject): boolean {
+export function isHotProject(project: CandidateProject): boolean {
   return typeof project.recentGrowth === "number" && project.recentGrowth > 0;
 }
 
@@ -55,11 +55,12 @@ export function matchesCategory(project: EditorialProject, category: DiscoveryCa
   return project.editorialTags.some((tag) => ["效率", "设计", "数据", "学习", "开源替代", "开发工具"].includes(tag));
 }
 
-export function projectCategory(project: EditorialProject, editionDate: string): string {
+export function projectCategory(project: CandidateProject, editionDate: string): string {
   if (isNewProject(project, editionDate)) return "刚刚冒头";
   if (isHotProject(project)) return "突然变火";
-  if (project.editorialTags.includes("AI 工具")) return "AI 好玩";
-  if (project.editorialTags.includes("有趣")) return "脑洞项目";
+  const editorialTags = "editorialTags" in project && Array.isArray(project.editorialTags) ? project.editorialTags : [];
+  if (editorialTags.includes("AI 工具")) return "AI 好玩";
+  if (editorialTags.includes("有趣")) return "脑洞项目";
   return "实用工具";
 }
 

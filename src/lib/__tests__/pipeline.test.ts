@@ -8,6 +8,7 @@ const project: CandidateProject = {
   githubUrl: "https://github.com/owner/repo",
   canonicalUrl: "https://github.com/owner/repo",
   description: "A real developer tool",
+  chineseDescription: "一个真正的开发工具",
   stars: 120,
   createdAt: "2026-09-05T00:00:00Z",
   pushedAt: "2026-09-07T00:00:00Z",

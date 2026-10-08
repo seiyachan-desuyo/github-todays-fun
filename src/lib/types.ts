@@ -47,6 +47,7 @@ export interface CandidateProject {
   githubUrl: string;
   canonicalUrl: string;
   description?: string;
+  chineseDescription?: string;
   readme?: string;
   stars?: number;
   forks?: number;
@@ -62,6 +63,11 @@ export interface CandidateProject {
   sources: SourceName[];
   raw?: RawProject[];
   score?: ScoreBreakdown;
+}
+
+export interface CandidatePool {
+  date: string;
+  projects: CandidateProject[];
 }
 
 export interface EditorTaskCandidate {

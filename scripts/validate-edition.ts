@@ -56,10 +56,9 @@ export async function validateEdition(date: string, editionFile?: string): Promi
 
   if (task.date !== edition.date || edition.date !== date) throw new Error("editor task、edition 与命令日期不一致");
   if (task.targetCount !== DAILY_EDITION_TARGET || edition.metadata?.targetCount !== DAILY_EDITION_TARGET) throw new Error("每日正式刊目标必须为 30 项");
-  const expectedCount = Math.min(DAILY_EDITION_TARGET, task.candidates.length);
-  if (edition.projects.length !== expectedCount) throw new Error(`正式刊应包含 ${expectedCount} 项，实际为 ${edition.projects.length} 项`);
-  const shouldDegrade = task.candidates.length < DAILY_EDITION_TARGET;
-  if (edition.metadata?.degraded !== shouldDegrade) throw new Error(shouldDegrade ? "候选不足时 metadata 必须明示降级" : "候选充足时不得标记为降级出版");
+  if (task.candidates.length < DAILY_EDITION_TARGET) throw new Error(`候选池仅 ${task.candidates.length} 项，不足以出版固定 30 项正式刊`);
+  if (edition.projects.length !== DAILY_EDITION_TARGET) throw new Error(`正式刊必须包含 ${DAILY_EDITION_TARGET} 项，实际为 ${edition.projects.length} 项`);
+  if (edition.metadata?.degraded) throw new Error("正式刊不得标记为降级出版");
   const byUrl = new Map(task.candidates.map((candidate) => [candidate.url.toLowerCase().replace(/\/$/, ""), candidate]));
   const seen = new Set<string>();
   for (const project of edition.projects) {

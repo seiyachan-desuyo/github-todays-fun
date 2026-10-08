@@ -1,5 +1,10 @@
+import { EnvHttpProxyAgent, setGlobalDispatcher } from "undici";
 import { makeCandidate } from "@/lib/pipeline/normalize";
 import type { CandidateProject, SourceName, SourceSnapshot } from "@/lib/types";
+
+if (process.env.HTTPS_PROXY || process.env.https_proxy || process.env.HTTP_PROXY || process.env.http_proxy) {
+  setGlobalDispatcher(new EnvHttpProxyAgent());
+}
 
 const API_ROOT = "https://api.github.com";
 const WEB_ROOT = "https://github.com";

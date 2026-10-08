@@ -1,6 +1,6 @@
 import { mkdir, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { excludePublishedProjects, loadPublishedRepoUrls } from "../src/lib/pipeline/history";
+import { canonicalGitHubUrl, loadPublishedCanonicalUrls } from "../src/lib/pipeline/history";
 import { dedupeProjects } from "../src/lib/pipeline/normalize";
 import { DAILY_EDITION_TARGET, rankProjects } from "../src/lib/pipeline/rank";
 import { applySnapshotGrowth, loadPreviousSnapshot, saveSnapshot } from "../src/lib/pipeline/snapshot";
@@ -47,15 +47,15 @@ async function main() {
 
   const allProjects = [...search.projects, ...trending.projects];
   const deduped = dedupeProjects(allProjects);
-  const publishedRepoUrls = await loadPublishedRepoUrls(undefined, date);
-  const freshProjects = excludePublishedProjects(deduped, publishedRepoUrls);
-  const repository = await probeGitHubRepository(freshProjects[0]);
+  const repository = await probeGitHubRepository(deduped[0]);
   const previous = await loadPreviousSnapshot(date);
-  const withGrowth = applySnapshotGrowth(freshProjects, previous);
+  const withGrowth = applySnapshotGrowth(deduped, previous);
   await saveSnapshot(date, withGrowth);
 
-  const candidates = rankProjects(withGrowth, now, Number.POSITIVE_INFINITY).map(toTaskCandidate);
-  if (!candidates.length) throw new Error("所有来源均未产生可核验候选，拒绝生成空任务或 mock 数据");
+  const publishedUrls = await loadPublishedCanonicalUrls(path.resolve(process.cwd(), "src/data/editions"), date);
+  const unpublished = withGrowth.filter((project) => !publishedUrls.has(canonicalGitHubUrl(project.canonicalUrl ?? project.githubUrl)));
+  const candidates = rankProjects(unpublished, now, Number.POSITIVE_INFINITY).map(toTaskCandidate);
+  if (!candidates.length) throw new Error("排除历史已发布项目后，所有来源均未产生可核验新候选，拒绝生成空任务或 mock 数据");
 
   const sourceStatus = [search.status, trending.status, repository];
   const task: EditorTask = {

@@ -1,0 +1,1336 @@
+{
+  "date": "2026-09-21",
+  "issue": 12,
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "今天从 GitHub 官方来源核出 105 个新鲜候选，精选 30 个真实项目：生成式 UI、编程智能体、自托管文档、AI 绘图与视频、逆向与终端工具、学习清单等，总有一款今天能玩点不一样的。",
+  "mode": "live",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+  "publishedAt": "2026-09-21T07:42:18.495Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-09-21T07:35:47.348Z",
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "raw": [
+        {
+          "query": "created:>=2026-09-18 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-09-07 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-09-18 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-09-21T07:35:47.380Z",
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 34 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "rawCount": 34,
+      "normalizedCount": 34,
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 13
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 21
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "degraded",
+      "fetchedAt": "2026-09-21T07:35:51.224Z",
+      "message": "HTTP 403，详情补全跳过；保留 Search/Trending 已有事实；rate limit remaining=0"
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 184,
+    "normalizedCandidateCount": 184,
+    "dedupedCandidateCount": 177,
+    "eligibleCandidateCount": 105,
+    "selectedCount": 30
+  },
+  "projects": [
+    {
+      "name": "vercel-labs/json-render",
+      "githubUrl": "https://github.com/vercel-labs/json-render",
+      "canonicalUrl": "https://github.com/vercel-labs/json-render",
+      "description": "The Generative UI framework",
+      "chineseDescription": "Vercel 出品的生成式 UI 框架，用 JSON 驱动动态界面渲染。",
+      "stars": 17599,
+      "forks": 928,
+      "recentGrowth": 291,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 49.1389473532801,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 49.1,
+        "signals": [
+          "Trending 披露 +291"
+        ]
+      },
+      "plainSummary": "用 JSON 描述界面，让大模型直接生成动态 UI 的前端框架。",
+      "introduction": "它把界面结构抽象成 JSON，让模型输出的数据可以直接映射为可交互组件。你可以用它快速搭建由 AI 生成、随对话变化的动态界面，而不用手写大量渲染逻辑。",
+      "whyToday": "今日 Trending 快照实增约 291 星，累计 17.6k★，是当前候选中人气与增速双高的项目。",
+      "audience": "做 AI 应用与生成式界面的前端开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "paperless-ngx/paperless-ngx",
+      "githubUrl": "https://github.com/paperless-ngx/paperless-ngx",
+      "canonicalUrl": "https://github.com/paperless-ngx/paperless-ngx",
+      "description": "A community-supported supercharged document management system: scan, index and archive all your documents",
+      "chineseDescription": "社区维护的强化版文档管理系统：扫描、索引并归档所有文档。",
+      "stars": 45708,
+      "forks": 3159,
+      "recentGrowth": 57,
+      "growthSource": "github-trending",
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 35.14788597076543,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 35.1,
+        "signals": [
+          "Trending 披露 +57"
+        ]
+      },
+      "plainSummary": "把所有纸质与电子文档扫描、索引并归档的自托管管理系统。",
+      "introduction": "它帮你把发票、合同、信件等文档扫描进库，自动 OCR、打标签并全文检索。你可以在自己的服务器上集中管理资料，替代付费的文档管理服务。",
+      "whyToday": "累计 45.7k★ 的老牌自托管项目，今日 Trending 仍实增约 57 星，热度稳定。",
+      "audience": "想自建文档库的个人与小团队",
+      "editorialTags": [
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "BuilderIO/agent-native",
+      "githubUrl": "https://github.com/builderio/agent-native",
+      "canonicalUrl": "https://github.com/builderio/agent-native",
+      "description": "A framework for building agentic apps",
+      "chineseDescription": "用于构建智能体应用的框架。",
+      "stars": 5442,
+      "forks": 504,
+      "recentGrowth": 98,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 39.77613972047766,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 39.8,
+        "signals": [
+          "Trending 披露 +98"
+        ]
+      },
+      "plainSummary": "用来构建智能体应用的开发框架。",
+      "introduction": "它提供了搭建 agentic 应用所需的基础结构，让你把模型、工具与流程编排组合起来。你可以基于它更快地做出能自主执行任务的 AI 应用。",
+      "whyToday": "今日 Trending 实增约 98 星，累计 5.4k★，是智能体开发框架里的上升选手。",
+      "audience": "构建 AI 智能体应用的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "QwenLM/Qwen-Image-2.1",
+      "githubUrl": "https://github.com/qwenlm/qwen-image-2.1",
+      "canonicalUrl": "https://github.com/qwenlm/qwen-image-2.1",
+      "description": "Qwen's most powerful open-source image generation model",
+      "chineseDescription": "通义千问最强开源图像生成模型。",
+      "stars": 722,
+      "forks": 27,
+      "openIssues": 4,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-14T04:12:17Z",
+      "updatedAt": "2026-09-21T07:35:32Z",
+      "pushedAt": "2026-09-20T12:25:51Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 100 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "通义千问团队开源的图像生成模型。",
+      "introduction": "它是 Qwen 目前最强的开源文生图模型，可以根据文字提示生成图像。你可以把它部署到本地或服务器，用于创作与设计场景。",
+      "whyToday": "累计 722★，是今天候选池中关注度较高的开源图像生成模型。",
+      "audience": "AI 绘画爱好者与做图像生成的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "zai-org/ZCode",
+      "githubUrl": "https://github.com/zai-org/zcode",
+      "canonicalUrl": "https://github.com/zai-org/zcode",
+      "description": "Z.ai's coding agent harness. Powerful, intelligent, extensible.",
+      "chineseDescription": "Z.ai 推出的编程智能体框架，强调强大、智能与可扩展。",
+      "stars": 4196,
+      "forks": 1117,
+      "openIssues": 11,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-20T12:01:16Z",
+      "updatedAt": "2026-09-21T07:35:37Z",
+      "pushedAt": "2026-09-21T00:02:36Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 4196 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Z.ai 推出的可扩展编程智能体框架。",
+      "introduction": "它是一个编程智能体的运行框架，强调强大、智能与可扩展。你可以用它把代码任务交给智能体处理，并按需扩展能力。",
+      "whyToday": "累计 4.2k★，是今日候选中人气靠前的编程智能体项目。",
+      "audience": "想用 AI 辅助写代码的开发者",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "dust-tt/dust",
+      "githubUrl": "https://github.com/dust-tt/dust",
+      "canonicalUrl": "https://github.com/dust-tt/dust",
+      "description": "Custom AI agent platform to speed up your work.",
+      "chineseDescription": "自定义 AI 智能体平台，帮你加速工作。",
+      "stars": 1469,
+      "forks": 359,
+      "openIssues": 417,
+      "language": "TypeScript",
+      "topics": [
+        "agents",
+        "large-language-models",
+        "llm",
+        "rust"
+      ],
+      "createdAt": "2022-08-19T07:57:29Z",
+      "updatedAt": "2026-09-21T07:35:36Z",
+      "pushedAt": "2026-09-21T07:35:33Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "帮你加速日常工作的自定义 AI 智能体平台。",
+      "introduction": "它让你搭建面向具体工作场景的自定义 AI 智能体，接入数据与工具。你可以用它把重复性的知识工作交给智能体来提效。",
+      "whyToday": "累计 1.5k★，是今日候选中较成熟的 AI 智能体平台之一。",
+      "audience": "想用 AI 提效的团队与知识工作者",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Haleclipse/CometixCode",
+      "githubUrl": "https://github.com/haleclipse/cometixcode",
+      "canonicalUrl": "https://github.com/haleclipse/cometixcode",
+      "description": "An unofficial Rust reimplementation of Anthropic's Claude Code terminal UI, built on iocraft",
+      "chineseDescription": "用 Rust 与 iocraft 重写的 Claude Code 终端界面非官方实现。",
+      "stars": 421,
+      "forks": 24,
+      "openIssues": 4,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-09-20T08:58:08Z",
+      "updatedAt": "2026-09-21T07:27:18Z",
+      "pushedAt": "2026-09-20T16:26:49Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 404 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "用 Rust 重写的 Claude Code 终端界面非官方实现。",
+      "introduction": "它用 Rust 和 iocraft 复刻了 Claude Code 的终端交互界面。你可以借它了解终端 AI 编码工具的实现方式，或作为轻量的替代终端体验。",
+      "whyToday": "累计 421★，是今日候选中颇有话题度的 Rust 重写项目。",
+      "audience": "喜欢终端工具与 Rust 的开发者",
+      "editorialTags": [
+        "开发工具",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "ejfkdev/ddc",
+      "githubUrl": "https://github.com/ejfkdev/ddc",
+      "canonicalUrl": "https://github.com/ejfkdev/ddc",
+      "description": "DEX → Java decompiler in Rust — fast, progressive analysis, bilingual CLI",
+      "chineseDescription": "用 Rust 编写的 DEX→Java 反编译器，快速、渐进、双语 CLI。",
+      "stars": 205,
+      "forks": 33,
+      "openIssues": 2,
+      "language": "Rust",
+      "topics": [
+        "android",
+        "decompiler",
+        "dex",
+        "reverse-engineering",
+        "rust"
+      ],
+      "createdAt": "2026-09-18T05:07:46Z",
+      "updatedAt": "2026-09-21T07:32:28Z",
+      "pushedAt": "2026-09-20T15:21:09Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 64 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "用 Rust 写的把安卓 DEX 反编译成 Java 的工具。",
+      "introduction": "它能把安卓 DEX 字节码反编译回可读的 Java 代码，支持渐进式分析和双语命令行。你可以用它做逆向分析或研究安卓应用内部实现。",
+      "whyToday": "累计 205★，是今日候选中少见的 Rust 逆向工程工具。",
+      "audience": "做安卓逆向与安全研究的开发者",
+      "editorialTags": [
+        "开发工具",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "LSPosed/ZygiskNext",
+      "githubUrl": "https://github.com/lsposed/zygisknext",
+      "canonicalUrl": "https://github.com/lsposed/zygisknext",
+      "description": "Standalone implementation of Zygisk",
+      "chineseDescription": "Zygisk 的独立实现。",
+      "stars": 254,
+      "forks": 4,
+      "openIssues": 1,
+      "language": "C",
+      "topics": [],
+      "createdAt": "2026-09-19T10:48:59Z",
+      "updatedAt": "2026-09-21T07:30:05Z",
+      "pushedAt": "2026-09-20T04:19:49Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 129 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "Zygisk 的独立实现，用于安卓模块化改造。",
+      "introduction": "它是 Zygisk 的独立实现，为 Root 环境下的模块注入提供基础能力。你可以基于它加载和管理安卓系统级模块。",
+      "whyToday": "累计 254★，来自知名 LSPosed 团队，今日候选中的安卓底层工具。",
+      "audience": "安卓折腾玩家与系统开发者",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "whisper-money/whisper-money",
+      "githubUrl": "https://github.com/whisper-money/whisper-money",
+      "canonicalUrl": "https://github.com/whisper-money/whisper-money",
+      "description": "Understand your personal finances. Forget Excels, try Whisper Money.",
+      "chineseDescription": "理解个人财务的开源工具，替代手工 Excel 记账。",
+      "stars": 1123,
+      "forks": 112,
+      "openIssues": 4,
+      "language": "PHP",
+      "topics": [
+        "budgeting",
+        "money-management",
+        "open-source",
+        "personal-finance",
+        "privacy",
+        "react",
+        "self-hosted"
+      ],
+      "createdAt": "2025-11-07T21:43:02Z",
+      "updatedAt": "2026-09-21T07:35:07Z",
+      "pushedAt": "2026-09-21T07:35:04Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "替代 Excel 记账、看懂个人财务的开源工具。",
+      "introduction": "它帮你把收支和资产整理清楚，用可视化方式呈现个人财务状况。你可以用它取代手工维护的记账表格，更直观地管理钱包。",
+      "whyToday": "累计 1.1k★，是今日候选中注重隐私的个人理财开源项目。",
+      "audience": "想管好个人财务、告别 Excel 的人",
+      "editorialTags": [
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "lightly-ai/lightly-studio",
+      "githubUrl": "https://github.com/lightly-ai/lightly-studio",
+      "canonicalUrl": "https://github.com/lightly-ai/lightly-studio",
+      "description": "LightlyStudio - The Unified Data Platform for Multimodal ML",
+      "chineseDescription": "面向多模态机器学习的统一数据平台。",
+      "stars": 889,
+      "forks": 37,
+      "openIssues": 52,
+      "language": "Python",
+      "topics": [
+        "computer-vision",
+        "curation",
+        "image-labeling",
+        "mlops"
+      ],
+      "createdAt": "2025-10-21T07:12:36Z",
+      "updatedAt": "2026-09-21T07:35:28Z",
+      "pushedAt": "2026-09-21T07:35:27Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "面向多模态机器学习的统一数据平台。",
+      "introduction": "它把数据标注、筛选与管理整合到一个平台，专为多模态机器学习设计。你可以用它统一处理图像等数据，提升数据集质量。",
+      "whyToday": "累计 889★，是今日候选中面向多模态 ML 的数据工具代表。",
+      "audience": "做计算机视觉与多模态 ML 的团队",
+      "editorialTags": [
+        "数据",
+        "AI 工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "chaseleantj/desktop-habitats",
+      "githubUrl": "https://github.com/chaseleantj/desktop-habitats",
+      "canonicalUrl": "https://github.com/chaseleantj/desktop-habitats",
+      "description": "Living ecosystems you can interact with on your desktop",
+      "chineseDescription": "可在桌面上互动的活体生态系统。",
+      "stars": 210,
+      "forks": 26,
+      "openIssues": 6,
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-09-18T08:31:55Z",
+      "updatedAt": "2026-09-21T06:49:43Z",
+      "pushedAt": "2026-09-21T06:27:13Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 69 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "可以在桌面上互动的活体生态系统。",
+      "introduction": "它在你的桌面上呈现一个可以互动的活体生态，生物会持续活动和演化。你可以把它当成陪伴式的桌面小玩意，观察和逗弄它们。",
+      "whyToday": "累计 210★，是今日候选中轻松有趣的桌面互动项目。",
+      "audience": "喜欢桌面小玩意的所有人",
+      "editorialTags": [
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Oldcircle/geo-sleuth",
+      "githubUrl": "https://github.com/oldcircle/geo-sleuth",
+      "canonicalUrl": "https://github.com/oldcircle/geo-sleuth",
+      "description": "An agent skill that finds where a photo was taken — OpenStreetMap geometry, elevation skylines, satellite imagery and street view — and shows its work. Works with Claude Code, Codex, Cursor, Gemini CLI, OpenCode and GitHub Copilot.",
+      "chineseDescription": "根据照片推断拍摄地点的智能体技能，支持多种编码助手。",
+      "stars": 214,
+      "forks": 24,
+      "openIssues": 0,
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "computer-vision",
+        "cursor",
+        "gemini-cli",
+        "geoguessr",
+        "geoint",
+        "geolocation",
+        "github-copilot",
+        "image-geolocation",
+        "opencode",
+        "openstreetmap",
+        "osint",
+        "photo-geolocation",
+        "reverse-image-search",
+        "satellite-imagery"
+      ],
+      "createdAt": "2026-09-18T08:51:34Z",
+      "updatedAt": "2026-09-21T06:50:26Z",
+      "pushedAt": "2026-09-21T03:43:02Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 70 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "看照片就能推断拍摄地点的智能体技能。",
+      "introduction": "它结合地图几何、海拔天际线、卫星与街景，推断一张照片是在哪里拍的，并展示推理过程。你可以把它接入 Claude Code、Codex 等多种编码助手使用。",
+      "whyToday": "累计 214★，是今日候选中玩法新奇的地理侦探型智能体技能。",
+      "audience": "喜欢解谜、地理定位的玩家与开发者",
+      "editorialTags": [
+        "有趣",
+        "AI 工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "joeseesun/qiaomu-download",
+      "githubUrl": "https://github.com/joeseesun/qiaomu-download",
+      "canonicalUrl": "https://github.com/joeseesun/qiaomu-download",
+      "description": "通用在线视频下载与媒体提取技能。用户提供 YouTube/youtu.be、B站/bilibili/b23.tv、X/Twitter、Vimeo、TikTok、Instagram、Facebook、Twitch、Reddit 或其他 yt-dlp 支持的视频链接，并要求下载/保存视频、提取 audio/MP3、下载字幕、查看视频信息或更新 yt-dlp 时使用。微信视频号 weixin.qq.com/sph 链接转交 qiaomu-wx-video，绝不自动化操作微信客户端。",
+      "chineseDescription": "通用在线视频下载技能，支持 YouTube、B 站、X 等多平台。",
+      "stars": 279,
+      "forks": 49,
+      "openIssues": 0,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-19T09:53:27Z",
+      "updatedAt": "2026-09-21T07:26:59Z",
+      "pushedAt": "2026-09-20T00:45:59Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 139 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "支持多平台的通用在线视频下载技能。",
+      "introduction": "它支持从 YouTube、B 站、X、Vimeo、TikTok 等 yt-dlp 支持的平台下载视频、提取音频和字幕。你可以用它一站式保存网络视频与音频素材。",
+      "whyToday": "累计 279★，是今日候选中实用的多平台视频下载工具。",
+      "audience": "需要保存视频与音频素材的用户",
+      "editorialTags": [
+        "效率",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Shirochi-stack/Glossarion",
+      "githubUrl": "https://github.com/shirochi-stack/glossarion",
+      "canonicalUrl": "https://github.com/shirochi-stack/glossarion",
+      "description": "Glossarion is a GUI utility for AI-assisted novel translation using OpenAI and Gemini APIs. It supports contextual translation, glossary generation, and EPUB rebuilding with full control.",
+      "chineseDescription": "用 OpenAI/Gemini 做 AI 辅助小说翻译的 GUI，支持 EPUB 重建。",
+      "stars": 113,
+      "forks": 16,
+      "openIssues": 0,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2025-05-23T16:59:54Z",
+      "updatedAt": "2026-09-21T07:35:18Z",
+      "pushedAt": "2026-09-21T07:35:14Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "用大模型做 AI 辅助小说翻译的图形界面工具。",
+      "introduction": "它借助 OpenAI 与 Gemini 做上下文连贯的小说翻译，支持术语表生成和 EPUB 重建。你可以用它把外文小说较流畅地译成本地语言并重新打包成电子书。",
+      "whyToday": "累计 113★，是今日候选中面向长文翻译的实用 AI 工具。",
+      "audience": "翻译外文小说的读者与译者",
+      "editorialTags": [
+        "AI 工具",
+        "有趣"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "bytestrix/InfraCanvas",
+      "githubUrl": "https://github.com/bytestrix/infracanvas",
+      "canonicalUrl": "https://github.com/bytestrix/infracanvas",
+      "description": "Live Docker & Kubernetes infrastructure visualization - containers, pods, volumes, and networks in one visual map. No VPN, no inbound ports.",
+      "chineseDescription": "实时可视化 Docker 与 Kubernetes 基础设施的一张图工具。",
+      "stars": 81,
+      "forks": 9,
+      "openIssues": 10,
+      "language": "Go",
+      "topics": [
+        "developer-tools",
+        "devops",
+        "devops-platform",
+        "devops-tools",
+        "docker",
+        "golang",
+        "infra",
+        "infrastructure",
+        "kubernetes",
+        "monitoring",
+        "nextjs",
+        "self-hosted",
+        "virtual-machine",
+        "visualization",
+        "vm"
+      ],
+      "createdAt": "2026-04-17T04:52:59Z",
+      "updatedAt": "2026-09-21T07:35:10Z",
+      "pushedAt": "2026-09-21T07:35:06Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "把 Docker 与 K8s 基础设施画成一张实时地图。",
+      "introduction": "它把容器、Pod、卷和网络等实时呈现在一张可视化地图上，无需 VPN 或开放入站端口。你可以用它直观地掌握本地或集群的基础设施拓扑。",
+      "whyToday": "累计 81★，是今日候选中新颖的基础设施可视化工具。",
+      "audience": "用 Docker/K8s 的开发与运维",
+      "editorialTags": [
+        "开发工具",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "wmwlwmwl/LumeTerm",
+      "githubUrl": "https://github.com/wmwlwmwl/lumeterm",
+      "canonicalUrl": "https://github.com/wmwlwmwl/lumeterm",
+      "description": "轻量全平台 SSH 客户端（Windows / macOS / Linux） — Go 原生并发 · 毫秒级终端 · 远程文件管理 · 系统探针 · 云端加密同步 · AI 对话 · MCP 智能体集成，无需服务端 Agent",
+      "chineseDescription": "轻量全平台 SSH 客户端，支持远程文件管理与 MCP 集成，无需服务端。",
+      "stars": 83,
+      "forks": 22,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-06-16T19:01:46Z",
+      "updatedAt": "2026-09-21T07:35:31Z",
+      "pushedAt": "2026-09-21T07:35:27Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "轻量的全平台 SSH 客户端，无需服务端 Agent。",
+      "introduction": "它提供跨 Windows/macOS/Linux 的 SSH 连接、远程文件管理、系统探针与云端加密同步，还集成了 AI 对话与 MCP。你可以用它更顺手地管理远程服务器。",
+      "whyToday": "累计 83★，是今日候选中功能齐全的新兴 SSH 客户端。",
+      "audience": "经常连服务器的开发与运维",
+      "editorialTags": [
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "JackyST0/awesome-rsshub-routes",
+      "githubUrl": "https://github.com/jackyst0/awesome-rsshub-routes",
+      "canonicalUrl": "https://github.com/jackyst0/awesome-rsshub-routes",
+      "description": "🎯 精选 RSSHub 实用路由推荐，让你的 RSS 阅读更高效！",
+      "chineseDescription": "精选 RSSHub 实用路由推荐，提升 RSS 阅读效率。",
+      "stars": 857,
+      "forks": 33,
+      "openIssues": 1,
+      "language": "HTML",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "rss",
+        "rss-feeds",
+        "rsshub"
+      ],
+      "createdAt": "2026-01-19T09:18:09Z",
+      "updatedAt": "2026-09-21T07:35:18Z",
+      "pushedAt": "2026-09-21T07:35:14Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "精选实用 RSSHub 路由，让 RSS 阅读更高效。",
+      "introduction": "它整理了一批实用的 RSSHub 路由推荐，帮你把各类网站变成可订阅的 RSS 源。你可以照着清单快速配置自己的信息流。",
+      "whyToday": "累计 857★，是今日候选中受欢迎的 RSS 效率清单。",
+      "audience": "用 RSS 管理信息的重度阅读者",
+      "editorialTags": [
+        "效率",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "cdyforever/how-to-live-better",
+      "githubUrl": "https://github.com/cdyforever/how-to-live-better",
+      "canonicalUrl": "https://github.com/cdyforever/how-to-live-better",
+      "description": "《高性价比人生指南》全书 528 条的在线单页阅读版：手机可读、可搜索、零依赖、支持离线",
+      "chineseDescription": "《高性价比人生指南》528 条在线单页阅读版，可搜索、支持离线。",
+      "stars": 167,
+      "forks": 7,
+      "openIssues": 0,
+      "language": "HTML",
+      "topics": [],
+      "createdAt": "2026-09-18T14:35:08Z",
+      "updatedAt": "2026-09-21T07:31:33Z",
+      "pushedAt": "2026-09-20T23:39:50Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 29.58872614273575,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 41.6,
+        "signals": [
+          "新仓约 59 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "528 条《高性价比人生指南》的在线单页阅读版。",
+      "introduction": "它把整本《高性价比人生指南》的 528 条建议做成手机可读、可搜索、支持离线的单页网站。你可以随时翻阅这些关于生活选择的实用建议。",
+      "whyToday": "累计 167★，是今日候选中轻量有趣的生活知识项目。",
+      "audience": "关注生活方式与实用建议的人",
+      "editorialTags": [
+        "学习",
+        "有趣"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "mabdulre9/electrical-engineering",
+      "githubUrl": "https://github.com/mabdulre9/electrical-engineering",
+      "canonicalUrl": "https://github.com/mabdulre9/electrical-engineering",
+      "description": "🎓 Path to a free self-taught education in Electrical Engineering",
+      "chineseDescription": "免费自学电气工程的学习路径清单。",
+      "stars": 251,
+      "forks": 20,
+      "openIssues": 0,
+      "topics": [],
+      "createdAt": "2026-09-20T06:13:22Z",
+      "updatedAt": "2026-09-21T07:29:20Z",
+      "pushedAt": "2026-09-21T05:23:30Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 217 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "免费自学电气工程的完整学习路径。",
+      "introduction": "它整理了一条免费自学电气工程的路线，把公开课程与资料按顺序串起来。你可以照着这份路径系统地入门并深入电气工程。",
+      "whyToday": "累计 251★，是今日候选中系统的自学路线清单。",
+      "audience": "想自学电气工程的学生与爱好者",
+      "editorialTags": [
+        "学习"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "pallavi-shekhar/ai-engineering-interview-questions-company-wise",
+      "githubUrl": "https://github.com/pallavi-shekhar/ai-engineering-interview-questions-company-wise",
+      "canonicalUrl": "https://github.com/pallavi-shekhar/ai-engineering-interview-questions-company-wise",
+      "description": "Your Cheat Sheet For AI Engineering Interviews at Top AI Companies - Questions and Answers.",
+      "chineseDescription": "顶尖 AI 公司 AI 工程面试题与答案速查表。",
+      "stars": 574,
+      "forks": 40,
+      "openIssues": 1,
+      "language": "Markdown",
+      "topics": [
+        "ai",
+        "ai-engineering",
+        "ai-engineering-interview",
+        "ai-interview",
+        "ai-interview-questions",
+        "company-wise-prep",
+        "company-wise-questions",
+        "interview-questions",
+        "llm-inference",
+        "questions-and-answers"
+      ],
+      "createdAt": "2026-09-19T04:14:43Z",
+      "updatedAt": "2026-09-21T07:14:25Z",
+      "pushedAt": "2026-09-19T10:40:41Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 256 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "顶尖 AI 公司 AI 工程面试题与答案速查表。",
+      "introduction": "它按公司整理了 AI 工程岗位的面试题和参考答案。你可以用它有针对性地准备各大 AI 公司的面试。",
+      "whyToday": "累计 574★，是今日候选中实用的 AI 面试备考资料。",
+      "audience": "准备 AI 工程面试的求职者",
+      "editorialTags": [
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "code-dot-org/code-dot-org",
+      "githubUrl": "https://github.com/code-dot-org/code-dot-org",
+      "canonicalUrl": "https://github.com/code-dot-org/code-dot-org",
+      "description": "The code powering code.org and studio.code.org",
+      "chineseDescription": "驱动 code.org 与 studio.code.org 的编程教育代码。",
+      "stars": 902,
+      "forks": 530,
+      "openIssues": 731,
+      "language": "JavaScript",
+      "topics": [
+        "blockly",
+        "code",
+        "coding",
+        "computer",
+        "educational",
+        "learning",
+        "online",
+        "science",
+        "studio"
+      ],
+      "createdAt": "2014-09-20T00:46:11Z",
+      "updatedAt": "2026-09-21T07:35:24Z",
+      "pushedAt": "2026-09-21T07:35:19Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "驱动 code.org 编程教育平台的开源代码。",
+      "introduction": "它是驱动 code-dot-org 编程教育平台的完整开源代码，用 Blockly 等积木方式教人写程序。你可以从中了解大型编程教育平台是如何构建的。",
+      "whyToday": "累计 902★，是今日候选中知名的编程教育开源项目。",
+      "audience": "编程教育者与相关开发者",
+      "editorialTags": [
+        "学习",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "OneKeyHQ/app-monorepo",
+      "githubUrl": "https://github.com/onekeyhq/app-monorepo",
+      "canonicalUrl": "https://github.com/onekeyhq/app-monorepo",
+      "description": "Secure, open source and community driven crypto wallet runs on all platforms and trusted by millions.",
+      "chineseDescription": "OneKey 安全开源的多平台加密货币钱包。",
+      "stars": 2448,
+      "forks": 535,
+      "openIssues": 170,
+      "language": "TypeScript",
+      "topics": [
+        "android",
+        "bitcoin",
+        "blockchain",
+        "crypto",
+        "defi",
+        "electron",
+        "ethereum",
+        "expo",
+        "ios",
+        "mobile",
+        "native",
+        "near",
+        "react",
+        "react-native",
+        "redux",
+        "solana",
+        "universal",
+        "wallet",
+        "web"
+      ],
+      "createdAt": "2021-11-22T14:54:51Z",
+      "updatedAt": "2026-09-21T07:35:39Z",
+      "pushedAt": "2026-09-21T07:35:37Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "安全开源、多平台的加密货币钱包。",
+      "introduction": "它是 OneKey 的开源加密钱包，覆盖安卓、桌面等多个平台，主打安全与社区驱动。你可以用它管理各类加密资产。",
+      "whyToday": "累计 2.4k★，是今日候选中成熟的开源加密钱包。",
+      "audience": "需要开源加密钱包的用户",
+      "editorialTags": [
+        "开源替代",
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "alchemy-run/alchemy",
+      "githubUrl": "https://github.com/alchemy-run/alchemy",
+      "canonicalUrl": "https://github.com/alchemy-run/alchemy",
+      "description": "Infrastructure as Effects",
+      "chineseDescription": "以 Effect 为核心的基础设施即代码（IaC）框架。",
+      "stars": 1301,
+      "forks": 183,
+      "openIssues": 238,
+      "language": "TypeScript",
+      "topics": [
+        "alchemy",
+        "cloud",
+        "effect",
+        "iac",
+        "typescript"
+      ],
+      "createdAt": "2025-10-22T18:11:16Z",
+      "updatedAt": "2026-09-21T07:35:06Z",
+      "pushedAt": "2026-09-21T07:35:02Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "以 Effect 为核心思想的基础设施即代码框架。",
+      "introduction": "它把基础设施描述成可组合的 Effect，用 TypeScript 声明式地管理云资源。你可以用它以类型安全的方式编排和部署基础设施。",
+      "whyToday": "累计 1.3k★，是今日候选中思路新颖的 IaC 框架。",
+      "audience": "用 TypeScript 做云基础设施的工程师",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "kk8bit/kaytool",
+      "githubUrl": "https://github.com/kk8bit/kaytool",
+      "canonicalUrl": "https://github.com/kk8bit/kaytool",
+      "description": "一个为 ComfyUI 开发的自定义节点实用工具包 A custom node utility package developed for ComfyUI",
+      "chineseDescription": "为 ComfyUI 开发的自定义节点实用工具包。",
+      "stars": 381,
+      "forks": 18,
+      "openIssues": 8,
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2024-10-19T16:33:58Z",
+      "updatedAt": "2026-09-21T07:35:30Z",
+      "pushedAt": "2026-09-21T07:35:26Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "为 ComfyUI 打造的自定义节点实用工具包。",
+      "introduction": "它为 ComfyUI 提供一批实用的自定义节点，扩展绘图工作流的能力。你可以把它装进 ComfyUI，让 AI 绘图流程更顺手。",
+      "whyToday": "累计 381★，是今日候选中面向 AI 绘图工作流的实用扩展。",
+      "audience": "用 ComfyUI 做 AI 绘图的创作者",
+      "editorialTags": [
+        "AI 工具",
+        "设计"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "Equal-Vote/bettervoting",
+      "githubUrl": "https://github.com/equal-vote/bettervoting",
+      "canonicalUrl": "https://github.com/equal-vote/bettervoting",
+      "description": "STAR Voting is an upgrade to our current way of voting that allows voters to score candidates from 0 to 5. Ultimately, STAR Voting elects candidates who better represent the whole of the electorate. We are building a site that lets everyone from individuals to organizations use STAR Voting to host simple polls or run secure elections.",
+      "chineseDescription": "STAR 评分投票网站，让选民为候选人打 0–5 分。",
+      "stars": 72,
+      "forks": 57,
+      "openIssues": 434,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2021-11-15T03:19:54Z",
+      "updatedAt": "2026-09-21T07:35:26Z",
+      "pushedAt": "2026-09-21T07:35:21Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "让选民给候选人打 0–5 分的 STAR 评分投票网站。",
+      "introduction": "它实现了 STAR 评分投票，让每个人给候选人打 0 到 5 分，从而更好地反映整体意愿。个人和组织都可以用它来发起投票。",
+      "whyToday": "累计 72★，是今日候选中关注公共选举机制的有趣项目。",
+      "audience": "关注投票机制的组织与个人",
+      "editorialTags": [
+        "有趣",
+        "学习"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "TshyGO/resume-form-assistant-plugin",
+      "githubUrl": "https://github.com/tshygo/resume-form-assistant-plugin",
+      "canonicalUrl": "https://github.com/tshygo/resume-form-assistant-plugin",
+      "description": "简历灵填助手：支持模板导入、AI解析与网申表单自动填写的浏览器插件",
+      "chineseDescription": "简历灵填助手：模板导入、AI 解析与网申表单自动填写插件。",
+      "stars": 109,
+      "forks": 5,
+      "openIssues": 9,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-04-21T13:54:40Z",
+      "updatedAt": "2026-09-21T07:35:36Z",
+      "pushedAt": "2026-09-21T07:35:31Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "能自动填写网申表单的简历灵填助手插件。",
+      "introduction": "它支持简历模板导入、AI 解析，并能自动帮你填写各类网申表单。你可以用这个浏览器插件省去重复填表的时间。",
+      "whyToday": "累计 109★，是今日候选中面向求职场景的实用效率插件。",
+      "audience": "频繁投递网申的求职者",
+      "editorialTags": [
+        "效率",
+        "AI 工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "poe-platform/poe-code",
+      "githubUrl": "https://github.com/poe-platform/poe-code",
+      "canonicalUrl": "https://github.com/poe-platform/poe-code",
+      "description": "Use Poe to power your favorite coding agents (Claude Code, Codex, OpenCode, etc). No need for multiple subscriptions.",
+      "chineseDescription": "用 Poe 驱动 Claude Code、Codex 等编码智能体，省去多份订阅。",
+      "stars": 95,
+      "forks": 15,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "topics": [
+        "claude",
+        "code",
+        "codex",
+        "opencode"
+      ],
+      "createdAt": "2025-10-17T20:26:49Z",
+      "updatedAt": "2026-09-21T07:35:32Z",
+      "pushedAt": "2026-09-21T07:35:28Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "用 Poe 一份订阅驱动多个编码智能体。",
+      "introduction": "它让你通过 Poe 为 Claude Code、Codex、OpenCode 等编码智能体提供模型能力，无需分别订阅。你可以用一份订阅在多个编码助手之间切换。",
+      "whyToday": "累计 95★，是今日候选中帮开发者省订阅的实用工具。",
+      "audience": "同时使用多种编码助手的开发者",
+      "editorialTags": [
+        "开发工具",
+        "AI 工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "huangbai-AI/post-production-skill",
+      "githubUrl": "https://github.com/huangbai-ai/post-production-skill",
+      "canonicalUrl": "https://github.com/huangbai-ai/post-production-skill",
+      "description": "用于 AI 视频后期特效创作的 Seedance 2.5 Skill，可生成电影级 VFX、创意转场、三维 UI、动态镜头与视觉合成提示词。",
+      "chineseDescription": "基于 Seedance 2.5 的 AI 视频后期特效创作技能。",
+      "stars": 223,
+      "forks": 39,
+      "openIssues": 0,
+      "topics": [],
+      "createdAt": "2026-09-19T11:16:11Z",
+      "updatedAt": "2026-09-21T04:53:50Z",
+      "pushedAt": "2026-09-19T11:42:43Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 115 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "基于 Seedance 2.5 的 AI 视频后期特效创作技能。",
+      "introduction": "它面向 AI 视频后期，能生成电影级 VFX、创意转场、三维 UI 与动态镜头的提示词。你可以用它辅助制作有质感的视频特效与视觉合成。",
+      "whyToday": "累计 223★，是今日候选中面向视频创作的 AI 特效技能。",
+      "audience": "做视频后期与视觉特效的创作者",
+      "editorialTags": [
+        "设计",
+        "AI 工具"
+      ],
+      "recommendation": 3
+    },
+    {
+      "name": "gitx/gitx",
+      "githubUrl": "https://github.com/gitx/gitx",
+      "canonicalUrl": "https://github.com/gitx/gitx",
+      "description": "The best fork of the best lightweight, visual git client for macOS.",
+      "chineseDescription": "macOS 上轻量可视化 Git 客户端的优质分支。",
+      "stars": 909,
+      "forks": 94,
+      "openIssues": 81,
+      "language": "Objective-C",
+      "topics": [
+        "git",
+        "mac",
+        "macos"
+      ],
+      "createdAt": "2016-12-07T21:16:03Z",
+      "updatedAt": "2026-09-21T07:35:25Z",
+      "pushedAt": "2026-09-21T07:35:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "macOS 上轻量、可视化的 Git 客户端优质分支。",
+      "introduction": "它是经典 macOS 可视化 Git 客户端 GitX 的活跃分支，界面轻量直观。你可以用它以图形方式浏览提交历史和管理仓库。",
+      "whyToday": "累计 909★，是今日候选中长青的 macOS 可视化 Git 工具。",
+      "audience": "在 macOS 上用 Git 的开发者",
+      "editorialTags": [
+        "开发工具",
+        "开源替代"
+      ],
+      "recommendation": 3
+    }
+  ]
+}

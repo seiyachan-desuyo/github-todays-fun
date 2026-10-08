@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { DailyDiscover } from "@/components/DailyDiscover";
-import { editions, getEnrichedCandidates, getEdition } from "@/data";
+import { candidatePools, editions, getEdition } from "@/data";
 
 export function generateStaticParams() {
   return editions.map(({ date }) => ({ date }));
@@ -10,5 +10,5 @@ export default async function ArchivePage({ params }: { params: Promise<{ date: 
   const { date } = await params;
   const edition = getEdition(date);
   if (!edition) notFound();
-  return <DailyDiscover edition={edition} editions={editions} candidates={getEnrichedCandidates(date)} />;
+  return <DailyDiscover edition={edition} editions={editions} candidatePools={candidatePools} />;
 }
