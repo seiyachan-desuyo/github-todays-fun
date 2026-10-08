@@ -1,0 +1,1381 @@
+{
+  "date": "2026-10-08",
+  "issue": 16,
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "今日 30 精选：Rust 重写 Adobe 全家桶的 ArtCraft 系列集体登场，photocraft/filmcraft/pdfcraft 等齐发；Agent 工具一路加码，rea 做逆向、claude-mem 做长期记忆、universal-modder 让 Claude 改游戏 Mod；端上大模型与本地推理也迎来 Strata 等新面孔。",
+  "mode": "live",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+  "publishedAt": "2026-10-08T06:10:21.972Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-10-08T06:02:37.220Z",
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "raw": [
+        {
+          "query": "created:>=2026-10-05 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-09-24 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-10-05 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-10-08T06:02:37.249Z",
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 24 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "rawCount": 24,
+      "normalizedCount": 24,
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 13
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 11
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "ok",
+      "fetchedAt": "2026-10-08T06:02:41.252Z",
+      "message": "仓库详情 API 可用，已验证 openai/math",
+      "rawCount": 1,
+      "normalizedCount": 1
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 174,
+    "normalizedCandidateCount": 174,
+    "dedupedCandidateCount": 168,
+    "eligibleCandidateCount": 151,
+    "selectedCount": 30
+  },
+  "projects": [
+    {
+      "name": "morluto/rea",
+      "githubUrl": "https://github.com/morluto/rea",
+      "canonicalUrl": "https://github.com/morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "chineseDescription": "让 Agent 做逆向工程：从 App 行为一路挖到原生二进制，自动化整个 RE 流程。",
+      "stars": 17027,
+      "forks": 1779,
+      "recentGrowth": 4655,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +4655"
+        ]
+      },
+      "plainSummary": "rea —— 用 Agent 做任意逆向工程的开源工具。",
+      "introduction": "rea 把逆向工程做成 Agent 任务：从 App 行为分析一路挖到原生二进制，自动串起反编译、分析、验证等步骤。项目用 TypeScript 实现，面向日常需要抠黑盒的安全研究者和逆向工程师。",
+      "whyToday": "今日新增约 +4655 星，一跃成为 Trending 冠军，当前共 17027 星，是今日最亮眼的 Agent 新物种。",
+      "audience": "安全研究、逆向工程和希望用 Agent 自动化黑盒分析的开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "boykopovar/AnyPS5",
+      "githubUrl": "https://github.com/boykopovar/anyps5",
+      "canonicalUrl": "https://github.com/boykopovar/anyps5",
+      "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+      "chineseDescription": "把 PS5 可执行文件自动移植到 Linux 和 Windows 上运行的工具。",
+      "stars": 11438,
+      "forks": 871,
+      "recentGrowth": 2716,
+      "growthSource": "github-trending",
+      "language": "C++",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +2716"
+        ]
+      },
+      "plainSummary": "AnyPS5 —— 把 PS5 可执行文件自动移植到 Linux 和 Windows。",
+      "introduction": "AnyPS5 用 C++ 实现了一套 PS5 可执行文件的自动化移植流程，让主机独占内容有机会在 PC 平台上跑起来。项目强调一键化流程，目标是降低移植门槛。",
+      "whyToday": "今日 +2716 星，是今日除 rea 外涨幅最猛的仓库，主机玩家与模拟器圈都在转发。",
+      "audience": "关注主机模拟与底层移植的游戏玩家和开发者。",
+      "editorialTags": [
+        "有趣",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "Niko1221/Strata",
+      "githubUrl": "https://github.com/niko1221/strata",
+      "canonicalUrl": "https://github.com/niko1221/strata",
+      "description": "Qwen3.8-Flash-Next on any consumer hardware: one-click install for Windows / Linux. Strata inference engine, OpenAI/Anthropic API on localhost, optional image input.",
+      "chineseDescription": "在消费级硬件上一键跑 Qwen3.8-Flash-Next 的 Strata 推理引擎，自带 OpenAI/Anthropic 兼容 API，Windows/Linux 一键安装。",
+      "stars": 17445,
+      "forks": 1542,
+      "openIssues": 385,
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2026-09-24T16:40:20Z",
+      "updatedAt": "2026-10-08T06:01:39Z",
+      "pushedAt": "2026-10-07T18:01:30Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 1271 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Strata —— 消费级硬件一键跑 Qwen3.8-Flash-Next 的本地推理引擎。",
+      "introduction": "Strata 是一个本地推理引擎，专门针对 Qwen3.8-Flash-Next 做了消费级硬件优化，并自带 OpenAI 与 Anthropic 兼容的本地 API。Windows 和 Linux 都有一键安装版本，装完即可当作本地的 ChatGPT 后端。",
+      "whyToday": "刚登陆当日即冲上 17445 星，是本地大模型推理赛道久违的新面孔。",
+      "audience": "想在自己的电脑上跑大模型、搭本地 API 的开发者和爱好者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "thedotmack/claude-mem",
+      "githubUrl": "https://github.com/thedotmack/claude-mem",
+      "canonicalUrl": "https://github.com/thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "chineseDescription": "为所有 Agent 做跨会话持久记忆：捕获会话全过程，AI 压缩后在新对话里按需注入。",
+      "stars": 97893,
+      "forks": 8610,
+      "recentGrowth": 578,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +578"
+        ]
+      },
+      "plainSummary": "claude-mem —— 给所有 Agent 做的跨会话持久记忆。",
+      "introduction": "claude-mem 把 Agent 在每次会话里的所有操作完整捕获下来，再用 AI 压缩成易检索的记忆片段，在新的对话里按需注入。它定位是 Agent 侧的通用记忆层，兼容 Claude Code、Codex 等多种工具。",
+      "whyToday": "当前近 10 万星，今日仍在增长 +578，是 Agent 记忆方向最火热的开源方案之一。",
+      "audience": "希望让 AI 编码助手「记性更好」的开发者与 Agent 工程师。",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "tester-army/e2e",
+      "githubUrl": "https://github.com/tester-army/e2e",
+      "canonicalUrl": "https://github.com/tester-army/e2e",
+      "description": "Next generation e2e testing framework for web and mobile apps.",
+      "chineseDescription": "面向 Web 与移动端的新一代端到端测试框架。",
+      "stars": 7730,
+      "forks": 351,
+      "recentGrowth": 1390,
+      "growthSource": "github-trending",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +1390"
+        ]
+      },
+      "plainSummary": "e2e —— 面向 Web 与移动端的新一代端到端测试框架。",
+      "introduction": "e2e 以 TypeScript 构建，重新设计了 Web 与移动应用的端到端测试流程，强调脚本可读、运行稳定与跨端复用。适合希望摆脱传统 Selenium/Playwright 组合痛点的团队。",
+      "whyToday": "今日 +1390 星迅速起量，是 e2e 测试工具少见的新面孔，值得尝鲜评估。",
+      "audience": "关注前端质量工程、E2E 自动化与跨端测试的工程师。",
+      "editorialTags": [
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "DuarteSantos8/openGym",
+      "githubUrl": "https://github.com/duartesantos8/opengym",
+      "canonicalUrl": "https://github.com/duartesantos8/opengym",
+      "description": "Self-hosted gym & body-weight tracker — plan routines, log workouts (supersets, warm-ups, cardio), see which muscles are trained, fatigued or detrained, import from FitNotes/Strong/Hevy, passkey login. Your data, your server.",
+      "chineseDescription": "自托管的健身与体重追踪工具：安排训练计划、记录组数与心肺，查看目标肌群与恢复状态。",
+      "stars": 7289,
+      "forks": 949,
+      "recentGrowth": 1493,
+      "growthSource": "github-trending",
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +1493"
+        ]
+      },
+      "plainSummary": "openGym —— 自托管的健身训练与体重跟踪工具。",
+      "introduction": "openGym 让你在自己的服务器上管理训练计划、记录每次训练（含超级组、热身与有氧），并直观地看到目标肌群与恢复状态。界面精简，强调私有化部署和数据所有权。",
+      "whyToday": "今日 +1493 星，自托管生活方式类项目很久没出过的黑马。",
+      "audience": "健身爱好者与自托管玩家。",
+      "editorialTags": [
+        "有趣",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "EpicGames/raddebugger",
+      "githubUrl": "https://github.com/epicgames/raddebugger",
+      "canonicalUrl": "https://github.com/epicgames/raddebugger",
+      "description": "A native, user-mode, multi-process, graphical debugger.",
+      "chineseDescription": "Epic Games 开源的原生用户态图形化多进程调试器。",
+      "stars": 7928,
+      "forks": 386,
+      "recentGrowth": 90,
+      "growthSource": "github-trending",
+      "language": "C",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 39.04676784119218,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 39,
+        "signals": [
+          "Trending 披露 +90"
+        ]
+      },
+      "plainSummary": "raddebugger —— Epic Games 开源的原生图形化调试器。",
+      "introduction": "raddebugger 是 Epic Games 推出的用户态图形化多进程调试器，面向原生代码开发者，强调跨进程联动与友好的 UI。它是 RAD 工具链继 RAD Game Tools 后首批开源成果之一。",
+      "whyToday": "当前近 8000 星，今日仍在 +90 稳定增长，Epic 出品让 C/C++ 调试工具生态终于迎来新一代。",
+      "audience": "写 C/C++、游戏引擎与系统软件、追求好用调试器的开发者。",
+      "editorialTags": [
+        "开发工具",
+        "开源替代"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "storytold/photocraft",
+      "githubUrl": "https://github.com/storytold/photocraft",
+      "canonicalUrl": "https://github.com/storytold/photocraft",
+      "description": "An open-source, clean-room reimplementation of Adobe Photoshop in pure Rust",
+      "chineseDescription": "用纯 Rust 做的开源 Photoshop 净室重写版。",
+      "stars": 19266,
+      "forks": 2525,
+      "openIssues": 310,
+      "language": "Rust",
+      "topics": [
+        "adobe",
+        "adobe-photoshop-2026",
+        "adobe-photoshop-2026-ai",
+        "art",
+        "image-editing",
+        "image-editing-software",
+        "image-editor",
+        "images",
+        "photo-editing",
+        "photoshop",
+        "psd",
+        "rust"
+      ],
+      "createdAt": "2026-09-30T13:37:48Z",
+      "updatedAt": "2026-10-08T06:02:24Z",
+      "pushedAt": "2026-10-08T05:59:49Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 2455 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "photocraft —— 纯 Rust 重写的开源 Photoshop。",
+      "introduction": "photocraft 是 ArtCraft 系列的旗舰之一：以净室方式用纯 Rust 重新实现 Adobe Photoshop 的核心能力，强调性能、可移植和开源。配套还有 Lightroom、Illustrator、Premiere 等多个同系项目。",
+      "whyToday": "当前 19266 星居 ArtCraft 系列之首，是 Rust 桌面创作应用的集中爆发点。",
+      "audience": "关注 Rust 桌面应用与设计工具开源替代品的创作者和开发者。",
+      "editorialTags": [
+        "开源替代",
+        "设计"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "storytold/filmcraft",
+      "githubUrl": "https://github.com/storytold/filmcraft",
+      "canonicalUrl": "https://github.com/storytold/filmcraft",
+      "description": "An open-source, clean-room reimplementation of Adobe Premiere Pro built in pure Rust.",
+      "chineseDescription": "用纯 Rust 做的开源 Premiere Pro 净室重写版。",
+      "stars": 3688,
+      "forks": 1192,
+      "openIssues": 68,
+      "language": "Rust",
+      "topics": [
+        "adobe",
+        "art",
+        "rust",
+        "video",
+        "video-editing",
+        "video-editor",
+        "video-processing"
+      ],
+      "createdAt": "2026-09-30T13:41:20Z",
+      "updatedAt": "2026-10-08T06:02:23Z",
+      "pushedAt": "2026-10-08T02:07:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 470 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "filmcraft —— 纯 Rust 重写的开源 Premiere Pro。",
+      "introduction": "filmcraft 是 ArtCraft 系列的视频剪辑分支，用纯 Rust 做了 Premiere Pro 的净室重实现，关注时间轴性能和跨平台渲染。它和 photocraft、lightcraft 一起构成这一系列的创作者套件。",
+      "whyToday": "当前 3688 星，是今日同系列中最受视频创作者关注的分支。",
+      "audience": "视频剪辑爱好者和关注 Rust 桌面应用的创作者。",
+      "editorialTags": [
+        "开源替代",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "storytold/pdfcraft",
+      "githubUrl": "https://github.com/storytold/pdfcraft",
+      "canonicalUrl": "https://github.com/storytold/pdfcraft",
+      "description": "An open-source, clean-room reimplementation of Adobe Acrobat built in pure Rust",
+      "chineseDescription": "用纯 Rust 做的开源 Acrobat 净室重写版。",
+      "stars": 2769,
+      "forks": 922,
+      "openIssues": 69,
+      "language": "Rust",
+      "topics": [
+        "acrobat",
+        "acrobat-full",
+        "acrobat-pro",
+        "adobe",
+        "adobe-acrobat",
+        "document-processing",
+        "documents",
+        "pdf",
+        "pdf-generation",
+        "pdf-processing",
+        "pdf-tools",
+        "pdf-viewer",
+        "rust"
+      ],
+      "createdAt": "2026-09-30T13:39:37Z",
+      "updatedAt": "2026-10-08T06:01:38Z",
+      "pushedAt": "2026-10-08T05:50:59Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 353 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "pdfcraft —— 纯 Rust 重写的开源 Acrobat。",
+      "introduction": "pdfcraft 用纯 Rust 对 Adobe Acrobat 做了净室重实现，阅读、批注、合并与导出能力一应俱全。它瞄准开源免费的替代场景，适合希望摆脱 Acrobat 订阅的个人与团队。",
+      "whyToday": "当前 2769 星，是 ArtCraft 系列中最具普适实用价值的一支。",
+      "audience": "对 PDF 工具有刚需、想摆脱 Acrobat 订阅的用户。",
+      "editorialTags": [
+        "开源替代",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "rehan-remade/universal-modder",
+      "githubUrl": "https://github.com/rehan-remade/universal-modder",
+      "canonicalUrl": "https://github.com/rehan-remade/universal-modder",
+      "description": "Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos.",
+      "chineseDescription": "把 Claude Code 指向任意 PC 游戏：用 Skills、工具和 fal MCP 做侦察、逆向和修改。",
+      "stars": 5297,
+      "forks": 484,
+      "openIssues": 23,
+      "language": "Python",
+      "topics": [
+        "age-of-empires",
+        "claude-code",
+        "claude-code-plugin",
+        "fal",
+        "game-assets",
+        "game-modding",
+        "mcp",
+        "modding",
+        "reverse-engineering",
+        "tmodloader"
+      ],
+      "createdAt": "2026-09-30T05:00:35Z",
+      "updatedAt": "2026-10-08T05:56:08Z",
+      "pushedAt": "2026-10-08T05:59:14Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 645 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "universal-modder —— 让 Claude Code 替你给任意 PC 游戏做 Mod。",
+      "introduction": "universal-modder 把一整套 Skills、工具和 fal MCP 打包给 Claude Code，让 AI 在你的本机对任意 PC 游戏做侦察、逆向和修改。配合 fal 的 MCP 还可以生成素材。",
+      "whyToday": "当前 5297 星，Claude Skills + 游戏 Mod 的组合是本月最具话题性的玩法之一。",
+      "audience": "喜欢折腾 PC 游戏 Mod、同时玩 AI Agent 的玩家。",
+      "editorialTags": [
+        "AI 工具",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "shihabal3amri/DiPlay",
+      "githubUrl": "https://github.com/shihabal3amri/diplay",
+      "canonicalUrl": "https://github.com/shihabal3amri/diplay",
+      "description": "Independent CarPlay receiver for compatible Android head units. Wired and wireless public preview.",
+      "chineseDescription": "独立的 CarPlay 接收端：让兼容的安卓车机支持有线和无线 CarPlay，面向公开预览。",
+      "stars": 6632,
+      "forks": 835,
+      "openIssues": 193,
+      "language": "Kotlin",
+      "topics": [],
+      "createdAt": "2026-09-24T15:36:38Z",
+      "updatedAt": "2026-10-08T06:01:51Z",
+      "pushedAt": "2026-10-07T11:24:59Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 482 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "DiPlay —— 让兼容安卓车机变成独立的 CarPlay 接收端。",
+      "introduction": "DiPlay 把安卓车机改造成一个独立的 CarPlay 接收端，同时支持有线和无线连接，用来给没有原生 CarPlay 的车机加功能。目前开放公开预览。",
+      "whyToday": "当前 6632 星，车机圈的热门话题，公开预览期间讨论度持续走高。",
+      "audience": "想给自己车机加 CarPlay 支持的车主与改装爱好者。",
+      "editorialTags": [
+        "有趣",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "KKKKhazix/AIHOT",
+      "githubUrl": "https://github.com/kkkkhazix/aihot",
+      "canonicalUrl": "https://github.com/kkkkhazix/aihot",
+      "description": "一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。",
+      "chineseDescription": "一个自己找热点、自己写日报的网站框架，换上你的信源和筛选标准，就能变成你的行业热点站。",
+      "stars": 6531,
+      "forks": 1610,
+      "openIssues": 2,
+      "language": "TypeScript",
+      "topics": [
+        "ai",
+        "chinese",
+        "content-curation",
+        "daily-digest",
+        "docker-compose",
+        "llm",
+        "mcp",
+        "news-aggregator",
+        "postgresql",
+        "rss",
+        "self-hosted",
+        "typescript"
+      ],
+      "createdAt": "2026-09-28T23:40:05Z",
+      "updatedAt": "2026-10-08T06:01:51Z",
+      "pushedAt": "2026-10-08T05:55:53Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 693 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "AIHOT —— 自己找热点、自己写日报的网站框架。",
+      "introduction": "AIHOT 预置了热点抓取、筛选和日报生成的全套链路，把信源和挑选标准换成自己的，就能快速变成某个行业的「热点站」。整体框架以 TypeScript 实现，便于二次开发。",
+      "whyToday": "当前 6531 星，国人作者作品，是「GitHub 今日好玩」同好最该先看的框架之一。",
+      "audience": "想做行业信息站、每日热点页的开发者和运营。",
+      "editorialTags": [
+        "效率",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "Louis-CFM/coucou",
+      "githubUrl": "https://github.com/louis-cfm/coucou",
+      "canonicalUrl": "https://github.com/louis-cfm/coucou",
+      "description": "A tiny friend in your Mac's notch and on your iPhone that keeps an eye on your AI coding agents: Claude Code, Codex, Cursor, Gemini CLI, Antigravity and more. Approve from the notch or your Lock Screen.",
+      "chineseDescription": "住在 Mac 刘海和 iPhone 上的小伙伴，盯着 Claude Code、Codex、Cursor、Gemini CLI 等 AI 编码 Agent 的状态。",
+      "stars": 4069,
+      "forks": 680,
+      "openIssues": 153,
+      "language": "Swift",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "antigravity",
+        "claude",
+        "claude-code",
+        "codex",
+        "cursor",
+        "dynamic-island",
+        "gemini-cli",
+        "ios",
+        "iphon",
+        "linux",
+        "macos",
+        "macos-app",
+        "menubar-app",
+        "notch",
+        "open-source",
+        "swift",
+        "swiftui",
+        "windows"
+      ],
+      "createdAt": "2026-09-27T21:54:12Z",
+      "updatedAt": "2026-10-08T05:57:19Z",
+      "pushedAt": "2026-10-07T23:37:42Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 387 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "coucou —— 住在 Mac 刘海与 iPhone 里的 AI 编码代理监视小伙伴。",
+      "introduction": "coucou 是一个常驻 Mac 刘海和 iPhone 的小应用，用来盯着 Claude Code、Codex、Cursor、Gemini CLI 等 AI 编码 Agent 的状态。它用 Swift 写成，追求轻量贴身的体验。",
+      "whyToday": "当前 4069 星，桌面陪伴型 AI 工具近期的代表作之一。",
+      "audience": "每天同时挂多种 AI 编码 Agent 的 Mac 用户。",
+      "editorialTags": [
+        "效率",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "omlahore/RemoveMacAI",
+      "githubUrl": "https://github.com/omlahore/removemacai",
+      "canonicalUrl": "https://github.com/omlahore/removemacai",
+      "description": "Debloat macOS: turn off Apple Intelligence, analytics, ads and pop-ups. A native app and CLI, and every change can be undone.",
+      "chineseDescription": "一键给 macOS 瘦身：关掉 Apple Intelligence、数据分析、广告和各种弹窗，提供原生 App 与 CLI，操作全部可逆。",
+      "stars": 3618,
+      "forks": 95,
+      "openIssues": 12,
+      "language": "Swift",
+      "topics": [
+        "apple-intelligence",
+        "cli",
+        "debloat",
+        "macos",
+        "macos-27",
+        "privacy",
+        "siri",
+        "swift"
+      ],
+      "createdAt": "2026-09-29T11:02:39Z",
+      "updatedAt": "2026-10-08T06:01:40Z",
+      "pushedAt": "2026-10-07T19:42:55Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 404 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "RemoveMacAI —— 一键给 macOS 瘦身的小应用。",
+      "introduction": "RemoveMacAI 用原生 App 加 CLI 的组合，一键关掉 Apple Intelligence、数据分析、广告与各种系统弹窗。每一项修改都可以随时回滚，不用担心踩坑无法恢复。",
+      "whyToday": "当前 3618 星，WWDC 后对 AI 系统功能的「反向需求」持续走高。",
+      "audience": "追求纯净 macOS 体验、想关闭 Apple Intelligence 的用户。",
+      "editorialTags": [
+        "效率",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "CopilotKit/OpenDots",
+      "githubUrl": "https://github.com/copilotkit/opendots",
+      "canonicalUrl": "https://github.com/copilotkit/opendots",
+      "description": "Your always-on AI coworkers that move between text, calls, and Slack.",
+      "chineseDescription": "始终在线的 AI 同事：在文本、通话和 Slack 等渠道之间自由切换。",
+      "stars": 4279,
+      "forks": 605,
+      "openIssues": 46,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-29T17:13:58Z",
+      "updatedAt": "2026-10-08T06:00:47Z",
+      "pushedAt": "2026-10-06T22:46:41Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 492 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "OpenDots —— 始终在线、横跨 Slack 与通话的 AI 同事。",
+      "introduction": "OpenDots 由 CopilotKit 团队开源：把 AI 同事做成常驻多渠道的工作者，可以在文本、通话和 Slack 之间无缝接力。整体以 TypeScript 实现，便于接入自家业务。",
+      "whyToday": "当前 4279 星，是企业端「AI 同事」方向最新一波开源代表。",
+      "audience": "关注企业 AI Agent、Slack 自动化的开发者与团队。",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "feder-cr/invisible_playwright_mcp",
+      "githubUrl": "https://github.com/feder-cr/invisible_playwright_mcp",
+      "canonicalUrl": "https://github.com/feder-cr/invisible_playwright_mcp",
+      "description": "Playwright MCP server undetected by anti-bots and captchas: AI agent browses the web on anti-detect stealth Firefox, Python, undetected browser automation, scraping, computer use.",
+      "chineseDescription": "绕过反爬与验证码的 Playwright MCP 服务：AI Agent 透过隐身 Firefox + Python 自动浏览网页。",
+      "stars": 2643,
+      "forks": 460,
+      "openIssues": 0,
+      "language": "Python",
+      "topics": [
+        "ai-tools",
+        "antidetect-browser",
+        "autonomous-agents",
+        "browser-agent",
+        "browser-automation",
+        "claude-code-plugin",
+        "computer-use",
+        "gemini-cli",
+        "gemini-cli-extension",
+        "job-hunting",
+        "job-search",
+        "llm-agent",
+        "mcp-server",
+        "mcp-tools",
+        "model-context-protocol",
+        "playwright",
+        "stealth-browser",
+        "web-automation",
+        "web-scraping",
+        "webscraping"
+      ],
+      "createdAt": "2026-09-29T23:06:00Z",
+      "updatedAt": "2026-10-08T01:42:38Z",
+      "pushedAt": "2026-10-08T01:42:34Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 313 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "invisible_playwright_mcp —— 反爬与验证码无感的 Playwright MCP。",
+      "introduction": "invisible_playwright_mcp 把反检测的 Firefox 隐身栈封装成 MCP 服务，让 AI Agent 可以绕过主流反爬和验证码来浏览网页。项目用 Python 实现，开箱即可接入。",
+      "whyToday": "当前 2643 星，是今日最具「暗黑向」实用性的 Agent 工具。",
+      "audience": "做 Web Scraping、Agent 浏览与自动化测试的开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "shader-effects-inc/shaders",
+      "githubUrl": "https://github.com/shader-effects-inc/shaders",
+      "canonicalUrl": "https://github.com/shader-effects-inc/shaders",
+      "description": "WebGPU components for React, Vue, Svelte, Solid, JS & Framer",
+      "chineseDescription": "面向 React、Vue、Svelte、Solid、原生 JS 与 Framer 的 WebGPU 着色器组件库。",
+      "stars": 2802,
+      "forks": 101,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "topics": [
+        "cli",
+        "javascript",
+        "mcp",
+        "react",
+        "shaders",
+        "solid",
+        "svelte",
+        "vue",
+        "webgpu-shaders"
+      ],
+      "createdAt": "2026-09-29T16:36:26Z",
+      "updatedAt": "2026-10-08T06:02:36Z",
+      "pushedAt": "2026-10-07T22:45:39Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 321 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "shaders —— 面向主流框架的 WebGPU 组件库。",
+      "introduction": "shaders 为 React、Vue、Svelte、Solid、原生 JS 以及 Framer 一次性提供了一套 WebGPU 着色器组件。你只需要像用普通组件那样引入，就能在页面上得到炫酷的背景与特效，省去自己写 WebGPU 代码的成本。",
+      "whyToday": "当前 2802 星，是 WebGPU 走向主流开发者工具链的重要信号。",
+      "audience": "前端工程师、UI 设计师和特效爱好者。",
+      "editorialTags": [
+        "设计",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "firelex/jeff",
+      "githubUrl": "https://github.com/firelex/jeff",
+      "canonicalUrl": "https://github.com/firelex/jeff",
+      "description": "Millisecond decisions, any domain: a 0.8B open \"System 1\" model that picks between your options with calibrated probabilities. One base, swappable LoRA adapters, on your own hardware.",
+      "chineseDescription": "0.8B 参数的开源 System 1 模型 Jeff：在毫秒内对任意选项给出带概率的决策，可换基座。",
+      "stars": 1442,
+      "forks": 68,
+      "openIssues": 1,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-28T16:18:39Z",
+      "updatedAt": "2026-10-08T03:52:55Z",
+      "pushedAt": "2026-10-07T12:39:50Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 148 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "jeff —— 0.8B 开源 System 1 决策模型。",
+      "introduction": "jeff 是一个仅 8 亿参数的开源 System 1 模型，能在毫秒级为任意多选场景给出带校准概率的决策。基座可替换，适合做分流、分类、是非判断等轻量任务。",
+      "whyToday": "当前 1442 星，是继 laya 之后又一个值得关注的小体量决策模型。",
+      "audience": "关注决策模型落地、推理流水线优化的算法与后端工程师。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "kandinskylab/kandinsky-6",
+      "githubUrl": "https://github.com/kandinskylab/kandinsky-6",
+      "canonicalUrl": "https://github.com/kandinskylab/kandinsky-6",
+      "description": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation",
+      "chineseDescription": "Kandinsky 6.0 Video：面向同步视频与音频生成的开源基础模型。",
+      "stars": 194,
+      "forks": 11,
+      "openIssues": 1,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-05T09:06:41Z",
+      "updatedAt": "2026-10-08T05:58:23Z",
+      "pushedAt": "2026-10-07T12:49:26Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 64 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Kandinsky 6.0 Video —— 同步生成视频与音频的开源基础模型。",
+      "introduction": "Kandinsky 6.0 Video 是一组面向视频 + 音频同步生成的开源基础模型，可以一次性输出匹配画面的音轨。项目延续了 Kandinsky 系列在图像生成领域的研究思路。",
+      "whyToday": "当前 194 星，是今日 AI 视频开源方向最新的研究型项目。",
+      "audience": "关注视频生成模型、多模态研究的研究者与创作者。",
+      "editorialTags": [
+        "AI 工具",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "pingdotgg/ts-rust",
+      "githubUrl": "https://github.com/pingdotgg/ts-rust",
+      "canonicalUrl": "https://github.com/pingdotgg/ts-rust",
+      "description": "An experimental Rust port of the TypeScript 7 compiler (tsc)",
+      "chineseDescription": "用 Rust 实验性移植 TypeScript 7 编译器 tsc 的尝试。",
+      "stars": 526,
+      "forks": 29,
+      "openIssues": 9,
+      "language": "Rust",
+      "topics": [
+        "compiler",
+        "rust",
+        "tsc",
+        "typescript"
+      ],
+      "createdAt": "2026-10-07T05:17:07Z",
+      "updatedAt": "2026-10-08T06:00:54Z",
+      "pushedAt": "2026-10-08T04:56:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 440 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "ts-rust —— 用 Rust 实验性移植 TypeScript 7 编译器。",
+      "introduction": "ts-rust 是 ping.gg 的实验性项目：尝试把 TypeScript 7 编译器 tsc 用 Rust 重写，追求更快的类型检查与构建速度。虽然仍处早期阶段，但代码仓库本身就是了解 tsc 内部结构的好材料。",
+      "whyToday": "当前 526 星，是在 tsc 原生化讨论热潮下的又一次社区尝试。",
+      "audience": "关注 TypeScript 内部实现、Rust 编译器开发的工程师。",
+      "editorialTags": [
+        "开发工具",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "nullmoth/nvidia-macos-driver",
+      "githubUrl": "https://github.com/nullmoth/nvidia-macos-driver",
+      "canonicalUrl": "https://github.com/nullmoth/nvidia-macos-driver",
+      "description": "Metal driver for NVIDIA GeForce RTX cards on macOS 15 Sequoia (Intel / OpenCore). Free, source included.",
+      "chineseDescription": "为 macOS 15 Sequoia（Intel + OpenCore）打造的 NVIDIA RTX 显卡 Metal 驱动，开源免费。",
+      "stars": 540,
+      "forks": 54,
+      "openIssues": 12,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-07T08:13:12Z",
+      "updatedAt": "2026-10-08T06:00:56Z",
+      "pushedAt": "2026-10-08T04:16:33Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 503 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "nvidia-macos-driver —— 为 macOS Sequoia 做的 NVIDIA RTX Metal 驱动。",
+      "introduction": "nvidia-macos-driver 为 macOS 15 Sequoia 上的 NVIDIA RTX 显卡提供了 Metal 驱动支持，面向 Intel 平台配合 OpenCore 的黑苹果场景。整个驱动用 Rust 开发并开放源码，是黑苹果玩家久违的硬核福利。",
+      "whyToday": "当前 540 星，是黑苹果社区久违的硬核项目。",
+      "audience": "黑苹果玩家、显卡驱动开发者和 macOS 极客。",
+      "editorialTags": [
+        "开发工具",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "egoist/mygo",
+      "githubUrl": "https://github.com/egoist/mygo",
+      "canonicalUrl": "https://github.com/egoist/mygo",
+      "description": "Develop desktop apps with a web frontend or native UI in Go",
+      "chineseDescription": "用 Go 开发桌面应用，前端可选 Web 或原生 UI。",
+      "stars": 956,
+      "forks": 30,
+      "openIssues": 23,
+      "language": "Go",
+      "topics": [],
+      "createdAt": "2026-09-26T15:21:37Z",
+      "updatedAt": "2026-10-08T06:02:20Z",
+      "pushedAt": "2026-10-08T05:43:57Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 81 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "mygo —— 用 Go 开发桌面应用的轻量框架。",
+      "introduction": "mygo 让 Go 开发者可以用 Web 前端或原生 UI 构建桌面应用，整体体积小、依赖少。作者是 Vue 生态中知名的 egoist，这次把目光转向了跨端桌面方向。",
+      "whyToday": "当前 956 星，是 Go 桌面开发赛道的新鲜血液。",
+      "audience": "想用 Go 做桌面小工具的开发者。",
+      "editorialTags": [
+        "开发工具",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "tobi/disktree",
+      "githubUrl": "https://github.com/tobi/disktree",
+      "canonicalUrl": "https://github.com/tobi/disktree",
+      "description": "A treemap for finding and removing what fills your disk, for Omarchy. Rust + GPUI.",
+      "chineseDescription": "面向 Omarchy 的磁盘空间 Treemap 工具，Rust + GPUI，用来找出并清理吃满磁盘的大文件。",
+      "stars": 2467,
+      "forks": 158,
+      "openIssues": 27,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-09-24T20:56:29Z",
+      "updatedAt": "2026-10-08T05:48:03Z",
+      "pushedAt": "2026-10-04T19:07:54Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 34,
+        "signals": [
+          "新仓约 182 stars/day",
+          "4 天内有更新"
+        ]
+      },
+      "plainSummary": "disktree —— Omarchy 下的 GPU 加速磁盘 Treemap。",
+      "introduction": "disktree 用 Rust + GPUI 做了一个磁盘空间可视化工具，以 Treemap 形式直观呈现各目录体积。项目专为 Omarchy 发行版调优，能够快速帮你定位并清理占满磁盘的大文件。",
+      "whyToday": "当前 2467 星，Omarchy 生态的高质量周边。",
+      "audience": "追求命令行流派的 Linux 用户与极客。",
+      "editorialTags": [
+        "效率",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "supermemoryai/company-brain",
+      "githubUrl": "https://github.com/supermemoryai/company-brain",
+      "canonicalUrl": "https://github.com/supermemoryai/company-brain",
+      "description": "Open-sourcing our company brain - A teammate in your Slack that remembers everything your team says, and can go do the work.",
+      "chineseDescription": "公司大脑开源版：一个驻扎在 Slack 的队友，记住团队说过的一切，还能帮你去完成相关工作。",
+      "stars": 971,
+      "forks": 137,
+      "openIssues": 18,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-25T22:48:14Z",
+      "updatedAt": "2026-10-08T05:01:27Z",
+      "pushedAt": "2026-10-02T18:39:55Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 34,
+        "signals": [
+          "新仓约 78 stars/day",
+          "6 天内有更新"
+        ]
+      },
+      "plainSummary": "company-brain —— 住在 Slack 里的公司大脑开源版。",
+      "introduction": "company-brain 是 Supermemory 开源的「公司大脑」实现，是一个驻扎在 Slack 的 AI 队友。它会记住团队的所有历史对话，还能基于这些上下文主动去完成相关任务。",
+      "whyToday": "当前 971 星，是企业知识管理 + Agent 落地的新代表。",
+      "audience": "关注企业知识库、Slack Agent 的产品与工程团队。",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "elstongun/leviathan",
+      "githubUrl": "https://github.com/elstongun/leviathan",
+      "canonicalUrl": "https://github.com/elstongun/leviathan",
+      "description": "**Deep memory for agents over large datasets.**   Leviathan is a single static binary that turns your records (JSONL, JSON, CSV/TSV, SQLite, or anything a database CLI can export) into a ranked full-text index.",
+      "chineseDescription": "为 Agent 构建的大规模深度记忆系统：单一静态二进制，可消化 JSONL、JSON、CSV/TSV、SQLite 等记录。",
+      "stars": 672,
+      "forks": 35,
+      "openIssues": 1,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-05T08:57:44Z",
+      "updatedAt": "2026-10-08T05:46:19Z",
+      "pushedAt": "2026-10-06T01:02:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 221 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "leviathan —— 面向 Agent 的大规模深度记忆存储。",
+      "introduction": "leviathan 把 JSONL、CSV、SQLite 等多种记录统一吞进一个单一静态二进制里，专为 Agent 做大数据集上的深度记忆检索。整体追求安装简单、读写高效，便于嵌入到自家 Agent 工作流中。",
+      "whyToday": "当前 672 星，是继 claude-mem 之后 Agent 记忆层的又一个值得评估的方案。",
+      "audience": "需要给自家 Agent 接长期记忆的工程师。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "manaflow-ai/cmux",
+      "githubUrl": "https://github.com/manaflow-ai/cmux",
+      "canonicalUrl": "https://github.com/manaflow-ai/cmux",
+      "description": "Open source Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents. Built for multitasking, organization, and programmability.",
+      "chineseDescription": "基于 Ghostty 的开源 macOS 终端：带垂直标签页和 AI 编码 Agent 的通知，专为多任务开发打造。",
+      "stars": 27932,
+      "forks": 2465,
+      "recentGrowth": 44,
+      "growthSource": "github-trending",
+      "language": "Swift",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 32.95111857797805,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 33,
+        "signals": [
+          "Trending 披露 +44"
+        ]
+      },
+      "plainSummary": "cmux —— 基于 Ghostty 的 macOS 终端，专为 AI 编码而生。",
+      "introduction": "cmux 在 Ghostty 之上构建了一个开源的 macOS 终端，自带垂直标签页和 AI 编码 Agent 的通知集成。它让你在多任务、多 Agent 之间更有条理地切换，是重度终端用户的新选择。",
+      "whyToday": "当前 27932 星，是今日终端类项目中星数最高、仍在 +44 增长的一位。",
+      "audience": "每天在终端里挂多个 AI 编码 Agent 的 macOS 开发者。",
+      "editorialTags": [
+        "效率",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "QingYunA/answer-me-with-html",
+      "githubUrl": "https://github.com/qingyuna/answer-me-with-html",
+      "canonicalUrl": "https://github.com/qingyuna/answer-me-with-html",
+      "description": "Answer me with HTML — an agent skill that answers hard questions with a one-page HTML you can actually read. 让 AI Agent 用一页 HTML 回答复杂问题。",
+      "chineseDescription": "让 AI Agent 用一页可阅读的 HTML 回答复杂问题的 Agent Skill。",
+      "stars": 2166,
+      "forks": 148,
+      "openIssues": 10,
+      "language": "JavaScript",
+      "topics": [
+        "agent-skill",
+        "ai-agent",
+        "claude-code",
+        "claude-code-skill",
+        "claude-skill",
+        "claude-skills",
+        "cli",
+        "diagram",
+        "explainer",
+        "html",
+        "llm",
+        "ste100"
+      ],
+      "createdAt": "2026-10-02T09:57:40Z",
+      "updatedAt": "2026-10-08T06:02:29Z",
+      "pushedAt": "2026-10-07T15:39:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 361 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "answer-me-with-html —— 用一页 HTML 回答复杂问题的 Agent Skill。",
+      "introduction": "answer-me-with-html 是一个 Agent Skill，面对难题时不再输出一大段文字。它会直接生成一页可读、可交互的 HTML 答复，让人类更容易消化复杂的推理过程。",
+      "whyToday": "当前 2166 星，是今日 Agent Skill 中最有产品感的一款。",
+      "audience": "关注 Agent Skill 玩法、追求更好 AI 输出形式的产品人。",
+      "editorialTags": [
+        "AI 工具",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "feitangyuan/onetake",
+      "githubUrl": "https://github.com/feitangyuan/onetake",
+      "canonicalUrl": "https://github.com/feitangyuan/onetake",
+      "description": "Motion films that never cut to the next slide: every beat grows out of the one before, one continuous camera, continuity measured by an oracle. A Claude Agent Skill for product launch films and feature demos.",
+      "chineseDescription": "追求一镜到底的动态影片：每个画面都从上一个长出来，由 Oracle 校验镜头连贯性。",
+      "stars": 1900,
+      "forks": 119,
+      "openIssues": 3,
+      "language": "Python",
+      "topics": [
+        "agent-skill",
+        "animation",
+        "canvas",
+        "claude-skill",
+        "launch-video",
+        "motion-graphics",
+        "video"
+      ],
+      "createdAt": "2026-09-26T05:35:17Z",
+      "updatedAt": "2026-10-08T05:49:53Z",
+      "pushedAt": "2026-10-08T02:03:21Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 156 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "onetake —— 用 AI 拍出的一镜到底动态影片。",
+      "introduction": "onetake 的目标是让 AI 生成的影片真的「一镜到底」，每个镜头都从上一个画面长出来。整部片保持一镜连续，由一个 Oracle 模型为镜头间的连贯性打分。",
+      "whyToday": "当前 1900 星，是今日视频生成方向最具美学野心的实验项目。",
+      "audience": "关注 AI 生成影片、长镜头美学的创作者和研究者。",
+      "editorialTags": [
+        "AI 工具",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "BlueHeisenberg/SCSKiller",
+      "githubUrl": "https://github.com/blueheisenberg/scskiller",
+      "canonicalUrl": "https://github.com/blueheisenberg/scskiller",
+      "description": "Kill shader compilation stutter before you play. Compiles your games' shaders into the GPU driver's cache ahead of time. Windows, NVIDIA and AMD.",
+      "chineseDescription": "提前把游戏着色器编译进显卡驱动缓存，彻底消灭开玩时的卡顿；支持 Windows、NVIDIA 和 AMD。",
+      "stars": 1328,
+      "forks": 32,
+      "openIssues": 40,
+      "language": "C#",
+      "topics": [
+        "amd",
+        "directx12",
+        "nvidia",
+        "pc-gaming",
+        "shader-compilation",
+        "stutter",
+        "windows"
+      ],
+      "createdAt": "2026-09-29T21:01:10Z",
+      "updatedAt": "2026-10-08T05:06:47Z",
+      "pushedAt": "2026-10-08T00:23:08Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 155 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "SCSKiller —— 提前编译游戏着色器，告别开玩卡顿。",
+      "introduction": "SCSKiller 让你在开玩之前就把游戏需要的所有着色器编进显卡驱动缓存，彻底避免首次运行时的编译卡顿。目前支持 Windows 平台的 NVIDIA 与 AMD 显卡。",
+      "whyToday": "当前 1328 星，是今日 PC 玩家最喜闻乐见的「隐藏神器」。",
+      "audience": "追求 PC 游戏丝滑体验的玩家与硬件爱好者。",
+      "editorialTags": [
+        "有趣",
+        "效率"
+      ],
+      "recommendation": 4
+    }
+  ]
+}
