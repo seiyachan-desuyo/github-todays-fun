@@ -1,0 +1,1414 @@
+{
+  "date": "2026-10-10",
+  "issue": 18,
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "本期从 96 个真实候选中精选 30 项：既有用 Rust 重做办公、CAD 与音频工具的开源新势力，也有跨游戏模组、AI 视频复刻、Mac 屏幕提示、Android 相框改造和 VRChat 酒吧等轻松玩法。GitHub Trending 日榜本次解析失败，推荐仅依据已取得的官方事实。",
+  "mode": "live",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+  "publishedAt": "2026-10-09T22:45:50.878Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-10-09T22:43:30.835Z",
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "raw": [
+        {
+          "query": "created:>=2026-10-07 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-09-26 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-10-07 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "degraded",
+      "fetchedAt": "2026-10-09T22:43:30.848Z",
+      "message": "1/2 个 GitHub Trending 页面解析成功，读取 11 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "rawCount": 11,
+      "normalizedCount": 11,
+      "raw": [
+        {
+          "period": "daily",
+          "status": 0,
+          "count": 0
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 11
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "ok",
+      "fetchedAt": "2026-10-09T22:43:52.247Z",
+      "message": "仓库详情 API 可用，已验证 mhtsec/ARTEX",
+      "rawCount": 1,
+      "normalizedCount": 1
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 161,
+    "normalizedCandidateCount": 161,
+    "dedupedCandidateCount": 153,
+    "eligibleCandidateCount": 96,
+    "selectedCount": 30
+  },
+  "projects": [
+    {
+      "name": "zhongerxin/iPhone-use",
+      "githubUrl": "https://github.com/zhongerxin/iphone-use",
+      "canonicalUrl": "https://github.com/zhongerxin/iphone-use",
+      "description": "让 Codex 通过 USB 操作真实 iPhone：引导安装、App 自动化、实时屏幕与截图回退。",
+      "chineseDescription": "让 Codex 通过 USB 操作真实 iPhone，支持安装引导、应用自动化、实时屏幕与截图回退。",
+      "stars": 1672,
+      "forks": 160,
+      "openIssues": 8,
+      "recentGrowth": 1437,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-06T15:09:33Z",
+      "updatedAt": "2026-10-09T22:42:04Z",
+      "pushedAt": "2026-10-09T13:47:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +1437",
+          "新仓约 442 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "iPhone-use —— 让 Codex 通过 USB 操作真实 iPhone。",
+      "introduction": "这个项目把真实 iPhone 接到 Codex 的自动化流程中，可完成安装引导与应用操作。它还提供实时屏幕能力，并在需要时回退到截图方案。",
+      "whyToday": "把 AI 编程助手带进真实手机操作，演示效果直观，快照实增 +1437，当前 1672 星。",
+      "audience": "想尝试 iPhone 自动化与 AI 控制真机的开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "storytold/wordcraft",
+      "githubUrl": "https://github.com/storytold/wordcraft",
+      "canonicalUrl": "https://github.com/storytold/wordcraft",
+      "description": "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
+      "chineseDescription": "使用纯 Rust 对 Microsoft Word 进行洁净室方式重写的开源项目。",
+      "stars": 1787,
+      "forks": 536,
+      "openIssues": 92,
+      "recentGrowth": 1097,
+      "growthSource": "snapshot",
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-07T08:34:24Z",
+      "updatedAt": "2026-10-09T22:40:09Z",
+      "pushedAt": "2026-10-09T13:22:42Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +1097",
+          "新仓约 584 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "WordCraft —— 用纯 Rust 重写一款开源文字处理器。",
+      "introduction": "WordCraft 以洁净室方式重新实现类似 Microsoft Word 的文字处理体验。项目使用纯 Rust 开发，目标是提供一款可研究、可改造的开源办公工具。",
+      "whyToday": "经典办公软件的开源重写很有看点，快照实增 +1097，当前 1787 星。",
+      "audience": "关注开源办公软件和 Rust 桌面应用的用户。",
+      "editorialTags": [
+        "开源替代",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "storytold/gridcraft",
+      "githubUrl": "https://github.com/storytold/gridcraft",
+      "canonicalUrl": "https://github.com/storytold/gridcraft",
+      "description": "GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust. By ArtCraft.",
+      "chineseDescription": "使用纯 Rust 打造的开源电子表格，界面与体验类似 Microsoft Excel。",
+      "stars": 1133,
+      "forks": 449,
+      "openIssues": 77,
+      "recentGrowth": 712,
+      "growthSource": "snapshot",
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-07T05:18:16Z",
+      "updatedAt": "2026-10-09T22:39:03Z",
+      "pushedAt": "2026-10-09T13:20:57Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +712",
+          "新仓约 355 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "GridCraft —— 用纯 Rust 打造 Excel 风格电子表格。",
+      "introduction": "GridCraft 是一款开源电子表格，主打类似 Microsoft Excel 的使用体验。它采用纯 Rust 实现，适合关注办公软件开源替代的人继续观察。",
+      "whyToday": "电子表格是人人熟悉的工具，开源重写容易上手围观，快照实增 +712，当前 1133 星。",
+      "audience": "想寻找开源表格工具的办公用户与 Rust 爱好者。",
+      "editorialTags": [
+        "开源替代",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "storytold/cadcraft",
+      "githubUrl": "https://github.com/storytold/cadcraft",
+      "canonicalUrl": "https://github.com/storytold/cadcraft",
+      "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
+      "chineseDescription": "使用纯 Rust 打造的开源计算机辅助设计与制图应用，风格类似 AutoCAD。",
+      "stars": 1327,
+      "forks": 563,
+      "openIssues": 59,
+      "recentGrowth": 711,
+      "growthSource": "snapshot",
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-07T05:22:31Z",
+      "updatedAt": "2026-10-09T22:39:22Z",
+      "pushedAt": "2026-10-09T13:21:09Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +711",
+          "新仓约 416 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "CADCraft —— 用纯 Rust 打造 AutoCAD 风格开源制图工具。",
+      "introduction": "CADCraft 聚焦计算机辅助设计与制图，尝试提供类似 AutoCAD 的开源应用。项目以纯 Rust 编写，适合拿来观察桌面 CAD 的开源实现路径。",
+      "whyToday": "专业制图软件的开源替代不常见，快照实增 +711，当前 1327 星。",
+      "audience": "需要 CAD 工具的创客、学生与开源软件爱好者。",
+      "editorialTags": [
+        "开源替代",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "storytold/deckcraft",
+      "githubUrl": "https://github.com/storytold/deckcraft",
+      "canonicalUrl": "https://github.com/storytold/deckcraft",
+      "description": "Presentations and slide shows: an open-source, clean-room reimplementation of Microsoft PowerPoint in pure Rust. Part of the ArtCraft Crafting Apps.",
+      "chineseDescription": "使用纯 Rust 对演示文稿与幻灯片工具进行洁净室方式重写的开源项目。",
+      "stars": 936,
+      "forks": 444,
+      "openIssues": 31,
+      "recentGrowth": 563,
+      "growthSource": "snapshot",
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-07T05:27:21Z",
+      "updatedAt": "2026-10-09T22:39:18Z",
+      "pushedAt": "2026-10-09T14:48:26Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +563",
+          "新仓约 293 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "DeckCraft —— 用纯 Rust 打造开源演示文稿工具。",
+      "introduction": "DeckCraft 面向演示文稿与幻灯片制作，采用洁净室方式重新实现类似 PowerPoint 的体验。它属于 ArtCraft 的办公应用系列，并完全使用 Rust 编写。",
+      "whyToday": "人人都会用到幻灯片，开源版本的成长值得关注，快照实增 +563，当前 936 星。",
+      "audience": "经常制作演示文稿、关注开源办公套件的用户。",
+      "editorialTags": [
+        "开源替代",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "storytold/soundcraft",
+      "githubUrl": "https://github.com/storytold/soundcraft",
+      "canonicalUrl": "https://github.com/storytold/soundcraft",
+      "description": "An open-source, clean-room reimplementation of Avid Pro Tools in pure Rust",
+      "chineseDescription": "使用纯 Rust 对 Avid Pro Tools 进行洁净室方式重写的开源项目。",
+      "stars": 919,
+      "forks": 488,
+      "openIssues": 50,
+      "recentGrowth": 485,
+      "growthSource": "snapshot",
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-07T08:31:31Z",
+      "updatedAt": "2026-10-09T22:43:21Z",
+      "pushedAt": "2026-10-09T22:37:04Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +485",
+          "新仓约 300 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "SoundCraft —— 用纯 Rust 重写开源专业音频工作站。",
+      "introduction": "SoundCraft 以洁净室方式尝试重新实现 Avid Pro Tools 的核心体验。项目使用纯 Rust，瞄准音乐制作与音频编辑这一专业场景。",
+      "whyToday": "专业音频工具的开源重写兼具创作与技术趣味，快照实增 +485，当前 919 星。",
+      "audience": "音乐制作人、音频爱好者与 Rust 桌面应用开发者。",
+      "editorialTags": [
+        "开源替代",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "edenfunf/reelmimic",
+      "githubUrl": "https://github.com/edenfunf/reelmimic",
+      "canonicalUrl": "https://github.com/edenfunf/reelmimic",
+      "description": "Show it a video you love. Get a new video in the same style. An AI crew (Claude Code or Codex) plans, builds and reviews it with you.",
+      "chineseDescription": "输入一段喜欢的视频，由 AI 团队与你协作规划、制作并审看同风格的新视频。",
+      "stars": 1938,
+      "forks": 202,
+      "openIssues": 33,
+      "recentGrowth": 219,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [
+        "2d-animation",
+        "ai-agents",
+        "ai-video",
+        "animation",
+        "claude-code",
+        "codex",
+        "multi-agent",
+        "style-transfer",
+        "video-generation"
+      ],
+      "createdAt": "2026-09-28T19:14:59Z",
+      "updatedAt": "2026-10-09T22:33:13Z",
+      "pushedAt": "2026-10-09T15:52:56Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +219",
+          "新仓约 167 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "ReelMimic —— 给一段参考视频，让 AI 协作制作同风格新片。",
+      "introduction": "ReelMimic 会分析你喜欢的视频，并让 Claude Code 或 Codex 组成的 AI 团队参与规划、制作和复查。用户仍在流程中协作，适合快速探索视频风格复现。",
+      "whyToday": "玩法简单直观，适合视频创作者马上试验，快照实增 +219，当前 1938 星。",
+      "audience": "想用 AI 试做短视频、广告或视觉实验的创作者。",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "droogie/bbhost",
+      "githubUrl": "https://github.com/droogie/bbhost",
+      "canonicalUrl": "https://github.com/droogie/bbhost",
+      "description": "Definitive Bloodborne PC Experience",
+      "chineseDescription": "面向 PC 平台的《血源诅咒》体验项目。",
+      "stars": 362,
+      "forks": 20,
+      "openIssues": 29,
+      "recentGrowth": 126,
+      "growthSource": "snapshot",
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2026-10-07T14:22:17Z",
+      "updatedAt": "2026-10-09T22:11:06Z",
+      "pushedAt": "2026-10-09T20:01:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +126",
+          "新仓约 128 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "bbhost —— 把《血源诅咒》的体验带到 PC。",
+      "introduction": "bbhost 把目标直接写成“完整的《血源诅咒》PC 体验”。它面向喜欢这款游戏、又想在电脑上折腾相关体验的玩家。",
+      "whyToday": "题材自带话题度，游戏玩家很容易看懂它的吸引力，快照实增 +126，当前 362 星。",
+      "audience": "《血源诅咒》玩家与喜欢折腾 PC 游戏体验的人。",
+      "editorialTags": [
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "nullmoth/1401",
+      "githubUrl": "https://github.com/nullmoth/1401",
+      "canonicalUrl": "https://github.com/nullmoth/1401",
+      "description": "1401: macOS on the PC you already own. Free, never for sale.",
+      "chineseDescription": "帮助用户在现有 PC 上运行 macOS 的免费项目。",
+      "stars": 239,
+      "forks": 19,
+      "openIssues": 19,
+      "recentGrowth": 118,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-07T08:13:16Z",
+      "updatedAt": "2026-10-09T22:02:38Z",
+      "pushedAt": "2026-10-09T19:16:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +118",
+          "新仓约 78 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "1401 —— 在已有 PC 上探索运行 macOS 的免费方案。",
+      "introduction": "1401 面向想在现有 PC 硬件上运行 macOS 的用户，并明确标注免费且不出售。项目切中老机器再利用与系统折腾的经典兴趣点。",
+      "whyToday": "把手边电脑变成 macOS 设备的想法足够有趣，快照实增 +118，当前 239 星。",
+      "audience": "喜欢折腾操作系统与旧电脑再利用的极客。",
+      "editorialTags": [
+        "有趣",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "kaankiziltug/logo-design-skill",
+      "githubUrl": "https://github.com/kaankiziltug/logo-design-skill",
+      "canonicalUrl": "https://github.com/kaankiziltug/logo-design-skill",
+      "description": "A comprehensive logo-design skill for Claude, Gemini CLI, Codex and other AI agents: principles, process, SVG craft, testing tools and a 1,400+ logo reference library.",
+      "chineseDescription": "面向多种 AI Agent 的完整标志设计技能，包含原则、流程、SVG 制作、测试工具和参考库。",
+      "stars": 2439,
+      "forks": 168,
+      "openIssues": 0,
+      "recentGrowth": 82,
+      "growthSource": "snapshot",
+      "language": "HTML",
+      "topics": [
+        "agent-skills",
+        "branding",
+        "claude",
+        "claude-skills",
+        "codex",
+        "gemini-cli",
+        "logo-design",
+        "svg"
+      ],
+      "createdAt": "2026-09-26T08:23:34Z",
+      "updatedAt": "2026-10-09T21:43:48Z",
+      "pushedAt": "2026-09-30T18:16:50Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 44.62527601942847,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 74.6,
+        "signals": [
+          "快照实增 +82",
+          "新仓约 173 stars/day"
+        ]
+      },
+      "plainSummary": "Logo Design Skill —— 给 AI Agent 一套完整标志设计方法。",
+      "introduction": "这个技能把标志设计原则、工作流程、SVG 制作与测试工具整理成可供多种 AI Agent 使用的方案。仓库还包含一千四百多个标志参考，便于查找灵感与做质量检查。",
+      "whyToday": "既有方法论又有大规模参考库，适合直接拿来辅助创作，快照实增 +82，当前 2439 星。",
+      "audience": "品牌设计师、独立开发者和使用 AI 做视觉方案的人。",
+      "editorialTags": [
+        "设计",
+        "AI 工具",
+        "学习"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "chasmlol/SkyCraft",
+      "githubUrl": "https://github.com/chasmlol/skycraft",
+      "canonicalUrl": "https://github.com/chasmlol/skycraft",
+      "description": "Play Skyrim as a Minecraft player: Minecraft physics, inventory, blocks and combat inside Skyrim's world (SKSE plugin + Fabric mod).",
+      "chineseDescription": "把 Minecraft 的物理、背包、方块与战斗机制带入《上古卷轴5》的联动模组。",
+      "stars": 1122,
+      "forks": 83,
+      "openIssues": 38,
+      "recentGrowth": 43,
+      "growthSource": "snapshot",
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2026-09-30T16:40:20Z",
+      "updatedAt": "2026-10-09T22:08:42Z",
+      "pushedAt": "2026-10-01T01:37:21Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 38.21602133046108,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 68.2,
+        "signals": [
+          "快照实增 +43",
+          "新仓约 115 stars/day"
+        ]
+      },
+      "plainSummary": "SkyCraft —— 用 Minecraft 的方式玩《上古卷轴5》。",
+      "introduction": "SkyCraft 把 Minecraft 的物理、背包、方块和战斗机制放进《上古卷轴5》的世界。项目由 SKSE 插件与 Fabric 模组组合而成，是一次很有梗的跨游戏玩法实验。",
+      "whyToday": "两款经典游戏的机制碰撞很有传播力，快照实增 +43，当前 1122 星。",
+      "audience": "Minecraft 与《上古卷轴5》玩家、模组爱好者。",
+      "editorialTags": [
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "noahdunnagan/fsearch",
+      "githubUrl": "https://github.com/noahdunnagan/fsearch",
+      "canonicalUrl": "https://github.com/noahdunnagan/fsearch",
+      "description": "Whole-disk file search for macOS: fuzzy names, typo tolerance, indexed content grep. ~1 ms over 8M files.",
+      "chineseDescription": "macOS 全盘文件搜索工具，支持模糊文件名、拼写容错和索引内容检索。",
+      "stars": 1111,
+      "forks": 81,
+      "openIssues": 3,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-08T17:50:33Z",
+      "updatedAt": "2026-10-09T22:38:52Z",
+      "pushedAt": "2026-10-09T16:22:32Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 664 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "fsearch —— 在 macOS 上毫秒级搜索全盘文件。",
+      "introduction": "fsearch 为 macOS 提供全盘文件检索，支持模糊文件名、拼写容错和索引内容搜索。项目描述给出的目标是在八百万文件规模下仍保持约一毫秒响应。",
+      "whyToday": "解决“文件到底放哪了”的高频痛点，新仓约 664 stars/day，当前 1111 星。",
+      "audience": "文件多、经常在 Mac 上翻找资料的用户。",
+      "editorialTags": [
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "franzenzenhofer/big-arrow-on-the-screen",
+      "githubUrl": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+      "canonicalUrl": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+      "description": "Let your AI agents paint big arrows, boxes and text on your Mac screen. One CLI, click-through, gone by itself. Skill for Claude Code and Codex. MIT.",
+      "chineseDescription": "让 AI Agent 在 Mac 屏幕上临时绘制大箭头、方框和文字的命令行工具。",
+      "stars": 430,
+      "forks": 6,
+      "openIssues": 0,
+      "language": "Swift",
+      "topics": [
+        "accessibility",
+        "ai-agents",
+        "claude-code",
+        "cli",
+        "codex",
+        "macos",
+        "swift"
+      ],
+      "createdAt": "2026-10-08T08:39:15Z",
+      "updatedAt": "2026-10-09T22:36:49Z",
+      "pushedAt": "2026-10-09T21:54:24Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 209 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Big Arrow —— 让 AI 在 Mac 屏幕上画箭头和提示框。",
+      "introduction": "这个命令行工具允许 AI Agent 在 Mac 屏幕上临时绘制大箭头、方框与文字。标记可以穿透点击并自动消失，适合做操作引导与视觉指示。",
+      "whyToday": "把 AI 的文字说明变成屏幕上的直接提示，玩法直观，新仓约 209 stars/day，当前 430 星。",
+      "audience": "需要演示、远程指导或构建桌面 Agent 的 Mac 用户。",
+      "editorialTags": [
+        "有趣",
+        "效率",
+        "AI 工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "t4t5/omdrop-owl",
+      "githubUrl": "https://github.com/t4t5/omdrop-owl",
+      "canonicalUrl": "https://github.com/t4t5/omdrop-owl",
+      "description": "airdrop for non-apple devices",
+      "chineseDescription": "面向非 Apple 设备的类 AirDrop 文件传输工具。",
+      "stars": 374,
+      "forks": 18,
+      "openIssues": 1,
+      "language": "Shell",
+      "topics": [
+        "airdrop",
+        "omarchy",
+        "opendrop"
+      ],
+      "createdAt": "2026-10-08T06:38:33Z",
+      "updatedAt": "2026-10-09T22:43:16Z",
+      "pushedAt": "2026-10-09T21:12:52Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 175 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "omdrop-owl —— 给非 Apple 设备准备的类 AirDrop 工具。",
+      "introduction": "omdrop-owl 想把 AirDrop 式的文件传输体验带给非 Apple 设备。它聚焦跨设备分享这个人人都会遇到的日常需求。",
+      "whyToday": "跨设备传文件的痛点明确，项目定位一眼就能看懂，新仓约 175 stars/day，当前 374 星。",
+      "audience": "需要在不同品牌设备之间快速传文件的用户。",
+      "editorialTags": [
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "wesbos/photo-frame-dashboard",
+      "githubUrl": "https://github.com/wesbos/photo-frame-dashboard",
+      "canonicalUrl": "https://github.com/wesbos/photo-frame-dashboard",
+      "description": "Getting ADB, root, backups and custom apps onto locked-down Android photo frames (Skylight Calendar, BIUFRAME)",
+      "chineseDescription": "研究如何在受限 Android 相框上启用 ADB、Root、备份和自定义应用。",
+      "stars": 302,
+      "forks": 15,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-10-08T18:22:19Z",
+      "updatedAt": "2026-10-09T22:41:43Z",
+      "pushedAt": "2026-10-09T17:36:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 183 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Photo Frame Dashboard —— 解锁受限 Android 相框的更多玩法。",
+      "introduction": "这个项目研究如何在 Skylight Calendar、BIUFRAME 等受限 Android 相框上启用 ADB、Root、备份和自定义应用。它把原本封闭的相框变成可以继续改造的小型设备。",
+      "whyToday": "旧硬件再利用和破解封闭设备都很有动手乐趣，新仓约 183 stars/day，当前 302 星。",
+      "audience": "喜欢硬件改造、智能家居与旧设备再利用的玩家。",
+      "editorialTags": [
+        "有趣",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "BinceQu/RoboHarness",
+      "githubUrl": "https://github.com/bincequ/roboharness",
+      "canonicalUrl": "https://github.com/bincequ/roboharness",
+      "description": "A robotic harness that gives LLM agents a visual-geometric control panel so that they can directly understand and invoke embodied tasks.",
+      "chineseDescription": "为大模型 Agent 提供视觉与几何控制面板，使其理解并调用具身任务。",
+      "stars": 222,
+      "forks": 18,
+      "openIssues": 0,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-07T04:39:45Z",
+      "updatedAt": "2026-10-09T13:59:23Z",
+      "pushedAt": "2026-10-09T13:59:19Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 69 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "RoboHarness —— 给大模型一块可理解机器人动作的控制面板。",
+      "introduction": "RoboHarness 为大模型 Agent 提供视觉与几何控制面板，帮助它理解并调用具身任务。项目把抽象语言模型与真实世界的动作控制连接起来。",
+      "whyToday": "机器人与大模型结合的展示感很强，新仓约 69 stars/day，当前 222 星。",
+      "audience": "机器人研究者、具身智能爱好者与 AI 开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "ThariqS/ai-newtab",
+      "githubUrl": "https://github.com/thariqs/ai-newtab",
+      "canonicalUrl": "https://github.com/thariqs/ai-newtab",
+      "description": "Claude generates a daily new tab page based on your browser history.",
+      "chineseDescription": "Claude 根据浏览历史每天生成一个新的浏览器新标签页。",
+      "stars": 504,
+      "forks": 38,
+      "openIssues": 7,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-10-08T17:44:43Z",
+      "updatedAt": "2026-10-09T22:25:46Z",
+      "pushedAt": "2026-10-08T20:56:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 300 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "AI New Tab —— 让 Claude 根据浏览历史每天生成新标签页。",
+      "introduction": "这个项目把浏览历史交给 Claude，用它每天生成不同的新标签页。它让浏览器入口随着个人兴趣变化，兼具个性化与每日开盲盒的感觉。",
+      "whyToday": "每天打开浏览器都可能看到新内容，玩法轻量又新鲜，新仓约 300 stars/day，当前 504 星。",
+      "audience": "想把浏览器首页变得更个性化的用户。",
+      "editorialTags": [
+        "AI 工具",
+        "有趣",
+        "设计"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "HelixDB/helix-foundry",
+      "githubUrl": "https://github.com/helixdb/helix-foundry",
+      "canonicalUrl": "https://github.com/helixdb/helix-foundry",
+      "description": "Your company's data, connected into one ontology, on your own computer. A local-first data workspace built on HelixDB and DuckDB.",
+      "chineseDescription": "在本机把企业数据连接成统一本体的本地优先数据工作区。",
+      "stars": 519,
+      "forks": 59,
+      "openIssues": 3,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-10-07T05:10:45Z",
+      "updatedAt": "2026-10-09T22:41:15Z",
+      "pushedAt": "2026-10-07T05:10:49Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 34,
+        "signals": [
+          "新仓约 162 stars/day",
+          "4 天内有更新"
+        ]
+      },
+      "plainSummary": "Helix Foundry —— 在本机把企业数据整理成统一知识结构。",
+      "introduction": "Helix Foundry 是一个本地优先的数据工作区，可把公司的不同数据连接到统一本体中。它基于 HelixDB 与 DuckDB，强调数据留在自己的电脑上。",
+      "whyToday": "本地优先与统一数据视图兼顾了实用性和掌控感，新仓约 162 stars/day，当前 519 星。",
+      "audience": "需要整理企业数据、又重视本地存储的数据团队。",
+      "editorialTags": [
+        "数据",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "vectorelktrek/FC-FIFA-Mod-Manager",
+      "githubUrl": "https://github.com/vectorelktrek/fc-fifa-mod-manager",
+      "canonicalUrl": "https://github.com/vectorelktrek/fc-fifa-mod-manager",
+      "description": "Complete mod management for EA Sports FC 26, FC 25, FC 24 & FIFA 19-23. FIFA Mod Manager, FC Mod Manager, FIFA Live Editor, FC Live Editor, FC26/FC27 Mod Manager, FIFA 26/27 Mod Manager. Drag & drop .fifamod, load order, conflict detection, BepInEx, Live Editor.",
+      "chineseDescription": "支持多代 EA Sports FC 与 FIFA 的模组管理器，包含拖放、排序和冲突检测。",
+      "stars": 102,
+      "forks": 28,
+      "openIssues": 0,
+      "language": "Python",
+      "topics": [
+        "bepinex-fifa",
+        "career-mode-mods",
+        "ea-fc-27",
+        "ea-sports-fc-modding",
+        "fbmod",
+        "fc-live-editor",
+        "fc-mod-loader",
+        "fc-mod-manager",
+        "fc24-mod-manager",
+        "fc25-mod-manager",
+        "fc26-mod-manager",
+        "fc27-mod-manager",
+        "fifa-database-editor",
+        "fifa-live-editor",
+        "fifa-mod-manager",
+        "fifa-mod-manager-2026",
+        "fifa-mod-tool",
+        "fifamod",
+        "gameplay-mods",
+        "visual-mods"
+      ],
+      "createdAt": "2026-09-21T16:21:19Z",
+      "updatedAt": "2026-10-09T22:43:31Z",
+      "pushedAt": "2026-10-09T22:43:27Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 13.44011639033573,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 25.4,
+        "signals": [
+          "新仓约 5 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "FC FIFA Mod Manager —— 集中管理多代足球游戏模组。",
+      "introduction": "这款工具覆盖 EA Sports FC 26、25、24 以及 FIFA 19 至 23。它支持拖放模组、调整加载顺序、检测冲突，并整合实时编辑能力。",
+      "whyToday": "多代游戏统一管理，对足球游戏模组玩家很实用，新仓约 5 stars/day，当前 102 星。",
+      "audience": "EA Sports FC 与 FIFA 的模组玩家。",
+      "editorialTags": [
+        "有趣",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "mdn/translated-content",
+      "githubUrl": "https://github.com/mdn/translated-content",
+      "canonicalUrl": "https://github.com/mdn/translated-content",
+      "description": "7 community-maintained translations of MDN Web Docs in ES, FR, JA, KO, PT-BR, RU, and ZH, to learn and contribute in your native language.",
+      "chineseDescription": "由社区维护的七种语言 MDN Web 文档翻译仓库，包含中文。",
+      "stars": 2037,
+      "forks": 8306,
+      "openIssues": 483,
+      "language": "Markdown",
+      "topics": [
+        "documentation",
+        "l10n",
+        "localization",
+        "mdn",
+        "web-development",
+        "web-platform"
+      ],
+      "createdAt": "2020-12-08T19:38:24Z",
+      "updatedAt": "2026-10-09T22:43:13Z",
+      "pushedAt": "2026-10-09T22:43:39Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "MDN 翻译仓库 —— 用七种语言学习和共建 Web 文档。",
+      "introduction": "这个仓库由社区维护 MDN Web Docs 的西班牙语、法语、日语、韩语、葡萄牙语、俄语和中文版本。读者可以用母语学习，也能直接参与文档翻译。",
+      "whyToday": "内容持续更新，适合学习者与贡献者随时查阅，1 天内有更新，当前 2037 星。",
+      "audience": "学习 Web 开发、偏好中文或其他本地语言资料的人。",
+      "editorialTags": [
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "frank890417/taiwan-md",
+      "githubUrl": "https://github.com/frank890417/taiwan-md",
+      "canonicalUrl": "https://github.com/frank890417/taiwan-md",
+      "description": "🇹🇼 讓全世界完整認識台灣 | An open-source, AI-friendly knowledge base about Taiwan",
+      "chineseDescription": "帮助世界完整认识台湾的开源、AI 友好型知识库。",
+      "stars": 1200,
+      "forks": 187,
+      "openIssues": 15,
+      "language": "HTML",
+      "topics": [],
+      "createdAt": "2026-03-17T08:05:33Z",
+      "updatedAt": "2026-10-09T22:43:26Z",
+      "pushedAt": "2026-10-09T22:43:21Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "taiwan.md —— 面向人和 AI 的开放台湾知识库。",
+      "introduction": "taiwan.md 希望帮助世界更完整地认识台湾，并以开源、AI 友好的形式组织知识。它既可供人阅读，也方便 AI 工具检索与使用。",
+      "whyToday": "开放知识库形态便于持续共建，1 天内有更新，当前 1200 星。",
+      "audience": "想了解台湾、整理开放资料或构建知识应用的人。",
+      "editorialTags": [
+        "学习",
+        "数据"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "indranilbanerjee/digital-marketing-pro",
+      "githubUrl": "https://github.com/indranilbanerjee/digital-marketing-pro",
+      "canonicalUrl": "https://github.com/indranilbanerjee/digital-marketing-pro",
+      "description": "An open-source AI marketing operating system for strategy, SEO, AEO/GEO, paid media, content, CRM, and analytics - grounded in brand context, human approval, and verifiable outputs.",
+      "chineseDescription": "开源 AI 营销操作系统，覆盖策略、搜索优化、内容、客户管理与分析。",
+      "stars": 861,
+      "forks": 137,
+      "openIssues": 2,
+      "language": "Python",
+      "topics": [
+        "aeo",
+        "agent-skills",
+        "ai-marketing",
+        "c2pa",
+        "claude-code",
+        "claude-plugin",
+        "claude-skills",
+        "content-marketing",
+        "copilot-cli-plugin",
+        "cursor-plugin",
+        "eu-ai-act",
+        "gemini-cli-extension",
+        "geo",
+        "google-antigravity",
+        "hermes-plugin",
+        "marketing-agency",
+        "marketing-automation",
+        "openai-codex",
+        "openclaw-plugin",
+        "seo"
+      ],
+      "createdAt": "2026-02-11T07:57:53Z",
+      "updatedAt": "2026-10-09T22:43:30Z",
+      "pushedAt": "2026-10-09T22:43:25Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Digital Marketing Pro —— 开源的 AI 营销操作系统。",
+      "introduction": "它覆盖营销策略、搜索优化、付费媒体、内容、客户管理与分析，并以品牌上下文为基础。项目强调人工审批和可验证输出，而不是完全自动替人决策。",
+      "whyToday": "覆盖营销全链路，又保留人工把关，1 天内有更新，当前 861 星。",
+      "audience": "市场运营、内容团队与独立品牌经营者。",
+      "editorialTags": [
+        "AI 工具",
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "777genius/agent-notifications",
+      "githubUrl": "https://github.com/777genius/agent-notifications",
+      "canonicalUrl": "https://github.com/777genius/agent-notifications",
+      "description": "🔔 Cross-platform smart notifications for Claude/Codex/OpenCode/Gemini. Desktop alerts, sounds, click-to-focus, and webhooks. macOS, Linux, and Windows.",
+      "chineseDescription": "为多种 AI 编程 Agent 提供跨平台桌面提醒、声音、聚焦与 Webhook。",
+      "stars": 816,
+      "forks": 111,
+      "openIssues": 42,
+      "language": "Go",
+      "topics": [
+        "agent-notifications",
+        "claude",
+        "claude-code",
+        "codex",
+        "codex-cli",
+        "cross-platform",
+        "developer-tools",
+        "gemini",
+        "iterm2",
+        "linux",
+        "macos",
+        "notifications",
+        "sounds",
+        "tmux",
+        "webhooks",
+        "windows"
+      ],
+      "createdAt": "2025-10-19T15:10:46Z",
+      "updatedAt": "2026-10-09T22:43:08Z",
+      "pushedAt": "2026-10-09T22:43:07Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Agent Notifications —— 给多种 AI 编程助手加上跨平台提醒。",
+      "introduction": "这个工具为 Claude、Codex、OpenCode 与 Gemini 提供桌面通知、声音、点击聚焦和 Webhook。它覆盖 macOS、Linux 与 Windows，减少等待 Agent 时反复切窗口查看的麻烦。",
+      "whyToday": "解决等待 AI 任务完成时的真实小痛点，1 天内有更新，当前 816 星。",
+      "audience": "同时使用多种 AI 编程助手的开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "obsidian-pkm-vault/awesome-obsidian-vault",
+      "githubUrl": "https://github.com/obsidian-pkm-vault/awesome-obsidian-vault",
+      "canonicalUrl": "https://github.com/obsidian-pkm-vault/awesome-obsidian-vault",
+      "description": "Awesome list of obsidian vaults",
+      "chineseDescription": "精选 Obsidian 知识库案例清单。",
+      "stars": 526,
+      "forks": 54,
+      "openIssues": 1,
+      "language": "JavaScript",
+      "topics": [
+        "awesome-list",
+        "knowledge",
+        "obsidian",
+        "obsidian-vault",
+        "resources"
+      ],
+      "createdAt": "2024-07-08T02:17:21Z",
+      "updatedAt": "2026-10-09T22:43:34Z",
+      "pushedAt": "2026-10-09T22:43:29Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Awesome Obsidian Vault —— 收集值得参考的 Obsidian 知识库。",
+      "introduction": "这是一个精选 Obsidian Vault 的清单，方便用户查看别人如何组织笔记与个人知识库。它适合用来找模板、结构灵感和新的知识管理方法。",
+      "whyToday": "内容型清单可直接翻阅取经，1 天内有更新，当前 526 星。",
+      "audience": "Obsidian 用户与正在搭建个人知识库的人。",
+      "editorialTags": [
+        "学习",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "gammons/slk",
+      "githubUrl": "https://github.com/gammons/slk",
+      "canonicalUrl": "https://github.com/gammons/slk",
+      "description": "A blazingly fast Slack TUI",
+      "chineseDescription": "速度很快的 Slack 终端界面客户端。",
+      "stars": 403,
+      "forks": 78,
+      "openIssues": 57,
+      "language": "Go",
+      "topics": [
+        "golang",
+        "slack"
+      ],
+      "createdAt": "2026-04-25T09:55:59Z",
+      "updatedAt": "2026-10-09T22:43:36Z",
+      "pushedAt": "2026-10-09T22:43:33Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "slk —— 在终端里快速使用 Slack。",
+      "introduction": "slk 是一款追求极快速度的 Slack 终端界面客户端。它让偏爱键盘和命令行的用户不用离开终端也能处理沟通。",
+      "whyToday": "终端里的 Slack 体验够鲜明，且项目近期仍在更新，1 天内有更新，当前 403 星。",
+      "audience": "习惯键盘操作、长期驻留终端的 Slack 用户。",
+      "editorialTags": [
+        "效率",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "tonisives/ovim",
+      "githubUrl": "https://github.com/tonisives/ovim",
+      "canonicalUrl": "https://github.com/tonisives/ovim",
+      "description": "macOS system wide vim mode",
+      "chineseDescription": "在 macOS 全系统提供 Vim 操作模式的工具。",
+      "stars": 402,
+      "forks": 12,
+      "openIssues": 2,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2025-12-15T06:10:52Z",
+      "updatedAt": "2026-10-09T22:43:20Z",
+      "pushedAt": "2026-10-09T22:43:16Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "ovim —— 把 Vim 操作模式带到整个 macOS。",
+      "introduction": "ovim 在 macOS 全系统提供 Vim 风格操作，而不只局限于编辑器。它适合希望在不同应用中保持一致键盘习惯的用户。",
+      "whyToday": "系统级 Vim 模式切中键盘党长期诉求，1 天内有更新，当前 402 星。",
+      "audience": "Vim 用户与追求纯键盘操作的 Mac 用户。",
+      "editorialTags": [
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "letehaha/moneymatter",
+      "githubUrl": "https://github.com/letehaha/moneymatter",
+      "canonicalUrl": "https://github.com/letehaha/moneymatter",
+      "description": "Open-source, self-hosted budget tracker and personal finance app. Bank sync, multi-currency, investments, and a built-in MCP server for Claude and ChatGPT.",
+      "chineseDescription": "开源、自托管的预算与个人财务应用，支持银行同步、多币种和投资。",
+      "stars": 162,
+      "forks": 57,
+      "openIssues": 10,
+      "language": "TypeScript",
+      "topics": [
+        "budget",
+        "budget-tracker",
+        "budgeting",
+        "docker",
+        "expense-tracker",
+        "investment-tracking",
+        "mcp-server",
+        "money-management",
+        "open-source",
+        "personal-finance",
+        "self-hosted"
+      ],
+      "createdAt": "2025-02-19T20:20:53Z",
+      "updatedAt": "2026-10-09T22:43:17Z",
+      "pushedAt": "2026-10-09T22:43:13Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "MoneyMatter —— 可自托管的开源个人财务与预算工具。",
+      "introduction": "MoneyMatter 提供预算跟踪、银行同步、多币种与投资管理，并支持自行部署。项目还带有 MCP 服务，可连接 Claude 与 ChatGPT 使用个人财务数据。",
+      "whyToday": "个人记账、投资与自托管合在一起，实用性强，1 天内有更新，当前 162 星。",
+      "audience": "重视数据掌控、想统一管理个人财务的用户。",
+      "editorialTags": [
+        "开源替代",
+        "数据",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "materializr-cad/materializr",
+      "githubUrl": "https://github.com/materializr-cad/materializr",
+      "canonicalUrl": "https://github.com/materializr-cad/materializr",
+      "description": "Open-source parametric 3D CAD for makers — constraint sketches, solid modeling, threads, SVG & text engraving, STL/STEP export. Android, iPad, Linux, Mac, Windows. Vibe coded.",
+      "chineseDescription": "面向创客的开源参数化三维 CAD，支持建模、雕刻与多格式导出。",
+      "stars": 142,
+      "forks": 18,
+      "openIssues": 7,
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2026-05-27T04:02:26Z",
+      "updatedAt": "2026-10-09T22:43:24Z",
+      "pushedAt": "2026-10-09T22:43:20Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Materializr —— 面向创客的跨平台开源参数化三维 CAD。",
+      "introduction": "Materializr 支持约束草图、实体建模、螺纹、SVG 与文字雕刻，并可导出 STL 和 STEP。它覆盖 Android、iPad、Linux、Mac 与 Windows，方便创客跨设备设计。",
+      "whyToday": "功能覆盖从建模到导出，且跨平台，1 天内有更新，当前 142 星。",
+      "audience": "做三维打印、机械设计与创客项目的用户。",
+      "editorialTags": [
+        "设计",
+        "开源替代"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "NSEvent/xbox-controller-mapper",
+      "githubUrl": "https://github.com/nsevent/xbox-controller-mapper",
+      "canonicalUrl": "https://github.com/nsevent/xbox-controller-mapper",
+      "description": "Remap Xbox, PlayStation, Nintendo, and 300+ controllers to keyboard, mouse,  macros, and scripts on macOS. Touchpad, gyroscope, swipe typing, and OBS  integration.",
+      "chineseDescription": "在 macOS 上把多种游戏手柄映射到键盘、鼠标、宏和脚本。",
+      "stars": 113,
+      "forks": 15,
+      "openIssues": 11,
+      "language": "Swift",
+      "topics": [
+        "accessibility",
+        "controller-mapping",
+        "couch-computing",
+        "dualsense",
+        "dualshock4",
+        "gamepad",
+        "joy-con",
+        "keyboard-mapper",
+        "keyboard-shortcuts",
+        "macos",
+        "mouse-control",
+        "nintendo-switch",
+        "obs-websocket",
+        "ps4-controller",
+        "ps5-controller",
+        "swift",
+        "swiftui",
+        "vibe-coding",
+        "xbox-controller",
+        "xbox-elite-wireless-controller-series-2"
+      ],
+      "createdAt": "2025-12-29T05:47:30Z",
+      "updatedAt": "2026-10-09T22:43:37Z",
+      "pushedAt": "2026-10-09T22:43:32Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Xbox Controller Mapper —— 在 macOS 上自由映射三百多种手柄。",
+      "introduction": "这个工具可把 Xbox、PlayStation、Nintendo 等三百多种手柄映射成键盘、鼠标、宏和脚本。它还支持触控板、陀螺仪、滑动输入与 OBS 集成。",
+      "whyToday": "一套工具兼容大量手柄与丰富输入方式，1 天内有更新，当前 113 星。",
+      "audience": "Mac 游戏玩家、直播创作者与手柄重度用户。",
+      "editorialTags": [
+        "有趣",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "owlboy/greatpug-public",
+      "githubUrl": "https://github.com/owlboy/greatpug-public",
+      "canonicalUrl": "https://github.com/owlboy/greatpug-public",
+      "description": "A Bar in the Metaverse (VRChat)",
+      "chineseDescription": "位于 VRChat 元宇宙中的酒吧项目。",
+      "stars": 60,
+      "forks": 6,
+      "openIssues": 19,
+      "language": "Shell",
+      "topics": [
+        "metaverse",
+        "socialvr",
+        "udon",
+        "vrchat",
+        "vrchat-worlds"
+      ],
+      "createdAt": "2017-05-17T21:12:56Z",
+      "updatedAt": "2026-10-09T22:43:20Z",
+      "pushedAt": "2026-10-09T22:43:16Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "The Great Pug —— 开在 VRChat 元宇宙里的酒吧。",
+      "introduction": "The Great Pug 是一间位于 VRChat 中的虚拟酒吧。公开仓库让人可以继续了解这个元宇宙社交空间背后的内容。",
+      "whyToday": "“元宇宙酒吧”本身就很有画面感，1 天内有更新，当前 60 星。",
+      "audience": "VRChat 玩家、虚拟空间设计者与社交世界爱好者。",
+      "editorialTags": [
+        "有趣",
+        "设计"
+      ],
+      "recommendation": 4
+    }
+  ]
+}
