@@ -31,6 +31,40 @@ DEFAULT_FEED_URL = (
 )
 LARK_API = "https://open.feishu.cn/open-apis"
 SHANGHAI = ZoneInfo("Asia/Shanghai")
+STATE_DIR = ROOT / ".daily-pipeline" / "lark-sent"
+
+
+def _state_file(date: str, recipient: str) -> Path:
+    safe_recipient = recipient.replace("/", "_").replace(":", "_")
+    return STATE_DIR / f"{date}-{safe_recipient}.json"
+
+
+def already_sent(date: str, recipient: str) -> dict[str, Any] | None:
+    path = _state_file(date, recipient)
+    if not path.is_file():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def record_sent(date: str, recipient: str, message_id: str | None) -> None:
+    STATE_DIR.mkdir(parents=True, exist_ok=True)
+    _state_file(date, recipient).write_text(
+        json.dumps(
+            {
+                "date": date,
+                "recipient": recipient,
+                "messageId": message_id,
+                "sentAt": datetime.now(SHANGHAI).isoformat(),
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
 
 
 def today_in_shanghai() -> str:
@@ -169,14 +203,23 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--date", default=os.environ.get("EDITION_DATE") or today_in_shanghai())
     parser.add_argument("--dry-run", action="store_true", help="只生成卡片，不调用飞书 API")
+    parser.add_argument("--force", action="store_true", help="忽略本地去重记录，强制重新发送")
     args = parser.parse_args()
     website_url = os.environ.get("GITHUB_TODAY_WEBSITE_URL", DEFAULT_SITE_URL)
     feed_url = os.environ.get("GITHUB_TODAY_FEED_URL") or DEFAULT_FEED_URL
+    recipient = os.environ.get("LARK_RECIPIENT_ID", "")
     card = build_card(load_edition(args.date, feed_url), website_url)
     if args.dry_run:
         print(json.dumps(card, ensure_ascii=False, indent=2))
         return 0
+    if not args.force and recipient:
+        existing = already_sent(args.date, recipient)
+        if existing:
+            print(json.dumps({"ok": True, "skipped": True, "reason": "already_sent", **existing}, ensure_ascii=False))
+            return 0
     message_id = send_card(card)
+    if recipient:
+        record_sent(args.date, recipient, message_id)
     print(json.dumps({"ok": True, "date": args.date, "messageId": message_id}, ensure_ascii=False))
     return 0
 

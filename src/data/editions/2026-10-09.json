@@ -1,0 +1,1513 @@
+{
+  "date": "2026-10-09",
+  "issue": 17,
+  "title": "30 个真实 GitHub 项目，今天都能玩点不一样的",
+  "metadata": {
+    "targetCount": 30,
+    "degraded": false
+  },
+  "summary": "今天的 GitHub 新鲜感集中在三条线上：Rust 正在重做创作工具，AI Agent 继续进入设计、编程与内容生产流程，一批轻巧而有趣的桌面和网页工具也快速冒头。本期依据可核验的 Search、Trending、快照增长和近期更新信号，从 120 个候选中精选 30 个项目；仓库详情补全虽受限流影响，但所有推荐均只采用候选文件中已有事实。",
+  "mode": "live",
+  "editorMode": "aime",
+  "notice": "仓库事实仅来自 editor task 记录的 GitHub 官方来源；中文介绍由 Aime 基于其中的 description、README 摘要（如有）和评分信号编辑。",
+  "publishedAt": "2026-10-09T06:43:47.944Z",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-10-08T18:32:26.852Z",
+      "message": "3/3 个查询成功，读取 150 条；匿名 Search 仅 10 次/分钟，生产强烈建议 GITHUB_TOKEN",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "raw": [
+        {
+          "query": "created:>=2026-10-06 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-09-25 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-10-06 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-10-08T18:32:26.865Z",
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 20 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "rawCount": 20,
+      "normalizedCount": 20,
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 9
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 11
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "degraded",
+      "fetchedAt": "2026-10-08T18:32:35.474Z",
+      "message": "HTTP 403，详情补全跳过；保留 Search/Trending 已有事实；rate limit remaining=0"
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 170,
+    "normalizedCandidateCount": 170,
+    "dedupedCandidateCount": 160,
+    "eligibleCandidateCount": 120,
+    "selectedCount": 30
+  },
+  "projects": [
+    {
+      "name": "storytold/artcraft",
+      "githubUrl": "https://github.com/storytold/artcraft",
+      "canonicalUrl": "https://github.com/storytold/artcraft",
+      "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+      "chineseDescription": "面向艺术家、设计师和电影人的创作引擎。",
+      "stars": 7076,
+      "forks": 938,
+      "recentGrowth": 2510,
+      "growthSource": "github-trending",
+      "language": "Rust",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +2510"
+        ]
+      },
+      "plainSummary": "ArtCraft —— 面向艺术家、设计师和电影人的创作引擎。",
+      "introduction": "ArtCraft 是一款服务于艺术、设计与影视创作者的创作引擎。候选资料强调其以更有意图的方式组织创作过程，具体能力以仓库现有说明为准。",
+      "whyToday": "GitHub Trending 明确披露当期增长 2510 星，是候选池中最强的短期关注信号。",
+      "audience": "适合艺术家、设计师、电影创作者及关注新型创作工作流的人。",
+      "editorialTags": [
+        "设计",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "storytold/lightcraft",
+      "githubUrl": "https://github.com/storytold/lightcraft",
+      "canonicalUrl": "https://github.com/storytold/lightcraft",
+      "description": "An open-source, clean-room reimplementation of Adobe Lightroom in pure Rust.",
+      "chineseDescription": "用纯 Rust 从零实现的开源 Lightroom 风格照片处理工具。",
+      "stars": 4904,
+      "forks": 1395,
+      "openIssues": 154,
+      "recentGrowth": 1479,
+      "growthSource": "snapshot",
+      "language": "Rust",
+      "topics": [
+        "art",
+        "lightroom",
+        "photography",
+        "raw",
+        "raw-editor",
+        "raw-processing",
+        "rust"
+      ],
+      "createdAt": "2026-09-30T14:09:27Z",
+      "updatedAt": "2026-10-08T18:32:13Z",
+      "pushedAt": "2026-10-08T18:23:44Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +1479",
+          "新仓约 556 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Lightcraft —— 用纯 Rust 从零实现的开源照片处理工具。",
+      "introduction": "Lightcraft 以纯 Rust 从零实现 Lightroom 风格的照片处理体验。它聚焦摄影与 RAW 图像处理，并以开源方式探索成熟创作工具的替代路径。",
+      "whyToday": "快照实增 1479 星，新仓速度约 556 星每天，且 1 天内仍有更新。",
+      "audience": "适合摄影师、RAW 工作流用户、Rust 开发者和开源创作工具关注者。",
+      "editorialTags": [
+        "开源替代",
+        "设计",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "storytold/vectorcraft",
+      "githubUrl": "https://github.com/storytold/vectorcraft",
+      "canonicalUrl": "https://github.com/storytold/vectorcraft",
+      "description": "An open-source, clean-room reimplementation of Adobe Illustrator, built in pure Rust.",
+      "chineseDescription": "用纯 Rust 从零实现的开源 Illustrator 风格矢量图形工具。",
+      "stars": 3401,
+      "forks": 1296,
+      "openIssues": 21,
+      "recentGrowth": 857,
+      "growthSource": "snapshot",
+      "language": "Rust",
+      "topics": [
+        "adobe-illustrator",
+        "art",
+        "illustrator",
+        "illustrator-2023",
+        "illustrator-extensions",
+        "illustrator-free",
+        "illustrator-full",
+        "rust",
+        "rust-lang",
+        "svg",
+        "svg-editor",
+        "vector-graphics"
+      ],
+      "createdAt": "2026-09-30T13:43:03Z",
+      "updatedAt": "2026-10-08T18:32:15Z",
+      "pushedAt": "2026-10-08T18:18:31Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +857",
+          "新仓约 385 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Vectorcraft —— 用纯 Rust 重做 Illustrator 风格的矢量绘图体验。",
+      "introduction": "Vectorcraft 是一款纯 Rust 编写的开源矢量图形工具，采用从零实现的方式复现 Illustrator 风格工作流。它面向 SVG 与矢量编辑场景，适合作为新兴桌面创作软件观察样本。",
+      "whyToday": "快照实增 857 星，新仓速度约 385 星每天，并在 1 天内更新。",
+      "audience": "适合矢量设计师、SVG 用户、Rust 图形应用开发者。",
+      "editorialTags": [
+        "开源替代",
+        "设计",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "alchaincyf/huashu-art-motion",
+      "githubUrl": "https://github.com/alchaincyf/huashu-art-motion",
+      "canonicalUrl": "https://github.com/alchaincyf/huashu-art-motion",
+      "description": "艺术动画skill：35种艺术风格、9种解说语法，用代码让画动起来。",
+      "chineseDescription": "包含 35 种艺术风格与 9 种解说语法、用代码让画面动起来的艺术动画 Skill。",
+      "stars": 2377,
+      "forks": 248,
+      "openIssues": 1,
+      "recentGrowth": 464,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-10-06T04:49:37Z",
+      "updatedAt": "2026-10-08T18:30:52Z",
+      "pushedAt": "2026-10-08T13:11:08Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +464",
+          "新仓约 739 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "画术 Art Motion —— 用代码让静态画面按多种艺术风格动起来。",
+      "introduction": "这是一个艺术动画 Skill，提供 35 种艺术风格与 9 种解说语法。它把代码创作、视觉风格和叙事表达组合起来，帮助用户生成具有明确风格的动态画面。",
+      "whyToday": "快照实增 464 星，新仓速度约 739 星每天，且 1 天内有更新。",
+      "audience": "适合动态设计师、内容创作者、创意编程与 Agent Skill 用户。",
+      "editorialTags": [
+        "设计",
+        "AI 工具",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "bas3line/ascii",
+      "githubUrl": "https://github.com/bas3line/ascii",
+      "canonicalUrl": "https://github.com/bas3line/ascii",
+      "description": "Animated ascii art for web pages, in TypeScript: React, Next.js, Astro, or one HTML tag",
+      "chineseDescription": "面向网页的动态 ASCII 艺术组件，支持 React、Next.js、Astro 或单个 HTML 标签。",
+      "stars": 571,
+      "forks": 29,
+      "openIssues": 3,
+      "recentGrowth": 275,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [
+        "animation",
+        "ascii",
+        "ascii-art",
+        "astro",
+        "nextjs",
+        "react",
+        "typescript",
+        "web-components"
+      ],
+      "createdAt": "2026-10-07T06:48:54Z",
+      "updatedAt": "2026-10-08T18:20:58Z",
+      "pushedAt": "2026-10-08T18:20:52Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +275",
+          "新仓约 268 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "ASCII —— 给网页加入动态字符画的 TypeScript 组件。",
+      "introduction": "这个项目把动态 ASCII 艺术带进网页，可用于 React、Next.js、Astro，也能通过单个 HTML 标签接入。它为前端页面提供一种轻量而鲜明的视觉表现形式。",
+      "whyToday": "快照实增 275 星，新仓速度约 268 星每天，并在 1 天内更新。",
+      "audience": "适合前端开发者、网页设计师和喜欢字符艺术的创作者。",
+      "editorialTags": [
+        "设计",
+        "开发工具",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "lucasmarkes/hairline",
+      "githubUrl": "https://github.com/lucasmarkes/hairline",
+      "canonicalUrl": "https://github.com/lucasmarkes/hairline",
+      "description": "Six isometric line figures that answer the pointer. For React and for anything with a DOM.",
+      "chineseDescription": "会响应指针移动的六款等距线框图形，可用于 React 或其他 DOM 页面。",
+      "stars": 1297,
+      "forks": 64,
+      "openIssues": 3,
+      "recentGrowth": 135,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [
+        "animation",
+        "isometric",
+        "react",
+        "shadcn",
+        "svg",
+        "typescript"
+      ],
+      "createdAt": "2026-10-01T13:52:19Z",
+      "updatedAt": "2026-10-08T18:19:32Z",
+      "pushedAt": "2026-10-08T13:20:37Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +135",
+          "新仓约 165 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Hairline —— 会跟随指针响应的等距线框图形组件。",
+      "introduction": "Hairline 提供六款会响应指针的等距线框图形。它既可用于 React，也可用于其他具备 DOM 的页面，为界面增加轻巧的交互动效。",
+      "whyToday": "快照实增 135 星，新仓速度约 165 星每天，且 1 天内有更新。",
+      "audience": "适合前端开发者、交互设计师和寻找微动效素材的人。",
+      "editorialTags": [
+        "设计",
+        "开发工具",
+        "有趣"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "iamlukethedev/Herald-OS",
+      "githubUrl": "https://github.com/iamlukethedev/herald-os",
+      "canonicalUrl": "https://github.com/iamlukethedev/herald-os",
+      "description": "An agent-native operating system, with Hermes Agent as the interface. Independent project, not affiliated with Nous Research.",
+      "chineseDescription": "以 Hermes Agent 为界面的 Agent 原生操作系统独立项目。",
+      "stars": 236,
+      "forks": 31,
+      "openIssues": 57,
+      "recentGrowth": 95,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [
+        "ai-agent",
+        "desktop-environment",
+        "fedora",
+        "hermes-agent",
+        "hyprland",
+        "linux",
+        "macos",
+        "niri",
+        "omarchy",
+        "operating-system"
+      ],
+      "createdAt": "2026-10-06T20:37:44Z",
+      "updatedAt": "2026-10-08T17:58:33Z",
+      "pushedAt": "2026-10-08T13:11:09Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +95",
+          "新仓约 92 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Herald OS —— 以 Hermes Agent 为交互界面的 Agent 原生操作系统。",
+      "introduction": "Herald OS 把 Hermes Agent 设为系统交互界面，定位为 Agent 原生操作系统。它是独立项目，候选资料明确说明与 Nous Research 无关联。",
+      "whyToday": "快照实增 95 星，新仓速度约 92 星每天，并在 1 天内更新。",
+      "audience": "适合 AI Agent 开发者、桌面环境爱好者和 Linux 系统探索者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "facebookincubator/muse-gadget-sdk",
+      "githubUrl": "https://github.com/facebookincubator/muse-gadget-sdk",
+      "canonicalUrl": "https://github.com/facebookincubator/muse-gadget-sdk",
+      "description": "Open source SDK to build Muse gadgets",
+      "chineseDescription": "用于构建 Muse 小工具的开源 SDK。",
+      "stars": 1779,
+      "forks": 357,
+      "openIssues": 71,
+      "recentGrowth": 86,
+      "growthSource": "snapshot",
+      "language": "C",
+      "topics": [],
+      "createdAt": "2026-10-02T18:21:23Z",
+      "updatedAt": "2026-10-08T18:27:11Z",
+      "pushedAt": "2026-10-08T18:20:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +86",
+          "新仓约 267 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Muse Gadget SDK —— 用于构建 Muse 小工具的开源开发套件。",
+      "introduction": "这是一个用于开发 Muse gadgets 的开源 SDK。候选资料没有展开设备能力，但其清晰提供了面向该生态的小工具开发入口。",
+      "whyToday": "快照实增 86 星，新仓速度约 267 星每天，并在 1 天内更新。",
+      "audience": "适合希望为 Muse 生态构建小工具的软件与硬件开发者。",
+      "editorialTags": [
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "LosaLosSantos/aurelio-finance",
+      "githubUrl": "https://github.com/losalossantos/aurelio-finance",
+      "canonicalUrl": "https://github.com/losalossantos/aurelio-finance",
+      "description": "Self-hosted personal wealth analysis: portfolio & net-worth tracking with AI insights. FastAPI + React.",
+      "chineseDescription": "可自托管的个人财富分析工具，支持投资组合、净资产跟踪与 AI 洞察。",
+      "stars": 353,
+      "forks": 57,
+      "openIssues": 0,
+      "recentGrowth": 66,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "ai",
+        "fastapi",
+        "fintech",
+        "net-worth",
+        "personal-finance",
+        "portfolio-tracker",
+        "python",
+        "react",
+        "self-hosted",
+        "typescript",
+        "wealth-management"
+      ],
+      "createdAt": "2026-10-06T20:14:19Z",
+      "updatedAt": "2026-10-08T18:28:58Z",
+      "pushedAt": "2026-10-08T18:28:53Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 42.4626243332044,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 84.5,
+        "signals": [
+          "快照实增 +66",
+          "新仓约 137 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Aurelio Finance —— 可自托管的个人投资组合与净资产分析工具。",
+      "introduction": "Aurelio Finance 用于跟踪投资组合和个人净资产，并提供 AI 洞察。项目采用 FastAPI 与 React，强调自托管的数据使用方式。",
+      "whyToday": "快照实增 66 星，新仓速度约 137 星每天，且 1 天内仍有更新。",
+      "audience": "适合关注个人财务、投资组合跟踪和自托管服务的用户。",
+      "editorialTags": [
+        "数据",
+        "AI 工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "alejandrobujan/tendedero",
+      "githubUrl": "https://github.com/alejandrobujan/tendedero",
+      "canonicalUrl": "https://github.com/alejandrobujan/tendedero",
+      "description": "Screenshots, hung out to dry. A tiny native macOS app that hangs every screenshot on a line at the top of your screen.",
+      "chineseDescription": "把每张截图挂在屏幕顶部一条线上展示的原生 macOS 小应用。",
+      "stars": 943,
+      "forks": 82,
+      "openIssues": 24,
+      "recentGrowth": 328,
+      "growthSource": "snapshot",
+      "language": "Swift",
+      "topics": [],
+      "createdAt": "2026-10-07T01:29:54Z",
+      "updatedAt": "2026-10-08T18:30:27Z",
+      "pushedAt": "2026-10-08T09:55:45Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +328",
+          "新仓约 401 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "Tendedero —— 把每张截图晾在 Mac 屏幕顶部的小工具。",
+      "introduction": "Tendedero 是一款小巧的原生 macOS 应用，会把截图依次挂在屏幕顶部的一条线上。它用直观的视觉方式暂存截图，方便用户快速查看和处理。",
+      "whyToday": "快照实增 328 星，新仓速度约 401 星每天，并在 2 天内更新。",
+      "audience": "适合频繁截图的设计师、产品经理、开发者和 macOS 用户。",
+      "editorialTags": [
+        "效率",
+        "设计",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "yihui-dev/awesome-opus5-5-videos",
+      "githubUrl": "https://github.com/yihui-dev/awesome-opus5-5-videos",
+      "canonicalUrl": "https://github.com/yihui-dev/awesome-opus5-5-videos",
+      "description": "A growing collection of viral videos made with Claude Opus 5.5 and the prompts behind them. Watch each original next to a live remake on Skillry. Updated regularly.",
+      "chineseDescription": "持续收集 Claude Opus 5.5 热门视频、对应提示词及在线复刻效果的项目。",
+      "stars": 3095,
+      "forks": 330,
+      "openIssues": 1,
+      "recentGrowth": 281,
+      "growthSource": "snapshot",
+      "topics": [
+        "ai-video",
+        "awesome",
+        "awesome-list",
+        "claude",
+        "claude-opus",
+        "creative-coding",
+        "motion-graphics",
+        "prompts",
+        "threejs"
+      ],
+      "createdAt": "2026-09-27T06:19:36Z",
+      "updatedAt": "2026-10-08T18:30:14Z",
+      "pushedAt": "2026-10-08T02:17:59Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +281",
+          "新仓约 255 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "Awesome Opus 5.5 Videos —— 汇集热门 AI 视频、提示词与在线复刻对照。",
+      "introduction": "该项目持续收集使用 Claude Opus 5.5 制作的热门视频及其提示词。用户可以把原作与 Skillry 上的在线复刻并排观看，便于理解创作思路。",
+      "whyToday": "快照实增 281 星，新仓速度约 255 星每天，并在 2 天内更新。",
+      "audience": "适合 AI 视频创作者、提示词研究者和创意案例收藏者。",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "学习"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "LoreanXavier/pt-pc",
+      "githubUrl": "https://github.com/loreanxavier/pt-pc",
+      "canonicalUrl": "https://github.com/loreanxavier/pt-pc",
+      "description": "Native PC port of P.T. (runs from your own PS4 game files)",
+      "chineseDescription": "使用用户自有 PS4 游戏文件运行的《P.T.》原生 PC 移植项目。",
+      "stars": 880,
+      "forks": 53,
+      "openIssues": 15,
+      "recentGrowth": 267,
+      "growthSource": "snapshot",
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2026-10-07T09:33:31Z",
+      "updatedAt": "2026-10-08T18:32:25Z",
+      "pushedAt": "2026-10-07T20:34:02Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +267",
+          "新仓约 436 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "P.T. PC —— 使用自有 PS4 游戏文件运行的原生 PC 移植项目。",
+      "introduction": "这个项目尝试把《PT》原生移植到 PC 平台。玩家需使用自己拥有的 PS4 游戏文件，候选资料未宣称包含任何游戏资产。",
+      "whyToday": "快照实增 267 星，新仓速度约 436 星每天，并在 2 天内更新。",
+      "audience": "适合游戏移植研究者、技术爱好者和拥有相应游戏文件的玩家。",
+      "editorialTags": [
+        "有趣",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "nykooi1/vibe-wise",
+      "githubUrl": "https://github.com/nykooi1/vibe-wise",
+      "canonicalUrl": "https://github.com/nykooi1/vibe-wise",
+      "description": "A Claude Code plugin that helps you learn how to build while AI writes the code.",
+      "chineseDescription": "在 AI 编写代码时帮助用户学习构建过程的 Claude Code 插件。",
+      "stars": 3136,
+      "forks": 135,
+      "openIssues": 22,
+      "recentGrowth": 126,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-09-29T01:29:57Z",
+      "updatedAt": "2026-10-08T18:29:59Z",
+      "pushedAt": "2026-10-06T21:20:56Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +126",
+          "新仓约 303 stars/day",
+          "3 天内有更新"
+        ]
+      },
+      "plainSummary": "Vibe Wise —— 在 AI 写代码时帮你理解构建过程的 Claude Code 插件。",
+      "introduction": "Vibe Wise 是一个 Claude Code 插件，目标是在 AI 代写代码时保留学习过程。它关注如何构建，而不仅是交付最终代码，适合边做项目边理解实现的人。",
+      "whyToday": "快照实增 126 星，新仓速度约 303 星每天，并在 3 天内更新。",
+      "audience": "适合正在学习编程、又希望借助 Claude Code 完成项目的开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "学习",
+        "开发工具"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "gr8rstudio/gr8r-studio",
+      "githubUrl": "https://github.com/gr8rstudio/gr8r-studio",
+      "canonicalUrl": "https://github.com/gr8rstudio/gr8r-studio",
+      "description": "Gr8r Studio: a calm, structured project management workspace. Vite + plain ES modules.",
+      "chineseDescription": "基于 Vite 与原生 ES 模块的平静、结构化项目管理工作区。",
+      "stars": 321,
+      "forks": 75,
+      "openIssues": 4,
+      "recentGrowth": 103,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-10-07T11:44:07Z",
+      "updatedAt": "2026-10-08T18:31:12Z",
+      "pushedAt": "2026-10-07T14:51:02Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +103",
+          "新仓约 167 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "Gr8r Studio —— 追求平静与结构感的项目管理工作区。",
+      "introduction": "Gr8r Studio 是一个结构化项目管理工作区，强调平静、不喧闹的使用体验。技术上采用 Vite 与原生 ES 模块，整体定位简洁直接。",
+      "whyToday": "快照实增 103 星，新仓速度约 167 星每天，并在 2 天内更新。",
+      "audience": "适合偏爱简洁界面的个人开发者、小团队和项目管理工具探索者。",
+      "editorialTags": [
+        "效率",
+        "设计"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "CAPCOM-TD-OSS/REDox",
+      "githubUrl": "https://github.com/capcom-td-oss/redox",
+      "canonicalUrl": "https://github.com/capcom-td-oss/redox",
+      "description": "High-performance, token-based structured data engine for .NET. A core component of REX, the technology behind CAPCOM's next-generation game engine.",
+      "chineseDescription": "面向 .NET 的高性能令牌化结构数据引擎，也是 CAPCOM 下一代游戏引擎技术 REX 的核心组件。",
+      "stars": 1211,
+      "forks": 35,
+      "openIssues": 0,
+      "recentGrowth": 80,
+      "growthSource": "snapshot",
+      "language": "C#",
+      "topics": [],
+      "createdAt": "2026-09-30T10:20:07Z",
+      "updatedAt": "2026-10-08T18:29:29Z",
+      "pushedAt": "2026-10-08T05:52:23Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 44.37895002019237,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 82.4,
+        "signals": [
+          "快照实增 +80",
+          "新仓约 135 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "REDox —— CAPCOM 下一代游戏引擎技术中的 .NET 结构数据核心。",
+      "introduction": "REDox 是面向 .NET 的高性能、令牌化结构数据引擎。候选资料称它是 REX 的核心组件，而 REX 是 CAPCOM 下一代游戏引擎背后的技术。",
+      "whyToday": "快照实增 80 星，新仓速度约 135 星每天，并在 2 天内更新。",
+      "audience": "适合 .NET 开发者、游戏引擎工程师和结构化数据系统研究者。",
+      "editorialTags": [
+        "开发工具",
+        "数据"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "oil-oil/oil-ui",
+      "githubUrl": "https://github.com/oil-oil/oil-ui",
+      "canonicalUrl": "https://github.com/oil-oil/oil-ui",
+      "description": "Push AI UI design to its limits: explore distinct directions, compare them side by side, and refine against real screenshots. 把 AI 的 UI 设计能力推到极限。",
+      "chineseDescription": "让 AI 探索多种界面方向、并排比较并对照真实截图细化设计的工具。",
+      "stars": 1083,
+      "forks": 60,
+      "openIssues": 0,
+      "recentGrowth": 53,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "ai-design",
+        "claude-code",
+        "claude-skills",
+        "codex",
+        "frontend",
+        "ui-design",
+        "ux-design"
+      ],
+      "createdAt": "2026-09-30T03:55:35Z",
+      "updatedAt": "2026-10-08T17:30:30Z",
+      "pushedAt": "2026-10-08T16:18:13Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 40.284212515144276,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 82.3,
+        "signals": [
+          "快照实增 +53",
+          "新仓约 117 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Oil UI —— 让 AI 同时探索、比较并打磨多种界面设计方向。",
+      "introduction": "Oil UI 用于推动 AI 界面设计探索，让多个差异化方向并排呈现。它还支持对照真实截图继续细化，帮助设计过程从单次生成转向比较与迭代。",
+      "whyToday": "快照实增 53 星，新仓速度约 117 星每天，且 1 天内有更新。",
+      "audience": "适合 UI 与 UX 设计师、前端开发者和使用 AI 做界面探索的人。",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "opencoredev/convt",
+      "githubUrl": "https://github.com/opencoredev/convt",
+      "canonicalUrl": "https://github.com/opencoredev/convt",
+      "description": "Convert any file with a right-click.",
+      "chineseDescription": "通过右键菜单转换任意文件的本地优先工具。",
+      "stars": 245,
+      "forks": 12,
+      "openIssues": 21,
+      "recentGrowth": 50,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [
+        "convert",
+        "convert-images",
+        "convert-local",
+        "converted-to-private",
+        "converter",
+        "converter-app",
+        "local",
+        "local-first",
+        "private"
+      ],
+      "createdAt": "2026-10-06T01:17:53Z",
+      "updatedAt": "2026-10-08T18:29:22Z",
+      "pushedAt": "2026-10-08T18:04:23Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 39.706977393800464,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 81.7,
+        "signals": [
+          "快照实增 +50",
+          "新仓约 73 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Convt —— 右键即可转换文件的本地优先工具。",
+      "introduction": "Convt 把文件转换放进右键菜单，减少打开专用应用和上传文件的步骤。项目主题强调本地处理与隐私，适合日常快速转换场景。",
+      "whyToday": "快照实增 50 星，新仓速度约 73 星每天，并在 1 天内更新。",
+      "audience": "适合经常转换图片或其他文件、且重视本地处理的桌面用户。",
+      "editorialTags": [
+        "效率",
+        "开源替代"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "lemomo-ai/lemo-opuscar",
+      "githubUrl": "https://github.com/lemomo-ai/lemo-opuscar",
+      "canonicalUrl": "https://github.com/lemomo-ai/lemo-opuscar",
+      "description": "Claude Code skill for short films with no video model: 43 film styles, each a style prompt plus a demo film made entirely in code by Claude Opus 5.5 (incl. OPUSCAR 98). By Lemomo. | Opus5.5 x 43 种影片风格：风格提示词 + 纯代码样片 + 导演与技术指南",
+      "chineseDescription": "无需视频模型、由 Claude Opus 5.5 纯代码制作短片的 Skill，提供 43 种影片风格、提示词、样片和指南。",
+      "stars": 1409,
+      "forks": 164,
+      "openIssues": 1,
+      "recentGrowth": 43,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "ai-short-film",
+        "ai-video",
+        "animation",
+        "canvas",
+        "claude",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-code-skill",
+        "creative-coding",
+        "ffmpeg",
+        "filmmaking",
+        "motion-graphics",
+        "opus-5-5",
+        "prompt-library",
+        "text-to-speech",
+        "threejs",
+        "video-production",
+        "webgl"
+      ],
+      "createdAt": "2026-09-26T10:10:41Z",
+      "updatedAt": "2026-10-08T17:14:47Z",
+      "pushedAt": "2026-10-08T14:00:16Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 38.21602133046108,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 80.2,
+        "signals": [
+          "快照实增 +43",
+          "新仓约 108 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "Lemo Opuscar —— 不用视频模型、靠代码制作 43 种风格短片的 Skill。",
+      "introduction": "Lemo Opuscar 是面向 Claude Code 的短片制作 Skill，不依赖视频模型。它提供 43 种影片风格，每种都配有风格提示词、纯代码样片以及导演和技术指南。",
+      "whyToday": "快照实增 43 星，新仓速度约 108 星每天，且 1 天内有更新。",
+      "audience": "适合 AI 短片创作者、动态设计师和创意编程用户。",
+      "editorialTags": [
+        "AI 工具",
+        "设计",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "KingKongRobotics/jumper",
+      "githubUrl": "https://github.com/kingkongrobotics/jumper",
+      "canonicalUrl": "https://github.com/kingkongrobotics/jumper",
+      "description": "🦀 Jumper — an crab robot.",
+      "chineseDescription": "一个螃蟹形态的机器人项目。",
+      "stars": 2017,
+      "forks": 185,
+      "openIssues": 6,
+      "recentGrowth": 304,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "crab-robot",
+        "robot",
+        "robotics"
+      ],
+      "createdAt": "2026-09-28T05:56:04Z",
+      "updatedAt": "2026-10-08T18:26:32Z",
+      "pushedAt": "2026-10-05T21:07:05Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +304",
+          "新仓约 181 stars/day",
+          "4 天内有更新"
+        ]
+      },
+      "plainSummary": "Jumper —— 一只用 Python 开发的螃蟹机器人。",
+      "introduction": "Jumper 是一个螃蟹形态的机器人项目，候选资料将其归入机器人与机器人学主题。现有事实没有展开硬件结构或控制能力，因此这里保留其简洁定位。",
+      "whyToday": "快照实增 304 星，新仓速度约 181 星每天，近期 4 天内有更新。",
+      "audience": "适合机器人爱好者、Python 开发者和关注仿生形态项目的人。",
+      "editorialTags": [
+        "有趣",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Jakeschincariol/replica-skill",
+      "githubUrl": "https://github.com/jakeschincariol/replica-skill",
+      "canonicalUrl": "https://github.com/jakeschincariol/replica-skill",
+      "description": "Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
+      "chineseDescription": "一组用于逆向分析、重建、测试和改进应用的免费 Claude Skills。",
+      "stars": 1031,
+      "forks": 127,
+      "openIssues": 4,
+      "recentGrowth": 119,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "app-clone",
+        "claude",
+        "claude-code",
+        "claude-skills",
+        "indie-hacker",
+        "reverse-engineering",
+        "saas"
+      ],
+      "createdAt": "2026-10-03T12:07:49Z",
+      "updatedAt": "2026-10-08T18:29:35Z",
+      "pushedAt": "2026-10-03T12:07:53Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +119",
+          "新仓约 174 stars/day",
+          "6 天内有更新"
+        ]
+      },
+      "plainSummary": "Replica Skill —— 用 11 个 Claude Skills 分析、重建和测试应用。",
+      "introduction": "Replica Skill 提供 11 个免费的 Claude Skills，用于逆向分析应用、重新构建并测试缺陷。它还把修复用户不满的问题纳入流程，采用 MIT 许可。",
+      "whyToday": "快照实增 119 星，新仓速度约 174 星每天，近期 6 天内有更新。",
+      "audience": "适合独立开发者、Claude Code 用户和研究应用重建流程的人。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "sganggs/Stronghold-Protocol",
+      "githubUrl": "https://github.com/sganggs/stronghold-protocol",
+      "canonicalUrl": "https://github.com/sganggs/stronghold-protocol",
+      "description": "明日方舟「卫戍协议：盟约」非官方同人复刻：浏览器自走棋塔防，单人或 1–4 人联机合作（非商业）",
+      "chineseDescription": "《明日方舟》“卫戍协议：盟约”的非官方非商业同人复刻，支持浏览器自走棋塔防和 1–4 人合作。",
+      "stars": 996,
+      "forks": 225,
+      "openIssues": 56,
+      "recentGrowth": 55,
+      "growthSource": "snapshot",
+      "language": "JavaScript",
+      "topics": [
+        "arknights",
+        "auto-chess",
+        "fan-game",
+        "nodejs",
+        "tower-defense",
+        "websocket"
+      ],
+      "createdAt": "2026-10-02T09:38:41Z",
+      "updatedAt": "2026-10-08T18:09:30Z",
+      "pushedAt": "2026-10-08T09:46:05Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 40.651484454403224,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 78.7,
+        "signals": [
+          "快照实增 +55",
+          "新仓约 142 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "Stronghold Protocol —— 可在浏览器单人或联机游玩的自走棋塔防同人项目。",
+      "introduction": "这是《明日方舟》“卫戍协议：盟约”的非官方非商业同人复刻。项目采用浏览器自走棋塔防玩法，支持单人以及 1–4 人联机合作。",
+      "whyToday": "快照实增 55 星，新仓速度约 142 星每天，并在 2 天内更新。",
+      "audience": "适合自走棋与塔防玩家、浏览器游戏开发者和联机玩法爱好者。",
+      "editorialTags": [
+        "有趣",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "snuri00/psp-web-recomp",
+      "githubUrl": "https://github.com/snuri00/psp-web-recomp",
+      "canonicalUrl": "https://github.com/snuri00/psp-web-recomp",
+      "description": "PSP games in the browser without an emulator: static recompilation to WebAssembly, an HLE kernel and a WebGL2 renderer",
+      "chineseDescription": "通过静态重编译到 WebAssembly、HLE 内核和 WebGL2 渲染器，让 PSP 游戏无需模拟器即可在浏览器运行。",
+      "stars": 177,
+      "forks": 4,
+      "openIssues": 1,
+      "recentGrowth": 47,
+      "growthSource": "snapshot",
+      "language": "C++",
+      "topics": [
+        "emscripten",
+        "god-of-war",
+        "psp",
+        "recompilation",
+        "static-recompilation",
+        "webassembly",
+        "webgl2"
+      ],
+      "createdAt": "2026-10-07T11:21:20Z",
+      "updatedAt": "2026-10-08T17:51:43Z",
+      "pushedAt": "2026-10-07T12:48:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 39.094737505048094,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 77.1,
+        "signals": [
+          "快照实增 +47",
+          "新仓约 91 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "PSP Web Recomp —— 通过静态重编译让 PSP 游戏在浏览器运行。",
+      "introduction": "该项目不使用模拟器，而是将 PSP 游戏静态重编译到 WebAssembly。它同时提供 HLE 内核与 WebGL2 渲染器，探索经典游戏进入现代浏览器的另一条技术路线。",
+      "whyToday": "快照实增 47 星，新仓速度约 91 星每天，并在 2 天内更新。",
+      "audience": "适合游戏技术研究者、WebAssembly 开发者和掌机游戏爱好者。",
+      "editorialTags": [
+        "开发工具",
+        "有趣"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "nanaism/yomiyasu",
+      "githubUrl": "https://github.com/nanaism/yomiyasu",
+      "canonicalUrl": "https://github.com/nanaism/yomiyasu",
+      "description": "AI生成の日本語を自然な日本語へ推敲するAgent Skill / Agent Skill for Refining AI-Generated Japanese into Natural Japanese",
+      "chineseDescription": "将 AI 生成的日语润色为自然日语的 Agent Skill。",
+      "stars": 1762,
+      "forks": 39,
+      "openIssues": 0,
+      "recentGrowth": 33,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "ai-writing",
+        "antigravity",
+        "claude-code",
+        "codex",
+        "cursor",
+        "gemini",
+        "japanese",
+        "linter",
+        "llm",
+        "nlp",
+        "writing",
+        "writing-assistant",
+        "writing-tool"
+      ],
+      "createdAt": "2026-09-30T11:49:32Z",
+      "updatedAt": "2026-10-08T16:55:47Z",
+      "pushedAt": "2026-10-08T02:43:41Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 35.61223988875237,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 73.6,
+        "signals": [
+          "快照实增 +33",
+          "新仓约 197 stars/day",
+          "2 天内有更新"
+        ]
+      },
+      "plainSummary": "Yomiyasu —— 把 AI 生成日语润色得更自然的 Agent Skill。",
+      "introduction": "Yomiyasu 专门改写 AI 生成的日语，使其更接近自然表达。它以 Agent Skill 形式提供，可用于多种支持相关工作流的编程与写作工具。",
+      "whyToday": "快照实增 33 星，新仓速度约 197 星每天，并在 2 天内更新。",
+      "audience": "适合日语内容编辑、写作者、翻译人员和 AI 写作工具用户。",
+      "editorialTags": [
+        "AI 工具",
+        "效率",
+        "学习"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "PSRben/VisionHOPE",
+      "githubUrl": "https://github.com/psrben/visionhope",
+      "canonicalUrl": "https://github.com/psrben/visionhope",
+      "description": "Official PyTorch implementation of VisionHOPE: Visual Backbones as Self-Modifying Learning Systems.",
+      "chineseDescription": "VisionHOPE 的官方 PyTorch 实现，将视觉骨干网络构造成自修改学习系统。",
+      "stars": 1019,
+      "forks": 15,
+      "openIssues": 7,
+      "recentGrowth": 44,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [
+        "backbone",
+        "backbone-networks",
+        "computer-vision",
+        "image-classification",
+        "vision-framework"
+      ],
+      "createdAt": "2026-09-27T06:56:59Z",
+      "updatedAt": "2026-10-08T18:24:40Z",
+      "pushedAt": "2026-10-03T18:35:57Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 38.44297167430772,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 72.4,
+        "signals": [
+          "快照实增 +44",
+          "新仓约 84 stars/day",
+          "6 天内有更新"
+        ]
+      },
+      "plainSummary": "VisionHOPE —— 把视觉骨干网络视作自修改学习系统的官方实现。",
+      "introduction": "VisionHOPE 是相关研究的官方 PyTorch 实现，探索将视觉骨干网络构造成自修改学习系统。候选资料未提供实验结果细节，适合从代码与项目说明继续了解。",
+      "whyToday": "快照实增 44 星，新仓速度约 84 星每天，近期 6 天内有更新。",
+      "audience": "适合计算机视觉研究者、PyTorch 用户和视觉骨干网络开发者。",
+      "editorialTags": [
+        "AI 工具",
+        "学习",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Pluviobyte/dot2api",
+      "githubUrl": "https://github.com/pluviobyte/dot2api",
+      "canonicalUrl": "https://github.com/pluviobyte/dot2api",
+      "description": "Turn your OpenAI Dot into an OpenAI- and Claude-compatible API",
+      "chineseDescription": "把 OpenAI Dot 转换为兼容 OpenAI 与 Claude 的 API。",
+      "stars": 189,
+      "forks": 19,
+      "openIssues": 3,
+      "recentGrowth": 39,
+      "growthSource": "snapshot",
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-06T06:33:50Z",
+      "updatedAt": "2026-10-08T16:30:07Z",
+      "pushedAt": "2026-10-06T06:35:29Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 37.25349666421154,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 29.669084980162417,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 70.9,
+        "signals": [
+          "快照实增 +39",
+          "新仓约 60 stars/day",
+          "4 天内有更新"
+        ]
+      },
+      "plainSummary": "dot2api —— 把 OpenAI Dot 转换为兼容两类主流接口的 API。",
+      "introduction": "dot2api 用于把 OpenAI Dot 转换成兼容 OpenAI 与 Claude 的 API。它面向需要统一接口形态的开发场景，候选资料未披露更多兼容范围。",
+      "whyToday": "快照实增 39 星，新仓速度约 60 星每天，近期 4 天内有更新。",
+      "audience": "适合 AI 应用开发者、接口集成工程师和本地工具搭建者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "dzhng/jevgrep",
+      "githubUrl": "https://github.com/dzhng/jevgrep",
+      "canonicalUrl": "https://github.com/dzhng/jevgrep",
+      "description": "Find code by asking what it does. A CLI for coding agents that uses Jev to discover relevant files and source context.",
+      "chineseDescription": "可按代码用途提问的命令行搜索工具，帮助编程 Agent 定位相关文件和源码上下文。",
+      "stars": 2452,
+      "forks": 178,
+      "openIssues": 25,
+      "recentGrowth": 31,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [
+        "ai-sdk",
+        "claude-code",
+        "cli",
+        "code-search",
+        "codex",
+        "coding-agents",
+        "context-retrieval",
+        "developer-tools",
+        "jev",
+        "semantic-search",
+        "typescript",
+        "vercel-ai-gateway"
+      ],
+      "createdAt": "2026-09-26T04:06:56Z",
+      "updatedAt": "2026-10-08T18:27:29Z",
+      "pushedAt": "2026-10-02T19:02:26Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 35,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 69,
+        "signals": [
+          "快照实增 +31",
+          "新仓约 185 stars/day",
+          "7 天内有更新"
+        ]
+      },
+      "plainSummary": "jevgrep —— 通过询问代码用途来寻找相关文件与上下文。",
+      "introduction": "jevgrep 是面向编程 Agent 的命令行代码搜索工具，可按“代码做什么”来查找内容。它使用 Jev 发现相关文件与源码上下文，帮助 Agent 更快聚焦代码库中的关键位置。",
+      "whyToday": "快照实增 31 星，新仓速度约 185 星每天，近期 7 天内有更新。",
+      "audience": "适合使用编程 Agent 的开发者、大型代码库维护者和语义搜索工具研究者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "mvschwarz/openrig",
+      "githubUrl": "https://github.com/mvschwarz/openrig",
+      "canonicalUrl": "https://github.com/mvschwarz/openrig",
+      "description": "Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work.",
+      "chineseDescription": "把 Claude Code、Codex 和 Pi 组织成具有角色、共享上下文与任务归属的持久 Agent 团队。",
+      "stars": 6068,
+      "forks": 446,
+      "recentGrowth": 187,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +187"
+        ]
+      },
+      "plainSummary": "OpenRig —— 把多种编程 Agent 组织成长期协作团队。",
+      "introduction": "OpenRig 可以把 Claude Code、Codex 与 Pi 组织成自己的 Agent 网络。团队可保持长期存在，并拥有明确角色、共享上下文与各自负责的工作。",
+      "whyToday": "快照实增 187 星，显示出明确的当期关注增长。",
+      "audience": "适合尝试多 Agent 协作、长期任务分工和编程自动化的开发团队。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "pablostanley/yoinks",
+      "githubUrl": "https://github.com/pablostanley/yoinks",
+      "canonicalUrl": "https://github.com/pablostanley/yoinks",
+      "description": "yoink any video from your terminal. no shady ads.",
+      "chineseDescription": "可直接从终端获取视频的命令行工具。",
+      "stars": 5326,
+      "forks": 458,
+      "recentGrowth": 148,
+      "growthSource": "snapshot",
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +148"
+        ]
+      },
+      "plainSummary": "Yoinks —— 从终端直接获取视频的简洁命令行工具。",
+      "introduction": "Yoinks 把视频获取操作放进终端，强调直接、无干扰的使用体验。候选资料没有披露更多来源范围或处理能力，因此推荐以仓库说明为准。",
+      "whyToday": "快照实增 148 星，形成了清晰的当期增长信号。",
+      "audience": "适合偏爱命令行工作流、需要便捷处理视频链接的用户。",
+      "editorialTags": [
+        "效率",
+        "开发工具"
+      ],
+      "recommendation": 4
+    },
+    {
+      "name": "Edwardxlai/easyread",
+      "githubUrl": "https://github.com/edwardxlai/easyread",
+      "canonicalUrl": "https://github.com/edwardxlai/easyread",
+      "description": "把英文论文读成舒服的中文：本地 PDF 论文翻译、原文对照、边读边问 AI、文献管理。Read English papers in comfortable Chinese.",
+      "chineseDescription": "把英文 PDF 论文翻译成中文并支持原文对照、边读边问 AI 和文献管理的本地工具。",
+      "stars": 862,
+      "forks": 64,
+      "openIssues": 3,
+      "language": "Python",
+      "topics": [
+        "academic",
+        "arxiv",
+        "chinese",
+        "claude-code",
+        "codex",
+        "electron",
+        "llm",
+        "paper-reading",
+        "pdf-translator",
+        "reference-manager",
+        "research-tool",
+        "translation"
+      ],
+      "createdAt": "2026-09-30T12:52:24Z",
+      "updatedAt": "2026-10-08T17:13:53Z",
+      "pushedAt": "2026-10-08T12:25:39Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 97 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "EasyRead —— 在本地把英文 PDF 论文读成舒适中文。",
+      "introduction": "EasyRead 面向英文论文阅读，提供本地 PDF 翻译、原文对照和边读边问 AI。它还整合文献管理，尝试把翻译、理解与资料整理放在同一工作流中。",
+      "whyToday": "这是近期新仓，速度约 97 星每天，并在 1 天内更新。",
+      "audience": "适合需要阅读英文论文的学生、研究者和中文科研工作者。",
+      "editorialTags": [
+        "AI 工具",
+        "学习",
+        "效率"
+      ],
+      "recommendation": 5
+    },
+    {
+      "name": "mhtsec/ARTEX",
+      "githubUrl": "https://github.com/mhtsec/artex",
+      "canonicalUrl": "https://github.com/mhtsec/artex",
+      "description": "AI 自主渗透测试系统 | 百度“agent+”攻防挑战赛冠军项目",
+      "chineseDescription": "AI 自主渗透测试系统，也是百度“Agent+”攻防挑战赛冠军项目。",
+      "stars": 638,
+      "forks": 1697,
+      "openIssues": 0,
+      "language": "Go",
+      "topics": [],
+      "createdAt": "2026-10-08T05:33:06Z",
+      "updatedAt": "2026-10-08T18:32:11Z",
+      "pushedAt": "2026-10-08T13:45:54Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 538 stars/day",
+          "1 天内有更新"
+        ]
+      },
+      "plainSummary": "ARTEX —— 获攻防挑战赛冠军的 AI 自主渗透测试系统。",
+      "introduction": "ARTEX 定位为 AI 自主渗透测试系统。候选资料同时标注它是百度“Agent+”攻防挑战赛冠军项目，但没有展开具体测试模块，因此不对能力范围作额外推断。",
+      "whyToday": "这是当天高速度新仓，约 538 星每天，并在 1 天内更新。",
+      "audience": "适合在合法授权环境中研究 AI 安全测试、攻防自动化和 Agent 系统的安全从业者。",
+      "editorialTags": [
+        "AI 工具",
+        "开发工具"
+      ],
+      "recommendation": 5
+    }
+  ]
+}
