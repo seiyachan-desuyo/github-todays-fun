@@ -5,7 +5,7 @@ description: 当用户想发现、浏览或了解当天值得关注的 GitHub �
 
 # GitHub 今日好玩
 
-本应用每天从 GitHub 官方 Search、Trending 与 Repository 数据中采集真实候选，再由 Aime 基于候选事实编辑中文介绍。不要根据仓库名猜测项目能力，也不要把采集失败解释为“当天没有项目”。
+本应用是**面向普通人的 GitHub 日报，偏好好玩 / 能上手的项目，而不是开发者工具目录**。每天从 GitHub 官方 Search、Trending 与 Repository 数据中采集真实候选，再由 Aime 基于候选事实编辑中文介绍。不要根据仓库名猜测项目能力，也不要把采集失败解释为“当天没有项目”。
 
 ## 打开应用
 
