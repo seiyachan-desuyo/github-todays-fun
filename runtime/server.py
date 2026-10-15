@@ -25,42 +25,59 @@ class AppHandler(SimpleHTTPRequestHandler):
     def do_GET(self) -> None:  # noqa: N802
         request_path = self.path.split("?", 1)[0]
         if request_path == "/api/feed":
-            try:
-                request = Request(REMOTE_FEED_URL, headers={"Accept": "application/json", "User-Agent": "github-today-fun-aime/0.1"})
-                with urlopen(request, timeout=10) as response:
-                    body = response.read()
-                    feed = json.loads(body)
-                    if (
-                        not isinstance(feed, dict)
-                        or feed.get("schemaVersion") != 2
-                        or not isinstance(feed.get("latest"), str)
-                        or not isinstance(feed.get("editions"), list)
-                        or not feed["editions"]
-                    ):
-                        raise ValueError("远程响应不是有效的 edition feed")
+            # 本地打包的 feed.json 是出版流水线 refresh-app 阶段同步的权威版本（dist/data/feed.json）。
+            # 远端 raw.githubusercontent.com 分支（aime/1788773097-github-today-fun/public/data/feed.json）
+            # 并不在每日流水线中同步，会长期停留在旧期，不能作为优先源。
+            # 因此：**本地优先**；仅当本地缺失、且环境变量显式允许时，才尝试远端作为兜底。
+            local_feed = DIST / "data" / "feed.json"
+            if local_feed.is_file():
+                body = local_feed.read_bytes()
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
                 self.send_header("Cache-Control", "no-store")
+                self.send_header("X-Feed-Source", "packaged-local")
                 self.send_header("Content-Length", str(len(body)))
                 self.end_headers()
                 self.wfile.write(body)
-            except (HTTPError, URLError, TimeoutError, json.JSONDecodeError, ValueError) as exc:
-                local_feed = DIST / "data" / "feed.json"
-                if local_feed.is_file():
-                    body = local_feed.read_bytes()
+                return
+            if os.environ.get("GITHUB_TODAY_ALLOW_REMOTE_FEED") == "1":
+                try:
+                    request = Request(REMOTE_FEED_URL, headers={"Accept": "application/json", "User-Agent": "github-today-fun-aime/0.1"})
+                    with urlopen(request, timeout=10) as response:
+                        body = response.read()
+                        feed = json.loads(body)
+                        if (
+                            not isinstance(feed, dict)
+                            or feed.get("schemaVersion") != 2
+                            or not isinstance(feed.get("latest"), str)
+                            or not isinstance(feed.get("editions"), list)
+                            or not feed["editions"]
+                        ):
+                            raise ValueError("远程响应不是有效的 edition feed")
                     self.send_response(200)
                     self.send_header("Content-Type", "application/json; charset=utf-8")
                     self.send_header("Cache-Control", "no-store")
-                    self.send_header("X-Feed-Source", "packaged-fallback")
-                    self.send_header("X-Remote-Feed-Error", type(exc).__name__)
-                else:
-                    body = json.dumps({"error": "remote_feed_unavailable", "detail": str(exc)}).encode()
+                    self.send_header("X-Feed-Source", "remote-fallback")
+                    self.send_header("Content-Length", str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
+                    return
+                except (HTTPError, URLError, TimeoutError, json.JSONDecodeError, ValueError) as exc:
+                    body = json.dumps({"error": "feed_unavailable", "detail": str(exc)}).encode()
                     self.send_response(502)
                     self.send_header("Content-Type", "application/json; charset=utf-8")
                     self.send_header("Cache-Control", "no-store")
-                self.send_header("Content-Length", str(len(body)))
-                self.end_headers()
-                self.wfile.write(body)
+                    self.send_header("Content-Length", str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
+                    return
+            body = json.dumps({"error": "feed_missing", "detail": "dist/data/feed.json 不存在"}).encode()
+            self.send_response(404)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
             return
         if request_path == "/healthz":
             body = json.dumps({"ok": True, "app": "github-today-fun"}).encode()

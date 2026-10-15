@@ -289,14 +289,16 @@ async function refreshApp(date: string): Promise<void> {
   const feed = JSON.parse(await readFile(feedPath, "utf8")) as { latest?: string };
   if (feed.latest !== date) throw new Error(`重建后的 dist/data/feed.json latest=${feed.latest ?? "(缺失)"}，期望 ${date}；拒绝覆盖安装目录`);
 
-  // 3. 覆盖安装目录的 dist（路径动态查找，绝不硬编码）。
+  // 3. 覆盖安装目录的 dist，并同步 runtime 服务实现（路径动态查找，绝不硬编码）。
+  // runtime/server.py 必须随正式源码更新，避免每日刷新或服务重启后重新使用旧的远端优先逻辑。
   const manifest = await readAppManifest();
   const installDir = await resolveInstallDir(manifest);
   const installDist = path.join(installDir, "dist");
   await rm(installDist, { recursive: true, force: true });
   await cp(path.join(ROOT, "dist"), installDist, { recursive: true });
+  await cp(path.join(ROOT, "runtime", "server.py"), path.join(installDir, "runtime", "server.py"));
 
-  // 4. 重启 Aime App 服务，使其加载新的 dist/data/feed.json。
+  // 4. 重启 Aime App 服务，使其加载新的 runtime 和 dist/data/feed.json。
   const serviceName = manifest.services?.[0]?.name ?? manifest.name;
   const restart = spawnSync("aime", ["app", "service", "restart", manifest.name, serviceName], { cwd: ROOT, env: process.env, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
   if (restart.status !== 0) throw new Error(`重启 Aime App 服务失败（exit ${restart.status ?? 1}）：${restart.stderr || restart.stdout}`);
