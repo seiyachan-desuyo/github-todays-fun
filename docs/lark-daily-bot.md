@@ -1,6 +1,11 @@
-# GitHub 今日好玩独立飞书 Bot
+# GitHub 今日好玩飞书推送（send-lark-notify.py）
 
-该任务每天北京时间 10:00 读取 `src/data/editions/YYYY-MM-DD.json`，按推荐等级、评分和近期增长挑选亮点，以独立飞书应用的交互卡片私聊推送，并附完整网站链接。09:30 发布到 10:00 推送之间预留 30 分钟。
+每天的飞书卡片由 **Aime 14:30 定时任务**统一调用 `scripts/send-lark-notify.py` 推送（读取 `public/data/feed.json` 中当天期刊，精选前 5 个项目）。`pnpm bot:send` 只是该脚本的兼容别名，旧的 `send-lark-daily.ts` 已下线，不存在第二套发送实现。
+
+## 去重与补发
+
+- 发送成功后写入 `.daily-pipeline/lark-sent/<date>-<recipient>.json` 标记；同一天重复执行会直接跳过（输出 `already_sent`），不会重发。
+- 确认需要当天重发时，加 `--force` 忽略标记。
 
 ## 飞书开放平台配置（必须由用户完成）
 
@@ -29,11 +34,11 @@ pnpm bot:send -- --date 2026-09-09
 
 ## 调度与失败处理
 
-- `.github/workflows/lark-daily-push.yml` 使用 `0 2 * * *`（UTC），即北京时间每天 10:00。
-- edition 缺失、日期不匹配、项目为空、配置缺失或飞书返回业务错误时，脚本以非零退出，Action 标红，不会发送“成功”假消息。
+- 自动推送由 Aime 定时任务「GitHub今日好玩每日飞书推送」每天 14:30（北京时间）执行；发送前会确认 `public/data/feed.json` 的 latest 为当天，否则停止不报旧刊。
+- `.github/workflows/lark-daily-push.yml` 已去掉 schedule，仅保留手动派发，作为应急补发通道（注意 CI 环境不保留 `.daily-pipeline/lark-sent` 去重标记，手动派发默认会真实发送）。
+- edition 缺失、日期不匹配、项目为空、配置缺失或飞书返回业务错误时，脚本以非零退出，不会发送“成功”假消息。
 - 网络错误、HTTP 429 和 5xx 最多尝试 3 次，指数退避；4xx 配置/权限错误直接失败。
-- GitHub Actions 可能延迟数分钟触发。如果必须严格 10:00，可在固定服务器使用同一命令配置 `CRON_TZ=Asia/Shanghai` 的 cron。
-- 手动重跑会再次发送；飞书消息创建接口没有跨运行的天然幂等保证。发送前请先查看当天 Action 是否已成功，避免重复。
+- 当天重复执行自动跳过（依据 `.daily-pipeline/lark-sent` 标记）；确需重发用 `--force`，重发前先确认群内是否已有当天卡片。
 
 ## 常见排查
 

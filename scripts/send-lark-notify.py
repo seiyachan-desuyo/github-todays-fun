@@ -204,7 +204,8 @@ def main() -> int:
     parser.add_argument("--date", default=os.environ.get("EDITION_DATE") or today_in_shanghai())
     parser.add_argument("--dry-run", action="store_true", help="只生成卡片，不调用飞书 API")
     parser.add_argument("--force", action="store_true", help="忽略本地去重记录，强制重新发送")
-    args = parser.parse_args()
+    # pnpm run 透传参数时可能带一个孤立的 "--" 分隔符（如 `pnpm bot:send -- --date X`），argparse 无法识别，直接丢弃。
+    args = parser.parse_args([value for value in sys.argv[1:] if value != "--"])
     website_url = os.environ.get("GITHUB_TODAY_WEBSITE_URL", DEFAULT_SITE_URL)
     feed_url = os.environ.get("GITHUB_TODAY_FEED_URL") or DEFAULT_FEED_URL
     recipient = os.environ.get("LARK_RECIPIENT_ID", "")

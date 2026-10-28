@@ -22,7 +22,7 @@
 | 构建 | `pnpm build` | ✅ 可以 | 纯静态导出（`output: "export"`） |
 | **部署 IDA** | deploy 命令 | ❌ **阻碍②** | IDA 为字节内网 + 内网鉴权，公有 runner 无法触达 |
 | git push | `git push` | ✅ 可以 | Actions 用 `GITHUB_TOKEN` 即可推分支 |
-| 飞书推送 | `pnpm bot:send` / `send-lark-notify.py` | ✅ 可以 | 走 `open.feishu.cn` 公网 API，已不依赖 IDA |
+| 飞书推送 | `send-lark-notify.py`（`pnpm bot:send` 为其兼容别名） | ✅ 可以 | 走 `open.feishu.cn` 公网 API，已不依赖 IDA；唯一发送实现，按 `.daily-pipeline/lark-sent` 当天去重 |
 
 ### 硬阻碍详解
 
@@ -31,7 +31,7 @@
 
 ## 已落地的线上化（本次实现）
 
-1. **飞书推送** —— `.github/workflows/lark-daily-push.yml`（既有）。改造后 `send-lark-notify.py` 与 `bot:send` 都从**已提交到仓库的期刊数据 / 本地 `public/data/feed.json`** 读数据，不再访问 IDA，可完全线上运行。
+1. **飞书推送** —— `.github/workflows/lark-daily-push.yml`（仅保留 `workflow_dispatch` 手动补发，自动 schedule 已下线）。唯一发送实现为 `send-lark-notify.py`（`pnpm bot:send` 是其兼容别名），从**已提交到仓库的期刊数据 / 本地 `public/data/feed.json`** 读数据，不再访问 IDA；按 `.daily-pipeline/lark-sent/<date>-<recipient>.json` 做当天去重，当天重复执行自动跳过，确需重发用 `--force`。
 2. **每日采集** —— `.github/workflows/daily-collect.yml`（本次新增）。每天 13:30 CST 在云端跑 `pnpm collect`，把当天 `src/data/editor-tasks/$DATE.json` 与 snapshot 提交回分支。这样**即使本地 Mac 断连，当天候选事实也已在云端就绪**，Aime 可直接从云端产物开始编辑，采集阶段彻底摆脱本地依赖。
 
 ## 建议的目标架构（混合模式）

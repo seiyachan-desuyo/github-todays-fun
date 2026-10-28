@@ -1,9 +1,9 @@
 name: GitHub 今日好玩飞书推送
 
 on:
-  schedule:
-    # UTC 02:07 = Asia/Shanghai 10:07。避开整点高峰，降低 GitHub 定时任务延迟或被丢弃的概率。
-    - cron: "7 2 * * *"
+  # 自动调度已下线：飞书推送统一由 Aime 14:30 定时任务调用
+  # scripts/send-lark-notify.py 完成（含 .daily-pipeline/lark-sent 当天去重）。
+  # 这里仅保留手动派发入口，作为应急补发通道。
   workflow_dispatch:
     inputs:
       date:
