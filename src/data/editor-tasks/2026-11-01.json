@@ -1,0 +1,5819 @@
+{
+  "date": "2026-11-01",
+  "generatedAt": "2026-11-01T11:56:35.424Z",
+  "editorMode": "aime",
+  "targetCount": 30,
+  "snapshotPath": "src/data/snapshots/2026-11-01.json",
+  "sourceStatus": [
+    {
+      "source": "github-search",
+      "status": "ok",
+      "fetchedAt": "2026-11-01T11:56:31.589Z",
+      "rawCount": 150,
+      "normalizedCount": 150,
+      "message": "3/3 个查询成功，读取 150 条；已认证",
+      "raw": [
+        {
+          "query": "created:>=2026-10-29 stars:>=5",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "created:>=2026-10-18 stars:>=25",
+          "status": 200,
+          "count": 50
+        },
+        {
+          "query": "pushed:>=2026-10-29 stars:50..5000 archived:false",
+          "status": 200,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "source": "github-trending",
+      "status": "ok",
+      "fetchedAt": "2026-11-01T11:56:31.641Z",
+      "rawCount": 33,
+      "normalizedCount": 33,
+      "message": "2/2 个 GitHub Trending 页面解析成功，读取 33 条；daily 的 stars today 作为页面明确披露的真实短期信号",
+      "raw": [
+        {
+          "period": "daily",
+          "status": 200,
+          "count": 17
+        },
+        {
+          "period": "weekly",
+          "status": 200,
+          "count": 16
+        }
+      ]
+    },
+    {
+      "source": "github-repository",
+      "status": "ok",
+      "fetchedAt": "2026-11-01T11:56:35.106Z",
+      "rawCount": 1,
+      "normalizedCount": 1,
+      "message": "仓库详情 API 可用，已验证 deepseek-ai/dsh-superagent-prototype"
+    }
+  ],
+  "pipelineStats": {
+    "rawCandidateCount": 183,
+    "normalizedCandidateCount": 183,
+    "dedupedCandidateCount": 173,
+    "eligibleCandidateCount": 157,
+    "selectedCount": 0
+  },
+  "candidates": [
+    {
+      "repoName": "heydamir/unslop",
+      "url": "https://github.com/heydamir/unslop",
+      "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
+      "stars": 4128,
+      "forks": 206,
+      "openIssues": 1,
+      "growth": {
+        "value": 1929,
+        "source": "snapshot"
+      },
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-10-29T15:41:21Z",
+      "updatedAt": "2026-11-01T11:55:39Z",
+      "pushedAt": "2026-11-01T00:06:01Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +1929",
+          "新仓约 1494 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "wangzan101/Mika",
+      "url": "https://github.com/wangzan101/mika",
+      "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
+      "stars": 3307,
+      "forks": 558,
+      "openIssues": 48,
+      "growth": {
+        "value": 1227,
+        "source": "snapshot"
+      },
+      "language": "Kotlin",
+      "topics": [
+        "accessibility",
+        "ai-agent",
+        "android",
+        "automation",
+        "jetpack-compose",
+        "kotlin",
+        "llm",
+        "mobile-agent"
+      ],
+      "createdAt": "2026-10-29T14:34:07Z",
+      "updatedAt": "2026-11-01T11:55:19Z",
+      "pushedAt": "2026-11-01T07:41:51Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +1227",
+          "新仓约 1177 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "ccch1mneyyy/dsh-Go",
+      "url": "https://github.com/ccch1mneyyy/dsh-go",
+      "description": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
+      "stars": 4199,
+      "forks": 198,
+      "openIssues": 184,
+      "growth": {
+        "value": 1055,
+        "source": "snapshot"
+      },
+      "language": "Dart",
+      "topics": [
+        "ai-agent",
+        "android",
+        "android-app",
+        "coding-agent",
+        "deepseek",
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "dsh-tui",
+        "flutter",
+        "llm"
+      ],
+      "createdAt": "2026-10-25T08:09:52Z",
+      "updatedAt": "2026-11-01T11:55:37Z",
+      "pushedAt": "2026-11-01T11:41:27Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +1055",
+          "新仓约 593 stars/day",
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Djihads80/Eglantine",
+      "url": "https://github.com/djihads80/eglantine",
+      "description": "VERY experimental Nintendo Switch 2 emulator",
+      "stars": 1575,
+      "forks": 191,
+      "openIssues": 88,
+      "growth": {
+        "value": 853,
+        "source": "snapshot"
+      },
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2026-10-29T00:25:18Z",
+      "updatedAt": "2026-11-01T11:56:29Z",
+      "pushedAt": "2026-11-01T07:48:52Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +853",
+          "新仓约 463 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "valentderah/totk-pc-recomp",
+      "url": "https://github.com/valentderah/totk-pc-recomp",
+      "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows x86-64, with a Vulkan renderer. Game files not included.",
+      "stars": 2876,
+      "forks": 232,
+      "openIssues": 162,
+      "growth": {
+        "value": 836,
+        "source": "snapshot"
+      },
+      "language": "C",
+      "topics": [],
+      "createdAt": "2026-10-29T12:32:46Z",
+      "updatedAt": "2026-11-01T11:55:34Z",
+      "pushedAt": "2026-11-01T09:54:31Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +836",
+          "新仓约 994 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "anhao/ai-pose-gallery-zh",
+      "url": "https://github.com/anhao/ai-pose-gallery-zh",
+      "description": "中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊",
+      "stars": 4989,
+      "forks": 1268,
+      "openIssues": 10,
+      "growth": {
+        "value": 635,
+        "source": "snapshot"
+      },
+      "language": "TypeScript",
+      "topics": [
+        "ai-art",
+        "chinese",
+        "cloudflare-pages",
+        "gallery",
+        "i18n",
+        "pose",
+        "reference-images",
+        "static-site"
+      ],
+      "createdAt": "2026-10-27T12:24:37Z",
+      "updatedAt": "2026-11-01T11:55:14Z",
+      "pushedAt": "2026-11-01T09:11:20Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +635",
+          "新仓约 1018 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "l0ng-ai/openidea",
+      "url": "https://github.com/l0ng-ai/openidea",
+      "description": "The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.",
+      "stars": 2317,
+      "forks": 202,
+      "openIssues": 85,
+      "growth": {
+        "value": 567,
+        "source": "snapshot"
+      },
+      "language": "TypeScript",
+      "topics": [
+        "code-editor",
+        "cross-platform",
+        "dap",
+        "database-client",
+        "debugger",
+        "desktop-app",
+        "developer-tools",
+        "git",
+        "http-client",
+        "ide",
+        "intellij",
+        "lsp",
+        "rust",
+        "tauri",
+        "terminal"
+      ],
+      "createdAt": "2026-10-21T12:23:14Z",
+      "updatedAt": "2026-11-01T11:56:30Z",
+      "pushedAt": "2026-11-01T11:34:31Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +567",
+          "新仓约 213 stars/day",
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "NiazMorshed2007/reanimate",
+      "url": "https://github.com/niazmorshed2007/reanimate",
+      "description": "A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same.",
+      "stars": 596,
+      "forks": 50,
+      "openIssues": 4,
+      "growth": {
+        "value": 340,
+        "source": "snapshot"
+      },
+      "language": "JavaScript",
+      "topics": [
+        "agent-skills",
+        "animation",
+        "claude-code",
+        "claude-skills",
+        "frontend",
+        "motion",
+        "playwright"
+      ],
+      "createdAt": "2026-10-29T06:20:59Z",
+      "updatedAt": "2026-11-01T11:53:10Z",
+      "pushedAt": "2026-10-31T12:49:35Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +340",
+          "新仓约 189 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "pengchujin/aerial-tv",
+      "url": "https://github.com/pengchujin/aerial-tv",
+      "description": "给国产电视的一块干净桌面：参照 tvOS 设计的开源 Android TV 桌面，没有广告，开机自动接管。A tvOS-style launcher for Xiaomi, TCL and other China-market TVs.",
+      "stars": 8529,
+      "forks": 719,
+      "openIssues": 350,
+      "growth": {
+        "value": 328,
+        "source": "snapshot"
+      },
+      "language": "Kotlin",
+      "topics": [],
+      "createdAt": "2026-10-20T09:13:06Z",
+      "updatedAt": "2026-11-01T11:45:03Z",
+      "pushedAt": "2026-11-01T10:36:29Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +328",
+          "新仓约 709 stars/day",
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "paipiange/nvzhuang",
+      "url": "https://github.com/paipiange/nvzhuang",
+      "description": "1407 张 AI 女装参考图集与虚拟试穿网站，支持中英检索、OpenAI Images / Gemini / 豆包及自定义 Base URL、API Key、模型。https://github.com/paipiange/nvzhuang",
+      "stars": 1828,
+      "forks": 481,
+      "openIssues": 0,
+      "growth": {
+        "value": 328,
+        "source": "snapshot"
+      },
+      "language": "Go",
+      "topics": [],
+      "createdAt": "2026-10-29T06:08:00Z",
+      "updatedAt": "2026-11-01T11:42:50Z",
+      "pushedAt": "2026-10-31T17:01:39Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +328",
+          "新仓约 578 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "kevinraymond/florilegium",
+      "url": "https://github.com/kevinraymond/florilegium",
+      "description": "Procedurally generated Delft-blue floral page margins for LuaLaTeX, drawn in Lua",
+      "stars": 1213,
+      "forks": 31,
+      "openIssues": 2,
+      "growth": {
+        "value": 297,
+        "source": "snapshot"
+      },
+      "language": "Lua",
+      "topics": [],
+      "createdAt": "2026-10-30T07:49:05Z",
+      "updatedAt": "2026-11-01T11:56:08Z",
+      "pushedAt": "2026-10-31T15:30:14Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +297",
+          "新仓约 580 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "lexifina/global-law",
+      "url": "https://github.com/lexifina/global-law",
+      "description": "Git for Global Law: the law of every country as one git history, each country's record a submodule, every commit one law taking effect",
+      "stars": 1491,
+      "forks": 124,
+      "openIssues": 11,
+      "growth": {
+        "value": 291,
+        "source": "snapshot"
+      },
+      "language": "HTML",
+      "topics": [],
+      "createdAt": "2026-10-28T13:34:16Z",
+      "updatedAt": "2026-11-01T11:56:02Z",
+      "pushedAt": "2026-11-01T11:55:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +291",
+          "新仓约 387 stars/day",
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "rddmwmddr/android-ad-cleaner",
+      "url": "https://github.com/rddmwmddr/android-ad-cleaner",
+      "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+      "stars": 5535,
+      "forks": 495,
+      "openIssues": 152,
+      "growth": {
+        "value": 289,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [
+        "adb",
+        "ai-agent",
+        "android",
+        "coloros",
+        "debloat",
+        "hyperos",
+        "magicos",
+        "originos"
+      ],
+      "createdAt": "2026-10-24T05:35:47Z",
+      "updatedAt": "2026-11-01T11:51:02Z",
+      "pushedAt": "2026-11-01T07:25:33Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +289",
+          "新仓约 676 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "ramenvr/autopilot",
+      "url": "https://github.com/ramenvr/autopilot",
+      "description": "Play any game",
+      "stars": 575,
+      "forks": 37,
+      "openIssues": 5,
+      "growth": {
+        "value": 286,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-30T03:47:28Z",
+      "updatedAt": "2026-11-01T11:47:56Z",
+      "pushedAt": "2026-11-01T04:15:54Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +286",
+          "新仓约 255 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "boardshogunfluctuate/Capri-AI",
+      "url": "https://github.com/boardshogunfluctuate/capri-ai",
+      "description": "⚡ Tell your PC what to do. Capri is a cyberpunk AI agent that works with your files, projects and code through Claude Code, Codex or Antigravity. Windows installer, no terminal. Fan-made, not affiliated with CD PROJEKT RED.",
+      "stars": 519,
+      "forks": 56,
+      "openIssues": 0,
+      "growth": {
+        "value": 233,
+        "source": "snapshot"
+      },
+      "topics": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "ai-assistants",
+        "antigravity",
+        "claude-code",
+        "claude-code-mod",
+        "codex",
+        "codex-app",
+        "cyberpunks",
+        "desktop-app",
+        "desktop-application",
+        "edgerunners",
+        "edgerunners-2",
+        "jarvis",
+        "jarvis-ai",
+        "windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-10-30T22:03:48Z",
+      "updatedAt": "2026-11-01T11:41:17Z",
+      "pushedAt": "2026-10-31T22:21:30Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +233",
+          "新仓约 347 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "UniXNU/UniXNU",
+      "url": "https://github.com/unixnu/unixnu",
+      "description": "Run iOS and macOS on non-Apple ARM64 hardware through UEFI.",
+      "stars": 1583,
+      "forks": 251,
+      "openIssues": 17,
+      "growth": {
+        "value": 211,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [
+        "unixnu"
+      ],
+      "createdAt": "2026-10-19T10:46:55Z",
+      "updatedAt": "2026-11-01T11:55:47Z",
+      "pushedAt": "2026-11-01T06:42:07Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +211",
+          "新仓约 122 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "qybaihe/bla",
+      "url": "https://github.com/qybaihe/bla",
+      "description": "🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against AI reverse-engineering agents like REA. Poison -> Exhaust -> Hallucinate.",
+      "stars": 1770,
+      "forks": 240,
+      "openIssues": 10,
+      "growth": {
+        "value": 189,
+        "source": "snapshot"
+      },
+      "language": "JavaScript",
+      "topics": [
+        "adversarial-ai",
+        "claude-code",
+        "cursor",
+        "electron-security",
+        "llm-security",
+        "mcp",
+        "mcp-server",
+        "obfuscation",
+        "reverse-engineering",
+        "webassembly"
+      ],
+      "createdAt": "2026-10-25T05:25:45Z",
+      "updatedAt": "2026-11-01T11:53:43Z",
+      "pushedAt": "2026-11-01T09:01:18Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +189",
+          "新仓约 246 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "xiaoyang111222/cn-math-taxonomy",
+      "url": "https://github.com/xiaoyang111222/cn-math-taxonomy",
+      "description": "数学（小学到高中）、英语（三年级到高中）、初中物理的知识图谱：1644 个知识点、2403 条先修边、6723 道题，对齐课标，附自适应前置诊断。",
+      "stars": 5758,
+      "forks": 1476,
+      "openIssues": 19,
+      "growth": {
+        "value": 183,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [
+        "chinese",
+        "curriculum",
+        "diagnostic",
+        "edtech",
+        "education",
+        "elementary-school",
+        "english",
+        "high-school",
+        "junior-high-school",
+        "k12",
+        "knowledge-graph",
+        "math",
+        "mathematics",
+        "middle-school",
+        "open-data",
+        "primary-school"
+      ],
+      "createdAt": "2026-10-18T09:04:43Z",
+      "updatedAt": "2026-11-01T11:55:33Z",
+      "pushedAt": "2026-10-31T12:38:42Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +183",
+          "新仓约 410 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "LNPANDY/NX2Apple",
+      "url": "https://github.com/lnpandy/nx2apple",
+      "description": "Play your own Switch games on iPhone/iPad — one-click macOS app, no terminal. | 把 Switch 游戏装进 iPhone：图形界面一键构建，不用命令行。Bring your own game.",
+      "stars": 2596,
+      "forks": 340,
+      "openIssues": 47,
+      "growth": {
+        "value": 181,
+        "source": "snapshot"
+      },
+      "language": "Swift",
+      "topics": [
+        "apple-silicon",
+        "custom-format",
+        "homebrew",
+        "ios",
+        "ipa",
+        "ipad",
+        "ipados",
+        "iphone",
+        "metal",
+        "native-port",
+        "nintendo-switch",
+        "nxnative",
+        "romfs",
+        "switch-games"
+      ],
+      "createdAt": "2026-10-20T18:16:07Z",
+      "updatedAt": "2026-11-01T11:56:30Z",
+      "pushedAt": "2026-11-01T11:48:01Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +181",
+          "新仓约 223 stars/day",
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "designfuchen/word-atlas",
+      "url": "https://github.com/designfuchen/word-atlas",
+      "description": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
+      "stars": 3644,
+      "forks": 787,
+      "openIssues": 30,
+      "growth": {
+        "value": 176,
+        "source": "snapshot"
+      },
+      "language": "TypeScript",
+      "topics": [
+        "chinese",
+        "dataset",
+        "english-learning",
+        "flashcards",
+        "fsrs",
+        "ielts",
+        "language-learning",
+        "pwa",
+        "react",
+        "spaced-repetition",
+        "vocabulary",
+        "webgl"
+      ],
+      "createdAt": "2026-10-25T08:27:22Z",
+      "updatedAt": "2026-11-01T11:54:19Z",
+      "pushedAt": "2026-10-31T11:37:01Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +176",
+          "新仓约 516 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "gothamor/gta-vcs-recomp",
+      "url": "https://github.com/gothamor/gta-vcs-recomp",
+      "description": "A native Windows and Linux port of Grand Theft Auto: Vice City Stories (PS2, USA, SLUS-21590), made by recompiling the game's PS2 executable into C++",
+      "stars": 349,
+      "forks": 16,
+      "openIssues": 29,
+      "growth": {
+        "value": 141,
+        "source": "snapshot"
+      },
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2026-10-30T03:46:44Z",
+      "updatedAt": "2026-11-01T11:35:56Z",
+      "pushedAt": "2026-11-01T10:06:56Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +141",
+          "新仓约 154 stars/day",
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "N1nEmAn/sapper-v2",
+      "url": "https://github.com/n1neman/sapper-v2",
+      "description": "Autonomous pentest legion — AI commander + worker swarm + layered fact-intent graph. 3rd Tencent Intelligent Attack-Defense online champion (634 teams · 8h unattended · 1B tokens beat 4.5B). The Nüwa Test: give AIs Create/Language/History, let a civilization grow.",
+      "stars": 400,
+      "forks": 361,
+      "openIssues": 1,
+      "growth": {
+        "value": 124,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [
+        "ai-agents",
+        "autonomous-agents",
+        "claude-code",
+        "ctf",
+        "llm",
+        "multi-agent",
+        "pentest"
+      ],
+      "createdAt": "2026-10-30T15:12:35Z",
+      "updatedAt": "2026-11-01T11:55:48Z",
+      "pushedAt": "2026-11-01T11:51:18Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +124",
+          "新仓约 224 stars/day",
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "alchaincyf/huashu-bird-sticker",
+      "url": "https://github.com/alchaincyf/huashu-bird-sticker",
+      "description": "花叔开源的全球鸟类贴纸库 · Stickers for all 11,064 living bird species, with names in 43 languages and structured data",
+      "stars": 447,
+      "forks": 77,
+      "openIssues": 0,
+      "growth": {
+        "value": 120,
+        "source": "snapshot"
+      },
+      "topics": [
+        "ai-generated",
+        "biodiversity",
+        "birding",
+        "birds",
+        "birdwatching",
+        "claude-code",
+        "codex",
+        "dataset",
+        "illustration",
+        "ioc-world-bird-list",
+        "multilingual",
+        "open-data",
+        "ornithology",
+        "stickers",
+        "taxonomy"
+      ],
+      "createdAt": "2026-10-30T05:19:33Z",
+      "updatedAt": "2026-11-01T11:14:55Z",
+      "pushedAt": "2026-11-01T04:42:26Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +120",
+          "新仓约 204 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "interplains/Zero-Breach-Toolkit",
+      "url": "https://github.com/interplains/zero-breach-toolkit",
+      "description": "Free, open-source, offline checks for traces of known mercenary spyware. Works on Windows, macOS and Linux, Android phones and iPhone backups.",
+      "stars": 4044,
+      "forks": 429,
+      "openIssues": 5,
+      "growth": {
+        "value": 112,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-25T14:41:34Z",
+      "updatedAt": "2026-11-01T11:44:24Z",
+      "pushedAt": "2026-11-01T01:11:45Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +112",
+          "新仓约 594 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "udhaykumarbala/cleanyourtv-app",
+      "url": "https://github.com/udhaykumarbala/cleanyourtv-app",
+      "description": "A community-built phone app for Clean Your TV: clean up an Android TV from your phone. No laptop, no coding agent, nothing uninstalled.",
+      "stars": 1319,
+      "forks": 114,
+      "openIssues": 3498,
+      "growth": {
+        "value": 88,
+        "source": "snapshot"
+      },
+      "language": "Kotlin",
+      "topics": [
+        "adb",
+        "android-tv",
+        "debloat",
+        "fire-tv",
+        "google-tv",
+        "launcher"
+      ],
+      "createdAt": "2026-10-21T12:42:09Z",
+      "updatedAt": "2026-11-01T11:51:38Z",
+      "pushedAt": "2026-10-31T12:19:04Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 87,
+        "signals": [
+          "快照实增 +88",
+          "新仓约 121 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "CopilotKit/OpenDuet",
+      "url": "https://github.com/copilotkit/openduet",
+      "description": "An Open Source template for a proactive AI agent that gets your work done and keeps you in the loop.",
+      "stars": 1754,
+      "forks": 224,
+      "openIssues": 11,
+      "growth": {
+        "value": 61,
+        "source": "snapshot"
+      },
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-10-21T19:43:59Z",
+      "updatedAt": "2026-11-01T11:56:13Z",
+      "pushedAt": "2026-10-31T21:26:41Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 41.67937417270812,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 83.7,
+        "signals": [
+          "快照实增 +61",
+          "新仓约 166 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "patch-gg/pixelfx",
+      "url": "https://github.com/patch-gg/pixelfx",
+      "description": "244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
+      "stars": 1988,
+      "forks": 260,
+      "openIssues": 1,
+      "growth": {
+        "value": 1355,
+        "source": "snapshot"
+      },
+      "language": "JavaScript",
+      "topics": [
+        "agent-skills",
+        "animation",
+        "canvas",
+        "claude-code-plugin",
+        "gamedev",
+        "pixel-art",
+        "sprite-sheet",
+        "vfx"
+      ],
+      "createdAt": "2026-10-30T06:43:25Z",
+      "updatedAt": "2026-11-01T11:53:50Z",
+      "pushedAt": "2026-10-31T08:44:14Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +1355",
+          "新仓约 930 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "BryceYuuu/RUN",
+      "url": "https://github.com/bryceyuuu/run",
+      "description": "RUN · 润：海外移居手册（欧洲 36 国 · 110 条路线 · 主要移民地区）",
+      "stars": 1077,
+      "forks": 64,
+      "openIssues": 0,
+      "growth": {
+        "value": 306,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-29T11:28:43Z",
+      "updatedAt": "2026-11-01T11:56:21Z",
+      "pushedAt": "2026-10-29T11:40:12Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +306",
+          "新仓约 367 stars/day",
+          "3 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Pika-Labs/Pika-H3-Flex",
+      "url": "https://github.com/pika-labs/pika-h3-flex",
+      "description": "Pika H3 Flex: video and audio generation inference",
+      "stars": 360,
+      "forks": 20,
+      "openIssues": 1,
+      "growth": {
+        "value": 114,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-29T17:08:59Z",
+      "updatedAt": "2026-11-01T10:03:58Z",
+      "pushedAt": "2026-10-29T23:29:02Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +114",
+          "新仓约 133 stars/day",
+          "3 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "windows-GPU-UNLOCK/Windows-GPU-UNLOCK",
+      "url": "https://github.com/windows-gpu-unlock/windows-gpu-unlock",
+      "description": "Windows GPU UNLOCK: RTX3090 UEFI port, Korean no-reset Windows boot guide, verified source and benchmark evidence",
+      "stars": 1446,
+      "forks": 141,
+      "openIssues": 127,
+      "growth": {
+        "value": 94,
+        "source": "snapshot"
+      },
+      "language": "C",
+      "topics": [],
+      "createdAt": "2026-10-20T04:41:07Z",
+      "updatedAt": "2026-11-01T11:55:43Z",
+      "pushedAt": "2026-10-31T09:52:46Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 83,
+        "signals": [
+          "快照实增 +94",
+          "新仓约 118 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Pluviobyte/douyin-comments",
+      "url": "https://github.com/pluviobyte/douyin-comments",
+      "description": "抓取抖音单条视频完整评论区（一级 + 楼中楼）的 Agent Skill：在已登录的 Chrome 里照抄页面真实请求，签名交给页面 SDK",
+      "stars": 362,
+      "forks": 96,
+      "openIssues": 0,
+      "growth": {
+        "value": 82,
+        "source": "snapshot"
+      },
+      "language": "JavaScript",
+      "topics": [
+        "agent-skill",
+        "claude-code",
+        "comments-scraper",
+        "douyin"
+      ],
+      "createdAt": "2026-10-30T15:47:16Z",
+      "updatedAt": "2026-11-01T11:15:49Z",
+      "pushedAt": "2026-10-31T02:52:47Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 44.62527601942847,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 82.6,
+        "signals": [
+          "快照实增 +82",
+          "新仓约 206 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "simbasjungles/free-my-tv",
+      "url": "https://github.com/simbasjungles/free-my-tv",
+      "description": "A fast, ad-free home screen for Google TV, LG webOS and Samsung Tizen. One button to undo.",
+      "stars": 5596,
+      "forks": 952,
+      "openIssues": 70,
+      "growth": {
+        "value": 79,
+        "source": "snapshot"
+      },
+      "language": "Java",
+      "topics": [
+        "android-tv",
+        "claude-code",
+        "google-tv",
+        "home-screen",
+        "launcher",
+        "no-ads",
+        "open-source",
+        "samsung-tizen",
+        "tizen",
+        "tmdb",
+        "webos"
+      ],
+      "createdAt": "2026-10-19T19:29:01Z",
+      "updatedAt": "2026-11-01T11:36:38Z",
+      "pushedAt": "2026-10-31T03:43:32Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 44.25349666421154,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 82.3,
+        "signals": [
+          "快照实增 +79",
+          "新仓约 444 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Ansub/tv-detox",
+      "url": "https://github.com/ansub/tv-detox",
+      "description": "Make an old Android TV fast again with Claude Code or Codex: a tiny ad-free home screen plus the prompt to clean it up",
+      "stars": 2006,
+      "forks": 211,
+      "openIssues": 22,
+      "growth": {
+        "value": 74,
+        "source": "snapshot"
+      },
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-10-18T06:42:29Z",
+      "updatedAt": "2026-11-01T11:46:33Z",
+      "pushedAt": "2026-10-30T07:16:25Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 43.601730833471166,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 81.6,
+        "signals": [
+          "快照实增 +74",
+          "新仓约 142 stars/day",
+          "3 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "indexable-inc/blaze",
+      "url": "https://github.com/indexable-inc/blaze",
+      "description": "Incremental rust builds up to 92x faster than cargo/rustc",
+      "stars": 1849,
+      "forks": 64,
+      "openIssues": 456,
+      "growth": {
+        "value": 47,
+        "source": "snapshot"
+      },
+      "language": "Rust",
+      "topics": [
+        "cargo",
+        "compiler",
+        "cranelift",
+        "developer-tools",
+        "hot-reload",
+        "incremental-compilation",
+        "jit",
+        "live-coding",
+        "rust",
+        "rust-analyzer"
+      ],
+      "createdAt": "2026-10-19T23:31:09Z",
+      "updatedAt": "2026-11-01T11:37:28Z",
+      "pushedAt": "2026-11-01T10:55:28Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 39.094737505048094,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 81.1,
+        "signals": [
+          "快照实增 +47",
+          "新仓约 149 stars/day",
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "DenisSergeevitch/ex-ussr-kinship-research",
+      "url": "https://github.com/denissergeevitch/ex-ussr-kinship-research",
+      "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
+      "stars": 1417,
+      "forks": 150,
+      "openIssues": 4,
+      "growth": {
+        "value": 45,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "archives",
+        "claude-code",
+        "codex",
+        "family-history",
+        "familysearch",
+        "genealogy",
+        "ussr"
+      ],
+      "createdAt": "2026-10-25T10:05:56Z",
+      "updatedAt": "2026-11-01T11:37:06Z",
+      "pushedAt": "2026-10-31T19:04:46Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 38.66493369239909,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 80.7,
+        "signals": [
+          "快照实增 +45",
+          "新仓约 203 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "andyhuo520/digital-human-koubo",
+      "url": "https://github.com/andyhuo520/digital-human-koubo",
+      "description": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Codex / OpenClaw / WorkBuddy …",
+      "stars": 1611,
+      "forks": 367,
+      "openIssues": 4,
+      "growth": {
+        "value": 43,
+        "source": "snapshot"
+      },
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-10-26T04:34:09Z",
+      "updatedAt": "2026-11-01T10:52:31Z",
+      "pushedAt": "2026-10-31T12:05:46Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 38.21602133046108,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 80.2,
+        "signals": [
+          "快照实增 +43",
+          "新仓约 259 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "xevrion/hatchzip",
+      "url": "https://github.com/xevrion/hatchzip",
+      "description": "HatchZip is a free, open-source archive extractor for Windows, macOS and Linux that extracts ZIP, 7z, RAR, tar and split archives in place, so it needs free space for the extracted files only. Desktop app and CLI.",
+      "stars": 2406,
+      "forks": 78,
+      "openIssues": 8,
+      "growth": {
+        "value": 40,
+        "source": "snapshot"
+      },
+      "language": "Rust",
+      "topics": [
+        "7z",
+        "7zip",
+        "archive",
+        "archive-extractor",
+        "cli",
+        "crash-safe",
+        "disk-space",
+        "extract",
+        "extractor",
+        "gui",
+        "in-place",
+        "linux",
+        "macos",
+        "rar",
+        "rust",
+        "tar",
+        "unrar",
+        "unzip",
+        "windows",
+        "zip"
+      ],
+      "createdAt": "2026-10-21T17:29:28Z",
+      "updatedAt": "2026-11-01T11:55:03Z",
+      "pushedAt": "2026-11-01T09:11:11Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 37.502864032326585,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 79.5,
+        "signals": [
+          "快照实增 +40",
+          "新仓约 225 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Zagitta/gpu-unlock",
+      "url": "https://github.com/zagitta/gpu-unlock",
+      "description": "Your GeForce runs AI at half speed. This fixes it for 20/30/40 series cards. Up to 2× FP16 / BF16 / TF32 tensor throughput",
+      "stars": 13979,
+      "forks": 1362,
+      "openIssues": 104,
+      "growth": {
+        "value": 377,
+        "source": "snapshot"
+      },
+      "language": "C",
+      "topics": [],
+      "createdAt": "2026-10-18T01:28:31Z",
+      "updatedAt": "2026-11-01T11:53:45Z",
+      "pushedAt": "2026-10-29T02:30:54Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +377",
+          "新仓约 974 stars/day",
+          "4 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "aschmelyun/print-my-profile-pic",
+      "url": "https://github.com/aschmelyun/print-my-profile-pic",
+      "description": "Say cheese! Star this repo and your profile picture gets printed out on a receipt printer.",
+      "stars": 1673,
+      "forks": 5,
+      "openIssues": 9,
+      "growth": {
+        "value": 314,
+        "source": "snapshot"
+      },
+      "topics": [],
+      "createdAt": "2026-10-27T20:40:05Z",
+      "updatedAt": "2026-11-01T10:21:28Z",
+      "pushedAt": "2026-10-29T03:34:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +314",
+          "新仓约 367 stars/day",
+          "4 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Motionsites-AI/claude-skill",
+      "url": "https://github.com/motionsites-ai/claude-skill",
+      "description": "Free Claude skill: make Claude build award-level, cinematic landing pages. By MotionSites.",
+      "stars": 1345,
+      "forks": 134,
+      "openIssues": 0,
+      "growth": {
+        "value": 116,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-26T06:58:45Z",
+      "updatedAt": "2026-11-01T11:51:37Z",
+      "pushedAt": "2026-10-26T07:04:24Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +116",
+          "新仓约 220 stars/day",
+          "7 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "smithjohn78390/tongjiang-lab",
+      "url": "https://github.com/smithjohn78390/tongjiang-lab",
+      "description": "Free interactive 3D science lessons for high school · 铜匠实验室 · https://lab.tongjiang.app",
+      "stars": 1234,
+      "forks": 327,
+      "openIssues": 14,
+      "growth": {
+        "value": 100,
+        "source": "snapshot"
+      },
+      "language": "HTML",
+      "topics": [
+        "3d",
+        "biology",
+        "chemistry",
+        "education",
+        "geography",
+        "high-school",
+        "interactive",
+        "open-educational-resources",
+        "physics",
+        "threejs",
+        "webgl"
+      ],
+      "createdAt": "2026-10-28T04:29:29Z",
+      "updatedAt": "2026-11-01T11:47:39Z",
+      "pushedAt": "2026-10-28T11:35:35Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 79,
+        "signals": [
+          "快照实增 +100",
+          "新仓约 292 stars/day",
+          "4 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "morganlinton/BeautifulRust",
+      "url": "https://github.com/morganlinton/beautifulrust",
+      "description": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, and Gemini CLI.",
+      "stars": 1633,
+      "forks": 84,
+      "openIssues": 3,
+      "growth": {
+        "value": 48,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "claude-plugin",
+        "claude-skills",
+        "clippy",
+        "code-review",
+        "coding-agent",
+        "cursor",
+        "rust",
+        "style-guide"
+      ],
+      "createdAt": "2026-10-23T03:01:11Z",
+      "updatedAt": "2026-11-01T11:07:13Z",
+      "pushedAt": "2026-10-30T23:52:41Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 39.302968908806456,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 77.3,
+        "signals": [
+          "快照实增 +48",
+          "新仓约 176 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "lyramakesmusic/neuron-explorer",
+      "url": "https://github.com/lyramakesmusic/neuron-explorer",
+      "description": "Steering-first neuron explorer for Qwen3.5-4B: push every MLP neuron, keep every rollout, browse the results",
+      "stars": 1790,
+      "forks": 216,
+      "openIssues": 4,
+      "growth": {
+        "value": 32,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [
+        "interpretability",
+        "mechanistic-interpretability",
+        "qwen",
+        "steering"
+      ],
+      "createdAt": "2026-10-21T04:09:05Z",
+      "updatedAt": "2026-11-01T11:35:39Z",
+      "pushedAt": "2026-11-01T00:46:55Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 35.310758835509176,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 77.3,
+        "signals": [
+          "快照实增 +32",
+          "新仓约 159 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "t3dotgg/tstack",
+      "url": "https://github.com/t3dotgg/tstack",
+      "description": "The agent skills I use every day. Works with Claude Code and Codex.",
+      "stars": 2559,
+      "forks": 165,
+      "openIssues": 12,
+      "growth": {
+        "value": 64,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-24T05:00:20Z",
+      "updatedAt": "2026-11-01T11:50:32Z",
+      "pushedAt": "2026-10-28T02:38:03Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 42.15657469119918,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 76.2,
+        "signals": [
+          "快照实增 +64",
+          "新仓约 312 stars/day",
+          "5 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "wesbos/3d-model-anything",
+      "url": "https://github.com/wesbos/3d-model-anything",
+      "description": "Capture iPhone LiDAR and photos, reconstruct editable Three.js rooms, and explore them in a browser.",
+      "stars": 2570,
+      "forks": 380,
+      "openIssues": 21,
+      "growth": {
+        "value": 61,
+        "source": "snapshot"
+      },
+      "language": "Swift",
+      "topics": [],
+      "createdAt": "2026-10-21T19:38:50Z",
+      "updatedAt": "2026-11-01T11:47:24Z",
+      "pushedAt": "2026-10-27T15:08:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 41.67937417270812,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 75.7,
+        "signals": [
+          "快照实增 +61",
+          "新仓约 242 stars/day",
+          "5 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Jakeschincariol/day-trader-skill",
+      "url": "https://github.com/jakeschincariol/day-trader-skill",
+      "description": "11 Claude skills for day trading: scan thousands of charts, track breaking news, time every entry and exit, and replay every outcome before you risk a dollar.",
+      "stars": 4120,
+      "forks": 967,
+      "openIssues": 37,
+      "growth": {
+        "value": 337,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [
+        "backtesting",
+        "claude",
+        "claude-skills",
+        "day-trading",
+        "stock-market"
+      ],
+      "createdAt": "2026-10-20T14:17:54Z",
+      "updatedAt": "2026-11-01T11:54:19Z",
+      "pushedAt": "2026-10-20T14:18:00Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 75,
+        "signals": [
+          "快照实增 +337",
+          "新仓约 349 stars/day"
+        ]
+      }
+    },
+    {
+      "repoName": "JoasASantos/REA-Prompts",
+      "url": "https://github.com/joasasantos/rea-prompts",
+      "description": "REAP - Prompts for you to use REA (Reverse Engineer Anything), get the most out of it, and clone or break down any program",
+      "stars": 3372,
+      "forks": 610,
+      "openIssues": 1,
+      "growth": {
+        "value": 50,
+        "source": "snapshot"
+      },
+      "language": "Batchfile",
+      "topics": [
+        "prompt-engineering",
+        "rea",
+        "reverse-enginnering"
+      ],
+      "createdAt": "2026-10-19T22:20:47Z",
+      "updatedAt": "2026-11-01T11:43:39Z",
+      "pushedAt": "2026-10-26T03:00:18Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 39.706977393800464,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 73.7,
+        "signals": [
+          "快照实增 +50",
+          "新仓约 270 stars/day",
+          "7 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "MarkBlah/smsofdeath",
+      "url": "https://github.com/markblah/smsofdeath",
+      "description": "remote + silent denial of service for all Android phones. https://smsofdeath.com/ for writeup.",
+      "stars": 392,
+      "forks": 106,
+      "openIssues": 8,
+      "growth": {
+        "value": 48,
+        "source": "snapshot"
+      },
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-10-29T05:20:26Z",
+      "updatedAt": "2026-11-01T10:04:47Z",
+      "pushedAt": "2026-10-29T05:28:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 39.302968908806456,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 73.3,
+        "signals": [
+          "快照实增 +48",
+          "新仓约 123 stars/day",
+          "4 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "JustAResearcher/gpu-unlock-ada",
+      "url": "https://github.com/justaresearcher/gpu-unlock-ada",
+      "description": "GPU tensor unlock source for RTX 4090 and experimental RTX 4070 Ti SUPER; firmware generated locally",
+      "stars": 4641,
+      "forks": 593,
+      "openIssues": 67,
+      "growth": {
+        "value": 41,
+        "source": "snapshot"
+      },
+      "language": "C",
+      "topics": [],
+      "createdAt": "2026-10-23T21:00:53Z",
+      "updatedAt": "2026-11-01T11:48:01Z",
+      "pushedAt": "2026-10-26T04:24:46Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 37.746221959451326,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 71.7,
+        "signals": [
+          "快照实增 +41",
+          "新仓约 543 stars/day",
+          "7 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "humblemuzzu/dumbtv",
+      "url": "https://github.com/humblemuzzu/dumbtv",
+      "description": "Take the ads, tracking and clutter out of your Fire TV over ADB, no root. Every step can be undone. Comes with its own open-source home screen.",
+      "stars": 1836,
+      "forks": 186,
+      "openIssues": 28,
+      "growth": {
+        "value": 33,
+        "source": "snapshot"
+      },
+      "language": "Java",
+      "topics": [
+        "ad-blocking",
+        "adb",
+        "android-tv",
+        "debloat",
+        "dns-filter",
+        "fire-os",
+        "fire-tv",
+        "firetv",
+        "launcher",
+        "privacy",
+        "smart-tv",
+        "telemetry"
+      ],
+      "createdAt": "2026-10-18T17:04:12Z",
+      "updatedAt": "2026-11-01T11:25:55Z",
+      "pushedAt": "2026-10-27T09:02:16Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 35.61223988875237,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 69.6,
+        "signals": [
+          "快照实增 +33",
+          "新仓约 134 stars/day",
+          "6 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "colinhacks/reylo",
+      "url": "https://github.com/colinhacks/reylo",
+      "description": "Import .sql files into TypeScript with full type inference and zero codegen.",
+      "stars": 1452,
+      "forks": 16,
+      "openIssues": 13,
+      "growth": {
+        "value": 21,
+        "source": "snapshot"
+      },
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-21T00:16:54Z",
+      "updatedAt": "2026-11-01T09:02:20Z",
+      "pushedAt": "2026-10-30T18:40:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 31.216021330461082,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 69.2,
+        "signals": [
+          "快照实增 +21",
+          "新仓约 127 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "alchaincyf/huashu-motion",
+      "url": "https://github.com/alchaincyf/huashu-motion",
+      "description": "让你的agent一键直出商业级产品宣传片：会作曲，能指着画面改。Commercial-grade launch films by your coding agent — point at the frame to change it.",
+      "stars": 1970,
+      "forks": 190,
+      "openIssues": 4,
+      "growth": {
+        "value": 42,
+        "source": "snapshot"
+      },
+      "language": "JavaScript",
+      "topics": [
+        "agent-skills",
+        "animation",
+        "claude-code",
+        "codex",
+        "gsap",
+        "launch-video",
+        "motion-graphics",
+        "skills"
+      ],
+      "createdAt": "2026-10-18T12:19:27Z",
+      "updatedAt": "2026-11-01T11:50:36Z",
+      "pushedAt": "2026-10-22T12:19:37Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 37.98385328291469,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 68,
+        "signals": [
+          "快照实增 +42",
+          "新仓约 142 stars/day"
+        ]
+      }
+    },
+    {
+      "repoName": "EthanArbuckle/fairplay-decrypt",
+      "url": "https://github.com/ethanarbuckle/fairplay-decrypt",
+      "description": "Offline FairPlay App Store IPA decryption with independent key derivation",
+      "stars": 2302,
+      "forks": 355,
+      "openIssues": 11,
+      "growth": {
+        "value": 12,
+        "source": "snapshot"
+      },
+      "language": "C",
+      "topics": [],
+      "createdAt": "2026-10-19T10:07:58Z",
+      "updatedAt": "2026-11-01T10:30:42Z",
+      "pushedAt": "2026-11-01T09:28:19Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 25.903078026987647,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 67.9,
+        "signals": [
+          "快照实增 +12",
+          "新仓约 177 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "enesozturk/dimensional-drawing",
+      "url": "https://github.com/enesozturk/dimensional-drawing",
+      "description": "Create Apple style dimensional drawings of UI components.",
+      "stars": 1698,
+      "forks": 116,
+      "openIssues": 4,
+      "growth": {
+        "value": 39,
+        "source": "snapshot"
+      },
+      "language": "HTML",
+      "topics": [
+        "skills",
+        "ui"
+      ],
+      "createdAt": "2026-10-23T12:20:16Z",
+      "updatedAt": "2026-11-01T11:31:35Z",
+      "pushedAt": "2026-10-24T09:41:54Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 37.25349666421154,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 67.3,
+        "signals": [
+          "快照实增 +39",
+          "新仓约 191 stars/day"
+        ]
+      }
+    },
+    {
+      "repoName": "stackedlol/ascii-sharks",
+      "url": "https://github.com/stackedlol/ascii-sharks",
+      "description": "ascii shark components in typescript",
+      "stars": 1227,
+      "forks": 90,
+      "openIssues": 2,
+      "growth": {
+        "value": 14,
+        "source": "snapshot"
+      },
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-10-19T21:54:19Z",
+      "updatedAt": "2026-11-01T11:40:28Z",
+      "pushedAt": "2026-10-24T16:07:32Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 27.34823416925963,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 57.3,
+        "signals": [
+          "快照实增 +14",
+          "新仓约 98 stars/day"
+        ]
+      }
+    },
+    {
+      "repoName": "Donchitos/Claude-Code-Game-Studios",
+      "url": "https://github.com/donchitos/claude-code-game-studios",
+      "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+      "stars": 31621,
+      "forks": 4320,
+      "growth": {
+        "value": 970,
+        "source": "github-trending"
+      },
+      "language": "Shell",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +970"
+        ]
+      }
+    },
+    {
+      "repoName": "shiyu-coder/Kronos",
+      "url": "https://github.com/shiyu-coder/kronos",
+      "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+      "stars": 44925,
+      "forks": 7426,
+      "growth": {
+        "value": 611,
+        "source": "github-trending"
+      },
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +611"
+        ]
+      }
+    },
+    {
+      "repoName": "cjpais/Handy",
+      "url": "https://github.com/cjpais/handy",
+      "description": "A free, open source, and extensible speech-to-text application that works completely offline.",
+      "stars": 36052,
+      "forks": 3425,
+      "growth": {
+        "value": 611,
+        "source": "github-trending"
+      },
+      "language": "Rust",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 55,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +611"
+        ]
+      }
+    },
+    {
+      "repoName": "patchy631/ai-engineering-hub",
+      "url": "https://github.com/patchy631/ai-engineering-hub",
+      "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
+      "stars": 39768,
+      "forks": 6443,
+      "growth": {
+        "value": 573,
+        "source": "github-trending"
+      },
+      "language": "Jupyter Notebook",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 54.989441560054125,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 55,
+        "signals": [
+          "Trending 披露 +573"
+        ]
+      }
+    },
+    {
+      "repoName": "beenuar/AiSOC",
+      "url": "https://github.com/beenuar/aisoc",
+      "description": "Open-source AI Security Operations Center: alert fusion, LLM-agent triage, MITRE ATT&CK investigation, and a replayable decision ledger for every agent step. Self-hostable, runs with no API keys, MIT licensed. Ships an MCP server for Claude, Cursor and Continue.",
+      "stars": 5853,
+      "forks": 615,
+      "growth": {
+        "value": 436,
+        "source": "github-trending"
+      },
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 52.62893681700359,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 52.6,
+        "signals": [
+          "Trending 披露 +436"
+        ]
+      }
+    },
+    {
+      "repoName": "ikow/php2shell-poc",
+      "url": "https://github.com/ikow/php2shell-poc",
+      "description": "CVE-2026-109618/109619 — 5 RCE chains + detection rules (Suricata, Sigma, ModSecurity). PHP session.upload_progress pre-auth exploit research.",
+      "stars": 1918,
+      "forks": 649,
+      "openIssues": 1,
+      "growth": {
+        "value": 5,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [
+        "cve-2026-109618",
+        "cve-2026-109619",
+        "detection-rules",
+        "exploit",
+        "php-exploit",
+        "php-security",
+        "php2shell",
+        "poc",
+        "rce",
+        "session-upload-progress",
+        "suricata-rules",
+        "vulnerability-research",
+        "waf-rules",
+        "wordpress-security"
+      ],
+      "createdAt": "2026-10-21T07:55:16Z",
+      "updatedAt": "2026-11-01T10:18:26Z",
+      "pushedAt": "2026-10-28T23:21:57Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 18.094737505048094,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 4,
+        "crossSource": 0,
+        "total": 52.1,
+        "signals": [
+          "快照实增 +5",
+          "新仓约 173 stars/day",
+          "4 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "9bie/php2shell-bypass-aslr-exp",
+      "url": "https://github.com/9bie/php2shell-bypass-aslr-exp",
+      "description": "A php2shell exploit that requires no modifications to the official version, and does not require display_errors or limit_memory.",
+      "stars": 1536,
+      "forks": 445,
+      "openIssues": 6,
+      "growth": {
+        "value": 6,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-21T11:11:57Z",
+      "updatedAt": "2026-11-01T09:53:35Z",
+      "pushedAt": "2026-10-23T20:40:43Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 19.651484454403228,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 49.7,
+        "signals": [
+          "快照实增 +6",
+          "新仓约 140 stars/day"
+        ]
+      }
+    },
+    {
+      "repoName": "public-apis/public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "stars": 493980,
+      "forks": 55149,
+      "growth": {
+        "value": 298,
+        "source": "github-trending"
+      },
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 49.344010045188625,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 49.3,
+        "signals": [
+          "Trending 披露 +298"
+        ]
+      }
+    },
+    {
+      "repoName": "FlashML-org/FreeToken",
+      "url": "https://github.com/flashml-org/freetoken",
+      "description": "FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently.",
+      "stars": 15095,
+      "forks": 1532,
+      "growth": {
+        "value": 232,
+        "source": "github-trending"
+      },
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 47.185116867925686,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 47.2,
+        "signals": [
+          "Trending 披露 +232"
+        ]
+      }
+    },
+    {
+      "repoName": "Renhuai123/ziwei-doushu",
+      "url": "https://github.com/renhuai123/ziwei-doushu",
+      "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+      "stars": 12736,
+      "forks": 2497,
+      "growth": {
+        "value": 953,
+        "source": "snapshot"
+      },
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +953"
+        ]
+      }
+    },
+    {
+      "repoName": "milind-soni/OpenMausBot",
+      "url": "https://github.com/milind-soni/openmausbot",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "stars": 10101,
+      "forks": 1398,
+      "growth": {
+        "value": 933,
+        "source": "snapshot"
+      },
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +933"
+        ]
+      }
+    },
+    {
+      "repoName": "Leonxlnx/taste-skill",
+      "url": "https://github.com/leonxlnx/taste-skill",
+      "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+      "stars": 107389,
+      "forks": 7257,
+      "growth": {
+        "value": 778,
+        "source": "snapshot"
+      },
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +778"
+        ]
+      }
+    },
+    {
+      "repoName": "togg53192-cmd/jailbreaks",
+      "url": "https://github.com/togg53192-cmd/jailbreaks",
+      "description": "LIST OF ALL MY JAILBREAKS",
+      "stars": 12521,
+      "forks": 1885,
+      "growth": {
+        "value": 753,
+        "source": "snapshot"
+      },
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +753"
+        ]
+      }
+    },
+    {
+      "repoName": "multica-ai/andrej-karpathy-skills",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "stars": 227730,
+      "forks": 22717,
+      "growth": {
+        "value": 602,
+        "source": "snapshot"
+      },
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +602"
+        ]
+      }
+    },
+    {
+      "repoName": "AgriciDaniel/claude-seo",
+      "url": "https://github.com/agricidaniel/claude-seo",
+      "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+      "stars": 25267,
+      "forks": 3337,
+      "growth": {
+        "value": 524,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +524"
+        ]
+      }
+    },
+    {
+      "repoName": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "stars": 186094,
+      "forks": 21974,
+      "growth": {
+        "value": 436,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +436"
+        ]
+      }
+    },
+    {
+      "repoName": "jakubkrehel/skills",
+      "url": "https://github.com/jakubkrehel/skills",
+      "description": "A collection of agent skills that help you build great interfaces.",
+      "stars": 9770,
+      "forks": 376,
+      "growth": {
+        "value": 302,
+        "source": "snapshot"
+      },
+      "language": "Markdown",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +302"
+        ]
+      }
+    },
+    {
+      "repoName": "CopilotKit/OpenBot",
+      "url": "https://github.com/copilotkit/openbot",
+      "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+      "stars": 9223,
+      "forks": 1159,
+      "growth": {
+        "value": 187,
+        "source": "snapshot"
+      },
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +187"
+        ]
+      }
+    },
+    {
+      "repoName": "JetBrains/thinkrail",
+      "url": "https://github.com/jetbrains/thinkrail",
+      "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+      "stars": 6879,
+      "forks": 380,
+      "growth": {
+        "value": 137,
+        "source": "snapshot"
+      },
+      "language": "TypeScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 45,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 45,
+        "signals": [
+          "快照实增 +137"
+        ]
+      }
+    },
+    {
+      "repoName": "anomalyco/hex",
+      "url": "https://github.com/anomalyco/hex",
+      "description": "Local-first voice dictation for macOS. Hold a shortcut, speak, and paste into any app. Native Rust, on-device speech recognition, and a Linux beta.",
+      "stars": 2522,
+      "forks": 158,
+      "growth": {
+        "value": 172,
+        "source": "github-trending"
+      },
+      "language": "Rust",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 44.607769365820346,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 44.6,
+        "signals": [
+          "Trending 披露 +172"
+        ]
+      }
+    },
+    {
+      "repoName": "deepseek-ai/dsh-superagent-prototype",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+      "description": "Towards a More Autonomous Agent System",
+      "stars": 5169,
+      "forks": 489,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-10-31T09:32:46Z",
+      "updatedAt": "2026-11-01T11:56:12Z",
+      "pushedAt": "2026-10-31T12:05:51Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 5073 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Arjun-Ingole/hop",
+      "url": "https://github.com/arjun-ingole/hop",
+      "description": "Install Linux next to Windows without a USB stick",
+      "stars": 928,
+      "forks": 32,
+      "openIssues": 6,
+      "language": "PowerShell",
+      "topics": [],
+      "createdAt": "2026-10-30T19:40:45Z",
+      "updatedAt": "2026-11-01T11:56:10Z",
+      "pushedAt": "2026-11-01T09:40:31Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 581 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "elvarofficial/teardown",
+      "url": "https://github.com/elvarofficial/teardown",
+      "description": "A Claude Code skill that turns any machine into a 3D simulator you can take apart",
+      "stars": 698,
+      "forks": 112,
+      "openIssues": 2,
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-10-30T09:29:01Z",
+      "updatedAt": "2026-11-01T11:55:39Z",
+      "pushedAt": "2026-10-31T14:01:06Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 345 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "hyz317/HairDeck",
+      "url": "https://github.com/hyz317/hairdeck",
+      "description": "HairDeck: Animation-Ready Stylized Hair Cards from a Single Image",
+      "stars": 487,
+      "forks": 29,
+      "openIssues": 1,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-29T17:16:13Z",
+      "updatedAt": "2026-11-01T11:55:07Z",
+      "pushedAt": "2026-10-31T15:17:18Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 181 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "storytold/craft-anything",
+      "url": "https://github.com/storytold/craft-anything",
+      "description": "Craft Anything: understand how any software works, and craft your own.",
+      "stars": 393,
+      "forks": 49,
+      "openIssues": 24,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-31T14:50:00Z",
+      "updatedAt": "2026-11-01T11:56:22Z",
+      "pushedAt": "2026-11-01T11:40:57Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 393 stars/day",
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "arpanjot-coding/AVault",
+      "url": "https://github.com/arpanjot-coding/avault",
+      "description": "AVault - Call Recorder (No Root Required) | Privacy-first, hardware-encrypted audio vault for Android 12-16+. Rootless call recording via Shizuku with AES-256-GCM, biometrics & auto-cleanup.",
+      "stars": 379,
+      "forks": 25,
+      "openIssues": 0,
+      "language": "Kotlin",
+      "topics": [
+        "aes-256",
+        "android",
+        "android-14",
+        "android-15",
+        "android-16",
+        "android-call-recorder",
+        "audio-recorder",
+        "biometrics",
+        "call-recorder",
+        "call-recording",
+        "encryption",
+        "foss",
+        "jetpack-compose",
+        "kotlin",
+        "open-source",
+        "privacy",
+        "rootless",
+        "security",
+        "shizuku",
+        "vault"
+      ],
+      "createdAt": "2026-10-31T19:21:27Z",
+      "updatedAt": "2026-11-01T11:53:38Z",
+      "pushedAt": "2026-11-01T09:05:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 379 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Centiplatrap/pc-game-fps-doctor",
+      "url": "https://github.com/centiplatrap/pc-game-fps-doctor",
+      "description": "One button: why the game stutters, why it lags and why it won't start. Pitstop measures with PresentMon, explains in plain words, fixes Windows only, and undoes every change in one click.",
+      "stars": 333,
+      "forks": 110,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "topics": [
+        "bufferbloat",
+        "fps-drops",
+        "lag-fix",
+        "presentmon",
+        "rust",
+        "secure-boot",
+        "stutter-fix",
+        "tpm",
+        "valorant",
+        "vanguard-errors"
+      ],
+      "createdAt": "2026-10-31T23:46:51Z",
+      "updatedAt": "2026-11-01T11:56:05Z",
+      "pushedAt": "2026-10-31T23:48:39Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 333 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "FencerEngage/courier-dota2",
+      "url": "https://github.com/fencerengage/courier-dota2",
+      "description": "Published: 2026-10-31",
+      "stars": 305,
+      "forks": 3,
+      "openIssues": 0,
+      "topics": [
+        "assets",
+        "community-hub",
+        "configuration",
+        "courier",
+        "courier-dota2",
+        "documentation",
+        "dota",
+        "dota-2",
+        "dota2",
+        "fan-project",
+        "gaming",
+        "mit-license",
+        "overlay",
+        "setup-guide",
+        "source2",
+        "troubleshooting",
+        "ui-concept",
+        "windows",
+        "x64"
+      ],
+      "createdAt": "2026-10-31T17:20:16Z",
+      "updatedAt": "2026-11-01T01:05:59Z",
+      "pushedAt": "2026-10-31T23:44:10Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 42,
+        "signals": [
+          "新仓约 305 stars/day",
+          "1 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "kornia/kornia",
+      "url": "https://github.com/kornia/kornia",
+      "description": "🐍 Geometric Computer Vision Library for Spatial AI",
+      "stars": 11575,
+      "forks": 1456,
+      "growth": {
+        "value": 88,
+        "source": "github-trending"
+      },
+      "language": "Python",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 38.85440058579839,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 38.9,
+        "signals": [
+          "Trending 披露 +88"
+        ]
+      }
+    },
+    {
+      "repoName": "ashayas/icloud-s3",
+      "url": "https://github.com/ashayas/icloud-s3",
+      "description": "An S3-compatible object store backed by iCloud Shared Photo Albums. Quota policy: Apple's Shared Album loophole.",
+      "stars": 366,
+      "forks": 25,
+      "openIssues": 0,
+      "language": "Rust",
+      "topics": [],
+      "createdAt": "2026-10-30T23:54:20Z",
+      "updatedAt": "2026-11-01T11:43:45Z",
+      "pushedAt": "2026-10-31T01:34:42Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 258 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "darkareaminaret/MetaTrader-5-Bot",
+      "url": "https://github.com/darkareaminaret/metatrader-5-bot",
+      "description": "Metatrader 5 Bot 2026: Full working installer with automated trading scripts ready to run.",
+      "stars": 313,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "background-process",
+        "developer-tools",
+        "metatrader5-no-gui",
+        "mt5-api",
+        "mt5-bot",
+        "mt5-ea",
+        "mt5-headless",
+        "mt5-no-gui",
+        "mt5-python",
+        "mt5-run-background",
+        "mt5-stealth",
+        "mt5-stealth-mode",
+        "open-source",
+        "pymt5",
+        "pymt5-application",
+        "python",
+        "scripts",
+        "software-engineering",
+        "xauusd"
+      ],
+      "createdAt": "2026-10-31T07:24:32Z",
+      "updatedAt": "2026-11-01T09:56:29Z",
+      "pushedAt": "2026-10-31T07:24:37Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 283 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "mythicassemblyladle/RX-11-Audio-Editor",
+      "url": "https://github.com/mythicassemblyladle/rx-11-audio-editor",
+      "description": "Rx 11 Audio Editor 2026 complete standalone installation setup. Ready-to-run desktop edition with all features unlocked.",
+      "stars": 310,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "audio-mastering",
+        "audio-restoration",
+        "automation",
+        "descript-pro",
+        "desktop",
+        "developer-tools",
+        "music-production-for-beginners",
+        "open-source",
+        "podcast-audio-fix",
+        "podcast-editor",
+        "python",
+        "scripts",
+        "software-engineering",
+        "stem-separation",
+        "system",
+        "trial-software",
+        "utility",
+        "windows-app"
+      ],
+      "createdAt": "2026-10-31T07:26:29Z",
+      "updatedAt": "2026-11-01T10:12:22Z",
+      "pushedAt": "2026-10-31T07:26:35Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 280 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Pointoocupola/Hwid-Spoofer",
+      "url": "https://github.com/pointoocupola/hwid-spoofer",
+      "description": "Complete standalone setup for Hwid Spoofer Free, pre-activated and ready to run.",
+      "stars": 304,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "disk-serial-changer",
+        "dse-bypass",
+        "latency-fix",
+        "mac-address-generator",
+        "open-source",
+        "patchguard-bypass",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "createdAt": "2026-10-31T07:23:36Z",
+      "updatedAt": "2026-11-01T06:24:48Z",
+      "pushedAt": "2026-10-31T07:23:42Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 274 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "PeasantMonitor/IOBIT-Driver-Booster",
+      "url": "https://github.com/peasantmonitor/iobit-driver-booster",
+      "description": "Pre-activated desktop edition of Iobit Driver Booster 2026. Complete standalone setup, ready to run with all features enabled.",
+      "stars": 302,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "bootcamp-drivers",
+        "developer-tools",
+        "device-drivers",
+        "device-manager-tool",
+        "driver-development",
+        "driver-downloader",
+        "driver-genius-latest",
+        "driver-optimizer",
+        "driver-tool",
+        "driver-update-software",
+        "driver-updater",
+        "driver-updater-pro",
+        "fps-booster-no-lag",
+        "game-booster",
+        "gpu-driver-tool",
+        "hardware-driver",
+        "open-source",
+        "python",
+        "software-engineering"
+      ],
+      "createdAt": "2026-10-31T07:23:55Z",
+      "updatedAt": "2026-11-01T06:25:38Z",
+      "pushedAt": "2026-10-31T07:24:00Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 272 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "archivethrushhook/Adobe-After-Effects",
+      "url": "https://github.com/archivethrushhook/adobe-after-effects",
+      "description": "Complete standalone setup for VFX Motion Studio 2026. Pre-activated desktop version ready to run.",
+      "stars": 301,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "adobe-after-effects",
+        "adobe-after-effects-for-windows",
+        "after-effects",
+        "after-effects-3d-animation-tools",
+        "after-effects-features",
+        "after-effects-free-24",
+        "after-effects-plugin",
+        "after-effects-plugin-ai",
+        "after-effects-plugins-windows",
+        "after-effects-scripts",
+        "after-effects-snapshot-location",
+        "after-effects-toolkit",
+        "animation-software",
+        "animation-software-installer",
+        "automation",
+        "developer-tools",
+        "open-source",
+        "plugins-after-effects",
+        "python",
+        "software-engineering"
+      ],
+      "createdAt": "2026-10-31T07:19:41Z",
+      "updatedAt": "2026-11-01T09:45:56Z",
+      "pushedAt": "2026-10-31T07:19:46Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 271 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "trappenguinhammer/Adobe-Substance-3d",
+      "url": "https://github.com/trappenguinhammer/adobe-substance-3d",
+      "description": "Creative Studio App 2026: Full working installer with secure digital asset deployment pipeline, ready to run.",
+      "stars": 301,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "substance",
+        "substance-3d",
+        "substance-3d-painter",
+        "substance-abuse",
+        "substance-designer",
+        "substance-designer-allegorithmic",
+        "substance-painter",
+        "substance-use",
+        "substance3d",
+        "substancedesigner",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "createdAt": "2026-10-31T07:20:05Z",
+      "updatedAt": "2026-11-01T06:10:04Z",
+      "pushedAt": "2026-10-31T07:20:10Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 271 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "MidwifeCompact/Reason-14",
+      "url": "https://github.com/midwifecompact/reason-14",
+      "description": "Reason 14 Full working installer for professional desktop software utility, complete standalone setup ready to run.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "daw-software",
+        "developer-tools",
+        "open-source",
+        "pro-edition",
+        "python",
+        "rack-synth",
+        "reason-12",
+        "reason-2026",
+        "reason-daw",
+        "reason-music",
+        "reason-plus",
+        "reason-plus-2026",
+        "reason-plus-download",
+        "reason-rack",
+        "reason-studios-daw-install-setup-windows-2026",
+        "reason-vst",
+        "scripts",
+        "software-engineering",
+        "utility"
+      ],
+      "createdAt": "2026-10-31T07:26:10Z",
+      "updatedAt": "2026-11-01T10:02:51Z",
+      "pushedAt": "2026-10-31T07:26:15Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 271 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "CourtHunterKey/Discord-Quest-Completer",
+      "url": "https://github.com/courthunterkey/discord-quest-completer",
+      "description": "Discord Quest Completer 2026 - Full working installer, ready-to-run desktop utility with all quests pre-configured.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "discord-automation",
+        "discord-orbs",
+        "discord-quest",
+        "discord-quest-completer-2026",
+        "discord-quest-completer-bot",
+        "discord-quest-completer-free",
+        "discord-quests",
+        "discord-rewards",
+        "discordtools",
+        "moderation-discord-bot",
+        "open-source",
+        "python",
+        "quest-completer",
+        "quest-discord",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility"
+      ],
+      "createdAt": "2026-10-31T07:22:15Z",
+      "updatedAt": "2026-11-01T06:19:23Z",
+      "pushedAt": "2026-10-31T07:22:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 270 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Armskostrike/Discord-Server-Raider",
+      "url": "https://github.com/armskostrike/discord-server-raider",
+      "description": "Discord Server Raider 2026: Full working installer with all features unlocked, ready to run on your desktop.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "discord-boost-tools",
+        "discord-boosting-tool",
+        "discord-boosts",
+        "discord-raid-protect",
+        "discord-raid-software",
+        "discord-raider-bot",
+        "discord-raider-server",
+        "discord-token-login",
+        "discord-user-spammer",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "createdAt": "2026-10-31T07:22:20Z",
+      "updatedAt": "2026-11-01T06:18:21Z",
+      "pushedAt": "2026-10-31T07:22:25Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 270 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "NadirCardinal/AnyUnlock",
+      "url": "https://github.com/nadircardinal/anyunlock",
+      "description": "AnyUnlock 2026: Full working installer for quick and easy access to all utility configurations.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "apple-id-remove",
+        "apple-id-remover",
+        "developer-tools",
+        "device-tool",
+        "frp-tool",
+        "ios-bypass",
+        "ios-find-my-bypass",
+        "ios-jailbreak",
+        "ios-mdm-bypass",
+        "iphone-mdm-remove",
+        "iphone-passcode",
+        "iphone-restore",
+        "lockdown-browser-bypass",
+        "mdm-bypass",
+        "open-source",
+        "palera1n",
+        "python",
+        "screen-passcode-recovery",
+        "software-engineering",
+        "unlocking"
+      ],
+      "createdAt": "2026-10-31T07:20:09Z",
+      "updatedAt": "2026-11-01T06:12:08Z",
+      "pushedAt": "2026-10-31T07:20:15Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 270 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "cubedoveabide9/Discord-Server-Cloner",
+      "url": "https://github.com/cubedoveabide9/discord-server-cloner",
+      "description": "Discord Server Cloner 2023: Full working installer for easy server duplication on your desktop.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "discord-channel-cloner",
+        "discord-clone",
+        "discord-cloner",
+        "discord-cloner-bot",
+        "discord-dm-cloner",
+        "discord-exporter",
+        "discord-message-sender",
+        "discord-self-bot",
+        "discord-server-clone",
+        "discord-server-cloning",
+        "discord-server-mirror",
+        "discord-server-scraper",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility"
+      ],
+      "createdAt": "2026-10-31T07:22:16Z",
+      "updatedAt": "2026-11-01T06:17:19Z",
+      "pushedAt": "2026-10-31T07:22:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 270 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "QuakeAnemoneGaze/SeedPhraseGenerator",
+      "url": "https://github.com/quakeanemonegaze/seedphrasegenerator",
+      "description": "Seedphrase Generator 2026: Full working installer, ready-to-run desktop utility for secure seed phrase management.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "crypto-checker-tool",
+        "desktop",
+        "developer-tools",
+        "ethereum-checker",
+        "mnemonic-phrase",
+        "open-source",
+        "phrase-generator",
+        "python",
+        "recovery-crypto",
+        "scripts",
+        "seed-generator",
+        "seed-phase-checker",
+        "seed-phrases-generate",
+        "software-engineering",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "createdAt": "2026-10-31T07:26:30Z",
+      "updatedAt": "2026-11-01T10:04:58Z",
+      "pushedAt": "2026-10-31T07:26:36Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 271 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Pauseoruncouple/Genesis-Miner",
+      "url": "https://github.com/pauseoruncouple/genesis-miner",
+      "description": "Genesis Miner 2026: Complete standalone setup, ready-to-run full working installer with all features pre-activated.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "bitcoin-mining-tools",
+        "cpu-mining",
+        "cpumining",
+        "cryptominer",
+        "developer-tools",
+        "gpu-mining",
+        "gpumining",
+        "miner-monero",
+        "miner-monitoring",
+        "monero-miner-suite",
+        "monero-mining",
+        "monero-mining-tools",
+        "monerominersuite",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility"
+      ],
+      "createdAt": "2026-10-31T07:23:07Z",
+      "updatedAt": "2026-11-01T06:21:32Z",
+      "pushedAt": "2026-10-31T07:23:14Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 271 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "AdvisorSwitch/FL-Studio",
+      "url": "https://github.com/advisorswitch/fl-studio",
+      "description": "Fl Studio 2026: Full working installer for professional DAW, ready to run with all essential plugins.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "audio-engineering",
+        "beat-making",
+        "developer-tools",
+        "digital-audio-workstation",
+        "fl",
+        "fl-studio-10",
+        "fl-studio-basic",
+        "fl-studio-classic",
+        "fruity-loops",
+        "image-line",
+        "mixing-and-mastering",
+        "music-production-for-beginners",
+        "music-software",
+        "open-source",
+        "professional-music-software",
+        "python",
+        "recording-software",
+        "software-fl-studio",
+        "studio-production",
+        "technical-resource"
+      ],
+      "createdAt": "2026-10-31T07:23:01Z",
+      "updatedAt": "2026-11-01T06:20:26Z",
+      "pushedAt": "2026-10-31T07:23:08Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 271 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "gryphonautocratmatch/StartAll-Back",
+      "url": "https://github.com/gryphonautocratmatch/startall-back",
+      "description": "Startall Back 2026: Full working installer with complete configuration utility for professional desktop environments.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "start-menu",
+        "startallback",
+        "startallback-pro",
+        "startallback-pro-download",
+        "startallback-pro-edition",
+        "startallback-pro-edition-2026",
+        "startallback-windows-11-start-menu-pro-install",
+        "startisback",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "createdAt": "2026-10-31T07:27:02Z",
+      "updatedAt": "2026-11-01T10:08:08Z",
+      "pushedAt": "2026-10-31T07:27:08Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 271 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "HeightMistEnumerate/Autodesk-Inventor",
+      "url": "https://github.com/heightmistenumerate/autodesk-inventor",
+      "description": "Autodesk Inventor 2026 complete standalone installation setup. Ready-to-run pre-activated desktop edition with all features.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "autodesk-inventor-pro",
+        "autodesk-inventor-pro-pc",
+        "automation",
+        "developer-tools",
+        "inventor",
+        "inventor-automation",
+        "inventor-design",
+        "inventor-parts",
+        "inventory-app",
+        "inventory-system",
+        "offsets-dump",
+        "open-source",
+        "python",
+        "real-time-inventory",
+        "scripts",
+        "software-engineering",
+        "stock-inventory",
+        "system",
+        "utility",
+        "windows-app"
+      ],
+      "createdAt": "2026-10-31T07:20:39Z",
+      "updatedAt": "2026-11-01T06:14:12Z",
+      "pushedAt": "2026-10-31T07:20:45Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 270 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "CoordinateGuardGorge/Microsoft-Project",
+      "url": "https://github.com/coordinateguardgorge/microsoft-project",
+      "description": "Microsoft Project 2026 complete standalone setup. Pre-activated desktop edition ready to run.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "automation",
+        "business-planning",
+        "developer-tools",
+        "enterprise-tools",
+        "how-to-install-ms-project",
+        "microsoft-project",
+        "microsoft-project-2026",
+        "microsoft-project-profession",
+        "microsoft-project-profession-2026",
+        "microsoft-project-profession-pc",
+        "ms-project",
+        "ms-project-crack",
+        "ms-project-professional-install-windows",
+        "office-converter",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system",
+        "utility"
+      ],
+      "createdAt": "2026-10-31T07:24:38Z",
+      "updatedAt": "2026-11-01T09:57:33Z",
+      "pushedAt": "2026-10-31T07:24:43Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 271 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "QuantumBladesmith/FPS-Optimizer-Universal-Game-Performance-Booster-2026",
+      "url": "https://github.com/quantumbladesmith/fps-optimizer-universal-game-performance-booster-2026",
+      "description": "Powerful FPS Optimizer for all games. Increase frame rate, reduce lag and stutters with one-click profiles. Clean interface, fully reversible, easy to use.",
+      "stars": 300,
+      "forks": 298,
+      "openIssues": 0,
+      "growth": {
+        "value": 0,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-30T18:40:57Z",
+      "updatedAt": "2026-10-31T07:03:38Z",
+      "pushedAt": "2026-10-30T18:41:11Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 183 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "CthulhuStormStore/Atas-Trading-Bot",
+      "url": "https://github.com/cthulhustormstore/atas-trading-bot",
+      "description": "Pre-activated desktop edition of Atas Trading Bot 2026. Full working installer with complete standalone setup, ready to run.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "atas-platform",
+        "atas-pro",
+        "background-process",
+        "dealer-positioning",
+        "es-futures",
+        "metatrader5-no-gui",
+        "mt5-api",
+        "mt5-bot",
+        "mt5-ea",
+        "mt5-headless",
+        "mt5-no-gui",
+        "mt5-python",
+        "mt5-run-background",
+        "mt5-stealth",
+        "mt5-stealth-mode",
+        "nq-futures",
+        "pymt5",
+        "pymt5-application",
+        "python",
+        "xauusd"
+      ],
+      "createdAt": "2026-10-31T07:20:34Z",
+      "updatedAt": "2026-11-01T06:13:10Z",
+      "pushedAt": "2026-10-31T07:20:38Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 270 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "TinsmithConsole60/Roblox-Account-Manager-Multi-Account-Tool-2026",
+      "url": "https://github.com/tinsmithconsole60/roblox-account-manager-multi-account-tool-2026",
+      "description": "Powerful Roblox Account Manager for easy multi-account control. Switch accounts, manage sessions and organize profiles with a clean interface. Simple setup and regularly updated.",
+      "stars": 300,
+      "forks": 62,
+      "openIssues": 0,
+      "growth": {
+        "value": 0,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [
+        "2026",
+        "account-manager",
+        "configuration",
+        "multi-account",
+        "open-source",
+        "profile-manager",
+        "roblox",
+        "roblox-tool",
+        "session-manager"
+      ],
+      "createdAt": "2026-10-31T02:54:13Z",
+      "updatedAt": "2026-10-31T11:07:20Z",
+      "pushedAt": "2026-10-31T02:54:41Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 232 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "ShopkeeperSieve/KMS-Pico",
+      "url": "https://github.com/shopkeepersieve/kms-pico",
+      "description": "Kms Pico Free 2026 - Full working installer, ready-to-run desktop utility configuration.",
+      "stars": 300,
+      "forks": 0,
+      "openIssues": 0,
+      "topics": [
+        "activation-fix",
+        "developer-tools",
+        "free-excel-word",
+        "key-management-system",
+        "kms-auto-2026",
+        "kms-auto-get",
+        "kms-pico-free",
+        "kmsauto-get",
+        "microsoft-office-26",
+        "microsoft-office-tool",
+        "microsoft-office-tools",
+        "office-2026-activation-tool",
+        "office-activation-utility-free",
+        "open-source",
+        "python",
+        "software-engineering",
+        "windows-activaton",
+        "windows-console-tools",
+        "windows-downloader",
+        "windows-setup"
+      ],
+      "createdAt": "2026-10-31T07:24:02Z",
+      "updatedAt": "2026-11-01T06:35:55Z",
+      "pushedAt": "2026-10-31T07:24:08Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 30,
+        "pushedFreshness": 8,
+        "crossSource": 0,
+        "total": 38,
+        "signals": [
+          "新仓约 271 stars/day",
+          "2 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "hyprwm/Hyprland",
+      "url": "https://github.com/hyprwm/hyprland",
+      "description": "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
+      "stars": 39131,
+      "forks": 2111,
+      "growth": {
+        "value": 37,
+        "source": "github-trending"
+      },
+      "language": "C++",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 31.48756508066151,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 31.5,
+        "signals": [
+          "Trending 披露 +37"
+        ]
+      }
+    },
+    {
+      "repoName": "VlcekM/MeitouClient",
+      "url": "https://github.com/vlcekm/meitouclient",
+      "description": "Open-source reimplementation of the Kenshi engine in C# / .NET 10 using a custom Vulkan renderer. Needs your own copy of Kenshi.",
+      "stars": 100,
+      "forks": 19,
+      "openIssues": 32,
+      "language": "C#",
+      "topics": [],
+      "createdAt": "2026-10-06T13:09:25Z",
+      "updatedAt": "2026-11-01T11:56:17Z",
+      "pushedAt": "2026-11-01T11:56:12Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 11.413253576131119,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 23.4,
+        "signals": [
+          "新仓约 4 stars/day",
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "cipher387/API-s-for-OSINT",
+      "url": "https://github.com/cipher387/api-s-for-osint",
+      "description": "List of API's for gathering information about phone numbers, addresses, domains etc",
+      "stars": 2629,
+      "forks": 337,
+      "openIssues": 10,
+      "topics": [
+        "api",
+        "api-rest",
+        "awesome",
+        "awesome-list",
+        "cybersecurity",
+        "information-gathering",
+        "osint"
+      ],
+      "createdAt": "2021-10-29T09:39:50Z",
+      "updatedAt": "2026-11-01T11:56:15Z",
+      "pushedAt": "2026-11-01T11:56:11Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "crmne/zapfast",
+      "url": "https://github.com/crmne/zapfast",
+      "description": "ZapFast: a fast, native WhatsApp client in Rust and egui",
+      "stars": 2344,
+      "forks": 273,
+      "openIssues": 130,
+      "language": "Rust",
+      "topics": [
+        "chat",
+        "desktop-app",
+        "egui",
+        "linux",
+        "macos",
+        "messaging",
+        "rust",
+        "whatsapp",
+        "whatsapp-client",
+        "windows"
+      ],
+      "createdAt": "2026-08-29T15:52:40Z",
+      "updatedAt": "2026-11-01T11:56:24Z",
+      "pushedAt": "2026-11-01T11:56:20Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "phishdestroy/destroylist",
+      "url": "https://github.com/phishdestroy/destroylist",
+      "description": "Real-time phishing & scam domain blocklist - 205k+ curated threats, 1M+ community, free API, multiple formats",
+      "stars": 2101,
+      "forks": 517,
+      "openIssues": 4,
+      "language": "HTML",
+      "topics": [
+        "anti-phishing",
+        "blacklist",
+        "blocklist",
+        "crypto-scam",
+        "cybersecurity",
+        "dns-blocklist",
+        "domains",
+        "drainer",
+        "malware",
+        "osint",
+        "phishing",
+        "scam",
+        "security-tools",
+        "seed-phishing",
+        "threat-intelligence",
+        "web3-security"
+      ],
+      "createdAt": "2025-07-17T02:31:45Z",
+      "updatedAt": "2026-11-01T11:56:22Z",
+      "pushedAt": "2026-11-01T11:56:00Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "qufei1993/skills-hub",
+      "url": "https://github.com/qufei1993/skills-hub",
+      "description": "A cross-platform desktop app to manage Agent Skills in one place and sync them to multiple AI coding tools’ global skills directories — “Install once, sync everywhere”.",
+      "stars": 1848,
+      "forks": 214,
+      "openIssues": 5,
+      "language": "Rust",
+      "topics": [
+        "agent-skills",
+        "ai-agent",
+        "claude-code",
+        "codex",
+        "cursor",
+        "desktop-app",
+        "react",
+        "rust",
+        "skill-management",
+        "skills-hub",
+        "skills-manager",
+        "tauri"
+      ],
+      "createdAt": "2026-01-25T03:31:21Z",
+      "updatedAt": "2026-11-01T11:56:19Z",
+      "pushedAt": "2026-11-01T11:56:15Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "open-gsd/gsd-pi",
+      "url": "https://github.com/open-gsd/gsd-pi",
+      "description": "A powerful meta-prompting, context engineering and spec-driven development system that enables agents to work for long periods of time autonomously without losing track of the big picture",
+      "stars": 1348,
+      "forks": 115,
+      "openIssues": 60,
+      "language": "TypeScript",
+      "topics": [
+        "context-engineering",
+        "meta-prompting",
+        "spec-driven-development"
+      ],
+      "createdAt": "2026-05-22T11:03:33Z",
+      "updatedAt": "2026-11-01T11:56:18Z",
+      "pushedAt": "2026-11-01T11:56:12Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "tcgdex/cards-database",
+      "url": "https://github.com/tcgdex/cards-database",
+      "description": "Pokémon Trading Card Game Card (TCG) Database for the TCGdex API. ⭐ Leave a star if the project interest you !",
+      "stars": 1160,
+      "forks": 246,
+      "openIssues": 159,
+      "language": "TypeScript",
+      "topics": [
+        "bunjs",
+        "card",
+        "cards-database",
+        "database",
+        "game",
+        "graphql",
+        "pokemon",
+        "tcg",
+        "tcgdex",
+        "trading"
+      ],
+      "createdAt": "2020-02-19T15:09:23Z",
+      "updatedAt": "2026-11-01T11:56:25Z",
+      "pushedAt": "2026-11-01T11:56:22Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "retentioneering/retentioneering-tools",
+      "url": "https://github.com/retentioneering/retentioneering-tools",
+      "description": "Python toolkit, MCP server, and agent skills for reproducible, auditable clickstream and event log analytics. Helps AI agents, data scientists and analysts build, validate, and cross-check product analytics, quantitative UX, customer journeys, graph-based user flows, behavioral segmentation, A/B tests, process mining models, Markov chain simulation",
+      "stars": 943,
+      "forks": 144,
+      "openIssues": 41,
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "analytics-mcp",
+        "behaviour-analysis",
+        "clickstream",
+        "clickstream-analysis",
+        "customer-journey-analytics",
+        "customer-journey-map",
+        "data-visualization",
+        "graph-visualizer",
+        "machine-learning",
+        "predictive-analytics",
+        "predictive-modeling",
+        "product-analytics",
+        "python",
+        "quant-ux",
+        "segmentation",
+        "user-flow",
+        "user-trajectories",
+        "user-trajectories-analysis",
+        "web-analytics"
+      ],
+      "createdAt": "2019-07-02T13:37:30Z",
+      "updatedAt": "2026-11-01T11:56:03Z",
+      "pushedAt": "2026-11-01T11:55:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "MIgHTy-alIeN/ethereum-flashloan-mev-bot",
+      "url": "https://github.com/mighty-alien/ethereum-flashloan-mev-bot",
+      "description": "An arbitrage bot is a smart contract connected to an external automation script that controls its operation.",
+      "stars": 931,
+      "forks": 590,
+      "openIssues": 0,
+      "growth": {
+        "value": 0,
+        "source": "snapshot"
+      },
+      "language": "Solidity",
+      "topics": [
+        "ai",
+        "aitradingbot",
+        "bot",
+        "btc",
+        "claude",
+        "eth",
+        "etherlab",
+        "mev",
+        "mevbots"
+      ],
+      "createdAt": "2026-07-17T09:45:22Z",
+      "updatedAt": "2026-11-01T11:56:13Z",
+      "pushedAt": "2026-11-01T11:56:09Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "rust-lang/crates.io-index",
+      "url": "https://github.com/rust-lang/crates.io-index",
+      "description": "Registry index for crates.io",
+      "stars": 756,
+      "forks": 272,
+      "openIssues": 2,
+      "growth": {
+        "value": 0,
+        "source": "snapshot"
+      },
+      "language": "Tcl",
+      "topics": [],
+      "createdAt": "2014-11-04T23:26:38Z",
+      "updatedAt": "2026-11-01T11:56:03Z",
+      "pushedAt": "2026-11-01T11:55:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "cashier-go/cashier",
+      "url": "https://github.com/cashier-go/cashier",
+      "description": "A self-service CA for OpenSSH",
+      "stars": 730,
+      "forks": 46,
+      "openIssues": 25,
+      "language": "Go",
+      "topics": [
+        "certificate",
+        "certificate-authority",
+        "openssh",
+        "ssh",
+        "ssh-key"
+      ],
+      "createdAt": "2016-04-18T21:11:30Z",
+      "updatedAt": "2026-11-01T11:56:07Z",
+      "pushedAt": "2026-11-01T11:56:05Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "spin311/MicrosoftRewardsWebsite",
+      "url": "https://github.com/spin311/microsoftrewardswebsite",
+      "description": "Microsoft Automatic rewards google extension and phone app",
+      "stars": 672,
+      "forks": 23,
+      "openIssues": 6,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2023-11-18T14:18:33Z",
+      "updatedAt": "2026-11-01T11:56:26Z",
+      "pushedAt": "2026-11-01T11:56:23Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "openaccountants/openaccountants",
+      "url": "https://github.com/openaccountants/openaccountants",
+      "description": "Open tax skills for AI: 2,250 skills across 266 jurisdictions, every figure cited to the law. Works in ChatGPT, Claude, Cursor and any MCP client.",
+      "stars": 468,
+      "forks": 66,
+      "openIssues": 291,
+      "language": "HTML",
+      "topics": [
+        "accountant",
+        "accounting",
+        "agent-skills",
+        "ai",
+        "ai-agents",
+        "chatgpt",
+        "claude",
+        "compliance",
+        "cpa",
+        "gst",
+        "income-tax",
+        "llm",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol",
+        "open-data",
+        "open-source",
+        "tax",
+        "tax-rules",
+        "vat"
+      ],
+      "createdAt": "2026-04-09T14:03:07Z",
+      "updatedAt": "2026-11-01T11:55:55Z",
+      "pushedAt": "2026-11-01T11:56:02Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "agentclientprotocol/registry",
+      "url": "https://github.com/agentclientprotocol/registry",
+      "description": "Registry of agents implementing the Agent Client Protocol (ACP)",
+      "stars": 445,
+      "forks": 377,
+      "openIssues": 274,
+      "topics": [
+        "acp",
+        "agentclientprotocol",
+        "agents",
+        "ai",
+        "registry"
+      ],
+      "createdAt": "2025-12-17T12:59:03Z",
+      "updatedAt": "2026-11-01T11:56:19Z",
+      "pushedAt": "2026-11-01T11:56:14Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Override92/AiSList",
+      "url": "https://github.com/override92/aislist",
+      "description": "Filter list for Ai Slop channels on YouTube",
+      "stars": 374,
+      "forks": 9,
+      "openIssues": 23,
+      "topics": [],
+      "createdAt": "2025-10-22T13:01:41Z",
+      "updatedAt": "2026-11-01T11:56:20Z",
+      "pushedAt": "2026-11-01T11:56:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "timmo001/system-bridge",
+      "url": "https://github.com/timmo001/system-bridge",
+      "description": "A bridge for your systems",
+      "stars": 359,
+      "forks": 28,
+      "openIssues": 22,
+      "language": "Go",
+      "topics": [
+        "api",
+        "automation",
+        "contributions-welcome",
+        "go",
+        "hacktoberfest",
+        "home-assistant",
+        "system-bridge",
+        "typescript",
+        "websocket"
+      ],
+      "createdAt": "2021-02-08T10:49:51Z",
+      "updatedAt": "2026-11-01T11:56:17Z",
+      "pushedAt": "2026-11-01T11:56:13Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "patriceckhart/zot",
+      "url": "https://github.com/patriceckhart/zot",
+      "description": "Yet another coding agent harness, lightweight and written in go.",
+      "stars": 354,
+      "forks": 48,
+      "openIssues": 4,
+      "language": "Go",
+      "topics": [
+        "agent-framework",
+        "agent-harness",
+        "ai-agent",
+        "cli",
+        "coding-agent",
+        "coding-assistant",
+        "continuous-agents",
+        "developer-tools",
+        "durable-agents",
+        "go",
+        "terminal",
+        "tui"
+      ],
+      "createdAt": "2026-04-17T16:21:00Z",
+      "updatedAt": "2026-11-01T11:56:20Z",
+      "pushedAt": "2026-11-01T11:56:15Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "aviatesk/JETLS.jl",
+      "url": "https://github.com/aviatesk/jetls.jl",
+      "description": "A new language server for Julia, enabling modern, compiler-powered tooling.",
+      "stars": 319,
+      "forks": 26,
+      "openIssues": 31,
+      "language": "Julia",
+      "topics": [
+        "jet",
+        "julia",
+        "language-server",
+        "static-analysis"
+      ],
+      "createdAt": "2022-10-30T09:05:21Z",
+      "updatedAt": "2026-11-01T11:55:57Z",
+      "pushedAt": "2026-11-01T11:55:53Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "dnouri/pilish",
+      "url": "https://github.com/dnouri/pilish",
+      "description": "The ergonomic agent harness for Emacs.",
+      "stars": 316,
+      "forks": 37,
+      "openIssues": 12,
+      "language": "Emacs Lisp",
+      "topics": [
+        "agentic-coding",
+        "emacs",
+        "harness-engineering",
+        "pi"
+      ],
+      "createdAt": "2025-12-30T18:18:03Z",
+      "updatedAt": "2026-11-01T11:56:22Z",
+      "pushedAt": "2026-11-01T11:56:21Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "dtrajko/MoravaEngine",
+      "url": "https://github.com/dtrajko/moravaengine",
+      "description": "C++ 2D/3D graphics engine and scene editor for Vulkan 1.4, OpenGL and DirectX 11, on Windows and Linux. Physically based rendering, global illumination, ray-traced reflections and ambient occlusion, a path tracer for reference. A playground for real-time rendering techniques.",
+      "stars": 311,
+      "forks": 20,
+      "openIssues": 0,
+      "language": "C++",
+      "topics": [
+        "3d-graphics",
+        "cpp",
+        "cross-platform",
+        "directx",
+        "global-illumination",
+        "glsl",
+        "imgui",
+        "instancing",
+        "marching-cubes",
+        "opengl",
+        "path-tracing",
+        "pbr",
+        "ray-tracing",
+        "rendering",
+        "scene-editor",
+        "shaders",
+        "voxel",
+        "voxel-engine",
+        "vulkan",
+        "vulkan-raytracing"
+      ],
+      "createdAt": "2020-06-13T03:51:27Z",
+      "updatedAt": "2026-11-01T11:56:08Z",
+      "pushedAt": "2026-11-01T11:56:25Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "yonatangross/orchestkit",
+      "url": "https://github.com/yonatangross/orchestkit",
+      "description": "The Complete AI Development Toolkit for Claude Code. 106 skills, 36 agents, 171 hooks. Install `ork` for stable (v9.x), or `ork-alpha` for the v10 line, which ships daily.",
+      "stars": 300,
+      "forks": 38,
+      "openIssues": 97,
+      "language": "TypeScript",
+      "topics": [
+        "agent-orchestration",
+        "agents",
+        "ai-agents",
+        "ai-development",
+        "anthropic",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-plugin",
+        "developer-tools",
+        "fastapi",
+        "langgraph",
+        "llm",
+        "mcp",
+        "rag",
+        "react",
+        "security",
+        "testing",
+        "typescript"
+      ],
+      "createdAt": "2025-12-31T05:58:52Z",
+      "updatedAt": "2026-11-01T11:56:06Z",
+      "pushedAt": "2026-11-01T11:56:04Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "scalaprops/scalaprops",
+      "url": "https://github.com/scalaprops/scalaprops",
+      "description": "property based testing library for Scala",
+      "stars": 283,
+      "forks": 21,
+      "openIssues": 9,
+      "language": "Scala",
+      "topics": [
+        "dotty",
+        "mersenne-twister",
+        "prng",
+        "property-based-testing",
+        "scala",
+        "scala-js",
+        "scala-native",
+        "scala3",
+        "scalaprops",
+        "scalaz",
+        "testing"
+      ],
+      "createdAt": "2015-05-05T03:19:11Z",
+      "updatedAt": "2026-11-01T11:38:36Z",
+      "pushedAt": "2026-11-01T11:56:31Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Kronuz/btree",
+      "url": "https://github.com/kronuz/btree",
+      "description": "B-tree containers for C++17: the std::map and std::set interfaces with less memory and fewer cache misses",
+      "stars": 282,
+      "forks": 49,
+      "openIssues": 1,
+      "language": "C++",
+      "topics": [
+        "btree",
+        "containers",
+        "cpp",
+        "cpp17",
+        "header-only",
+        "map",
+        "set"
+      ],
+      "createdAt": "2019-08-02T18:19:08Z",
+      "updatedAt": "2026-11-01T11:56:22Z",
+      "pushedAt": "2026-11-01T11:56:18Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "ktomy/nightscout-clock",
+      "url": "https://github.com/ktomy/nightscout-clock",
+      "description": "Display blood sugar on a desk clock",
+      "stars": 195,
+      "forks": 70,
+      "openIssues": 23,
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2023-08-05T23:37:49Z",
+      "updatedAt": "2026-11-01T11:56:05Z",
+      "pushedAt": "2026-11-01T11:56:00Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "iboxz/free-v2ray-collector",
+      "url": "https://github.com/iboxz/free-v2ray-collector",
+      "description": "V2Ray config collector, multiple protocols support Mix, Reality, VLESS, VMESS, Shadowsocks, Trojan",
+      "stars": 192,
+      "forks": 11,
+      "openIssues": 0,
+      "language": "CSS",
+      "topics": [
+        "configuration",
+        "iran",
+        "proxy",
+        "v2ray",
+        "vless",
+        "vmess"
+      ],
+      "createdAt": "2023-08-05T19:06:47Z",
+      "updatedAt": "2026-11-01T11:56:08Z",
+      "pushedAt": "2026-11-01T11:56:04Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "themiralay/Proxy-List-World",
+      "url": "https://github.com/themiralay/proxy-list-world",
+      "description": "ICE Proxy list produces new proxies by collectively scanning the entire open source list in the world. Proxies are updated every 2 - 3 minutes. New Proxy sources will be added day by day. The list is always open source.",
+      "stars": 185,
+      "forks": 14,
+      "openIssues": 4,
+      "topics": [],
+      "createdAt": "2023-12-05T20:42:59Z",
+      "updatedAt": "2026-11-01T11:56:33Z",
+      "pushedAt": "2026-11-01T11:56:29Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "WayfireWM/wf-shell",
+      "url": "https://github.com/wayfirewm/wf-shell",
+      "description": "A collection of GTK4-based desktop components designed for Wayfire and Wlroots desktops",
+      "stars": 180,
+      "forks": 57,
+      "openIssues": 71,
+      "language": "C++",
+      "topics": [],
+      "createdAt": "2018-08-30T09:34:18Z",
+      "updatedAt": "2026-11-01T11:56:19Z",
+      "pushedAt": "2026-11-01T11:56:15Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "magnus919/agent-skills",
+      "url": "https://github.com/magnus919/agent-skills",
+      "description": "Curated collection of AI agent skills for Hermes and other agent frameworks",
+      "stars": 162,
+      "forks": 20,
+      "openIssues": 4,
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "agentskills",
+        "ai-agents",
+        "automation",
+        "llm"
+      ],
+      "createdAt": "2026-07-11T21:36:47Z",
+      "updatedAt": "2026-11-01T11:56:19Z",
+      "pushedAt": "2026-11-01T11:56:16Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "fichenx/Actions-OpenWrt",
+      "url": "https://github.com/fichenx/actions-openwrt",
+      "description": "自动编译OpenWrt固件，每周四定时编译。现支持红米AX6、Newifi-D2、S905D、S905X3!",
+      "stars": 154,
+      "forks": 90,
+      "openIssues": 0,
+      "language": "Shell",
+      "topics": [],
+      "createdAt": "2022-08-26T05:11:15Z",
+      "updatedAt": "2026-11-01T11:56:07Z",
+      "pushedAt": "2026-11-01T11:56:03Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "pando85/kaniop",
+      "url": "https://github.com/pando85/kaniop",
+      "description": "Kubernetes operator for managing Kanidm",
+      "stars": 136,
+      "forks": 13,
+      "openIssues": 5,
+      "language": "Rust",
+      "topics": [
+        "identity-management",
+        "idm",
+        "kanidm",
+        "kubernetes",
+        "kubernetes-operator",
+        "security"
+      ],
+      "createdAt": "2024-09-17T15:22:47Z",
+      "updatedAt": "2026-11-01T11:56:04Z",
+      "pushedAt": "2026-11-01T11:56:02Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "freelensapp/freelens-fluxcd-extension",
+      "url": "https://github.com/freelensapp/freelens-fluxcd-extension",
+      "description": "Freelens FluxCD extension",
+      "stars": 128,
+      "forks": 13,
+      "openIssues": 6,
+      "language": "TypeScript",
+      "topics": [
+        "fluxcd",
+        "freelens",
+        "gitops",
+        "kubernetes",
+        "ui"
+      ],
+      "createdAt": "2025-05-13T15:46:23Z",
+      "updatedAt": "2026-11-01T11:56:13Z",
+      "pushedAt": "2026-11-01T11:56:11Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Szotasz/marveen",
+      "url": "https://github.com/szotasz/marveen",
+      "description": "AI csapatod, ami fut amíg te alszol.",
+      "stars": 126,
+      "forks": 168,
+      "openIssues": 193,
+      "language": "TypeScript",
+      "topics": [
+        "agent-harness",
+        "ai-agents",
+        "ai-assistant",
+        "claude-code",
+        "multi-agent",
+        "self-hosted",
+        "slack-bot",
+        "telegram-bot",
+        "typescript"
+      ],
+      "createdAt": "2026-04-08T11:00:40Z",
+      "updatedAt": "2026-11-01T11:55:58Z",
+      "pushedAt": "2026-11-01T11:55:54Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "airmang/python-hwpx",
+      "url": "https://github.com/airmang/python-hwpx",
+      "description": "Pure Python HWPX automation: read, edit, generate, and validate documents without Hancom Office.",
+      "stars": 119,
+      "forks": 42,
+      "openIssues": 9,
+      "language": "Python",
+      "topics": [
+        "document-automation",
+        "hancom",
+        "hwp",
+        "hwpx",
+        "office-documents",
+        "opc",
+        "owpml",
+        "python",
+        "template",
+        "text-extraction",
+        "validation",
+        "xml"
+      ],
+      "createdAt": "2025-09-17T03:29:26Z",
+      "updatedAt": "2026-11-01T11:56:23Z",
+      "pushedAt": "2026-11-01T11:56:19Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "plainhub/plain-desktop",
+      "url": "https://github.com/plainhub/plain-desktop",
+      "description": "The desktop app and web ui for PlainApp to manage your phone data.",
+      "stars": 119,
+      "forks": 35,
+      "openIssues": 0,
+      "language": "TypeScript",
+      "topics": [
+        "desktop-app",
+        "encrypted",
+        "plain-app",
+        "rust",
+        "tauri-app",
+        "typescript",
+        "vuejs"
+      ],
+      "createdAt": "2023-04-10T07:30:26Z",
+      "updatedAt": "2026-11-01T11:56:16Z",
+      "pushedAt": "2026-11-01T11:56:12Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "karakum-team/karakum",
+      "url": "https://github.com/karakum-team/karakum",
+      "description": "Converter of TypeScript declaration files to Kotlin declarations",
+      "stars": 116,
+      "forks": 4,
+      "openIssues": 10,
+      "language": "Kotlin",
+      "topics": [
+        "kotlin",
+        "typescript"
+      ],
+      "createdAt": "2022-02-06T16:18:38Z",
+      "updatedAt": "2026-11-01T11:56:03Z",
+      "pushedAt": "2026-11-01T11:55:59Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "BlenMiner/NowUI",
+      "url": "https://github.com/blenminer/nowui",
+      "description": "An immediate UI library for Unity3D.",
+      "stars": 108,
+      "forks": 12,
+      "openIssues": 1,
+      "language": "C#",
+      "topics": [],
+      "createdAt": "2022-04-20T07:21:49Z",
+      "updatedAt": "2026-11-01T11:56:17Z",
+      "pushedAt": "2026-11-01T11:56:17Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "2youg1/sprawling-agents",
+      "url": "https://github.com/2youg1/sprawling-agents",
+      "description": "Local multi-agent harness for running persistent agent teams, long-run, society-simulation",
+      "stars": 108,
+      "forks": 10,
+      "openIssues": 47,
+      "language": "Rust",
+      "topics": [
+        "acp",
+        "agent",
+        "harness",
+        "multi-agent",
+        "performance",
+        "privacy-first",
+        "rust",
+        "society-simulation"
+      ],
+      "createdAt": "2026-08-22T13:20:29Z",
+      "updatedAt": "2026-11-01T11:56:07Z",
+      "pushedAt": "2026-11-01T11:56:04Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "hproxy-com/free-proxy-list",
+      "url": "https://github.com/hproxy-com/free-proxy-list",
+      "description": "Free proxy list, verified around the clock: HTTP, HTTPS, SOCKS4 and SOCKS5 proxies with country, anonymity, latency and uptime on every row, updated several times a day. Live list, proxy checker, keyless API and MCP server at hproxy.com.",
+      "stars": 86,
+      "forks": 7,
+      "openIssues": 0,
+      "growth": {
+        "value": 0,
+        "source": "snapshot"
+      },
+      "topics": [
+        "ai-agents",
+        "anonymous-proxy",
+        "free-proxies",
+        "free-proxy",
+        "free-proxy-api",
+        "free-proxy-list",
+        "http-proxy",
+        "https-proxy",
+        "mcp-server",
+        "proxies",
+        "proxy",
+        "proxy-api",
+        "proxy-checker",
+        "proxy-list",
+        "proxy-server",
+        "scraping",
+        "socks4",
+        "socks5",
+        "socks5-proxy",
+        "web-scraping"
+      ],
+      "createdAt": "2026-06-16T18:04:40Z",
+      "updatedAt": "2026-11-01T11:56:13Z",
+      "pushedAt": "2026-11-01T11:56:10Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "true-async/server",
+      "url": "https://github.com/true-async/server",
+      "description": "TrueAsync Server",
+      "stars": 77,
+      "forks": 2,
+      "openIssues": 6,
+      "language": "C",
+      "topics": [
+        "async",
+        "grpc",
+        "http2",
+        "http2-server",
+        "http3",
+        "php",
+        "server",
+        "websocket"
+      ],
+      "createdAt": "2026-04-21T10:37:37Z",
+      "updatedAt": "2026-11-01T11:56:02Z",
+      "pushedAt": "2026-11-01T11:55:58Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "sdsrss/claude-mem-lite",
+      "url": "https://github.com/sdsrss/claude-mem-lite",
+      "description": "Persistent long-term memory for Claude Code via MCP — captures coding decisions, bugfixes, and context across sessions. Hybrid FTS5 + TF-IDF search with episode batching. Single SQLite DB, no external services. Alternative to claude-mem with 600x lower cost.",
+      "stars": 68,
+      "forks": 14,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "topics": [
+        "agent-memory",
+        "ai-coding-assistant",
+        "ai-memory",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "claude-code-plugin",
+        "fts5",
+        "hooks",
+        "hybrid-search",
+        "llm-memory",
+        "long-term-memory",
+        "mcp",
+        "mcp-server",
+        "memory",
+        "model-context-protocol",
+        "persistence",
+        "rag",
+        "semantic-search",
+        "sqlite"
+      ],
+      "createdAt": "2026-02-08T07:10:37Z",
+      "updatedAt": "2026-11-01T11:56:30Z",
+      "pushedAt": "2026-11-01T11:56:27Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "jasisz/aver",
+      "url": "https://github.com/jasisz/aver",
+      "description": "Aver is a programming language for auditable AI-written code",
+      "stars": 66,
+      "forks": 2,
+      "openIssues": 6,
+      "language": "Rust",
+      "topics": [
+        "ai-code",
+        "effect-system",
+        "formal-verification",
+        "lean4",
+        "programming-language",
+        "rust",
+        "spec-tests",
+        "transpiler"
+      ],
+      "createdAt": "2026-02-24T20:31:07Z",
+      "updatedAt": "2026-11-01T11:56:13Z",
+      "pushedAt": "2026-11-01T11:56:10Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Integration-Automation/PyBreeze",
+      "url": "https://github.com/integration-automation/pybreeze",
+      "description": "PyBreeze features built-in modules tailored for every level of modern automation, allowing developers to tackle complex scenarios without leaving the IDE.",
+      "stars": 65,
+      "forks": 3,
+      "openIssues": 2,
+      "language": "Python",
+      "topics": [
+        "api-automation",
+        "api-automation-testing",
+        "automation",
+        "binggpt",
+        "chat",
+        "chatbot",
+        "chatgpt",
+        "gui",
+        "gui-automation",
+        "gui-testing",
+        "ide",
+        "load-testing",
+        "python",
+        "python-ide",
+        "selenium",
+        "test-automation",
+        "testing",
+        "text-editor",
+        "web-automation"
+      ],
+      "createdAt": "2022-06-07T07:10:55Z",
+      "updatedAt": "2026-11-01T11:56:09Z",
+      "pushedAt": "2026-11-01T11:56:07Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "stickerdaniel/saas-starter",
+      "url": "https://github.com/stickerdaniel/saas-starter",
+      "description": "SvelteKit + Convex-native SaaS starter optimised for coding agents, with auth, billing, admin, AI, and built-in regression guardrails.",
+      "stars": 61,
+      "forks": 12,
+      "openIssues": 47,
+      "language": "TypeScript",
+      "topics": [
+        "ai-chat",
+        "better-auth",
+        "bun",
+        "cloudflare-workers",
+        "convex",
+        "saas-boilerplate",
+        "saas-starter",
+        "saas-template",
+        "shadcn-svelte",
+        "svelte",
+        "sveltekit",
+        "tailwindcss",
+        "template",
+        "tolgee",
+        "typescript"
+      ],
+      "createdAt": "2025-08-18T20:35:25Z",
+      "updatedAt": "2026-11-01T11:55:57Z",
+      "pushedAt": "2026-11-01T11:55:54Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "Code2Collapse/ComfyUI-CustomNodePacks",
+      "url": "https://github.com/code2collapse/comfyui-customnodepacks",
+      "description": "Experimental nodes! This is a production suite for ComfyUI — SAM2.1/SAM3 segmentation, alpha matting, inpaint crop/stitch, VFX tools (EXR I/O, LUTs, render passes), video mask propagation, temporal anchors, VAE merging, spline editors, and auto-versioned output.",
+      "stars": 60,
+      "forks": 10,
+      "openIssues": 2,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-02-19T18:12:36Z",
+      "updatedAt": "2026-11-01T11:56:21Z",
+      "pushedAt": "2026-11-01T11:56:18Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "AgOpenGPS-Official/AgOpenWeb",
+      "url": "https://github.com/agopengps-official/agopenweb",
+      "description": "Web-first agricultural GPS guidance — browser client + headless .NET host. Independent fork of AgOpenGPS-Official/AgValoniaGPS.",
+      "stars": 60,
+      "forks": 39,
+      "openIssues": 13,
+      "language": "C#",
+      "topics": [],
+      "createdAt": "2026-06-20T10:36:08Z",
+      "updatedAt": "2026-11-01T11:55:59Z",
+      "pushedAt": "2026-11-01T11:56:04Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "HeliosSoftware/hfs",
+      "url": "https://github.com/heliossoftware/hfs",
+      "description": "The Helios FHIR Server is an implementation of the HL7® FHIR® standard, built in Rust for high performance and optimized for clinical analytics workloads.",
+      "stars": 57,
+      "forks": 22,
+      "openIssues": 136,
+      "language": "Rust",
+      "topics": [
+        "analytics",
+        "fhir",
+        "fhir-server",
+        "healthcare",
+        "healthcare-analytics",
+        "hl7-fhir"
+      ],
+      "createdAt": "2025-01-04T22:18:33Z",
+      "updatedAt": "2026-11-01T11:56:26Z",
+      "pushedAt": "2026-11-01T11:56:24Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "buraksocial/IgnisDB",
+      "url": "https://github.com/buraksocial/ignisdb",
+      "description": "IgnisDB is a key-value database built from scratch in Python. v2 introduces a Log-Structured Merge Tree (LSM-Tree) storage engine that keeps RAM usage fixed at 64–128 MB regardless of dataset size, while providing unlimited disk-backed storage.",
+      "stars": 54,
+      "forks": 4,
+      "openIssues": 5,
+      "growth": {
+        "value": 0,
+        "source": "snapshot"
+      },
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2025-06-10T23:03:34Z",
+      "updatedAt": "2026-11-01T11:56:14Z",
+      "pushedAt": "2026-11-01T11:56:11Z",
+      "sources": [
+        "github-search"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 12,
+        "crossSource": 0,
+        "total": 12,
+        "signals": [
+          "0 天内有更新"
+        ]
+      }
+    },
+    {
+      "repoName": "ghostty-org/ghostty",
+      "url": "https://github.com/ghostty-org/ghostty",
+      "description": "👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
+      "stars": 63123,
+      "forks": 3810,
+      "language": "Zig",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 0,
+        "signals": [
+          "进入 GitHub 官方候选源"
+        ]
+      }
+    },
+    {
+      "repoName": "Nutlope/hallmark",
+      "url": "https://github.com/nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "stars": 44342,
+      "forks": 2344,
+      "language": "CSS",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 0,
+        "signals": [
+          "进入 GitHub 官方候选源"
+        ]
+      }
+    },
+    {
+      "repoName": "YuJunZhiXue/dsh-purge",
+      "url": "https://github.com/yujunzhixue/dsh-purge",
+      "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分",
+      "stars": 15010,
+      "forks": 3469,
+      "language": "JavaScript",
+      "topics": [],
+      "sources": [
+        "github-trending"
+      ],
+      "score": {
+        "snapshotGrowth": 0,
+        "trendingGrowth": 0,
+        "newProjectVelocity": 0,
+        "pushedFreshness": 0,
+        "crossSource": 0,
+        "total": 0,
+        "signals": [
+          "进入 GitHub 官方候选源"
+        ]
+      }
+    }
+  ]
+}
